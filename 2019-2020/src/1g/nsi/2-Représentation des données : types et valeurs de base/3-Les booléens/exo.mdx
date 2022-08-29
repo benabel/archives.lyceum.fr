@@ -1,0 +1,50 @@
+## Construire des tables de vérité
+
+1. Produisez les tables de vérité pour les opérations suivantes:
+
+- $NAND$ : `P NAND Q = NON (P ET Q)`
+- $NOR$ : `P NOR Q = NON (P OU Q)`
+- $XOR$ : `P XOR Q` est vrai si et UNIQUEMENT si l'un des P ou Q est vrai.
+
+2. Produire des tables de vérité pour:
+
+- $P⋅Q⋅R$
+- $P'⋅Q'⋅R'$
+- $P⋅Q⋅R + P⋅Q'⋅R$
+- $P⋅R$
+- $(P + Q)'$
+- $P'⋅Q'$
+- $(P⋅Q)'$
+- $P'+ Q'$
+
+## Expressions équivalentes
+
+**Savoir-faire:** Utiliser une table de vérité pour montrer que deux expressions logiques sont équivalentes
+
+- Montrer que $P+(P'⋅Q)=P+Q$
+
+
+- Utiliser une table de vérité pour démontrer la propriété d’absorption de l’algèbre de Boole:
+$P+P⋅Q=P⋅1+P⋅Q=P⋅(1+Q)=P$.
+
+- Montrer que $P + Q⋅R$ est équivalent à $(P + Q) ⋅ (P + R)$
+
+## Simplifications d'expressions booléennes
+
+- Simplifier l'expression $(P+Q)\cdot(P+Q')$. vérifier votre résultat avec une table de vérité.
+
+- A partir de la table de vérité de la fonction `XOR`, déterminer une expression booléenne à base
+  d'opérateurs élémentaires. Pour cela commencer par remarquer que  $0\ xor\ Q\ =\ Q$ et $1\ xor\ Q\
+  =\ Q'$. Vérifier votre résultat avec une table de vérité.
+
+[Source l'Informatique c'est Fantastique CC-B6-SA-NC](http://info.blaisepascal.fr/nsi-les-booleens)
+
+## Recherche d'expressions équivalentes( Plus dur)
+
+Exprimer sous forme simplifiée de somme de produit:
+
+- $P⋅Q'⋅R '+ P⋅Q'⋅R + P⋅Q⋅R$
+- $P⋅Q ⋅ (R + S)$
+- $(P + Q) ⋅ (R + S + T)$
+- $P'⋅R ⋅(P'⋅Q⋅S)'+ P'⋅Q⋅R'⋅S' + P⋅Q'⋅R$
+- $(P '+ Q) ⋅ (P + Q + S) ⋅ S'$

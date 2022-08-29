@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+  ISN - Algorithme et programme
+    </title>
+<!--use just the brands and solid styles-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/highlight-ipynb.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/pygments.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/style.css" />
+
+    <!-- Favicons from realfavicongenerator.net -->
+<!-- This file is part of design repo don't edit it from anywhere else -->
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.png">
+<link rel="icon" sizes="144x144" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-144x144.png">
+<link rel="icon" sizes="96x96" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-96x96.png">
+<link rel="icon" sizes="48x48" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.ico>
+
+<!-- Safari -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://archives.lyceum.fr/2017-2018/theme/favicons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="lyceum.fr">
+
+<!-- multiple icons for IE -->
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+
+<link rel="mask-icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/safari-pinned-tab.svg color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="mstile-144x144.png>
+
+<!-- Theme color for Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#003CBA">
+<link rel="manifest" href="https://archives.lyceum.fr/2017-2018/theme/favicons/site.webmanifest>
+<meta name="application-name" content="lyceum.fr"></head>
+
+<body>
+    <!-- Nav Bar -->
+<div class="back-to-present">Vous êtes sur une version archivée de lyceum.fr. <a href="https://lyceum.fr">&nbsp;Revenir au présent</a></div>
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="https://archives.lyceum.fr/2017-2018">archives.lyceum.fr/2017-2018</a>
+              </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon">
+                <a href="#">
+          <span>Menu</span>
+        </a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                    <a href="https://gitlab.com/lyceum.fr" class="active">
+                        Gitlab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/isn" class="active">
+                        ISN
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/icn" class="active">
+                        ICN
+                    </a>
+                </li>
+                 <li class="has-form">
+                    <div class="row collapse">
+                        <div class="small-12 columns">
+                            <input type="text" name="q" id="tipue_drop_input" autocomplete="off" required placeholder="Rechercher">
+                        </div>
+                        <div id="tipue_drop_content"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>    <!-- End Nav -->
+
+    <!-- Main Blog Content -->
+    <div class="row " id="main-content">
+<article>
+  <!-- chapter_nav -->
+<header>
+    <div class="row chapter-nav">
+
+        <div class="sub-nav">
+            <h1>Introduction à Python</h1>
+
+            <dl class="sub-nav">
+                <dt>Navigation:</dt>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/1-quel-est-le-but-de-lisn'>
+                Quel est le but de l'ISN?
+              </a>
+                </dd>
+                <dd class="active" >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/2-algorithme-et-programme'>
+                Algorithme et programme
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/3-syntaxe'>
+                Syntaxe
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/4-types'>
+                Types
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/5-entrees-et-sorties'>
+                Entrées et sorties
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/6-variables-et-fonctions'>
+                Variables et fonctions
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/7-structures-conditionnelles'>
+                Structures conditionnelles
+              </a>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="sub-nav">
+            <div class="chapter-nav large-8 columns">
+                <h2><a href="https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/2-algorithme-et-programme" rel="bookmark"
+                  title="Permalink to Algorithme et programme">
+                      Algorithme et programme
+                  </a>
+                </h2>
+            </div>
+            <div id="toc" class="large-4 columns">
+            </div>
+        </div>
+    </div>
+</header>  <!-- chapter_infos -->
+<h6 class="subheader" title="2017-09-07T00:00:00+02:00">
+    publié le
+    jeu. 07 septembre 2017
+
+
+</h6>  <!-- main content -->
+  <p>Donc pour qu'un ordinateur puisse résoudre un problème, il faut réussir à traduire ce problème sous la forme d'un algorithme.</p>
+<h1 id="quest-ce-quun-algorithme">Qu'est ce qu'un algorithme?</h1>
+<p>Vous avez déjà rencontré la notion d'algorithme en classe de mathématiques.</p>
+<dl>
+<dt>Algorithme</dt>
+<dd>Un algorithme est une méthode, une suite d'instructions pour obtenir un résultat.</dd>
+</dl>
+<p>Ce type de méthode est utilisé depuis la nuit des temps pour fabriquer des tissus, nouer des cordages, ou bien préparer des aliments.</p>
+<p>La révolution de l'informatique survenue au milieu du XX<sup>e</sup> siècle vient du fait que l'on a pu faire exécuter ces algorithmes à des machines. Pour cela il a fallu exprimer ces algorithmes dans des langages de programmation afin qu'ils puissent être exécutés par les ordinateurs.</p>
+<h2 id="exemple">Exemple</h2>
+<p>Voici un exemple d'algorithme antique utilisé pour calculer une racine carré: l'algorithme d'Héron.</p>
+<p>Pour chercher la racine carrée d'un nombre <em>x</em>:</p>
+<ol>
+<li>Commencer par choisir un nombre <em>s</em> au hasard si possible le plus proche possible de la valeur de la racine carrée recherchée: <strong>une semence</strong>.</li>
+<li>Porter <em>s</em> au carré.</li>
+<li>Comparer cette valeur au nombre <em>x</em>.</li>
+<li>Si cette valeur est trop loin de la valeur x, recommencer les étapes 1 à 3 en utilisant comme semence la moyenne de s et de x/s:</li>
+</ol>
+<div class="math">$$\frac{1}{2}(s+\frac{x}{s})$$</div>
+<p><em>A vous: Essayez s'utiliser cet algorithme pour calculer la racine carrée de 16 en utilisant une semence initiale de 3, et en arrêtant l'algorithme si <span class="math">\(s^{2} = 16 \pm 0.1\)</span></em></p>
+<h1 id="quest-ce-quun-programme">Qu'est ce qu'un programme?</h1>
+<dl>
+<dt>Programme</dt>
+<dd>Un programme est la forme électronique et numérique d'un algorithme exprimé dans un langage de programmation. <a href="http://fr.wikipedia.org/wiki/Programme_informatique">Source Wikipedia</a></dd>
+</dl>
+<p>Pour écrire un programme, on utilise un langage de programmation, dans notre cas <a href="https://www.python.org/">Python</a>. Ce langage possède une syntaxe particulière qui va permettre de traduire chacune des instructions de notre programme en une suite d'instructions électroniques à suivre par les composants de notre ordinateur pour effectuer les calculs demandés.</p>
+<!-- converted from notebook
+{% notebook 2016-2017/1-2-connaissances.ipynb %} -->
+
+<p>Voici par exemple, la syntaxe utilisée pour les opérations de base en Python:</p>
+<ul>
+<li>addition: <code>+</code></li>
+<li>soustraction: <code>-</code></li>
+<li>multiplication: <code>*</code></li>
+<li>division: <code>/</code></li>
+<li>division entière: <code>//</code></li>
+<li>modulo: <code>%</code></li>
+<li>puissance: <code>**</code></li>
+</ul>
+<p>Ces opérations sont implémentées directement dans Python, par contre la racine carrée ne l'est pas, si vous souhaitez calculer une racine carrée, il faut utiliser la puissance un demi:</p>
+<div class="highlight"><pre><span></span><span class="mi">16</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>4.0
+</pre></div>
+
+
+<p>ou importer le module <code>math</code> et utiliser la fonction <code>sqrt</code> de ce module:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>4.0
+</pre></div>
+
+
+<p>Le module <code>math</code> contient de nombreuses autres fonctions utiles:</p>
+<ul>
+<li>le cosinus: <code>math.cos()</code></li>
+<li>le logarithme: <code>math.log()</code></li>
+<li>...</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># On peut lister ces fonctions en utiisant la fonction dir de python</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[&#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;,
+ &#39;atan&#39;,
+ &#39;atan2&#39;,
+ &#39;atanh&#39;,
+ &#39;ceil&#39;,
+ &#39;copysign&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;degrees&#39;,
+ &#39;e&#39;,
+ &#39;erf&#39;,
+ &#39;erfc&#39;,
+ &#39;exp&#39;,
+ &#39;expm1&#39;,
+ &#39;fabs&#39;,
+ &#39;factorial&#39;,
+ &#39;floor&#39;,
+ &#39;fmod&#39;,
+ &#39;frexp&#39;,
+ &#39;fsum&#39;,
+ &#39;gamma&#39;,
+ &#39;gcd&#39;,
+ &#39;hypot&#39;,
+ &#39;inf&#39;,
+ &#39;isclose&#39;,
+ &#39;isfinite&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;ldexp&#39;,
+ &#39;lgamma&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log1p&#39;,
+ &#39;log2&#39;,
+ &#39;modf&#39;,
+ &#39;nan&#39;,
+ &#39;pi&#39;,
+ &#39;pow&#39;,
+ &#39;radians&#39;,
+ &#39;sin&#39;,
+ &#39;sinh&#39;,
+ &#39;sqrt&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;,
+ &#39;trunc&#39;]
+</pre></div>
+
+
+<h1 id="quelques-petits-exercices-pratiques-avec-jupyter-notebook">Quelques petits exercices pratiques avec jupyter notebook</h1>
+<h2 id="utiliser-un-notebook-comme-une-calculatrice">Utiliser un notebook comme une calculatrice</h2>
+<h3 id="priorite-des-operateurs">Priorité des opérateurs.</h3>
+<p>Réaliser les calculs suivants:</p>
+<ul>
+<li><code>6+4*10</code></li>
+<li><code>(6+4)*10</code></li>
+<li><code>2**8</code></li>
+<li><code>2**8+1</code></li>
+<li><code>11 / 5</code></li>
+<li><code>11 // 5</code></li>
+<li><code>11 % 2</code></li>
+<li><code>11 % 5</code></li>
+</ul>
+<p>Expérimenter divers calculs pour donner l'ordre de priorité des opérations de base en python.</p>
+<h3 id="racine-dun-trinome">Racine d'un trinôme</h3>
+<p>calculer la racine positive de l'équation: <code>34*x^2 + 68*x - 510</code></p>
+<p>Rappel: pour le trinôme <span class="math">\(a*x^2 + b*x + c\)</span>, la racine positive est <span class="math">\(x_2 = \frac{-b + \sqrt{b^2 - 4ac}}{2a}\)</span></p>
+<h3 id="formule-trigonometrique">Formule trigonométrique</h3>
+<ul>
+<li><code>math.cos(3.4)**2 + math.sin(3.4)**2</code></li>
+</ul>
+<h2 id="mettre-en-forme-du-texte">Mettre en forme du texte</h2>
+<p>Mais c'est pas tout, le notebook <a href="http://jupyter.org/">jupyter</a> permettent de créer du texte enrichi en utilisant la syntaxe <a href="https://fr.wikipedia.org/wiki/Markdown">markdown</a>.</p>
+<p>Pour cela, il suffit de remplacer le type de cellule <code>Code</code> par <code>Markdown</code>, et vous pouvez alors mettre en forme votre texte simplement.</p>
+<div class="highlight"><pre><span></span>**quelques mots en gras**
+*ici c&#39;est en italique*
+Ceci est du `code` informatique
+...
+</pre></div>
+
+
+<p>Voir le lien vers Wikipedia pour plus d'informations.</p>
+<p>Vous pouvez même écrire des formules mathématiques avec la syntaxe Latex:</p>
+<div class="highlight"><pre><span></span>$\frac{1}{2}mv^{2}$
+</pre></div>
+
+
+<p>Donnera: <span class="math">\(\frac{1}{2}mv^{2}\)</span></p>
+<p>Voir le <a href="https://fr.wikibooks.org/wiki/LaTeX/Math%C3%A9matiques#Les_fonctions_math.C3.A9matiques">wikilivre</a> sur Latex pour plus d'informations.</p>
+<p>Essayer d'écrire la formule de la longueur d'onde en fonction de la fréquence avec la syntaxe Latex.</p>
+<h1 id="correction-des-exercices-pratiques-avec-jupyter-notebook">Correction des exercices pratiques avec jupyter notebook</h1>
+<p>Le but de ces exercices était de s'approprier l'environnement de travail des notebook <a href="http://jupyter.org/">jupyter</a> en apprenant:</p>
+<ol>
+<li>à effectuer des calculs numériques en python</li>
+<li>à utiliser la syntaxe <code>markdown</code> pour mettre en forme ses réponses et rédiger du texte.</li>
+</ol>
+<h2 id="regles-de-priorites-des-operations">Régles de priorités des opérations</h2>
+<div class="highlight"><pre><span></span><span class="mi">6</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>46
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">6</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>100
+</pre></div>
+
+
+<p>On remarque que les règles de priorité des calculs sont les mes qu'en mathématique, la multiplication est prioritaire sur l'addition.</p>
+<p><em>Règles PEMDAS</em></p>
+<blockquote>
+<p>Sous Python, les règles de priorité sont les mêmes que celles qui vous ont été enseignées au cours de mathématiques. Vous pouvez les mémoriser aisément à l'aide d'un « truc » mnémotechnique, l'acronyme <strong>PEMDAS</strong> :</p>
+<p>P pour parenthèses.
+   E pour exposants.
+   M et D pour multiplication et division, qui ont la même priorité. Elles sont évaluées avant l'addition A et la soustraction S, lesquelles sont donc effectuées en dernier lieu.
+<a href="http://python.developpez.com/cours/TutoSwinnen/?page=Chapitre2#L2.9">Source developpez.com</a></p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="mf">23.0</span><span class="o">**</span><span class="mi">5</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>6436343.0
+</pre></div>
+
+
+<h2 id="calcul-de-la-racine-carree-du-trinome">Calcul de la racine carrée du trinôme</h2>
+<p>Calculer la racine positive de l'équation: <span class="math">\(34*x^2 + 68*x - 510\)</span></p>
+<p>Rappel: pour <span class="math">\(ax^2 + bx + c\)</span>, la racine positive est:
+</p>
+<div class="math">$$x_2 = \frac{-b +\sqrt{b^2 - 4ac}}{2a}$$</div>
+<p>ici:</p>
+<p>a=34
+b=68
+c=-510</p>
+<div class="highlight"><pre><span></span><span class="c1"># On importe le module math pour calculer la racine carrée</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="p">(</span><span class="o">-</span><span class="mi">68</span><span class="o">+</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">68</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="mi">34</span><span class="o">*-</span><span class="mi">510</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">34</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>3.0
+</pre></div>
+
+
+<h2 id="formule-trigonometrique_1">Formule trigonomètrique</h2>
+<p>Nous allons vérifier que: </p>
+<div class="math">$$\cos^2 x +\sin^2 x = 1$$</div>
+<div class="highlight"><pre><span></span><span class="c1"># le module math a déjà été importé plus haut il n&#39;est pas nécessaire de le réimporter</span>
+<span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">3.4</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">3.4</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>1.0
+</pre></div>
+
+
+<h2 id="formule-de-la-longueur-donde">Formule de la longueur d'onde</h2>
+<div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nv">\lambda</span><span class="o">=</span><span class="nv">\frac</span><span class="nb">{v}{f}</span><span class="s">$$</span>
+</pre></div>
+
+
+<div class="math">$$\lambda=\frac{v}{f}$$</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  <div class="row">
+    <div class="large-9 columns">
+<p class="subheader">Matière: <a href="https://archives.lyceum.fr/2017-2018/isn">isn</a>
+
+    Mots-clés:
+    <a href="https://archives.lyceum.fr/2017-2018/tag/python.html">python </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/algorithme.html">algorithme </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/programme.html">programme </a>
+</p>    </div>
+</div>
+</article>
+
+
+    </div>
+    <!-- End Main Content -->
+    <!-- Footer -->
+<div class="footer">
+  <div class="row">
+    <div class="large-3 columns">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licence Creative Commons" src="https://archives.lyceum.fr/2017-2018/theme/images/by-sa.svg" />
+      </a>
+    </div>
+    <div class="large-9 columns">
+      «Algorithme et programme» par Benjamin Abel est mis à disposition selon les termes de la
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International</a>.
+    </div>
+  </div>
+</div>    <!-- End footer -->
+    <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/foundation/js/foundation.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.js"></script>
+    <script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <!-- Search bar -->
+    <script>
+    $(document).ready(function()
+    {
+        $('#tipue_drop_input').tipuedrop(
+        {
+            'mode': 'json',
+            'contentLocation': 'https://archives.lyceum.fr/2017-2018/summaries.json'
+        });
+    });
+    </script>
+    <!-- End Search bar -->
+
+    <!-- My global javascript -->
+    <script src="https://archives.lyceum.fr/2017-2018/theme/js/mine.js"></script>
+</body>

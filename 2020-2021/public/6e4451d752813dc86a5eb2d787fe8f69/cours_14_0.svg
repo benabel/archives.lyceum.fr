@@ -1,0 +1,45 @@
+
+    <svg width="1000.0" height="450" xmlns="http://www.w3.org/2000/svg"
+         dominant-baseline="middle" text-anchor="middle">
+        <style>
+            .etiquette {
+                font: 500 25px sans-serif;
+                text-align: center;
+            }
+            .noeud {
+                fill: lightgray;
+            }
+
+        </style>
+        <g transform="scale(1)">
+    <line x1="494.75" x2="244.75" y1="75" y2="150" stroke="#333" stroke-width="1.5" /><line x1="494.75" x2="744.75" y1="75" y2="150" stroke="#333" stroke-width="1.5" /><line x1="244.75" x2="119.75" y1="150" y2="225" stroke="#333" stroke-width="1.5" /><line x1="244.75" x2="369.75" y1="150" y2="225" stroke="#333" stroke-width="1.5" /><line x1="744.75" x2="619.75" y1="150" y2="225" stroke="#333" stroke-width="1.5" /><line x1="119.75" x2="182.25" y1="225" y2="300" stroke="#333" stroke-width="1.5" /><line x1="369.75" x2="307.25" y1="225" y2="300" stroke="#333" stroke-width="1.5" /><line x1="369.75" x2="432.25" y1="225" y2="300" stroke="#333" stroke-width="1.5" /><line x1="307.25" x2="338.5" y1="300" y2="375" stroke="#333" stroke-width="1.5" />
+            <!--<rect x="494.75" y="75" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="494.75" cy="75" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="494.75" y="75" dominant-baseline="middle">12</text>
+            <!--<rect x="244.75" y="150" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="244.75" cy="150" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="244.75" y="150" dominant-baseline="middle">5</text>
+            <!--<rect x="744.75" y="150" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="744.75" cy="150" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="744.75" y="150" dominant-baseline="middle">14</text>
+            <!--<rect x="119.75" y="225" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="119.75" cy="225" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="119.75" y="225" dominant-baseline="middle">0</text>
+            <!--<rect x="369.75" y="225" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="369.75" cy="225" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="369.75" y="225" dominant-baseline="middle">8</text>
+            <!--<rect x="619.75" y="225" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="619.75" cy="225" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="619.75" y="225" dominant-baseline="middle">13</text>
+            <!--<rect x="182.25" y="300" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="182.25" cy="300" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="182.25" y="300" dominant-baseline="middle">4</text>
+            <!--<rect x="307.25" y="300" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="307.25" cy="300" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="307.25" y="300" dominant-baseline="middle">6</text>
+            <!--<rect x="432.25" y="300" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="432.25" cy="300" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="432.25" y="300" dominant-baseline="middle">11</text>
+            <!--<rect x="338.5" y="375" rx="2.5" ry="25" width="55.00000000000001" height="27.500000000000004" fill="blue"/>-->
+            <circle class="noeud" cx="338.5" cy="375" r="25" stroke="#333" stroke-width="1.5" />
+                   <text class="etiquette" x="338.5" y="375" dominant-baseline="middle">7</text></g></svg>

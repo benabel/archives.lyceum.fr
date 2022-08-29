@@ -1,0 +1,108 @@
+/* Greatly inspired by https://github.com/hakimel/reveal.js/blob/master/css/print/paper.css */
+
+@media print {
+  /* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+  html {
+    background: #fff;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+  body {
+    background: #fff;
+    font-size: 20pt;
+    width: auto;
+    height: auto;
+    border: 0;
+    margin: 0 5%;
+    padding: 0;
+    overflow: visible;
+    float: none !important;
+  }
+  @page {
+    margin: 1cm;
+  }
+
+  /* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+  nav {
+    display: none !important;
+  }
+
+  /* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+  body,
+  p,
+  td,
+  li,
+  div {
+    font-size: 20pt !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    color: #000;
+  }
+
+  /* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000 !important;
+    height: auto;
+    line-height: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    text-shadow: 0 0 0 #000 !important;
+    text-align: left;
+    letter-spacing: normal;
+  }
+  /* Need to reduce the size of the fonts for printing */
+  h1 {
+    font-size: 28pt !important;
+  }
+  h2 {
+    font-size: 24pt !important;
+  }
+  h3 {
+    font-size: 22pt !important;
+  }
+  h4 {
+    font-size: 22pt !important;
+    font-variant: small-caps;
+  }
+  h5 {
+    font-size: 21pt !important;
+  }
+  h6 {
+    font-size: 20pt !important;
+    font-style: italic;
+  }
+
+  /* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+  a:link,
+  a:visited {
+    color: #000 !important;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  /* Sauts de pages */
+  h2:first-of-type {
+    page-break-before: avoid;
+  }
+
+  h2 {
+    page-break-before: always;
+  }
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+}

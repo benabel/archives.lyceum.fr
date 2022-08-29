@@ -1,0 +1,123 @@
+On rappelle que l'encodage des nombres flottants s'effectue de la façon suivante:
+
+$$
+s\ m \cdot 2^n
+$$
+
+- $s$ est le signe représenté par le bit de poids fort:
+    - $s=0$: signe $+$
+    - $s=1$: signe $-$
+
+
+- $n$ est l'exposant représenté par un *entier relatif décalé* de $2^{e-1} - 1$ (e représente le
+  nombre de bits de l'exposant)
+
+- $m$ est la mantisse qui est un nombre binaire à virgule compris entre 1 inclus et 2 exclus. Le
+  seul chiffre avant la virgule étant toujours 1, il n'est pas représenté(on le dit *implicite*),
+  et le codage binaire de la mantisse représente donc uniquement les chiffres après la virgule qui
+  sont en base 2 des demis, des quarts, des huitièmes...
+
+
+## Encodage sur un octet
+
+On considère des nombres flottants encodés sur un octet avec dans l'ordre:
+
+- 1 bit de signe,
+- 3 bits d'exposant,
+- 4 bits de mantisse.
+
+1. Trouver les nombres à virgule représentés par les mots binaires suivants:
+
+   - `0111 1000`
+   - `1001 0001`
+
+2. Donner les représentations binaires des nombres flottants suivants:
+
+   - $2,5$ (qui est égal à $1,25 \times 2$).
+   - $-1,125$.
+
+3. Avec cet encodage à 8 bits: 
+
+   - Quel est le plus grand nombre à virgules que l'on peut représenter?
+   - Quel est le plus petit nombre à virgule, donc négatif?
+   - Quel est le plus petit nombre à virgule strictement positif que l'on peut représenter?
+
+## Encodage double précision: sur 64 bits
+
+On considère des nombres flottants encodés sur 64 bits avec dans l'ordre:
+
+- 1 bit de signe,
+- 11 bits d'exposant (-1022 à 1023)
+- 52 bits de mantisse.
+
+1. Trouver les nombres à virgule représentés par les mots binaires suivants
+
+   - `1 10001000110 1001001111000011100000000000000000000000000000000000`
+   - `0 00100000011 1101001110010101100000000000000000000000000000000000`
+
+2. Donner les représentations binaires des nombres flottants suivants:
+
+   - $2^{-1022}$ (qui est égal à $2,225 \times 10^{-308}$).
+   - $7,0$.
+
+3. Avec cet encodage à 64 bits: 
+
+   - Quel est le plus grand nombre à virgules que l'on peut représenter?
+   - Quel est le plus petit nombre à virgule, donc négatif?
+   - Quel est le plus petit nombre à virgule strictement positif que l'on peut représenter?
+
+
+## Exercice Python n°1
+
+On considère le programme suivant:
+
+```python
+x = 1.0
+y = x + 1.0
+while y - x == 1.0:
+    x = x * 2.0
+    y = x + 1.0
+print("Terminé, y=", y)
+```
+
+1. Si l'on calculait sur des nombres rationnels exacts, que se passerait-il lors de l'exécution de
+   ce programme ?
+
+2. Écrire ce programme et l'exécuter. Que constate-t-on ?
+
+3. Modifier le programme de façon à déterminer au bout de combien d'exécutions du corps de la
+   boucle il s'arrête, ainsi que la valeur de `x` à la fin de cette exécution.
+
+4. Comment est représentée cette dernière valeur de `x` ? Et celle de `y` ? 
+
+On pourra utiliser un convertisseur en ligne comme:
+<http://www.binaryconvert.com/convert_double.html>
+
+5. Proposer une explication de ce comportement.
+
+## Exercice Python n°2
+
+On considère le programme suivant:
+
+```python
+a = 0.0
+for loop in range(0,10):
+    a = a + 0.1
+    print(a)
+```
+
+1. Si l'on calculait sur des nombres rationnels exacts, que se passerait-il lors de l'exécution de
+   ce programme ?
+
+2. Écrire ce programme et l'exécuter. Que constate-t-on ?
+
+3. Vérifier avec le convertisseur en ligne que la représentation binaire de 0,1 est
+   `0_01111111011_1001100110011001100110011001100110011001100110011010`.
+
+Quel nombre décimal cette représentation désigne-t-elle en réalité ?
+
+4. Expliquer le résultat obtenu.
+
+#### Source
+
+[Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés et des idées de projets par Gilles Dowek](http://www.editions-eyrolles.com/Livre/9782212135435/)

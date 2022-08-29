@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+  ISN - Entrées et sorties
+    </title>
+<!--use just the brands and solid styles-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/highlight-ipynb.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/pygments.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/style.css" />
+
+    <!-- Favicons from realfavicongenerator.net -->
+<!-- This file is part of design repo don't edit it from anywhere else -->
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.png">
+<link rel="icon" sizes="144x144" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-144x144.png">
+<link rel="icon" sizes="96x96" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-96x96.png">
+<link rel="icon" sizes="48x48" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.ico>
+
+<!-- Safari -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://archives.lyceum.fr/2017-2018/theme/favicons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="lyceum.fr">
+
+<!-- multiple icons for IE -->
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+
+<link rel="mask-icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/safari-pinned-tab.svg color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="mstile-144x144.png>
+
+<!-- Theme color for Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#003CBA">
+<link rel="manifest" href="https://archives.lyceum.fr/2017-2018/theme/favicons/site.webmanifest>
+<meta name="application-name" content="lyceum.fr"></head>
+
+<body>
+    <!-- Nav Bar -->
+<div class="back-to-present">Vous êtes sur une version archivée de lyceum.fr. <a href="https://lyceum.fr">&nbsp;Revenir au présent</a></div>
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="https://archives.lyceum.fr/2017-2018">archives.lyceum.fr/2017-2018</a>
+              </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon">
+                <a href="#">
+          <span>Menu</span>
+        </a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                    <a href="https://gitlab.com/lyceum.fr" class="active">
+                        Gitlab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/isn" class="active">
+                        ISN
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/icn" class="active">
+                        ICN
+                    </a>
+                </li>
+                 <li class="has-form">
+                    <div class="row collapse">
+                        <div class="small-12 columns">
+                            <input type="text" name="q" id="tipue_drop_input" autocomplete="off" required placeholder="Rechercher">
+                        </div>
+                        <div id="tipue_drop_content"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>    <!-- End Nav -->
+
+    <!-- Main Blog Content -->
+    <div class="row " id="main-content">
+<article>
+  <!-- chapter_nav -->
+<header>
+    <div class="row chapter-nav">
+
+        <div class="sub-nav">
+            <h1>Introduction à Python</h1>
+
+            <dl class="sub-nav">
+                <dt>Navigation:</dt>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/1-quel-est-le-but-de-lisn'>
+                Quel est le but de l'ISN?
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/2-algorithme-et-programme'>
+                Algorithme et programme
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/3-syntaxe'>
+                Syntaxe
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/4-types'>
+                Types
+              </a>
+                </dd>
+                <dd class="active" >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/5-entrees-et-sorties'>
+                Entrées et sorties
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/6-variables-et-fonctions'>
+                Variables et fonctions
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/7-structures-conditionnelles'>
+                Structures conditionnelles
+              </a>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="sub-nav">
+            <div class="chapter-nav large-8 columns">
+                <h2><a href="https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/5-entrees-et-sorties" rel="bookmark"
+                  title="Permalink to Entrées et sorties">
+                      Entrées et sorties
+                  </a>
+                </h2>
+            </div>
+            <div id="toc" class="large-4 columns">
+            </div>
+        </div>
+    </div>
+</header>  <!-- chapter_infos -->
+<h6 class="subheader" title="2017-09-14T00:00:00+02:00">
+    publié le
+    jeu. 14 septembre 2017
+
+
+</h6>  <!-- main content -->
+  <p>Un programme est avant tout là pour nous servir à résoudre des problèmes, l'utilisateur doit pouvoir intéragir avec celui-ci.</p>
+<p>Cela s'effectue par l'intérmédiare d'entrées et des sorties.</p>
+<ul>
+<li>
+<p>les <strong>entrées</strong> permettent à l'utilisateur d'entrer des données dans le programme.</p>
+</li>
+<li>
+<p>les <strong>sorties</strong> permettent d'afficher les résultats à l'utilisateur.</p>
+</li>
+</ul>
+<h1 id="entree-des-donnees-avec-la-fonction-input">Entrée des données avec la fonction <code>input()</code></h1>
+<p>La fonction <code>input()</code> permet d'afficher une phrase(plus exactement une chaîne de caractères, c'est pour cela qu'on doit placer cette phrase entre guillemets <code>"ma phrase"</code>), d'attendre que l'utilisateur entre une donnée et tape sur <em>Entrée</em>.</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; input(&quot;Qu&#39;est-ce qui est apparu en premier : l&#39;œuf ou la poule ? &quot;)
+Qu&#39;est-ce qui est apparu en premier : l&#39;œuf ou la poule ? la poule
+</pre></div>
+
+
+<p>La donnée entrée par l'utilisateur est renvoyée par la fonction <code>input()</code> et peut être stockée dans une variable pour une utilisation ultérieure.</p>
+<p>Par exemple stockons cette réponse dans une variable appelée <code>reponse</code>:</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; reponse = input(&quot;Quel jour du mois sommes nous ? &quot;)
+Quel jour du mois sommes nous ? 13
+</pre></div>
+
+
+<p><strong>ATTENTION</strong> la fonction <code>input()</code> stocke la valeur sous la forme d'une chaîne de carctères si vous voulez effectuer des opérations mathématiques, commencez par la convertir en nombre(entier ou réel), sinon vous risquez d'avoir de mauvaises surprises!</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; reponse = input(&quot;Quel jour du mois sommes nous ? &quot;)
+Quel jour du mois sommes nous ? 13
+&gt;&gt;&gt; type(reponse)
+&lt;class &#39;str&#39;&gt;
+&gt;&gt;&gt; reponse * 2
+&#39;1313&#39;
+</pre></div>
+
+
+<p>Convertissons l'entrée de l'utilisateur en entier avec la fonction <code>int()</code></p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; reponse = int(input(&quot;Quel jour du mois sommes nous ? &quot;))
+Quel jour du mois sommes nous ? 13
+&gt;&gt;&gt; type(reponse)
+&lt;class &#39;int&#39;&gt;
+&gt;&gt;&gt; reponse * 2
+26
+</pre></div>
+
+
+<h1 id="affichage-de-resultats-pour-lutilisateur-avec-la-fonction-print">Affichage de résultats pour l'utilisateur avec la fonction <code>print()</code></h1>
+<p>Pour afficher du texte ou des valeurs de variables on utilise la fonction <code>print()</code>.</p>
+<p><strong>ATTENTION</strong> Lorsque vous affichez du texte il doit être entouré de guillements, mais pas lorsque vous souhaitez afficher des valeurs de variables.</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; print(&quot;Votre réponse est: &quot;)
+Votre réponse est:
+
+&gt;&gt;&gt; print(reponse)
+13
+</pre></div>
+
+
+<p>Vous pouvez même afficher plusieurs objets en les séparant par des virgules.</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; print(&quot;Nous sommes le&quot;, reponse, &quot;du mois de septembre&quot;)
+Nous sommes le 13 du mois de septembre
+</pre></div>
+
+
+<p>On peut même créer des chaînes de caractères multilignes en utilisants trois guillemets.</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; print(&quot;&quot;&quot;Nous allons faire une si longue phrase qu&#39;il
+... est indispensable de l&#39;écrire
+... sur au moins trois
+... , que dis-je,
+... cinq lignes&quot;&quot;&quot;)
+Nous allons faire une si longue phrase qu&#39;il
+est indispensable de l&#39;écrire
+sur au moins trois
+, que dis-je,
+cinq lignes
+</pre></div>
+
+
+<h1 id="exercice-creer-un-solveur-dequations">Exercice: créer un solveur d'équations</h1>
+<h2 id="calculer-des-grandeurs-physiques">Calculer des grandeurs physiques</h2>
+<p>Implémenter des programmes pour calculer:</p>
+<ul>
+<li>une vitesse: <span class="math">\(v=\frac{d}{t}\)</span></li>
+<li>une force gravitationnelle: <span class="math">\(F_{g}=G\times \frac{m_Am_B}{d^2}\)</span></li>
+<li>une longueur d'onde: <span class="math">\(\lambda =  v T\)</span> ou <span class="math">\(\lambda =  \frac{v}{f}\)</span></li>
+<li>un niveau d'intensité sonore: <span class="math">\(L=10  log(\frac{I}{I_{0}})\)</span> avec <span class="math">\(Io =1 \times 10^{{}-12} W/m^2\)</span></li>
+</ul>
+<p>Vous pourrez trouver d'autres formules sur la page suivante du site <a href="https://openclassrooms.com/forum/sujet/bac-terminale-s-les-formules-a-connaitre-1">openclassroom</a>.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  <div class="row">
+    <div class="large-9 columns">
+<p class="subheader">Matière: <a href="https://archives.lyceum.fr/2017-2018/isn">isn</a>
+
+    Mots-clés:
+    <a href="https://archives.lyceum.fr/2017-2018/tag/python.html">python </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/type.html">type </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/interpreteur.html">interpréteur </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/print.html">print </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/input.html">input </a>
+</p>    </div>
+</div>
+</article>
+
+
+    </div>
+    <!-- End Main Content -->
+    <!-- Footer -->
+<div class="footer">
+  <div class="row">
+    <div class="large-3 columns">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licence Creative Commons" src="https://archives.lyceum.fr/2017-2018/theme/images/by-sa.svg" />
+      </a>
+    </div>
+    <div class="large-9 columns">
+      «Entrées et sorties» par Benjamin Abel est mis à disposition selon les termes de la
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International</a>.
+    </div>
+  </div>
+</div>    <!-- End footer -->
+    <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/foundation/js/foundation.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.js"></script>
+    <script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <!-- Search bar -->
+    <script>
+    $(document).ready(function()
+    {
+        $('#tipue_drop_input').tipuedrop(
+        {
+            'mode': 'json',
+            'contentLocation': 'https://archives.lyceum.fr/2017-2018/summaries.json'
+        });
+    });
+    </script>
+    <!-- End Search bar -->
+
+    <!-- My global javascript -->
+    <script src="https://archives.lyceum.fr/2017-2018/theme/js/mine.js"></script>
+</body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Un exemple de dessin vectoriel dynamique en svg</h1>
+  <p>
+    Le premier cercle est rendu dynamique par le <code>css</code>, grâce à la
+    pseudo-classe
+    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:hover"
+      ><code>:hover</code> </a
+    >.
+  </p>
+  <p>
+    Le deuxième à partir du <code>javascript</code>, en utilisant la méthode
+    <a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener"
+      ><code>addEventListener()</code></a
+    > pour appeler une fonction à chaque clique sur le deuxième cercle.
+  </p>
+
+  <svg width="500" height="500">
+    <circle id="circle1" cx="50" cy="50" r="20" fill="red" />
+    <text x="30" y="100">CSS</text>
+    <circle id="circle2" cx="150" cy="50" r="20" fill="green" />
+    <text x="140" y="100">JS</text>
+  </svg>
+</body>

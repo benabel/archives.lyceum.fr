@@ -1,0 +1,71 @@
+@import '~system-font-css/system-font';
+
+// variables
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
+
+// palette de couleurs voir lyceum-fr/design
+$blue: #295db1;
+$indigo: #252235;
+$purple: #c234c6;
+$pink: #eff3f4;
+$red: #d02a3e;
+$orange: #dbda4a;
+$yellow: #f2f11d;
+$green: #4faf41;
+$teal: #b9c8c5;
+$cyan: #37b0db;
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$primary: $blue !default;
+$secondary: $cyan;
+$success: $green !default;
+$info: $orange;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: true;
+$enable-gradients: true;
+$enable-transitions: true !default;
+$enable-hover-media-query: false !default; // Deprecated, no longer affects any compiled CSS
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $pink;
+$body-color: $gray-900 !default;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-base: system-ui;
+$headings-font-family: system-ui;
+$headings-font-weight: 600 !default;
+// $headings-line-height: 1.7;
+// $headings-color: inherit !default;
+
+// Jumbotron
+$jumbotron-padding: 2rem !default;
+$jumbotron-bg: $yellow !default;

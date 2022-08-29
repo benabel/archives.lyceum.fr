@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+  ISN - Structures conditionnelles
+    </title>
+<!--use just the brands and solid styles-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/highlight-ipynb.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/pygments.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/style.css" />
+
+    <!-- Favicons from realfavicongenerator.net -->
+<!-- This file is part of design repo don't edit it from anywhere else -->
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.png">
+<link rel="icon" sizes="144x144" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-144x144.png">
+<link rel="icon" sizes="96x96" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-96x96.png">
+<link rel="icon" sizes="48x48" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.ico>
+
+<!-- Safari -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://archives.lyceum.fr/2017-2018/theme/favicons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="lyceum.fr">
+
+<!-- multiple icons for IE -->
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+
+<link rel="mask-icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/safari-pinned-tab.svg color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="mstile-144x144.png>
+
+<!-- Theme color for Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#003CBA">
+<link rel="manifest" href="https://archives.lyceum.fr/2017-2018/theme/favicons/site.webmanifest>
+<meta name="application-name" content="lyceum.fr"></head>
+
+<body>
+    <!-- Nav Bar -->
+<div class="back-to-present">Vous êtes sur une version archivée de lyceum.fr. <a href="https://lyceum.fr">&nbsp;Revenir au présent</a></div>
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="https://archives.lyceum.fr/2017-2018">archives.lyceum.fr/2017-2018</a>
+              </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon">
+                <a href="#">
+          <span>Menu</span>
+        </a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                    <a href="https://gitlab.com/lyceum.fr" class="active">
+                        Gitlab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/isn" class="active">
+                        ISN
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/icn" class="active">
+                        ICN
+                    </a>
+                </li>
+                 <li class="has-form">
+                    <div class="row collapse">
+                        <div class="small-12 columns">
+                            <input type="text" name="q" id="tipue_drop_input" autocomplete="off" required placeholder="Rechercher">
+                        </div>
+                        <div id="tipue_drop_content"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>    <!-- End Nav -->
+
+    <!-- Main Blog Content -->
+    <div class="row " id="main-content">
+<article>
+  <!-- chapter_nav -->
+<header>
+    <div class="row chapter-nav">
+
+        <div class="sub-nav">
+            <h1>Introduction à Python</h1>
+
+            <dl class="sub-nav">
+                <dt>Navigation:</dt>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/1-quel-est-le-but-de-lisn'>
+                Quel est le but de l'ISN?
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/2-algorithme-et-programme'>
+                Algorithme et programme
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/3-syntaxe'>
+                Syntaxe
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/4-types'>
+                Types
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/5-entrees-et-sorties'>
+                Entrées et sorties
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/6-variables-et-fonctions'>
+                Variables et fonctions
+              </a>
+                </dd>
+                <dd class="active" >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/7-structures-conditionnelles'>
+                Structures conditionnelles
+              </a>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="sub-nav">
+            <div class="chapter-nav large-8 columns">
+                <h2><a href="https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/7-structures-conditionnelles" rel="bookmark"
+                  title="Permalink to Structures conditionnelles">
+                      Structures conditionnelles
+                  </a>
+                </h2>
+            </div>
+            <div id="toc" class="large-4 columns">
+            </div>
+        </div>
+    </div>
+</header>  <!-- chapter_infos -->
+<h6 class="subheader" title="2017-09-26T00:00:00+02:00">
+    publié le
+    mar. 26 septembre 2017
+
+
+</h6>  <!-- main content -->
+  <p>Nous avons vu la semaine dernière la notion de <strong>bloc</strong> à l'occasion de l'écriture de fonctions. Il s'agit de parties de programmes qui ne sont pas forcément exécutées à chaque lancement du programme.</p>
+<p>En python, les blocs sont délimités grâce aux tabulations et introduits grâce à deux points <code>:</code>.</p>
+<div class="highlight"><pre><span></span>entrée dans un bloc:
+    ligne 1 du bloc
+    ligne 2 du bloc
+    ...
+
+retour dans l’exécution normale du programme ligne à ligne.
+</pre></div>
+
+
+<p>La semaine dernière le bloc définin dans la fonction n'est éxecuté qu'à l'appel de la fonction, aujourd'hui, nous allons utiliser des structures de contrôle qui permettent d’exécuter: des <em>blocs</em>, en fonction de conditions. On parle de <strong>structure conditionnelles</strong>.</p>
+<p>Nous devons dans un premier temps définir les <strong>opérations booléennes</strong> qui vont nous permettre de définir nos conditions.</p>
+<h1 id="operateurs-booleens">Opérateurs booléens</h1>
+<p>Les <strong>opérateurs booléens</strong> sont des opérateurs de <em>comparaison</em> qui retournent un objet de type booléen: <code>True</code> ou <code>False</code>.</p>
+<h2 id="comparaisons-de-nombres">Comparaisons de nombres</h2>
+<p>Soit x et y des variables de type <code>int</code> ou <code>float</code>, les opérateurs de comparaison sont:</p>
+<ul>
+<li><code>x &lt; y</code>: x est-il inférieur à y ?</li>
+<li><code>x &lt;= y</code>: x est-il inférieur ou égal  à y ?</li>
+<li><code>x &gt; y</code>: x est-il supérieur à y ?</li>
+<li><code>x &gt;= y</code>: x est-il supérieur ou égal à y ?</li>
+<li><code>x == y</code>: x est-il égal à y ?</li>
+<li><code>x != y</code>: x est-il différent y ?</li>
+</ul>
+<p><strong>Exemples:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span>
+
+<span class="c1"># en ipython notebook, le print sur la deuxième ligne est optionnel</span>
+<span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span>
+
+<span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span>
+
+<span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span>
+
+<span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span>
+</pre></div>
+
+
+<p>On peut constater que ces instructions retournent systématiquement un objet de type booléen.</p>
+<div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">bool</span><span class="s1">&#39;&gt;</span>
+</pre></div>
+
+
+<p>ou un erreur si on cherche à comparer <em>l'incomparable</em>:</p>
+<div class="highlight"><pre><span></span><span class="s2">&quot;un&quot;</span> <span class="o">&lt;</span> <span class="mi">2</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unorderable</span> <span class="n">types</span><span class="p">:</span> <span class="nb">str</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">()</span>
+</pre></div>
+
+
+<p><strong>ATTENTION:</strong> Comme vous l'avez remarqué pour tester une égalité on utilise le double signe égal <code>==</code>. Tout simplement car le signe égal seul <code>=</code> est déjà utilisé pour l'<a href="https://archives.lyceum.fr/2017-2018/isn/1-introduction-a-python/6-variables-et-fonctions">affectation</a> de variables.</p>
+<h1 id="associations-doperations-booleennes-les-fonctions-logiques">Associations d'opérations booléennes: les fonctions logiques</h1>
+<p>Il est également possible d'associer plusieurs opérations logiques grâce aux <a href="https://fr.wikipedia.org/wiki/Alg%C3%A8bre_de_Boole_(logique)#Fonctions_logiques_fondamentales">trois fonctions logiques fondamentales</a>:</p>
+<ul>
+<li><code>not(a)</code>: <strong>L'INVERSE</strong> renvoie l'inverse de son argument <code>a</code>: <code>True</code> si <code>a</code> a pour valeur <code>False</code>, et vice-versa.</li>
+<li><code>a and b</code>: <strong>ET LOGIQUE</strong> renvoie <code>True</code> si <code>a</code> et <code>b</code> ont pour valeur <code>True</code>.</li>
+<li><code>a or b</code>: <strong>ou LOGIQUE</strong> renvoie <code>True</code> si <code>a</code> ou <code>b</code> ont pour valeur <code>True</code>.</li>
+</ul>
+<p><strong>Exemples:</strong></p>
+<div class="highlight"><pre><span></span><span class="ow">not</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span>
+
+<span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">9</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span>
+
+<span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">9</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span>
+</pre></div>
+
+
+<ol>
+<li><code>not(2 &lt; 3)</code> renvoie <code>False</code> car 2 est inférieur à trois donc en prenant l'inverse on obtient <code>False</code></li>
+<li><code>(1 &lt; 2) or (9 &lt; 5)</code> renvoie <code>True</code> car une des deux expression est vraie, la première.</li>
+<li><code>(1 &lt; 2) and (9 &lt; 5)</code> renvoie <code>False</code> car les deux expressions ne sont pas vraies, seule la prmeière l'est.</li>
+</ol>
+<h1 id="programme-a-structure-conditionnelle">Programme à structure conditionnelle</h1>
+<p>Grâce aux opérateurs que l'on vient de voir on va pouvoir maîtriser la façon dont se déroule le programme en fonction de certaines conditions.</p>
+<p>Le code sera toujours interprété ligne par ligne, cependant certains blocs de code ne seront exécutés que si une condition donnée est vraie.</p>
+<p>En <a href="http://www.python.org">Python</a>, pour différencier les <em>blocs de code</em> et <em>le flux d'instructions</em> du programme principal, on les indente avec quatre espaces.</p>
+<h2 id="linstruction-if">L'instruction <code>if</code></h2>
+<p>Le bloc d'instruction contenu n'est exécuté que si la condition est vérifiée.</p>
+<p><strong>Syntaxe</strong></p>
+<div class="highlight"><pre><span></span>if condition:
+    instruction 1
+    instruction 2
+    ...
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="n">a</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">3</span>
+</pre></div>
+
+
+<p>Dans le programme précédent l'instruction <code>if a &gt; 0:</code> est toujours éexécutée par l'interpréteur, car elle est dans le flux normal du programme(en début de ligne).</p>
+<p>Par contre, l'instruction <code>a = -a</code> n'est éxecutée que si la condition <code>a &gt; 0</code> a renvoyé <code>True</code>, il s'agit d'un <strong>bloc</strong> relatif à l'instruction  <code>if a &gt; 0:</code> qui le précéde. Elle est <strong>indentée</strong> avec quatre espaces. Si j'affecte la valeur négative -5 à <code>a</code>, ce bloc ne sera pas exécuté, et le changement de signe n'aura pas lieu.</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="n">a</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">5</span>
+</pre></div>
+
+
+<h2 id="linstruction-else">L'instruction else</h2>
+<p>Indique le bloc d'instruction a exécuter si la condition n'est pas vérifiée.</p>
+<p><strong>Syntaxe</strong></p>
+<div class="highlight"><pre><span></span>if condition:
+    bloc d&#39;instructions exécuté si la condition est vraie
+else:
+    bloc d&#39;instructions exécuté si la condition est fausse
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="n">a</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="mi">100</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">300</span>
+</pre></div>
+
+
+<p>Comme initialement la variable a n'était pas positive, c'est le bloc d'instructions <code>else</code> qui a été exécuté.</p>
+<h2 id="linstruction-elif">L'instruction elif</h2>
+<p>Cette instruction permet de réaliser des tests imbriqués, c'est un raccourci pour les instructions else et if.</p>
+<p><strong>Syntaxe</strong></p>
+<div class="highlight"><pre><span></span>if condition 1:
+    bloc d&#39;instructions exécuté si la condition 1 est vraie
+elif condition 2:
+    bloc d&#39;instructions exécuté si la condition 1 est fausse et la condition 2 vraie
+else:
+    bloc d&#39;instructions exécuté si les conditions 1 et 2 sont fausses
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;C&#39;est un chiffre porte bonheur&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Quelques modifications sont nécessaires&quot;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="mi">4</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Quelques</span> <span class="n">modifications</span> <span class="n">sont</span> <span class="n">nécessaires</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">7</span>
+</pre></div>
+
+
+<p>Vous voila maintenant armés pour aborder des programmes beaucoup plus riches dans lesquels vous allez pouvoir <strong>prendre des décisions</strong> en fonction des données qui lui arrivent.</p>
+<h1 id="exercices">Exercices</h1>
+<h2 id="donner-la-valeur-renvoyee-par-les-instructions-suivantes">Donner la valeur renvoyée par les instructions suivantes</h2>
+<div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">4</span>
+
+<span class="mf">4.0</span> <span class="o">&gt;</span> <span class="mf">3.999</span>
+
+<span class="mi">4</span> <span class="o">&gt;</span> <span class="mi">4</span>
+
+<span class="mi">4</span> <span class="o">&gt;</span> <span class="o">+</span> <span class="mi">4</span>
+
+<span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+
+<span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
+
+<span class="bp">False</span> <span class="ow">or</span> <span class="bp">False</span>
+
+<span class="ow">not</span> <span class="bp">False</span>
+
+<span class="mf">3.0</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="o">!=</span> <span class="mf">5.0</span> <span class="o">-</span> <span class="mf">3.0</span>
+
+<span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">9</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="mi">4</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">or</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">and</span> <span class="mi">9</span> <span class="o">&gt;</span> <span class="mi">8</span>
+
+<span class="ow">not</span><span class="p">(</span><span class="mi">4</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">100</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="donner-le-type-et-la-valeur-renvoyee-par-les-instructions-suivantes">Donner le type et la valeur renvoyée par les instructions suivantes</h2>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">a</span> <span class="o">==</span> <span class="mf">5.0</span>
+<span class="n">a</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">9</span>
+<span class="n">c</span>
+</pre></div>
+
+
+<h2 id="calculer-les-racines-du-trinome">Calculer les racines du trinôme</h2>
+<p>Vous devez implémenter un programme qui demande à l'utilisateur les trois coefficients du <a href="https://fr.wikipedia.org/wiki/Fonction_du_second_degr%C3%A9">trinôme</a>  <span class="math">\(ax^2 + bx + c\)</span>, et qui lui indique en retour <a href="https://fr.wikipedia.org/wiki/Fonction_du_second_degr%C3%A9#.C3.89quation">le nombre de racines et leurs valeurs</a>.</p>
+<h1 id="mini-projet">Mini-projet</h1>
+<p>Créez un programme qui permette de calculer la surface de différents <a href="https://fr.wikipedia.org/wiki/Formulaire_de_g%C3%A9om%C3%A9trie_classique#P.C3.A9rim.C3.A8tre_et_aire">polygones</a>(carré, rectangle...) à partir de questions posées à l'utilisateur.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  <div class="row">
+    <div class="large-9 columns">
+<p class="subheader">Matière: <a href="https://archives.lyceum.fr/2017-2018/isn">isn</a>
+
+    Mots-clés:
+    <a href="https://archives.lyceum.fr/2017-2018/tag/python.html">python </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/structure-conditionnelle.html">structure conditionnelle </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/if.html">if </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/elif.html">elif </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/else.html">else </a>
+</p>    </div>
+</div>
+</article>
+
+
+    </div>
+    <!-- End Main Content -->
+    <!-- Footer -->
+<div class="footer">
+  <div class="row">
+    <div class="large-3 columns">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licence Creative Commons" src="https://archives.lyceum.fr/2017-2018/theme/images/by-sa.svg" />
+      </a>
+    </div>
+    <div class="large-9 columns">
+      «Structures conditionnelles» par Benjamin Abel est mis à disposition selon les termes de la
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International</a>.
+    </div>
+  </div>
+</div>    <!-- End footer -->
+    <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/foundation/js/foundation.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.js"></script>
+    <script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <!-- Search bar -->
+    <script>
+    $(document).ready(function()
+    {
+        $('#tipue_drop_input').tipuedrop(
+        {
+            'mode': 'json',
+            'contentLocation': 'https://archives.lyceum.fr/2017-2018/summaries.json'
+        });
+    });
+    </script>
+    <!-- End Search bar -->
+
+    <!-- My global javascript -->
+    <script src="https://archives.lyceum.fr/2017-2018/theme/js/mine.js"></script>
+</body>

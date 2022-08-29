@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dessin en canvas</title>
+  </head>
+
+  <body>
+    <canvas id="mon-canvas" width="400" height="300">
+      Votre navigateur ne supporte pas la balise HTML5 Canvas.
+    </canvas>
+
+    <script>
+      var theCanvas = document.getElementById('mon-canvas')
+      var ctx = theCanvas.getContext('2d')
+
+      // background
+      function drawBackground() {
+        ctx.fillStyle = '#ffffaa'
+        ctx.fillRect(0, 0, 400, 300)
+
+        // box
+        ctx.strokeStyle = '#000000'
+        ctx.strokeRect(5, 5, 390, 290)
+      }
+
+      function drawSmiley(x, y) {
+        // smiley
+        ctx.beginPath()
+        ctx.arc(x, y, 50, 0, Math.PI * 2, true) // Tête
+        ctx.fillStyle = '#FFFF00'
+        ctx.fill() // Colorier la tête en jaune
+        ctx.moveTo(x + 35, y)
+        ctx.arc(x, y, 35, 0, Math.PI, false) // Bouche
+        ctx.moveTo(x - 10, y - 10)
+        ctx.arc(x - 15, y - 10, 5, 0, Math.PI * 2, true) // Oeil gauche
+        ctx.moveTo(x + 20, y - 10)
+        ctx.arc(x + 15, y - 10, 5, 0, Math.PI * 2, true) // Oeil droit
+
+        ctx.lineWidth = 5
+        ctx.stroke()
+      }
+
+      // appel des fonctions pour dessiner dans le canvas
+      //
+      // On dessine le fond
+      drawBackground()
+      // On dessine le smiley en passant en arguments de la fonctions
+      //les coordonnées x et y auxquelles on veut le dessiner
+      drawSmiley(200, 150)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+  ISN - Boucles
+    </title>
+<!--use just the brands and solid styles-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/highlight-ipynb.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/pygments.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/style.css" />
+
+    <!-- Favicons from realfavicongenerator.net -->
+<!-- This file is part of design repo don't edit it from anywhere else -->
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.png">
+<link rel="icon" sizes="144x144" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-144x144.png">
+<link rel="icon" sizes="96x96" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-96x96.png">
+<link rel="icon" sizes="48x48" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.ico>
+
+<!-- Safari -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://archives.lyceum.fr/2017-2018/theme/favicons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="lyceum.fr">
+
+<!-- multiple icons for IE -->
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+
+<link rel="mask-icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/safari-pinned-tab.svg color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="mstile-144x144.png>
+
+<!-- Theme color for Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#003CBA">
+<link rel="manifest" href="https://archives.lyceum.fr/2017-2018/theme/favicons/site.webmanifest>
+<meta name="application-name" content="lyceum.fr"></head>
+
+<body>
+    <!-- Nav Bar -->
+<div class="back-to-present">Vous êtes sur une version archivée de lyceum.fr. <a href="https://lyceum.fr">&nbsp;Revenir au présent</a></div>
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="https://archives.lyceum.fr/2017-2018">archives.lyceum.fr/2017-2018</a>
+              </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon">
+                <a href="#">
+          <span>Menu</span>
+        </a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                    <a href="https://gitlab.com/lyceum.fr" class="active">
+                        Gitlab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/isn" class="active">
+                        ISN
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/icn" class="active">
+                        ICN
+                    </a>
+                </li>
+                 <li class="has-form">
+                    <div class="row collapse">
+                        <div class="small-12 columns">
+                            <input type="text" name="q" id="tipue_drop_input" autocomplete="off" required placeholder="Rechercher">
+                        </div>
+                        <div id="tipue_drop_content"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>    <!-- End Nav -->
+
+    <!-- Main Blog Content -->
+    <div class="row " id="main-content">
+<article>
+  <!-- chapter_nav -->
+<header>
+    <div class="row chapter-nav">
+
+        <div class="sub-nav">
+            <h1>Python avancé</h1>
+
+            <dl class="sub-nav">
+                <dt>Navigation:</dt>
+                <dd class="active" >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/5-python-avance/1-boucles'>
+                Boucles
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/5-python-avance/2-types-composites'>
+                Types composites
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/5-python-avance/3-algorithmes-de-tri'>
+                Algorithmes de tri
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/5-python-avance/4-la-dichotomie'>
+                La dichotomie
+              </a>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="sub-nav">
+            <div class="chapter-nav large-8 columns">
+                <h2><a href="https://archives.lyceum.fr/2017-2018/isn/5-python-avance/1-boucles" rel="bookmark"
+                  title="Permalink to Boucles">
+                      Boucles
+                  </a>
+                </h2>
+            </div>
+            <div id="toc" class="large-4 columns">
+            </div>
+        </div>
+    </div>
+</header>  <!-- chapter_infos -->
+<h6 class="subheader" title="2018-02-14T00:00:00+01:00">
+    publié le
+    mer. 14 février 2018
+
+
+</h6>  <!-- main content -->
+  <p>Jusqu'à maintenant nous avons réalisé des programmes simples que l'interpréteur <code>Python</code> lisait éxecuté ligne par ligne.</p>
+<p>Nous avions également vu les structures conditionnelles <code>if elif else</code> qui permettent d'éxecuter certains blocs de programmes et pas d'autres en fonction de conditions, mais cependant chaque ligne du programme pouvait être exécutée au maximum une fois.</p>
+<p>Maintenant nous allons introduire les boucles qui permettent d'éxecuter plusieurs fois un bloc du programme en utilisant les structures de contrôle:</p>
+<ul>
+<li>
+<p><code>while</code> qui peut se traduire par <em>tant que</em>,</p>
+<p>p.ex: tant que cette condition est vrai éxecuter ce bloc d'instructions</p>
+</li>
+<li>
+<p><code>for</code> qui peut se traduire par <em>pour</em>.</p>
+<p>p.ex: pour telles valeurs de la variable i éxecuter ce bloc d'instructions</p>
+</li>
+</ul>
+<p><em>Remarque:</em> Comme toujours, en Python, les blocs d'instructions sont indentés avec quatre espaces pour être séparés du reste du programme.</p>
+<p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="La-boucle-for">La boucle <code>for</code><a class="anchor-link" href="#La-boucle-for">&#182;</a></h1><p>La syntaxe est de la forme:</p>
+
+<pre><code>for i in range(début, fin):
+    instruction 1
+    instruction 2
+    ...
+
+</code></pre>
+<p>Voici quelques exemples:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>ATTENTION</strong> Comme vous le voyez l'indice de fin n'est pas inclus dans la boucle.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Bonjour
+Bonjour
+Bonjour
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Par défaut l'indice de départ et 0, si l'indice de début n'est pas précisé.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+2
+3
+4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>On peut également choisir le pas de l'incrémentation grâce à la syntaxe:</p>
+
+<pre><code>for i in range(début, fin, pas):
+    instruction 1
+    instruction 2
+    ...</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+3
+5
+7
+9
+11
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">365</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>365
+360
+355
+350
+345
+340
+335
+330
+325
+320
+315
+310
+305
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Remarque:</em> par défaut chaque instruction print se termine par un retour à la ligne, mais on peut suprimer ce retour en choisissant une fin de print vide avec l'attribut end.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; janvier&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 janvier
+2 janvier
+3 janvier
+4 janvier
+5 janvier
+6 janvier
+7 janvier
+8 janvier
+9 janvier
+10 janvier
+11 janvier
+12 janvier
+13 janvier
+14 janvier
+15 janvier
+16 janvier
+17 janvier
+18 janvier
+19 janvier
+20 janvier
+21 janvier
+22 janvier
+23 janvier
+24 janvier
+25 janvier
+26 janvier
+27 janvier
+28 janvier
+29 janvier
+30 janvier
+31 janvier
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Boucles-imbriqu&#233;es">Boucles imbriqu&#233;es<a class="anchor-link" href="#Boucles-imbriqu&#233;es">&#182;</a></h2><p>Il est possible d'éxecuter une boucle à l'intérieur d'une autre boucle, elles sont alors dites imbriquées.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">mois</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">jour</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">jour</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">mois</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1/1
+2/1
+3/1
+4/1
+5/1
+6/1
+7/1
+8/1
+9/1
+10/1
+11/1
+12/1
+13/1
+14/1
+15/1
+16/1
+17/1
+18/1
+19/1
+20/1
+21/1
+22/1
+23/1
+24/1
+25/1
+26/1
+27/1
+28/1
+29/1
+30/1
+1/2
+2/2
+3/2
+4/2
+5/2
+6/2
+7/2
+8/2
+9/2
+10/2
+11/2
+12/2
+13/2
+14/2
+15/2
+16/2
+17/2
+18/2
+19/2
+20/2
+21/2
+22/2
+23/2
+24/2
+25/2
+26/2
+27/2
+28/2
+29/2
+30/2
+1/3
+2/3
+3/3
+4/3
+5/3
+6/3
+7/3
+8/3
+9/3
+10/3
+11/3
+12/3
+13/3
+14/3
+15/3
+16/3
+17/3
+18/3
+19/3
+20/3
+21/3
+22/3
+23/3
+24/3
+25/3
+26/3
+27/3
+28/3
+29/3
+30/3
+1/4
+2/4
+3/4
+4/4
+5/4
+6/4
+7/4
+8/4
+9/4
+10/4
+11/4
+12/4
+13/4
+14/4
+15/4
+16/4
+17/4
+18/4
+19/4
+20/4
+21/4
+22/4
+23/4
+24/4
+25/4
+26/4
+27/4
+28/4
+29/4
+30/4
+1/5
+2/5
+3/5
+4/5
+5/5
+6/5
+7/5
+8/5
+9/5
+10/5
+11/5
+12/5
+13/5
+14/5
+15/5
+16/5
+17/5
+18/5
+19/5
+20/5
+21/5
+22/5
+23/5
+24/5
+25/5
+26/5
+27/5
+28/5
+29/5
+30/5
+1/6
+2/6
+3/6
+4/6
+5/6
+6/6
+7/6
+8/6
+9/6
+10/6
+11/6
+12/6
+13/6
+14/6
+15/6
+16/6
+17/6
+18/6
+19/6
+20/6
+21/6
+22/6
+23/6
+24/6
+25/6
+26/6
+27/6
+28/6
+29/6
+30/6
+1/7
+2/7
+3/7
+4/7
+5/7
+6/7
+7/7
+8/7
+9/7
+10/7
+11/7
+12/7
+13/7
+14/7
+15/7
+16/7
+17/7
+18/7
+19/7
+20/7
+21/7
+22/7
+23/7
+24/7
+25/7
+26/7
+27/7
+28/7
+29/7
+30/7
+1/8
+2/8
+3/8
+4/8
+5/8
+6/8
+7/8
+8/8
+9/8
+10/8
+11/8
+12/8
+13/8
+14/8
+15/8
+16/8
+17/8
+18/8
+19/8
+20/8
+21/8
+22/8
+23/8
+24/8
+25/8
+26/8
+27/8
+28/8
+29/8
+30/8
+1/9
+2/9
+3/9
+4/9
+5/9
+6/9
+7/9
+8/9
+9/9
+10/9
+11/9
+12/9
+13/9
+14/9
+15/9
+16/9
+17/9
+18/9
+19/9
+20/9
+21/9
+22/9
+23/9
+24/9
+25/9
+26/9
+27/9
+28/9
+29/9
+30/9
+1/10
+2/10
+3/10
+4/10
+5/10
+6/10
+7/10
+8/10
+9/10
+10/10
+11/10
+12/10
+13/10
+14/10
+15/10
+16/10
+17/10
+18/10
+19/10
+20/10
+21/10
+22/10
+23/10
+24/10
+25/10
+26/10
+27/10
+28/10
+29/10
+30/10
+1/11
+2/11
+3/11
+4/11
+5/11
+6/11
+7/11
+8/11
+9/11
+10/11
+11/11
+12/11
+13/11
+14/11
+15/11
+16/11
+17/11
+18/11
+19/11
+20/11
+21/11
+22/11
+23/11
+24/11
+25/11
+26/11
+27/11
+28/11
+29/11
+30/11
+1/12
+2/12
+3/12
+4/12
+5/12
+6/12
+7/12
+8/12
+9/12
+10/12
+11/12
+12/12
+13/12
+14/12
+15/12
+16/12
+17/12
+18/12
+19/12
+20/12
+21/12
+22/12
+23/12
+24/12
+25/12
+26/12
+27/12
+28/12
+29/12
+30/12
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="La-boucle-while">La boucle <code>while</code><a class="anchor-link" href="#La-boucle-while">&#182;</a></h1><p>La syntaxe est de la forme:</p>
+
+<pre><code>while condition:
+    instruction 1
+    instruction 2
+    ...
+
+</code></pre>
+<p>Contrairement à la boucle <code>for</code>, le nombre d'itérations n'est pas fixé à l'avance, mais il est fait dynamiquement:
+avant chaque éxecution du bloc d'instructions de la boucle, on test une condition, si cette condition est vérifiée, on éxecute le bloc d'instructiuons de la boucle, sinon, l'éxecution de la boucle est arrétée.</p>
+<p>Souvent il faut <strong>initialiser</strong> une variable d'itération avant de commencer la boucle/</p>
+<p><em>Exemples:</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Cette boucle est tout à fait identique à la boucle:</p>
+
+<pre><code>for n in range(10):
+    print(n)
+
+</code></pre>
+<p>Cependant une des deux formes est souvent plus adaptée qu'une autre:</p>
+<ul>
+<li><p><code>for</code> si on connait les itérations à parcourir à l'avance,</p>
+</li>
+<li><p><code>while</code> sinon.</p>
+</li>
+</ul>
+<p>En fait, <strong>la boucle <code>for</code> est un cas particulier de la boucle <code>while</code></strong>. On peut toujours remplacer une boucle <code>for</code> par une boucle <code>while</code>, mais l'inverse n'est pas toujours vrai.</p>
+<p><strong>La boucle <code>while</code> est un outil plus puissant que la boucle <code>for</code>.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calcul du logarithme  entier (en base 10) d&#39;un nombre x</span>
+<span class="c1"># Par exemple prenons x = 100 </span>
+<span class="c1"># log(100) = 2 car 10^2 = 100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># boucle avec initialisation</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">10.0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="La-non-terminaison">La non terminaison<a class="anchor-link" href="#La-non-terminaison">&#182;</a></h2><p>Avec la boucle <code>while</code>, il est possible de créer un programme qui ne <strong>s'arrête jamais</strong>.</p>
+<p>C'est très utile, et me indispensable si l'on considère par exemple les programmes des serveurs de document <code>html</code>, qui doivent envoyer les pages <code>html</code> indéfiniment à un nombre très important d'utilisateurs.</p>
+<p>Cependant, cela peut rendre le debuguage du programme compliqué surtout si on pensait que notre boucle allait s'arrêter mais qu'en fait notre condition d'arrêt était mal implémentée.</p>
+<p>En cas de non terminaison involontaire, il faut forcer l'arrêt de l'éxecution du programme.</p>
+<ul>
+<li>dans un notebook sélectionner <code>Kernel Interrupt</code> ou <code>Kernel Restart</code></li>
+<li>dans un terminal python la combinaison de touches <CTRL><C> ou <CTRL><Z> permet souvent d'appliquer un <code>KeyboardInterrupt</code></li>
+</ul>
+<p>Par exemple:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-19-d2c1875d82cb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> n <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">3</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">while</span> n <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span>print<span class="ansi-blue-fg">(</span>n<span class="ansi-blue-fg">,</span> end<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/opt/miniconda3/lib/python3.5/site-packages/ipykernel/iostream.py</span> in <span class="ansi-cyan-fg">write</span><span class="ansi-blue-fg">(self, string)</span>
+<span class="ansi-green-intense-fg ansi-bold">    369</span>             is_child <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span><span class="ansi-green-fg">not</span> self<span class="ansi-blue-fg">.</span>_is_master_process<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    370</span>             <span class="ansi-red-fg"># only touch the buffer in the IO thread to avoid races</span>
+<span class="ansi-green-fg">--&gt; 371</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>pub_thread<span class="ansi-blue-fg">.</span>schedule<span class="ansi-blue-fg">(</span><span class="ansi-green-fg">lambda</span> <span class="ansi-blue-fg">:</span> self<span class="ansi-blue-fg">.</span>_buffer<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span>string<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    372</span>             <span class="ansi-green-fg">if</span> is_child<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    373</span>                 <span class="ansi-red-fg"># newlines imply flush in subprocesses</span>
+
+<span class="ansi-green-fg">/opt/miniconda3/lib/python3.5/site-packages/ipykernel/iostream.py</span> in <span class="ansi-cyan-fg">schedule</span><span class="ansi-blue-fg">(self, f)</span>
+<span class="ansi-green-intense-fg ansi-bold">    184</span>         &#34;&#34;&#34;
+<span class="ansi-green-intense-fg ansi-bold">    185</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>thread<span class="ansi-blue-fg">.</span>is_alive<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 186</span><span class="ansi-red-fg">             </span>event_id <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>urandom<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">16</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    187</span>             <span class="ansi-green-fg">while</span> event_id <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>_events<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    188</span>                 event_id <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>urandom<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">16</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+</p>
+  <div class="row">
+    <div class="large-9 columns">
+<p class="subheader">Matière: <a href="https://archives.lyceum.fr/2017-2018/isn">isn</a>
+
+    Mots-clés:
+    <a href="https://archives.lyceum.fr/2017-2018/tag/python.html">python </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/boucles.html">boucles </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/for.html">for </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/while.html">while </a>
+</p>    </div>
+</div>
+</article>
+
+
+    </div>
+    <!-- End Main Content -->
+    <!-- Footer -->
+<div class="footer">
+  <div class="row">
+    <div class="large-3 columns">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licence Creative Commons" src="https://archives.lyceum.fr/2017-2018/theme/images/by-sa.svg" />
+      </a>
+    </div>
+    <div class="large-9 columns">
+      «Boucles» par Benjamin Abel est mis à disposition selon les termes de la
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International</a>.
+    </div>
+  </div>
+</div>    <!-- End footer -->
+    <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/foundation/js/foundation.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.js"></script>
+    <script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <!-- Search bar -->
+    <script>
+    $(document).ready(function()
+    {
+        $('#tipue_drop_input').tipuedrop(
+        {
+            'mode': 'json',
+            'contentLocation': 'https://archives.lyceum.fr/2017-2018/summaries.json'
+        });
+    });
+    </script>
+    <!-- End Search bar -->
+
+    <!-- My global javascript -->
+    <script src="https://archives.lyceum.fr/2017-2018/theme/js/mine.js"></script>
+</body>

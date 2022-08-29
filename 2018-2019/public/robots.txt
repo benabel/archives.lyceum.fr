@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://archives.lyceum.fr/2018-2019/sitemap.xml
+Host: https://archives.lyceum.fr

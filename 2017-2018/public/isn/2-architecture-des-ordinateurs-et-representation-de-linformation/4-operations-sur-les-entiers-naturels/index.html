@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+  ISN - Opérations sur les entiers naturels
+    </title>
+<!--use just the brands and solid styles-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/highlight-ipynb.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/pygments.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/style.css" />
+
+    <!-- Favicons from realfavicongenerator.net -->
+<!-- This file is part of design repo don't edit it from anywhere else -->
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.png">
+<link rel="icon" sizes="144x144" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-144x144.png">
+<link rel="icon" sizes="96x96" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-96x96.png">
+<link rel="icon" sizes="48x48" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.ico>
+
+<!-- Safari -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://archives.lyceum.fr/2017-2018/theme/favicons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="lyceum.fr">
+
+<!-- multiple icons for IE -->
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+
+<link rel="mask-icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/safari-pinned-tab.svg color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="mstile-144x144.png>
+
+<!-- Theme color for Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#003CBA">
+<link rel="manifest" href="https://archives.lyceum.fr/2017-2018/theme/favicons/site.webmanifest>
+<meta name="application-name" content="lyceum.fr"></head>
+
+<body>
+    <!-- Nav Bar -->
+<div class="back-to-present">Vous êtes sur une version archivée de lyceum.fr. <a href="https://lyceum.fr">&nbsp;Revenir au présent</a></div>
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="https://archives.lyceum.fr/2017-2018">archives.lyceum.fr/2017-2018</a>
+              </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon">
+                <a href="#">
+          <span>Menu</span>
+        </a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                    <a href="https://gitlab.com/lyceum.fr" class="active">
+                        Gitlab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/isn" class="active">
+                        ISN
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/icn" class="active">
+                        ICN
+                    </a>
+                </li>
+                 <li class="has-form">
+                    <div class="row collapse">
+                        <div class="small-12 columns">
+                            <input type="text" name="q" id="tipue_drop_input" autocomplete="off" required placeholder="Rechercher">
+                        </div>
+                        <div id="tipue_drop_content"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>    <!-- End Nav -->
+
+    <!-- Main Blog Content -->
+    <div class="row " id="main-content">
+<article>
+  <!-- chapter_nav -->
+<header>
+    <div class="row chapter-nav">
+
+        <div class="sub-nav">
+            <h1>Architecture des ordinateurs et représentation de l'information</h1>
+
+            <dl class="sub-nav">
+                <dt>Navigation:</dt>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/1-histoire-de-linformatique'>
+                Histoire de l'informatique
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/2-architecture-des-ordinateurs'>
+                Architecture des ordinateurs
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/3-codage-de-linformation-en-binaire'>
+                Codage de l'information en binaire
+              </a>
+                </dd>
+                <dd class="active" >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/4-operations-sur-les-entiers-naturels'>
+                Opérations sur les entiers naturels
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/5-representation-des-entiers-relatifs-et-des-reels'>
+                Représentation des entiers relatifs et des réels
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/6-representation-des-caracteres'>
+                Représentation des caractères
+              </a>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="sub-nav">
+            <div class="chapter-nav large-8 columns">
+                <h2><a href="https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/4-operations-sur-les-entiers-naturels" rel="bookmark"
+                  title="Permalink to Opérations sur les entiers naturels">
+                      Opérations sur les entiers naturels
+                  </a>
+                </h2>
+            </div>
+            <div id="toc" class="large-4 columns">
+            </div>
+        </div>
+    </div>
+</header>  <!-- chapter_infos -->
+<h6 class="subheader" title="2017-11-16T00:00:00+01:00">
+    publié le
+    jeu. 16 novembre 2017
+
+
+</h6>  <!-- main content -->
+  <h1 id="operations-arithmetiques">Opérations arithmétiques</h1>
+<p>Les règles utilisées en base dix s'appliquent de la même façon dans les autres bases.</p>
+<h1 id="addition-binaire">Addition binaire</h1>
+<p><strong>Exemple</strong></p>
+<p>Réaliser l'addition binaire: <span class="math">\(1011_2 + 1010_2\)</span></p>
+<div class="highlight"><pre><span></span> (1) (1)
+    1 0 1 1
+  + 1 0 1 0
+    -------
+  1 0 1 0 1
+</pre></div>
+
+
+<p>On peut vérifier le résultat en base 10:</p>
+<div class="math">$$({1011}_2 = 11_{10})+({1010}_2 = 10_{10})={10101}_2 = 21_{10}$$</div>
+<h1 id="addition-hexadecimale">Addition hexadécimale</h1>
+<p><strong>Exemple</strong></p>
+<p>Réaliser l'addition hexadécimale: <span class="math">\(A803_{16} + 2D35_{16}\)</span></p>
+<div class="highlight"><pre><span></span>   (1)
+    A 8 0 3
+  + 2 D 3 5
+    -------
+    D 5 3 8
+</pre></div>
+
+
+<p>On peut vérifier le résultat en base 10:</p>
+<div class="math">$$({A803}_{16} = 43 011_{10})+({2D35}_{16} = 11 573_{10})={D538}_{16} = 54 584_{10}$$</div>
+<h1 id="soustraction-binaire">Soustraction binaire</h1>
+<p><strong>Exemple</strong></p>
+<p>Réaliser la soustraction binaire: <span class="math">\(1011_2 - 1010_2\)</span></p>
+<div class="highlight"><pre><span></span>    1 0 1 1
+  - 1 0 1 0
+    -------
+    0 0 0 1
+</pre></div>
+
+
+<p>On peut vérifier le résultat en base 10:</p>
+<div class="math">$$({1011}_2 = 11_{10})-({1010}_2 = 10_{10})={0001}_2 = 1_{10}$$</div>
+<h1 id="soustraction-hexadecimale">Soustraction hexadécimale</h1>
+<p><strong>Exemple</strong></p>
+<p>Réaliser la soustraction hexadécimale: <span class="math">\(A803_{16} - 2D35_{16}\)</span></p>
+<div class="highlight"><pre><span></span>     A  8  0  3
+  -  2  D  3  5
+    (1)(1)(1)
+    -----------
+     7  A  C  E
+</pre></div>
+
+
+<p>On peut vérifier le résultat en base 10:</p>
+<div class="math">$$({A803}_{16} = 43 011_{10})-({2D35}_{16} = 11 573_{10})={7ACE}_{16} = 31 438_{10}$$</div>
+<p>Maintenant que vous avez tout compris, voici un lien vers un convertisseur en ligne.</p>
+<p><a href="http://www.binaryconvert.com/convert_unsigned_int.html">http://www.binaryconvert.com/convert_unsigned_int.html</a></p>
+<h1 id="conversions-et-operations-en-python">Conversions et opérations en python</h1>
+<p>Bien entendu comme ce genre d'opérations est courante en informatique, python possède des fonctions pour manipuler les nombres entiers en base décimale <code>int</code>, en base deux <code>bin</code>, en base seize <code>hex</code>.</p>
+<p>Vous pouvez trouver quelques exemples de ces conversions sur cette réponse du forum de programmation an anglais <a href="http://stackoverflow.com/a/11029366/1919130">stackoverflow</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  <div class="row">
+    <div class="large-9 columns">
+<p class="subheader">Matière: <a href="https://archives.lyceum.fr/2017-2018/isn">isn</a>
+
+    Mots-clés:
+    <a href="https://archives.lyceum.fr/2017-2018/tag/conversion.html">conversion </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/base-2.html">base 2 </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/base-16.html">base 16 </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/operations-binaires.html">opérations binaires </a>
+</p>    </div>
+</div>
+</article>
+
+
+    </div>
+    <!-- End Main Content -->
+    <!-- Footer -->
+<div class="footer">
+  <div class="row">
+    <div class="large-3 columns">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licence Creative Commons" src="https://archives.lyceum.fr/2017-2018/theme/images/by-sa.svg" />
+      </a>
+    </div>
+    <div class="large-9 columns">
+      «Opérations sur les entiers naturels» par Benjamin Abel est mis à disposition selon les termes de la
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International</a>.
+    </div>
+  </div>
+</div>    <!-- End footer -->
+    <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/foundation/js/foundation.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.js"></script>
+    <script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <!-- Search bar -->
+    <script>
+    $(document).ready(function()
+    {
+        $('#tipue_drop_input').tipuedrop(
+        {
+            'mode': 'json',
+            'contentLocation': 'https://archives.lyceum.fr/2017-2018/summaries.json'
+        });
+    });
+    </script>
+    <!-- End Search bar -->
+
+    <!-- My global javascript -->
+    <script src="https://archives.lyceum.fr/2017-2018/theme/js/mine.js"></script>
+</body>

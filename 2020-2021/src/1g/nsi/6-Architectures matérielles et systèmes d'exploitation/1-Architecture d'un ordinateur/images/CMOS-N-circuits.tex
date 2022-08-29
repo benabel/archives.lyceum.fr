@@ -1,0 +1,208 @@
+% Transistor CMOS-N
+\documentclass{article}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Adventor}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}%
+%%%>
+\usepackage[european]{circuitikz}
+\usepackage{amsmath}
+\begin{document}
+\newfontfamily\titlefont[Numbers={Proportional,OldStyle}]{Ubuntu}
+\newfontfamily\normalfont[Numbers={Proportional,OldStyle}]{TeX Gyre Adventor}
+
+
+%%----------------------------------------------------------------------
+%%  Transistor N-mos
+%%----------------------------------------------------------------------
+\begin{circuitikz}[thick, line cap=round]
+	% Symbol with voltage and current:
+	\draw
+	(-0.5,2) node{\titlefont\textbf{Transistor N-mos}}
+	(0,0) node[nmos] (mos) {}
+	(mos.gate) node[anchor=east] {\normalfont Grille}
+	(mos.drain) node[anchor=south] {Drain}
+	(mos.source) node[anchor=north] {Source}
+	;
+\end{circuitikz}
+
+%%----------------------------------------------------------------------
+%%  Commutation du transistor
+%%----------------------------------------------------------------------
+\begin{circuitikz}[scale=1.0, thick]
+	\draw (1.5,3) node{\titlefont\textbf{Commutation du transistor}};
+
+	\draw (-1,0) -- (0,0) node[anchor=north west] {Source} to [short, -o] (0,2/3);
+	\draw (0,4/3) to [short,o-](0,2) node[anchor=south west] {Drain};
+	\draw (0-0.01,2/3+0.05) -- +(96:2/3);
+	\draw (0,0) -- (-1,0);
+	\draw (-1,1) to [short, -o] (-1,1) node[anchor=south] {\normalfont Grille};
+	\draw [->](-1,0.1) -- (-1,0.9) node[anchor=north east] {$U>U_{seuil}$};
+	\draw (-1,-1) node{\titlefont{Transistor saturé}};
+
+	\draw (1.5,-1) -- (1.5,2.5);
+
+
+	\draw (4,0) -- (5,0) node[anchor=north west] {Source} to [short, -o] (5,2/3);
+	\draw (5,4/3) to [short,o-](5,2) node[anchor=south west] {Drain};
+	\draw (5-0.03, 2/3+0.05) -- +(120:2/3);
+	\draw (5,0) -- (4,0);
+	\draw (4,1) to [short, -o] (4,1) node[anchor=south] {\normalfont Grille};
+	\draw [->](4,0.1) -- (4,0.9) node[anchor=north east] {$U<U_{seuil}$};
+	\draw (4,-1) node{\titlefont{Transistor bloqué}};
+
+\end{circuitikz}
+
+
+%%----------------------------------------------------------------------
+%%  Le circuit Non
+%%----------------------------------------------------------------------
+
+\begin{circuitikz} [thick, line cap=round]
+	% Symbol with voltage and current:
+	\draw
+	(2,4) node{\titlefont\textbf{Le circuit Non}}
+
+	(0,0) node[nmos] (mos) {}
+	(mos.gate) node[anchor=south] {\normalfont G}
+
+	(mos.drain) node[anchor=north west] {D}
+	(mos.drain) to [R] (0, 3) -- (-3,3)
+	(mos.source) node[anchor=south west] {S}
+	-- (0,-1) -- (-3,-1)
+	to[V=$E$] (-3,3)
+	(-1,-2) node{\titlefont{Schéma électrique}};
+
+	\draw[red]
+	(mos.gate) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée}}
+	;
+	\draw[red]
+	(mos.drain) to [short, -o] +(+0.5,0)  node[anchor=west] {\normalfont\textit{sortie}}
+	;
+
+	\draw (2,-1) -- (2,3);
+
+	\draw
+	(6,1) node[not port] (notgate) {}
+	(5,-2) node{\titlefont{Schéma logique}};
+
+	\draw[red]
+	(notgate.in) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée}}
+	;
+	\draw[red]
+	(notgate.out) to [short, -o] +(+0.5,0)  node[anchor=west] {\normalfont\textit{sortie}}
+
+	;
+\end{circuitikz}
+
+%%----------------------------------------------------------------------
+%%  Le circuit Ou
+%%----------------------------------------------------------------------
+
+\begin{circuitikz} [thick, line cap=round]
+	% Symbol with voltage and current:
+	\draw
+	(1,5) node{\titlefont\textbf{Le circuit Ou}}
+
+	(0,0) node[nmos] (mos) {}
+	(3,0) node[nmos] (mos2) {}
+	(5,1) node[nmos] (mos3) {}
+
+
+	(mos.source) -- (0,-1) -- (-3,-1) to[V=$E$] (-3,4)
+	(mos.drain) -- (0,1)
+	(mos2.source) -- (3,-1)
+	(mos2.drain) -- (3,1)
+	(mos3.source) -- (5,-1) -- (0,-1)
+	(mos3.gate) -- (0,1) to [R] (0, 4) -- (-3,4)
+	(mos3.drain)  to [R] (5, 4) -- (0,4)
+
+	(1,-2) node{\titlefont{Schéma électrique}}
+
+	;
+
+
+	\draw[red]
+	(mos.gate) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée 1}}
+	;
+	\draw[red]
+	(mos2.gate) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée 2}}
+	;
+	\draw[red]
+	(mos3.drain)  to [short, -o] +(+0.5,0)  node[anchor=west] {\normalfont\textit{sortie}}
+	;
+
+	\draw (-4,-3) -- (7,-3);
+
+	\draw
+	(2,-5) node[or port] (orgate) {}
+	(1,-6.5) node{\titlefont{Schéma logique}};
+
+	\draw[red]
+	(orgate.in 1) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée 1}};
+	\draw[red]
+	(orgate.in 2) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée 2}}
+	;
+	\draw[red]
+	(orgate.out) to [short, -o] +(+0.5,0)  node[anchor=west] {\normalfont\textit{sortie}}
+
+	;
+\end{circuitikz}
+
+%%----------------------------------------------------------------------
+%%  Le circuit Et
+%%----------------------------------------------------------------------
+
+\begin{circuitikz} [thick, line cap=round]
+	% Symbol with voltage and current:
+	\draw
+	(0,5) node{\titlefont\textbf{Le circuit Et}}
+
+	(0,1) node[nmos] (mos) {}
+	(0,0) node[nmos] (mos2) {}
+	(3,1.5) node[nmos] (mos3) {}
+
+
+	(mos2.source) -- (0,-1) -- (-4,-1) to[V=$E$] (-4,4)
+	(mos3.gate) -- (0,1.5) to [R] (0, 4) -- (-4,4)
+	(mos3.drain)  to [R] (3, 4) -- (0,4)
+	(mos3.source)  -- (3, -1) -- (0,-1)
+
+	(0,-2) node{\titlefont{Schéma électrique}}
+
+	;
+
+
+	\draw[red]
+	(mos.gate) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée 1}}
+	;
+	\draw[red]
+	(mos2.gate) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée 2}}
+	;
+	\draw[red]
+	(mos3.drain)  to [short, -o] +(+0.5,0)  node[anchor=west] {\normalfont\textit{sortie}}
+	;
+
+	\draw (-5,-3) -- (5,-3);
+
+	\draw
+	(1,-5) node[and port] (andgate) {}
+	(0,-6.5) node{\titlefont{Schéma logique}};
+
+	\draw[red]
+	(andgate.in 1) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée 1}};
+	\draw[red]
+	(andgate.in 2) to [short, -o]  +(-0.5,0)  node[anchor=east] {\normalfont\textit{entrée 2}}
+	;
+	\draw[red]
+	(andgate.out) to [short, -o] +(+0.5,0)  node[anchor=west] {\normalfont\textit{sortie}}
+
+	;
+\end{circuitikz}
+
+
+\end{document}

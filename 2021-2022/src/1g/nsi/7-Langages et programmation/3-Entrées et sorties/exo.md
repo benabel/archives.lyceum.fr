@@ -1,0 +1,25 @@
+## Calcul de prix TTC
+
+Écrivez un programme qui fait **saisir** un prix hors taxes à l'utilisateur, puis qui **affiche**
+le prix TTC correspondant en se basant sur un taux de TVA à 20%.
+
+## Calcul d'une vitesse
+
+Écrivez un programme qui fait **saisir** une distance en mètre et un temps en seconde, puis qui
+**affiche** la valeur de la vitesse en m/s et en km/h.
+
+$$v=\frac{d}{t}$$
+
+## Permutation de deux variables
+
+Écrivez un programme qui permute deux variables :
+
+```python
+nombre1 = 5
+nombre2 = 3
+
+# Tapez votre code ici (sans rien modifier d'autre !)
+
+print(nombre1); # Doit afficher 3
+print(nombre2); # Doit afficher 5
+```

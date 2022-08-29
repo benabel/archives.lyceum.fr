@@ -1,0 +1,272 @@
+---
+tags: ["cours", "terminale", "lycée", "numérique et sciences informatiques", "nsi"]
+---
+
+::: programme
+
++----------------+---------------------------------+-------------------------------------+
+|    Contenus    |       Capacités attendues       |            Commentaires             |
++================+=================================+=====================================+
+| Paradigmes de  | Distinguer sur des exemples les | Choisir le paradigme de             |
+| programmation. | paradigmes impératif,           | programmation selon le champ        |
+|                | fonctionnel et objet.           | d’application d’un programme.       |
+|                |                                 | Avec un même langage de             |
+|                |                                 | programmation, on peut utiliser     |
+|                |                                 | des paradigmes différents. Dans     |
+|                |                                 | un même programme, on peut          |
+|                |                                 | utiliser des paradigmes différents. |
++----------------+---------------------------------+-------------------------------------+
+
+:::
+
+> La création du premier programme informatique par Ada Lovelace sur la machine de Babbage en 1842
+> a permis de formaliser les [ingrédients des
+> algorithmes](/1g/nsi/7-langages-et-programmation/1-les-ingredients-dun-algorithme) tels que nous
+> les connaissons: affectations, boucles, conditions Cependant, maintenant que l'informatique
+> est présente dans très nombreux domaines, il s'est avéré nécessaire d'adapter la programmation
+> aux problèmes à traiter. Ces approches appelées _paradigmes de programmation_ fournissent au
+> développeur une vue différente de la façon dont s'éxecute le programme, la [programmation
+> orientée objet](/tg/nsi/1-structures-de-donnees/2-programmation-objet) en est un exemple bien
+> connu.
+
+## Les trois grands types de programmation
+
+Il existe trois grands types de programmation :
+
+- La programmation **impérative**: le paradigme originel est le plus courant.
+- La programmation **orientée objet**(POO) consistant en la définition et l’assemblage de briques
+  logicielles appelées objets.
+- La programmation _déclarative_ consistant à déclarer les données du problème, puis à demander au
+  programme de le résoudre. La programmation **fonctionnelle** en est un exemple représentatif dans
+  lequel le résultat souhaité est déclaré comme la valeur d'une série d'applications de fonctions.
+
+Même si certains langages forcent à utiliser un paradigme de programmation (ex: Smalltalk: POO,
+Haskell: fonctionnnelle), de nombreux langages modernes comme Python (ou Javascript) sont
+multiparadigmes  et permettent la programmation impérative structurée, fonctionnelle et orientée
+objet; laissant ainsi le choix au programmeur du paradigme à utiliser en fonction du problème posé.
+
+## Exemples d'approches en Python
+
+Pour illustrer les différences entre ces paradigmes, nous allons utiliser un exemple très simple
+issu de [opensource.com][opensource].
+
+On a une liste de caractères que nous souhaitons concaténer en une chaine de caractères.
+
+```
+ENTREE: entrée = ['p','y','t','h','o','n']
+SORTIE: sortie = 'python'
+```
+
+### Programmation impérative : _le comment_
+
+La programmation impérative est un paradigme de programmation qui décrit les opérations en
+séquences d'instructions exécutées par l'ordinateur pour modifier l'état du programme.
+
+La programmation impérative se concentre sur la description du fonctionnement d'un programme : **le
+comment**.
+
+La plupart des langages de haut niveau comporte cinq types d'instructions principales :
+
+- la séquence d'instructions
+- l'assignation ou affectation
+- l'instruction conditionnelle(`if`, `else`)
+- la boucle(`for`, `while`)
+- les branchements(`GOTO` p.ex)
+
+```python
+entrée = ['p','y','t','h','o','n']
+# on initialise une chaine vide pour la sortie
+sortie = ""
+# On concatène à l'aide d'une boucle
+for c in entrée:
+     sortie = sortie + c
+ 
+print(sortie)
+python
+```
+
+Ce type de programmation est le plus ancien et utilisé, il est facile à comprendre, souvent
+efficace car proche des instructions réalisés par les processeurs. Par contre, il est assez
+difficile à tester car l'état du programme ne cesse de changer et il est difficile de tester une
+petite partie du programme au milieu de son exécution par exemple car elle ne nécessite que toutes
+les instructions précédentes aient déjà été appliquées correctement.
+
+### Programmation fonctionnelle : _le quoi_
+
+En programmation fonctionnelle **on décrit les résultats que l'on veut obtenir à partir des
+données** plutôt que  la séquence d'instructions qui permettent d'obtenir les résultats _(c'est un
+paradigme déclaratif)_.
+
+L'approche fonctionnelle considère le calcul en tant qu'évaluation de **fonctions** mathématiques.
+Vous donnez vos données en entrée aux fonctions, qui vous renvoient les valeurs calculées en
+sortie.
+
+L'utilisation massive de fonctions a amené à la création d'une syntaxe raccourcie pour la définition
+de fonctions anonymes, les fonctions `lambda`s :
+
+```python
+lambda param1, ... , paramN: valeur_retournée
+```
+
+Au lieu de:
+
+```python
+def ma_fonction(param1, ... , paramN):
+    ...
+    return valeur_retournée
+```
+
+En programmation fonctionnelle, **il n'y a pas d'état**, l'_opération d'affectation est interdite_,
+ce qui permet de s'affranchir des effets secondaires (ou effets de bord).
+
+Ceci rend les programmes parfaitement prédictibles, faciles à tester et à paralléliser, par contre
+il est souvent compliqué de se débarrasser complétement de l'état du programme.
+
+Comme vu dans le chapitre précédent, en programmation fonctionnelle, on remplace souvent les
+boucles par des [fonctions récursives](../4-recursivite). Une approche fonctionnelle par la
+récursion de notre problème pourrait être :
+
+```python
+entrée = ['p','y','t','h','o','n']
+
+def list_to_string(ma_liste, ma_chaine=""):
+    """Fonction récursive pour concaténer les éléments d'une liste"""
+    if ma_liste:
+        # on enlève le premier élement de la liste
+        # qu'on ajoute à la chaine de caractères
+        ma_chaine += ma_liste.pop(0)
+        # application récursive
+        return list_to_string(ma_liste, ma_chaine)
+    else:
+        # cas de base
+        return ma_chaine
+    
+    
+list_to_string(entrée)
+```
+
+
+::: {.plus titre="filter, map, reduce"}
+
+Parmi les fonctions les plus représentatives de la programmation fonctionnelle, on trouve:
+`filter`, `map` et `reduce` (voir [ici](http://sametmax.com/map-filter-et-reduce/) pour plus de
+détails).
+
+```python
+# on importe le module functools qui comporte 
+# les utilitaires de programmation fonctionnelle
+import functools
+entrée = ['p','y','t','h','o','n']
+
+# on concatène avec la méthode reduce
+sortie = functools.reduce(lambda s, c: s + c, entrée)
+print(sortie)
+python
+```
+
+On utilise ici `reduce` une [fonction d'ordre
+supérieur](https://fr.wikipedia.org/wiki/Fonction_d%27ordre_sup%C3%A9rieur) très utilisée en
+programmation fonctionnelle. Cette fonction applique une fonction de deux arguments de manière
+cumulative aux éléments en séquence, de gauche à droite, pour réduire la séquence à une seule
+valeur. Par exemple:
+
+```python
+sample_list = [1,2,3,4,5]
+import functools
+somme = functools.reduce(lambda x, y: x + y, sample_list)
+somme
+15
+((((1 + 2) +3) +4) +5)
+15
+```
+
+Pour plus de méthodes fonctionnelles, consulter la documentation du module
+[`functools`](https://docs.python.org/3/library/functools.html) qui est utilisé pour des fonctions
+de haut niveau : des fonctions qui agissent sur ou revoient d'autres fonctions.
+
+Une implémentation et des exemples d'utilisation des fonctions `filter`, `map`, `reduce` est
+proposée en [exercice](./exo).
+
+:::
+
+### Programmation objet: _POO_
+
+La POO consiste en la définition et l'interaction de **briques logicielles appelées objets**; un
+objet représente un concept, une idée ou toute entité du monde physique, comme une voiture, une
+personne ou encore une page d'un livre.
+
+Un objet possède:
+
+- des données: ses **attributs** et
+- des fonctions: ses **méthodes**
+
+```python
+class ListeLettres:
+    "Classe permettant de lier une chaîne de caractères à une liste de caractères"
+    def __init__(self, lettres=[]):
+        """Intialisation de l'objet
+
+        Paramètres
+        ----------
+        lettres: list
+            liste des caractères vide par défaut
+        """    
+        # initialisation des attributs de l'objet
+        self.lettres = lettres
+        # Conversion en chaine de caractères
+        self.string = ''.join(lettres)
+
+    # définition d'une méthode
+    def get_string(self):
+        return self.string
+ 
+entrée = ['p','y','t','h','o','n']
+
+# instanciation de l'objet avec les données de la liste
+objet_py = ListeLettres(entrée)
+
+# récupération de l'attribut string de l'objet
+objet_py.string # renvoie 'python'
+
+# récupération de l'attribut string grâce à la méthode get_string (préféré)
+objet_py.get_string() # renvoie 'python'
+```
+
+Les différents principes de la conception orientée objet aident à la réutilisation du code, au
+masquage des données, etc., mais c'est une bête complexe, et comprendre toute la logique des objets
+et de leurs interactions est délicat et souvent difficile à tester en raison de ces
+interdépendances.
+
+Nous aborderons plus en détail la [programmation orientée
+objet](/tg/nsi/4-langages-et-programmation/6-programmation-objet) au prochain chapitre.
+
+## Comment choisir le paradigme à utiliser?
+
+> Pour simplifier, si votre problème implique une série de manipulations séquentielles simples,
+> suivre le paradigme de **programmation impérative** de la vieille école serait le moins cher en
+> termes de temps et d'efforts et vous donnerait potentiellement les meilleures performances.
+
+
+> Dans le cas de problèmes nécessitant des transformations mathématiques des valeurs, le filtrage
+> des informations, le mappage( transformer une liste en une autre) et les réductions( transformer
+> une liste en une valeur), la **programmation fonctionnelle** pourrait être adaptée.
+
+
+> Si le problème est structuré comme un tas d'objets interdépendants avec certains attributs qui
+> peuvent changer avec le temps, en fonction de certaines conditions, la **programmation orientée
+> objet** sera certainement la plus naturelle.
+
+> Bien sûr, il n'y a pas de règle simple, car le choix du paradigme de programmation dépend
+> également fortement du type de données à traiter, des connaissances des programmeurs et de
+> diverses autres choses comme l'évolutivité.
+
+*[Perceiving Python programming paradigms][opensource]*{.cite-source}
+
+::: ref
+
+- [Article Wikipedia sur les paradigmes de programmation](https://fr.wikipedia.org/wiki/Paradigme_(programmation))
+- [Perceiving Python programming paradigms][opensource]
+
+[opensource]: https://opensource.com/article/19/10/python-programming-paradigms
+
+:::

@@ -1,0 +1,105 @@
+{
+ "metadata": {
+  "name": "",
+  "signature": "sha256:9d76d7b94bbb6b3e9e46a120310433e217faf2c3214f838b64e23488ac286046"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "#Impl\u00e9mentation en python\n",
+      "Nous avons d\u00e9j\u00e0 rencontr\u00e9 les valeurs logiques ou bool\u00e9ennes lorsque nous avons vu les types de donn\u00e9es utilis\u00e9es en python. (voir \t [types de donn\u00e9es en python]({filename}/Algorithmique/1-2-La pr\u00e9paration du traitement.md#valeurs-logiques))\n",
+      "\n",
+      "Pour rappel, les trois op\u00e9rateurs de base sont `not`, `or`, et `and`.\n",
+      "\n",
+      "**Propri\u00e9t\u00e9:** On peut exprimer de mani\u00e8re symbolique toutes les fonctions bool\u00e9ennes avec les seules fonctions `non`, `et` et `ou`.\n",
+      "\n",
+      "##Tables de v\u00e9rit\u00e9\n",
+      "\n",
+      "Les **tables de v\u00e9rit\u00e9** indiquent la valeur de la fonction bool\u00e9enne en fonction des vraiable d'entr\u00e9e.\n",
+      "\n",
+      "On peut facilement cr\u00e9er une boucle pour tester les valeurs donn\u00e9es par ces op\u00e9rateurs."
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "#Op\u00e9rateur not\n",
+      "print(\"  x      not(x)\")  \n",
+      "print(\"__________\")  \n",
+      "for x in True, False:\n",
+      "    print(x, not x)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "  x      not(x)\n",
+        "__________\n",
+        "True False\n",
+        "False True\n"
+       ]
+      }
+     ],
+     "prompt_number": 24
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "#Op\u00e9rateur and\n",
+      "print(\"  x   y    and(x)\")  \n",
+      "print(\"_____________\")  \n",
+      "for x in True, False:\n",
+      "    for y in True, False:\n",
+      "        print(x, y,  x and y)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "  x   y    and(x)\n",
+        "_____________\n",
+        "True True True\n",
+        "True False False\n",
+        "False True False\n",
+        "False False False\n"
+       ]
+      }
+     ],
+     "prompt_number": 29
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "#Applications\n",
+      "\n",
+      "1.  Ecrire le programme python qui donne la table de v\u00e9rit\u00e9 de la fonction `or`.\n",
+      "\n",
+      "2. V\u00e9rifier que `x ou y = non(non(x) et non(y))`\n",
+      "\n",
+      "3. Quand deux interrupteurs sont en parall\u00e8le, la lumi\u00e8re s\u2019allume quand l\u2019un d\u2019eux est ferm\u00e9. Quand ils sont en s\u00e9rie, la lumi\u00e8re s\u2019allume quand les deux sont ferm\u00e9s. Quand ils sont en va-et-vient la lumi\u00e8re s\u2019allume quand les deux sont ferm\u00e9s ou les deux sont ouverts. Donner la table de la fonction bool\u00e9enne dans ces trois cas et exprimer ces trois fonctions bool\u00e9ennes avec les fonctions non et ou.\n",
+      "4. Montrer que `x et y = y et x`. Est-ce la m\u00eame chose pour ou ? Calculer `x et 1` et `x et 0`. On appelle \u00e9l\u00e9ment neutre d\u2019une fonction binaire f, un \u00e9l\u00e9ment n tel que pour tout x, `f(x,n) = f(n,x) = x` et \u00e9l\u00e9ment absorbant un \u00e9l\u00e9ment a tel que pour tout x, `f(x,a) = f(a,x) = a`. La fonction et a-t-elle un \u00e9l\u00e9ment neutre ? Et un \u00e9l\u00e9ment absorbant ? La fonction ou a-t-elle un \u00e9l\u00e9ment neutre ? Et un \u00e9l\u00e9ment absorbant ?\n",
+      "5. Med est content si Bob et Jon sont tous les deux l\u00e0, mais sans Rut, ou si Rut est l\u00e0 soit avec Bob, soit avec Jon. Construire une table avec en entr\u00e9e la pr\u00e9sence de Rut, Bob et Jon et en sortie le bool\u00e9en qui vaut 1 si Med est content. Exprimer le choix de Med par une phrase plus simple.\n",
+      "\n",
+      "[Source: Informatique et sciences du num\u00e9rique - Edition sp\u00e9ciale Python !](http://www.eyrolles.com/Informatique/Livre/informatique-et-sciences-du-numerique-edition-speciale-python-9782212136760)\n"
+     ]
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

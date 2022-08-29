@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/1-histoire-de-linformatique/1-quelques-dates-marquantes-de-lhistoire-de-linformatique</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/1-histoire-de-linformatique/2-technologie-et-theorie</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/1-representation-des-entiers-naturels</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/2-representation-des-textes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/3-les-booleens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/4-representation-des-entiers-relatifs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/5-representation-approximative-des-nombres-reels</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/3-representation-des-donnees-types-construits/1-p–uplets</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/3-representation-des-donnees-types-construits/3-dictionnaires</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/3-representation-des-donnees-types-construits/2-tableaux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/4-traitement-de-donnees-en-tables/1-tables-de-donnees</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/4-traitement-de-donnees-en-tables/2-utilisation-de-la-librairie-pandas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/1-generalites-sur-le-web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/2-ecriture-dune-page-html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/3-mise-en-forme-avec-css</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/4-gestion-des-evenements-en-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/5-interaction-client–serveur</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/6-formulaire-dune-page-web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/1-architecture-dun-ordinateur</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/2-jeu-dinstructions-du-processeur</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/3-systemes-dexploitation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/4-circuits-combinatoires</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/5-reseaux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/1-les-ingredients-dun-algorithme</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/2-types</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/3-entrees-et-sorties</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/4-conditions</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/6-robotique</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/5-boucles</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/6-fonctions</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/7-comparaisons-de-langages</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/8-mise-au-point-dun-programme</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/1-parcours-sequentiel-dun-tableau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/3-algorithme-des-k-plus-proches-voisins</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/5-algorithmes-gloutons</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/2-algorithmes-de-tri</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/1-presentation-des-ondes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/2-les-ondes-progressives-periodiques</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/3-les-ondes-sonores</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/5-aspects-ondulatoires-de-la-lumiere</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/4-analyse-spectrale-en-chimie</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir/13-controle-de-qualite-par-dosage</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir/14-strategies-de-la-synthese-organique</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir/15-transmettre-et-stocker-de-linformation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir/16-enjeux-energetiques</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/10-mecanique-newtonienne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/11-presentation-de-la-physique-moderne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/12-reactions-acide–base</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/6-cinetique-chimique</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/7-representation-spatiale-des-molecules</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/8-transformation-en-chimie-organique</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/9-les-oscillateurs-energie-et-temps</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/4-recherche-dichotomique</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/1-histoire-de-linformatique</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/3-representation-des-donnees-types-construits</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/4-traitement-de-donnees-en-tables</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/programme</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/programme</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/blog/2020-01-31-trace-de-vecteurs-cinematiques-en-python/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/1-histoire-de-linformatique/1-quelques-dates-marquantes-de-lhistoire-de-linformatique/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/1-histoire-de-linformatique/2-technologie-et-theorie/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/1-representation-des-entiers-naturels/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/2-representation-des-textes/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/3-les-booleens/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/4-representation-des-entiers-relatifs/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/5-representation-approximative-des-nombres-reels/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/3-representation-des-donnees-types-construits/1-p–uplets/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/3-representation-des-donnees-types-construits/2-tableaux/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/3-representation-des-donnees-types-construits/3-dictionnaires/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/4-traitement-de-donnees-en-tables/1-tables-de-donnees/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/4-traitement-de-donnees-en-tables/2-utilisation-de-la-librairie-pandas/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/1-generalites-sur-le-web/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/3-mise-en-forme-avec-css/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/2-ecriture-dune-page-html/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/4-gestion-des-evenements-en-javascript/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/5-interaction-client–serveur/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/6-formulaire-dune-page-web/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/1-architecture-dun-ordinateur/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/2-jeu-dinstructions-du-processeur/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/3-systemes-dexploitation/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/4-circuits-combinatoires/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/5-reseaux/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/6-robotique/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/1-les-ingredients-dun-algorithme/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/2-types/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/3-entrees-et-sorties/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/4-conditions/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/5-boucles/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/6-fonctions/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/7-comparaisons-de-langages/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/1-parcours-sequentiel-dun-tableau/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/7-langages-et-programmation/8-mise-au-point-dun-programme/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/2-algorithmes-de-tri/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/3-algorithme-des-k-plus-proches-voisins/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/4-recherche-dichotomique/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/1g/nsi/8-algorithmique/5-algorithmes-gloutons/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/1-presentation-des-ondes/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/3-les-ondes-sonores/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/2-les-ondes-progressives-periodiques/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/4-analyse-spectrale-en-chimie/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/1-observer/5-aspects-ondulatoires-de-la-lumiere/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir/13-controle-de-qualite-par-dosage/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir/14-strategies-de-la-synthese-organique/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir/15-transmettre-et-stocker-de-linformation/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/3-agir/16-enjeux-energetiques/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/10-mecanique-newtonienne/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/11-presentation-de-la-physique-moderne/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/12-reactions-acide–base/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/6-cinetique-chimique/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/7-representation-spatiale-des-molecules/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/8-transformation-en-chimie-organique/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/ts/pc/2-comprendre/9-les-oscillateurs-energie-et-temps/exo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/1-Histoire de l&#039;informatique/1-Quelques dates marquantes de l&#039;histoire de l&#039;informatique/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/1-Histoire de l&#039;informatique/2-Technologie et théorie/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/2-Représentation des données : types et valeurs de base/1-Représentation des entiers naturels/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/2-Représentation des données : types et valeurs de base/2-Représentation des textes/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/2-Représentation des données : types et valeurs de base/3-Les booléens/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/2-Représentation des données : types et valeurs de base/4-Représentation des entiers relatifs/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/3-Représentation des données : types construits/1-p–uplets/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/2-Représentation des données : types et valeurs de base/5-Représentation approximative des nombres réels/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/3-Représentation des données : types construits/2-Tableaux/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/3-Représentation des données : types construits/3-Dictionnaires/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/4-Traitement de données en tables/1-Tables de données/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/4-Traitement de données en tables/2-Utilisation de la librairie pandas/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/5-Interactions entre l&#039;homme et la machine sur le Web/1-Généralités sur le web/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/5-Interactions entre l&#039;homme et la machine sur le Web/2-Ecriture d&#039;une page HTML/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/5-Interactions entre l&#039;homme et la machine sur le Web/3-Mise en forme avec CSS/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/5-Interactions entre l&#039;homme et la machine sur le Web/4-Gestion des événements en javascript/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/5-Interactions entre l&#039;homme et la machine sur le Web/5-Interaction client–serveur/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/5-Interactions entre l&#039;homme et la machine sur le Web/6-Formulaire d&#039;une page web/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/6-Architectures matérielles et systèmes d&#039;exploitation/1-Architecture d&#039;un ordinateur/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/6-Architectures matérielles et systèmes d&#039;exploitation/2-Jeu d&#039;instructions du processeur/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/6-Architectures matérielles et systèmes d&#039;exploitation/3-Systèmes d&#039;exploitation/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/6-Architectures matérielles et systèmes d&#039;exploitation/4-Circuits combinatoires/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/6-Architectures matérielles et systèmes d&#039;exploitation/5-Réseaux/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/6-Architectures matérielles et systèmes d&#039;exploitation/6-Robotique/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/7-Langages et programmation/1-Les ingrédients d&#039;un algorithme/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/7-Langages et programmation/2-Types/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/7-Langages et programmation/3-Entrées et sorties/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/7-Langages et programmation/4-Conditions/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/7-Langages et programmation/5-Boucles/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/7-Langages et programmation/6-Fonctions/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/7-Langages et programmation/7-Comparaisons de langages/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/7-Langages et programmation/8-Mise au point d&#039;un programme/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/8-Algorithmique/1-Parcours séquentiel d&#039;un tableau/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/8-Algorithmique/2-Algorithmes de tri/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/8-Algorithmique/3-Algorithme des k plus proches voisins/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/8-Algorithmique/4-Recherche dichotomique/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/1g/nsi/8-Algorithmique/5-Algorithmes gloutons/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/1-Observer/1-Présentation des ondes/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/1-Observer/2-Les ondes progressives périodiques/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/1-Observer/3-Les ondes sonores/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/1-Observer/4-Analyse spectrale en chimie/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/1-Observer/5-Aspects ondulatoires de la lumière/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/2-Comprendre/10-Mécanique Newtonienne/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/2-Comprendre/11-Présentation de la physique moderne/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/2-Comprendre/12-Réactions acide–base/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/2-Comprendre/6-Cinétique chimique/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/2-Comprendre/7-Représentation spatiale des molécules/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/2-Comprendre/8-Transformation en chimie organique/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/2-Comprendre/9-Les oscillateurs énergie et temps/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/3-Agir/13-Contrôle de qualité par dosage/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/3-Agir/14-Stratégies de la synthèse organique/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/3-Agir/15-Transmettre et stocker de l&#039;information/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://archives.lyceum\.fr/2019-2020/2019-2020/courses/ts/pc/3-Agir/16-Enjeux énergétiques/exo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>

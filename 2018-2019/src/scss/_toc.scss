@@ -1,0 +1,44 @@
+.toc {
+  strong {
+    padding: 2.5rem;
+  }
+  li {
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: #000;
+      background-color: $orange;
+    }
+  }
+  ul {
+    counter-reset: h2;
+    padding-left: 2.5rem;
+  }
+  ul ul {
+    counter-reset: h3;
+  }
+
+  li:before {
+    content: counter(h2, decimal) '. ';
+    counter-increment: h2;
+  }
+
+  ul ul li:before {
+    content: counter(h2, decimal) '.' counter(h3, lower-latin) '. ';
+    counter-increment: h3;
+  }
+}
+
+#toc-button {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 2em;
+  z-index: 2;
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://lyceum.fr/sitemap.xml
+Host: https://lyceum.fr

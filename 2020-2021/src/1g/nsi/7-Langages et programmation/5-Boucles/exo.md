@@ -1,0 +1,206 @@
+Ces exercices sont adaptés du cours sur la javascript de
+[openclassrooms](https://openclassrooms.com/en/courses/2984401-apprenez-a-coder-avec-javascript/3074396-repetez-des-instructions#/id/r-3075177)
+
+Je vous conseille de réaliser chaque exercice avec le `for`, et avec le
+`while`. Cela vous entraînera et vous permettra de mieux juger par la suite du
+meilleur type de boucle à utiliser.
+
+## Tournez manège
+
+Ecrivez un programme qui fait faire 10 tours de manège en affichant un message à
+chaque tour: `"C'est le tour n°..."`.
+
+<!--
+### Une solution possible
+
+for i in range(1,11):
+    print("C'est le tour n°", i) -->
+
+## Parité
+
+Ecrivez un programme qui affiche tous les nombres entre 1 et 10, et indique pour
+chacun si celui-ci est pair ou impair:
+
+```python
+"1 est impair"
+"2 est pair"
+...
+"10 est pair"
+```
+
+<!-- ### Une solution possible¶
+
+for i in range(1,11):
+    if i %2 ==0:
+        print(i, "est pair")
+    else:
+        print(i, "est impair") -->
+
+## Contrôle de saisie
+
+Ecrivez un programme qui fait saisir un nombre à l'utilisateur jusqu'à ce que ce
+nombre soit inférieur ou égal à 100.
+
+Ensuite, améliorez votre programme pour que le nombre saisi soit compris entre
+50 et 100.
+
+**Attention** Réfléchissez bien à la condition de votre boucle : quel est
+l'inverse de "compris entre 50 et 100" ?
+
+<!-- ### Une solution possible¶
+
+REPEAT = True
+while REPEAT:
+    n = int(input("Entrez un nombre compris entre 50 et 100: "))
+    if (n > 49) and (n < 100):
+        print("Merci pour votre réponse:)")
+        REPEAT = False -->
+
+## Table de multiplication
+
+Ecrivez un programme qui fait saisir un chiffre à l'utilisateur puis affiche la
+table de multiplication de ce chiffre.
+
+```python
+Voici la table de multiplication de 7
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70
+```
+
+Ensuite, améliorez votre programme pour vérifier que le nombre saisi soit
+compris entre 1 et 9, en vous inspirant de l'exercice précédent.
+
+<!-- ### Une solution possible
+
+n = int(input("Vous souhaitez afficher la table de: "))
+for i in range(1,11):
+    print(n, "x", i, "=", n*i) -->
+
+## Ni oui ni non
+
+Ecrivez un programme qui fait jouer l'utilisateur au ni oui, ni non : il entre
+un texte jusqu'à saisir "oui" ou "non", ce qui déclenche la fin du jeu.
+
+<!-- ### Une solution possible¶
+
+print("""
+Bienvenue dans le jeu du ni oui ni non
+""")
+# On initialise la variable reponse
+reponse = ""
+while (reponse != "oui") and (reponse != "non"):
+    reponse = input("Que dites-vous? ")
+    # On convertit la réponse en minuscules pour la comparaison
+    reponse = reponse.lower()
+
+print("PERDU! Vous avez dit", reponse) -->
+
+## FizzBuzz
+
+Ecrivez un programme qui affiche tous les nombres entre 1 et 100 avec les
+exceptions suivantes :
+
+- Il affiche "Fizz" à la place du nombre si celui-ci est divisible par 3.
+- Il affiche "Buzz" à la place du nombre si celui-ci est divisible par 5 et non par 3.
+
+```python
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+```
+
+Ensuite, améliorez votre programme pour qu'il affiche "FizzBuzz" à la place des
+nombres divisibles à la fois par 3 et par 5.
+
+**Attention:** Cet exercice a de nombreuses solutions possibles et constitue un
+test d'entretien d'embauche classique qui élimine un nombre significatif de
+candidats. Accrochez-vous pour le réussir !
+
+```python
+13
+14
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+```
+
+<!--
+### Une solution possible¶
+
+J'attends toujours vos propositions! -->
+
+Les deux exercices qui suivent ont été traduits à partir du cours d'[initiation à la programmation](https://www.edx.org/course/introduction-to-computer-science-and-programming-7) du MIT.
+
+<!-- Lien vers les solutions: https://github.com/anarayanan86/MITx-6.00.1x -->
+
+## Boucles `for`
+
+1. Ecrire le code Python permettant d'afficher cette sortie avec une boucle `for`:
+
+```
+2
+4
+6
+8
+10
+Goodbye!
+```
+
+<!-- 
+for i in range(2, 11, 2):
+    print(i)
+print('Goodbye!')
+ -->
+
+2. Ecrire le code Python permettant d'afficher cette sortie avec une boucle `for`:
+
+```
+Hello!
+10
+8
+6
+4
+2
+```
+
+<!-- 
+print('Hello!')
+for i in range(10, 0, -2):
+    print(i)
+ -->
+
+3. Écrivez une boucle `for` qui additionne les valeurs de `1` à `end`, inclus. `end` est une
+   variable dont la valeur est entrée par l'utilisateur avant la boucle `for`. Ainsi, par exemple,
+   si `end` à pour valeur `6`, votre code doit afficher le résultat: `21` car $1 + 2 + 3 + 4 + 5 +
+   6 = 21$.
+
+<!-- 
+total = 0
+for i in range(end+1):
+    total += i
+
+print(total)
+ -->
+
+## Boucles `while`
+
+Reprendre les 3 questions de l'exercice précédent en utilisant cette fois-ci une boucle `while`.

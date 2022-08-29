@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+  ISN - Ajouter du style avec css
+    </title>
+<!--use just the brands and solid styles-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/highlight-ipynb.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/pygments.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/style.css" />
+
+    <!-- Favicons from realfavicongenerator.net -->
+<!-- This file is part of design repo don't edit it from anywhere else -->
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.png">
+<link rel="icon" sizes="144x144" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-144x144.png">
+<link rel="icon" sizes="96x96" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-96x96.png">
+<link rel="icon" sizes="48x48" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.ico>
+
+<!-- Safari -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://archives.lyceum.fr/2017-2018/theme/favicons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="lyceum.fr">
+
+<!-- multiple icons for IE -->
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+
+<link rel="mask-icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/safari-pinned-tab.svg color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="mstile-144x144.png>
+
+<!-- Theme color for Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#003CBA">
+<link rel="manifest" href="https://archives.lyceum.fr/2017-2018/theme/favicons/site.webmanifest>
+<meta name="application-name" content="lyceum.fr"></head>
+
+<body>
+    <!-- Nav Bar -->
+<div class="back-to-present">Vous êtes sur une version archivée de lyceum.fr. <a href="https://lyceum.fr">&nbsp;Revenir au présent</a></div>
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="https://archives.lyceum.fr/2017-2018">archives.lyceum.fr/2017-2018</a>
+              </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon">
+                <a href="#">
+          <span>Menu</span>
+        </a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                    <a href="https://gitlab.com/lyceum.fr" class="active">
+                        Gitlab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/isn" class="active">
+                        ISN
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/icn" class="active">
+                        ICN
+                    </a>
+                </li>
+                 <li class="has-form">
+                    <div class="row collapse">
+                        <div class="small-12 columns">
+                            <input type="text" name="q" id="tipue_drop_input" autocomplete="off" required placeholder="Rechercher">
+                        </div>
+                        <div id="tipue_drop_content"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>    <!-- End Nav -->
+
+    <!-- Main Blog Content -->
+    <div class="row " id="main-content">
+<article>
+  <!-- chapter_nav -->
+<header>
+    <div class="row chapter-nav">
+
+        <div class="sub-nav">
+            <h1>Programmation web</h1>
+
+            <dl class="sub-nav">
+                <dt>Navigation:</dt>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/3-programmation-web/1-presentation-de-la-partie-programmation-web'>
+                Présentation de la partie programmation web
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/3-programmation-web/2-structure-dun-document-html'>
+                Structure d'un document html
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/3-programmation-web/3-quelques-balises-html-utiles'>
+                Quelques balises html utiles
+              </a>
+                </dd>
+                <dd class="active" >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/3-programmation-web/4-ajouter-du-style-avec-css'>
+                Ajouter du style avec css
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/3-programmation-web/5-mise-en-page-avec-html5-et-css3'>
+                Mise en page avec html5 et css3
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/3-programmation-web/6-ajouter-du-dynamisme-avec-javascript'>
+                Ajouter du dynamisme avec javascript
+              </a>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="sub-nav">
+            <div class="chapter-nav large-8 columns">
+                <h2><a href="https://archives.lyceum.fr/2017-2018/isn/3-programmation-web/4-ajouter-du-style-avec-css" rel="bookmark"
+                  title="Permalink to Ajouter du style avec css">
+                      Ajouter du style avec css
+                  </a>
+                </h2>
+            </div>
+            <div id="toc" class="large-4 columns">
+            </div>
+        </div>
+    </div>
+</header>  <!-- chapter_infos -->
+<h6 class="subheader" title="2018-01-11T00:00:00+01:00">
+    publié le
+    jeu. 11 janvier 2018
+
+
+</h6>  <!-- main content -->
+  <p><a title="Par W3C (http://www.w3.org/html/logo/) [CC-BY-3.0 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AClass-header-css3.jpg"><img width="256" alt="Class-header-css3" src="//upload.wikimedia.org/wikipedia/commons/5/52/Class-header-css3.jpg"/></a></p>
+<blockquote>
+<p>Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML. Les standards définissant CSS sont publiés par le World Wide Web Consortium (W3C). Introduit au milieu des années 1990, CSS devient couramment utilisé dans la conception de sites web et bien pris en charge par les navigateurs web dans les années 2000. <a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade">Source Wikipedia</a></p>
+</blockquote>
+<p>Lors de la dernière séance, nous avons vu le langage de de base à la création des pages web, le <code>html</code>. Maintenant nous allons voir comment mettre en forme notre page web avec le <code>css</code>, pour qu'elle soit moins austère qu'avec les styles par défaut utilisés par les navigateurs.</p>
+<p>L'utilisation de ces deux langages répond à un principe de <em>séparation du fond et de la forme</em> qui est utilisé depuis longtemps dans le monde de l'édition. D'abord on écrit du contenu(le fond), ensuite, on met en forme le contenu.</p>
+<p>Le document <code>html</code> décrit le contenu du document: le <em>fond</em>, et le document <code>css</code> décrit sa <em>forme</em>.</p>
+<p>Nous allons d'abord voir comment lier une feuille de styles à notre page <code>html</code>.</p>
+<h1 id="integration-de-code-css-dans-une-page-html">Intégration de code css dans une page html</h1>
+<p>Il existe <strong>trois façons</strong> d'ajouter des règles <code>css</code> à une page.</p>
+<h2 id="1ere-methoderecommandee-utilisation-dune-feuille-de-style-externe">1ère méthode(recommandée): Utilisation d'une feuille de style externe</h2>
+<p>On écrit le code css dans un fichier avec l'extension <code>.css</code>, par exemple <code>style.css</code> et on la lie dans l'en-tête du document(le <code>&lt;head&gt;</code>).</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;style.css&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</pre></div>
+
+
+<p><em>C'est la méthode préférée lorsque l'on a un ensemble de pages qui contiennent des styles identiques, cela permet d'alléger l'écriture du code et les requêtes vers le serveur de documents.</em></p>
+<h2 id="2e-methode-utilisation-dune-feuille-de-style-interne">2e méthode: Utilisation d'une feuille de style interne</h2>
+<p>On intègre le code <code>css</code> au sein de balises <code>&lt;style&gt;</code> dans l'entête du document(le <head>).</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        body {
+              background-color: linen;
+             }
+        h1 {
+            color: maroon;
+            margin-left: 40px;
+            }
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</pre></div>
+
+
+<p><em>Méthode pratique lorsque l'on a des documents html d'une seule page ou avec des styles spécifiques.</em></p>
+<h2 id="3e-methodea-eviter-insertion-directe-dans-les-balises-html">3e méthode(à éviter): Insertion directe dans les balises html</h2>
+<p>On utilise alors l'attribut style au sein de la balise ouvrante de l'élément à styler.</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">&quot;color: red; font-weight: bold;&quot;</span><span class="nt">&gt;</span>
+    Maintenant mon texte est écrit en rouge et en gras.
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+
+
+<p><strong>RENDU</strong>
+<p style="color: red; font-weight: bold;">
+    Maintenant mon texte est écrit en rouge et en gras.
+</p></p>
+<p><em>Cette méthode est peu recommandée car on mélange le fond et la forme, et aussi parceque cela rend le code <code>html</code> encore plus illisible qu'il ne l'est!</em></p>
+<h1 id="syntaxe">Syntaxe</h1>
+<p>Une règle <code>css</code> est constituée d'un sélecteur suivi d'un bloc de déclaration entre accolades. Chaque déclaration se termine par un point-virgule.</p>
+<h2 id="les-selecteurs">Les sélecteurs</h2>
+<p>Pour pouvoir savoir, quelles balises doivent être mises en forme dans le document html, on utilise des <strong>sélecteurs</strong>, p.ex:</p>
+<ul>
+<li><code>p</code> sélectionnera toutes les balises paragraphe <code>p</code>;</li>
+<li><code>h1, h3</code> sélectionnera toutes les balises <code>h1</code> et <code>h3</code>;</li>
+<li><code>section p</code> sélectionnera tous les paragrahes contenus dans des balises <code>section</code>.</li>
+</ul>
+<h2 id="le-bloc-de-declaration">Le bloc de déclaration</h2>
+<p>Il s'agit des règles de style à appliquer sur les élements sélectionnés, p.ex:</p>
+<div class="highlight"><pre><span></span><span class="nt">p</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Cette règle permet de colorier en rouge et de centrer tous les paragraphes du document <code>html</code>.</p>
+<p>L'ensemble des mots-clés en <code>css</code> est listé sur l'excellent site  <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference">MDN</a>.</p>
+<h2 id="commentaires">Commentaires</h2>
+<p>Les commentaires utilisent la syntaxe suivante: <code>/* Un commentaire */</code></p>
+<h2 id="ordre-dapplication-des-regles">Ordre d'application des règles</h2>
+<p>Ce n'est pas pour rien qu'on parle de feuilles de styles en cascade, car en fait la difficulté en css est souvent que l'on définit des règles différentes pour des tags identiques, et qu'il faut savoir qu'elle règle va s'appliquer sur notre élément.</p>
+<p>Par ordre de priorité croissante:</p>
+<ul>
+<li>Règles par défaut du navigateur</li>
+<li>Feuille de style externe</li>
+<li>Feuille de style interne</li>
+<li>Style au sein d'un élément html.</li>
+</ul>
+<h1 id="selecteurs-plus-elabores">Sélecteurs plus élaborés</h1>
+<ul>
+<li>Il est possible de sélectionner <strong>plusieurs balises</strong> à la fois pour leur appliquer une règle commune, ces balises doivent alors être séparées par des <em>virgules</em>.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="kc">lime</span><span class="p">;}</span>
+</pre></div>
+
+
+<ul>
+<li>La virgule est très importante, car si on sépare les sélecteurs par des <em>espaces</em> il s'agit d'une <strong>sélection par descendence</strong>, le code css suivant par exemple ne sélectionne que les paragraphes contenus dans une balise <code>div</code>(<a href="https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteurs_descendant">voir mdn pour plus de détails</a>).</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nt">div</span> <span class="nt">p</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;}</span>
+</pre></div>
+
+
+<ul>
+<li>
+<p>Pour appliquer <strong>un même style à plusieurs éléments</strong> on peut leur ajouter un attribut <code>html</code> <code>class="ma-classe"</code>, qui pourra être sélectionné en <code>css</code> avec le sélecteur <code>.ma-classe</code>.</p>
+</li>
+<li>
+<p>Pour appliquer <strong>un style specifique à un unique élément</strong> on lui ajoute un attribut <code>html</code> <code>id="mon-id"</code>, qui pourra être sélectionné en <code>css</code> avec le sélecteur <code>#mon-id</code>.</p>
+</li>
+</ul>
+<h1 id="des-styles-plus-elabores">Des styles plus élaborés</h1>
+<h2 id="references-des-proprietes-css">Références des propriétés <code>css</code></h2>
+<p>Cette référence CSS sur <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference">MDN</a> liste toutes les propriétés standards CSS.</p>
+<h2 id="tutoriels-et-exemples-en-ligne">Tutoriels et exemples en ligne</h2>
+<p>Le site <a href="http://www.w3schools.com/css/css_examples.asp">w3cschools</a> présente des exemples éditables et dynamiques de situations courantes lors du stylage d'une page web, voir notamment les pages suivantes:</p>
+<ul>
+<li><a href="http://www.w3schools.com/css/css_background.asp">CSS Backgrounds</a> et <a href="http://www.w3schools.com/css/css3_backgrounds.asp">CSS3 Backgrounds</a> pour les <strong>arrières plans</strong></li>
+<li><a href="http://www.w3schools.com/css/css_text.asp">CSS Text</a>, <a href="http://www.w3schools.com/css/css_font.asp">CSS Fonts</a> et <a href="http://www.w3schools.com/css/css3_fonts.asp">CSS3 Fonts</a> pour la <strong>mise en forme du texte</strong></li>
+<li><a href="http://www.w3schools.com/css/css_list.asp">CSS Lists</a> pour les <strong>listes</strong> numérotées on non.</li>
+<li><a href="http://www.w3schools.com/css/css_boxmodel.asp">CSS Box Model</a> et <a href="http://www.w3schools.com/css/css3_borders.asp">CSS3 Borders</a> pour les modèles de <strong>boîtes</strong></li>
+<li><a href="http://www.w3schools.com/css/css3_transitions.asp">CSS3 Transitions</a> et <a href="http://www.w3schools.com/css/css3_animations.asp">CSS3 Animations</a> pour des effets <strong>dynamiques</strong> sur vos pages.</li>
+</ul>
+<h1 id="deboguer-son-code-css">Déboguer son code css</h1>
+<h2 id="inspecteur-de-styles-du-navigateur">Inspecteur de styles du navigateur</h2>
+<p>Pour savoir qu'elle règle a été utilisée par le navigateur, la console web du navigateur est d'un grand secours. On peut par exemple inspecter un élément et savoir qu'elles règles <code>css</code> s'appliquent et qu'elles règles <code>css</code> ont été supplantés(elles apparaissent barrées dans l'inspecteur de styles).</p>
+<p>Pour accéder à la console web, taper <kbd>CTRL+MAJ+K</kbd> sur firefox, pour inspecter un élément il suffit de le sélectionner et de faire un clic droit de la souris puis de taper <kbd>x</kbd>.</p>
+<h2 id="validateur-du-w3c">Validateur du W3C</h2>
+<p>Le site du W3C propose comme pour le language html un (validateur)[http://jigsaw.w3.org/css-validator/#validate_by_input+with_options] de fichier <code>css</code>.</p>
+  <div class="row">
+    <div class="large-9 columns">
+<p class="subheader">Matière: <a href="https://archives.lyceum.fr/2017-2018/isn">isn</a>
+
+    Mots-clés:
+    <a href="https://archives.lyceum.fr/2017-2018/tag/html5.html">html5 </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/css.html">css </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/css3.html">css3 </a>
+</p>    </div>
+</div>
+</article>
+
+
+    </div>
+    <!-- End Main Content -->
+    <!-- Footer -->
+<div class="footer">
+  <div class="row">
+    <div class="large-3 columns">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licence Creative Commons" src="https://archives.lyceum.fr/2017-2018/theme/images/by-sa.svg" />
+      </a>
+    </div>
+    <div class="large-9 columns">
+      «Ajouter du style avec css» par Benjamin Abel est mis à disposition selon les termes de la
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International</a>.
+    </div>
+  </div>
+</div>    <!-- End footer -->
+    <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/foundation/js/foundation.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.js"></script>
+    <script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <!-- Search bar -->
+    <script>
+    $(document).ready(function()
+    {
+        $('#tipue_drop_input').tipuedrop(
+        {
+            'mode': 'json',
+            'contentLocation': 'https://archives.lyceum.fr/2017-2018/summaries.json'
+        });
+    });
+    </script>
+    <!-- End Search bar -->
+
+    <!-- My global javascript -->
+    <script src="https://archives.lyceum.fr/2017-2018/theme/js/mine.js"></script>
+</body>

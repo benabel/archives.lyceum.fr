@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+  ISN - Codage de l'information en binaire
+    </title>
+<!--use just the brands and solid styles-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/highlight-ipynb.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/pygments.css" />
+    <link rel="stylesheet" href="https://archives.lyceum.fr/2017-2018/theme/css/style.css" />
+
+    <!-- Favicons from realfavicongenerator.net -->
+<!-- This file is part of design repo don't edit it from anywhere else -->
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.png">
+<link rel="icon" sizes="144x144" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-144x144.png">
+<link rel="icon" sizes="96x96" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-96x96.png">
+<link rel="icon" sizes="48x48" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/favicon.ico>
+
+<!-- Safari -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://archives.lyceum.fr/2017-2018/theme/favicons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="lyceum.fr">
+
+<!-- multiple icons for IE -->
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+
+<link rel="mask-icon" href="https://archives.lyceum.fr/2017-2018/theme/favicons/safari-pinned-tab.svg color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="mstile-144x144.png>
+
+<!-- Theme color for Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#003CBA">
+<link rel="manifest" href="https://archives.lyceum.fr/2017-2018/theme/favicons/site.webmanifest>
+<meta name="application-name" content="lyceum.fr"></head>
+
+<body>
+    <!-- Nav Bar -->
+<div class="back-to-present">Vous êtes sur une version archivée de lyceum.fr. <a href="https://lyceum.fr">&nbsp;Revenir au présent</a></div>
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <h1>
+                <a href="https://archives.lyceum.fr/2017-2018">archives.lyceum.fr/2017-2018</a>
+              </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon">
+                <a href="#">
+          <span>Menu</span>
+        </a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                    <a href="https://gitlab.com/lyceum.fr" class="active">
+                        Gitlab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/isn" class="active">
+                        ISN
+                    </a>
+                </li>
+                <li>
+                    <a href="https://archives.lyceum.fr/2017-2018/icn" class="active">
+                        ICN
+                    </a>
+                </li>
+                 <li class="has-form">
+                    <div class="row collapse">
+                        <div class="small-12 columns">
+                            <input type="text" name="q" id="tipue_drop_input" autocomplete="off" required placeholder="Rechercher">
+                        </div>
+                        <div id="tipue_drop_content"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>    <!-- End Nav -->
+
+    <!-- Main Blog Content -->
+    <div class="row " id="main-content">
+<article>
+  <!-- chapter_nav -->
+<header>
+    <div class="row chapter-nav">
+
+        <div class="sub-nav">
+            <h1>Architecture des ordinateurs et représentation de l'information</h1>
+
+            <dl class="sub-nav">
+                <dt>Navigation:</dt>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/1-histoire-de-linformatique'>
+                Histoire de l'informatique
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/2-architecture-des-ordinateurs'>
+                Architecture des ordinateurs
+              </a>
+                </dd>
+                <dd class="active" >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/3-codage-de-linformation-en-binaire'>
+                Codage de l'information en binaire
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/4-operations-sur-les-entiers-naturels'>
+                Opérations sur les entiers naturels
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/5-representation-des-entiers-relatifs-et-des-reels'>
+                Représentation des entiers relatifs et des réels
+              </a>
+                </dd>
+                <dd >
+                    <a href='https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/6-representation-des-caracteres'>
+                Représentation des caractères
+              </a>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="sub-nav">
+            <div class="chapter-nav large-8 columns">
+                <h2><a href="https://archives.lyceum.fr/2017-2018/isn/2-architecture-des-ordinateurs-et-representation-de-linformation/3-codage-de-linformation-en-binaire" rel="bookmark"
+                  title="Permalink to Codage de l'information en binaire">
+                      Codage de l'information en binaire
+                  </a>
+                </h2>
+            </div>
+            <div id="toc" class="large-4 columns">
+            </div>
+        </div>
+    </div>
+</header>  <!-- chapter_infos -->
+<h6 class="subheader" title="2017-11-13T00:00:00+01:00">
+    publié le
+    lun. 13 novembre 2017
+
+
+</h6>  <!-- main content -->
+  <h1 id="notation-decimale">Notation décimale</h1>
+<p>On a l'habitude d'écrire les nombres entiers naturels en <em>notation décimale à position</em>, dans ce système, on écrit de <strong>droite à gauche</strong> le nombre d'unités, de paquets de dizaines, de centaines, etc.</p>
+<p>Chacun de ces nombres étant comprise entre 0 et 9, cela représente un ensemble de dix chiffres d’où le nom de notation décimale.</p>
+<p>Les chiffres utilisés sont: <strong>0 1 2 3 4 5 6 7 8 9</strong></p>
+<p><strong>exemple: 1789</strong></p>
+<p>1789 est l'addition de droite à gauche de neuf unités, huit dizaines, sept centaines, et un millier.</p>
+<p>Soit mathématiquement:</p>
+<div class="math">$$ 1789=1 \times 10^3 + 7 \times 10^2 + 8 \times 10^1 + 9 \times 10^0 $$</div>
+<h1 id="codage-binaire">Codage binaire</h1>
+<blockquote>
+<p>Le système binaire est un système de numération utilisant la base 2. On nomme couramment bit (de l'anglais binary digit, soit « chiffre binaire ») les chiffres de la numération binaire positionnelle. Ceux-ci ne peuvent prendre que deux valeurs, notées par convention 0 et 1.</p>
+<p>C'est un concept essentiel de l'informatique. En effet, les processeurs des ordinateurs actuels sont composés de transistors ne gérant chacun que deux états.</p>
+<p><a href="http://fr.wikipedia.org/wiki/Syst%C3%A8me_binaire">Source Wikipedia</a></p>
+</blockquote>
+<p>Ainsi dans les systèmes numériques comme les ordinateurs, toutes les informations, qu'il s'agisse de nombres, de textes d'images, de sons ou encore de vidéos sont codées en <strong>langage binaire</strong>.</p>
+<p>Le système binaire est un système de numération positionnel utilisant la base deux.</p>
+<p>Les chiffres utilisés sont: <strong>0 1</strong></p>
+<p><strong>exemple: 1110</strong></p>
+<p><span class="math">\(1110_2\)</span> est l'addition de droite à gauche de zéro unité, une deuzaine, une quatraine, une huitaine.</p>
+<p>Soit mathématiquement:</p>
+<div class="math">$$1110=1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 = 14$$</div>
+<p><em>Remarque: on indique la base de numération par un indice à la fin du nombre.</em></p>
+<p>Soit <span class="math">\(1110_2 = 14_{10}\)</span></p>
+<h2 id="comment-passer-de-la-notation-decimale-a-la-notation-binaire">Comment passer de la notation décimale à la notation binaire ?</h2>
+<p>On regroupe les objets par paquets de 2 en réalisant des divisions successives jusqu'à obtenir un quotient égal à 0.</p>
+<p><strong>Exemple</strong></p>
+<p>Trouver en base deux la représentation du nombre <span class="math">\(13_{10}\)</span></p>
+<div class="highlight"><pre><span></span>13 | 2
+   |---
+ 1 | 6 | 2
+       |---
+     0 | 3 | 2
+           |---
+         1 | 1 | 2
+               |---
+             1 | 0
+</pre></div>
+
+
+<p>L'écriture du nombre se fait alors de droite à gauche:</p>
+<div class="math">$$13_{10} = 1101_{2}$$</div>
+<p>On peut vérifier le résultat:</p>
+<div class="math">$${1110}_{2} = 1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 = 13_{10}$$</div>
+<h2 id="exercices">Exercices</h2>
+<ol>
+<li>
+<p>Trouver la représentation en base deux du nombre 1000.</p>
+</li>
+<li>
+<p>Donner les représentations en base deux des nombres 1, 3, 7, 15, 31 et 63. Expliquer le résultat.</p>
+</li>
+<li>
+<p>Trouver la représentation en base dix du nombre 10010110.</p>
+</li>
+<li>
+<p>C’est en 11110010000 qu’a été démontré le théorème fondamental de l'informatique. Exprimer ce nombre en base dix.</p>
+</li>
+<li>
+<p>Pour multiplier par dix un entier naturel exprimé en base dix, il suffit d’ajouter un 0 à sa droite, par exemple, 12 x 10 = 120. Quelle est l’opération équivalente pour les entiers natu— rels exprimés en base deux ? Exprimer en base deux les nombres 3, 6 et 12 pour illustrer  cette remarque.  </p>
+</li>
+</ol>
+<h1 id="loctet">L'octet</h1>
+<blockquote>
+<p>Les mémoires actuelles sont toutes composées de cellules mémoires capables de retenir un bit. En mettant pleins de ces cellules dans un seul composant, et en mettant quelques circuits électroniques pour gérer le tout, on obtient une mémoire.<a href="http://fr.openclassrooms.com/informatique/cours/fonctionnement-d-un-ordinateur-depuis-zero/memoriser-un-bit">Source OpenClassroom</a></p>
+</blockquote>
+<p>L’état d’un circuit mémoire, se décrit par une suite finie de 0 et de 1, que l’on appelle un <strong>mot</strong>. Par exemple, le mot 100 décrit l’état d’un circuit composé de trois circuits mémoire un bit, respectivement dans l’état 1, 0 et 0.</p>
+<p>Dans la mémoire des ordinateurs les circuits mémoire un bit sont souvent groupés par huit : les <strong>octets</strong>. On utilise souvent des nombres exprimés en notation binaire, c’est-à-dire en base deux, sur un, deux, quatre ou huit
+octets, soit 8, 16, 32 ou 64 bits.</p>
+<p>Un octet permet de représenter <span class="math">\(2^8\)</span>, c'est-à-dire 256, valeurs différentes. Un ou plusieurs octets permettent ainsi de coder des valeurs numériques ou des caractères.</p>
+<h2 id="exercices_1">Exercices</h2>
+<ol>
+<li>
+<p>On imagine un ordinateur dont la mémoire est constituée de quatre circuits mémoire un bit. Quel est le nombre d'états possibles de la mémoire de cet ordinateur ? Même question pour un ordinateur dont la mémoire est constituée de dix circuits mémoire un bit. Et pour un ordinateur dont la mémoire est constituée de 34 milliards de tels circuits.</p>
+</li>
+<li>
+<p>On veut représenter chacune des sept couleurs de l’arc—en—ciel par un mot, les sept mots devant être distincts et de même longueur. Quelle est la longueur minimale de ces mots ?  </p>
+</li>
+</ol>
+<h1 id="codage-hexadecimale">Codage hexadécimale</h1>
+<p>La notation binaire bien qu'adaptée aux composants électroniques, ne l'est pas du tout pour l'homme. Certains des premiers ordinateurs, comme l'<a href="https://fr.wikipedia.org/wiki/ENIAC#Histoire">EINAC</a> utilisaient la base 10, cependant cette idée a été abandonnée en raison des difficultés que cela entraînaient au niveau électronique. La base 16, le système hexadécimal rend l'utilisation du binaire plus humaine.</p>
+<p>Un chiffre hexadécimal est un mot de 4 bits puique <span class="math">\(2^4 = 16\)</span>.</p>
+<blockquote>
+<p>Le système hexadécimal est utilisé notamment en électronique numérique et en informatique car il est particulièrement commode et permet un compromis entre le code binaire des machines et une base de numération pratique à utiliser pour les ingénieurs. En effet, chaque chiffre hexadécimal correspond exactement à quatre chiffres binaires (ou bits), rendant les conversions très simples et fournissant une écriture plus compacte.<a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_hexad%C3%A9cimal">Source Wikipedia</a></p>
+</blockquote>
+<p>Les chiffres utilisés sont: <strong>0 1 2 3 4 5 6 7 8 9 a b c d e f</strong></p>
+<p>Voici les correspondances entre les bases hexadécimale, décimale et binaire.</p>
+<table>
+    <colgroup>
+        <col style="width: 29%" />
+        <col style="width: 35%" />
+        <col style="width: 35%" />
+    </colgroup>
+    <thead>
+        <tr class="header">
+            <th >Chiffre hexadécimal</th>
+            <th >Représentation décimale</th>
+            <th >Représentation binaire</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd">
+            <td >
+                <p>0</p>
+            </td>
+            <td >
+                <p>0</p>
+            </td>
+            <td >
+                <p>0000</p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td >
+                <p>1</p>
+            </td>
+            <td >
+                <p>1</p>
+            </td>
+            <td >
+                <p>0001</p>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td >
+                <p>2</p>
+            </td>
+            <td >
+                <p>2</p>
+            </td>
+            <td >
+                <p>0010</p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td >
+                <p>3</p>
+            </td>
+            <td >
+                <p>3</p>
+            </td>
+            <td >
+                <p>0011</p>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td >
+                <p>4</p>
+            </td>
+            <td >
+                <p>4</p>
+            </td>
+            <td >
+                <p>0100</p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td >
+                <p>5</p>
+            </td>
+            <td >
+                <p>5</p>
+            </td>
+            <td >
+                <p>0101</p>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td >
+                <p>6</p>
+            </td>
+            <td >
+                <p>6</p>
+            </td>
+            <td >
+                <p>0110</p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td >
+                <p>7</p>
+            </td>
+            <td >
+                <p>7</p>
+            </td>
+            <td >
+                <p>0111</p>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td >
+                <p>8</p>
+            </td>
+            <td >
+                <p>8</p>
+            </td>
+            <td >
+                <p>1000</p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td >
+                <p>9</p>
+            </td>
+            <td >
+                <p>9</p>
+            </td>
+            <td >
+                <p>1001</p>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td >
+                <p>A</p>
+            </td>
+            <td >
+                <p>10</p>
+            </td>
+            <td >
+                <p>1010</p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td >
+                <p>B</p>
+            </td>
+            <td >
+                <p>11</p>
+            </td>
+            <td >
+                <p>1011</p>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td >
+                <p>C</p>
+            </td>
+            <td >
+                <p>12</p>
+            </td>
+            <td >
+                <p>1100</p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td >
+                <p>D</p>
+            </td>
+            <td >
+                <p>13</p>
+            </td>
+            <td >
+                <p>1101</p>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td >
+                <p>E</p>
+            </td>
+            <td >
+                <p>14</p>
+            </td>
+            <td >
+                <p>1110</p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td >
+                <p>F</p>
+            </td>
+            <td >
+                <p>15</p>
+            </td>
+            <td >
+                <p>1111</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>exemple: comment représenter le mot binaire de 16 bits: <code>1010101111100001</code></strong></p>
+<p>On est d'accord, en binaire, c'est <em>inhumain</em>, par contre en hexadécimal, cela devient beaucoup plus lisible et manipulable:</p>
+<div class="math">$${1010101111100001}_2 = {abe1}_{16}$$</div>
+<p>Ou si l'on tient vraiement à notre bonne vielle base 10:</p>
+<div class="math">$$abe1_{16}=(10 \times 16^3 + 11 \times 16^2 + 14 \times 16^1 + 1 \times 16^0)_{10}=44001_{10}$$</div>
+<h2 id="methode-comment-passer-de-la-notation-binaire-a-la-notation-hexadecimale">Méthode: comment passer de la notation binaire à la notation hexadécimale ?</h2>
+<p>Pour passer de l’écriture binaire à l’écriture hexadécimale, il suffit de regrouper les chiffres 4 par 4.</p>
+<p><strong>Exemple</strong></p>
+<p>Trouver en base seize la représentation du nombre <span class="math">\(101101_{2}\)</span></p>
+<div class="highlight"><pre><span></span>En base 2:    101101 = 0010 1101
+En base 16:              2    D
+</pre></div>
+
+
+<p>Soit: </p>
+<div class="math">$$101101_{2} = 2D_{16}$$</div>
+<p>On peut vérifier le résultat en base 10:</p>
+<div class="math">$${101101}_2 = + 1 \times 2^5 + 0 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1 \times 2^0 = 13_{10}$$</div>
+<h2 id="exercices_2">Exercices</h2>
+<ol>
+<li>Trouver la représentation en base 16 du nombre binaire: <code>111100011001</code></li>
+<li>Trouver la représentation en base dix du nombre 4e2c (en base seize).</li>
+<li>Trouver la représentation en base seize du nombre 965.</li>
+</ol>
+<p><strong>Source</strong> Tous les exercices de cette page sont issus su livre <a href="http://www.editions-eyrolles.com/Livre/9782212135435/">Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés et des idées de projets par Gilles Dowek</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  <div class="row">
+    <div class="large-9 columns">
+<p class="subheader">Matière: <a href="https://archives.lyceum.fr/2017-2018/isn">isn</a>
+
+    Mots-clés:
+    <a href="https://archives.lyceum.fr/2017-2018/tag/representation-des-entiers.html">représentation des entiers </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/base-2.html">base 2 </a>
+    <a href="https://archives.lyceum.fr/2017-2018/tag/base-16.html">base 16 </a>
+</p>    </div>
+</div>
+</article>
+
+
+    </div>
+    <!-- End Main Content -->
+    <!-- Footer -->
+<div class="footer">
+  <div class="row">
+    <div class="large-3 columns">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licence Creative Commons" src="https://archives.lyceum.fr/2017-2018/theme/images/by-sa.svg" />
+      </a>
+    </div>
+    <div class="large-9 columns">
+      «Codage de l'information en binaire» par Benjamin Abel est mis à disposition selon les termes de la
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 4.0 International</a>.
+    </div>
+  </div>
+</div>    <!-- End footer -->
+    <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/bower_components/foundation/js/foundation.js"></script>
+    <script src="https://archives.lyceum.fr/2017-2018/theme/tipuedrop/tipuedrop.js"></script>
+    <script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <!-- Search bar -->
+    <script>
+    $(document).ready(function()
+    {
+        $('#tipue_drop_input').tipuedrop(
+        {
+            'mode': 'json',
+            'contentLocation': 'https://archives.lyceum.fr/2017-2018/summaries.json'
+        });
+    });
+    </script>
+    <!-- End Search bar -->
+
+    <!-- My global javascript -->
+    <script src="https://archives.lyceum.fr/2017-2018/theme/js/mine.js"></script>
+</body>

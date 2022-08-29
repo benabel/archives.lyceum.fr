@@ -1,0 +1,24 @@
+{
+  "name": "archives",
+  "version": "1.0.0",
+  "description": "Archives du site lyceum.fr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write index/index.html",
+    "start": "onchange index/** -- yarn run build",
+    "build": "rm -rf public && mkdir public && cp -r index/* public && for d in 20*; do mkdir public/$d; cp -r $d/public/* public/$d; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@framagit.org:lyceum/archives.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "onchange": "^7.1.0"
+  }
+}

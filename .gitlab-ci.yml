@@ -1,0 +1,11 @@
+image: node:lts
+
+pages:
+  stage: deploy
+  script:
+  - npm run build
+  artifacts:
+    paths:
+    - public
+  only:
+  - main

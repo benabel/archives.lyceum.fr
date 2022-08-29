@@ -1,0 +1,15 @@
+{
+  "name": "Un svg dynamique avec css et js",
+  "version": "1.0.0",
+  "description": "Exemple interactif du site lyceum.fr",
+  "licence": "MIT",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "latest"
+  }
+}

@@ -1,0 +1,326 @@
+@import 'bootstrap-variables';
+@import 'bootstrap-custom';
+@import 'toc';
+
+body {
+  background: radial-gradient(circle, lighten($cyan, 20%) 0%, $pink 100%);
+}
+
+.container {
+  background: $white;
+  padding-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-variant: small-caps;
+}
+
+a {
+  color: darken($teal, 33%);
+}
+a:hover {
+  color: mix($teal, $indigo);
+}
+
+//footer
+.footer {
+  a {
+    color: $teal;
+  }
+  a:hover {
+    color: $indigo;
+  }
+  div {
+    padding: 0.3em;
+  }
+}
+
+// video plugin: gatsby-remark-embed-video
+.embedVideoIframe {
+  display: block;
+  margin: 0 auto;
+}
+
+// centrage avec la classe center
+
+.center {
+  margin: 15px auto;
+  text-align: center;
+}
+// Images centrées avec la classe center
+
+img.center {
+  display: block;
+  margin: 15px auto;
+  max-width: 100%;
+}
+
+img.full {
+  height: auto;
+  width: 90%;
+}
+
+img.half {
+  height: auto;
+  width: 50%;
+}
+
+img.right {
+  float: right;
+}
+
+img.left {
+  float: left;
+}
+
+//
+// Compteurs
+//
+
+body {
+  counter-reset: h2;
+}
+
+h2 {
+  counter-reset: h3;
+}
+
+h2:before {
+  content: counter(h2, decimal) '. ';
+  counter-increment: h2;
+}
+
+h3:before {
+  content: counter(h2, decimal) '.' counter(h3, lower-latin) '. ';
+  counter-increment: h3;
+  font-variant: normal;
+}
+
+// citations
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: '\201C''\201D''\2018''\2019';
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+// changer le style si on est dans le en plus
+details {
+  blockquote {
+    background: inherit;
+    border-left: 10px solid $yellow;
+  }
+  blockquote:before {
+    color: $yellow;
+  }
+}
+
+// maths avec katex
+span.katex {
+  font-size: 1.3em;
+}
+.katex-display {
+  font-size: 1.5em;
+}
+
+//
+// notebooks
+//
+
+.stream-output {
+  overflow-y: scroll;
+  max-height: 60vh;
+}
+
+// Citations
+//
+.cite-source {
+  &::before {
+    content: 'Source:\00a0';
+  }
+  color: $teal;
+  a {
+    color: darken($teal, 30);
+  }
+}
+
+//
+// Custom blocks
+//
+
+// inspirés de Atlas de Oreilly
+// http://docs.atlas.oreilly.com/writing_in_asciidoc.html
+// ATTENTION: ne pas oublier de changer la couleur du svg
+
+// custom-block définitions
+.custom-block-def {
+  font-size: 1.15rem;
+  margin: 40px;
+  border-top: 4px double $cyan;
+  border-bottom: 4px double $cyan;
+  div.custom-block-heading::before {
+    content: 'DEFINITION: ';
+  }
+  > .custom-block-heading {
+    background-image: url('../assets/icons/graduation-cap-solid.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 35px;
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-left: 40px;
+    color: $cyan;
+    font-weight: bold;
+  }
+  > .custom-block-body {
+    padding-left: 40px;
+    margin-right: 0;
+  }
+}
+
+// custom-block applications
+.custom-block-appli {
+  font-size: 1rem;
+  margin: 40px;
+  summary.custom-block-heading::before {
+    content: 'Application: ';
+  }
+  > .custom-block-heading {
+    background-image: url('../assets/icons/pencil-alt-solid.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 35px;
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-left: 40px;
+    color: $orange;
+    font-weight: bold;
+  }
+  > .custom-block-body {
+    padding-left: 40px;
+    padding: 20px 40px 10px;
+    margin-right: 0;
+    background-color: $orange;
+    color: $indigo;
+  }
+}
+
+// custom-block en plus
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.custom-block-plus {
+  font-size: 1rem;
+  margin: 40px;
+  background-color: $purple;
+  color: $yellow;
+  border-radius: 0.7em 0.7em 0.3em 0.3em;
+  a:hover {
+    text-decoration: none;
+    color: saturate($teal, 100%);
+  }
+  a {
+    color: saturate($yellow, 50%);
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  // Tour noir
+  // -webkit-text-stroke: 0.3px black;
+  > .custom-block-heading {
+    background-image: url('../assets/icons/plus-solid.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 35px;
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-left: 40px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  > .custom-block-body {
+    padding-left: 40px;
+    padding: 20px 40px 10px;
+    margin-right: 0;
+  }
+}
+
+// custom-block propriétés
+.custom-block-prop {
+  font-size: 1.15rem;
+  margin: 40px;
+  border: 2px dashed darken($teal, 50%);
+  border-radius: 1rem;
+  div.custom-block-body::before {
+    content: 'PROPRIETE ';
+    background-image: url('../assets/icons/book-open-solid.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 1.5em;
+    font-weight: bold;
+  }
+  > .custom-block-body {
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 20px;
+    color: darken($teal, 50%);
+  }
+}
+
+// custom-block example et examples
+.custom-block-example {
+  div.custom-block-body::before {
+    content: 'Exemple ';
+    font-weight: bolder;
+  }
+}
+.custom-block-examples {
+  div.custom-block-body::before {
+    content: 'Exemples ';
+    font-weight: bolder;
+  }
+}
+.custom-block-example,
+.custom-block-examples {
+  font-size: 0.95rem;
+  margin: 40px;
+  border: 3px solid $gray-700;
+  border-radius: 19px 0.3em 0.3em 0.3em;
+  > .custom-block-body {
+    background-image: url('../assets/icons/wpexplorer-brands.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 35px;
+    font-size: 1em;
+    margin: -2px 1em 1em -2px;
+    padding-top: 15px;
+    padding-left: 40px;
+    color: $gray-700;
+  }
+}
