@@ -3,7 +3,7 @@
 Archives du site lyceum.fr depuis sa création en 2017.
 
 Compte tenu des limites de taille sur framagit, les archives à partir de
-2021-2022 sont créés sur github.
+2021-2022 sont créés sur gitlab car framagit limite la taille du site.
 
 ## Ajout d'une nouvelle année
 
