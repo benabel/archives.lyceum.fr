@@ -43,8 +43,8 @@ Il existe de nombreuses façons d'écrire des requêtes SQL avec une base de don
 - Via un langage de programmation comme Python grâce au module [`sqlite3`](https://docs.python.org/3/library/sqlite3.html)
 
 Pour illustrer ce cours, nous allons étudier des données situées dans un dépôt
-[framagit](https://framagit.org/eduinfo/binder-sqlite) via un environnement jupyterlab en ligne
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fframagit.org%2Feduinfo%2Fbinder-sqlite/main?urlpath=lab).
+[framagit](https://framagit.org/lyceum/binder-sqlite) via un environnement jupyterlab en ligne
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fframagit.org%2Flyceum%2Fbinder-sqlite/main?urlpath=lab).
 
 ## Le langage SQL
 

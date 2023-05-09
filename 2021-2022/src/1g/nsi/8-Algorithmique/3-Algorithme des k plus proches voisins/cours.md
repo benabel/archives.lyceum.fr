@@ -78,7 +78,7 @@ Le code qui suit utilise des méthodes de `pandas` `matplotlib` et `numpy` non v
 
 Nous allons utiliser un fichier `csv` qui contient les *moyennes, absences et mentions d'élèves de lycée*.
 
-Vous pouvez visualiser ce fichier ici: https://framagit.org/eduinfo/k-plus-proches-voisins/blob/master/data/mentions-anonymised.csv
+Vous pouvez visualiser ce fichier ici: https://framagit.org/lyceum/k-plus-proches-voisins/blob/master/data/mentions-anonymised.csv
 
 A partir de ce fichier de données **l'algorithme sera capable de vous indiquer quelle sera votre mention (Félicitations, compliments...)** en fonction de notre moyenne générale et notre nombre d'absences.
 
@@ -505,9 +505,9 @@ L'élève a maintenant les encouragements.
 
 L'algorithme et les données sont en ligne dans le dépôt suivant:
 
-https://framagit.org/eduinfo/k-plus-proches-voisins
+https://framagit.org/lyceum/k-plus-proches-voisins
 
-Vous pouvez *soit* télécharger le [dossier](https://framagit.org/eduinfo/k-plus-proches-voisins/archive/master.zip) pour travailler sur le code sur votre machine si vous avaez installé python et anconda chez vous.
+Vous pouvez *soit* télécharger le [dossier](https://framagit.org/lyceum/k-plus-proches-voisins/archive/master.zip) pour travailler sur le code sur votre machine si vous avaez installé python et anconda chez vous.
 
 Vous pouvez sinon travailler en ligne en lancant un environment [![Binder](http://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/heoinfo/k-plus-proches-voisins/master?filepath=index.ipynb).
 

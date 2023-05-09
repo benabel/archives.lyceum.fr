@@ -7,8 +7,8 @@
 Vous allez créer une application web, avec un serveur écrit en python, telle que décrite dans le
 cours.
 
-Le code est disponible dans ce dépôt [framagit](https://framagit.org/eduinfo/flask-csv) au format
-[zip](https://framagit.org/eduinfo/flask-csv/-/archive/master/flask-csv-master.zip). Téléchargez-le, puis dézippez-le.
+Le code est disponible dans ce dépôt [framagit](https://framagit.org/lyceum/flask-csv) au format
+[zip](https://framagit.org/lyceum/flask-csv/-/archive/master/flask-csv-master.zip). Téléchargez-le, puis dézippez-le.
 
 Ouvrir le **dossier** dans Visual Studio Code.
 

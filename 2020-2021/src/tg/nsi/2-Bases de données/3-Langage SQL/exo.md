@@ -104,7 +104,7 @@ de données: <http://deptfod.cnam.fr/bd/tp>
 Le dépôt git suivant contient une mini-application web utilisant python pour accéder aux données
 d'une base de données `sqlite`.
 
-<https://framagit.org/eduinfo/flask-sqlite>
+<https://framagit.org/lyceum/flask-sqlite>
 
 Par **groupe de 2 ou 3**, développez l'ébauche d'application proposée pour qu'elle utilise des
 _données intéressantes_ de votre choix mais non personnelles.

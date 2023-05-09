@@ -416,7 +416,7 @@ https://scikit-learn.org/stable/modules/classes.html
 
 Utiliser la documentation de sklearn pour implémenter la recherche des k-plus proches voisins vue
 en classe première en utilisant le jeu de données sur les joueurs du top-14
-[ici](https://framagit.org/eduinfo/binder-notebooks/-/blob/main/kplusproches/joueurs-top14-edit.csv).
+[ici](https://framagit.org/lyceum/binder-notebooks/-/blob/main/kplusproches/joueurs-top14-edit.csv).
 
 :::
 

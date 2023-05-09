@@ -28,11 +28,11 @@ un tableur([LibreOffice](https://fr.libreoffice.org/) de préférence).
 
 Voici un exemple de rendu d'une frise avec `timeline.js`.
 
-[![Copie d'écran d'un exemple de frise](frise-histoire-physique.png)](https://eduinfo.frama.io/timelinejs-local/).
+[![Copie d'écran d'un exemple de frise](frise-histoire-physique.png)](https://lyceum.frama.io/timelinejs-local/).
 
 Vous pouvez visualiser le fichier `csv` de données qui a permis de créer cette
 frise à cette adresse:
-<https://framagit.org/eduinfo/timelinejs-local/-/blob/master/src/timeline-data.csv>.
+<https://framagit.org/lyceum/timelinejs-local/-/blob/master/src/timeline-data.csv>.
 
 La particularité de la librairie [TimelineJS](https://timeline.knightlab.com/),
 est qu'elle permet d'ajouter eu plus du simple texte, des médias issus de
@@ -73,7 +73,7 @@ Voici la signification des entrées de ce tableau de données:
 
 Pour créer votre frise, téléchargez le dossier compressé du code de la frise
 d'exemple à l'adresse suivante:
-<https://framagit.org/eduinfo/timelinejs-local/-/archive/master/timelinejs-local-master.zip>, puis éditez
+<https://framagit.org/lyceum/timelinejs-local/-/archive/master/timelinejs-local-master.zip>, puis éditez
 le fichier `timeline-data.csv` avec le tableur.
 
 Observez le rendu dans le navigateur en ouvrant le fichier `index.html` et en
