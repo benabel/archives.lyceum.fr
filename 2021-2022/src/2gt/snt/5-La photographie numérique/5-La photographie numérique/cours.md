@@ -138,6 +138,6 @@ Un des formats de métadonnées couramment utilisé dans les photos est le forma
 
 Citer au moins cinq métadonnées présentes dans la photo présentée sur cette page:
 
-<https://eduinfo.frama.io/photo-metadata/>
+<https://apps.lyceum.fr/photo-metadata/>
 
 :::

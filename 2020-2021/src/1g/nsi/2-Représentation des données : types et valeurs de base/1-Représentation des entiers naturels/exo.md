@@ -86,7 +86,7 @@ chacune des trois couleurs primaires de la synthèse additive **Rouge, Vert et B
 _Par exemple, le code `#FF0000` représente un niveau maximal à 255 sur le rouge, et des niveaux
 nuls pour le vert et le bleu._
 
-Une animation est disponible à l'adresse suivante: <https://eduinfo.frama.io/css-colors/>
+Une animation est disponible à l'adresse suivante: <https://apps.lyceum.fr/css-colors/>
 
 1. Chaque composante de couleur étant codé sur un octet, donner en décimal et en hexadécimal les
    valeurs minimale, maximale et médiane.

@@ -75,7 +75,7 @@ La plupart des formats ajoutent des données pour décrire le fichier. **Ce sont
 
 Observer les données et métadonnées d'une photo sur cette page:
 
-<https://eduinfo.frama.io/photo-metadata/>
+<https://apps.lyceum.fr/photo-metadata/>
 
 1. Que représentent les données de cette photo?
 2. Donner cinq métadonnées ajoutées à cette photo.

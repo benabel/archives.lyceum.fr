@@ -31,9 +31,9 @@ Un joueur de cartes reçoit 9 cartes lors de la donne en début de partie ; il l
 - Comment procède-t-il exactement pour réaliser cette opération ?
 - Y a-t-il plusieurs façons de procéder :
 
-Vous rendre sur [cette page](https://eduinfo.frama.io/order-cards-game/) sur laquelle vous est proposé un jeu de cartes à trier:
+Vous rendre sur [cette page](https://apps.lyceum.fr/order-cards-game/) sur laquelle vous est proposé un jeu de cartes à trier:
 
-<iframe src="https://eduinfo.frama.io/order-cards-game/" width="960" height="480"></iframe>
+<iframe src="https://apps.lyceum.fr/order-cards-game/" width="960" height="480"></iframe>
 
 
 
