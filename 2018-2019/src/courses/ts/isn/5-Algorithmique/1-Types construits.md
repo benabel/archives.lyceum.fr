@@ -2,7 +2,7 @@
 "tags": ["python", "listes", "dictionnaires"]
 ---
 
-Dans l'[introduction à Python](https://lyceum.fr/ts/isn/1-Introduction-a-Python), nous avions vu certains types et valeurs de base:
+Dans l'[introduction à Python](https://www.lyceum.fr/ts/isn/1-Introduction-a-Python), nous avions vu certains types et valeurs de base:
 
 - `int`: les entiers
 - `float`: les rééls(nombres à virgule flottante)
@@ -20,15 +20,13 @@ Nous verrons dans ce cours deux exemples de variables construits:
 
 ## Listes
 
-
-Les listes sont des collections *ordonnées de valeurs*, elles sont
+Les listes sont des collections _ordonnées de valeurs_, elles sont
 entourées par des crochets `[]`, leurs éléments sont séparés par des
 virgules.
 
 Les éléments d'une liste peuvent avoir des types différents.
 
-
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -44,17 +42,15 @@ type(ma_liste)
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     list
 
-
-
 ### Longueur et accés aux éléments
-On peut facilement accéder à la longueur de la liste grace à la fonction
-`len` et à chacun de ces éléments grâce à leur index *(Attention le
-premier élement à l'index 0)*
 
-------
+On peut facilement accéder à la longueur de la liste grace à la fonction
+`len` et à chacun de ces éléments grâce à leur index _(Attention le
+premier élement à l'index 0)_
+
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -69,12 +65,9 @@ len(ma_liste)
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     3
 
-
-
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -89,14 +82,11 @@ ma_liste[0], ma_liste[2]
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     (1, 3)
-
-
 
 On peut inversement connaître l'indice correspondant à une valeur grâce à l'attribut `index`.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -111,16 +101,13 @@ ma_liste.index('deux')
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     1
-
-
 
 ### Ajout et suppression d'éléments
 
 On peut ajouter des éléments à la liste à la fin avec la méthode `append`, ou à un indice quelconque avec la méthode `insert`.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -136,12 +123,9 @@ ma_liste
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     [1, 'deux', 3, 4]
 
-
-
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -157,14 +141,11 @@ ma_liste
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     ['zéro', 1, 'deux', 3, 4]
-
-
 
 On peut au contraire supprimer des éléments de la liste à la fin avec la méthode `pop()`, ou à un indice quelconque avec la méthode `pop(indice)`.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -180,12 +161,9 @@ ma_liste
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     ['zéro', 1, 'deux', 3]
 
-
-
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -201,10 +179,7 @@ ma_liste
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     ['zéro', 'deux', 3]
-
-
 
 ### Itération sur les valeurs de la liste
 
@@ -212,7 +187,7 @@ On peut utiliser les index ou une méthode simplifiée implémentée dans Python
 
 #### Méthode simplifiée
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -232,15 +207,14 @@ for e in ma_liste:
     deux
     3
 
-
 </div>
 </div>
 
------
+---
 
 #### Itération de l'index
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -260,19 +234,17 @@ for i in range(len(ma_liste)):
     1 deux
     2 3
 
-
 </div>
 </div>
 
------
+---
 
 ## Dictionnaires
 
 Dans un dictionnaire les valeurs de la collection ne sont pas repéré par
-un index, mais par une *clé*. Les dictionnaires sont entourés d'accolades `{}`.
+un index, mais par une _clé_. Les dictionnaires sont entourés d'accolades `{}`.
 
-
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -288,14 +260,11 @@ type(D)
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     dict
-
-
 
 Pour accéder aux éléments du dictionnaire, il suffit d'appeler la clé correspondante, d'autres part la fonction len est égalemnt disponible.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -310,12 +279,9 @@ len(D)
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     3
 
-
-
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -330,16 +296,13 @@ D['nom'], D['age']
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     ('Doe', 77)
-
-
 
 ### Ajout et suppression d'éléments
 
-On peut ajouter des éléments au dictionnaire en **assignant* des clés paire valeur à notre guise.
+On peut ajouter des éléments au dictionnaire en \*_assignant_ des clés paire valeur à notre guise.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -355,14 +318,11 @@ D
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     {'nom': 'Doe', 'prenom': 'John', 'age': 77, 'adresse': 'Nice'}
-
-
 
 On peut au contraire supprimer des éléments du dictionnaire avec la méthode `pop()`.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -378,19 +338,15 @@ D
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     {'nom': 'Doe', 'prenom': 'John', 'adresse': 'Nice'}
 
-
-
 ### Itération sur les dictionnaires
-
 
 Les dictionnaires étant des associations de clés(key) et de valeurs(value), on peut itérer sur les clés, les valeurs, ou les deux.
 
 #### Itération sur les clés: `keys()`
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -413,22 +369,21 @@ for key in D:
     nom
     prenom
     adresse
-    
+
     ou plus simplement
-    
+
     nom
     prenom
     adresse
 
-
 </div>
 </div>
 
------
+---
 
 #### Itération sur les valeurs: `values()`
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -448,15 +403,14 @@ for value in D.values():
     John
     Nice
 
-
 </div>
 </div>
 
------
+---
 
 #### Itération sur les paires clé, valeurs: `items()`
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -476,18 +430,16 @@ for key, value in D.items():
     prenom => John
     adresse => Nice
 
-
 </div>
 </div>
 
------
+---
 
 ## Persistance des données
 
 Les listes et dictionnaires sont des objets **mutables**, c'est à dire que l'on peut modifier leur contenu sans créer un nouvel objet. On dit qu'il s'agit de données [non-persistantes](http://fr.wikipedia.org/wiki/Persistance_%28informatique%29).
 
-
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -532,15 +484,14 @@ print("Suppression d'éléments:\n", liste, dict)
     Suppression d'éléments:
      [2, 3, 4] {'nom': 'Doe', 'prenom': 'John', 'nationalité': 'française'}
 
-
 </div>
 </div>
 
------
+---
 
 Si on a besoin de modifier une liste ou un dictionnaire, mais que l'on veut garder une trace des objets initiaux, il faut commencer par en créer une **copie**, il ne suffit pas de créer une variable suplémentaire sans quoi cette variable serait elle aussi modifiée si l'objet initial changeait: l'assignation est dite par **référence** dans ce cas.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -580,8 +531,7 @@ print("La copie L_copie n'a pas été modifiée:", L_copie)
     La liste L_ref a aussi été modifiée car il s'agit juste d'une référence vers la liste L: [1, 2, 3]
     La copie L_copie n'a pas été modifiée: [1, 'deux', 3]
 
-
 </div>
 </div>
 
------
+---

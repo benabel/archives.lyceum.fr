@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>   Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span> Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>    Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diversité et unité des langages de programmation</td>
+<td>Repérer, dans un nouveau langage de programmation, les traits communs et les traits particuliers à ce langage.</td>
+<td>Les manières dont un même programme simple s’écrit dans différents langages sont comparées.</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<p>Comme nous l’avons vu précédemment un programme permet d’écrire un algorithme afin qu’il soit exécuté par un ordinateur.</p>
+<p>Il existe de très nombreux langages de programmation aujourd’hui, chacun ayant ses forces et ses faiblesses et sera donc adapté à un domaine plutôt qu’à un autre.</p>
+<p>Cette année nous utiliserons deux langages: <a href="https://www.python.org/">Python</a> et <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript">javascript</a>:</p>
+<ul>
+<li><code>Python</code> est très apprécié dans la communauté scientifique</li>
+<li>alors que le <code>javascript</code> est le langage implémenté nativement dans tous les navigateurs web.</li>
+</ul>
+<p>Nous allons voir sur l’exemple de ces deux langages qu’il est possible d’écrire les mêmes algorithmes avec des syntaxes assez proches.</p>
+<h2 id="commentaires" class="anchored">Commentaires</h2>
+<p>Les commentaires sont indispensables pour expliquer votre code à ceux qui le lisent(souvent vous-même quelques jours, semaines ou mois après). En <code>javascript</code> on utilise le double slash pour le commentaire de ligne <code>//</code>.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>python</th>
+<th>javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="highlight"><pre><span></span><span class="c1"># ceci est un commentaire</span>
+</pre></div>
+</td>
+<td><div class="highlight"><pre><span></span><span class="c1">// ceci est un commentaire</span>
+</pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="affectation-de-variable" class="anchored">Affectation de variable</h2>
+<p>Dans les deux langages on utilise le simple signe égal <code>=</code>, on utilise cependant le mot clé <code>var</code> en <code>js</code>.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>python</th>
+<th>javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</td>
+<td><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span>
+</pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="plus"><summary>let et const</summary>
+<p>Les nouvelles versions de javascript ont ajouté les mots-clés <code>const</code> et <code>let</code> pour déclarer des variables respectivement immutables ou mutables.</p>
+</details>
+
+<h2 id="entrées-et-sorties" class="anchored">Entrées et sorties</h2>
+<p>Les entrées permettent de récupérer des données de l’utilisateur pour adapter son fonctionnement aux exigences de ce dernier.</p>
+<p>Les sorties permettent d’afficher les résultats à l’utilisateur.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>python</th>
+<th>javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="highlight"><pre><span></span><span class="c1"># entrée</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Quel age avez-vous?)</span>
+<span class="c1"># sortie</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Votre âge est "</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s2">" ans"</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="highlight"><pre><span></span><span class="c1">// entrée</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">"Quel age avez-vous?"</span><span class="p">)</span>
+<span class="c1">// sortie</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Votre âge est "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" ans"</span><span class="p">)</span>
+</pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="instructions-conditionnelles" class="anchored">Instructions conditionnelles</h2>
+<p>Dans les deux langages on utilise les mots-clef <code>if</code> et <code>else</code> cependant le <code>elif</code> n’existe pas en <code>js</code>. On utilise <code>else if</code>.</p>
+<p>D’autre part, le javascript n’utilise pas l’indentation pour définir les blocs de code, il les place entre accolades <code>{}</code></p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>python</th>
+<th>javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">:</span>
+<span class="nb">    print</span><span class="p">(</span><span class="s2">"Vous êtes majeur"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;</span><span class="mi">16</span><span class="p">:</span>
+<span class="nb">    print</span><span class="p">(</span><span class="s2">"Bientôt majeur"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="nb">    print</span><span class="p">(</span><span class="s2">"Soyez patient"</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Vous êtes majeur`</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">16</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Bientôt majeur`</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Soyez patient`</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boucles" class="anchored">Boucles</h2>
+<p>Les deux langages définissent les boucles <code>for</code> et <code>while</code>.</p>
+<h3 id="boucle-for" class="anchored">Boucle <code>for</code></h3>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>python</th>
+<th>javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="boucle-while" class="anchored">Boucle <code>while</code></h3>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>python</th>
+<th>javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># initialisation</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># condition d'arrêt</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1">    # incrémentation de l'indice</span>
+<span class="n">    i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="nb">    print</span><span class="p">(</span><span class="s2">"Soyez patient"</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="c1">// initialisation</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// condition d'arrêt</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// incrémentation de l'indice</span>
+<span class="w">    </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span>
+<span class="p">}</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Soyez patient`</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fonctions" class="anchored">Fonctions</h2>
+<h3 id="définition-de-la-fonction" class="anchored">Définition de la fonction</h3>
+<p>En python le mot clef utilisé est <code>def</code> et <code>function</code> en javascript, dans les deux cas le retour de fonction se fait par le mot-clé <code>return</code>.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>python</th>
+<th>javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">carré</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
+<span class="k">    return</span> <span class="n">nb</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</td>
+<td><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">carré</span><span class="w"> </span><span class="p">(</span><span class="nx">nb</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">nb</span><span class="o">**</span><span class="mf">2</span>
+<span class="p">}</span>
+</pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="appel-de-la-fonction" class="anchored">Appel de la fonction</h3>
+<p>Même syntaxe, on écrit le nom de la fonction avec le ou les arguments de la fonction entre parenthèse.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>python</th>
+<th>javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="highlight"><pre><span></span><span class="n">carré</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td>
+<td><div class="highlight"><pre><span></span><span class="nx">carré</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span>
+</pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="plus"><summary>Fonction sans paramètres</summary>
+<p>Une fonction peut ne pas avoir de paramètres, mais son appel <strong>nécessite</strong> la présence des parenthèses.</p>
+<div class="highlight"><pre><span></span>compte()
+</pre></div>
+
+</details>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

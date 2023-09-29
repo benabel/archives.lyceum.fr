@@ -1,0 +1,245 @@
+---
+tags: ["cours", "terminale", "lycée", "numérique et sciences informatiques", "nsi"]
+tocHTML: '<ul><li><a href="#le-langage-sql" data-localhref="true">Le langage SQL</a></li><li><a href="#construire-des-requêtes-dinterrogation" data-localhref="true">Construire des requêtes d’interrogation</a></li><ul><li><a href="#choisir-les-colonnes-à-afficher-avec-select" data-localhref="true">Choisir les colonnes à afficher avec <code>SELECT</code></a></li><li><a href="#restreindre-les-lignes-avec-where" data-localhref="true">Restreindre les lignes avec <code>WHERE</code></a></li><li><a href="#jointure-de-deux-tables-avec-join" data-localhref="true">Jointure de deux tables avec <code>JOIN</code></a></li><li><a href="#les-clauses-distinct-order-by-et-group-by" data-localhref="true">Les clauses <code>DISTINCT</code> <code>ORDER BY</code> et <code>GROUP BY</code></a></li></ul><li><a href="#construire-des-requêtes-dinsertion-et-de-mise-à-jour" data-localhref="true">Construire des requêtes d’insertion et de mise à jour</a></li><ul><li><a href="#ajouter-des-entrées-avec-insert" data-localhref="true">Ajouter des entrées avec <code>INSERT</code></a></li><li><a href="#mettre-à-jour-des-informations-avec-update" data-localhref="true">Mettre à jour des informations avec <code>UPDATE</code></a></li><li><a href="#supprimer-des-entrées-avec-delete" data-localhref="true">Supprimer des entrées avec <code>DELETE</code></a></li></ul></ul>'
+---
+
+
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>    Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>    Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>       Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Langage SQL : requêtes d’interrogation et de mise à jour d’une base de données.</td>
+<td><p>Identifier les composants d’une requête.</p>
+<p>Construire des requêtes d’interrogation à l’aide des clauses du langage SQL : <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>JOIN</code>.</p>
+<p>Construire des requêtes d’insertion et de mise à jour à l’aide de : <code>UPDATE</code>, <code>INSERT</code>, <code>DELETE</code>.</p></td>
+<td>On peut utiliser <code>DISTINCT</code>, <code>ORDER BY</code> ou les fonctions d’agrégation sans utiliser les clauses <code>GROUP BY</code> et <code>HAVING</code>.</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<!-- A VOIR https://fr.wikipedia.org/wiki/Alg%C3%A8bre_relationnelle pour les fondements algébriques du sql 
+
+-->
+<div class="intro">
+<p><wc-wikimage class="half right" title="SQL_Joins.svg"></wc-wikimage></p>
+<blockquote class="blockquote">
+<p>Maintenant que nous avons vu comment étaient organisées les bases de données, et comment elles étaient maintenues conformes, nous allons interagir avec elles en utilisant le langage <code>SQL</code>(<em>Structured Query Language</em>) pour interroger ou écrire dans une base de données.</p>
+</blockquote>
+</div>
+<p>Dans ce cours, nous allons utiliser le SGBD <code>sqlite3</code> qui permet de stocker des petites bases de données dans des fichiers.</p>
+<p>Il existe de nombreuses façons d’écrire des requêtes SQL avec une base de données <code>sqlite</code>:</p>
+<ul>
+<li>En interface graphique avec <a href="https://sqlitebrowser.org/">sqlitebrowser</a>,</li>
+<li>En console, en lançant: <code>sqlite3 nom_de_ma_bdd.db</code>.</li>
+<li>Dans le navigateur grâce à <a href="https://github.com/sql-js/sql.js"><code>sql.js</code></a> voir https://apps.lyceum.fr/sqlite par exemple.</li>
+<li>Via un langage de programmation comme Python grâce au module <a href="https://docs.python.org/3/library/sqlite3.html"><code>sqlite3</code></a></li>
+</ul>
+<p>Pour illustrer ce cours, nous allons étudier des données situées dans la base de données peinture de la page https://apps.lyceum.fr/sqlite.</p>
+<h2 id="le-langage-sql" class="anchored">Le langage SQL</h2>
+<p>Les instructions SQL s’écrivent d’une manière qui ressemble à celle de phrases ordinaires en anglais. C’est un langage <strong>déclaratif</strong>, c’est-à-dire qu’il permet de décrire le résultat escompté, sans décrire la manière de l’obtenir.</p>
+<p>Le langage <code>SQL</code> n’est pas sensible à la casse, mais a l’<em>habitude d’écrire les instructions en majuscules</em>, on peut écrire les instructions sur plusieurs lignes avec ou sans indentation et chaque instruction doit être terminée par un <em>point-virgule</em>.</p>
+<p>Nous verrons cette année les instructions de manipulation du contenu de la base de données qui commencent par les mots clés:</p>
+<ul>
+<li><code>SELECT</code>: recherche de contenu;</li>
+<li><code>UPDATE</code>: modification,</li>
+<li><code>INSERT</code>: ajout,</li>
+<li><code>DELETE</code> suppression.</li>
+</ul>
+<div class="example">
+<p>Étudions dans la console les tables contenues dans la base de données <code>peintures</code>.</p>
+<p>Dont le schéma est le suivant:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/peinture-diag.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Schéma relationnel de la bdd peinture.db</figcaption><p></p>
+</figure>
+</div>
+<p>Ouvrir la page https://apps.lyceum.fr/sqlite puis sélectionner la base de données <code>peinture</code>.</p>
+<p>Maintenant dans l’éditeur <code>sql</code>, on peut interagir avec la bdd, par exemple en affichant tous les peintres de la table <code>peintres</code>.</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">peintre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintres</span><span class="p">;</span>
+</pre></div>
+
+<p>Pour exécuter une commande <code>sql</code>, vous pouvez utiliser <code>CTRL+Entrée</code>.</p>
+</div>
+<h2 id="construire-des-requêtes-dinterrogation" class="anchored">Construire des requêtes d’interrogation</h2>
+<p>Pour afficher tous les enregistrements d’une table on utilise:</p>
+
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tablename</span><span class="p">;</span>
+</pre></div>
+
+<div class="examples">
+<p>On va commencer par afficher toutes les entrées de:</p>
+<ul>
+<li>La table <code>peintres</code>: <code>SELECT * FROM peintres;</code>,</li>
+<li>puis <code>peintures</code>: <code>SELECT * FROM peintures;</code>.</li>
+</ul>
+<p>On peut limiter le nombre de lignes affichées avec <code>LIMIT</code>, par exemple pour n’afficher que trois enregistrements de la sélection: <code>SELECT * FROM peintres LIMIT 3;</code>,</p>
+</div>
+<h3 id="choisir-les-colonnes-à-afficher-avec-select" class="anchored">Choisir les colonnes à afficher avec <code>SELECT</code></h3>
+
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tablename</span><span class="p">;</span>
+</pre></div>
+
+<div class="example">
+<p>On va récupérer le nom et le sexe du peintre:</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">sexe</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintres</span><span class="p">;</span>
+</pre></div>
+
+</div>
+<h3 id="restreindre-les-lignes-avec-where" class="anchored">Restreindre les lignes avec <code>WHERE</code></h3>
+<p>On sélectionne les tableaux peints en 1503.</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintures</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="o">=</span><span class="ss">"1503"</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="jointure-de-deux-tables-avec-join" class="anchored">Jointure de deux tables avec <code>JOIN</code></h3>
+<p>Dans cette base de données, les informations sur les peintres et sur les peintures ont été séparées, ce qui est bien pour éviter la redondance et les risques d’anomalies.</p>
+<div class="prop">
+<p>La jointure permet d’utiliser les clés secondaires pour aller rechercher les données d’une autre table grâce à la clé étrangère.</p>
+</div>
+
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">table1</span><span class="p">.</span><span class="n">attribut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table2</span><span class="p">.</span><span class="n">attribut</span>
+</pre></div>
+
+<div class="example">
+<p>Par exemple, la requête: <code>SELECT * FROM peintures WHERE titre="La Joconde";</code></p>
+<p>renvoie:</p>
+<div class="highlight"><pre><span></span><span class="mf">12418</span><span class="err">|</span><span class="n">La</span><span class="w"> </span><span class="n">Joconde</span><span class="err">|</span><span class="mf">1503</span><span class="err">|</span><span class="mf">762</span><span class="err">|</span><span class="n">Haute</span><span class="w"> </span><span class="n">Renaissance</span><span class="err">|</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">commons</span><span class="mf">.</span><span class="n">wikimedia</span><span class="mf">.</span><span class="ow">or</span><span class="n">g</span><span class="o">/</span><span class="n">wiki</span><span class="o">/</span><span class="n">Special</span><span class="p">:</span><span class="n">FilePath</span><span class="o">/</span><span class="n">Mona%</span><span class="mf">20</span><span class="n">Lisa%</span><span class="mf">2</span><span class="n">C%</span><span class="mf">20</span><span class="n">by%</span><span class="mf">20</span><span class="n">Leonardo%</span><span class="mf">20</span><span class="n">da%</span><span class="mf">20</span><span class="n">Vinci%</span><span class="mf">2</span><span class="n">C%</span><span class="mf">20</span><span class="n">from%</span><span class="mf">20</span><span class="n">C2RMF%</span><span class="mf">20</span><span class="n">retouched</span><span class="mf">.</span><span class="n">jpg</span>
+</pre></div>
+
+<p>Ainsi le peintre est identifié par son id <code>762</code>, c’est bien pour la base de données, mais pas pour l’utilisateur qui veut connaitre le nom du peintre.</p>
+<p>Il va falloir aller chercher cette information dans la deuxième table: <code>peintres</code> et faire une jointure pour afficher toutes les informations souhaitées.</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">annee</span><span class="p">,</span><span class="w"> </span><span class="n">peintre</span><span class="p">,</span><span class="w"> </span><span class="n">pays</span><span class="p">,</span><span class="w"> </span><span class="n">date_naissance</span><span class="p">,</span><span class="w"> </span><span class="n">date_mort</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintures</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">peintres</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">peintures</span><span class="p">.</span><span class="n">id_peintre</span><span class="o">=</span><span class="n">peintres</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="o">=</span><span class="ss">"La Joconde"</span><span class="p">;</span>
+</pre></div>
+
+<p>Qui renvoie:</p>
+<div class="highlight"><pre><span></span>La Joconde  |   1503    |   Léonard de Vinci    |   République florentine   |   1452-04-24T00:00:00Z    |   1519-05-12T00:00:00Z
+</pre></div>
+
+<p>Comme vous le voyez il est possible ou nécessaire de préciser d’où vient la colonne sélectionnée avec une notation pointée comme: <code>peintures.id</code> de la forme <code>nom_de_la_table.nom_de_la_colonne</code></p>
+</div>
+<h3 id="les-clauses-distinct-order-by-et-group-by" class="anchored">Les clauses <code>DISTINCT</code> <code>ORDER BY</code> et <code>GROUP BY</code></h3>
+<p>Voici deux instructions supplémentaires qui peuvent être utiles:</p>
+<ul>
+<li><p><code>DISTINCT</code>: Ne pas renvoyer les doublons.</p>
+
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">ma_colonne</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">nom_du_tableau</span><span class="p">;</span>
+</pre></div>
+
+<div class="example">
+<p>De nombreux peintres proviennent du même pays. Ainsi la requête suivante va renvoyer des doublons.</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">pays</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintres</span><span class="p">;</span>
+</pre></div>
+
+<p>On ajoute <code>DISTINCT</code> pour n’afficher que des valeurs distinctes.</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">pays</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintres</span><span class="p">;</span>
+</pre></div>
+
+</div></li>
+</ul>
+<p>Cette requête sélectionne le champ <code>ma_colonne</code> de la table <code>nom_du_tableau</code> en évitant de retourner des doublons.</p>
+<ul>
+<li><p><code>ORDER BY</code>: Permet d’ordonner les résultats selon la colonne de votre choix.</p>
+
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">table</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">colonne1</span><span class="w"> </span><span class="p">[</span><span class="k">ASC</span><span class="o">|</span><span class="k">DESC</span><span class="p">];</span>
+</pre></div>
+
+<p>Cette requête sélectionne les champs <code>colonne1</code> et <code>colonne2</code> de la table <code>table</code> et classe la sélection par ordre croissant sur la <code>colonne1</code>.</p>
+<div class="example">
+<p>On classe les tableaux par date croissante.</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">annee</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">peintures</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">annee</span><span class="p">;</span>
+</pre></div>
+
+<p>On ajoute <code>DISTINCT</code> pour n’afficher que des valeurs distinctes.</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">pays</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintres</span><span class="p">;</span>
+</pre></div>
+
+</div></li>
+<li><p><code>GROUP BY</code>: grouper plusieurs résultats et utiliser une fonction d’agrégation (<code>SUM</code>, <code>AVG</code>, <code>COUNT</code>, <code>MAX</code>, <code>MIN</code>) sur un groupe de résultat.</p>
+
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">table</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">colonne1</span><span class="p">;</span>
+</pre></div>
+
+<div class="example">
+<p>On regroupe les peintres par pays en comptant le nombre de peintres par pays.</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">pays</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">pays</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintres</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">pays</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">pays</span><span class="p">)</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</pre></div>
+
+</div></li>
+</ul>
+<h2 id="construire-des-requêtes-dinsertion-et-de-mise-à-jour" class="anchored">Construire des requêtes d’insertion et de mise à jour</h2>
+<h3 id="ajouter-des-entrées-avec-insert" class="anchored">Ajouter des entrées avec <code>INSERT</code></h3>
+<p>Grâce au SQL, nous pouvons aussi ajouter des informations dans une table avec la commande <code>INSERT INTO</code>. Pour ce faire, il faut indiquer la table dans laquelle on souhaite intégrer une ligne ainsi que la liste des champs pour lesquels on spécifie une valeur, et enfin la liste des valeurs correspondantes.</p>
+
+<div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="k">VALUES</span>
+<span class="p">(</span><span class="n">val1</span><span class="p">,</span><span class="w"> </span><span class="n">val2</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">valN</span><span class="p">)</span>
+</pre></div>
+
+<div class="example">
+<p>Ajout d’un tableau La Joconde 2.</p>
+<div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">peintures</span><span class="w"> </span><span class="k">VALUES</span>
+<span class="p">(</span><span class="mi">124181</span><span class="p">,</span><span class="w"> </span><span class="ss">"La Joconde 2 Le retour"</span><span class="p">,</span><span class="w"> </span><span class="mi">1504</span><span class="p">,</span><span class="w"> </span><span class="mi">762</span><span class="p">,</span><span class="w"> </span><span class="ss">"Haute Renaissance"</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">);</span>
+</pre></div>
+
+</div>
+<h3 id="mettre-à-jour-des-informations-avec-update" class="anchored">Mettre à jour des informations avec <code>UPDATE</code></h3>
+<p>On peut modifier certains champs d’enregistrements existants grâce au mot-clé <code>UPDATE</code> : cette instruction permet de mettre à jour plusieurs champs de plusieurs enregistrements d’une table, à partir des expressions qui lui sont fournies.</p>
+
+<div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">col1</span><span class="o">=</span><span class="n">val1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">coli</span><span class="o">=</span><span class="ss">"valeur"</span><span class="p">;</span>
+</pre></div>
+
+<div class="example">
+<p>Mise à jour de la Joconde 2.</p>
+<div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">peintures</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">annee</span><span class="o">=</span><span class="mi">1505</span><span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">124181</span><span class="p">;</span>
+</pre></div>
+
+<p>On peut vérifier la mise à jour avec: <code>SELECT * FROM peintures WHERE id=124181;</code></p>
+</div>
+<h3 id="supprimer-des-entrées-avec-delete" class="anchored">Supprimer des entrées avec <code>DELETE</code></h3>
+<p>Il se peut que l’on soit amené à supprimer un ou plusieurs enregistrements d’une table, il existe pour cela l’instruction <code>DELETE FROM</code>.</p>
+
+<div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">coli</span><span class="o">=</span><span class="ss">"valeur"</span><span class="p">;</span>
+</pre></div>
+
+<div class="example">
+<p>On va supprimer la Joconde 2.</p>
+<div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">peintures</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">124181</span><span class="p">;</span>
+</pre></div>
+
+<p>On peut vérifier la suppression avec: <code>SELECT * FROM peintures WHERE id=124181;</code></p>
+</div>
+<div class="ref">
+<ul>
+<li><a href="https://openclassrooms.com/fr/courses/993975-apprenez-a-programmer-en-vb-net/992711-introduction-au-langage-sql">Cours OpenClassRoom de Thomas Martinet sous licence CC-BY-NC-SA</a></li>
+</ul>
+</div>
+

@@ -1,0 +1,314 @@
+---
+tags: ["cours", "terminale", "lycée", "numérique et sciences informatiques", "nsi"]
+tocHTML: '<ul><li><a href="#les-graphes-une-structure-de-données-non-linéaire" data-localhref="true">Les graphes : une structure de données non linéaire</a></li><li><a href="#vocabulaire-des-graphes" data-localhref="true">Vocabulaire des graphes</a></li><li><a href="#quelques-exemples-de-graphes" data-localhref="true">Quelques exemples de graphes</a></li><ul><li><a href="#internet" data-localhref="true">Internet</a></li><li><a href="#réseaux-sociaux" data-localhref="true">Réseaux sociaux</a></li><li><a href="#graphes-routiers" data-localhref="true">Graphes routiers</a></li></ul><li><a href="#comment-implémenter-un-graphe" data-localhref="true">Comment implémenter un graphe?</a></li><ul><li><a href="#la-liste-de-successeursprédécesseurs" data-localhref="true">La liste de successeurs/prédécesseurs</a></li><li><a href="#la-matrice-dadjacence" data-localhref="true">La matrice d’adjacence</a></li><li><a href="#implémentations-en-python" data-localhref="true">Implémentations en Python</a></li></ul></ul>'
+---
+
+
+
+
+
+<p><strong>Ce chapitre ne pourra pas faire l’objet d’une évaluation lors de l’épreuve terminale écrite et pratique de l’enseignement de spécialité.</strong> <a href="https://www.education.gouv.fr/bo/21/Hebdo30/MENE2121274N.htm" class="cite-source">BO MENE2121274N</a></p>
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Graphes : structures relationnelles.</p>
+<p>Sommets, arcs, arêtes, graphes orientés ou non orientés.</p></td>
+<td><p>Modéliser des situations sous forme de graphes.</p>
+<p>Écrire les implémentations correspondantes d’un graphe : matrice d’adjacence, liste de successeurs/de prédécesseurs.</p>
+<p>Passer d’une représentation à une autre.</p></td>
+<td><p>On s’appuie sur des exemples comme le réseau routier, le réseau électrique, Internet, les réseaux sociaux.</p>
+<p>Le choix de la représentation dépend du traitement qu’on veut mettre en place : on fait le lien avec la rubrique « algorithmique ».</p></td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro">
+<p><wc-wikimage title="Random-graph-Erdos_generated_network.svg" class="half right"></wc-wikimage></p>
+<p>Dans ce chapitre, nous étudions les <em>graphes</em>, une structure de données très utilisée pour représenter les liens et les interactions entre des objets, les personnes, les villes, les ordinateurs… En effet, nous verrons qu’il existe de nombreuses variétés de <em>graphes</em> permettant ainsi de décrire des situations diverses, tout en conservant, une même représentation et donc des mêmes méthodes pour les manipuler par informatique.</p>
+</div>
+<h2 id="les-graphes-une-structure-de-données-non-linéaire" class="anchored">Les graphes : une structure de données non linéaire</h2>
+<p>Vous êtes déjà habitués à manipuler des listes, n-uplets ou encore les piles et les files, qui sont des exemples de <em>structures de données linéaires</em>, c’est-à-dire à une dimension, on peut les parcourir du début à la fin en suivant <em>un seul chemin</em>.</p>
+<p>Dans le chapitre précédent, nous avons vu les <a href="../../1-structures-de-donnees/4-arbres">arbres</a>, un exemple structure de données non linéaire très utilisée pour représenter une hiérarchie entre des données comme des liens de descendance dans un arbre généalogique.</p>
+<p>En fait, les arbres sont des graphes avec bien particuliers tels que tous les sommets sauf la racine ont un unique parent(on parle de <em>graphe acyclique orienté</em>).</p>
+<p>Maintenant que nous parlons de graphe, il n’existe plus aucune restriction, il n’y a plus de racine, plus de restriction sur les parents, les enfants, ou quoi que ce soit.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/arbre-vs-graphe.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Graphe et arbres</figcaption><p></p>
+</figure>
+</div>
+<dl>
+<dt>
+graphe
+</dt>
+<dd>
+<div>
+<p>Un graphe est une structure de données composée d’objets: les <em>sommets</em> dans laquelle certaines paires d’objets sont reliées par des <em>arêtes</em> (ou arcs dans le cas de graphes orientés).</p>
+</div>
+</dd>
+</dl>
+<p><a href="lexique" class="cite-source">Lexique de la théorie des graphes</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/graphe-vocab.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sommets et arêtes sur un graphe</figcaption><p></p>
+</figure>
+</div>
+<dl>
+<dt>
+Graphe orienté
+</dt>
+<dd>
+<div>
+<p>On distingue les graphes <em>non orientés</em>, où les arêtes relient deux sommets de <em>manière symétrique</em> et les graphes <em>orientés</em>, où les arêtes, alors appelés <em>arcs</em>, relient deux sommets de manière asymétrique.</p>
+<p><a href="lexique">Lexique de la théorie des graphes</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/graphe-orientation.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Graphes orientés et non orientés</figcaption><p></p>
+</figure>
+</div>
+</div>
+</dd>
+<dt>
+Graphe pondéré
+</dt>
+<dd>
+<div>
+<p>Un graphe pondéré ou un réseau est un graphe où chaque arête porte un nombre (son poids).</p>
+<p><wc-wikimage class="half center" title="Weighted_network.png"></wc-wikimage></p>
+<p>Ces poids peuvent représenter par exemple des coûts, des longueurs ou des capacités, en fonction du problème traité. Ces graphes sont fréquents dans divers contextes, comme le problème de plus court chemin ou le problème du voyageur de commerce.</p>
+</div>
+</dd>
+</dl>
+<h2 id="vocabulaire-des-graphes" class="anchored">Vocabulaire des graphes</h2>
+<dl>
+<dt>
+Sommets adjacents
+</dt>
+<dd>
+<div>
+<p>Deux sommets reliés par une arête sont dits adjacents.</p>
+</div>
+</dd>
+<dt>
+Graphe complet
+</dt>
+<dd>
+<div>
+<p>Un graphe est dit complet lorsque tous ses sommets sont adjacents.</p>
+</div>
+</dd>
+<dt>
+Ordre d’un graphe
+</dt>
+<dd>
+<div>
+<p>L’ordre d’un graphe est le nombre de sommets de ce graphe.</p>
+</div>
+</dd>
+<dt>
+Degré d’un sommet
+</dt>
+<dd>
+<div>
+<p>Le degré d’un sommet est le nombre d’arêtes dont ce sommet est une extrémité.</p>
+</div>
+</dd>
+</dl>
+<p><a href="lexique">Lexique de la théorie des graphes</a></p>
+<h2 id="quelques-exemples-de-graphes" class="anchored">Quelques exemples de graphes</h2>
+<p>En fait les graphes sont omniprésents, car il est rare que l’information puisse être réduite à une structure linéaire comme les listes ou encore à un arbre dans lequel la descendance est parfaitement établie.</p>
+<h3 id="internet" class="anchored">Internet</h3>
+<div class="clearfix">
+<p><wc-wikimage title="Internet_map_1024.jpg" class="half right" caption=""></wc-wikimage></p>
+<p>Prenons l’exemple d’internet, le réseau internet est un ensemble de machines sont identifiées par leur adresse IP. Elles sont reliées entre elles <em>sans une machine mère</em> qui centralise les échanges et dans lequel le chemin des paquets n’est pas unique entre deux machines grâce aux protocoles de routage.</p>
+<p>Lorsque nous cliquons entre des sites Web et que nous naviguons entre les URL, nous naviguons vraiment à travers un graphe. Parfois, ces graphiques ont des sommets avec des bords non orientés - je peux aller et venir d’une page Web à une autre - et d’autres qui sont dirigés - je ne peux que passer de la page Web A à la page Web B, et jamais l’inverse.</p>
+<p>Mais il y a un meilleur exemple qui illustre magnifiquement nos interactions quotidiennes avec les graphes: les <em>réseaux sociaux</em>.</p>
+</div>
+<h3 id="réseaux-sociaux" class="anchored">Réseaux sociaux</h3>
+<p>Prenons l’exemple des réseaux sociaux tels sur Facebook ou son alternative libre <a href="https://diasporafoundation.org/">Diaspora</a>.</p>
+<p>Dans ce type de réseau social:</p>
+<ul>
+<li>les sommets sont les utilisateurs</li>
+<li>les arêtes sont les liens d’amitié entre ces utilisateurs.</li>
+</ul>
+<p><img src="../../images/medium-social-graph.jpeg" class="img-fluid" alt="Réseau social d’amis"> <a href="https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8" class="cite-source">A gentle introduction to graph theory</a></p>
+<p>L’amitié se veut être un lien bidirectionnel, on ne peut être ami de quelqu’un qui n’est pas votre ami: <strong>C’est un graphe non-orienté</strong>.</p>
+<p>Au contraire dans les réseaux de microblogging comme Twiter ou son alternative libre <a href="https://mastodon.social/about">Mastodon</a>, les liens ne sont pas de la même nature.</p>
+<p>On peut suivre une personne, mais il n’est pas obligatoire que cette personne vous suivre en retour.</p>
+<p><img src="../../images/medium-social-graph-directed.jpeg" class="img-fluid" alt="Réseau social d’amis avec suivi"> <a href="https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8" class="cite-source">A gentle introduction to graph theory</a></p>
+<p>Le suivi est un lien directionnel : <strong>C’est un graphe non-orienté</strong>.</p>
+<h3 id="graphes-routiers" class="anchored">Graphes routiers</h3>
+<div class="clearfix">
+<p><wc-wikimage class="half right" title="Carte_TGV.svg" caption="Carte du réseau ferroviare des TGV"></wc-wikimage></p>
+<p>Les graphes routiers sont un bel exemple de graphes <strong>pondérés non-orientés</strong>. On peut utiliser le temps ou la distance pour la pondération.</p>
+<p>On place souvent les sommets à leur position réelle sur une carte sur ce type de graphes.</p>
+</div>
+<h2 id="comment-implémenter-un-graphe" class="anchored">Comment implémenter un graphe?</h2>
+<p>Il existe deux façons d’implémenter un graphe:</p>
+<ul>
+<li>La matrice d’adjacence,</li>
+<li>la liste de successeurs/prédécesseurs.</li>
+</ul>
+<p>Nous allons voir comment réaliser ces deux implémentations, et comment passer de l’une à l’autre.</p>
+<h3 id="la-liste-de-successeursprédécesseurs" class="anchored">La liste de successeurs/prédécesseurs</h3>
+<dl>
+<dt>
+Liste d’adjacence
+</dt>
+<dd>
+<div>
+<p>La liste d’adjacence d’un graphe non orienté, est la liste des voisins de chaque sommet.</p>
+</div>
+</dd>
+</dl>
+<p><a href="https://fr.wikipedia.org/wiki/Liste_d%27adjacence" class="cite-source">Article Wikipédia sur la liste d’adjacence</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/liste-adjacence-graph-non-oriente.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Liste d’adjacence d’un graphe orienté</figcaption><p></p>
+</figure>
+</div>
+<h3 id="la-matrice-dadjacence" class="anchored">La matrice d’adjacence</h3>
+<dl>
+<dt>
+Matrice d’adjacence
+</dt>
+<dd>
+<div>
+<p>On représente les liens entre les <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>
+sommets du graphe par une matrice de dimension <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>
+dont l’élément non diagonal <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>
+est le nombre d’arêtes (ou son poids pour un graphe pondéré) liant le sommet <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+au sommet <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>
+.</p>
+</div>
+</dd>
+</dl>
+<p>L’élément diagonal <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{ii}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ii</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+est le nombre de boucles au sommet i.</p>
+<p>Dans le cas d’un graphe non orienté, la matrice d’adjacence est <em>symétrique</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/matrice-adjacence-graph-non-oriente.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Matrice d’adjacence d’un graphe non orienté</figcaption><p></p>
+</figure>
+</div>
+<p>Pour un graphe orienté, elle est quelconque.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/matrice-adjacence-graph-oriente.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Matrice d’adjacence d’un graphe orienté</figcaption><p></p>
+</figure>
+</div>
+<p><a href="https://fr.wikipedia.org/wiki/Matrice_d%27adjacence" class="cite-source">Article Wikipédia sur les matrices d’adjacence</a></p>
+<details class="plus"><summary>Quelle implémentation choisir?</summary>
+<p>Cette représentation est particulièrement adaptée aux graphes creux (c’est-à-dire peu denses), contrairement à la matrice d’adjacence adaptée aux graphes denses.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Implémentation</th>
+<th>Accès à une arête</th>
+<th>Accès à un voisin</th>
+<th>Utilisation préférée</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>matrice d’adjacence</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+</td>
+<td>Graphe dense</td>
+</tr>
+<tr class="even">
+<td>liste de successeurs</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+<td>Graphe creux</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h3 id="implémentations-en-python" class="anchored">Implémentations en Python</h3>
+<p>Le créateur de Python Guido Von Rossum, proposa une implémentation de graphe en Python utilisant la <strong>liste d’adjacence</strong>(https://www.python.org/doc/essays/graphs/):</p>
+<blockquote class="blockquote">
+<p>Few programming languages provide direct support for graphs as a data type, and Python is no exception. However, graphs are easily built out of lists and dictionaries. For instance, here’s a simple graph (I can’t use drawings in these columns, so I write down the graph’s arcs):</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">B</span>
+<span class="n">A</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">C</span>
+<span class="n">B</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">C</span>
+<span class="n">B</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">D</span>
+<span class="n">C</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">D</span>
+<span class="n">D</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">C</span>
+<span class="n">E</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">F</span>
+<span class="n">F</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">C</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'A'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">],</span>
+<span class="s1">         'B'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">],</span>
+<span class="s1">         'C'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'D'</span><span class="p">],</span>
+<span class="s1">         'D'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'C'</span><span class="p">],</span>
+<span class="s1">         'E'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'F'</span><span class="p">],</span>
+<span class="s1">         'F'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'C'</span><span class="p">]}</span>
+</pre></div>
+
+<p>En ce qui concerne les <strong>matrices</strong>, on les représente généralement sous forme de tableaux de tableaux, comme vu en <a href="/1g/nsi/3-representation-des-donnees-types-construits/2-usages-avances-des-tableaux#tableaux-à-deux-dimensions-les-matrices">première</a>.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center center center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>4</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>5</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>6</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>7</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>8</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>9</mn></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">
+\begin{pmatrix}
+   1 &amp; 2 &amp; 3\\
+   4 &amp; 5 &amp; 6\\
+   7 &amp; 8 &amp; 9 
+\end{pmatrix}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.875em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.875em" height="3.600em" viewBox="0 0 875 3600"><path d="M863,9c0,-2,-2,-5,-6,-9c0,0,-17,0,-17,0c-12.7,0,-19.3,0.3,-20,1
+c-5.3,5.3,-10.3,11,-15,17c-242.7,294.7,-395.3,682,-458,1162c-21.3,163.3,-33.3,349,
+-36,557 l0,84c0.2,6,0,26,0,60c2,159.3,10,310.7,24,454c53.3,528,210,
+949.7,470,1265c4.7,6,9.7,11.7,15,17c0.7,0.7,7,1,19,1c0,0,18,0,18,0c4,-4,6,-7,6,-9
+c0,-2.7,-3.3,-8.7,-10,-18c-135.3,-192.7,-235.5,-414.3,-300.5,-665c-65,-250.7,-102.5,
+-544.7,-112.5,-882c-2,-104,-3,-167,-3,-189
+l0,-92c0,-162.7,5.7,-314,17,-454c20.7,-272,63.7,-513,129,-723c65.3,
+-210,155.3,-396.3,270,-559c6.7,-9.3,10,-15.3,10,-18z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">7</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">5</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">6</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">9</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.875em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.875em" height="3.600em" viewBox="0 0 875 3600"><path d="M76,0c-16.7,0,-25,3,-25,9c0,2,2,6.3,6,13c21.3,28.7,42.3,60.3,
+63,95c96.7,156.7,172.8,332.5,228.5,527.5c55.7,195,92.8,416.5,111.5,664.5
+c11.3,139.3,17,290.7,17,454c0,28,1.7,43,3.3,45l0,9
+c-3,4,-3.3,16.7,-3.3,38c0,162,-5.7,313.7,-17,455c-18.7,248,-55.8,469.3,-111.5,664
+c-55.7,194.7,-131.8,370.3,-228.5,527c-20.7,34.7,-41.7,66.3,-63,95c-2,3.3,-4,7,-6,11
+c0,7.3,5.7,11,17,11c0,0,11,0,11,0c9.3,0,14.3,-0.3,15,-1c5.3,-5.3,10.3,-11,15,-17
+c242.7,-294.7,395.3,-681.7,458,-1161c21.3,-164.7,33.3,-350.7,36,-558
+l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
+-470,-1265c-4.7,-6,-9.7,-11.7,-15,-17c-0.7,-0.7,-6.7,-1,-18,-1z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+</p>
+<div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="p">     [</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+<span class="p">     [</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</pre></div>
+
+<details class="appli"><summary>&nbsp;</summary>
+<ol type="1">
+<li>Dessiner une représentation conventionnelle du graphe proposé par Guido Von Rossum.</li>
+<li>Écrire la matrice d’adjacence correspondante.</li>
+<li>Proposer une implémentation de la matrice d’adjacence de ce graphe en Python en utilisant une liste de liste.</li>
+</ol>
+</details>
+
+<div class="ref">
+<ul>
+<li><a href="https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8" class="cite-source">A gentle introduction to graph theory</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Graphe_(math%C3%A9matiques_discr%C3%A8tes)" class="cite-source">Article wikipedia sur les graphes</a></li>
+<li><a href="lexique">Lexique de la théorie des graphes sur Wikipédia</a></li>
+</ul>
+</div>
+

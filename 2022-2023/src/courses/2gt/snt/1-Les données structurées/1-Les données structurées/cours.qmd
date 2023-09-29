@@ -1,0 +1,349 @@
+---
+tags: ["données", "métadonnées", "cloud"]
+---
+
+::: programme
+
++-----------------------------------+-----------------------------------------------------------------+
+| Contenus                          | Capacités attendues                                             |
++===================================+=================================================================+
+| Données                           | Définir une donnée personnelle.                                 |
+|                                   | Identifier les principaux formats et représentations de         |
+|                                   | données.                                                        |
++-----------------------------------+-----------------------------------------------------------------+
+| Données structurées               | Identifier les différents descripteurs d’un objet.              |
+|                                   | Distinguer la valeur d’une donnée de son descripteur.           |
+|                                   | Utiliser un site de données ouvertes, pour sélectionner et      |
+|                                   | récupérer des données.                                          |
++-----------------------------------+-----------------------------------------------------------------+
+| Traitement de données structurées | Réaliser des opérations de recherche, filtre, tri ou calcul sur |
+|                                   | une ou plusieurs tables.                                        |
++-----------------------------------+-----------------------------------------------------------------+
+| Métadonnées                       | Retrouver les métadonnées d’un fichier personnel.               |
++-----------------------------------+-----------------------------------------------------------------+
+| Données dans le nuage             | Utiliser un support de stockage dans le nuage.                  |
+| (_cloud_)                         |                                                                 |
+|                                   | Partager des fichiers, paramétrer des modes de                  |
+|                                   | synchronisation.                                                |
+|                                   |                                                                 |
+|                                   | Identifier les principales causes de la consommation            |
+|                                   | énergétique des centres de données ainsi que leur ordre de      |
+|                                   | grandeur.                                                       |
++-----------------------------------+-----------------------------------------------------------------+
+
+:::
+
+
+::: {.intro layout-ncol=2}
+
+Les données personnelles sont un grand enjeu actuel du web, c'est pour cela que l'Europe s'est
+dotée du RGPD pour faire respecter des règles sur la collecte et le traitement des données
+personnelles par les entreprises.
+
+![Image d'un formulaire de collecte de données](../../images/formulaire.png)
+
+:::
+
+::: appli
+
+[Évaluation diagnostique PP12-13](https://lienmini.fr/3389-102).
+
+:::
+
+`youtube: N6XJXkeW5OE`
+
+## Les formats de données
+
+En informatique les données sont codées sous forme binaire(des 0 et des 1).
+
+La façon de coder l'information dépend du type de fichier que l'on reconnait grâce à son _extension_.
+
+
+::: examples
+
+- image: _________
+- vidéo: _________
+- texte: _________
+- audio: _________
+- ...
+
+:::
+
+La plupart des formats ajoutent des données pour décrire le fichier. **Ce sont les métadonnées.**
+
+::: appli
+
+Observer les données et métadonnées d'une photo sur cette page:
+
+<https://apps.lyceum.fr/photo-metadata/>
+
+1. Que représentent les données de cette photo?
+2. Donner cinq métadonnées ajoutées à cette photo.
+
+:::
+
+::: {.plus titre="Comment compter en binaire?"}
+
+En binaire $11 = 3$ ! **Étrange**, pas tant que ça si on compte sur nos _deux_ doigts.
+
+
+0. `0`
+1. `1`
+2. `10`
+3. `11`
+4. `100`
+...
+
+On a l'habitude de préciser la base de numération en indice $3_{10}= 11_{2}$.
+
+:::
+
+::: appli
+
+1. Compter jusqu'à 16 en binaire.
+2. Quelle est la valeur de `1111 1111`, la plus grande valeur stockée sur un octet?
+3. Écrire 64 en binaire.
+
+:::
+
+::: {.plus titre="L'enjeu des métadonnées"}
+
+Lire cette vidéo du journal Le Monde.
+
+`youtube: kz3Zb_Y_wJw`
+
+:::
+
+## Qu'est-ce qu'une donnée personnelle ?
+
+
+Donnée personnelle
+
+: Une donnée personnelle correspond à toute information qui permet d'identifier directement ou
+  indirectement une personne physique.
+
+  [CNIL](https://www.cnil.fr/fr/definition/donnee-personnelle){.cite-source}
+
+::: examples
+
+- Nom,
+- Prénom
+- photographie du visage
+- date et lieu de naissance
+- adresse, adresse électronique, adresse IP
+- numéro de téléphone
+- numéro de sécurité sociale
+- numéro de carte bancaire
+
+:::
+
+::: plus
+
+En droit français, les personnes morales(non physiques) sont les personnes
+agissant au sein d'une entreprise ou d'une association par exemple.
+
+:::
+
+## Descripteurs et valeurs d'un tableau de données
+
+Dans un jeu de données, on distingue:
+
+- le **descripteur** par exemple `artiste` qui est un champ commun à tout le jeu de données.
+- de sa **valeur** `Adele`, `Led Zeppelin`... qui est propre à chaque ligne des données.
+
+![Copie d'écran de libreoffice calc avec des données sur des albums musicaux.](../../images/tableau-albums.png)
+
+
+
+## Les formats de données structurées
+
+Les données peuvent être stockées sous divers _formats_ adaptés à leurs usages.
+
+[![Format des données sur http://opendata.nicecotedazur.org/data/dataset](../../images/formats-opendata-nice.png) opendata.nicecotedazur.org](http://opendata.nicecotedazur.org/data/dataset){.cite-source}
+
+- Les formats de tableur spécifiques aux logiciels, par exemple: 
+
+  - `XLS`: tableur Microsoft Excel.
+  - `ODS`: tableur LibreOffice sous licence libre.
+
+- Les formats textuels adaptés aux machines et _indépendants_ du logiciel de traitement.
+  
+    - `CSV`: données séparées par des virgules _Coma Separated Values_
+  
+      ```{python}
+      #|echo: false
+      import pandas as pd
+      from IPython.display import Code
+      
+      df = pd.DataFrame(
+          {
+              "album": ["Thriller", "Led Zeppelin IV", "Legend", "25"],
+              "artiste": [
+                  "Michael Jackson",
+                  "Led Zeppelin",
+                  "Bob Marley & the Wailers",
+                  "Adele",
+              ],
+              "année": [1982, 1971, 1984, 2015],
+              "ventes": ["33M", "23M", "15M", "10M"],
+          }
+      )
+      Code(df.to_csv(index=False))
+      ```
+    
+    - `JSON`: notation objet issue de javascript.
+
+      ```{python}
+      #|echo: false
+
+      Code(df.to_json(orient='records', lines=True, force_ascii=False))
+      ```
+
+    - `XML`: format de données avec balises _eXtensible Markup Langage_
+    
+      ```{python}
+      #|echo: false
+
+      Code(df.to_xml(index=False, parser='etree'))
+      ```
+
+## Les données ouvertes
+
+À l'inverse des données collectées par certaines entreprises privées pour mieux connaitre leurs
+utilisateurs ou éventuellement faire un commerce de ces données, les données ouvertes sont
+librement accessibles grâce à une licence ouverte garantissant leur libre accès et leur
+réutilisation par tous, sans restriction technique, juridique ou financière.
+
+Données ouvertes
+
+:    Les **données ouvertes** ou _open data_ sont des données numériques dont
+l'accès et l'usage sont laissés libres aux usagers.
+
+
+::: examples
+
+- Plateforme ouverte des données publiques françaises: <https://www.data.gouv.fr/fr/>
+- Données de la ville de Nice Côte d'azur: <http://opendata.nicecotedazur.org/data/dataset>
+- Données structurées de Wikipédia: <https://wikidata.org/>
+- ...
+
+:::
+
+
+## Informatique en nuage: le cloud
+
+<wc-wikimage title="Nuage33.png" caption=""></wc-wikimage>
+
+Informatique en nuage
+
+:   Réseau d'ordinateurs permettant à leurs utilisateurs de partager et utiliser à distance diverses ressources informatiques comme des fichiers, des logiciels, des capacités de calcul et de la mémoire. [Wiktionnaire](https://fr.wiktionary.org/wiki/informatique_en_nuage){.cite-source}
+
+::: examples
+
+- atrium: le cloud des lycées de la région sud.
+- __________: _________________________________
+- __________: _________________________________
+
+:::
+
+::: {.appli titre="Partager des documents sur atrium"}
+
+À l'aide des tutoriels d'atrium, réaliser les actions suivantes:
+
+1. [Déposer un document sur atrium](https://www.atrium-sud.fr/web/assistance/deposer-un-document)
+2. [Partager un document](https://www.atrium-sud.fr/web/assistance/partager-un-document) en réglant les paramètres de partage.
+
+:::
+
+::: {.appli titre="Paramètres de synchronisation"}
+
+En utilisant le document 2 P 22 du [manuel de
+Delagrave](https://www.editions-delagrave.fr/livre/9782206103389-sciences-numeriques-et-technologie-snt-2de-2019-manuel-eleve):
+
+- Vérifier vos paramètres de synchronisation des données de votre téléphone.
+- Où sont enregistrées ces données?
+- À quoi peuvent-elles servir?
+
+:::
+
+::: {.appli titre="La consommation de données des data-centers"}
+
+En utilisant le document 4 P 23 du [manuel de
+Delagrave](https://www.editions-delagrave.fr/livre/9782206103389-sciences-numeriques-et-technologie-snt-2de-2019-manuel-eleve):
+
+Rédiger un court paragraphe expliquant quels sont les enjeux de la consommation énergétique des centres de données utilisés dans le cloud.
+
+:::
+
+
+
+## Les dictionnaires en Python
+
+En python, une entrée peut-être représentée par un dictionnaire ou les couples `"descripteur":
+valeur` sont séparés par des virgules et entourées d'accolades.
+
+```python
+match = {'ligue': 'L1',
+         'saison': '2002-2003',
+         'jour': '1',
+         'date': '2002-08-03 20:00:00+02:00',
+         'lieu': 'Nice',
+         'equipe_domicile': 'Nice',
+         'score_domicile': '1',
+         'equipe_exterieur': 'Le Havre',
+         'score_exterieur': '2'}
+```
+
+Chaque valeur peut-être accédée grâce à son descripteur (ou clé):
+
+```python
+print(match["lieu"]) # affiche "Nice"
+```
+
+::: appli
+
+Expliquer simplement quelle donnée représente le dictionnaire match?
+
+:::
+
+## Exploitation d'un fichier `csv` en Python
+
+Lorsqu'on lit un fichier `csv` en Python, chaque ligne du fichier est automatiquement converti en
+`dict`ionnaire.
+
+Voici par exemple comment afficher toutes les lignes d'un fichier appelé `data.csv`.
+
+```python
+# import du module csv de Python
+import csv
+
+# Lecture de chaque ligne sous forme de dictionnaire
+with open('data.csv') as csv_file:
+    reader = csv.DictReader(csv_file)
+    for ligne in reader:
+        # affiche le dictionnaire complet
+        print(ligne)
+        # ou on affiche qu'une valeur par ligne
+        # print(ligne["descripteur"])
+```
+
+Voici par exemple la sortie obtenue avec le fichier des musées de Nice:
+
+```
+{"Type d'établissement": 'MUSEE', 'Identité': "MUSÉE D'ART MODERNE ET D'ART CONTEMPORAIN MAMAC", 'Adresse': 'Place Yves Klein 06300 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': 'MUSÉE MATISSE', 'Adresse': '164 Avenue des Arènes de Cimiez, 06000 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': 'PALAIS LASCARIS', 'Adresse': '15 rue Droite            06300 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': "MUSEUM D'HISTOIRE NATURELLE", 'Adresse': '60 bd Risso           06300 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': "MUSEE D'ARCHEOLOGIE DE NICE CIMIEZ", 'Adresse': '160, avenue des Arènes de Cimiez 06000 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': "MUSEE D'ARCHEOLOGIE DE NICE TERRA AMATA", 'Adresse': '25 bd Carnot\n06300 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': 'MUSÉE DES BEAUX-ARTS JULES CHERET', 'Adresse': '33 av des Baumettes    06000 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': "MUSÉE INTERNATIONAL D'ART NAÏF ANATOLE JAKOVSKY", 'Adresse': 'Château Sainte-Hélène 23, avenue de Fabron 06200 NICE'}
+{"Type d'établissement": 'MUSEE', 'Identité': 'MUSÉE DE LA PHOTOGRAPHIE CHARLES NEGRE', 'Adresse': '1 Place Pierre Gautier 06300 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': 'VILLA MASSÉNA', 'Adresse': '65 rue de France   06000 Nice'}
+{"Type d'établissement": 'MUSEE', 'Identité': 'PRIEURE DU VIEUX LOGIS', 'Adresse': '59 Avenue de Saint-Barthélémy, 06100 Nice'}
+{"Type d'établissement": 'GALERIE ', 'Identité': 'GALERIE DE LA MARINE', 'Adresse': '59 quai des Etats-Unis  06300 Nice'}
+{"Type d'établissement": 'GALERIE ', 'Identité': 'GALERIE DES PONCHETTES', 'Adresse': '77 Quai des États-Unis, 06300 Nice'}
+{"Type d'établissement": '', 'Identité': 'MONASTERE DES FRANCISCAINS', 'Adresse': 'Place du Monastère - 06000 Nice'}
+```
+
+

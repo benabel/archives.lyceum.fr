@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Formulaire d’une page Web</td>
+<td><p>Analyser le fonctionnement d’un formulaire simple.</p>
+<p>Distinguer les transmissions de paramètres par les requêtes POST ou GET.</p></td>
+<td>Discuter les deux types de requêtes selon le type des valeurs à transmettre et/ou leur confidentialité.</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Dans ce chapitre, nous allons voir comment permettre à l’utilisateur d’entrer des données sur une page web grâce à la balise html <code>&lt;form&gt;</code>. Ces données seront ensuite transmises au serveur pour alimenter des bases de données comme nous le verront au chapitre suivant.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><wc-wikimage title="Sample_web_form.png" caption="Les formulaires web permettent d'utiliser' types d'entrée: texte, nombre, bouton radio, liste déroulante..."></wc-wikimage></p>
+</div>
+</div>
+</div>
+<h2 id="création-du-formulaire-avec-la-balise-form" class="anchored">Création du formulaire avec la balise <code>&lt;form&gt;</code></h2>
+<p>Les formulaires sont un moyen de récupérer des données à partir du client pour les passer à l’application serveur.</p>
+<p>Dans le fichier <code>html</code>, on utilise la balise <code>&lt;form&gt;</code> en y ajoutant l’attribut <code>method</code> qui permet d’indiquer quel est le type de requête HTTP.</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"get"</span><span class="p">&gt;</span>
+<span></span>
+<span class="p">    &lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"nom"</span><span class="p">&gt;</span>Entrez votre nom: <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"nom"</span> <span class="na">required</span><span class="p">&gt;</span>
+<span class="p">  
+    &lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"email"</span><span class="p">&gt;</span>Entrez votre email: <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"email"</span> <span class="na">name</span><span class="o">=</span><span class="s">"email"</span> <span class="na">required</span><span class="p">&gt;</span>
+<span class="p">  
+    &lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Enregistrer"</span><span class="p">&gt;</span>
+<span class="p">  
+&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+
+<h3 id="méthode-http-get" class="anchored">Méthode <code>HTTP GET</code></h3>
+<p>Avec cette méthode, les paramètres du formulaire sont placés dans l’<em>url</em> lors de la soumission.</p>
+<div class="example">
+<p>Soumission des données par la méthode GET:</p>
+<p><a href="http://chemin/fichier.html?nom=James&amp;email=james%40cameron.com" class="uri">http://chemin/fichier.html?nom=James&amp;email=james%40cameron.com</a></p>
+<ul>
+<li>nom: James</li>
+<li>email: james@cameron.com</li>
+</ul>
+</div>
+<details class="plus"><summary>Percent-encoding</summary>
+<p>Dans les URL, les caractères spéciaux tels <code>@</code> sont échappés avec un code par exemple: <code>%40</code> pour <code>@</code>, <code>%20</code> pour l’espace.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/percent-encoding-wikipedia.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Tableau d’exemples issu de wikipedia</figcaption><p></p>
+</figure>
+</div>
+<p>Voir l’article <a href="https://fr.wikipedia.org/wiki/Percent-encoding">Wikipedia</a> pour plus de détails.</p>
+</details>
+
+<details class="appli"><summary>Création d'un formulaire avec la méthode GET</summary>
+<p>Créer une page <code>index.html</code> dans laquelle vous placerez un formulaire, avec la méthode <code>GET</code>.</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
+<span class="p">  &lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span> <span class="p">/&gt;</span>
+<span class="p">    &lt;</span><span class="nt">title</span><span class="p">&gt;</span>Un document minuscule<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">  &lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">  &lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Les formulaires en html<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="cm">    &lt;!-- Le formulaire ci-dessous --&gt;</span>
+<span class="p">    &lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"GET"</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"nom"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Entrer votre nom"</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Envoyer les données<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">  &lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Enregistrer ce fichier puis l’ouvrir dans le navigateur.</p>
+<ol type="1">
+<li><p>Entrer une valeur dans le formulaire et appuyer sur le bouton pour le soumettre et observer la barre d’adresse du navigateur.</p></li>
+<li><p>Ajouter d’autres types d’entrées avec la balise <code>&lt;input&gt;</code>.</p>
+<ul>
+<li><code>&lt;input type="text" ...</code>: Par défaut: entrée de texte.</li>
+<li><code>&lt;input type="button" ...</code>: Un bouton(on préfèrera cependant la balise <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a> cependant).</li>
+<li><code>&lt;input type="checkbox" ...</code>: Case à cocher.</li>
+<li><code>&lt;input type="radio" ...</code>: un bouton radio qui permet de sélectionner une seule valeur parmi un groupe de différentes valeurs.</li>
+</ul>
+<p>Assurez-vous que toutes les balises <code>input</code> ont bien un attribut <code>name</code> pour pouvoir être traités.</p>
+<p>Observer dans la barre d’adresse comment sont placés les paramètres lors de la soumission du formulaire avec le bouton <code>submit</code>.</p></li>
+</ol>
+</details>
+
+<h3 id="méthode-http-post" class="anchored">Méthode <code>HTTP POST</code></h3>
+<p>Avec cette méthode les données sont transmises dans le corps de la requête http, sans les encoder dans l’url cette fois-ci.</p>
+<p>Le serveur doit accepter les requêtes POST.</p>
+<p>Pour observer les paramètres d’une requête <code>POST</code>, il faut ouvrir la console de développement du navigateur, dans l’onglet réseaux.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/console-reseaux-post.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">console réseau POST firefox</figcaption><p></p>
+</figure>
+</div>
+<p>Les paramètres étant «cachés» dans la requête HTML, on les utilisera notamment pour la soumission de formulaires avec des données confidentielles:</p>
+<ul>
+<li>mot de passe</li>
+<li>email</li>
+<li><a href="/2gt/snt/4-les-donnees-structurees-et-leur-traitement/1-donnees">données personnelles</a> en général</li>
+</ul>
+<details class="appli"><summary>Création d'un formulaire avec la méthode POST</summary>
+<p>Sur la page web précédente, ajouter un autre formulaire, qui utilisera cette fois-ci la méthode <code>POST</code>.</p>
+<p>Pour que le formulaire fonctionne il faut lancer un serveur local, si vous êtes sur Visual Studio Code, je vous conseille d’installer l’extension <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a></p>
+<p>Vérifier les différences de fonctionnement entre ces deux formulaires en utilisant la console réseau du navigateur.</p>
+</details>
+
+<h2 id="validation-des-données-du-formulaire" class="anchored">Validation des données du formulaire</h2>
+<p>A priori, les données sont destinées traitées au niveau du serveur comme nous le verrons dans le prochain chapitre.</p>
+<p>Il n’est cependant pas rare de valider les données côté client en <code>javascript</code> avant envoi des données pour ne pas surcharger le serveur.</p>
+<div class="example">
+<p>Vérification que le nom n’est pas vide.</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
+<span class="p">  &lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span> <span class="p">/&gt;</span>
+<span class="p">    &lt;</span><span class="nt">title</span><span class="p">&gt;</span>Un document minuscule<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">  &lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">  &lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Les formulaires en html<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="cm">    &lt;!-- Le formulaire ci-dessous --&gt;</span>
+<span class="p">    &lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"GET"</span> <span class="p">&gt;</span>
+<span class="p">      &lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"nom"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Entrer votre nom"</span><span class="p">&gt;</span>
+<span class="p">      &lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"tel"</span> <span class="na">name</span><span class="o">=</span><span class="s">"telephone"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"0123456789"</span><span class="p">&gt;</span>
+<span class="p">      &lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"validateForm()"</span><span class="p">&gt;</span>Envoyer les données<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">    &lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="kd">function</span><span class="w"> </span><span class="nx">validateForm</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"input[name='nom']"</span><span class="p">).</span><span class="nx">value</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">nom</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">''</span><span class="p">){</span>
+<span class="w">          </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Nom ne doit pas être vide"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="s2">"Envoi des données"</span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">  &lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+</div>
+<details class="appli"><summary>&nbsp;</summary>
+<p>Vérifier en <code>javascript</code> qu’on a un numéro de téléphone qui commence par 0 et comporte 10 chiffres.</p>
+</details>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

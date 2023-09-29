@@ -1,0 +1,227 @@
+---
+"tags": ["python", "spécification", "tests", "modules"]
+---
+
+::: programme
++------------------------+---------------------------------+-----------------------------------+
+| Contenus               | Capacités attendues             | Commentaires                      |
++========================+=================================+===================================+
+| Mise au point de       | Utiliser des jeux de tests.     | L’importance de la qualité et du  |
+| programmes             |                                 | nombre des tests est mise en      |
+|                        |                                 | évidence.                         |
+|                        |                                 |                                   |
+|                        |                                 | Le succès d’un jeu de tests ne    |
+|                        |                                 | garantit pas la correction d’un   |
+|                        |                                 | programme.                        |
++------------------------+---------------------------------+-----------------------------------+
+| Utilisation de         | Utiliser la documentation d’une | Aucune connaissance exhaustive    |
+| bibliothèques          | bibliothèque.                   | d’une bibliothèque particulière   |
+|                        |                                 | n’est exigible.                   |
++------------------------+---------------------------------+-----------------------------------+
+:::
+
+Nous avons déjà vu que parmi des ingrédients des [programmes](../1-les-ingredients-dun-algorithme), il y en a un 
+qui est particuliérément utile pour rendre les programmes plus lisibles et structurés et donc **plus faciles à maintenir**, c'est l'*utilisation de fonctions*.
+
+Nous avons également vu comment *prototyper* des [fonctions](6-fonctions) afin de pouvoir rendre le code plus explicite et que l'on puisse revenir dessus afin de l'améliorer ou le corriger plus tard lors du développement du programme.
+
+Nous étions alors dans la phase descendante de la conception du programme qui nous a permis d'arriver à *implémenter notre programme*. Ce modèle d'organisation de la conception d'un programme est connu sous le nom de *[cycle en V](https://fr.wikipedia.org/wiki/Cycle_en_V)*, et il est un standard utuilisé depuis les années 1980.
+
+<a title="Leon Osborne, Jeffrey Brummond, Robert Hart, Mohsen (Moe) Zarean Ph.D., P.E, Steven Conger ; Redrawn by User:Slashme. / Public domain" href="https://commons.wikimedia.org/wiki/File:Systems_Engineering_Process_II.svg"><img class="center"  width="512" alt="Systems Engineering Process II" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Systems_Engineering_Process_II.svg/512px-Systems_Engineering_Process_II.svg.png"></a>
+
+Nous allons voir dans ce chapitre une autre étape du cycle de développement d'applications: **La mise au point du programme grâce à l'utilisation de tests**.
+
+
+
+Prenons l'exemple du calcul des racines du trinôme proposé par *un élève*. **Nous allons peu à peu améliorer ce programme pour le rendre plus stable, plus facile à utiliser, à maintenir et à améliorer pour le futur**.
+
+```python
+import math
+
+print("""
+
+Programme de calcul des racines d'un trinôme
+============================================
+
+ax^2 + bx +c
+""")
+a = float(input("Entrer la valeur de a: "))
+b = float(input("Entrer la valeur de b: "))
+c = float(input("Entrer la valeur de c: "))
+
+# Calcul du discriminant
+delta = b * b - 4 * a * c;
+# Affichage des solutions
+if delta < 0: 
+    print("Pas de solution")
+elif delta == 0:
+    print("Une solution : ",end="")
+    print(- b / (2 * a))
+else:
+    print("Deux solutions : ",end="")
+    print((- b - math.sqrt(delta)) / (2 * a),end="")
+    print(" et ",end="")
+    print((- b + math.sqrt(delta)) / (2 * a))
+```
+
+## Utilisation d'une approche fonctionnelle: `def`
+
+Plutôt que de placer les instructions les unes à la suite des autres sans réelle organisation, nous allons utiliser une **approche fonctionnelle** pour rendre ce programme plus pratique à utiliser et à tester.
+
+La programmation fonctionnelle est un [paradigme de programmation](https://fr.wikipedia.org/wiki/Paradigme_(programmation)) très apprécié notamment dans le monde universitaire, et de plus en plus utilisé par l'industrie afin d'avoir des programmes dont le *comportement est plus facile à prédire* que dans un programmation orientée objet par exemple.
+
+On va placer le code dans une fonction qui prend trois arguments, les coefficients du trinôme et qui affiche les racines à l'écran(*il s'agit pour l'instant d'une procédure*).
+
+```{python}
+def racines_du_trinome(a, b, c):
+    import math
+    # Calcul du discriminant
+    delta = b * b - 4 * a * c
+    # Affichage des solutions
+    if delta < 0: 
+        print("Pas de solution")
+    elif delta == 0:
+        print("Une solution : ",end="")
+        print(- b / (2 * a))
+    else:
+        print("Deux solutions : ",end="")
+        print((- b - math.sqrt(delta)) / (2 * a),end="")
+        print(" et ",end="")
+        print((- b + math.sqrt(delta)) / (2 * a))
+racines_du_trinome(a=1, b=0, c=-1)
+```
+
+## Renvoi de valeurs: `return`
+
+Nous allons maintenant remplacer les `print` par des `return` pour récupérer les racines en sortie de la fonction.
+
+En effet tout ce qui se passe à l'intérieur d'une fonction reste à l'intérieur de la fonction, mais par contre les `print()` sont des fonctions globales qui agissent à l'extérieur de la fonction( On parle d'effets de bords).
+
+En utilisant des return, on pourra récupérer le résultat de l'algorithme de notre fonction que lorsqu'on l'appelera, et qu'on assignera éventuellemnt ces valeurs de retour à des variables(globales ou non).
+
+```{python}
+def racines_du_trinome(a, b, c):
+    import math
+    # Calcul du discriminant
+    delta = b * b - 4 * a * c
+    # Affichage des solutions
+    if delta < 0: 
+        return ()
+    elif delta == 0:
+        return (- b / (2 * a))
+    else:
+        r1 = (- b - math.sqrt(delta)) / (2 * a)
+        r2 = (- b + math.sqrt(delta)) / (2 * a)
+        return (r1, r2)
+racines_du_trinome(a=1, b=0, c=-1)
+```
+
+## Prototypage de la fonction
+
+Pour rendre notre code compréhensible et facile à maintenir, on va écrire le prototype de la fonction comme on l'a vu dans le chapitre sur [fonctions](./6-fonctions). 
+
+On appelle cela une [`docstring`](https://numpydoc.readthedocs.io/en/latest/format.html) qui permet de comprendre comment "fonctionne" la fonction.
+
+On la place sur une chaine de caractères multi-line avec trois guillemets. Elle se présente généralement en trois parties:
+
+1. Une explication
+2. Paramètres
+3. Sortie(Returns en anglais)
+
+Même si Python est un lagage non typé, on précise les type des paramètres et sorties de la fonction.
+
+La docstring peut alors être renvoyée en cas de besoin avec la fonction Python `help(nom_de_la_fonction)`
+
+```{python}
+def racines_du_trinome(a, b, c):
+    """Renvoie les éventuelles racines d'un trinôme
+    
+    ax**2 + bx + c
+    
+    Parameters
+    ----------
+    a : float
+    b : float
+    c : float
+    
+    Returns
+    -------
+    tuple
+        tuple contenant les 0, 1 ou 2 racines du trinôme suivant le cas
+    """
+    import math
+    # Calcul du discriminant
+    delta = b * b - 4 * a * c
+    # Affichage des solutions
+    if delta < 0: 
+        return ()
+    elif delta == 0:
+        return (- b / (2 * a))
+    else:
+        r1 = (- b - math.sqrt(delta)) / (2 * a)
+        r2 = (- b + math.sqrt(delta)) / (2 * a)
+        return (r1, r2)
+help(racines_du_trinome)
+```
+
+## Les tests: `assert`
+
+L'informatique consiste la plupart du temps à une **chasse aux bugs**, il convient donc d'essayer de les repérer le plus tôt possible à l'aide de tests.
+
+On va donc pour effectuer des tests sur les valeurs renvoyées par la fonction. Pour cela on utilise des assertions `assert` qui bloquent l'éxecution du programme lorsqu'une expression renvoie `False`.
+
+On va placer ces tests dans une fonction appelée `run_tests()` pour pouvoir en placer plusieurs au fur et à mesure qu'on y pense ou que l'on constate des bugs.
+
+```{python}
+def run_tests():
+    # deux racines réelles
+    assert racines_du_trinome(1,0,-1) == (-1.0, 1.0)
+    # une racine double
+    assert racines_du_trinome(1, 0, 0) == (0.0)
+    # pas de racine
+    assert racines_du_trinome(1, 0, 1) == ()
+    
+    # si une assertion s'avère fausse la fonction va renvoyer une AssertionError
+    print("Tous les tests ont été passé avec succés")
+run_tests()
+```
+
+## Les bibliothèques: `import`
+
+Les bibliothéques ou `module`s permettent de **rassembler et d'organiser les diverses fonctionnalités** d'un programme afin de pouvoir les importer ultérieurement.
+
+Elles constituent un outil important dans la mise au point de programme complexe en permettant de séparer le code en diveres parties, chacune de ces parties ayant un rôle bien spécifique et plus facile à tester.
+
+De nombreuses bibliothéques sont fournies avec Python, comme par exemple les modules `math` ou `random`. On les appelle les bibilothèques standards. On en a également utilisé d'autres non fournies avec Python, mais facilement installables comme `pandas` pour le traitement de données, ou `matplotlib` pour le tracé de graphiques.
+
+```{python}
+import math
+
+# racine carré de 4
+math.sqrt(4)
+```
+
+```{python}
+import random
+
+# nombre aléatoire entre 0 et 1
+random.random()
+```
+
+On peut accéder à la documentation directement à partir de python avec la fonction `help`, mais on préférera tout de même la documentation en ligne lorsqu'on a accès à internet.
+
+- Doc Python: https://docs.python.org/3/
+- Doc javascript: https://developer.mozilla.org/fr/docs/Web/JavaScript
+
+```{python}
+help(math)
+```
+
+## Bibliothèques tierces
+
+Le succés d'un langage viendra souvent des bibliothèques tiers qui seront développées autour de lui, on télécharge aujourd'hui les bibliotgèques open-source directement sur internet.
+
+- modules Python: https://pypi.org/
+- modules javascript: https://www.npmjs.com/
+
+En effet nous sommes souvent ammenés à réaliser le même type de tâches pour concevoir notre programme, et il n'est pas nécessaire de repartir de zéro à chaque fois.

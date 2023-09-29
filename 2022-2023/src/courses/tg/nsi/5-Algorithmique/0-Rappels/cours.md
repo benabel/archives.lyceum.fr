@@ -1,0 +1,271 @@
+---
+tags: ["complexité d'un algorithme", "correction d'un algorithme"]
+tocHTML: '<ul><li><a href="#algorithme-naïf-de-recherche-la-recherche-en-table" data-localhref="true">Algorithme naïf de recherche: la recherche en table</a></li><li><a href="#notion-de-complexité" data-localhref="true">Notion de complexité</a></li><li><a href="#un-algorithme-efficace-la-recherche-dichotomique" data-localhref="true">Un algorithme efficace: la recherche dichotomique</a></li><li><a href="#correction-dun-algorithme" data-localhref="true">Correction d’un algorithme</a></li><li><a href="#correction-du-tri-par-sélection" data-localhref="true">Correction du tri par sélection</a></li><ul><li><a href="#implémentation-en-python" data-localhref="true">Implémentation en Python</a></li><li><a href="#correction-de-lalgorithme" data-localhref="true">Correction de l’algorithme</a></li></ul></ul>'
+---
+
+
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<p>Révisions de <a href="/1g/nsi/programme">première</a>:</p>
+<ul>
+<li>Algorithmes de recherche: recherche en table, recherche dichotomique.</li>
+<li>Complexité d’un algorithme, notation grand O. Complexité linéaire, quadratique et logarithmique.</li>
+<li>Algorithmes de tri: tri par sélection, tri par insertion.</li>
+<li>Correction d’un algorithme, invariant de boucle.</li>
+</ul>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<blockquote class="blockquote">
+<p>Nous allons revoir quelques définitions importantes de première en s’appuyant sur les algorithmes classiques de recherche et de tris.</p>
+</blockquote>
+<h2 id="algorithme-naïf-de-recherche-la-recherche-en-table" class="anchored">Algorithme naïf de recherche: la recherche en table</h2>
+<p>Pour rechercher un élément dans une table on pourrait simplement parcourir tout simplement le tableau jusqu’à rencontrer la valeur recherché. C’est ce que l’on appelle la <a href="/1g/nsi/8-algorithmique/1-parcours-sequentiel-dun-tableau/#la-recherche-en-table">recherche en table</a>.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">élément</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Recherche d'un élément dans une liste</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    liste: liste d'entiers</span>
+<span class="sd">    élément: entier</span>
+<span class="sd">        l'élément cherché</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int: l'indice de l'élément si trouvé ou -1 sinon</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+<span class="k">    for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+<span class="k">        if</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">élément</span><span class="p">:</span>
+<span class="c1">            # l'élément est trouve</span>
+<span class="k">            return</span> <span class="n">i</span>
+<span class="c1">    # non trouvé</span>
+<span class="k">    return</span> <span class="o">-</span><span class="mi">1</span>
+<span></span>
+<span class="c1"># Quelques tests</span>
+<span class="k">assert</span> <span class="n">recherche</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">recherche</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="k">assert</span> <span class="n">recherche</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+
+<p>Même si cet algorithme simple semble faire le travail, il n’est en pratique pas du tout utiliser, car <strong>il n’est pas du tout efficace</strong>.</p>
+<p>Pour mesurer l’efficacité d’un algorithme, on utilise la notion de <strong>complexité</strong>.</p>
+<h2 id="notion-de-complexité" class="anchored">Notion de complexité</h2>
+<p>Si je donne à mon programme une entrée de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>
+. Quel est l’ordre de grandeur, en fonction de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>
+, du nombre d’opérations qu’il va effectuer ?</p>
+<dl>
+<dt>
+Complexité
+</dt>
+<dd>
+<div>
+<p>La complexité d’un algorithme est le nombre d’opérations élémentaires(opération arithmétique, comparaison, affectation…)_ effectuées pour obtenir un résultat.</p>
+</div>
+</dd>
+</dl>
+<p>Si on prend l’exemple de l’algorithme précédent, on se rend compte que cela dépend des cas. Expliquez…</p>
+<p>Pour pouvoir faire des comparaisons entre algorithmes, l’informaticien étudie souvent la <strong>complexité dans le pire des cas</strong>.</p>
+<details class="appli"><summary>Complexité de la recherche linéaire</summary>
+<p>Regardons ce que cela donne dans le cas de notre recherche en table, le pire des cas correspond au cas où l’élément n’est pas dans le tableau.</p>
+<p>Étudions chacune des étapes pour compter les opérations élémentaires effectuées.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>      <span class="c1"># N opérations</span>
+<span class="k">    if</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">élément</span><span class="p">:</span>      <span class="c1"># N opérations</span>
+<span class="k">        return</span> <span class="n">i</span>                 <span class="c1"># 0 opération(on est dans le pire des cas)</span>
+<span class="k">return</span> <span class="o">-</span><span class="mi">1</span>                        <span class="c1"># 1 seul return </span>
+</pre></div>
+
+<p>On obtient donc: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>N</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2N + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+opérations.</p>
+<p>Les facteurs multiplicatifs et additifs sont négligés, on dit que notre algorithme a une complexité grand O de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>
+notée:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">
+O(N)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></span>
+</p>
+<p>On parle d’<em>algorithme linéaire</em>: son temps d’exécution croit proportionnellement avec la taille de l’entrée.</p>
+</details>
+
+<dl>
+<dt>
+Notation asymptotique: grand O
+</dt>
+<dd>
+<div>
+<p>On utilise la notation asymptotique (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">N \rightarrow \infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span>
+) pour décrire le temps d’exécution des algorithmes. On se placera dans le pire des cas(Ex: élément non trouvé pour une recherche) la complexité est alors notée <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi></mrow><annotation encoding="application/x-tex">O</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span></span></span></span>
+.</p>
+</div>
+</dd>
+</dl>
+<div class="examples">
+<p>Par ordre de complexité croissante:</p>
+<ul>
+<li>complexité logarithmique: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>
+</li>
+<li>complexité linéaire: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>
+</li>
+<li>complexité quadratique: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+</li>
+<li>complexité exponentielle: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>e</mi><mi>N</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(e^N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0913em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+</li>
+</ul>
+<p>Dès <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+l’algorithme devient quasiment inutilisable en pratique.</p>
+</div>
+<h2 id="un-algorithme-efficace-la-recherche-dichotomique" class="anchored">Un algorithme efficace: la recherche dichotomique</h2>
+<p>Quand on cherche un mot dans le dictionnaire, on ne va pas le chercher en les lisant un par un, on va utiliser la méthode de <a href="/1g/nsi/8-algorithmique/4-recherche-dichotomique">recherche dichotomique vue en première</a>.</p>
+<p>Cette méthode est possible dans le cas ou les données ont été au préalable trié, ce pour quoi il existe également des <a href="/1g/nsi/8-algorithmique/2-algorithmes-de-tri">algorithmes</a> efficaces.</p>
+<p><wc-wikimage title="Binary_search_into_array.png" caption="Cette image illustre la recherche de l'élément 4 dans tableau trié."></wc-wikimage></p>
+<p>Voici un exemple d’implémentation en Python:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recherche_dichotomique</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">élément</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Recherche dichotomique</span>
+<span></span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    liste: liste d'entiers</span>
+<span class="sd">        ATTENTION: la liste doit être triée</span>
+<span class="sd">    élément: entier</span>
+<span class="sd">        l'élément cherché</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int: l'indice de l'élément si trouvé ou -1 sinon</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+<span class="c1">    # on initialise les indices début et fin aux extrémités de la liste</span>
+<span class="n">    début</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">    fin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>    
+<span class="k">    while</span> <span class="n">début</span> <span class="o">&lt;=</span> <span class="n">fin</span><span class="p">:</span>
+<span class="c1">        # On se place au milieu de la liste</span>
+<span class="n">        milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">début</span> <span class="o">+</span> <span class="n">fin</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="c1"># il, s'agit d'une division entière</span>
+<span class="k">        if</span> <span class="n">liste</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">==</span> <span class="n">élément</span><span class="p">:</span>
+<span class="c1">            # l'élément est trouvé</span>
+<span class="k">            return</span> <span class="n">milieu</span>
+<span class="k">        elif</span> <span class="n">liste</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">élément</span><span class="p">:</span>   
+<span class="c1">            # l'élément est situé dans la sous-liste de droite    </span>
+<span class="n">            début</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">        else</span><span class="p">:</span>
+<span class="c1">            # l'élément est situé dans la sous-liste de gauche</span>
+<span class="n">            fin</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">    return</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+
+<details class="appli"><summary>Complexité de la recherche dichotomique</summary>
+<p>En prenant l’exemple de la liste <code>L8 = [2, 11, 14, 20, 22, 30, 33, 37]</code></p>
+<ol type="1">
+<li><p>Combien de tours de boucles sont faites lors des appels:</p>
+<ul>
+<li><code>recherche_dichotomique(L8, 11)</code></li>
+<li><code>recherche_dichotomique(L8, 12)</code></li>
+</ul></li>
+<li><p>Montrer que dans le pire des cas, il faut 4 tours de boucles pour rechercher un élément dans <code>L16 = [3, 11, 14, 21, 22, 27, 33, 37, 42, 50, 55, 58, 62, 69, 76, 81]</code></p></li>
+<li><p>A votre avis combien faudrait-il de tours de boucles pour effectuer une recherche sur une liste de 256 éléments.</p></li>
+</ol>
+</details>
+
+<p>Cet algorithme est beaucoup plus efficace, sa complexité (asymptotique dans le pire des cas) est <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log(N))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">))</span></span></span></span>
+.</p>
+<p>Ceci fait une énorme différence notamment lorsque la taille des données augmente:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/comparaison-complexite.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Comparaison des complexités linéaire et logarithmique</figcaption><p></p>
+</figure>
+</div>
+<h2 id="correction-dun-algorithme" class="anchored">Correction d’un algorithme</h2>
+<p>Pour rappel, un algorithme est une suite d’instructions permettant d’obtenir un résultat.</p>
+<p>La <strong>correction d’un algorithme</strong> est une démonstration qui prouve que l’algorithme permet bien d’obtenir le résultat souhaité.</p>
+<p>Nous allons utiliser une méthode répandue semblable au <em>raisonnement par récurrence</em> fondée sur la recherche d’un <strong>invariant de boucle</strong>.</p>
+<p>Pour prouver la correction nous devons montrer les trois points suivants:</p>
+<ol type="1">
+<li><strong>Initialisation:</strong> L’invariant est vrai avant la première itération.</li>
+<li><strong>Conservation:</strong> si l’invariant est vrai avant une itération, il restera vrai après l’itération.</li>
+<li><strong>Terminaison:</strong> la boucle se termine et nous donne le résultat attendu.</li>
+</ol>
+<p>Nous allons appliquer cette méthode aux algorithmes de tris vus en première.</p>
+<h2 id="correction-du-tri-par-sélection" class="anchored">Correction du tri par sélection</h2>
+<p>On rappelle le principe de l’algorithme.</p>
+<blockquote class="blockquote">
+<p>Sur un tableau de N éléments (numérotés de 0 à <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+), le principe du tri par sélection est le suivant : &nbsp; - rechercher le plus petit élément du tableau, et l’échanger avec l’élément d’indice 0 ; - rechercher le second plus petit élément du tableau, et l’échanger avec l’élément d’indice 1 ; - continuer de cette façon jusqu’à ce que le tableau soit entièrement trié.</p>
+</blockquote>
+<h3 id="implémentation-en-python" class="anchored">Implémentation en Python</h3>
+<p>En voici une implémentation en python.</p>
+
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tri_selection</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="n">    N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="c1">    # Parcourir le tableau jusqu'à l'avant dernière valeur</span>
+<span class="c1">    # en effet la dernière valeur sera forcément la plus grande</span>
+<span class="k">    for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="c1">        # on recherche l'indice du plus petit élément du sous-tableau de droite</span>
+<span class="n">        i_min</span> <span class="o">=</span> <span class="n">i</span>
+<span class="c1">        #  Parcourir le reste du tableau pour rechercher l'élément le plus petit restant</span>
+<span class="k">        for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="k">            if</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">[</span><span class="n">i_min</span><span class="p">]:</span>
+<span class="n">                i_min</span> <span class="o">=</span> <span class="n">j</span>
+<span class="k">        if</span> <span class="n">i_min</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span>
+<span class="c1">            # échanger t[i] et t[i_min]</span>
+<span class="n">            t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i_min</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i_min</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="k">    return</span> <span class="n">t</span>
+</pre></div>
+
+<p>Voici les états successifs du tableau après chaque tour de boucle avec en entrée <code>[12, 15, 1, 3, 7]</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">[1, 15, 12, 3, 7]</span>
+<span class="k">[1, 3, 12, 15, 7]</span>
+<span class="k">[1, 3, 7, 15, 12]</span>
+<span class="k">[1, 3, 7, 12, 15]</span>
+</pre></div>
+
+<h3 id="correction-de-lalgorithme" class="anchored">Correction de l’algorithme</h3>
+<p>L’invariant de boucle consiste à montrer que si les <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+premiers éléments du tableau sont triés avant l’itération, alors les <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+premiers éléments seront triés après une itération.</p>
+<ol type="1">
+<li><strong>Initialisation:</strong> Au départ, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">i = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>
+, le sous-tableau trié de gauche ne contient aucun élément <code>[]</code>. Il est donc forcément trié.</li>
+<li><strong>Conservation:</strong> Lorsqu’on considère le tour de boucle <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+, le tableau est déjà trié pour les indices <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>
+à <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+. Grâce à la boucle interne, on trouve le plus petit élément parmi les éléments d’indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+à <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>
+(tous plus grands que l’élément d’indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+), et on le place à l’indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+. Après le tour de boucle, le tableau sera donc trié pour les indices de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>
+à <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+.</li>
+<li><strong>Terminaison:</strong> la boucle se termine lorsqu’on arrive à l’avant-dernier élément du tableau. Le tableau est trié pour les éléments d’indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>
+à <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>
+, et le dernier élément d’indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+est forcément plus grand que l’élément d’indice $ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>
+. Le tableau est donc entièrement trié.</li>
+</ol>
+<details class="appli"><summary>Étude du tri par insertion</summary>
+<p>La partie <a href="./exo">exercice</a> propose une étude complète de l’algorithme de tri par insertion vu également en première.</p>
+<blockquote class="blockquote">
+<p>Dans l’algorithme, on parcourt le tableau à trier du début à la fin. Au moment où on considère le i-ème élément, les éléments qui le précèdent sont déjà triés. Pour faire l’analogie avec l’exemple du jeu de cartes, lorsqu’on est à la i-ème étape du parcours, le i-ème élément est la carte saisie, les éléments précédents sont la main triée et les éléments suivants correspondent aux cartes encore mélangées sur la table.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>L’objectif d’une étape est d’insérer le i-ème élément à sa place parmi ceux qui précèdent. Il faut pour cela trouver où l’élément doit être inséré en le comparant aux autres, puis décaler les éléments afin de pouvoir effectuer l’insertion. En pratique, ces deux actions sont fréquemment effectuées en une passe, qui consiste à faire « remonter » l’élément au fur et à mesure jusqu’à rencontrer un élément plus petit.</p>
+</blockquote>
+<p><a href="http://fr.wikipedia.org/wiki/Tri_par_insertion">Source Wikipedia</a></p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tri_insertion</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<span class="n">    N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="k">    for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="n">        x</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">        j</span> <span class="o">=</span> <span class="n">i</span>
+<span class="k">        while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">:</span>
+<span class="n">            t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">            j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">        t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+<span class="k">    return</span> <span class="n">t</span>
+</pre></div>
+
+</details>
+
+<details class="plus"><summary>Complexité des algorithmes de tri</summary>
+<p>Montrer que les deux algorithmes de tris précédents ont une complexité quadratique en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+.</p>
+</details>
+

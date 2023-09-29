@@ -1,0 +1,357 @@
+## Intervalles de valeurs
+
+1. En complément à deux, quel intervalle d'entiers relatifs peut-on représenter avec des mots de 8
+   bits? Combien de valeurs sont représentées?
+
+   ::: correction
+   
+   Avec un octet, soit huit bits, on peut représenter $2^8=256$ nombres allant de $-2^{7}$ à $2^{7}
+   -1$, soit l'intervalle: $[-128; 127]$.
+
+   :::
+
+2. Même question avec des mots de 32 bits et 64 bits.
+
+   ::: correction
+   
+   Avec 32 bits, on peut représenter $2^{32}=\num{4294967296}$ nombres allant de $-2^{31}$ à
+   $2^{31} -1$, soit l'intervalle: $[\num{-2147483648}; \num{2147483647}]$.
+   
+   Avec 64 bits, on peut représenter $2^{64}=\num{18446744073709551616}$ nombres allant de
+   $-2^{63}$ à $2^{63} -1$, soit l'intervalle:
+   $[\num{-9223372036854775808}; \num{9223372036854775807}]$.
+
+   :::
+   
+[Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés
+et des idées de projets par Gilles
+Dowek](http://www.editions-eyrolles.com/Livre/9782212135435/){.cite-source}
+
+## Coder sur 4 bits des entiers relatifs
+
+Dans cet exercice, on utilise un codage en complément à $2^{4}$ sur 4 bits. 
+
+1. Quels sont les nombres minimum et maximum que l'on peut représenter?
+
+
+   ::: correction
+   
+   On peut représenter des nombres allant de $-2^{3}$ à $2^{3} -1$, soit l'intervalle: $[-8; 7].$
+
+   :::
+   
+2. Compléter le tableau suivant:
+
+   +---------+----------------+
+   | Base 10 | Complément à 2 |
+   +========:+:==============:+
+   | -8      |                |
+   +---------+----------------+
+   | -1      |                |
+   +---------+----------------+
+   | 0       |                |
+   +---------+----------------+
+   | 3       |                |
+   +---------+----------------+
+   | -5      |                |
+   +---------+----------------+
+   |         | `0111`         |
+   +---------+----------------+
+   |         | `1001`         |
+   +---------+----------------+
+   |         | `1100`         |
+   +---------+----------------+
+   
+   
+   
+   ::: correction
+   
+   +---------+----------------+
+   | Base 10 | Complément à 2 |
+   +========:+:==============:+
+   | -8      | `1000`         |
+   +---------+----------------+
+   | -1      | `1111`         |
+   +---------+----------------+
+   |  0      | `0000`         |
+   +---------+----------------+
+   |  3      | `0011`         |
+   +---------+----------------+
+   | -5      | `1011`         |
+   +---------+----------------+
+   |  7      | `0111`         |
+   +---------+----------------+
+   | -7      | `1001`         |
+   +---------+----------------+
+   | -4      | `1100`         |
+   +---------+----------------+
+
+   :::
+
+3. Réaliser les calculs suivants en binaire: $7-5$ et $-2\times 3$.
+
+   ::: correction
+   
+   - $7-5$
+   
+     ```
+        0111
+       +1011
+        ----
+     (1)0010
+     ```
+   
+     On vérifie bien `0010` = 2.
+   
+   - $-2\times 3$
+   
+     ```
+          1110
+         x0011
+          ----
+          1110
+         1110
+        0000
+       0000
+       ------- 
+     (010)1010 
+     ```
+   
+   
+     On vérifie bien `1010` = 10-16=-6.
+   
+   :::
+
+## Complément à 2 sur un octet
+
+1. Trouver la représentation binaire sur huit bits des entiers relatifs $0$ et $-128$.
+
+   ::: correction
+   
+   - $0_{10} = 0000~0000_2$
+   - $-128_{10} = 1000~0000_2$
+   
+   :::
+
+2. Trouver la représentation décimale des entiers relatifs dont la
+   représentation binaire sur huit bits est `0000 1000` et `1000 1000`.
+
+   ::: correction
+   
+   - $0000~1000_2 = 8_{10}$
+   - $1000~1000_2= 128 + 8 - 256_{10} = -120_{10}$
+   
+   :::
+
+3. Calculer la représentation binaire sur huit bits de l’entier relatif $-16$, puis de son opposé.
+
+   ::: correction
+   
+   - $0001~0000_2 = 16_{10}$
+   - $-16 + 256 _{10}= 240_{10} = 128 + 64 +32 +16_{10} = 1111~0000_2$
+
+   On pourrait aussi utiliser le fait que 16 + (-16) = 0 pour trouver la représentation de -16.
+   
+   :::
+
+4. Représenter les entiers relatifs $96$ et $48$ en binaire sur huit bits.
+   Ajouter les deux nombres binaires obtenus en utilisant l’algorithme de
+   l’addition binaire. Quel est l'entier relatif obtenu ? Pourquoi est-il
+   négatif ?
+
+   ::: correction
+
+   $96_{10}=64+32_{10} = 0110~0000_2$
+
+   $48_{10}=32+16_{10} = 0011~0000_2$
+   
+
+   ```
+      0110 0000
+     +0011 0000
+      ---------
+      1001 0000
+   ```
+
+   Il s'agit d'un dépassement de capacité on ne peut encoder uniquement des nombres entre -128 et
+   127 sur un octet et le résultat attendu est 144 > 127.
+
+   Le calcul est donc faux, on obtient: $96+48=144-256=-112$
+   
+   :::
+
+5. Calculer en binaire $15 - 7$. 
+
+   ::: correction
+   
+   - $15-7$
+   
+     ```
+        0000 1111
+       +1111 1001
+        ---------
+     (1)0000 1000
+     ```
+   
+     On vérifie bien `0000 1000` = 8.
+
+   :::
+
+[Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés
+et des idées de projets par Gilles
+Dowek](http://www.editions-eyrolles.com/Livre/9782212135435/){.cite-source}
+
+## [Le bug de l'an 2038](https://fr.wikipedia.org/wiki/Bug_de_l%27an_2038) de linux ***
+
+Voici un extrait d'un article developpez.com sur le bug de l'an 2038.
+
+> Depuis la version 5.6 du noyau, publié en mars dernier, l’équipe a commencé à proposer des
+> correctifs pour résoudre le problème de l’année 2038. Il s’agit d’un bogue détecté il y a longtemps
+> dans l’encodage du temps sur les systèmes de type Unix, dont Linux, macOS, et d’autres systèmes
+> d’exploitation compatibles POSIX. Sur ces systèmes, le calcul du temps est effectué en fonction des
+> secondes écoulées à partir du 1er janvier 1970 à 00:00:00 UTC (nommée également epoch). Un jour
+> donnera par exemple 86 400 secondes et une année 31 536 000 secondes.
+> 
+> Et plus les années passeront, plus il faudra de nombres pour représenter les dates. Pour effectuer
+> le décompte sur ces systèmes, lorsque la fonction `time()` est appelée, elle retourne un entier signé
+> de type “time_t”. Si le système est 32 bits, la valeur retournée est un entier signé 32 bits et si
+> le système est 64 bits, la valeur retournée est 64 bits. Sur un système 64 bits, les limites sont
+> supérieures à 292 milliards d’années. Il n’y a donc pas de soucis à se faire ici (ce sera beaucoup
+> plus que l'âge de notre planète ou l'estimation de son espérance de vie).
+> 
+> Mais sur les systèmes 32 bits, le nombre de secondes total que la fonction peut retourner est
+> $2^{31}–1$, c’est-à-dire environ 136 ans. La date de référence étant le 1er janvier 1970 à 00:00:00 UTC,
+> la date minimale représentable est le vendredi 13 décembre 1901 et la date maximale représentable
+> est le mardi 19 janvier 2038 à 3 h 14 min 8 s. Lorsqu’il sera 3 h 14 min 8 s le 19 janvier 2038, le
+> système passera au 13 décembre 1901 à la seconde suivante (également appelé le bogue de l’an 2038
+> abrégé en anglais Y2038). Bien évidemment, ce ne sera pas la fin du monde.
+> [article developpez.com](https://linux.developpez.com/actu/309958/Linux-5-10-rc1-se-separe-d-une-fonctionnalite-vieille-de-plusieurs-decennies-qui-a-cause-des-bogues-de-securite-et-repousse-le-probleme-de-l-an-2038-a-l-an-2486-via-un-reglage-de-l-horodatage-XFS/){.cite-source} 
+
+1. Quelle est la plus grande valeur pouvant être encodé sur 32 bits en complément à deux?
+
+   ::: correction
+   
+   $2^{31} -1 = 2~147~483~647$
+   
+   :::
+
+2. Convertir la valeur précédente en ans jours heures minute seconde en considérant que les années font
+   toutes 365 jours.
+
+   ```{python}
+   #|tags: [correction]
+   #|echo: false
+   an, sec  = divmod(2**31-1, 365*24*3600)
+   jour, sec = divmod(sec, 24*3600)
+   heure,sec = divmod(sec, 3600)
+   minute,sec = divmod(sec, 60)
+   print(int(an), "ans", int(jour), "jours", int(heure), "heures", int(minute), "minutes", sec, "secondes")
+   
+   ```
+
+3. Vérifier la date indiquée par l'article sachant que les années bissextiles entre 1970 et 2038
+   sont:
+
+   1972; 1976; 1980; 1984; 1988; 1992; 1996; 2000; 2004; 2008; 2012; 2016; 2020; 2024; 2028; 2032; 2036. 
+
+   ::: correction
+   
+   Les dates sont comptées à partir du _premier janvier 1970_. En ajoutant 68 ans et 35 jours, on
+   arrive au 36^e^ jour de 2038.
+   
+   On compte 17 années bissextiles sur cette période.
+   
+   (1970+68=2038) ans (36-17=19) jours 3 heures 14 minutes 7 secondes
+   
+   Soit le 19 janvier 2038 à 3h14min7s.
+   
+   :::
+   
+4. Vérifier alors l'affirmation suivante concernant l'heure affichée une seconde plus tard si le
+   bug n'était pas réparé.
+
+   > Le bug de l'an 2038, ou bogue de l'an 2038 (au Canada), aussi appelé Y2038, est un bug
+   > informatique similaire au bug de l'an 2000 qui pourrait perturber le fonctionnement d'un grand
+   > nombre de systèmes informatiques le 19 janvier 2038 à 3 h 14 min 8 s, temps universel. Ils
+   > afficheront alors 13 décembre 1901 et 20 h 45 min 52 s.
+
+   [Article Bug de l'an 2038 sur Wikipédia](https://fr.wikipedia.org/wiki/Bug_de_l%27an_2038){.cite-source}
+
+
+
+   ::: correction
+   
+   Même raisonnemnt mais ici on est en négatif avec une seconde de plus.
+   
+   $-2^31 = -2~147~483~648$
+   
+   68 ans 35 jours 3 heures 14 minutes 8 secondes
+
+   (1970-68=1902) ans (-35+17=-18) jours -3 heures -14 minutes -8 secondes
+   
+   20:45:52 le 13 décembre 1901
+   
+   :::
+
+
+5. Repérer deux erreurs de l'article du site developpez.com.
+
+   ::: correction
+
+   1. $2^{31}-1$ n'est pas égal à 136 ans.
+   2. Il y a une erreur de 1 seconde dans la date maximale 3 h 14 min 7 s et non 3 h 14 min 8 s
+      comme indiqué.
+   
+   :::
+
+## Codage et décodage en Python
+
+1. Créer un programme qui demande un nombre à encoder et un nombre $n$ de bits d'encodage, et qui
+   renvoie la représentation binaire du nombre en complément $2^n$ de ce nombre.
+
+   P.ex:
+   
+   - si vous demandez le codage de -1 sur 4 bits, le programme affiche: `"1111"`.
+   - si vous demandez le codage de 5 sur 4 bits, le programme affiche: `"0101"`.
+
+   Pour simplifier, on supposera que l'utilisateur ne demande pas l'impossible, et que le nombre
+   demandé peut être codé sur le nombre de bits donnés.
+
+**Aides:**
+
+- Pour obtenir la représentation binaire d'un nombre entier naturel on utilise: `bin(nombre)[2:]`.
+
+  P.ex: `bin(127)[2:]` renvoie `'1111111'`
+
+- Pour parcourir un à un les éléments d'une chaîne de caractère, on utilise la syntaxe `for élément in chaine_de_caractères:`
+  
+  P.ex:
+
+  ```python
+  for chiffre in '1111111':
+      print(chiffre)
+  ```
+
+- Pour forcer l'écriture sur $n$ bits d'un nombre binaire, on utilise: `'{:0nd}'.format(nombre)`
+  
+  P.ex: `'{:08d}'.format(1000)` renvoie `'00001000'`
+
+**Une des difficultés notables de cet exercice est qu'il faut traiter les nombres binaires comme
+des `str`. Réfléchissez bien aux types utilsés.**
+
+
+2. Créer un programme qui demande un code binaire à décoder écrit sur $n$ bits, et qui
+   renvoie la valeur décimale de ce nombre par décodage du nombre en complément $2^n$.
+
+   P.ex:
+   
+   - si vous demandez le décodage de `"1111"`, le programme affiche: `-1`.
+   - si vous demandez le décodage de `"0101"`, le programme affiche: `5`.
+
+   le codage binaire donnant implicitement la valeur de n pour le complément à 2.
+
+**Aide**
+
+Pour obtenir la longueur d'une chaîne de caractères, on utilise la fonction `len()`.
+
+P.ex: `len("0101")` renvoie `4`.

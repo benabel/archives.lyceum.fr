@@ -1,0 +1,275 @@
+---
+tags: ["tri par sélection", "tri par insertion"]
+---
+
+::: programme
++--------------------------+-----------------------------------+-------------------------------------+
+| Contenus                 | Capacités attendues               | Commentaires                        |
++==========================+===================================+=====================================+
+| Tris par insertion, par  | Écrire un algorithme de tri.      | La terminaison de ces algorithmes   |
+| sélection                |                                   | est à justifier.                    |
+|                          |                                   |                                     |
+|                          | Décrire un invariant de boucle    | On montre que leur coût est         |
+|                          | qui prouve la correction des tris | quadratique dans le pire cas.       |
+|                          | par insertion, par sélection.     |                                     |
++--------------------------+-----------------------------------+-------------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+Maintenant que nous disposons de tableaux pour stocker de grandes quantités de données, il faut
+qu'on apprenne à les classer. Il existe de nombreux algorithmes de tri plus ou moins efficaces, qui
+sont pour la plupart répertoriées dans _The Art of Computer Programming, Volume 3, Sorting and
+Searching._ de Knuth, Donald. E. [1998]. Le livre de chevet de tout programmeur.
+
+<wc-wikimage title="Sorting_insertion_sort_anim.gif" caption="Animation de l'algorithme de tri par insertion"></wc-wikimage>
+
+:::
+
+## Problématique
+
+> Comment ranger des données afin de faciliter leur accès futur ? C'est par exemple l'ordre
+> alphabétique du dictionnaire, où les mots sont rangés dans un ordre logique qui permet de ne pas
+> devoir parcourir tout l'ouvrage pour retrouver une définition. Ce peut être aussi l'ordre
+> intuitif dans lequel un joueur de cartes va ranger son jeu afin de limiter le temps de recherche
+> pendant le déroulement de la partie. Cette problématique permet d'introduire la notion de tri
+> (avec plusieurs sens distincts : séparer, ordonner, choisir), puis d'étudier différents
+> algorithmes de tri. Le tri permet essentiellement d'accélérer les recherches, grâce à
+> l'algorithme de recherche dichotomique.
+
+[Source eduscol](http://cache.media.eduscol.education.fr/file/ISN_Tle_S/29/6/lyceeGT_ressource_ISN_20_06_Tle_S_14_Vous_avez_dit_trier_1_algorithmes_218296.pdf)
+
+### Situation d'accroche
+
+Un joueur de cartes reçoit 9 cartes lors de la donne en début de partie ; il les trie ensuite pour
+faciliter la lecture de son jeu.
+
+- Comment procède-t-il exactement pour réaliser cette opération ?
+- Y a-t-il plusieurs façons de procéder :
+
+Vous rendre sur [cette page](https://apps.lyceum.fr/order-cards-game/) sur laquelle vous est
+proposé un jeu de cartes à trier:
+
+<iframe src="https://apps.lyceum.fr/order-cards-game/" width="960" height="480"></iframe>
+
+
+
+Réalisez les consignes suivantes dans l'ordre.
+
+1. **Consigne n° 1:** « triez les cartes » en notant le nombre d'opérations nécessaires au tri,
+   recommencer l'opération pour voir si le nombre de tours d'algorithmes varie, et de quoi peut
+   dépendre ce nombre. Ensuite seulement,
+2. **Consigne n° 2:** « décrivez par écrit la façon précise dont vous vous y êtes pris pour effectuer le tri ».
+3. **En plus:** imaginez d'autres méthodes qui pourraient être plus efficaces pour effectuer le tri.
+
+
+### Les deux types de tri «quadratiques»
+
+Nous allons cette année voir deux algorithmes de tri pas forcément très efficaces, mais relativement simples.
+
+Dans ces deux algorithmes, on va créer une sous-triée à gauche qui va grandir au fur et à mesure que l'algorithme «avance» jusqu'à ce que la liste soit entièrement triée. 
+
+
+
+Ces deux algorithmes utilisent deux boucles imbriquées:
+
+- La **boucle externe** est représentée par la flèche _rouge_.
+- La **boucle interne** est représentée par la flèche _jaune_.
+
+Les animations ci-dessous sont issues du [Cahier NSI 1re aux éditions Bordas](https://www.editions-bordas.fr/cahier-nsi-1re-collection-30.html) et peuvent être consultées en plein écran en suivant ce lien:
+
+https://www.cahier-nsi.fr/#!/interfaces
+
+- **Le tri par sélection** consiste à créer une sous-liste triée à gauche en y ajoutant les éléments non triés de droite dans l'ordre croissant.
+
+<iframe src="https://www.cahier-nsi.fr/tri_par_selection/" width="960" height="480"></iframe>
+
+[Cahier NSI 1re aux éditions Bordas](https://www.editions-bordas.fr/cahier-nsi-1re-collection-30.html){.cite-source}
+
+
+- **le tri par insertion** consiste à avancer dans la liste et placer la carte considérée à sa place dans la sous-liste triée de gauche.
+
+<iframe src="https://www.cahier-nsi.fr/tri_par_insertion/" width="960" height="480"></iframe>
+
+[Cahier NSI 1re aux éditions Bordas](https://www.editions-bordas.fr/cahier-nsi-1re-collection-30.html){.cite-source}
+
+::: {.plus titre="Utilisation de la mémoire"}
+On parle de tri en place (in-place en anglais) la liste est triée sans utiliser une autre liste pour stocker les résultats.
+:::
+
+### Créer une liste de données aléatoire
+
+Nous allons maintenant implémenter ces algorithmes en Python.
+
+On commence par créer une liste aléatoire d'entiers pour tester nos algorithmes de tri.
+
+```{python}
+# Importer le module random pour créer des nombres au hasard
+import random
+
+def genere_liste_aleatoire(N, n):
+    """Génére une liste aléatoire de N éléments compris entre 0 et n"""
+    # Créer une liste vide pour accueillir les nombres
+    data = []
+    # ajoute les éléments aléatoires dans la liste
+    for i in range(N):
+        data.append(random.randrange(n))
+    return data
+
+# Création d'une liste de 9 valeurs comprises entre 0 et 100
+liste_aléatoire = genere_liste_aleatoire(9, 100)
+print(liste_aléatoire)
+```
+
+## Le tri par sélection
+### Principe
+> Sur un tableau de n éléments (numérotés de $0$ à $n-1$), le principe du tri par sélection est le
+> suivant :
+> 
+> - Rechercher le plus petit élément du tableau, et l'échanger avec l'élément d'indice 0 ;
+> - rechercher le second plus petit élément du tableau, et l'échanger avec l'élément d'indice 1 ;
+> - continuer de cette façon jusqu'à ce que le tableau soit entièrement trié.
+> &nbsp;
+> [Source Wikipedia](http://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection)
+
+### Illustration graphique
+
+<wc-wikimage title="Selection-Sort-Animation.gif" class="half"></wc-wikimage>
+
+### Illustration en vidéo
+
+`youtube: Ns4TPTC8whw`
+
+*Select-sort with Gypsy folk dance. Created at Sapientia University, Tirgu Mures (Marosvásárhely), Romania. Directed by Kátai Zoltán and Tóth László. In cooperation with "Maros Művészegyüttes", Tirgu Mures (Marosvásárhely), Romania.*{.cite-source}
+
+### Implémentation en python
+
+Voici un exemple de code implémentant cet algorithme de tri présentant l'état de la liste à chaque
+tour avancée dans le tableau. Vous pouvez voir que le tableau est bien classé en **plaçant
+systématiquement l'élément minimum du tableau restant à trier à la fin des éléments triés**.
+
+
+```{python}
+# Création d'une liste de 5 valeurs comprises entre 0 et 100 à trier
+data = genere_liste_aleatoire(5, 100)
+print("Liste initiale: ", data)
+
+def tri_par_selection(tab):
+    # Calculer la taille du tableau
+    N = len(tab)
+    # Parcourir le tableau jusqu'à l'avant dernière valeur
+    # en effet la dernière valeur sera forcément la plus grande
+    for i in range(N - 1):
+        # Stocker la valeur initiale de la case d'indice i, et son indice
+        minimum = tab[i]
+        i_min = i
+        #  Parcourir le reste du tableau pour rechercher l'élément le plus petit restant
+        for j in range(i, N):
+            if tab[j] < minimum:
+                # Stocker la valeur du minimum et son indice
+                minimum = tab[j]
+                i_min = j
+        # Intervertir la valeur initiale de la case d'indice i et le minimum trouvé
+        tab[i], tab[i_min] = minimum, tab[i]
+        
+        # Affiche les états intermédiaires de la liste
+        print("Etat à la fin du tour", i, ":" , tab)
+
+tri_par_selection(data)
+print("Liste finale: ", data)
+```
+
+### Aspects théoriques
+
+Cet algorithme réalise deux boucles imbriquées il a une _complexité quadratique_ dans le pire des
+cas $O(N^2)$.
+
+L'_invariant de boucle_ garantit qu'au début de chaque tour $i$ de boucle externe, les $i$
+premières valeurs du tableau sont les plus petites et sont triées.
+
+## Le tri par insertion
+
+### Principe
+
+> Dans l'algorithme, on parcourt le tableau à trier du début à la fin. Au moment où on considère le
+> i-ème élément, les éléments qui le précèdent sont déjà triés. Pour faire l'analogie avec
+> l'exemple du jeu de cartes, lorsqu'on est à la i-ème étape du parcours, le i-ème élément est la
+> carte saisie, les éléments précédents sont la main triée et les éléments suivants correspondent
+> aux cartes encore mélangées sur la table.
+
+> L'objectif d'une étape est d'insérer le i-ème élément à sa place parmi ceux qui précèdent. En
+> pratique, on fait « remonter » l'élément au fur et à mesure jusqu'à rencontrer un élément plus
+> petit.
+
+[Source Wikipedia](http://fr.wikipedia.org/wiki/Tri_par_insertion)
+
+### Illustration graphique
+
+<wc-wikimage title="Insertion-sort-example-300px.gif" caption="Animation du tri par insertion"></wc-wikimage>
+
+
+### Illustration en vidéo
+
+`youtube: ROalU379l3U`
+
+*Insert-sort with Romanian folk dance. Created at Sapientia University, Tirgu Mures (Marosvásárhely), Romania. Directed by Kátai Zoltán and Tóth László. In cooperation with "Maros Művészegyüttes", Tirgu Mures (Marosvásárhely), Romania.*{.cite-source}
+
+### Implémentation en python
+
+Voici un exemple d'implémentation ou le tableau est parcouru de la gauche vers la droite, observer bien ou est placée la valeur à insérer à chaque tour de la boucle.
+
+```{python}
+# Création d'une liste de 5 valeurs comprises entre 0 et 20 à trier
+data = genere_liste_aleatoire(5, 100)
+print("Liste initiale: ", data)
+
+def tri_insertion(tab):
+    # Calculer la taille du tableau
+    N = len(tab)
+    # Parcourir l'ensemble de la liste à partir de la deuxième case
+    # en effet un tableau de 1 case est forcément trié
+    for i in range(1, N):
+        # Stocker la valeur à "insérer"
+        val = tab[i]
+        print("Valeur à insérer:", val)
+        # Parcourir le tableau déjà trié de dimension i-1 vers la gauche
+        # jusqu'à rencontrer une valeur inférieure à notre valeur à insérer
+        j = i - 1
+        while tab[j] > val and j >= 0:
+            # Intervertir  les valeurs aux indices j et j+1
+            tab[j + 1], tab[j] = tab[j], tab[j + 1]
+            # Diminuer j de 1 pour la prochaine comparaison
+            j = j - 1
+        # Affiche les états intermédiaires de la liste
+        print("Etat à la fin du tour", i, ":" , tab)
+
+tri_insertion(data)
+print("Liste finale:", data)
+```
+
+### Aspects théoriques
+
+Cet algorithme réalise deux boucles imbriquées il a une _complexité quadratique_ dans le pire des
+cas $O(N^2)$.
+
+L'_invariant de boucle_ garantit qu'au début de chaque tour $i$ de boucle externe, les $i+1$
+premières valeurs du tableau sont triées.
+
+## Autres algorithmes
+
+Ces deux algorithmes ne sont que des exemples d'algorithmes de tri, et il en existe bien d'autres
+plus efficace comme le fameux *quicksort*, ou le *timsort* utilisé comme algorithme par défaut en
+Python.
+
+La littérature ne manque pas sur ce sujet, car il s'agit d'une introduction de choix à de nombreux
+concepts clés de l'algorithmique:
+
+- **la complexité**: l'étude du temps et de la mémoire nécessité par l'algorithme.
+- **les cas extrêmes** ou *edge cases*: que se passe-t-il dans le cas ou la liste est déjà triée,
+  ou au contraire si elle est en ordre inversé.
+- **la correction de l'algorithme**: comment prouver que l'algorithme donne le bon résultat en toute occasion par une *méthode de récurrence* mathématique.
+
+
+Vous pouvez consulter cet article du site
+[interstices.info](https://interstices.info/jcms/c_6973/les-algorithmes-de-tri) pour en savoir
+plus.

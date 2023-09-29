@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<div class="intro">
+<blockquote class="blockquote">
+<p>Nous avons vu l’année dernière comment étaient codées les données au sein d’un ordinateur, et nous avons utilisé des types simples et composés de Python.</p>
+</blockquote>
+</div>
+<h2 id="les-types-simples" class="anchored">Les types simples</h2>
+<p>Un objet de type simple ne stocke qu’une donnée.</p>
+<ul>
+<li>entier(<code>int</code>): <code>1</code> <code>12</code> <code>-4</code></li>
+<li>nombre flottant(<code>float</code>): <code>1.1</code> <code>12.0</code> -25E2`<br>
+</li>
+<li>chaîne de caractères(<code>str</code>): <code>"Du texte"</code> <code>'Un autre texte'</code></li>
+<li>booléen(<code>bool</code>): <code>True</code> <code>False</code></li>
+</ul>
+<h2 id="les-types-construits" class="anchored">Les types construits</h2>
+<p>Les types construits permettent de stocker des collections de données.</p>
+<ul>
+<li><p>tableau(<code>list</code>): <code>l = [1, 12, -4]</code></p>
+<p>On accède aux éléments du tableau par <strong>index</strong>. <code>l[2]</code> → <code>-4</code></p></li>
+<li><p>dictionnaire(<code>dict</code>): <code>d = {"nom": "Gaston", "age": 25}</code></p>
+<p>On accède aux éléments du dictionnaire par <strong>clef</strong>. <code>d["age"]</code> → <code>25</code></p></li>
+</ul>
+<h2 id="méthode-ditérations" class="anchored">Méthode d’itérations</h2>
+<h3 id="itération-sur-une-liste" class="anchored">Itération sur une liste</h3>
+<p>On peut itérer sur les valeurs ou sur les index.</p>
+<ol type="1">
+<li>Itération sur les valeurs</li>
+</ol>
+<p>On fait une itération sures valeurs du tableau en utilisant le mot-clé <code>in</code>.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">ma_liste</span><span class="p">:</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+<ol start="2" type="1">
+<li>Itération sur les index</li>
+</ol>
+<p>C’est la méthode classique utilisée dans les langages impératifs. Ayant accès à l’index on a également accès la valeur.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)):</span>
+<span class="n">    val</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">    print</span><span class="p">(</span><span class="s2">"indice:"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">"valeur:"</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="itération-sur-les-dictionnaires" class="anchored">Itération sur les dictionnaires</h3>
+<p>Les dictionnaires étant des associations de clés(key) et de valeurs(value), on peut itérer sur les clés, les valeurs, ou les deux.</p>
+<ol type="1">
+<li><p>Itération sur les clés: <code>keys()</code></p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">D</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+
+<p>Ou plus simplement.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">D</span><span class="p">:</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</li>
+<li><p>Itération sur les valeurs: <code>values()</code></p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">D</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</li>
+<li><p>Itération sur les paires clé, valeurs: <code>items()</code></p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">D</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">'=&gt;'</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

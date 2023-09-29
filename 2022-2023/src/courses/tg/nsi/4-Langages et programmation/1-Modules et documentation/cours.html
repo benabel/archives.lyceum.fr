@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Modularité.</td>
+<td><p>Utiliser des API (Application Programming Interface) ou des bibliothèques.</p>
+<p>Exploiter leur documentation. Créer des modules simples et les documenter.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro">
+<!-- TODO utiliser wc-wikimage -->
+<figure class="half right figure">
+<img src="../../images/640px-PyPI_logo.svg.png" class="figure-img">
+<figcaption class="figure-caption">
+Pypi le python packaging index permet de publier des modules python open-source pour qu’ils puissent être réutilisés.
+</figcaption>
+</figure>
+<p>Jusqu’à maintenant, nous avons toujours programmé au sein d’un seul fichier (ou script). Cependant, lorsqu’on souhaite rédiger des programmes plus longs, il est souhaitable de séparer le code dans plusieurs fichiers. Chaque fichier est appelé un module et les définitions d’un module peuvent être importées dans un autre module grâce au mot-clé <code>import</code>.</p>
+</div>
+<h2 id="utilisation-des-modules" class="anchored">Utilisation des modules</h2>
+<p>Lorsqu’on utilise Python, certaines fonctionnalités sont présentes par défaut, comme les fonctions <code>print()</code> et <code>round()</code>.</p>
+<p>Par contre, pour certaines fonctionnalités jugées moins «indispensables», il est nécessaire d’importer des modules de code qui vont permettre de rajouter les fonctionnalités souhaitées.</p>
+<p>On a par exemple déjà utilisé les modules <code>math</code> ou <code>random</code>, nous allons dans cet exemple utiliser le module <a href="https://docs.python.org/fr:3/library/statistics.html"><code>statistics</code></a> moins connu ajouté à partir de la version 3.4 de Python.</p>
+<div class="highlight"><pre><span></span><span class="c1"># import du module</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
+<span class="c1"># affiche l'aide</span>
+<span class="n">help</span><span class="p">(</span><span class="n">statistics</span><span class="p">)</span>
+</pre></div>
+
+<p>Supposons que l’on souhaite utiliser les fonctions <code>mean()</code> moyenne et <code>stdev()</code> :écart-type. Plusieurs solutions s’offrent à nous:</p>
+<ol type="1">
+<li>Import du module et utilisation de son espace de noms avec une notation pointée(avec un point entre le nom du module et le nom de la fonction).</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statistics</span>
+<span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Moyenne:"</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Écart-type:"</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">stdev</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+</pre></div>
+
+<p>SORTIE</p>
+<div class="highlight"><pre><span></span>Moyenne: 12.571428571428571
+Écart-type: 4.035556254807296
+</pre></div>
+
+<p>On peut aussi renommer l’import avec le mot-clé <code>as</code> pour rendre le code plus lisible.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statistics</span> <span class="k">as</span> <span class="nn">stat</span>
+<span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Moyenne:"</span><span class="p">,</span> <span class="n">stat</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Écart-type:"</span><span class="p">,</span> <span class="n">stat</span><span class="o">.</span><span class="n">stdev</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+</pre></div>
+
+<ol start="2" type="1">
+<li>Vous pouvez également n’importer que les fonctions dont vous avez besoin.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">mean</span><span class="p">,</span> <span class="n">stdev</span>
+<span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Moyenne:"</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Écart-type:"</span><span class="p">,</span> <span class="n">stdev</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+</pre></div>
+
+<ol start="3" type="1">
+<li>Une autre méthode cependant <strong>déconseillée</strong> en raison de la pollution de l’espace des noms(de variables) est l’utilisation du <code>*</code> (<em>wildcard</em>, joker en anglais).</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1"># Toutes les objets du module sont disponibles sans notation pointée</span>
+<span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Moyenne:"</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Écart-type:"</span><span class="p">,</span> <span class="n">stdev</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+</pre></div>
+
+<details class="plus"><summary>&nbsp;</summary>
+<p>Python possède de très nombreux modules implémentés directement par l’équipe de développement de Python, c’est ce qu’on appelle la <a href="https://docs.python.org/fr/3/library/index.html">bibliothèque standard</a>:</p>
+<ul>
+<li><code>datetime</code>: Types de base pour la date et l’heure</li>
+<li><code>random</code>: Génère des nombres pseudo-aléatoires</li>
+<li><code>zipfile</code>: Travailler avec des archives ZIP</li>
+<li>…</li>
+</ul>
+<p>La liste est longue et ne cesse de s’allonger à chaque version de Python en fonction des demandes des utilisateurs.</p>
+<p>Si cependant vous ne trouvez pas votre bonheur dans la bibliothèque standard, python possède une communauté open-source importante qui propose des modules (et packages: ensembles de modules) sur <a href="https://pypi.org/">Pypi</a>, on trouvera parmi les milliers de projets certains noatbles:</p>
+<ul>
+<li><code>pandas</code> pour la manipulation de données.</li>
+<li><code>django</code> pour créer des applications web.</li>
+<li><code>numpy</code> pour la manipulation de matrices ou tableaux multidimensionnels.</li>
+<li><code>scipy</code> pour les applications scientifiques.</li>
+<li>…</li>
+</ul>
+<p>Si vous ne trouvez pas votre bonheur parmi ces packages vous devrez l’écrire!</p>
+</details>
+
+<h2 id="notre-premier-module" class="anchored">Notre premier module</h2>
+<p>Nous allons créer un premier module dans un fichier <code>fibo.py</code> qui permet générer les nombres de la suite de Fibonacci.</p>
+<p>La suite de Fibonacci est une suite de nombres entiers définie par récurrence.</p>
+<p>Les deux premiers termes sont 0 et 1, puis un terme est la somme des deux termes précédents.</p>
+<p>On obtient ainsi les nombres dits de Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21…</p>
+<p>La définition mathématique est:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>f</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn><mo separator="true">;</mo><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mo separator="true">;</mo><msub><mi>f</mi><mi>n</mi></msub><mo>=</mo><msub><mi>f</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>f</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mtext>&nbsp;pour&nbsp;n&nbsp;&gt;&nbsp;1</mtext></mrow><annotation encoding="application/x-tex">
+f_0 = 0; f_1 = 1; f_n = f_{n-1} + f_{n-2} \text{ pour n &gt; 1}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9028em;vertical-align:-0.2083em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9028em;vertical-align:-0.2083em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mord text"><span class="mord">&nbsp;pour&nbsp;n&nbsp;&gt;&nbsp;1</span></span></span></span></span></span>
+</p>
+<div class="highlight"><pre><span></span><span class="c1"># Module sur les nombres de Fibonacci</span>
+<span></span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c1"># affiche les nombres de Fibonacci jusqu'à n</span>
+<span class="n">    a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="k">    while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+<span class="nb">        print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="n">        a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="nb">    print</span><span class="p">()</span>
+<span></span>
+<span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>   <span class="c1"># renvoie la liste des nombres de Fibonacci jusqu'à n</span>
+<span class="n">    result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">    a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="k">    while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+<span class="n">        result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">        a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="k">    return</span> <span class="n">result</span>
+</pre></div>
+
+<p>Si le module est correctement installé ou tout simplement présent dans le même dossier que celui ou vous exécutez python (<em>cwd</em>: Current Working Directory_).</p>
+<p>On importe le module sous le nom <code>fibo</code> en python, l’extension ne doit pas être précisée.</p>
+<p>Les imports fonctionnent comme d’habitude.</p>
+<ul>
+<li><p>Soit en important le module directement et en utilisant des notations pointées;</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span>
+<span class="n">fibo</span><span class="o">.</span><span class="n">fib</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="c1"># affiche 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</span>
+<span class="n">fibo</span><span class="o">.</span><span class="n">fib2</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># renvoie [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</span>
+</pre></div>
+</li>
+<li><p>soit en important spécifiquement des fonctions pour pouvoir les utiliser sans rappeler le module d’origine.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fibo</span> <span class="kn">import</span> <span class="n">fib</span><span class="p">,</span> <span class="n">fib2</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="c1"># affiche 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</span>
+<span class="n">fib2</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># renvoie [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</span>
+</pre></div>
+</li>
+</ul>
+<h2 id="documentation-et-commentaires" class="anchored">Documentation et commentaires</h2>
+<p>Nous avons déjà vu en <a href="/1g/nsi/7-langages-et-programmation/6-fonctions/#prototyper-une-fonction">première</a> comment <em>prototyper</em> des fonctions pour décrire le rôle de la fonction, le type des paramètres et le type de la valeur de retour. C’est ce que l’on appelle une <code>docstring</code>.</p>
+<p>Les <code>docstring</code>s sont utilisées pour afficher les documentations en ligne ou directement dans Python avec la fonction <code>help()</code></p>
+<p>Pour documenter un module, il suffit de créer la <code>docstring</code> au début du fichier en utilisant les chaines de caractères multilignes délimitées par <code>"""</code>, pour une lecture aisée on limite souvent le nombre de caractères par ligne à 80(ou 100 suivant les projets).</p>
+<p>Si on prend l’exemple précédent on pourrait le documenter avec une description générale au début du module ainsi qu’une liste des fonctions, et en pensant à documenter également les fonctions bien sûr.</p>
+<p>Les fonctions ont également été renommées pour être plus explicites:</p>
+<ul>
+<li><code>fib</code>: <code>fib_print</code></li>
+<li><code>fib2</code>: <code>fib_to_array</code></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="sd">""" Module fibo relatif à la création de nombres de Fibionacci</span>
+<span></span>
+<span class="sd">Pour rappel, la suite de Fibonacci est une suite d'entiers dans laquelle chaque terme est la somme </span>
+<span class="sd">des deux termes qui le précèdent.(voir: https://fr.wikipedia.org/wiki/Suite_de_Fibonacci)</span>
+<span></span>
+<span class="sd">Ce module présente deux fonctions:</span>
+<span></span>
+<span class="sd">- fib_print: affiche les nombres de Fibionacci</span>
+<span class="sd">- fib_to_array: renvoie la liste des nombres de Fibionacci</span>
+<span></span>
+<span class="sd">"""</span>
+<span></span>
+<span class="k">def</span> <span class="nf">fib_print</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Affiche les nombres de Fibionacci</span>
+<span></span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    n: int</span>
+<span class="sd">        dernier rang de la suite de Fibonacci affiché</span>
+<span class="sd">    """</span>
+<span class="n">    a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="k">    while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+<span class="nb">        print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="n">        a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="nb">    print</span><span class="p">()</span>
+<span></span>
+<span class="k">def</span> <span class="nf">fib_to_array</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Renvoie la liste des nombres de Fibionacci</span>
+<span></span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    n: int</span>
+<span class="sd">        dernier rang de la suite de Fibonacci renvoyé dans la liste</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list</span>
+<span class="sd">        La liste des nombres de Fibionnaci jusqu'au rang n</span>
+<span class="sd">    """</span>
+<span class="n">    result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">    a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="k">    while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+<span class="n">        result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">        a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="k">    return</span> <span class="n">result</span>
+</pre></div>
+
+<details class="plus"><summary>Documentation et commentaires</summary>
+<p>Attention à bien distinguer:</p>
+<ul>
+<li>La documentation qui est destinée aux utilisateurs du programme.</li>
+<li>Les commentaires qui sont destinés aux programmeurs lisant le code.</li>
+</ul>
+</details>
+
+<!-- ## Documentation
+
+Il est important de bien distinguer commenter et documenter.
+
+- les _commentaires_ sont destinés au programmeur, pour expliquer ce que l'on a fait, pourquoi on
+  l'a fait.
+
+::: example
+
+Dans un tri, on pourrait trouver le code suivant.
+
+```python
+# on part du deuxième élément car il est déjà trié
+for i in range(1, len(tab)):
+    ...
+```
+
+Le commentaire explique ce que l'on a fait, et évite de revenir en arrière si quelqu'un ne comprend
+pas pourquoi on est parti de l'indice 1.
+
+:::
+
+- la _documentation_ est destinée aux utilisateurs, elle leur permet d'expliquer comment on utilise
+  le programme du point de vue de l'utilisateur et non du programmeur.
+
+En Python, la documentation se fait par l'écriture de
+[Docstring](https://www.python.org/dev/peps/pep-0257/)s.
+
+Docstring
+
+:   Une docstring est une chaîne de caractère écrite en tant que première instruction dans une
+    définition de module, fonction, classe ou méthode. Une telle docstring devient l'attribut spécial
+    `__doc__` de cet objet, et pourra être affichée grâce à la fonction `help()`.
+
+::: example
+
+On peut accéder à la Docstring de la fonction `est_pair` écrite précédemment comme ceci.
+
+```python
+help(est_pair)
+```
+ 
+Affiche :
+
+```
+Help on function est_pair in module __main__:
+
+est_pair(n)
+    Indique si un nombre est pair ou non
+    
+    Paramètres
+    ----------
+    n: int
+    
+    Returns
+    -------
+    bool
+        True si n est pair, False sinon
+```
+::: -->
+<h2 id="annotations-de-types" class="anchored">Annotations de types</h2>
+<p>Depuis la version 3.5, Python propose des <a href="https://docs.python.org/fr/3/library/typing.html">annotations de types</a> dans les fonctions.</p>
+<div class="example">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dit_bonjour</span><span class="p">(</span><span class="n">nom</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">    return</span> <span class="s1">'Bonjour '</span> <span class="o">+</span> <span class="n">nom</span>
+</pre></div>
+
+<p>Cette fonction prend en paramètre un nom de type chaîne de caractères <code>str</code> et renvoie également une chaine de caractères <code>str</code>.</p>
+</div>
+<p>On peut ainsi rendre plus compacte la documentation de nos fonctions.</p>
+<details class="appli"><summary>&nbsp;</summary>
+<p>Proposer des annotations de type pour nos deux fonctions du module <code>fibo</code>.</p>
+</details>
+
+<h2 id="api-application-programming-interface" class="anchored">API (<em>Application Programming Interface</em>)</h2>
+<p>Lorsqu’un projet grandit, il y a de plus en plus de personnes qui doivent travailler dessus et l’utiliser et il devient de plus en plus complexe à comprendre. C’est pour cela qu’une bonne documentation est indispensable, mais aussi une bonne organisation du code afin de le rendre plus facile à utiliser.</p>
+<p>Il conviendra de bien organiser les divers modules et fonctions accessibles, ce qu’on appelle l’API.</p>
+<p>La liste des fonctions disponibles dans l’API est disponible avec la fonction <code>dir()</code>.</p>
+<div class="example">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+
+<p>SORTIE</p>
+<div class="highlight"><pre><span></span>['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
+</pre></div>
+
+</div>
+<details class="plus"><summary>Fonctions privées</summary>
+<p>On définit parfois certaines fonctions juste pour pouvoir développer notre module, ces fonctions ne sont pas destinées à être utilisées par les utilisateurs de notre module, elles sont dites <em>privées</em>.</p>
+<p>Python permet de «cacher» ces fonctions de l’API, pour cela il faut que leur nom commence par un tiret bas <code>_</code>.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_privée</span><span class="p">():</span>
+<span class="nb">    print</span><span class="p">(</span><span class="s2">"Je suis cachée et n'apparait pas dans la documentation"</span><span class="p">)</span>
+</pre></div>
+
+<p><strong>Attention</strong>, la fonction reste accessible malgré tout, elle n’est juste pas documentée ni importée lors des imports avec le jocker: <code>from module import *</code></p>
+</details>
+
+<details class="appli"><summary>&nbsp;</summary>
+<p>On peut prendre l’exemple de la bibliothèque open-source <a href="https://github.com/scikit-learn/scikit-learn"><code>sklearn</code></a> connue pour la qualité de son code, de son API et de sa documentation.</p>
+<p>https://scikit-learn.org/stable/modules/classes.html</p>
+<p>Utiliser la documentation de sklearn pour implémenter la recherche des k-plus proches voisins vue en classe première en utilisant le jeu de données sur les joueurs du top-14 <a href="https://framagit.org/lyceum/binder-notebooks/-/blob/main/kplusproches/joueurs-top14-edit.csv">ici</a>.</p>
+</details>
+
+<div class="ref">
+<ul>
+<li><a href="https://docs.python.org/fr/3/tutorial/modules.html">Documentation python sur les modules</a></li>
+<li><a href="https://numpy.org/devdocs/docs/howto_document.html">A Guide to NumPy/SciPy Documentation</a></li>
+</ul>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,21 +1,22 @@
 ---
-tags: ['communication client-serveur', 'protocole http', "paramètres d'une requête"]
+tags:
+  ["communication client-serveur", "protocole http", "paramètres d'une requête"]
 ---
 
 ::: programme
 +---------------------+------------------------------------+----------------------------------------+
-|      Contenus       |        Capacités attendues         |              Commentaires              |
+| Contenus | Capacités attendues | Commentaires |
 +=====================+====================================+========================================+
-| Interaction client- | Distinguer ce qui est exécuté      | Il s’agit de faire le lien avec ce qui |
-| serveur.            | sur le client ou sur le serveur et | a été vu en classe de seconde et       |
-|                     | dans quel ordre.                   | d’expliquer comment on peut            |
-| Requêtes HTTP,      |                                    | passer des paramètres à un site        |
-| réponses du serveur | Distinguer ce qui est mémorisé     | grâce au protocole HTTP.               |
-|                     | dans le client et retransmis au    |                                        |
-|                     | serveur.                           |                                        |
-|                     |                                    |                                        |
-|                     | Reconnaître quand et pourquoi      |                                        |
-|                     | la transmission est chiffrée.      |                                        |
+| Interaction client- | Distinguer ce qui est exécuté | Il s’agit de faire le lien avec ce qui |
+| serveur. | sur le client ou sur le serveur et | a été vu en classe de seconde et |
+| | dans quel ordre. | d’expliquer comment on peut |
+| Requêtes HTTP, | | passer des paramètres à un site |
+| réponses du serveur | Distinguer ce qui est mémorisé | grâce au protocole HTTP. |
+| | dans le client et retransmis au | |
+| | serveur. | |
+| | | |
+| | Reconnaître quand et pourquoi | |
+| | la transmission est chiffrée. | |
 +---------------------+------------------------------------+----------------------------------------+
 :::
 
@@ -24,7 +25,7 @@ tags: ['communication client-serveur', 'protocole http', "paramètres d'une requ
 <a title="Colin Viebrock, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:PHP-logo.svg"><img class="half right" alt="PHP-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/512px-PHP-logo.svg.png"></a>
 
 Dès la création du `html` par Tim Berners Lee, celui-ci a également créé le protocole
-http(*hypertext transfer protocol*) pour normaliser l'échange des données entre le client(le
+http(_hypertext transfer protocol_) pour normaliser l'échange des données entre le client(le
 navigateur) et le serveur qui fournit les pages web.
 
 Aujourd'hui la plupart des applications web utilisent le langage `php` côté serveur, mais il est
@@ -37,14 +38,13 @@ possible d'utiliser n'importe quel langage `python`, `javascript`...
 Les protocoles HTTP, ou HTTPS pour sa version sécurisée afin de crypter les informations échangées,
 définissent des en-têtes lors des requêtes du client et des réponses du serveur.
 
-Tous les navigateurs permettent de les afficher en utilisant le *moniteur réseau* des **outils de
-développement** du navigateur(*Touche F12*).
+Tous les navigateurs permettent de les afficher en utilisant le _moniteur réseau_ des **outils de
+développement** du navigateur(_Touche F12_).
 
 Voici une requête et une réponse de la page d'accueil du site situé à l'adresse:
 <https://lyceum.fr>
 
 ![console réseau firefox](./images/moniteur-reseau-firefox.png)
-
 
 ### Requête du client
 
@@ -54,14 +54,14 @@ Analysons la requête:
 
 Ici on veut obtenir la page web, il existe aussi d'autres méthodes `POST`, `PUT`, `DELETE`...
 
-- URL: <https://lyceum.fr/>
+- URL: <https://www.lyceum.fr/>
 
 L'adresse URL de la page ici, c'est la page d'accueil.
 
 - En-têtes:
 
 Des informations sur le client.
-  
+
 ```
 Host: lyceum.fr
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:67.0) Gecko/20100101 Firefox/67.0
@@ -82,7 +82,6 @@ traitée, sinon des codes normalisés existent `404`: page non trouvée, `403` a
 L'ensemble des codes et leur signification est disponible sur
 [MDN](https://developer.mozilla.org/fr/docs/Web/HTTP/Status).
 
-  
 ```
 HTTP/1.1 200 OK
 server: nginx/1.16.0
@@ -101,11 +100,16 @@ Il s'agit tout simplement de la page `html` renvoyée que je résume ici, c'est 
 `html` complète.
 
 ```html
-<!DOCTYPE html><html><head><meta charSet="utf-8"/>
-...
-<body>
-...
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    ...
+    <body>
+      ...
+    </body>
+  </head>
+</html>
 ```
 
 ## L'application côté serveur

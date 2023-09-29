@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="représentation-binaire-des-entiers-naturels" class="anchored">Représentation binaire des entiers naturels</h2>
+<p><a href="https://h5p.lyceum.fr/3402212386/" class="uri">https://h5p.lyceum.fr/3402212386/</a></p>
+<h2 id="entiers-naturels-en-base-deux" class="anchored">Entiers naturels en base deux</h2>
+<ol type="1">
+<li><p>Trouver la représentation en base deux du nombre 1000.</p></li>
+<li><p>Donner les représentations en base deux des nombres 1, 3, 7, 15, 31 et 63. Expliquer le résultat.</p>
+<p>Ces nombres sont égaux à une puissance de 2 moins 1, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^n - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7477em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+ce sont les plus grands nombres pouvant être encodés sur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>
+bits.</p></li>
+<li><p>Trouver la représentation en base dix du nombre <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1001</mn><mtext>&nbsp;</mtext><mn>011</mn><msub><mn>0</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1001~0110_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7944em;vertical-align:-0.15em;"></span><span class="mord">1001</span><span class="mspace nobreak">&nbsp;</span><span class="mord">011</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+.</p></li>
+<li><p>C’est en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>111</mn><mtext>&nbsp;</mtext><mn>1001</mn><mtext>&nbsp;</mtext><mn>000</mn><msub><mn>0</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">111~1001~0000_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7944em;vertical-align:-0.15em;"></span><span class="mord">111</span><span class="mspace nobreak">&nbsp;</span><span class="mord">1001</span><span class="mspace nobreak">&nbsp;</span><span class="mord">000</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+qu’a été démontré le théorème fondamental de l’informatique. Exprimer ce nombre en base dix.</p></li>
+<li><p>Pour multiplier par dix un entier naturel exprimé en base dix, il suffit d’ajouter un 0 à sa droite, par exemple, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn><mo>×</mo><mn>10</mn><mo>=</mo><mn>120</mn></mrow><annotation encoding="application/x-tex">12 \times 10 = 120</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">12</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">120</span></span></span></span>
+. Quelle est l’opération équivalente pour les entiers naturels exprimés en base deux ? Exprimer en base deux les nombres 3, 6 et 12 pour illustrer cette remarque.</p>
+<p>Lorsqu’n ajoute un zéro en base deux, le nombre est multiplié par deux.</p></li>
+</ol>
+<h2 id="octet-et-information" class="anchored">Octet et information</h2>
+<ol type="1">
+<li><p>Combien de bits d’informations contient un octet ? Combien un octet peut-il représenter de valeurs différentes ?</p></li>
+<li><p>On imagine un ordinateur dont la mémoire est constituée de quatre circuits mémoire un bit. Quel est le nombre d’états possibles de la mémoire de cet ordinateur ? Même question pour un ordinateur dont la mémoire est constituée de dix circuits mémoires un bit. Et pour un ordinateur dont la mémoire est constituée de 34 milliards de tels circuits.</p></li>
+<li><p>On veut représenter chacune des sept couleurs de l’arc-en-ciel par un mot, les sept mots devant être distincts et de même longueur. Quelle est la longueur minimale de ces mots ?</p></li>
+</ol>
+<h2 id="entiers-naturels-en-base-16" class="anchored">Entiers naturels en base 16</h2>
+<ol type="1">
+<li><p>Trouver la représentation en base 16 du nombre binaire: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>11110001100</mn><msub><mn>1</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">111100011001_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7944em;vertical-align:-0.15em;"></span><span class="mord">11110001100</span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+.</p></li>
+<li><p>Trouver la représentation en base dix du nombre <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>e</mi><mn>2</mn><msub><mi>c</mi><mn>16</mn></msub></mrow><annotation encoding="application/x-tex">4e2c_{16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7944em;vertical-align:-0.15em;"></span><span class="mord">4</span><span class="mord mathnormal">e</span><span class="mord">2</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+.</p></li>
+<li><p>Trouver la représentation en base seize du nombre <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>96</mn><msub><mn>5</mn><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">965_{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7944em;vertical-align:-0.15em;"></span><span class="mord">96</span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+.</p></li>
+</ol>
+<h2 id="effectuer-des-opérations" class="anchored">Effectuer des opérations</h2>
+<ol type="1">
+<li><p>Poser les opérations <em>binaires</em> suivantes et vérifier votre résultat en base 10:</p>
+<div class="highlight"><pre><span></span>   11010
++ 110011
+--------
+</pre></div>
+
+<div class="highlight"><pre><span></span> 110011
+- 11010
+--------
+</pre></div>
+</li>
+<li><p>Poser les opérations <em>hexadécimales</em> suivantes et vérifier votre résultat en base 10:</p>
+<div class="highlight"><pre><span></span>   FF0
++   1E
+------
+</pre></div>
+
+<div class="highlight"><pre><span></span> FF0
+- 1E
+----
+</pre></div>
+</li>
+</ol>
+<h2 id="représenter-des-couleurs-en-hexadécimal" class="anchored">Représenter des couleurs en hexadécimal</h2>
+<p>En HTML et en CSS, les couleurs peuvent être codées sous la forme d’un sextuplet hexadécimal représentant ainsi la couleur sur 3 octets. Par exemple: <code>12AB5F</code>.</p>
+<p>Chaque <strong>octet</strong> est écrit avec deux chiffres hexadécimaux, et représente un niveau parmi 256 de chacune des trois couleurs primaires de la synthèse additive <strong>Rouge, Vert et Bleu</strong> dans l’ordre.</p>
+<p><em>Par exemple, le code <code>#FF0000</code> représente un niveau maximal à 255 sur le rouge, et des niveaux nuls pour le vert et le bleu.</em></p>
+<p>Une animation est disponible à l’adresse suivante: <a href="https://apps.lyceum.fr/css-colors/" class="uri">https://apps.lyceum.fr/css-colors/</a></p>
+<ol type="1">
+<li><p>Chaque composante de couleur étant codé sur un octet, donner en décimal et en hexadécimal les valeurs minimale, maximale et médiane.</p></li>
+<li><p>Compléter le tableau suivant:</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>couleur</th>
+<th>Code hexadécimal</th>
+<th>R(décimal)</th>
+<th>V(décimal</th>
+<th>B(décimal)</th>
+<th>Codage 3bits(quest. 4)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><code>#000000</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>0</td>
+<td>0</td>
+<td>255</td>
+<td><code>001</code></td>
+</tr>
+<tr class="odd">
+<td>Vert</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>#00FFFF</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>255</td>
+<td>0</td>
+<td>0</td>
+<td><code>100</code></td>
+</tr>
+<tr class="even">
+<td>Magenta</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>#FFFF00</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Blanc</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>La complémentaire d’une couleur est obtenue en allumant les lampes éteintes et en éteignant les lampes allumées. Déterminer les couleurs complémentaires des couleurs précédentes.</p></li>
+<li><p>En utilisant comme précédemment uniquement les éclairages nuls et maximum, combien de couleurs sont codées? En déduire comment aurait-on pu coder ces données sur 3 bits et compléter le tableau de la question 2?</p></li>
+<li><p>Quel est le nombre de couleurs qui peut être codé si on considère toutes les combinaisons d’éclairage rendues possibles par le codage hexadécimal utilisé par le HTML et CSS.</p></li>
+<li><p>Grâce à l’animation expliquer comment:</p>
+<ul>
+<li><p>Créer des nuances de gris.</p></li>
+<li><p>Comment obscurcir une couleur par exemple le rouge.</p></li>
+<li><p>Comment éclaircir une couleur par exemple le rouge.</p></li>
+</ul></li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

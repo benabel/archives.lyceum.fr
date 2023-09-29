@@ -1,0 +1,219 @@
+## Définir et appeler des fonctions
+
+Écrire les fonctions suivantes, et pour chacune, donner un exemple d'appel avec la sortie attendue.
+
+1. Une fonction `plus_grand(n1, n2)` qui _renvoie_ la plus grande valeur de deux valeurs entières
+   données en arguments.
+
+   ```{python}
+   #|tags: [correction]
+   def plus_grand(n1, n2):
+       if n1 > n2:
+           return n1
+       # le else est facultatif
+       else:
+           return n2
+   
+   plus_grand(24, -12) # 24
+   ```
+
+2. Une procédure `repete_mot(mot, n)` qui _affiche_ un même `mot` `n` fois.
+
+   ```{python}
+   #|tags: [correction]
+   def repete_mot(mot, n):
+       print(mot * n)
+           
+   
+   repete_mot("TO", 2) # affiche TOTO , NE RENVOIE RIEN
+   ```
+
+3. Écrivez une fonction `plus_grand3(n1, n2, n3)` qui _renvoie_ le maximum de trois nombres.
+
+   ```{python}
+   #|tags: [correction]
+   def plus_grand3(n1, n2, n3):
+       if n1 > n2 and n1 > n3:
+           return n1
+       elif n2 > n1 and n2 > n3:
+           return n2
+       # le else est facultatif
+       else:
+           return n3
+   
+   plus_grand3(24, -12, 48) # 48
+   ```
+
+4. Écrivez une fonction `carres(n)` pour _afficher_ les valeurs des carrés des nombres compris entre
+   1 et `n` (les deux inclus).
+
+   ```{python}
+   #|tags: [correction]
+   def carres(n):
+       for i in range(1, n+1):
+           print(i**2)
+   
+   carres(5) # affiche 1 4 9 16 25
+   ```
+
+5. Écrivez une fonction `est_pair(n)` pour vérifier si un nombre `n` donné en argument est pair.
+
+   Cette fonction doit _renvoyer_ un booléen.
+
+   ```{python}
+   #|tags: [correction]
+   def est_pair(n):
+       if n % 2 == 0:
+           return True
+       else:
+           return False
+   
+   est_pair(12345) # renvoie False
+   ```
+
+   
+6. Écrivez une fonction `factorielle(n)` qui _renvoie_ la factorielle d’un entier naturel `n`.
+
+   Par définition, la factorielle est le résultat de la multiplication d’un nombre entier par tous
+   les nombres entiers inférieurs à celui-ci.
+
+   exemple: La factorielle de 5, qu’on note 5!, est égale à $5\times4\times3\times2\times1$, soit 120.
+
+   ```{python}
+   #|tags: [correction]
+   def factorielle(n):
+       res = 1
+       for i in range(2, n+1):
+           res = res * i
+       return res
+    
+   factorielle(5) # renvoie 120
+   ```
+
+7. **Niveau avancé** Écrivez une fonction `est_premier(n)` qui prend un nombre `n` en paramètre et
+   vérifie si le nombre est premier ou non. La fonction doit renvoyer un booléen.
+   
+   Par définition, un nombre premier est un nombre naturel supérieur à 1 et qui n'a pas de diviseur
+   positif autre que 1 et lui-même.
+
+
+8. **Niveau avancé** Écrivez une fonction `triangle_pascal(n)` qui affiche les n premières lignes
+   du triangle de Pascal.
+   
+   Le triangle de Pascal est une figure arithmétique et géométrique imaginée par Blaise Pascal.
+
+   Exemple de triangle de Pascal:
+ 
+   ::: {.content-visible when-format="html"}
+   ![Triangle de Pascal: Chaque nombre est la somme deux chiffres au-dessus.](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
+   :::
+
+   ::: {.content-visible when-format="latex"}
+   ![Triangle de Pascal: Chaque nombre est la somme deux chiffres au-dessus.](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pascal%27s_triangle_5.svg/1024px-Pascal%27s_triangle_5.svg.png)
+   :::
+
+   
+
+## Prototyper des fonctions
+
+Donner le prototype des fonctions
+
+- `plus_grand(n1, n2)`, 
+- `repete_mot(mot, n)`, 
+- `est_pair(n)`
+
+```{python}
+#|tags: [correction]
+def plus_grand(n1, n2):
+    """Renvoie la plus grande valeur de deux valeurs entières
+    données en arguments
+    
+    Paramètres
+    ----------
+    n1: int
+    n2: int
+    
+    Renvoie
+    -------
+    int
+        n1 si n1 > n2 sinon n2
+    """
+    if n1 > n2:
+        return n1
+    # le else est facultatif
+    else:
+        return n2
+```
+
+```{python}
+#|tags: [correction]
+def repete_mot(mot, n):
+    """affiche un même mot n fois
+    
+    Paramètres
+    ----------
+    mot: str
+    n: int
+    
+    Renvoie
+    -------
+    None
+        pas de valeur renvoyée que des affichages
+    """
+    print(mot * n)
+```
+
+```{python}
+#|tags: [correction]
+def est_pair(n):
+    """Vérifie si un nombre n donné en argument est pair
+    
+    Paramètres
+    ----------
+    n: int
+    
+    Renvoie
+    -------
+    bool
+        True si n est pair et False sinon
+    """
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+```
+
+## Tests d'assertion
+
+1. Écrire trois tests d'assertion pour les fonctions:
+
+   - `plus_grand(n1, n2)`, 
+   - `est_pair(n)`
+
+   ```{python}
+   #|tags: [correction]
+   assert plus_grand(1, 10) == 10
+   assert plus_grand(11, 10) == 11
+   assert plus_grand(-11, 10) == 10
+   
+   assert est_pair(2) == True
+   assert est_pair(3) == False
+   assert est_pair(-2) == True
+   ```
+
+
+2. Expliquer pourquoi on ne peut pas écrire de test d'assertion pour la fonction
+   `repete_mot(mot, n)`.
+
+   ::: correction
+   
+   On ne peut pas écrire de test d’assertion pour la fonction `repete_mot(mot, n)`
+   car il s'agit d'une procédure, elle ne renvoie rien(`None`).
+   
+   :::
+
+   ```{python}
+   #|tags: [correction]
+   # assert repete_mot("TO", 2) == "TOTO"
+   assert repete_mot("TO", 2) == None
+   ```

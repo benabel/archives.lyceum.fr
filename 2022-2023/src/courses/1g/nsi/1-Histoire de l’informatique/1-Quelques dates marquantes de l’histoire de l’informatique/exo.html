@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<p><code>h5p: 1060965078</code></p>
+<h2 id="le-parcours-scientifique-dalan-turing" class="anchored">Le parcours scientifique d’Alan Turing</h2>
+<p>En utilisant comme <em>source</em> l’article «<a href="https://interstices.info/alan-turing-itineraire-dun-precurseur/">Alan Turing itinéraire d’un précurseur</a>», écrire un résumé de 10-20 lignes expliquant les divers sujets qu’a étudiés Alan Turing au cours de sa vie.</p>
+<h2 id="créez-votre-propre-frise" class="anchored">Créez votre propre frise</h2>
+<p>Créez <em>votre histoire de l’informatique</em> en utilisant les <a href="./#sources">sources</a> données dans le cours, et en réalisant une frise chronologique grâce à la librairie <code>javascript</code> <a href="https://timeline.knightlab.com/">TimelineJS</a></p>
+<h3 id="recherche-documentaire" class="anchored">Recherche documentaire</h3>
+<p>Pour cela vous allez devoir dans un premier temps concevoir sur le papier votre frise en sélectionnant les éléments les plus signifiants, en les ordonnant. N’oubliez pas de noter également vos sources de texte et d’images(libres de droit dans le cas d’une publication sur la toile).</p>
+<h3 id="création-de-la-frise-interactive" class="anchored">Création de la frise interactive</h3>
+<p>Vous intégrerez ensuite vos éléments au sein d’un fichier de données <code>csv</code>(comma separated values, soit valeurs séparées par des virgules) que vous éditerez avec un tableur(<a href="https://fr.libreoffice.org/">LibreOffice</a> de préférence).</p>
+<p>Voici un exemple de rendu d’une frise avec <code>timeline.js</code>.</p>
+<p><a href="https://lyceum.frama.io/timelinejs-local/"><img src="frise-histoire-physique.png" class="img-fluid" alt="Copie d’écran d’un exemple de frise"></a>.</p>
+<p>Vous pouvez visualiser le fichier <code>csv</code> de données qui a permis de créer cette frise à cette adresse: <a href="https://framagit.org/lyceum/timelinejs-local/-/blob/master/src/timeline-data.csv" class="uri">https://framagit.org/lyceum/timelinejs-local/-/blob/master/src/timeline-data.csv</a>.</p>
+<p>La particularité de la librairie <a href="https://timeline.knightlab.com/">TimelineJS</a>, est qu’elle permet d’ajouter eu plus du simple texte, des médias issus de diverses sources: Wikipedia, Youtube, SoundCloud, Instangram, Tweeter… <a href="https://timeline.knightlab.com/docs/media-types.html">(lien vers la liste complète sur knightlab.com)</a></p>
+<p>Voici la signification des entrées de ce tableau de données:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th><div class="highlight"><pre><span></span>  Clef
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>                                                          Rôle
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>date</code></td>
+<td>année de la découverte ou de l’invention(<strong>obligatoire</strong> sauf pour la vignette de titre)</td>
+</tr>
+<tr class="even">
+<td><code>type</code></td>
+<td>laisser vide pour un événement normal et indiquer <code>titre</code> pour la vignette de titre de la frise.</td>
+</tr>
+<tr class="odd">
+<td><code>titre</code></td>
+<td>titre de la vignette.</td>
+</tr>
+<tr class="even">
+<td><code>texte</code></td>
+<td>texte à inclure dans la vignette.</td>
+</tr>
+<tr class="odd">
+<td><code>mediaUrl</code></td>
+<td>adresse de l’élément media(exemple: <a href="https://fr.wikipedia.org/wiki/Pascaline" class="uri">https://fr.wikipedia.org/wiki/Pascaline</a>, ou localement: <code>mon-image.jpg</code>)</td>
+</tr>
+<tr class="even">
+<td><code>mediaCredit</code></td>
+<td>auteur et licence du média intégré</td>
+</tr>
+<tr class="odd">
+<td><code>mediaLegend</code></td>
+<td>légende à ajouter au media</td>
+</tr>
+<tr class="even">
+<td><code>mediaThumbnail</code></td>
+<td>vignette à utiliser pour afficher la vignette sur la frise, si vide, une vignette par défaut est ajouté en fonction du média(exemple: logo Youtube pour les média youtube)</td>
+</tr>
+<tr class="odd">
+<td><code>backgroundUrl</code></td>
+<td>adresse url d’une image à utiliser pour le fond de la vignette.</td>
+</tr>
+<tr class="even">
+<td><code>backgroundColor</code></td>
+<td>couleur du fond de la vignette, vous pouvez utiliser une couleur héxadécimale <code>#RRGGBB</code> ou avec transparence <code>#RRGGBBaa</code>, ou simplement un nom de couleur <code>css</code> comme <code>white</code>, <code>lime</code>… <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Type_color#Les_mots-cl%C3%A9s">lien vers la liste complète des couleurs sur MDN</a></td>
+</tr>
+</tbody>
+</table>
+<p>Pour créer votre frise, téléchargez le dossier compressé du code de la frise d’exemple à l’adresse suivante: <a href="https://framagit.org/lyceum/timelinejs-local/-/archive/master/timelinejs-local-master.zip" class="uri">https://framagit.org/lyceum/timelinejs-local/-/archive/master/timelinejs-local-master.zip</a>, puis éditez le fichier <code>timeline-data.csv</code> avec le tableur.</p>
+<p>Observez le rendu dans le navigateur en ouvrant le fichier <code>index.html</code> et en rafraîchissant la page à chaque changement(<code>CTRL+R</code>).</p>
+<p><em>A vos claviers!</em></p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

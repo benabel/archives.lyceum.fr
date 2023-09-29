@@ -1,0 +1,54 @@
+---
+tags: ["cours", "svt", "terminale", "lycée", "enseignement scientifique"]
+---
+
+::: programme
+
++---------------------------------------------------+--------------------------------+
+|                    **Savoirs**                    |        **Savoir-faire**        |
++===================================================+================================+
+| Les modèles climatiques s’appuient sur :          | Mettre en évidence le rôle des |
+|                                                   | différents paramètres de       |
+| - la mise en équations des mécanismes essentiels  | l’évolution climatique, en     |
+| qui agissent sur le système Terre;                | exploitant un logiciel de      |
+| - des méthodes numériques de résolution.          | simulation de celle-ci, ou par |
+|                                                   | la lecture de graphiques.      |
+| Les résultats des modèles sont évalués par        |                                |
+| comparaison aux observations in situ et spatiales |                                |
+| ainsi qu’à la connaissance des paléoclimats.      |                                |
+|                                                   |                                |
+| Ces modèles, nombreux et indépendants, réalisent  |                                |
+| des projections climatiques. Après avoir anticipé |                                |
+| les évolutions des dernières décennies, ils       |                                |
+| estiment les variations climatiques globales et   |                                |
+| locales à venir sur des décennies ou des siècles. |                                |
++---------------------------------------------------+--------------------------------+
+| L’analyse scientifique combinant observations,    | Exploiter les résultats d’un   |
+| éléments théoriques et modélisations numériques   | modèle climatique pour         |
+| permet aujourd’hui de conclure que l’augmentation | expliquer des corrélations par |
+| de température moyenne depuis le début de l’ère   | des liens de cause à effet.    |
+| industrielle est liée à l’activité humaine : CO2  |                                |
+| produit par la combustion d’hydrocarbures, la     |                                |
+| déforestation, la production de ciment; CH4       |                                |
+| produit par les fuites de gaz naturel, la         |                                |
+| fermentation dans les décharges, certaines        |                                |
+| activités agricoles.                              |                                |
+|                                                   |                                |
+| Les modèles s’accordent à prévoir, avec une forte |                                |
+| probabilité d’occurrence, dans des fourchettes    |                                |
+| dépendant de la quantité émise de GES :           |                                |
+|                                                   |                                |
+| - une augmentation de 1,5 à 5°C de la température |                                |
+| moyenne entre 2017 et la fin du XXIe siècle;      |                                |
+|                                                   |                                |
+| - une élévation du niveau moyen des océans entre  |                                |
+| le début du XXIe siècle et 2100 pouvant           |                                |
+| atteindre le mètre;                               |                                |
+| - des modifications des régimes de pluie et des   |                                |
+| événements climatiques extrêmes;                  |                                |
+| - une acidification des océans;                   |                                |
+| - un impact majeur sur les écosystèmes terrestres |                                |
+| et marins.                                        |                                |
++---------------------------------------------------+--------------------------------+
+
+:::

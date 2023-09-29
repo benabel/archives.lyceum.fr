@@ -1,0 +1,109 @@
+## Les bases du `html`
+
+Voici un extrait du code de la première page web crée par Tim Berners Lee au CERN.
+
+```html
+<header>
+    <title>The World Wide Web project</title>
+</header>
+
+<body>
+    <h1>World Wide Web</h1>
+
+    <p>The WorldWideWeb (W3) is a wide-area<a href="WhatIs.html">hypermedia</a>
+    information retrieval initiative aiming to give universal access to a large
+    universe of documents.</p>
+    
+</body>
+```
+
+Voici le rendu:
+
+![Rendu de page html par le navigateur](../../images/exo-html-1.png)
+
+Le langage `html` est un langage qui utilise des balises ouvrantes `<balise>` et fermantes
+`</balise>`.
+
+1. Quelle différence y a-t-il entre la balise ouvrante et la balise fermante ?
+
+   ::: correction
+   
+   La balise fermante possède une barre oblique `/` avant le nom.
+   
+   :::
+
+2. Repérer toutes les balises utilisées dans ce document.
+
+   ::: correction
+   
+   1. `<header>`
+   2. `<title>`
+   3. `<body>`
+   4. `<h1>`
+   5. `<p>`
+   6. `<a>`
+   
+   :::
+
+3. Quelle balise permet de créer des liens **hypertextes** ?
+
+   ::: correction
+   
+   C'est la balise `<a>` appelée [ancre](https://developer.mozilla.org/fr/docs/Web/HTML/Element/a).
+   
+   :::
+   
+4. Essayer de deviner le rôle des autres balises en observant attentivement le rendu.
+
+   ::: correction
+   
+   1. `<header>`: en-tête du document destiné aux machines.
+   2. `<title>`: titre de la page pour le navigateur et les moteurs de recherche.
+   3. `<body>`: corps du document affiché à l'utilisateur.
+   4. `<h1>`: titre de niveau 1(_heading 1_).
+   5. `<p>`: paragraphe.
+   
+   :::
+
+## Comprendre une `URL`
+
+Compléter le tableau suivant donnant les diverses informations contenues dans les URL suivantes.
+
+1. mailto:gaston.lagaffe@mail.com
+2. ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/
+3. https://fr.wikipedia.org/wiki/Grace_Hopper#Anecdote
+4. https://developer.mozilla.org/fr/search?q=HTTP&locale=en-US
+5. https://www.google.com/search?q=snt&as_sitesearch=lemonde.fr
+
+
++-----+-----------+----------------+--------------------------+------------+-------+
+| URL | Protocole | Nom de domaine | Chemin vers la ressource | Paramètres | Ancre |
++=====+===========+================+==========================+============+=======+
+| 1   |           |                |                          |            |       |
++-----+-----------+----------------+--------------------------+------------+-------+
+| 2   |           |                |                          |            |       |
++-----+-----------+----------------+--------------------------+------------+-------+
+| 3   |           |                |                          |            |       |
++-----+-----------+----------------+--------------------------+------------+-------+
+| 4   |           |                |                          |            |       |
++-----+-----------+----------------+--------------------------+------------+-------+
+| 5   |           |                |                          |            |       |
++-----+-----------+----------------+--------------------------+------------+-------+
+
+::: correction
+
++-----+-----------+-----------------------+------------------------------------+--------------------------------+-----------+
+| URL | Protocole |    Nom de domaine     |      Chemin vers la ressource      |           Paramètres           |   Ancre   |
++=====+===========+=======================+====================================+================================+===========+
+| 1   | mailto    | mail.com              | gaston.lagaffe                     |                                |           |
++-----+-----------+-----------------------+------------------------------------+--------------------------------+-----------+
+| 2   | ftp       | ftp.mozilla.org       | /pub/mozilla.org/firefox/releases/ |                                |           |
++-----+-----------+-----------------------+------------------------------------+--------------------------------+-----------+
+| 3   | https     | fr.wikipedia.org      | wiki/Grace_Hopper                  |                                | #Anecdote |
++-----+-----------+-----------------------+------------------------------------+--------------------------------+-----------+
+| 4   | https     | developer.mozilla.org | fr/search                          | q=HTTP&locale=en-US            |           |
++-----+-----------+-----------------------+------------------------------------+--------------------------------+-----------+
+| 5   | https     | www.google.com        | search                             | q=snt&as_sitesearch=lemonde.fr |           |
++-----+-----------+-----------------------+------------------------------------+--------------------------------+-----------+
+
+:::

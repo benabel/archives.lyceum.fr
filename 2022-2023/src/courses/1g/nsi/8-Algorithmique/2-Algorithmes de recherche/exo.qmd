@@ -1,0 +1,65 @@
+---
+'tags': ['nsi', 'exercices']
+---
+
+## Recherche dans un annuaire
+
+On suppose que l’on a un annuaire qui contient les huit milliards d’êtres humains dans l’ordre
+alphabétique de leurs noms, prénom, lieu de naissance et date de naissance.
+
+Combien de comparaisons sont nécessaires pour retrouver une personne dans cet annuaire ?
+
+## Recherche dans un dictionnaire
+
+La page suivante contient une liste de 336531 mots du français.
+
+https://chrplr.github.io/openlexicon/datasets-info/Liste-de-mots-francais-Gutenberg/liste.de.mots.francais.frgut.txt
+
+[openlexicon](https://chrplr.github.io/openlexicon/datasets-info/Liste-de-mots-francais-Gutenberg/README-liste-francais-Gutenberg.html){.cite-source}
+
+
+Après avoir téléchargé le fichier, vous pouvez importer les mots dans une liste avec le code python
+suivant.
+
+```python
+# initialisation de la liste de mots vide
+mots = []
+with open('liste.de.mots.francais.frgut.txt') as f:
+    mots = [line.rstrip() for line in f]
+
+# affichage du nombre de mots
+len(mots) # renvoie 336531
+```
+
+En python, le logarithme en base 2 est implémenté dans le module `math`.
+
+```python
+import math
+math.log2(len(mots)) # renvoie 18.3603798811634
+```
+
+1. Implémenter l'algorithme de recherche dichotomique sur la liste `mots`, et vérifier que dans le
+pire des cas le résultat de la recherche sera donnée en 19 tours de boucle.
+2. Quel est le cas le plus favorable? le moins favorable?
+
+## Le jeu du "plus petit, plus grand"
+
+1. Écrire un programme qui joue au jeu du "plus petit-plus grand":
+
+- Le programme choisit un nombre au hasard entre 1 et 100,
+- l'utilisateur choisit un nombre au hasard,
+- l'ordinateur indique si le nombre est plus petit, plus-grand ou deviné, jusqu'à ce que
+  l'utilisateur l'ait trouvé.
+
+2. En combien d'étapes au plus peut-on deviner le nombre:
+
+- Si on procède au hasard?
+- Si on applique la méthode de la dichotomie?
+
+3. Écrire un autre programme qui cherche à deviner le nombre par la méthode de dichotomie et qui
+   affiche le nombre de tours utilisés.
+
+
+[Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés
+et des idées de projets par Gilles
+Dowek](http://www.editions-eyrolles.com/Livre/9782212135435/){.cite-source}

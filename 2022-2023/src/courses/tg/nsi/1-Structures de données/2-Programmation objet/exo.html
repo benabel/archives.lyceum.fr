@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="création-instanciation-et-représentation-dune-classe" class="anchored">Création, instanciation et représentation d’une classe</h2>
+<p>Créez une classe <code>Voiture</code> avec deux attributs d’instance:</p>
+<ul>
+<li><code>couleur</code>, qui stocke la couleur de la voiture sous forme de chaîne de caractères</li>
+<li><code>kilometrage</code>, qui stocke le nombre de kilomètres sur la voiture sous forme d’entier.</li>
+</ul>
+<p>Ensuite, instanciez deux objets <code>Voiture</code> - une voiture bleue de 20 000 kilomètres et une voiture rouge de 30 000 kilomètres. Affichez ensuite leurs couleurs et leur kilométrage. Votre sortie devrait ressembler à ceci:</p>
+<div class="highlight"><pre><span></span>La voiture bleue a 20 000 kilomètres.
+La voiture rouge a 30 000 kilomètres.
+</pre></div>
+
+<h2 id="des-classes-cinématographiques" class="anchored">Des classes cinématographiques</h2>
+<p>On considère les définitions de classe suivantes:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Personne</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Objet représentant une personne"""</span>
+<span></span>
+<span class="k">    def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">année_naissance</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lieu_naissance</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="bp">        self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+<span class="bp">        self</span><span class="o">.</span><span class="n">année_naissance</span> <span class="o">=</span> <span class="n">année_naissance</span>
+<span class="bp">        self</span><span class="o">.</span><span class="n">lieu_naissance</span> <span class="o">=</span> <span class="n">lieu_naissance</span>
+<span></span>
+<span class="k">
+class</span> <span class="nc">Film</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Objet représentant un film"""</span>
+<span></span>
+<span class="k">    def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">titre</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">réalisateur</span><span class="p">:</span> <span class="n">Personne</span><span class="p">):</span>
+<span class="bp">        self</span><span class="o">.</span><span class="n">titre</span> <span class="o">=</span> <span class="n">titre</span>
+<span class="bp">        self</span><span class="o">.</span><span class="n">réalisateur</span> <span class="o">=</span> <span class="n">réalisateur</span>
+</pre></div>
+
+<ol type="1">
+<li><p>Comment créer une instance de la classe <code>Personne</code> appelée <code>lautner</code> pour le réalisateur Georges Lautner né en 1926 à Nice?</p></li>
+<li><p>Proposer la définition d’une méthode <code>__str__</code> dans la classe <code>Personne</code> qui afficherait <code>"Georges Lautner est une personne née à Nice en 1926"</code> lors de l’appel <code>print(lautner)</code>.</p></li>
+<li><p>On crée une instance de la classe <code>Film</code> avec l’instruction suivante: <code>tonton = Film("Les tontons flingueurs", lautner)</code>.</p>
+<ol type="a">
+<li><p>Qu’affiche l’instruction: <code>print(tonton.titre)</code> ?</p></li>
+<li><p>Qu’affiche l’instruction: <code>print(tonton.réalisateur.nom)</code> ?</p></li>
+<li><p>Proposer la définition d’une méthode <code>__str__</code> dans la classe <code>Film</code> qui afficherait <code>"Les tontons flingeurs est un film réalisé par Georges Lautner originaire de Nice"</code> lors de l’appel <code>print(tonton)</code>.</p></li>
+</ol></li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

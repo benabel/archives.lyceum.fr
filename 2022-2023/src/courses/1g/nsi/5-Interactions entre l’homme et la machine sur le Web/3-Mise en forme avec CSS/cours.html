@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Modalités de l’interaction entre l’homme et la machine</p>
+<p>Événements</p></td>
+<td><p>Identifier les différents composants graphiques permettant d’interagir avec une application Web</p>
+<p>Identifier les événements que les fonctions associées aux différents composants graphiques sont capables de traiter</p></td>
+<td>Il s’agit d’examiner le code HTML d’une page comprenant des composants graphiques et de distinguer ce qui relève de la description des composants graphiques en HTML de leur comportement (réaction aux événements) programmé par exemple en JavaScript.</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Le W3C a défini deux langages afin de bien séparer <em>le fond et la forme</em>. Le <code>html</code> décrit le contenu du document: le <em>fond</em>, et le <code>css</code> décrit sa <em>forme</em>. Le <code>css</code> permet de mettre en forme notre page web pour personnaliser son aspect. Comme nous allons le voir le <code>CSS</code> pour <em>Cascading Style Sheet</em> (Feuille de styles en cascade) est basé sur la sélection d’éléments d’un page <code>html</code> afin de leur appliquer des styles spécifiques.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><wc-wikimage title="Class-header-css3.jpg"></wc-wikimage></p>
+</div>
+</div>
+</div>
+<p>Nous allons d’abord voir comment lier une feuille de styles à notre page <code>html</code>.</p>
+<h2 id="intégration-de-code-css-dans-une-page-html" class="anchored">Intégration de code <code>css</code> dans une page <code>html</code></h2>
+<p>Il existe <strong>diverses façons</strong> d’appliquer du code <code>css</code> à une page, la méthode recommandée est d’écrire le code <code>css</code> dans un fichier avec l’extension <code>.css</code>, par exemple <code>style.css</code> et le lier dans l’en-tête du document(le <code>&lt;head&gt;</code>).</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">href</span><span class="o">=</span><span class="s">"style.css"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+
+<p><em>C’est la méthode préférée lorsque l’on a un ensemble de pages qui contiennent des styles identiques, cela permet d’alléger l’écriture du code et les requêtes vers le serveur de documents.</em></p>
+<details class="plus"><summary>autres méthodes</summary>
+<ol type="1">
+<li>Utilisation d’une feuille de style interne</li>
+</ol>
+<p>On intègre le code <code>css</code> au sein de balises <code>&lt;style&gt;</code> dans l’entête du document(le <code>&lt;head&gt;</code>).</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">linen</span><span class="p">;</span>
+<span class="w">             </span><span class="p">}</span>
+<span class="w">        </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">maroon</span><span class="p">;</span>
+<span class="w">            </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+
+<p><em>Méthode pratique lorsque l’on a des documents <code>html</code> d’une seule page ou avec des styles spécifiques.</em></p>
+<ol start="2" type="1">
+<li>Insertion directe dans les balises <code>html</code></li>
+</ol>
+<p>On utilise alors l’attribut style au sein de la balise ouvrante de l’élément à styler.</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"color: red; font-weight: bold;"</span><span class="p">&gt;</span>
+    Maintenant mon texte est écrit en rouge et en gras.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
+<strong>RENDU</strong>
+<p style="color: red; font-weight: bold;">
+Maintenant mon texte est écrit en rouge et en gras.
+</p>
+</details>
+
+<h2 id="syntaxe" class="anchored">Syntaxe</h2>
+<p>Une règle <code>css</code> est constituée d’un sélecteur suivi d’un bloc de déclaration entre accolades. Chaque déclaration se termine par un point-virgule.</p>
+<div class="highlight"><pre><span></span><span class="nt">selecteur</span><span class="w"> </span><span class="nt">de</span><span class="w"> </span><span class="nt">balises</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">attribut-css</span><span class="p">:</span><span class="w"> </span><span class="n">valeur</span><span class="p">;</span>
+<span class="w">    </span><span class="n">attribut-css2</span><span class="p">:</span><span class="w"> </span><span class="n">valeur2</span><span class="p">;</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong>Remarque:</strong> <em>Les points-virgules sont obligatoires, mais pas l’indentation. Cette dernière est cependant conseillée pour rendre le code plus lisible.</em></p>
+<div class="example">
+<p>Un code <code>css</code> qui permet d’écrire tous les éléments <code>&lt;strong&gt;</code> en rouge et soulignés.</p>
+<div class="highlight"><pre><span></span><span class="nt">strong</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+<h2 id="les-sélecteurs" class="anchored">Les sélecteurs</h2>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>sélecteur</th>
+<th>Éléments visés</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>p {...}</code></td>
+<td>Tous les éléments avec la balise <code>&lt;b&gt;</code></td>
+</tr>
+<tr class="even">
+<td><code>p, li{...}</code></td>
+<td>Tous les éléments <code>&lt;p&gt;</code> <strong>et</strong> les éléments <code>&lt;p&gt;</code></td>
+</tr>
+<tr class="odd">
+<td><code>div p{...}</code></td>
+<td>Tous les éléments <code>&lt;p&gt;</code> <strong>contenus dans</strong>(<em>descendants d’</em>)une balise <code>&lt;div&gt;</code></td>
+</tr>
+<tr class="even">
+<td><code>.centre {...}</code></td>
+<td><em>Tous les éléments</em> ayant un attribut <code>class="centre"</code></td>
+</tr>
+<tr class="odd">
+<td><code>#formulaire {...}</code></td>
+<td><em>L’élément</em> ayant un attribut <code>id="formulaire"</code></td>
+</tr>
+<tr class="even">
+<td><code>p.centre {...}</code></td>
+<td><em>Tous les éléments</em> <code>&lt;p&gt;</code> ayant un attribut <code>class="centre"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="les-propriétés" class="anchored">Les propriétés</h2>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>propriété</th>
+<th>Mise en forme</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>color: ...;</code></td>
+<td>Couleur de l’élément.</td>
+</tr>
+<tr class="even">
+<td><code>background-color: ...;</code></td>
+<td>Couleur de l’arrière-plan de l’élément.</td>
+</tr>
+<tr class="odd">
+<td><code>text-align: ...;</code></td>
+<td>Alignement du texte(gauche, centré, justifié…).</td>
+</tr>
+<tr class="even">
+<td><code>text-decoration: ...;</code></td>
+<td>Décoration du texte(souligné, barré…)</td>
+</tr>
+<tr class="odd">
+<td><code>font-size: ...;</code></td>
+<td>Taille de la police</td>
+</tr>
+<tr class="even">
+<td><code>font-weight: ...;</code></td>
+<td>Graisse de la police(plus ou moins gras)</td>
+</tr>
+<tr class="odd">
+<td><code>margin: ...;</code></td>
+<td>Espacement par rapport aux voisins</td>
+</tr>
+<tr class="even">
+<td><code>padding: ...;</code></td>
+<td>Espacement par rapport aux bords de sa boite englobante</td>
+</tr>
+</tbody>
+</table>
+<p>L’ensemble des propriétés en <code>css</code> est listé sur l’excellent site <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference">MDN</a>.</p>
+<h2 id="positionnement-en-css" class="anchored">Positionnement en <code>css</code></h2>
+<h3 id="display-inline-et-displayblock" class="anchored"><code>display: inline;</code> et <code>display:block;</code></h3>
+<p>Il existe deux propriétés principales de positionnement en <code>css</code>:</p>
+<ul>
+<li><code>display: block</code>: les éléments se placent les uns au-dessus des autres et occupent toute la largeur disponible. C’est la propriété appliquée par défaut sur les balises de titres <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> ou encore aux paragraphes <code>&lt;p&gt;</code> par exemple.</li>
+</ul>
+<div class="example">
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">"background-color:yellow;"</span><span class="p">&gt;</span>Titre de niveau 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"background-color:lime;"</span><span class="p">&gt;</span> Un paragraphe avec un fond vert clair pour voir l'espace qu'il occupe à l'écran.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
+<strong>RENDU</strong>
+<h1 style="background-color:yellow;">
+Titre de niveau 1
+</h1>
+<p style="background-color:lime;">
+Un paragraphe avec un fond vert clair pour voir l’espace qu’il occupe à l’écran.
+</p>
+</div>
+<ul>
+<li><code>display: inline</code>: les éléments se placent les uns à côté des autres, et occupent exactement la place dont ils ont besoin. C’est la propriété appliquée par défaut sur les balises <code>&lt;strong&gt;</code> ou <code>&lt;span&gt;</code>.</li>
+</ul>
+<div class="example">
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"background-color:lime;"</span><span class="p">&gt;</span> Un paragraphe avec un fond vert clair et des éléments inline <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>strong<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> et  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">"background-color=ligthblue;"</span><span class="p">&gt;</span>span<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> pour voir le positionnement à l'écran.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
+<strong>RENDU</strong>
+<p style="background-color:lime;">
+Un paragraphe avec un fond vert clair et des éléments inline <strong>strong</strong> et <span style="background-color:lightblue;">span</span> pour voir leurs positionnement à l’écran.
+</p>
+</div>
+<h3 id="des-positionnements-plus-évolués" class="anchored">Des positionnements plus évolués</h3>
+<p>Lorsqu’on laisse les éléments se placer naturellement à l’écran <em>(de haut en bas, ou de droite à gauche)</em>, on dit que les éléments sont <strong>positionnés dans le flux</strong>. Si l’on souhaite les positionner ailleurs, c’est-à-dire les sortir du flux, on utilise principalement les propriétés <code>css</code>:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/display"><code>display</code></a>: avec notamment les valeurs <a href="http://fr.learnlayout.com/flexbox.html"><code>flex</code></a> pour le positionnement 1D et <code>grid</code> pour le positionnement 2D.</li>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/position"><code>position</code></a>: avec les valeurs <code>relative</code>, <code>absolute</code> ou <code>fixed</code>.</li>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/float"><code>float</code></a> avec les valeurs <code>left</code> ou <code>right</code>.</li>
+</ul>
+<h2 id="en-plus" class="anchored">En plus</h2>
+<ul>
+<li>Les commentaires utilisent la syntaxe suivante: <code>/* Un commentaire */</code></li>
+<li>Les attributs <code>id</code> et les <code>class</code> sont souvent ajoutés au <code>html</code> pour pouvoir les sélectionner aisément en <code>css</code>. Attention cependant, plusieurs éléments peuvent avoir la même <code>class</code>e, mais un <code>id</code> est unique.</li>
+<li>Inspecteur de styles du navigateur: pour inspecter un élément il suffit de le sélectionner et de faire un clic droit de la souris puis de sélectionner <code>Inspecter l'élément</code>.</li>
+</ul>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,76 @@
+## Questions de cours
+
+1. Qu'est-ce qu'un dictionnaire en Python?
+
+   ::: correction
+
+   un dictionnaire est un type de données en Python qui permet de stocker une série d'éléments de
+   manière désordonnée en y accédant à l'aide de clés de type non mutable(souvent `str`). Les
+   éléments d'un dictionnaire peuvent être de n'importe quel type, y compris des nombres, des
+   chaînes de caractères, des tuples et même d'autres dictionnaires.
+
+   :::
+
+2. Comment créez-vous un dictionnaire en Python? Donner en exemple les instructions permettant de créer
+   un dictionnaire `d` de 3 entiers avec comme clés des lettres.
+   
+   ::: correction
+
+   Vous pouvez créer un dictionnaire en Python en utilisant les accolades `{}`. Par exemple:
+   
+   ```python
+   d = {"a": 1, "b": 2, "c": 3}
+   ```
+
+   :::
+
+3. Comment accédez-vous aux éléments d'un dictionnaire en Python? Donner en exemple un accés à une
+   valeur de `d`.
+   
+
+   ::: correction
+
+   Vous pouvez accéder aux éléments d'un dictionnaire en utilisant la clé de l'élément souhaité.vant.
+   
+   Par exemple:
+   
+   d["b"] # renvoie 2
+
+   :::
+
+4. Comment modifiez-vous les éléments d'un dictionnaire en Python? Donner un exemple sur `d`.
+   
+
+   ::: correction
+
+   Vous pouvez modifier les éléments d'un dictionnaire en utilisant leur clé et en leur attribuant une
+   nouvelle valeur. Par exemple:
+
+   d["b"] = 7
+
+   :::
+
+5. Comment ajoutez-vous des éléments à un dictionnaire en Python? Donner un exemple sur `d`.
+
+   ::: correction
+
+   Il suffit de créer la nouvelle clé et de lui affecter la valeur souhaitée.
+   
+   Par exemple:
+
+   d["d"] = 4
+   
+   :::
+
+6. Comment supprimez-vous des éléments d'un dictionnaire en Python? Donner un exemple sur `d`.
+
+   ::: correction
+
+   Vous pouvez utiliser la méthode pop() pour supprimer un élément spécifique d'un dictionnaire.
+   
+   Par exemple: pour supprimer la clé "b" aisni que sa valeur associée.
+   
+   d.pop("b")
+
+   :::
+

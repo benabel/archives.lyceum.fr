@@ -1,0 +1,111 @@
+---
+tags: ["cours", "pc", "terminale", "lycée", "enseignement scientifique"]
+tocHTML: '<ul><li><a href="#lalternateur" data-localhref="true">L’alternateur</a></li><ul><li><a href="#principe-de-lalternateur" data-localhref="true">Principe de l’alternateur</a></li><li><a href="#rendement-dun-alternateur" data-localhref="true">Rendement d’un alternateur</a></li></ul><li><a href="#les-cellules-photovoltaïques" data-localhref="true">Les cellules photovoltaïques</a></li><ul><li><a href="#quest-ce-quun-semi-conducteur" data-localhref="true">Qu’est-ce qu’un semi-conducteur?</a></li><li><a href="#rendement-de-la-conversion" data-localhref="true">Rendement de la conversion</a></li></ul></ul>'
+---
+
+
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>               **Savoirs**
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>        **Savoir-faire**
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Les alternateurs électriques exploitent le phénomène d’induction électromagnétique découvert par Faraday puis théorisé par Maxwell au XIXe siècle.</p>
+<p>Ils réalisent une conversion d’énergie mécanique en énergie électrique avec un rendement potentiellement très proche de 1.</p></td>
+<td><p>Reconnaître les éléments principaux d’un alternateur (source de champ magnétique et fil conducteur mobile) dans un schéma fourni.</p>
+<p>Analyser les propriétés d’un alternateur modèle étudié expérimentalement en classe. Définir le rendement d’un alternateur et citer un phénomène susceptible de l’influencer.</p></td>
+</tr>
+<tr class="even">
+<td>Au début du XXe siècle, la physique a connu une révolution conceptuelle à travers la vision quantique qui introduit un comportement probabiliste de la nature. Le caractère discret des spectres de raies d’émission des atomes s’explique de cette façon.</td>
+<td>Interpréter et exploiter un spectre d’émission atomique.</td>
+</tr>
+<tr class="odd">
+<td><p>L’exploitation technologique des matériaux semi-conducteurs, en particulier du silicium, en est également une conséquence.</p>
+<p>Ces matériaux sont utilisés en électronique et sont constitutifs des capteurs photovoltaïques. Ceux-ci absorbent l’énergie radiative et la convertissent en énergie électrique.</p></td>
+<td><p>Comparer le spectre d’absorption d’un matériau semi-conducteur et le spectre solaire pour décider si ce matériau est susceptible d’être utilisé pour fabriquer un capteur photovoltaïque.</p>
+<p>Tracer la caractéristique i(u) d’une cellule photovoltaïque et exploiter cette représentation pour déterminer la résistance d’utilisation maximisant la puissance électrique délivrée.</p></td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<p>Dans ce chapitre nous allons voir deux inventions qui permettent la production d’énergie électrique:</p>
+<ul>
+<li>l’alternateur</li>
+<li>les cellules photovoltaïques</li>
+</ul>
+<p>Voici une vidéo d’excellente qualité produite par la BBC qui retrace l”«âge des inventions» de l’électricité durant le XIXe siècle et diffusée sur <a href="https://www.arte.tv/">arte.tv</a>.</p>
+<p></p><div class="yt-embend"><div><iframe width="560" height="315" src="https://invidious.projectsegfau.lt/embed/Im2G3FCk-fk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><p><a href="https://www.youtube.com/watch?v=Im2G3FCk-fk">Vidéo</a> servie sans cookie via <a href="https://projectsegfau.lt/">Project Segfault</a></p></div></div><p></p>
+<!-- 
+ARTE: Histoire de l'électricité e, trois parties: https://www.arte.tv/fr/videos/RC-018190/l-histoire-de-l-electricite/
+
+`youtube: oce00LbvndU` Marche plus: 
+
+`youtube: Im2G3FCk-fk` OK
+
+`youtube: 2tm8IdoxHbk` Voir sur dailymotion: https://www.dailymotion.com/video/x4jg4nw
+
+
+ARTE:
+<iframe allowfullscreen="true" style="transition-duration:0;transition-property:no;margin:0 auto;position:relative;display:block;background-color:#000000;" frameborder="0" scrolling="no" width="100%" height="100%" src="https://www.arte.tv/player/v6/index.php?json_url=https%3A%2F%2Fapi.arte.tv%2Fapi%2Fplayer%2Fv2%2Fconfig%2Ffr%2F050724-002-A&lang=fr&autoplay=false&mute=0&previewData=%7B%22title%22%3A%22L'histoire%20de%20l'%C3%A9lectricit%C3%A9%20(2%2F3)%22%2C%22subtitle%22%3A%22L'%C3%A2ge%20des%20inventions%22%2C%22image%22%3A%22https%3A%2F%2Fapi-cdn.arte.tv%2Fapi%2Fmami%2Fv1%2Fprogram%2Ffr%2F050724-002-A%2F940x530%3Fts%3D1589790560%22%7D"></iframe>
+
+-->
+<h2 id="lalternateur" class="anchored">L’alternateur</h2>
+<p>L’alternateur permet la conversion d’énergie mécanique en énergie électrique.</p>
+<div class="example">
+<p>Alternateur d’une voiture thermique</p>
+<p><wc-wikimage class="half center" title="Tendeur courroie alternateur automobile.jpg" caption="Pour recharger la batterie du véhicule, l'alternateur est entraîné par le moteur via une courroie."></wc-wikimage></p>
+</div>
+<h3 id="principe-de-lalternateur" class="anchored">Principe de l’alternateur</h3>
+<p>L’alternateur utilise le phénomène d’<em>induction électromagnétique</em> découvert par Faraday au XIXe siècle.</p>
+<iframe src="https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_fr.html" width="800" height="600" allowfullscreen="">
+</iframe>
+<p>Un fil électrique fixe(le <em>stator</em>) soumis à un champ magnétique tournant (le <em>rotor</em>) produit un mouvement alternatif des électrons au sein du stator: on crée ainsi un <strong>courant alternatif</strong>.</p>
+<p><wc-wikimage class="half center" title="Alternator_1.svg" caption="Le mouvement de rotation de l'aimant produit un courant alternatif par l'effet d 'induction éléctromagnétique dans le fil conducteur électrique."></wc-wikimage></p>
+<details class="plus"><summary>La bobine</summary>
+<p>On utilise souvent une bobine pour produire le courant électrique. Une bobine est enroulement de fil électrique qui lorsqu’elle est parcourue un courant produit un champ magnétique.</p>
+<p><wc-wikimage class="half center" title="Common_mode_choke_2A_with_20mH_inductance.jpg" caption="Une bobine électronique de faible puissance. Les bobines haute-puissance dont au contraire utilisées en électrotechnique."></wc-wikimage></p>
+</details>
+
+<h3 id="rendement-dun-alternateur" class="anchored">Rendement d’un alternateur</h3>
+<p>Le rendement <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi></mrow><annotation encoding="application/x-tex">\eta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">η</span></span></span></span>
+de l’alternateur est le quotient de l’énergie électrique obtenue par de l’énergie mécanique fournie.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>η</mi><mo>=</mo><mfrac><msub><mi>P</mi><mrow><mover accent="true"><mi>e</mi><mo>ˊ</mo></mover><mi>l</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>r</mi><mi>i</mi><mi>q</mi><mi>u</mi><mi>e</mi></mrow></msub><msub><mi>P</mi><mrow><mi>m</mi><mover accent="true"><mi>e</mi><mo>ˊ</mo></mover><mi>c</mi><mi>a</mi><mi>n</mi><mi>i</mi><mi>q</mi><mi>u</mi><mi>e</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">
+\eta = \frac{P_{électrique}}{P_{mécanique}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">η</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.3324em;vertical-align:-0.9721em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mathnormal mtight">e</span></span><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord mtight">ˊ</span></span></span></span></span></span></span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">ani</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">q</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mathnormal mtight">e</span></span><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord mtight">ˊ</span></span></span></span></span></span></span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">ec</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">q</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9721em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
+</p>
+<div class="prop">
+<p>Les alternateurs réalisent une conversion d’énergie mécanique en énergie électrique avec un <strong>rendement potentiellement très proche de 1</strong>.</p>
+</div>
+<h2 id="les-cellules-photovoltaïques" class="anchored">Les cellules photovoltaïques</h2>
+<p></p><div class="yt-embend"><div><iframe width="560" height="315" src="https://invidious.projectsegfau.lt/embed/7BUjVyw5LaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><p><a href="https://www.youtube.com/watch?v=7BUjVyw5LaM">Vidéo</a> servie sans cookie via <a href="https://projectsegfau.lt/">Project Segfault</a></p></div></div><p></p>
+<p>Les cellules photovoltaïques sont aujourd’hui utilisées pour convertir l’énergie radiative solaire en énergie électrique. C’est une technologie autour de laquelle la recherche est acharnée compte tenu des impacts économiques et environnementaux envisageables.</p>
+<p>Ce type de cellules utilise des matériaux bien particuliers utilisés en électronique: les <em>semi-conducteurs</em> comme le silicium.</p>
+<h3 id="quest-ce-quun-semi-conducteur" class="anchored">Qu’est-ce qu’un semi-conducteur?</h3>
+<p>Vous avez déjà vu que les atomes présentent des spectres <em>discrets</em> qui ont été expliqués au début du <em>XXe siècle</em> par la description <em>quantique</em> de la matière à l’échelle de l’infiniment petit.</p>
+<p><wc-wikimage class="half center" title="Hydrogen_transitions.svg" caption="Les raies d'émission de l'hydrogène sont dues à la liberation de photons lors du passage d'un atome d'un niveau d'énergie à un autre."></wc-wikimage></p>
+<p>Les spectres des solides présentent quant à eux des <em>bandes d’énergie</em>.</p>
+<p>Un matériau semi-conducteur est un matériau dont les bandes de conduction et de valence sont disjointes, mais proches.</p>
+<p><wc-wikimage class="half center" title="Semiconductor_band_structure_(lots_of_bands_2).svg" caption="Dans un matériau semi-conducteur la bande de conduction est proche de la bande de valence."></wc-wikimage></p>
+<h3 id="rendement-de-la-conversion" class="anchored">Rendement de la conversion</h3>
+<div class="prop">
+<p>Pour être efficace et rentable, le matériau semi-conducteur doit absorber un maximum de l’énergie radiative solaire pour la convertir en énergie électrique.</p>
+<p><wc-wikimage class="half center" title="Solar_Spectrum_and_Spectral-Response.png" caption="Le maximum d’émission du spectre solaire est dans le vert (λ=504 nm). Une cellule photodiode en silicium a son maximum d'absorption aux alentours de 1µm(IR), absorbe tout de même une grande partie du spectre solaire."></wc-wikimage></p>
+</div>
+<details class="plus"><summary>Rendement des cellules photovoltaïques</summary>
+<p><wc-wikimage title="CellPVeff(rev200406).png" caption="La limite théorique de rendement dite limite de Shockley-Queisser est de l'ordre de 33% pour une
+cellule unijonction, les meilleures cellules de ce type ont actuellement un rendement de 20 à 25%,
+mais on peut améliorer le rendement en utilisant par exemple des cellules à jonctions multiples."></wc-wikimage></p>
+</details>
+

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>   Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>     Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structures de données, interface et implémentation.</td>
+<td><p>Spécifier une structure de données par son interface.</p>
+<p>Distinguer interface et implémentation.</p>
+<p>Écrire plusieurs implémentations d’une même structure de données.</p></td>
+<td>L’abstraction des structures de données est introduite après plusieurs implémentations d’une structure simple comme la file (avec un tableau ou avec deux piles).</td>
+</tr>
+<tr class="even">
+<td><p>Listes, piles, files : structures linéaires.</p>
+<p>Dictionnaires, index et clé.</p></td>
+<td><p>Distinguer des structures par le jeu des méthodes qui les caractérisent.</p>
+<p>Choisir une structure de données adaptée à la situation à modéliser.</p>
+<p>Distinguer la recherche d’une valeur dans une liste et dans un dictionnaire.</p></td>
+<td>_</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<blockquote class="blockquote">
+<p>Cette année, nous allons voir de nouvelles façons d’organiser et de traiter les données, ce que l’on appelle des <strong>structures de données</strong>. On rencontrera, notamment des structures linéaires comme la liste, la pile et la file, mais également des structures relationnelles telles que les arbres ou les graphes. Dans ce chapitre, nous allons commencer par distinguer la structure de données de son implémentation en s’appuyant sur les tableaux et dictionnaires vus en première.</p>
+</blockquote>
+<h2 id="les-tableaux-list-en-python" class="anchored">Les tableaux: <em>(<code>list</code> en python)</em></h2>
+<p>En <a href="/1g/nsi/3-representation-des-donnees-types-construits/1-tableaux">première</a>, nous avons déjà rencontré les tableaux(<em>tableaux dynamiques</em> pour être plus précis), qui sont des séquences d’éléments ordonnés auxquels on peut accéder facilement par leur <em>index</em>.</p>
+<p><wc-wikimage title="Tableau_à_une_dimension.png" caption="Un tableau est une suite de données ordonnées auxquelles on accéde par un index(un entier)."> </wc-wikimage></p>
+<p>En python les tableaux sont implémentés par l’objet <code>list</code> dont les éléments sont séparés par une virgule et entourés de crochets.</p>
+<div class="highlight"><pre><span></span><span class="c1"># création</span>
+<span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"deux"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="c1"># accès aux élements par index</span>
+<span class="n">ma_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># renvoie "deux"!</span>
+</pre></div>
+
+<p>Les listes étant mutables, on peut ajouter ou supprimer des éléments après création.</p>
+<ul>
+<li>Ajout d’un élément à l’index souhaité :</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># ajout avec la méthode `insert()`</span>
+<span class="n">ma_liste</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"zéro"</span><span class="p">)</span>
+<span class="n">ma_liste</span> <span class="c1"># renvoie ['zéro', 1, 'deux', 3.0]</span>
+</pre></div>
+
+<ul>
+<li>Suppression d’un élément à l’index souhaité :</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># suppression avec la méthode `pop()`</span>
+<span class="n">ma_liste</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ma_liste</span> <span class="c1"># renvoie ['zéro', 1, 3.0]</span>
+</pre></div>
+
+<ul>
+<li>Il est également fréquent de souhaiter connaitre la longueur de la liste :</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># longueur avec la fonction `len()`</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span> <span class="c1"># renvoie 3 puisque ['zéro', 1, 3.0]</span>
+</pre></div>
+
+<details class="plus"><summary>Une liste est-elle vide en Python?</summary>
+<p>Python étant un langage à type dynamique, il peut convertir le type d’une valeur en un autre suivant la situation. Ainsi si une liste se retouve dans une situation ou un booléen est attendu(<code>if liste: ... while liste:</code>), il convertira:</p>
+<ul>
+<li>la liste vide en: <code>False</code></li>
+<li>une liste non vide en: <code>True</code></li>
+</ul>
+<p>Donc vérifier si une liste est vide peut-être simplement fait avec <code>bool(liste)</code>.</p>
+</details>
+
+<h2 id="différence-entre-interface-et-implémentation" class="anchored">Différence entre interface et implémentation</h2>
+<p>Les quatre méthodes qui ont été définies dans la classe <code>list</code> en Python: <code>len</code>, <code>pop</code>, <code>insert</code> sont ce que l’on appelle une <em>implémentation</em> de la structure de donnée tableau.</p>
+<dl>
+<dt>
+Implémentation
+</dt>
+<dd>
+<div>
+<p>L’implémentation d’une structure de données ou d’un algorithme est une <em>mise en œuvre</em> pratique dans un langage de programmation.</p>
+</div>
+</dd>
+</dl>
+<p>Il existe de nombreux langages de programmation qui implémentent le type abstrait <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>b</mi><mi>l</mi><mi>e</mi><mi>a</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">tableau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">ab</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">a</span><span class="mord mathnormal">u</span></span></span></span>
+, nous avions vu l’<a href="/1g/nsi/7-langages-et-programmation/7-comparaisons-de-langages">année dernière</a> les différences d’implémentation entre les <code>list</code> de Python et les <code>Array</code> de javascript.</p>
+<p>Cependant, on retrouve des méthodes similaires qui sont ce que l’on appelle l’<em>interface</em> de la structure de données <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>b</mi><mi>l</mi><mi>e</mi><mi>a</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">tableau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">ab</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">a</span><span class="mord mathnormal">u</span></span></span></span>
+:</p>
+<ol type="1">
+<li>« Insérer » : ajoute un élément dans le tableau à l’index souhaité. <code>ajout(index, élément)</code>;</li>
+<li>« Retirer » : retire un élément de le tableau à l’index souhaité. <code>suppr(index)</code>;</li>
+<li>« Le tableau est-il vide ? » : renvoie « vrai » si le tableau est vide, « faux » sinon. <code>est_vide()</code>;</li>
+<li>« Nombre d’éléments dans le tableau » : renvoie le nombre d’éléments dans le tableau. <code>longueur()</code>.</li>
+</ol>
+<p><a href="https://fr.wikipedia.org/wiki/Liste_(informatique)#Primitives" class="cite-source">Article Wikipedia sur les listes</a></p>
+<dl>
+<dt>
+Interface
+</dt>
+<dd>
+<div>
+<p>L’interface d’une structure de données est la <em>spécification</em> des méthodes pouvant être appliquées sur cette structure de données.</p>
+</div>
+</dd>
+</dl>
+<details class="plus"><summary>Vers le pseudo-langage</summary>
+<p>L’intérêt de définir des structures de données avec une interface commune est de pouvoir écrire des algorithmes sur le papier en utilisant l’interface définie.</p>
+<p>On utilise alors un pseudo-langage plus ou moins proche de la langue naturelle qui pourra être implémenté dans tous les langages de programmation ayant défini la structure de données.</p>
+</details>
+
+
+<details class="appli"><summary>Implémentation d'un tableau en python</summary>
+<p>Créer une classe <code>Tableau</code> qui implémente les quatre méthodes ci-dessus en stockant les données du tableau dans un attribut appelé <code>data</code> de type <code>list</code>e.</p>
+<p>Pour aller plus loin, faire l’<a href="./exo">exercice 2</a>.</p>
+</details>
+
+<h2 id="les-tableaux-associatifs-dictionnaires-en-python" class="anchored">Les Tableaux associatifs: <em>(<code>dict</code>ionnaires en Python)</em></h2>
+<p>Un dictionnaire, est un type de données associant à un ensemble de <strong>clés</strong>, un ensemble de <strong>valeurs</strong> correspondantes.</p>
+<p><wc-wikimage title="Associative_array_as_linked_list.svg" caption="Dans tableau associatif, on accéde aux données par une clé(chaîne de caractère), ils ne sont généralement pas ordonnés."> </wc-wikimage></p>
+<p>Il s’agit de <em>l’implémentation</em> d’une structure de données <em>abstraite</em> appelée <strong>tableau associatif</strong>.</p>
+<h3 id="interface" class="anchored">Interface</h3>
+<p>Les opérations usuellement fournies par un tableau associatif sont :</p>
+<ul>
+<li>ajout : association d’une nouvelle valeur à une nouvelle clef ;</li>
+<li>modification : association d’une nouvelle valeur à une ancienne clef ;</li>
+<li>suppression : suppression d’une clef ;</li>
+<li>recherche : détermination de la valeur associée à une clef, si elle existe.</li>
+</ul>
+<p><a href="https://fr.wikipedia.org/wiki/Tableau_associatif" class="cite-source">Article Wikipedia sur le Tableau associatif</a></p>
+<h3 id="implémentation-en-python" class="anchored">Implémentation en python</h3>
+<p>Les dictionnaires font partie de la bibliothèque standard de Python grâce à la classe <code>dict</code> vue en <a href="/1g/nsi/3-representation-des-donnees-types-construits/3-dictionnaires">première</a>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># création du dictionnaire</span>
+<span class="n">personne</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"nom"</span><span class="p">:</span> <span class="s2">"Lagaffe"</span><span class="p">,</span> <span class="s2">"prenom"</span><span class="p">:</span> <span class="s2">"Gaston"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span> <span class="s2">"rigolo"</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="c1"># accès à une valeur</span>
+<span class="n">personne</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]</span> <span class="c1"># renvoie 27</span>
+</pre></div>
+
+<p>Les dictionnaires étant mutables, on peut ajouter supprimer ou modifier une valeur à un dictionnaire déjà créé:</p>
+<div class="highlight"><pre><span></span><span class="c1"># ajout d'une clé</span>
+<span class="n">personne</span><span class="p">[</span><span class="s2">"dessinateur"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"André Franquin"</span>
+<span class="c1"># suppression d'une clé</span>
+<span class="k">del</span> <span class="n">personne</span><span class="p">[</span><span class="s2">"rigolo"</span><span class="p">]</span>
+<span class="c1"># modification d'une clé</span>
+<span class="n">personne</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="c1"># accès à une valeur</span>
+<span class="n">personne</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]</span> <span class="c1"># renvoie 28</span>
+</pre></div>
+
+<p>La recherche d’une valeur d’une valeur est traitée ci-après comme le propose le <a href="../../programme">programme officiel</a>.</p>
+<details class="plus"><summary>Différentes implémentations des dictionnaires</summary>
+<p>L’article anglais de wikipédia compare diverses implémentations des tableaux associatifs.</p>
+<p>https://en.wikipedia.org/wiki/Associative_array#Comparison</p>
+<ul>
+<li>table de hachage</li>
+<li>arbres binaires de recherche équilibrés ou non</li>
+<li>liste chaînée…</li>
+</ul>
+<p>En fonction des implémentations utilisées, les opérations de recherche ou d’ajouts sont plus ou moins couteuses en temps:</p>
+<ul>
+<li>temps fixe: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</li>
+<li>temps logarithmique <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+</li>
+<li>temps linéaire <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+</li>
+</ul>
+</details>
+
+<h2 id="recherche-dune-valeur" class="anchored">Recherche d’une valeur</h2>
+<p>Les méthodes d’itération diffèrent légèrement entre les <code>list</code>es et le <code>dict</code>ionnaire en Python.</p>
+<h3 id="dans-une-liste" class="anchored">Dans une liste</h3>
+<div class="highlight"><pre><span></span><span class="c1"># on crée une liste vide par compréhension</span>
+<span class="n">paires</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">paires</span><span class="p">)</span> <span class="c1"># affiche [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span>
+<span></span>
+<span class="k">def</span> <span class="nf">recherche_liste</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">élément</span><span class="p">):</span>
+<span class="c1">    # itération sur les valeurs de la liste</span>
+<span class="k">    for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+<span class="k">        if</span> <span class="n">e</span> <span class="o">==</span> <span class="n">élément</span><span class="p">:</span>
+<span class="k">            return</span> <span class="kc">True</span>
+<span class="k">    return</span> <span class="kc">False</span>
+<span></span>
+<span class="c1"># Appels de la fonction</span>
+<span class="n">recherche_liste</span><span class="p">(</span><span class="n">paires</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># renvoie False</span>
+<span class="n">recherche_liste</span><span class="p">(</span><span class="n">paires</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="c1"># renvoie True</span>
+</pre></div>
+
+<details class="plus"><summary>Avec le mot-clé in</summary>
+<p>On peut utiliser le mot-clé <code>in</code> pour tester la présence d’une valeur dans la liste:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">8</span> <span class="ow">in</span> <span class="n">paires</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">7</span> <span class="ow">in</span> <span class="n">paires</span>
+<span class="kc">False</span>
+</pre></div>
+
+</details>
+
+<h3 id="dans-un-dictionnaire" class="anchored">Dans un dictionnaire</h3>
+<p>Il existe trois méthodes d’itération sur les dictionnaires vues en <a href="/1g/nsi/3-representation-des-donnees-types-construits/3-dictionnaires/#itération-sur-les-dictionnaires">première</a>:</p>
+<ul>
+<li>Itération sur les clés: <code>keys()</code></li>
+<li>Itération sur les valeurs: <code>values()</code></li>
+<li>Itération sur les paires clé, valeurs: <code>items()</code></li>
+</ul>
+<p>Pour rechercher une valeur, une itération sur les valeurs suffit.</p>
+<div class="highlight"><pre><span></span><span class="n">personne</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s1">'Lagaffe'</span><span class="p">,</span> <span class="s1">'prenom'</span><span class="p">:</span> <span class="s1">'Gaston'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">'dessinateur'</span><span class="p">:</span> <span class="s1">'André Franquin'</span><span class="p">}</span>
+<span></span>
+<span class="k">def</span> <span class="nf">recherche_dict</span><span class="p">(</span><span class="n">dico</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
+<span class="k">    for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dico</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="k">        if</span> <span class="n">val</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
+<span class="k">            return</span> <span class="kc">True</span>
+<span class="k">    return</span> <span class="kc">False</span>
+<span></span>
+<span class="n">recherche_dict</span><span class="p">(</span><span class="n">personne</span><span class="p">,</span> <span class="s1">'André Franquin'</span><span class="p">)</span> <span class="c1"># renvoie True</span>
+<span class="n">recherche_dict</span><span class="p">(</span><span class="n">personne</span><span class="p">,</span> <span class="s1">'Lagafe'</span><span class="p">)</span> <span class="c1"># renvoie False</span>
+</pre></div>
+
+<details class="plus"><summary>Avec le mot-clé in</summary>
+<p>Le mot-clé <code>in</code> teste l’opérande parmi les <em>clés</em> et non les valeurs.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">'André Franquin'</span> <span class="ow">in</span> <span class="n">personne</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">'dessinateur'</span> <span class="ow">in</span> <span class="n">personne</span>
+<span class="kc">True</span>
+</pre></div>
+
+</details>
+
+<h2 id="complexité-des-opérations" class="anchored">Complexité des opérations</h2>
+<p>Nous avons déjà défini la complexité temporelle d’un algorithme qui consiste à compter le nombre d’opérations élémentaires effectuées par un algorithme pour aboutir au résultat souhaité.</p>
+<p>Nous allons préciser ici ce que l’on entend par opération élémentaire, car parfois lorsque l’on tape une opération celle-ci n’est pas élémentaire.</p>
+<div class="prop">
+<p>Une opération est élémentaire si elle a une complexité <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+.</p>
+</div>
+<h3 id="cas-des-listes" class="anchored">Cas des <code>list</code>es</h3>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>    Opération
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Exemple
+</pre></div>
+</th>
+<th>Complexité</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ajout à la fin</td>
+<td><code>liste.append(e)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="even">
+<td>Insertion d’un élément</td>
+<td><code>liste.insert(i, e)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="odd">
+<td>Suppression à la fin</td>
+<td><code>liste.pop()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="even">
+<td>Suppression au milieu</td>
+<td><code>liste.pop(i)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="odd">
+<td>Accès à un élément</td>
+<td><code>liste[i]</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="even">
+<td>Modification d’un élément</td>
+<td><code>liste[i] = e</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="odd">
+<td>Longueur de la liste</td>
+<td><code>len(liste)</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="even">
+<td>Recherche d’un élément</td>
+<td><code>e in liste</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://wiki.python.org/moin/TimeComplexity#list" class="cite-source">Time complexity sur le wiki Python</a></p>
+<h3 id="cas-des-dictionnaires" class="anchored">Cas des <code>dict</code>ionnaires</h3>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>    Opération
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Exemple
+</pre></div>
+</th>
+<th>Complexité</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ajout d’un élément</td>
+<td><code>dico[clé] = val</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="even">
+<td>Modification d’un élément</td>
+<td><code>dico[clé] = val</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="odd">
+<td>Suppression d’un élément</td>
+<td><code>del dico[clé]</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="even">
+<td>Accès à un élément</td>
+<td><code>dico[i]</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="odd">
+<td>Recherche d’une clé</td>
+<td><code>e in dico</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+<tr class="even">
+<td>Recherche d’un valeur</td>
+<td><code>e in dico.values()</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: les complexités données sont moyennes car dans le pire des cas, toutes ses opérations sont en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+.</em></p>
+<p><a href="https://wiki.python.org/moin/TimeComplexity#dict" class="cite-source">Time complexity sur le wiki Python</a></p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

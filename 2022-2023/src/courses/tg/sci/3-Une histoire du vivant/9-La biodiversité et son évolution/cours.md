@@ -1,0 +1,53 @@
+---
+tags: ["cours", "svt", "terminale", "lycée", "enseignement scientifique"]
+tocHTML: ''
+---
+
+
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>               **Savoirs**
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>              **Savoir-faire**
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Il existe sur Terre un grand nombre d’espèces dont seule une faible proportion est effectivement connue. La biodiversité se mesure par des techniques d’échantillonnage (spécimens ou ADN) qui permettent d’estimer le nombre d’espèces (richesse spécifique) dans différents milieux. Les composantes de la biodiversité peuvent aussi être décrites par l’abondance (nombre d’individus) d’une population, d’une espèce ou d’un plus grand taxon.</p>
+<p>Il existe plusieurs méthodes permettant d’estimer un effectif à partir d’échantillons. La méthode de « capture-marquage-recapture » repose sur des calculs effectués sur un échantillon. Si on suppose que la proportion d’individus marqués est identique dans l’échantillon de recapture et dans la population totale, l’effectif de celle-ci s’obtient par le calcul d’une quatrième proportionnelle.</p>
+<p>À partir d’un seul échantillon, l’effectif d’une population peut également être estimé à l’aide d’un intervalle de confiance. Une telle estimation est toujours assortie d’un niveau de confiance strictement inférieur à 100 % en raison de la fluctuation des échantillons. Pour un niveau de confiance donné, l’estimation est d’autant plus précise que la taille de l’échantillon est grande.</p></td>
+<td><p>Exploiter des données obtenues au cours d’une sortie de terrain ou d’explorations scientifiques (historiques et/ou actuelles) pour estimer la biodiversité (richesse spécifique et/ou abondance relative de chaque taxon).</p>
+<p>Quantifier l’effectif d’une population ou d’un taxon plus vaste à partir de résultats d’échantillonnage.</p>
+<p>Estimer une abondance par la méthode de capture, marquage, recapture, fondée sur le calcul d’une quatrième proportionnelle. À l’aide d’un tableur, simuler des échantillons de même effectif pour visualiser la fluctuation d’échantillonnage. En utilisant une formule donnée pour un intervalle de confiance au niveau de confiance de 95%, estimer un paramètre inconnu dans une population de grande taille à partir des résultats observés sur un échantillon.</p></td>
+</tr>
+<tr class="even">
+<td><p>Au cours de l’évolution biologique, la composition génétique des populations d’une espèce change de génération en génération.</p>
+<p>Le modèle mathématique de Hardy-Weinberg utilise la théorie des probabilités pour décrire le phénomène aléatoire de transmission des allèles dans une population.</p>
+<p>En assimilant les probabilités à des fréquences pour des effectifs de grande taille (loi des grands nombres), le modèle prédit que la structure génétique d’une population de grand effectif est stable d’une génération à l’autre sous certaines conditions (absence de migration, de mutation et de sélection). Cette stabilité théorique est connue sous le nom d’équilibre de Hardy-Weinberg.</p>
+<p>Les écarts entre les fréquences observées sur une population naturelle et les résultats du modèle s’expliquent notamment par les effets de forces évolutives (mutation, sélection, dérive, etc.).</p></td>
+<td><p>Pour la transmission de deux allèles dans le cadre du modèle de Hardy-Weinberg, établir les relations entre les probabilités des génotypes d’une génération et celles de la génération précédente.</p>
+<p>Produire une démonstration mathématique ou un calcul sur tableur ou un programme en Python pour prouver ou constater que les probabilités des génotypes sont constantes à partir de la seconde génération (modèle de Hardy-Weinberg).</p>
+<p>Utiliser des logiciels de simulation basés sur ce modèle mathématique.</p>
+<p>Analyser une situation d’évolution biologique expliquant un écart par rapport au modèle de Hardy-Weinberg.</p></td>
+</tr>
+<tr class="odd">
+<td><p>Les activités humaines (pollution, destruction des écosystèmes, combustions et leurs impacts climatiques, surexploitation d’espèces…) ont des conséquences sur la biodiversité et ses composantes (dont la variation d’abondance) et conduisent à l’extinction d’espèces.</p>
+<p>La fragmentation d’une population en plusieurs échantillons de plus faibles effectifs entraîne par dérive génétique un appauvrissement de la diversité génétique d’une population.</p>
+<p>La connaissance et la gestion d’un écosystème permettent d’y préserver la biodiversité.</p></td>
+<td><p>Utiliser un modèle géométrique simple (quadrillage) pour calculer l’impact d’une fragmentation sur la surface disponible pour une espèce.</p>
+<p>À partir d’un logiciel de simulation, montrer l’impact d’un faible effectif de population sur la dérive génétique et l’évolution rapide des fréquences alléliques.</p>
+<p>Analyser des documents pour comprendre les mesures de protection de populations à faibles effectifs.</p>
+<p>Identifier des critères de gestion durable d’un écosystème. Envisager des solutions pour un environnement proche.</p></td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+

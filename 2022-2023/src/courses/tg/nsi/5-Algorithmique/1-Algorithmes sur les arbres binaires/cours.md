@@ -1,0 +1,448 @@
+---
+tags: ["cours", "terminale", "lycée", "numérique et sciences informatiques", "nsi"]
+tocHTML: '<ul><li><a href="#description-de-la-structure-de-données" data-localhref="true">Description de la structure de données</a></li><li><a href="#calculer-la-taille-de-larbre" data-localhref="true">Calculer la taille de l’arbre</a></li><li><a href="#calculer-la-hauteur-de-larbre" data-localhref="true">Calculer la hauteur de l’arbre</a></li><li><a href="#parcours-de-larbre" data-localhref="true">Parcours de l’arbre</a></li><ul><li><a href="#parcours-préfixe" data-localhref="true">Parcours préfixe</a></li><li><a href="#parcours-infixe" data-localhref="true">Parcours infixe</a></li><li><a href="#parcours-postfixe" data-localhref="true">Parcours postfixe</a></li><li><a href="#parcours-en-largeur" data-localhref="true">Parcours en largeur</a></li></ul><li><a href="#arbre-binaire-de-recherche" data-localhref="true">Arbre binaire de recherche</a></li><ul><li><a href="#recherche-dune-clé" data-localhref="true">Recherche d’une clé</a></li><li><a href="#insertion-dune-clé" data-localhref="true">Insertion d’une clé</a></li></ul></ul>'
+---
+
+
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>   Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>   Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>        Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Algorithmes sur les arbres binaires et sur les arbres binaires de recherche.</td>
+<td><p>Calculer la taille et la hauteur d’un arbre.</p>
+<p>Parcourir un arbre de différentes façons (ordres infixe, préfixe ou suffixe ; ordre en largeur d’abord).</p>
+<p>Rechercher une clé dans un arbre de recherche, insérer une clé.</p></td>
+<td><p>Une structure de données récursive adaptée est utilisée.</p>
+<p>L’exemple des arbres permet d’illustrer la programmation par classe.</p>
+<p>La recherche dans un arbre de recherche équilibré est de coût logarithmique.</p></td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<p>Dans ce chapitre nous allons voir quelques algorithmes classiques sur les <a href="/tg/nsi/1-structures-de-donnees/4-arbres/">arbres</a>:</p>
+<ul>
+<li>Calcul de la taille et de la hauteur de l’arbre.</li>
+<li>Parcours de l’arbre de différentes façons</li>
+<li>Recherche et insertion d’une clé dans un arbre binaire de recherche.</li>
+</ul>
+<h2 id="description-de-la-structure-de-données" class="anchored">Description de la structure de données</h2>
+<p>Pour représenter les arbres, nous allons décrire l’arbre à partir d’une classe <code>Node</code> <em>récursive</em> avec les attributs suivants:</p>
+<ul>
+<li><code>value</code>: valeur ou clé du nœud de type numérique,</li>
+<li><code>left</code>: sous-arbre gauche de type <code>Node</code>,</li>
+<li><code>right</code>: sous-arbre droit de type <code>Node</code>,</li>
+</ul>
+<p>Cette structure de données est <em>récursive</em> car les attributes <code>left</code> et <code>right</code> de l’objet <code>Node</code> sont eux-mêmes de type <code>Node</code>.</p>
+<details class="plus"><summary>&nbsp;</summary>
+<p>La syntaxe utilisée est basée sur le package python <a href="https://binarytree.readthedocs.io/en/latest/index.html">binarytree</a> ce qui à l’inconvénient d’être en anglais, mais qui nous permettra de programmer et tester facilement nos algorithmes en Python.</p>
+</details>
+
+<div class="cell" data-execution_count="1">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">binarytree</span> <span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">tree</span>
+<span class="c1"># On peut facilement créer un arbre aléatoire</span>
+<span class="n">mon_arbre</span> <span class="o">=</span> <span class="n">tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span></span>
+<span class="c1"># L'affichage de l'arbre est aisé</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Arbre aléatoire"</span><span class="p">)</span>
+<span class="n">mon_arbre</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>Arbre aléatoire
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<p><img src="cours_files/figure-html/cell-2-output-2.svg" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="highlight"><pre><span></span><span class="c1"># ou créer l'arbre de toutes pièces</span>
+<span class="n">arbre</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A la main"</span><span class="p">)</span>
+<span class="n">arbre</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>A la main
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<p><img src="cours_files/figure-html/cell-3-output-2.svg" class="img-fluid"></p>
+</div>
+</div>
+<h2 id="calculer-la-taille-de-larbre" class="anchored">Calculer la taille de l’arbre</h2>
+<p>Pour rappel, voici la définition vue dans le <a href="/tg/nsi/1-structures-de-donnees/4-arbres">chapitre P1C4 sur les arbres binaires</a>.</p>
+<dl>
+<dt>
+Taille d’un arbre
+</dt>
+<dd>
+<div>
+<p>La taille d’un arbre est son nombre de nœuds.</p>
+</div>
+</dd>
+</dl>
+<p>Nous allons utiliser une fonction <em>recursive</em>.</p>
+<p>A chaque appel, on renvoie <code>1 + taille(gauche(A)) + taille(droite(A))</code>.</p>
+<p>Dans le cas de base, en cas d’absence de noeud, on renvoie 0.</p>
+<p>Voici le pseudo-code correspondant à cette fonction:</p>
+<div class="highlight"><pre><span></span>taille(Arbre A) :
+    Si A vide
+        retourner 0
+    retourner 1 + taille(gauche(A)) + taille(droite(A))
+</pre></div>
+
+<p>Et voici l’implémentation de cette fonction en Python en utilisant la classe <code>binarytree.Node</code> pour représenter les arbres binaires.</p>
+<div class="cell" data-execution_count="3">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="n">arbre</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Fonction récursive renvoyant la taille d'un arbre</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    arbre: Arbre Binaire</span>
+<span class="sd">        Le noeud racine de l'arbre</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        La taille de l'arbre</span>
+<span class="sd">    """</span>
+<span class="c1">    # Cas de base </span>
+<span class="k">    if</span> <span class="ow">not</span><span class="p">(</span><span class="n">arbre</span><span class="p">):</span>
+<span class="k">        return</span> <span class="mi">0</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="c1">        # print(arbre)</span>
+<span class="k">        return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">taille</span><span class="p">(</span><span class="n">arbre</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">taille</span><span class="p">(</span><span class="n">arbre</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+  
+<span></span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"taille:"</span><span class="p">,</span> <span class="n">taille</span><span class="p">(</span><span class="n">mon_arbre</span><span class="p">))</span>
+<span class="n">mon_arbre</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span><span class="n">taille</span><span class="o">:</span><span class="w"> </span><span class="mi">11</span>
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<p><img src="cours_files/figure-html/cell-4-output-2.svg" class="img-fluid"></p>
+</div>
+</div>
+<h2 id="calculer-la-hauteur-de-larbre" class="anchored">Calculer la hauteur de l’arbre</h2>
+<p>Pour rappel, voici la définition vue dans le <a href="/tg/nsi/1-structures-de-donnees/4-arbres">chapitre P1C4 sur les arbres binaires</a>.</p>
+<dl>
+<dt>
+Hauteur d’un arbre
+</dt>
+<dd>
+<div>
+<p>La hauteur d’un arbre est la plus grande profondeur d’une feuille de l’arbre.</p>
+</div>
+</dd>
+</dl>
+<p>A chaque appel, on va renvoyer le maximum des hauteurs des sous-arbres: <code>1 + hauteur(node.left), hauteur(node.right))</code>.</p>
+<p>Mais comme toute fonction recursive, il faut un cas de base qui ne nécessite pas le rappel de la fonction(sans quoi on aurait une boucle infinie). Ce cas est l’absence de noeud, cela signifie que le noeud parent était une feuille, et renvoie -1 pour diminuer la hauteur accumulée de 1.</p>
+<p>Voici le pseudo-code correspondant à cette fonction:</p>
+<div class="highlight"><pre><span></span>hauteur(Arbre A) :
+    Si A vide
+        retourner - 1
+    retourner 1 + max(hauteur(gauche(A)), hauteur(droite(A)))
+</pre></div>
+
+<p>Et voici l’implémentation de cette fonction en Python en utilisant la classe <code>binarytree.Node</code> pour représenter les arbres binaires.</p>
+<div class="cell" data-execution_count="4">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hauteur</span><span class="p">(</span><span class="n">arbre</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Fonction récursive renvoyant la hauteur d'un arbre</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    arbre: Arbre binaire</span>
+<span class="sd">        Le noeud racine de l'arbre</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        La hauteur de l'arbre</span>
+<span class="sd">    """</span>
+<span class="c1">    # Cas de base </span>
+<span class="k">    if</span> <span class="ow">not</span><span class="p">(</span><span class="n">arbre</span><span class="p">):</span>
+<span class="k">        return</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="c1">        # print(arbre)</span>
+<span class="k">        return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">hauteur</span><span class="p">(</span><span class="n">arbre</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="n">hauteur</span><span class="p">(</span><span class="n">arbre</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+<span class="nb">        
+print</span><span class="p">(</span><span class="s2">"hauteur:"</span><span class="p">,</span> <span class="n">hauteur</span><span class="p">(</span><span class="n">mon_arbre</span><span class="p">))</span>
+<span class="n">mon_arbre</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span><span class="n">hauteur</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span>
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<p><img src="cours_files/figure-html/cell-5-output-2.svg" class="img-fluid"></p>
+</div>
+</div>
+<p>N’hésitez pas à décommenter le <code>print</code> pour observer les arbres sur lesquels sont appelés cette fonction.</p>
+<details class="appli"><summary>&nbsp;</summary>
+<p>Schématiser la pile d’appels de la fonction récursive utilisée pour obtenir ce résultat.</p>
+</details>
+
+<h2 id="parcours-de-larbre" class="anchored">Parcours de l’arbre</h2>
+<p>Nous allons voir quatre méthodes de parcours des arbres, en fonction de l’ordre dans lequel on parcourt les noeuds:</p>
+<ul>
+<li>parcours préfixe</li>
+<li>parcours postfixe</li>
+<li>parcours infixe</li>
+<li>parcours en largeur</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/parcours-arbres-wikipedia.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Comparaisons des parcours d’arbres</figcaption><p></p>
+</figure>
+</div>
+<h3 id="parcours-préfixe" class="anchored">Parcours préfixe</h3>
+<p>Dans cet ordre, chaque nœud est visité puis chacun de ses fils.</p>
+<p>Voici le pseudo-code extrait de l’article Wikipedia sur les arbres.</p>
+<div class="highlight"><pre><span></span>parcours_préfixe(Arbre A) :
+    visiter (A)
+    Si nonVide (gauche(A))
+          parcours_préfixe(gauche(A))
+    Si nonVide (droite(A))
+          parcours_préfixe(droite(A))
+</pre></div>
+
+<h3 id="parcours-infixe" class="anchored">Parcours infixe</h3>
+<p>On visite chaque nœud entre les nœuds de son sous-arbre de gauche et les nœuds de son sous-arbre de droite. C’est une manière assez commune de parcourir un <em>arbre binaire de recherche</em>, car il donne les valeurs dans l’ordre croissant.</p>
+<p>Voici le pseudo-code extrait de l’article Wikipedia sur les arbres.</p>
+<div class="highlight"><pre><span></span>parcours_infixe(Arbre A) :
+    Si nonVide(gauche(A))
+       parcours_infixe(gauche(A))
+    visiter(A)
+    Si nonVide(droite(A))
+       parcours_infixe(droite(A))
+</pre></div>
+
+<h3 id="parcours-postfixe" class="anchored">Parcours postfixe</h3>
+<p>On affiche chaque nœud après avoir affiché chacun de ses fils.</p>
+<p>Voici le pseudo-code extrait de l’article Wikipedia sur les arbres.</p>
+<div class="highlight"><pre><span></span>parcours_postfixe(Arbre A) :
+    Si nonVide(gauche(A))
+       parcours_postfixe(gauche(A))
+    Si nonVide(droite(A))
+       parcours_postfixe(droite(A))
+    visiter(A)
+</pre></div>
+
+<h3 id="parcours-en-largeur" class="anchored">Parcours en largeur</h3>
+<p>On parcours les noeuds de gauche à droite étage par étage, comme si on «lisait» l’arbre.</p>
+<p>Voici le pseudo-code issu de l’article Wikipedia sur les arbres.</p>
+<p>Ce code n’est pas <em>recusrif</em> et a la particularité d’utiliser une structure de file avec les méthodes <code>enfiler</code> et <code>défiler</code>.</p>
+<div class="highlight"><pre><span></span>parcours_largeur(Arbre A) 
+   f = FileVide
+   enfiler(Racine(A), f)
+   Tant que (f != FileVide) 
+       nœud = defiler(f)
+       Visiter(nœud)                        // On fait une opération
+       Si (gauche(nœud) != null) Alors
+           enfiler(gauche(nœud), f)
+       Si (droite(nœud) != null) Alors
+           enfiler(droite(nœud), f)
+</pre></div>
+
+<p>Voici un exemple d’implémentation en Python utilisant une liste en guise de file avec les méthodes:</p>
+<ul>
+<li><code>list.insert(0, el)</code>, pour enfiler l’élément à l’index 0.</li>
+<li><code>list.pop()</code>, pour supprimer et renvoyer le dernier élément de la file(le défiler).</li>
+</ul>
+<div class="cell" data-execution_count="5">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parcours_largeur</span><span class="p">(</span><span class="n">arbre</span><span class="p">):</span>
+<span class="n">    f</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">    f</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">arbre</span><span class="p">)</span>
+<span class="k">    while</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">        noeud</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">        print</span><span class="p">(</span><span class="n">noeud</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="k">        if</span> <span class="n">noeud</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+<span class="n">            f</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noeud</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+<span class="k">        if</span> <span class="n">noeud</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+<span class="n">            f</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noeud</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+<span></span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Parcours en largeur"</span><span class="p">)</span>
+<span class="n">parcours_largeur</span><span class="p">(</span><span class="n">mon_arbre</span><span class="p">)</span>
+<span class="n">mon_arbre</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>Parcours en largeur
+10
+14
+1
+9
+12
+3
+13
+5
+6
+0
+8
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<p><img src="cours_files/figure-html/cell-6-output-2.svg" class="img-fluid"></p>
+</div>
+</div>
+<h2 id="arbre-binaire-de-recherche" class="anchored">Arbre binaire de recherche</h2>
+<p>Comme nous l’avons vu dans le chapitre sur les <a href="../../1-structures-de-donnees/4-arbres/#arbres-binaires-de-recherche">arbres</a> de la partie structure de données,</p>
+<blockquote class="blockquote">
+<p>un arbre binaire de recherche permet des opérations rapides pour rechercher une clé, insérer ou supprimer une clé.</p>
+</blockquote>
+<p>Pour rappel:</p>
+<dl>
+<dt>
+Arbre binaire de recherche
+</dt>
+<dd>
+<div>
+<p>Il s’agit d’un arbre binaire dans lequel toutes les valeurs dans le sous-arbre gauche d’un nœud sont inférieures à la valeur à la racine de l’arbre et toutes les valeurs dans le sous-arbre droit d’un nœud sont supérieures ou égales à la valeur à la racine de l’arbre.</p>
+</div>
+</dd>
+</dl>
+<p>Nous allons voir les algorithmes permettant la recherche et l’insertion d’une clé.</p>
+<p>Encore une fois nous utiliserons le package <code>binarytree</code> qui permet de facilementcréer des arbres binaires grâce à la fonction <code>bst</code>(<em>binary search tree</em>).</p>
+<div class="cell" data-execution_count="6">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">binarytree</span> <span class="kn">import</span> <span class="n">bst</span>
+<span class="n">abr</span> <span class="o">=</span> <span class="n">bst</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">abr</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="6">
+<p><img src="cours_files/figure-html/cell-7-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<h3 id="recherche-dune-clé" class="anchored">Recherche d’une clé</h3>
+<p>Puisque ce type d’arbre est trié, nous pouvons utiliser une méthode de <a href="/1g/nsi/8-algorithmique/4-recherche-dichotomique">recherche dichotomique</a> telle que nous l’avions vu en première.</p>
+<p>On peut ainsi éliminer la moitié de l’arbre à chaque itération et la complexité est <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">log(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+si l’arbre est équilibré.</p>
+<p>Voici le pseudo code de cet algorithme.</p>
+<div class="highlight"><pre><span></span>fonction recherche(a: abr, clé: élément)
+<span></span>
+        Si a vide
+            retourner Faux
+<span></span>
+        Sinon
+            e = étiquette de a
+            Si e == clé 
+                retourner Vrai
+            Sinon si e &lt; clé
+                retourner recherche(gauche(a), clé)
+            Sinon
+                retourner recherche(droite(a), clé)
+</pre></div>
+
+<div class="app">
+<p>Implémenter cet algorithme en Python en utilisant le module <code>binarytree</code>.</p>
+</div>
+<h3 id="insertion-dune-clé" class="anchored">Insertion d’une clé</h3>
+<blockquote class="blockquote">
+<p>L’insertion d’un nœud commence par une recherche : on cherche la clé du nœud à insérer ; lorsqu’on arrive à une feuille, on ajoute le nœud comme fils de la feuille en comparant sa clé à celle de la feuille : si elle est inférieure, le nouveau nœud sera à gauche ; sinon il sera à droite.</p>
+</blockquote>
+<div class="highlight"><pre><span></span>fonction insertion(a: ABR, clé: élément)
+        Si a vide
+            retourner ABR(clé, vide, vide)
+            
+        Sinon
+            e = étiquette de a
+            Si e &lt; clé
+                retourner ABR(e, insertion(gauche(a), clé), droite(a))
+            Sinon
+                retourner ABR(e, gauche(a), insertion(droite(a), clé))
+</pre></div>
+
+<p><a href="https://fr.wikipedia.org/wiki/Arbre_binaire_de_recherche#Insertion" class="cite-source">ABR sur Wikipedia</a></p>
+<p>On peut traduire cet algorithme en Python de cette façon:</p>
+<div class="cell" data-execution_count="7">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insertion</span><span class="p">(</span><span class="n">abr</span><span class="p">,</span> <span class="n">clé</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Insertion de la clé dans l'arbre abr</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    abr: binarytree.Node</span>
+<span class="sd">        l'arbre dans lequel doit être inséré la clé</span>
+<span class="sd">    clé: Number</span>
+<span class="sd">        La cle à insérer</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    binarytree.Node</span>
+<span class="sd">        l'arbre modifié</span>
+<span class="sd">    """</span>
+<span class="k">    if</span> <span class="ow">not</span><span class="p">(</span><span class="n">abr</span><span class="p">):</span>
+<span class="k">        return</span> <span class="n">Node</span><span class="p">(</span><span class="n">clé</span><span class="p">)</span>
+<span class="n">    e</span> <span class="o">=</span> <span class="n">abr</span><span class="o">.</span><span class="n">value</span>
+<span class="k">    if</span> <span class="n">clé</span> <span class="o">&lt;</span> <span class="n">e</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">e</span><span class="p">,</span>
+<span class="n">                    left</span><span class="o">=</span><span class="n">insertion</span><span class="p">(</span><span class="n">abr</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">clé</span><span class="p">),</span>
+<span class="n">                    right</span><span class="o">=</span><span class="n">abr</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">e</span><span class="p">,</span>
+<span class="n">                    left</span><span class="o">=</span><span class="n">abr</span><span class="o">.</span><span class="n">left</span><span class="p">,</span>
+<span class="n">                    right</span><span class="o">=</span><span class="n">insertion</span><span class="p">(</span><span class="n">abr</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">clé</span><span class="p">))</span>
+<span></span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Arbre initial"</span><span class="p">)</span>
+<span class="n">abr</span> <span class="o">=</span> <span class="n">bst</span><span class="p">()</span>
+<span class="n">abr</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>Arbre initial
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<p><img src="cours_files/figure-html/cell-8-output-2.svg" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="highlight"><pre><span></span><span class="c1"># Insertion de l'élément 7</span>
+<span class="n">abr2</span> <span class="o">=</span> <span class="n">insertion</span><span class="p">(</span><span class="n">abr</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">abr2</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="8">
+<p><img src="cours_files/figure-html/cell-9-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<div class="ref">
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Arbre_enracin%C3%A9">Article Wikipedia sur les arbres</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Arbre_enracin%C3%A9">Article Wikipedia sur les arbres binaires de recherche</a></li>
+</ul>
+</div>
+

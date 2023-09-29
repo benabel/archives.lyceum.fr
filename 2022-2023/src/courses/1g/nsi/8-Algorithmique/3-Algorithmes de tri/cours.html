@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tris par insertion, par sélection</td>
+<td><p>Écrire un algorithme de tri.</p>
+<p>Décrire un invariant de boucle qui prouve la correction des tris par insertion, par sélection.</p></td>
+<td><p>La terminaison de ces algorithmes est à justifier.</p>
+<p>On montre que leur coût est quadratique dans le pire cas.</p></td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Maintenant que nous disposons de tableaux pour stocker de grandes quantités de données, il faut qu’on apprenne à les classer. Il existe de nombreux algorithmes de tri plus ou moins efficaces, qui sont pour la plupart répertoriées dans <em>The Art of Computer Programming, Volume 3, Sorting and Searching.</em> de Knuth, Donald. E. [1998]. Le livre de chevet de tout programmeur.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><wc-wikimage title="Sorting_insertion_sort_anim.gif" caption="Animation de l'algorithme de tri par insertion"></wc-wikimage></p>
+</div>
+</div>
+</div>
+<h2 id="problématique" class="anchored">Problématique</h2>
+<blockquote class="blockquote">
+<p>Comment ranger des données afin de faciliter leur accès futur ? C’est par exemple l’ordre alphabétique du dictionnaire, où les mots sont rangés dans un ordre logique qui permet de ne pas devoir parcourir tout l’ouvrage pour retrouver une définition. Ce peut être aussi l’ordre intuitif dans lequel un joueur de cartes va ranger son jeu afin de limiter le temps de recherche pendant le déroulement de la partie. Cette problématique permet d’introduire la notion de tri (avec plusieurs sens distincts : séparer, ordonner, choisir), puis d’étudier différents algorithmes de tri. Le tri permet essentiellement d’accélérer les recherches, grâce à l’algorithme de recherche dichotomique.</p>
+</blockquote>
+<p><a href="http://cache.media.eduscol.education.fr/file/ISN_Tle_S/29/6/lyceeGT_ressource_ISN_20_06_Tle_S_14_Vous_avez_dit_trier_1_algorithmes_218296.pdf">Source eduscol</a></p>
+<h3 id="situation-daccroche" class="anchored">Situation d’accroche</h3>
+<p>Un joueur de cartes reçoit 9 cartes lors de la donne en début de partie ; il les trie ensuite pour faciliter la lecture de son jeu.</p>
+<ul>
+<li>Comment procède-t-il exactement pour réaliser cette opération ?</li>
+<li>Y a-t-il plusieurs façons de procéder :</li>
+</ul>
+<p>Vous rendre sur <a href="https://apps.lyceum.fr/order-cards-game/">cette page</a> sur laquelle vous est proposé un jeu de cartes à trier:</p>
+<iframe src="https://apps.lyceum.fr/order-cards-game/" width="960" height="480">
+</iframe>
+<p>Réalisez les consignes suivantes dans l’ordre.</p>
+<ol type="1">
+<li><strong>Consigne n° 1:</strong> « triez les cartes » en notant le nombre d’opérations nécessaires au tri, recommencer l’opération pour voir si le nombre de tours d’algorithmes varie, et de quoi peut dépendre ce nombre. Ensuite seulement,</li>
+<li><strong>Consigne n° 2:</strong> « décrivez par écrit la façon précise dont vous vous y êtes pris pour effectuer le tri ».</li>
+<li><strong>En plus:</strong> imaginez d’autres méthodes qui pourraient être plus efficaces pour effectuer le tri.</li>
+</ol>
+<h3 id="les-deux-types-de-tri-quadratiques" class="anchored">Les deux types de tri «quadratiques»</h3>
+<p>Nous allons cette année voir deux algorithmes de tri pas forcément très efficaces, mais relativement simples.</p>
+<p>Dans ces deux algorithmes, on va créer une sous-triée à gauche qui va grandir au fur et à mesure que l’algorithme «avance» jusqu’à ce que la liste soit entièrement triée.</p>
+<p>Ces deux algorithmes utilisent deux boucles imbriquées:</p>
+<ul>
+<li>La <strong>boucle externe</strong> est représentée par la flèche <em>rouge</em>.</li>
+<li>La <strong>boucle interne</strong> est représentée par la flèche <em>jaune</em>.</li>
+</ul>
+<p>Les animations ci-dessous sont issues du <a href="https://www.editions-bordas.fr/cahier-nsi-1re-collection-30.html">Cahier NSI 1re aux éditions Bordas</a> et peuvent être consultées en plein écran en suivant ce lien:</p>
+<p>https://www.cahier-nsi.fr/#!/interfaces</p>
+<ul>
+<li><strong>Le tri par sélection</strong> consiste à créer une sous-liste triée à gauche en y ajoutant les éléments non triés de droite dans l’ordre croissant.</li>
+</ul>
+<iframe src="https://www.cahier-nsi.fr/tri_par_selection/" width="960" height="480">
+</iframe>
+<p><a href="https://www.editions-bordas.fr/cahier-nsi-1re-collection-30.html" class="cite-source">Cahier NSI 1re aux éditions Bordas</a></p>
+<ul>
+<li><strong>le tri par insertion</strong> consiste à avancer dans la liste et placer la carte considérée à sa place dans la sous-liste triée de gauche.</li>
+</ul>
+<iframe src="https://www.cahier-nsi.fr/tri_par_insertion/" width="960" height="480">
+</iframe>
+<p><a href="https://www.editions-bordas.fr/cahier-nsi-1re-collection-30.html" class="cite-source">Cahier NSI 1re aux éditions Bordas</a></p>
+<details class="plus"><summary>Utilisation de la mémoire</summary>
+<p>On parle de tri en place (in-place en anglais) la liste est triée sans utiliser une autre liste pour stocker les résultats.</p>
+</details>
+
+<h3 id="créer-une-liste-de-données-aléatoire" class="anchored">Créer une liste de données aléatoire</h3>
+<p>Nous allons maintenant implémenter ces algorithmes en Python.</p>
+<p>On commence par créer une liste aléatoire d’entiers pour tester nos algorithmes de tri.</p>
+<div class="cell" data-execution_count="1">
+<div class="highlight"><pre><span></span><span class="c1"># Importer le module random pour créer des nombres au hasard</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span></span>
+<span class="k">def</span> <span class="nf">genere_liste_aleatoire</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Génére une liste aléatoire de N éléments compris entre 0 et n"""</span>
+<span class="c1">    # Créer une liste vide pour accueillir les nombres</span>
+<span class="n">    data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">    # ajoute les éléments aléatoires dans la liste</span>
+<span class="k">    for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="n">        data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="k">    return</span> <span class="n">data</span>
+<span></span>
+<span class="c1"># Création d'une liste de 9 valeurs comprises entre 0 et 100</span>
+<span class="n">liste_aléatoire</span> <span class="o">=</span> <span class="n">genere_liste_aleatoire</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste_aléatoire</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>[50, 70, 72, 85, 72, 10, 43, 53, 77]
+</pre></div>
+
+</div>
+</div>
+<h2 id="le-tri-par-sélection" class="anchored">Le tri par sélection</h2>
+<h3 id="principe" class="anchored">Principe</h3>
+<blockquote class="blockquote">
+<p>Sur un tableau de n éléments (numérotés de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>
+à <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+), le principe du tri par sélection est le suivant :</p>
+<ul>
+<li>Rechercher le plus petit élément du tableau, et l’échanger avec l’élément d’indice 0 ;</li>
+<li>rechercher le second plus petit élément du tableau, et l’échanger avec l’élément d’indice 1 ;</li>
+<li>continuer de cette façon jusqu’à ce que le tableau soit entièrement trié. &nbsp; <a href="http://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection">Source Wikipedia</a></li>
+</ul>
+</blockquote>
+<h3 id="illustration-graphique" class="anchored">Illustration graphique</h3>
+<p><wc-wikimage title="Selection-Sort-Animation.gif" class="half"></wc-wikimage></p>
+<h3 id="illustration-en-vidéo" class="anchored">Illustration en vidéo</h3>
+<p></p><div class="yt-embend"><div><iframe width="560" height="315" src="https://invidious.projectsegfau.lt/embed/Ns4TPTC8whw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><p><a href="https://www.youtube.com/watch?v=Ns4TPTC8whw">Vidéo</a> servie sans cookie via <a href="https://projectsegfau.lt/">Project Segfault</a></p></div></div><p></p>
+<p><em>Select-sort with Gypsy folk dance. Created at Sapientia University, Tirgu Mures (Marosvásárhely), Romania. Directed by Kátai Zoltán and Tóth László. In cooperation with “Maros Művészegyüttes”, Tirgu Mures (Marosvásárhely), Romania.</em>{.cite-source}</p>
+<h3 id="implémentation-en-python" class="anchored">Implémentation en python</h3>
+<p>Voici un exemple de code implémentant cet algorithme de tri présentant l’état de la liste à chaque tour avancée dans le tableau. Vous pouvez voir que le tableau est bien classé en <strong>plaçant systématiquement l’élément minimum du tableau restant à trier à la fin des éléments triés</strong>.</p>
+<div class="cell" data-execution_count="2">
+
+<div class="highlight"><pre><span></span><span class="c1"># Création d'une liste de 5 valeurs comprises entre 0 et 100 à trier</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">genere_liste_aleatoire</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Liste initiale: "</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span></span>
+<span class="k">def</span> <span class="nf">tri_par_selection</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="c1">    # Calculer la taille du tableau</span>
+<span class="n">    N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="c1">    # Parcourir le tableau jusqu'à l'avant dernière valeur</span>
+<span class="c1">    # en effet la dernière valeur sera forcément la plus grande</span>
+<span class="k">    for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<span class="c1">        # Stocker la valeur initiale de la case d'indice i, et son indice</span>
+<span class="n">        minimum</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">        i_min</span> <span class="o">=</span> <span class="n">i</span>
+<span class="c1">        #  Parcourir le reste du tableau pour rechercher l'élément le plus petit restant</span>
+<span class="k">        for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="k">            if</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">:</span>
+<span class="c1">                # Stocker la valeur du minimum et son indice</span>
+<span class="n">                minimum</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="n">                i_min</span> <span class="o">=</span> <span class="n">j</span>
+<span class="c1">        # Intervertir la valeur initiale de la case d'indice i et le minimum trouvé</span>
+<span class="n">        tab</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">i_min</span><span class="p">]</span> <span class="o">=</span> <span class="n">minimum</span><span class="p">,</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="c1">        
+        # Affiche les états intermédiaires de la liste</span>
+<span class="nb">        print</span><span class="p">(</span><span class="s2">"Etat à la fin du tour"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">":"</span> <span class="p">,</span> <span class="n">tab</span><span class="p">)</span>
+<span></span>
+<span class="n">tri_par_selection</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Liste finale: "</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>Liste initiale:  [54, 68, 90, 70, 43]
+Etat à la fin du tour 0 : [43, 68, 90, 70, 54]
+Etat à la fin du tour 1 : [43, 54, 90, 70, 68]
+Etat à la fin du tour 2 : [43, 54, 68, 70, 90]
+Etat à la fin du tour 3 : [43, 54, 68, 70, 90]
+Liste finale:  [43, 54, 68, 70, 90]
+</pre></div>
+
+</div>
+</div>
+<h3 id="aspects-théoriques" class="anchored">Aspects théoriques</h3>
+<p>Cet algorithme réalise deux boucles imbriquées il a une <em>complexité quadratique</em> dans le pire des cas <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+.</p>
+<p>L’<em>invariant de boucle</em> garantit qu’au début de chaque tour <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+de boucle externe, les <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+premières valeurs du tableau sont les plus petites et sont triées.</p>
+<h2 id="le-tri-par-insertion" class="anchored">Le tri par insertion</h2>
+<h3 id="principe-1" class="anchored">Principe</h3>
+<blockquote class="blockquote">
+<p>Dans l’algorithme, on parcourt le tableau à trier du début à la fin. Au moment où on considère le i-ème élément, les éléments qui le précèdent sont déjà triés. Pour faire l’analogie avec l’exemple du jeu de cartes, lorsqu’on est à la i-ème étape du parcours, le i-ème élément est la carte saisie, les éléments précédents sont la main triée et les éléments suivants correspondent aux cartes encore mélangées sur la table.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>L’objectif d’une étape est d’insérer le i-ème élément à sa place parmi ceux qui précèdent. En pratique, on fait « remonter » l’élément au fur et à mesure jusqu’à rencontrer un élément plus petit.</p>
+</blockquote>
+<p><a href="http://fr.wikipedia.org/wiki/Tri_par_insertion">Source Wikipedia</a></p>
+<h3 id="illustration-graphique-1" class="anchored">Illustration graphique</h3>
+<p><wc-wikimage title="Insertion-sort-example-300px.gif" caption="Animation du tri par insertion"></wc-wikimage></p>
+<h3 id="illustration-en-vidéo-1" class="anchored">Illustration en vidéo</h3>
+<p></p><div class="yt-embend"><div><iframe width="560" height="315" src="https://invidious.projectsegfau.lt/embed/ROalU379l3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><p><a href="https://www.youtube.com/watch?v=ROalU379l3U">Vidéo</a> servie sans cookie via <a href="https://projectsegfau.lt/">Project Segfault</a></p></div></div><p></p>
+<p><em>Insert-sort with Romanian folk dance. Created at Sapientia University, Tirgu Mures (Marosvásárhely), Romania. Directed by Kátai Zoltán and Tóth László. In cooperation with “Maros Művészegyüttes”, Tirgu Mures (Marosvásárhely), Romania.</em>{.cite-source}</p>
+<h3 id="implémentation-en-python-1" class="anchored">Implémentation en python</h3>
+<p>Voici un exemple d’implémentation ou le tableau est parcouru de la gauche vers la droite, observer bien ou est placée la valeur à insérer à chaque tour de la boucle.</p>
+<div class="cell" data-execution_count="3">
+
+<div class="highlight"><pre><span></span><span class="c1"># Création d'une liste de 5 valeurs comprises entre 0 et 20 à trier</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">genere_liste_aleatoire</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Liste initiale: "</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span></span>
+<span class="k">def</span> <span class="nf">tri_insertion</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="c1">    # Calculer la taille du tableau</span>
+<span class="n">    N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="c1">    # Parcourir l'ensemble de la liste à partir de la deuxième case</span>
+<span class="c1">    # en effet un tableau de 1 case est forcément trié</span>
+<span class="k">    for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="c1">        # Stocker la valeur à "insérer"</span>
+<span class="n">        val</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">        print</span><span class="p">(</span><span class="s2">"Valeur à insérer:"</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+<span class="c1">        # Parcourir le tableau déjà trié de dimension i-1 vers la gauche</span>
+<span class="c1">        # jusqu'à rencontrer une valeur inférieure à notre valeur à insérer</span>
+<span class="n">        j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">        while</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">val</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c1">            # Intervertir  les valeurs aux indices j et j+1</span>
+<span class="n">            tab</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="c1">            # Diminuer j de 1 pour la prochaine comparaison</span>
+<span class="n">            j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1">        # Affiche les états intermédiaires de la liste</span>
+<span class="nb">        print</span><span class="p">(</span><span class="s2">"Etat à la fin du tour"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">":"</span> <span class="p">,</span> <span class="n">tab</span><span class="p">)</span>
+<span></span>
+<span class="n">tri_insertion</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Liste finale:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>Liste initiale:  [26, 33, 7, 63, 10]
+Valeur à insérer: 33
+Etat à la fin du tour 1 : [26, 33, 7, 63, 10]
+Valeur à insérer: 7
+Etat à la fin du tour 2 : [7, 26, 33, 63, 10]
+Valeur à insérer: 63
+Etat à la fin du tour 3 : [7, 26, 33, 63, 10]
+Valeur à insérer: 10
+Etat à la fin du tour 4 : [7, 10, 26, 33, 63]
+Liste finale: [7, 10, 26, 33, 63]
+</pre></div>
+
+</div>
+</div>
+<h3 id="aspects-théoriques-1" class="anchored">Aspects théoriques</h3>
+<p>Cet algorithme réalise deux boucles imbriquées il a une <em>complexité quadratique</em> dans le pire des cas <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+.</p>
+<p>L’<em>invariant de boucle</em> garantit qu’au début de chaque tour <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>
+de boucle externe, les <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+premières valeurs du tableau sont triées.</p>
+<h2 id="autres-algorithmes" class="anchored">Autres algorithmes</h2>
+<p>Ces deux algorithmes ne sont que des exemples d’algorithmes de tri, et il en existe bien d’autres plus efficace comme le fameux <em>quicksort</em>, ou le <em>timsort</em> utilisé comme algorithme par défaut en Python.</p>
+<p>La littérature ne manque pas sur ce sujet, car il s’agit d’une introduction de choix à de nombreux concepts clés de l’algorithmique:</p>
+<ul>
+<li><strong>la complexité</strong>: l’étude du temps et de la mémoire nécessité par l’algorithme.</li>
+<li><strong>les cas extrêmes</strong> ou <em>edge cases</em>: que se passe-t-il dans le cas ou la liste est déjà triée, ou au contraire si elle est en ordre inversé.</li>
+<li><strong>la correction de l’algorithme</strong>: comment prouver que l’algorithme donne le bon résultat en toute occasion par une <em>méthode de récurrence</em> mathématique.</li>
+</ul>
+<p>Vous pouvez consulter cet article du site <a href="https://interstices.info/jcms/c_6973/les-algorithmes-de-tri">interstices.info</a> pour en savoir plus.</p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

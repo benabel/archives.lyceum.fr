@@ -1,0 +1,89 @@
+---
+tags: ["introduction", "terminale", "lycée", "enseignement scientifique"]
+---
+
+::: programme
+L’ensemble des disciplines scientifiques concourt à la compréhension du monde, de son
+organisation, de son fonctionnement et des lois qui le régissent, ainsi qu’à la maîtrise des
+outils et des technologies. L’histoire des sciences raconte une aventure de l’esprit humain, lancé
+dans une exploration du monde (la science pour savoir) et dans une action sur le monde (la science
+pour faire).
+
+Le développement des sciences et des technologies a profondément modifié les conditions de vie des
+êtres humains et les sociétés dans lesquelles ils vivent. Cela s’est traduit par d’importants
+progrès, dans les domaines de l’alimentation, de la santé, de la communication, des transports,
+etc. Grâce à ses inventions, l’être humain a désormais les moyens d’agir sur son environnement
+immédiat. Par son impact, l’espèce humaine modifie également les équilibres à l’échelle globale de
+la planète. La présence humaine modifie le climat; ses déchets s’accumulent et son utilisation des
+ressources naturelles est massive. Si l’espèce humaine n’est pas la première forme de vie à
+transformer la planète, c’est sans aucun doute la première qui s’en préoccupe.
+
+Grâce, notamment, à l’approche scientifique, l’être humain dispose des outils intellectuels
+nécessaires pour devenir un acteur conscient et responsable de la relation au monde et de la
+transformation des sociétés. L’approche scientifique nourrit le jugement critique et rencontre des
+préoccupations d’ordre éthique. Ainsi, c’est de façon rationnellement éclairée que chacun doit être
+en mesure de participer à la prise de décisions, individuelles et collectives, locales ou
+globales.
+
+La science construit peu à peu un corpus de connaissances grâce à des méthodes spécifiques : elle
+élabore un ensemble de théories, établit des lois, invente des concepts, découvre des mécanismes;
+cet ensemble se perfectionne par la confrontation à des faits nouvellement connus, souvent en lien
+avec l’évolution des techniques. Le savoir scientifique est une construction collective qui a une
+histoire. Il est fondé sur le raisonnement rationnel et la recherche de causes matérielles; il se
+développe parfois en réfutation des intuitions premières au-delà desquelles le scientifique doit
+s’aventurer.
+
+La compréhension de l’histoire des savoirs scientifiques et de leur mode de construction, la
+pratique véritable d’une démarche scientifique (y compris dans sa dimension concrète) développent
+des qualités de l’esprit utiles à tous. En fréquentant la science, chacun développe son
+intelligence, sa curiosité sa raison, son humilité devant les faits et les idées pour enrichir son
+savoir.
+
+Le but essentiel de l’enseignement scientifique est de dispenser une formation scientifique
+générale pour tous les élèves, tout en offrant un point d’appui pour ceux qui poursuivent et
+veulent poursuivre des études scientifiques. Il ne vise pas à construire un savoir encyclopédique
+mais cherche plutôt à atteindre trois buts intimement liés :
+
+- contribuer à faire de chaque élève une personne lucide, consciente de ce qu’elle est, de ce
+  qu’est le monde et de ce qu’est sa relation au monde;
+- contribuer à faire de chaque élève un citoyen ou une citoyenne responsable, qui connaît les
+  conséquences de ses actions sur le monde et dispose des outils nécessaires pour les contrôler;
+- contribuer au développement en chaque élève d’un esprit rationnel, autonome et éclairé, capable
+  d’exercer une analyse critique face aux fausses informations et aux rumeurs.
+
+:::
+
+::: intro
+
+L’histoire des sciences raconte une aventure de l’esprit humain, lancé:
+
+- Dans une exploration du monde (la science pour savoir)
+- et dans une action sur le monde (la science pour faire).
+
+:::
+
+## Galilée(XVII^e^)
+
+Galilée est considéré depuis 1680 comme le fondateur de la physique, qui s'est imposée comme la
+première des sciences modernes.
+
+`youtube: AayuNW8TZdo`
+
+Par ses études et ses nombreuses expériences, parfois uniquement de pensée, ainsi que par la
+généralisation des mesures, en particulier du temps ce chercheur a posé les bases de la science.
+
+## La démarche scientifique
+
+`youtube: 59wYmEoccF8`
+
+À partir de l’observation d’un phénomène et de la formulation d’une problématique.
+
+Différentes _hypothèses_ vont être émises, testées par l’observation et l’_expérimentation_.
+
+La confirmation d'une hypothèse permet de construire un _modèle_ ou une _théorie_.
+
+::: ref
+
+<https://www.cea.fr/comprendre/Pages/physique-chimie/essentiel-sur-demarche-scientifique.aspx>
+
+:::

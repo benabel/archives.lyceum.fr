@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Algorithme des k plus proches voisins</td>
+<td>Écrire un algorithme qui prédit la classe d’un élément en fonction de la classe majoritaire de ses k plus proches voisins.</td>
+<td>Il s’agit d’un exemple d’algorithme d’apprentissage.</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Dans ce chapitre nous abordons un algorithme dit d’<strong>apprentissage automatique</strong> qui permet à un programme d’apprendre à classer des « objets » en utilisant un jeu de données pour qu’il y trouve des similarités. Il s’agit d’un algorithme simple de <em>« machine learning »</em> un sujet très en vogue à l’heure actuelle dans le domaine de l’informatique.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><wc-wikimage title="KnnClassification.svg" caption="Exemple de classification k-NN . L'échantillon de test (point vert) pourrait être classé soit dans la première classe de carré bleu ou la seconde classe de triangles rouges. Si k = 3 (cercle en ligne pleine) il est affecté à la classe des triangles car il y a deux triangles et seulement un carré dans le cercle considéré. Si k = 5 (cercle en ligne pointillée) il est affecté à la classe des carrés (3 carrés face à deux triangles dans le cercle externe)."></wc-wikimage></p>
+</div>
+</div>
+</div>
+<h2 id="principe" class="anchored">Principe</h2>
+<h3 id="principe-de-lapprentissage-supervisé" class="anchored">Principe de l’apprentissage supervisé</h3>
+<p>À l’heure actuelle, l’intelligence artificielle se base souvent sur l’utilisation de données annotées que l’on fournit à l’ordinateur pour qu’il y trouve des similarités(c’est ce que l’on appelle de l’apprentissage supervisé).</p>
+<div class="example">
+<p>On peut fournir à un programme une grande quantité d’écritures de chiffres.</p>
+<p>Le programme va lire toutes les données, et grâce à des algorithmes plus ou moins évolués, le programme va trouver les points communs entre les chiffres représentant le même nombre.</p>
+<p><wc-wikimage title="MnistExamples.png" caption="Le jeu de données du MNIST est un exemple de jeu d'entrainement et de tests des algorithmes de reconnaissance de chiffres."></wc-wikimage></p>
+<p>Ensuite, on peut donner au programme une image non annotée, et il nous dira s’il s’agit d’un 1, d’un 6 ou d’un 8…</p>
+<p>C’est un système qui est utilisé depuis des années pour la lecture des codes postaux sur les lettres avec une efficacité supérieure à 99%.</p>
+</div>
+<h3 id="principe-lalgorithme-des-k-plus-proches-voisins" class="anchored">Principe l’algorithme des k plus proches voisins</h3>
+<p>On dispose d’une collection de données annotées, et on veut savoir à quelle catégorie appartient un nouvel échantillon. Il s’agit d’un problème de <strong>classification</strong>.</p>
+<p>Prenons l’exemple suivant issu de cette <a href="https://nadjarebinguet.wordpress.com/2020/03/20/algorithme-des-k-plus-proches-voisins/">page</a>.</p>
+<blockquote class="blockquote">
+<p>Imaginons… On étudie des papillons. Ceux-ci ont une certaine largeur et une certaine longueur. Certains sont des males, d’autres des femelles.</p>
+<p>On étudie un certain nombre de ces papillons. Cela constitue un jeu d’apprentissage dont les caractéristiques sont représentées ci-dessous.</p>
+<p>A partir de ce jeu d’apprentissage, on cherche à prédire le sexe d’un papillon dont on connaît les dimensions.</p>
+</blockquote>
+<blockquote class="blockquote">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/geogebra-papillons.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Classification des papillons</figcaption><p></p>
+</figure>
+</div>
+</blockquote>
+<blockquote class="blockquote">
+<p>L’objectif est maintenant d’identifier le sexe d’un nouveau papillon en s’appuyant sur notre expérience précédente.</p>
+<p><strong>Le principe est simple : On fait l’hypothèse que notre papillon a le même sexe que ces voisins.</strong></p>
+</blockquote>
+<p>On voit par exemple que le voisin le plus proche est un paillon mâle:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/geogebra-1voisin.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">k=1</figcaption><p></p>
+</figure>
+</div>
+<p>Cependant, la particularité de l’algorithme des k plus proches voisins est le fait que l’on puisse choisir <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>
+, le nombre de plus proches voisins nous permettant de faire notre choix, on va prendre plusieurs voisins pour éviter de se baser que sur une observation pour notre choix.</p>
+<p>Voici par exemple l’application pour <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">k=5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span>
+:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/geogebra-5-voisins.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">k=5</figcaption><p></p>
+</figure>
+</div>
+<details class="appli"><summary>Influence du nombre de voisins</summary>
+<p>En utilisant ce fichier <a href="https://www.geogebra.org/m/zhbhycsh">geogebra</a> montrer comment le choix de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>
+a une influence sur la prévision de la méthode.</p>
+</details>
+
+<h2 id="implémentation-naïve-en-python" class="anchored">Implémentation naïve en Python</h2>
+<p>Le code qui suit utilise des méthodes de <code>pandas</code> <code>matplotlib</code> et <code>numpy</code> non vues, il n’est pas nécessaire de savoir le refaire, par contre en utilisant les commentaires vous pouvez voir comment est effectuée la classification dans cette implémentation.</p>
+<h3 id="classification-délèves-en-conseil-de-classe" class="anchored">Classification d’élèves en conseil de classe</h3>
+<p>Nous allons utiliser un fichier <code>csv</code> qui contient les <em>moyennes, absences et mentions d’élèves de lycée</em>.</p>
+<p>Vous pouvez visualiser ce fichier ici: https://framagit.org/lyceum/k-plus-proches-voisins/blob/master/data/mentions-anonymised.csv</p>
+<p>À partir de ce fichier de données <strong>l’algorithme sera capable de vous indiquer quelle sera votre mention (Félicitations, compliments…)</strong> en fonction de notre moyenne générale et notre nombre d’absences.</p>
+<h3 id="tracé-de-la-classification" class="anchored">Tracé de la classification</h3>
+<p>Commençons par observer l’ensemble des données sous forme graphique pour se faire une idée.</p>
+<div class="cell" data-execution_count="1">
+
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span>
+<span class="c1"># Lecture des données du conseil de classe </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./data/mentions-anonymised.csv'</span><span class="p">)</span>
+<span></span>
+<span class="c1"># On affiche 3 échantillons du tableau</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="table table-bordered table-hover table-sm table-striped" data-border="1">
+<thead class="table-warning">
+<tr class="header" style="text-align: right;">
+<th></th>
+<th>Mentions</th>
+<th>1/2j abs</th>
+<th>Rang</th>
+<th>Moyenne Générale</th>
+<th>PHILOSOPHIE</th>
+<th>HISTOIRE-GEOGRAPHIE</th>
+<th>MATHEMATIQUES</th>
+<th>PHYSIQUE-CHIMIE</th>
+<th>SCIENCES VIE &amp; TERRE</th>
+<th>ED.PHYSIQUE &amp; SPORT.</th>
+<th>...</th>
+<th>ESPAGNOL LV2</th>
+<th>ITALIEN LV2</th>
+<th>JAPONAIS LV2</th>
+<th>SPECIALITE SVT</th>
+<th>SPECIALITE PHYS</th>
+<th>NISSART LV3</th>
+<th>SPECIALITE MATHS</th>
+<th>SPECIALITE ISN</th>
+<th>arts fac</th>
+<th>ENS. MORAL &amp; CIVIQUE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th>46</th>
+<td>Compliments</td>
+<td>5.0</td>
+<td>16.0</td>
+<td>12.9</td>
+<td>13.3</td>
+<td>12.5</td>
+<td>11.1</td>
+<td>11.0</td>
+<td>13.3</td>
+<td>14.5</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>15.3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>15.6</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th>61</th>
+<td>Encouragements</td>
+<td>6.0</td>
+<td>21.0</td>
+<td>12.2</td>
+<td>12.3</td>
+<td>14</td>
+<td>11.1</td>
+<td>10.0</td>
+<td>14.4</td>
+<td>14.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>16.5</td>
+<td>NaN</td>
+<td>11</td>
+<td>NaN</td>
+<td>14.4</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th>14</th>
+<td>Félicitations</td>
+<td>16.0</td>
+<td>5.0</td>
+<td>17.1</td>
+<td>13.0</td>
+<td>18</td>
+<td>17.8</td>
+<td>16.0</td>
+<td>18.8</td>
+<td>17.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>18.4</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>3 rows × 22 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="highlight"><pre><span></span><span class="c1"># on ne conserve que 3 colonnes pour cette étude simplifiée</span>
+<span class="n">df</span> <span class="o">=</span>  <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">'Moyenne Générale'</span><span class="p">,</span> <span class="s1">'1/2j abs'</span><span class="p">,</span> <span class="s1">'Mentions'</span><span class="p">]]</span>
+<span class="n">df</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="table table-bordered table-hover table-sm table-striped" data-border="1">
+<thead class="table-warning">
+<tr class="header" style="text-align: right;">
+<th></th>
+<th>Moyenne Générale</th>
+<th>1/2j abs</th>
+<th>Mentions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th>0</th>
+<td>17.4</td>
+<td>3.0</td>
+<td>Félicitations</td>
+</tr>
+<tr class="even">
+<th>1</th>
+<td>18.1</td>
+<td>5.0</td>
+<td>Félicitations</td>
+</tr>
+<tr class="odd">
+<th>2</th>
+<td>18.2</td>
+<td>NaN</td>
+<td>Félicitations</td>
+</tr>
+<tr class="even">
+<th>3</th>
+<td>17.0</td>
+<td>1.0</td>
+<td>Félicitations</td>
+</tr>
+<tr class="odd">
+<th>4</th>
+<td>17.6</td>
+<td>2.0</td>
+<td>Félicitations</td>
+</tr>
+<tr class="even">
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th>91</th>
+<td>9.0</td>
+<td>12.0</td>
+<td>Encouragements</td>
+</tr>
+<tr class="even">
+<th>92</th>
+<td>9.4</td>
+<td>14.0</td>
+<td>Pas de mention</td>
+</tr>
+<tr class="odd">
+<th>93</th>
+<td>7.7</td>
+<td>49.0</td>
+<td>Pas de mention</td>
+</tr>
+<tr class="even">
+<th>94</th>
+<td>12.3</td>
+<td>32.0</td>
+<td>Pas de mention</td>
+</tr>
+<tr class="odd">
+<th>95</th>
+<td>11.7</td>
+<td>33.0</td>
+<td>Pas de mention</td>
+</tr>
+</tbody>
+</table>
+
+<p>96 rows × 3 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tracé_graph</span><span class="p">():</span>
+<span class="k">    for</span> <span class="n">mention</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Pas de mention"</span><span class="p">,</span><span class="s2">"Encouragements"</span><span class="p">,</span> <span class="s2">"Compliments"</span><span class="p">,</span> <span class="s2">"Félicitations"</span><span class="p">]:</span>
+<span class="n">        df_mention</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"Mentions"</span><span class="p">]</span> <span class="o">==</span> <span class="n">mention</span><span class="p">]</span>
+<span class="n">        plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_mention</span><span class="p">[</span><span class="s2">"1/2j abs"</span><span class="p">],</span> <span class="n">df_mention</span><span class="p">[</span><span class="s2">"Moyenne Générale"</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">mention</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">    plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">tracé_graph</span><span class="p">()</span>
+</pre></div>
+
+<div class="cell-output cell-output-display">
+<p><img src="cours_files/figure-html/cell-4-output-1.png" width="566" height="411"></p>
+</div>
+</div>
+<p>On voit bien le groupe des <strong>Félicitations</strong> se dégager avec des hautes notes et peu d’absences, ainsi que le groupe <strong>Pas de mention</strong> pour les absentéistes. Par contre, la zone basse du graphique présente de nombreux points de diverses mentions proches.</p>
+<h3 id="implémentation-de-lalgorithme" class="anchored">Implémentation de l’algorithme</h3>
+<p>Nous allons maintenant définir la fonction qui à partie de la moyenne et des absences données en argument renverra la mention des k plus proches voisins(par défaut: 3).</p>
+<div class="cell" data-execution_count="4">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">k_plus_proches_voisins</span><span class="p">(</span><span class="n">moyenne</span><span class="p">,</span> <span class="n">absences</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Renvoie la classe des k plus proches voisins</span>
+<span class="sd">    </span>
+<span class="sd">    Entrée:</span>
+<span class="sd">        moyenne: moyenne de l'élève</span>
+<span class="sd">        absences: nb de 1/2j d'absences lors du trimestre</span>
+<span class="sd">        k: nombre de voisins les plus proches à utiliser(par défaut 3)</span>
+<span class="sd">        </span>
+<span class="sd">    Sortie:</span>
+<span class="sd">        renvoie les classe la plus probable des k plus porches voisins"""</span>
+<span class="c1">    
+    # on commence par afficher notre point sur un graphique</span>
+<span class="n">    plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">absences</span><span class="p">,</span> <span class="n">moyenne</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Elève étudié"</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"P"</span><span class="p">)</span>
+<span class="c1">    
+    # on crée une liste pour stocker les distances euclidiennes</span>
+<span class="n">    df</span><span class="p">[</span><span class="s1">'distance'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="s2">"Moyenne Générale"</span><span class="p">]</span> <span class="o">-</span> <span class="n">moyenne</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"1/2j abs"</span><span class="p">]</span> <span class="o">-</span> <span class="n">absences</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">    # On affiche les trois plus courtes distances</span>
+<span class="n">    df_voisins</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">distance</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="n">k</span><span class="p">]]</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">df_voisins</span><span class="p">)</span>
+<span class="c1">    # on les marque sur le graph</span>
+<span class="n">    plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_voisins</span><span class="p">[</span><span class="s2">"1/2j abs"</span><span class="p">],</span>
+<span class="n">                df_voisins</span><span class="p">[</span><span class="s2">"Moyenne Générale"</span><span class="p">],</span>
+<span class="n">                label</span><span class="o">=</span><span class="s2">"Plus proches voisins"</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"*"</span><span class="p">)</span>
+<span class="c1">    # On ajoute tous les autres points</span>
+<span class="n">    tracé_graph</span><span class="p">()</span>
+<span class="k">    return</span> <span class="n">df_voisins</span><span class="p">[</span><span class="s2">"Mentions"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+<h3 id="appels-de-la-fonction" class="anchored">Appels de la fonction</h3>
+<div class="cell" data-execution_count="5">
+<div class="highlight"><pre><span></span><span class="n">k_plus_proches_voisins</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>    Moyenne Générale  1/2j abs        Mentions  distance
+32              12.3      11.0     Compliments  1.019804
+62              11.6       9.0  Pas de mention  1.345362
+66              11.4       9.0  Pas de mention  1.486607
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="highlight"><pre><span></span>Mentions
+Pas de mention    2
+Name: count, dtype: int64
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="cours_files/figure-html/cell-6-output-3.png" width="566" height="411"></p>
+</div>
+</div>
+<p>On observe donc que l’élève n’aurait pas de mention malgré ses 12.5 de moyenne, Voyons ce qu’il en est si on réduit le nombre d’absences à 5.</p>
+<div class="cell" data-execution_count="6">
+<div class="highlight"><pre><span></span><span class="n">k_plus_proches_voisins</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>    Moyenne Générale  1/2j abs        Mentions  distance
+65              12.4       5.0  Encouragements       0.1
+46              12.9       5.0     Compliments       0.4
+58              12.5       4.0  Encouragements       1.0
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="highlight"><pre><span></span>Mentions
+Encouragements    2
+Name: count, dtype: int64
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="cours_files/figure-html/cell-7-output-3.png" width="566" height="411"></p>
+</div>
+</div>
+<p>L’élève a maintenant les encouragements.</p>
+<h3 id="et-vous-quelle-serait-votre-mention" class="anchored">Et vous, quelle serait votre mention?</h3>
+<p>L’algorithme et les données sont en ligne dans le dépôt suivant:</p>
+<p>https://framagit.org/lyceum/k-plus-proches-voisins</p>
+<p>Vous pouvez <em>soit</em> télécharger le <a href="https://framagit.org/lyceum/k-plus-proches-voisins/archive/master.zip">dossier</a> pour travailler sur le code sur votre machine si vous avez installé python et anconda chez vous.</p>
+<p>Vous pouvez sinon travailler en ligne en lançant un environnement <a href="http://mybinder.org/v2/gh/heoinfo/k-plus-proches-voisins/master?filepath=index.ipynb"><img src="http://mybinder.org/badge_logo.svg" class="img-fluid" alt="Binder"></a>.</p>
+<details class="appli"><summary>L’algorithme est-il efficace?</summary>
+<p>Reprendre vos bulletins de lycée pour vérifier si la prévision faite à partir de votre moyenne générale et de votre nombre de jours d’absences est conforme au résultat obtenu.</p>
+<p>Vous pouvez éventuellement changer la valeur de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>
+pour améliorer les prédictions.</p>
+<p><strong>Pour conclure:</strong> Que diriez-vous de cette méthode? Peut-on vraiment qualifier cet algorithme d’<em>intelligence artificielle</em>? Voyez-vous des dangers à la prise de décisions par des algorithmes?</p>
+</details>
+
+<h2 id="notes-sur-lalgorithme" class="anchored">Notes sur l’algorithme</h2>
+<p>Cet algorithme(<em>brute-force</em>) est peu efficace avec une complexité de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">[</mo><mi>D</mi><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">O[D N^2]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>
+(voir <a href="https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbor-algorithms">doc sklearn</a>).</p>
+<p>D’autre part, il serait bon de mettre à l’échelle les données utilisées, car on voit bien que l’échelle des absences est trois fois plus grande que les moyennes, et ainsi a une importance accrue dans le calcul de la distance des voisins.</p>
+<div class="ref">
+<ul>
+<li><p>Cours de Nadja Rebinguet duquel est extrait l’exemple des papillons: https://nadjarebinguet.wordpress.com/2020/03/20/algorithme-des-k-plus-proches-voisins/</p></li>
+<li><p>Cette vidéo de <a href="https://www.youtube.com/watch?v=OEJX-q6UOag">Phillippe Bouchery sur le machine learning</a></p></li>
+<li><p>Cours sur pixees.fr: https://pixees.fr/informatiquelycee/n_site/nsi_prem_knn.html</p></li>
+<li><p>Article Wikipedia: https://fr.wikipedia.org/wiki/M%C3%A9thode_des_k_plus_proches_voisins</p></li>
+<li><p>Doc sklearn: https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbor-algorithms</p></li>
+</ul>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

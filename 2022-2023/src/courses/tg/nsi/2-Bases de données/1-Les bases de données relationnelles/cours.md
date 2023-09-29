@@ -1,0 +1,1001 @@
+---
+tags: ["cours", "terminale", "lycée", "numérique et sciences informatiques", "nsi"]
+tocHTML: '<ul><li><a href="#définition" data-localhref="true">Définition</a></li><li><a href="#motivations" data-localhref="true">Motivations</a></li><li><a href="#modèle-relationnel" data-localhref="true">Modèle relationnel</a></li><li><a href="#système-de-gestion-de-base-de-données-sgbd" data-localhref="true">Système de gestion de base de données: <em>SGBD</em> *</a></li></ul>'
+---
+
+
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>    Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>    Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>       Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Modèle relationnel : relation, attribut, domaine, clef primaire, clef étrangère, schéma relationnel.</td>
+<td>Identifier les concepts définissant le modèle relationnel.</td>
+<td>Ces concepts permettent d’exprimer les contraintes d’intégrité (domaine, relation et référence).</td>
+</tr>
+<tr class="even">
+<td>Système de gestion de bases de données relationnelles.</td>
+<td>Identifier les services rendus par un système de gestion de bases de données relationnelles : persistance des données, gestion des accès concurrents, efficacité de traitement des requêtes, sécurisation des accès.</td>
+<td>Il s’agit de comprendre le rôle et les enjeux des différents services sans en détailler le fonctionnement.</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<blockquote class="blockquote">
+<p>Les bases de données sont aujourd’hui incontournables, car très peu d’informations restent encore stockées sur du papier. Nous avons vu en <a href="/1g/nsi/4-traitement-de-donnees-en-tables/1-tables-de-donnees">première</a> comment utiliser des données comme celle d’un tableur avec notamment l’utilisation du format <code>csv</code>. Cependant l’utilisation de simples tableaux a ses limites et c’est pour cela que l’on utilise les <strong>bases de données relationnelles</strong> qui ont été formalisées en 1970 par <a href="https://fr.wikipedia.org/wiki/Edgar_F._Codd">Edgar F.Codd</a> qui recevra le prix Turing en 1981 pour son travail.</p>
+</blockquote>
+<h2 id="définition" class="anchored">Définition</h2>
+<dl>
+<dt>
+Base de données
+</dt>
+<dd>
+<div>
+<p>En informatique, une base de données est une collection organisée de données stockées et consultées électroniquement.</p>
+</div>
+</dd>
+</dl>
+<p>Il existe divers modèles de bases de données:</p>
+<ul>
+<li>Les <strong>bases données relationnelles</strong> utilisent des tableaux de données organisés en lignes et colonnes auxquelles on accède grâce au langage <code>SQL</code>.</li>
+<li>Les <strong>bases de données non relationnelles</strong> dites <code>noSQL</code> qui peuvent stocker des données de formes diverses graphes, documents…</li>
+</ul>
+<p>Cette année, nous nous intéresserons uniquement aux bases de données relationnelles et au langage <code>SQL</code> dont on peut voir ci-dessous un exemple de requête et de résultats sur une base de données de location de DVD.</p>
+<p><wc-wikimage title="DVD_Rental_Query.png" caption="Requête SQL sur une base de données de locations de DVD"></wc-wikimage></p>
+<h2 id="motivations" class="anchored">Motivations</h2>
+<p>Tout d’abord l’utilisation de fichiers <code>csv</code> pose des problèmes d’accès aux données dans le cas des accès concurrentiels:</p>
+<ul>
+<li>Tous les utilisateurs doivent charger le fichier pour l’utiliser.</li>
+<li>Que faire si plusieurs utilisateurs modifient en même temps le fichier?</li>
+</ul>
+<p><img src="../../images/sql-dbpedia-sans-serveur.png" class="img-fluid" alt="Approche simpliste avec accès direct aux fichiers"><a href="http://sql.bdpedia.fr/intro.html#donnees-bases-de-donnees-et-sgbd" class="cite-source">Image CC-BY-NC-SA Philippe Rigaux sur sql.dbpedia.fr</a></p>
+<p>D’autre part, l’organisation même des données au sein d’un seul tableau n’est pas optimale.</p>
+<p>Prenons l’exemple d’un tableau donnant les récompenses aux oscars. <a href="https://query.wikidata.org/" class="cite-source">wikdata.org</a></p>
+<div class="too-long">
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>humanLabel</th>
+<th>awardEditionLabel</th>
+<th>awardLabel</th>
+<th>awardWorkLabel</th>
+<th>directorLabel</th>
+<th>time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bong Joon-ho</td>
+<td>92e cérémonie des Oscars</td>
+<td>Oscar du meilleur réalisateur</td>
+<td>Parasite</td>
+<td>Bong Joon-ho</td>
+<td>2020-02-09T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Brad Pitt</td>
+<td>92e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur dans un second rôle</td>
+<td>Once Upon a Time in… Hollywood</td>
+<td>Quentin Tarantino</td>
+<td>2020-02-09T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Guillaume Rocheron</td>
+<td>92e cérémonie des Oscars</td>
+<td>Oscar des meilleurs effets visuels</td>
+<td>1917</td>
+<td>Sam Mendes</td>
+<td>2020-02-09T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Joaquin Phoenix</td>
+<td>92e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur</td>
+<td>Joker</td>
+<td>Todd Phillips</td>
+<td>2020-02-09T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Julia Reichert</td>
+<td>92e cérémonie des Oscars</td>
+<td>Oscar du meilleur film documentaire</td>
+<td>American Factory</td>
+<td>Julia Reichert</td>
+<td>2020-02-09T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Laura Dern</td>
+<td>92e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice dans un second rôle</td>
+<td>Marriage Story</td>
+<td>Noah Baumbach</td>
+<td>2020-02-09T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Renée Zellweger</td>
+<td>92e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice</td>
+<td>Judy</td>
+<td>Rupert Goold</td>
+<td>2020-02-09T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Olivia Colman</td>
+<td>91e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice</td>
+<td>The Favourite</td>
+<td>Yórgos Lánthimos</td>
+<td>2019-02-24T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Rami Malek</td>
+<td>91e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur</td>
+<td>Bohemian Rhapsody</td>
+<td>Bryan Singer</td>
+<td>2019-02-24T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Ruth E. Carter</td>
+<td>91e cérémonie des Oscars</td>
+<td>Oscar de la meilleure création de costumes</td>
+<td>Black Panther</td>
+<td>Ryan Coogler</td>
+<td>2019-02-24T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Alexandre Desplat</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar de la meilleure musique de film</td>
+<td>La Forme de l’eau</td>
+<td>Guillermo del Toro</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Allison Janney</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice dans un second rôle</td>
+<td>Moi, Tonya</td>
+<td>Craig Gillespie</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Frances McDormand</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice</td>
+<td>Trois Billboards : Les Panneaux de la vengeance</td>
+<td>Martin McDonagh</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Frank Stiefel</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage documentaire</td>
+<td>Heaven Is a Traffic Jam on the 405</td>
+<td>Frank Stiefel</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Gary Oldman</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur</td>
+<td>Les Heures sombres</td>
+<td>Joe Wright</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Gregg Landaker</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur mixage de son</td>
+<td>Dunkerque</td>
+<td>Christopher Nolan</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Guillermo del Toro</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur réalisateur</td>
+<td>La Forme de l’eau</td>
+<td>Guillermo del Toro</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>James Ivory</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario adapté</td>
+<td>Call Me by Your Name</td>
+<td>Luca Guadagnino</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Jordan Peele</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario original</td>
+<td>Get Out</td>
+<td>Jordan Peele</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Lee Smith</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage</td>
+<td>Dunkerque</td>
+<td>Christopher Nolan</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Lucy Sibbick</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur maquillage</td>
+<td>Les Heures sombres</td>
+<td>Joe Wright</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Mark Bridges</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar de la meilleure création de costumes</td>
+<td>Phantom Thread</td>
+<td>Paul Thomas Anderson</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Richard King</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage de son</td>
+<td>Dunkerque</td>
+<td>Christopher Nolan</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Richard R. Hoover</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar des meilleurs effets visuels</td>
+<td>Blade Runner 2049</td>
+<td>Denis Villeneuve</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Roger Deakins</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar de la meilleure photographie</td>
+<td>Blade Runner 2049</td>
+<td>Denis Villeneuve</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Sam Rockwell</td>
+<td>90e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur dans un second rôle</td>
+<td>Trois Billboards : Les Panneaux de la vengeance</td>
+<td>Martin McDonagh</td>
+<td>2018-03-04T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Adam Valdez</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar des meilleurs effets visuels</td>
+<td>Le Livre de la jungle</td>
+<td>Jon Favreau</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Anna Udvardy</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage de fiction</td>
+<td>Sing</td>
+<td>Kristóf Deák</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Barry Jenkins</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario adapté</td>
+<td>Moonlight</td>
+<td>Barry Jenkins</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Casey Affleck</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur</td>
+<td>Manchester by the Sea</td>
+<td>Kenneth Lonergan</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Clark Spencer</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur film d’animation</td>
+<td>Zootopie</td>
+<td>Byron Howard</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Colleen Atwood</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar de la meilleure création de costumes</td>
+<td>Les Animaux fantastiques</td>
+<td>David Yates</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Damien Chazelle</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur réalisateur</td>
+<td>La La Land</td>
+<td>Damien Chazelle</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Emma Stone</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice</td>
+<td>La La Land</td>
+<td>Damien Chazelle</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Jeremy Kleiner</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur film</td>
+<td>Moonlight</td>
+<td>Barry Jenkins</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>John Gilbert</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage</td>
+<td>Tu ne tueras point</td>
+<td>Mel Gibson</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Justin Hurwitz</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar de la meilleure musique de film</td>
+<td>La La Land</td>
+<td>Damien Chazelle</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Kenneth Lonergan</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario original</td>
+<td>Manchester by the Sea</td>
+<td>Kenneth Lonergan</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Linus Sandgren</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar de la meilleure photographie</td>
+<td>La La Land</td>
+<td>Damien Chazelle</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Mahershalalhashbaz Ali</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur dans un second rôle</td>
+<td>Moonlight</td>
+<td>Barry Jenkins</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Robert Mackenzie</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur mixage de son</td>
+<td>Tu ne tueras point</td>
+<td>Mel Gibson</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Sylvain Bellemare</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage de son</td>
+<td>Premier Contact</td>
+<td>Denis Villeneuve</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Viola Davis</td>
+<td>89e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice dans un second rôle</td>
+<td>Fences</td>
+<td>Denzel Washington</td>
+<td>2017-02-26T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Alejandro González Iñárritu</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur réalisateur</td>
+<td>The Revenant</td>
+<td>Alejandro González Iñárritu</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Alicia Vikander</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice dans un second rôle</td>
+<td>The Danish Girl</td>
+<td>Tom Hooper</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Benjamin Cleary</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage de fiction</td>
+<td>Stutterer</td>
+<td>Benjamin Cleary</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Brie Larson</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice</td>
+<td>Room</td>
+<td>Lenny Abrahamson</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Charles Randolph</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario adapté</td>
+<td>The Big Short</td>
+<td>Adam McKay</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Damian Martin</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur maquillage</td>
+<td>Mad Max: Fury Road</td>
+<td>George Miller</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>David White</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage de son</td>
+<td>Mad Max: Fury Road</td>
+<td>George Miller</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Emmanuel Lubezki</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar de la meilleure photographie</td>
+<td>The Revenant</td>
+<td>Alejandro González Iñárritu</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Ennio Morricone</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar de la meilleure musique de film</td>
+<td>The Hateful Eight</td>
+<td>Quentin Tarantino</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Gregg Rudloff</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur mixage de son</td>
+<td>Mad Max: Fury Road</td>
+<td>George Miller</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>James Gay-Rees</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur film documentaire</td>
+<td>Amy</td>
+<td>Asif Kapadia</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Jenny Beavan</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar de la meilleure création de costumes</td>
+<td>Mad Max: Fury Road</td>
+<td>George Miller</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Jonas Rivera</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur film d’animation</td>
+<td>Vice-Versa</td>
+<td>Pete Docter</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Josh Singer</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario original</td>
+<td>Spotlight</td>
+<td>Tom McCarthy</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Leonardo DiCaprio</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur</td>
+<td>The Revenant</td>
+<td>Alejandro González Iñárritu</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Lisa Thompson</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar de la meilleure direction artistique</td>
+<td>Mad Max: Fury Road</td>
+<td>George Miller</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Margaret Sixel</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage</td>
+<td>Mad Max: Fury Road</td>
+<td>George Miller</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Mark Rylance</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur dans un second rôle</td>
+<td>Le pont des espions</td>
+<td>Steven Spielberg</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Mark Williams Ardington</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar des meilleurs effets visuels</td>
+<td>Ex Machina</td>
+<td>Alex Garland</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Pato Escala Pierart</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage d’animation</td>
+<td>Historia de un oso</td>
+<td>Gabriel Osorio Vargas</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Sharmeen Obaid-Chinoy</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage documentaire</td>
+<td>A Girl in the River: The Price of Forgiveness</td>
+<td>Sharmeen Obaid-Chinoy</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Steve Golin</td>
+<td>88e cérémonie des Oscars</td>
+<td>Oscar du meilleur film</td>
+<td>Spotlight</td>
+<td>Tom McCarthy</td>
+<td>2016-02-28T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Adam Stockhausen</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar de la meilleure direction artistique</td>
+<td>The Grand Budapest Hotel</td>
+<td>Wes Anderson</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Alan Robert Murray</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage de son</td>
+<td>American Sniper</td>
+<td>Clint Eastwood</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Alejandro González Iñárritu</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur réalisateur</td>
+<td>Birdman</td>
+<td>Alejandro González Iñárritu</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Alexander Dinelaris Jr.</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario original</td>
+<td>Birdman</td>
+<td>Alejandro González Iñárritu</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Alexandre Desplat</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar de la meilleure musique de film</td>
+<td>The Grand Budapest Hotel</td>
+<td>Wes Anderson</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Craig Mann</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur mixage de son</td>
+<td>Whiplash</td>
+<td>Damien Chazelle</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Eddie Redmayne</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur</td>
+<td>Une merveilleuse histoire du temps</td>
+<td>James Marsh</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Ellen Goosenberg Kent</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage documentaire</td>
+<td>Crisis Hotline: Veterans Press 1</td>
+<td>Ellen Goosenberg Kent</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Emmanuel Lubezki</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar de la meilleure photographie</td>
+<td>Birdman</td>
+<td>Alejandro González Iñárritu</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Graham Moore</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario adapté</td>
+<td>Imitation Game</td>
+<td>Morten Tyldum</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Ian Hunter</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar des meilleurs effets visuels</td>
+<td>Interstellar</td>
+<td>Christopher Nolan</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>J. K. Simmons</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur dans un second rôle</td>
+<td>Whiplash</td>
+<td>Damien Chazelle</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>James Lucas</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage de fiction</td>
+<td>The Phone Call</td>
+<td>Mat Kirkby</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>John Lesher</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur film</td>
+<td>Birdman</td>
+<td>Alejandro González Iñárritu</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Julianne Moore</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice</td>
+<td>Still Alice</td>
+<td>Wash Westmoreland</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Kristina Reed</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage d’animation</td>
+<td>Feast</td>
+<td>Patrick Osborne</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Mark Coulier</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur maquillage</td>
+<td>The Grand Budapest Hotel</td>
+<td>Wes Anderson</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Milena Canonero</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar de la meilleure création de costumes</td>
+<td>The Grand Budapest Hotel</td>
+<td>Wes Anderson</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Patricia Arquette</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice dans un second rôle</td>
+<td>Boyhood</td>
+<td>Richard Linklater</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Roy Conli</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur film d’animation</td>
+<td>Big Hero 6</td>
+<td>Chris Williams</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Tom Cross</td>
+<td>87e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage</td>
+<td>Whiplash</td>
+<td>Damien Chazelle</td>
+<td>2015-02-22T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Alexandre Espigares</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage d’animation</td>
+<td>Mr Hublot</td>
+<td>Laurent Witz</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Alfonso Cuarón</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur réalisateur</td>
+<td>Gravity</td>
+<td>Alfonso Cuarón</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Anders Walter</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage de fiction</td>
+<td>Helium</td>
+<td>Kim Magnusson</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Beverley Dunn</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar de la meilleure direction artistique</td>
+<td>Gatsby le Magnifique</td>
+<td>Baz Luhrmann</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Cate Blanchett</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice</td>
+<td>Blue Jasmine</td>
+<td>Woody Allen</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Catherine Martin</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar de la meilleure création de costumes</td>
+<td>Gatsby le Magnifique</td>
+<td>Baz Luhrmann</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Chris Lawrence</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar des meilleurs effets visuels</td>
+<td>Gravity</td>
+<td>Alfonso Cuarón</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Emmanuel Lubezki</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar de la meilleure photographie</td>
+<td>Gravity</td>
+<td>Alfonso Cuarón</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Glenn Freemantle</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage de son</td>
+<td>Gravity</td>
+<td>Alfonso Cuarón</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Jared Leto</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur dans un second rôle</td>
+<td>The Dallas Buyers Club</td>
+<td>Jean-Marc Vallée</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Jeremy Kleiner</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur film</td>
+<td>Twelve Years a Slave</td>
+<td>Steve McQueen</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>John Ridley</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario adapté</td>
+<td>Twelve Years a Slave</td>
+<td>Steve McQueen</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Lupita Nyong’o</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar de la meilleure actrice dans un second rôle</td>
+<td>Twelve Years a Slave</td>
+<td>Steve McQueen</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Malcolm Clarke</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur court métrage documentaire</td>
+<td>La Dame du 6</td>
+<td>Malcolm Clarke</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Mark Sanger</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur montage</td>
+<td>Gravity</td>
+<td>Alfonso Cuarón</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Matthew McConaughey</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur</td>
+<td>The Dallas Buyers Club</td>
+<td>Jean-Marc Vallée</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Niv Adiri</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur mixage de son</td>
+<td>Gravity</td>
+<td>Alfonso Cuarón</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Peter Del Vecho</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur film d’animation</td>
+<td>La Reine des neiges</td>
+<td>Chris Buck</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Robin Mathews</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur maquillage</td>
+<td>The Dallas Buyers Club</td>
+<td>Jean-Marc Vallée</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Spike Jonze</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario original</td>
+<td>Her</td>
+<td>Spike Jonze</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Steven Price</td>
+<td>86e cérémonie des Oscars</td>
+<td>Oscar de la meilleure musique de film</td>
+<td>Gravity</td>
+<td>Alfonso Cuarón</td>
+<td>2014-03-02T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Christoph Waltz</td>
+<td>85e cérémonie des Oscars</td>
+<td>Oscar du meilleur acteur dans un second rôle</td>
+<td>Django Unchained</td>
+<td>Quentin Tarantino</td>
+<td>2013-02-24T00:00:00Z</td>
+</tr>
+<tr class="odd">
+<td>Mark Andrews</td>
+<td>85e cérémonie des Oscars</td>
+<td>Oscar du meilleur film d’animation</td>
+<td>Rebelle</td>
+<td>Brenda Chapman</td>
+<td>2013-02-24T00:00:00Z</td>
+</tr>
+<tr class="even">
+<td>Quentin Tarantino</td>
+<td>85e cérémonie des Oscars</td>
+<td>Oscar du meilleur scénario original</td>
+<td>Django Unchained</td>
+<td>Quentin Tarantino</td>
+<td>2013-02-24T00:00:00Z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Vous voyez déjà sur cet extrait que certaines données sont redondantes comme les dates des cérémonies, les noms des réalisateurs de films.</p>
+<p>Si on doit modifier une information sur un acteur on doit le faire sur toute la table, et pas seulement à un endroit.</p>
+<p><em>On le voit bien, il serait préférable de stocker les informations sur les films, les acteurs les cérémonies séparément, puis établir des liens entre elles pour éviter toutes ces redondances</em>. <strong>C’est pourquoi on parle de base de données relationnelles.</strong></p>
+<h2 id="modèle-relationnel" class="anchored">Modèle relationnel</h2>
+<p>Dans une base de données, plutôt que de stocker toutes les données dans une table, on les stocke dans plusieurs tables reliées entre elles par des clés.</p>
+<p>Une base de données est définie par son <strong>schéma relationnel</strong> qui spécifie:</p>
+<ul>
+<li><p>La liste des tables avec pour chaque table:</p>
+<ul>
+<li>Le nom de la table(<em>relation</em>).</li>
+<li>La liste des colonnes(<em>attributs</em>) avec leur nom et le domaine de valeurs des données qui y sont stockées(Chaînes de caractères, entiers, dates…).</li>
+<li>Les identifiants (<em>uniques</em>) de chaque ligne.</li>
+</ul>
+<p><a title="Puerto01 at French Wikipedia, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Table_relationnel.png"><img width="512" alt="Table relationnel" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Table_relationnel.png"></a></p></li>
+<li><p>Les tables doivent être reliées entre elles grâce à des identifiants secondaires.</p>
+<p>
+</p><p><a href="https://commons.wikimedia.org/wiki/File:Relation.png#/media/File:Relation.png"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Relation.png" alt="Relation.png"></a><br>By <a href="https://en.wikipedia.org/wiki/fr:User:Puerto01" class="extiw" title="w:fr:User:Puerto01">Puerto01</a> at <a href="https://en.wikipedia.org/wiki/fr:" class="extiw" title="w:fr:">French Wikipedia</a>, <a href="https://creativecommons.org/licenses/by/2.5" title="Creative Commons Attribution 2.5">CC BY 2.5</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=16455198">Link</a></p>
+<p></p></li>
+</ul>
+<h2 id="système-de-gestion-de-base-de-données-sgbd" class="anchored">Système de gestion de base de données: <em>SGBD</em> *</h2>
+<p><strong>Cette partie ne pourra pas faire l’objet d’une évaluation lors de l’épreuve terminale écrite et pratique de l’enseignement de spécialité.</strong> <a href="https://www.education.gouv.fr/bo/21/Hebdo30/MENE2121274N.htm" class="cite-source">BO MENE2121274N</a></p>
+<p>Comme nous l’avons vu l’utilisation d’un modèle relationnel, permet d’éviter des redondances dans les données ce qui permet <strong>d’économiser de la place</strong>, mais aussi de ne garder qu’une seule source de vérité et éviter par exemple les noms orthographiés de plusieurs façons différentes.</p>
+<p>Mais ce n’est pas tout, la base de données est gérée par un programme appelé système de gestion de base de données(SGBD).</p>
+<p><img src="../../images/sql-dbpedia-avec-serveur.png" class="img-fluid" alt="Approche classique avec serveur SGBD"><a href="http://sql.bdpedia.fr/intro.html#donnees-bases-de-donnees-et-sgbd" class="cite-source">Image CC-BY-NC-SA Philippe Rigaux sur sql.dbpedia.fr</a></p>
+<p>Le SGBD veille à ce que les données dans la table restent conformes au schéma qui la définit, mais aussi:</p>
+<ul>
+<li>La <strong>gestion des accès concurrents</strong>: que faire si deux personnes accèdent et modifient en me temps la base de données?</li>
+<li><strong>Efficacité de traitement des requêtes</strong>: les bases de données pouvant être très volumineuse(jusqu’au pétaoctet), il faut pouvoir rechercher dedans efficacement.</li>
+<li><strong>Sécurisation des accès</strong>: qui a le droit de lire, d’écrire dans la base de données.</li>
+</ul>
+<details class="plus"><summary>Propriétés ACID</summary>
+<p>En informatique, les propriétés ACID (atomicité, cohérence, isolation et durabilité) sont un ensemble de propriétés qui garantissent qu’une transaction informatique est exécutée de façon fiable.</p>
+<p>Jim Gray a défini les propriétés qui garantissent des transactions fiables à la fin des années 1970 et a développé des technologies pour les mettre en œuvre automatiquement.</p>
+<p><a href="https://fr.wikipedia.org/wiki/Propri%C3%A9t%C3%A9s_ACID" class="cite-source">Article Wikipédia ACID</a></p>
+</details>
+

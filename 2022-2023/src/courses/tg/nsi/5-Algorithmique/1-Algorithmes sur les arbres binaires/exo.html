@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="implémentations-des-algorithmes-du-cours" class="anchored">Implémentations des algorithmes du cours</h2>
+<p>En utilisant le module <a href="https://github.com/joowani/binarytree"><code>binarytree</code></a>, implémenter les algorithmes du programme officiel:</p>
+<ul>
+<li><p>Calculer la hauteur de l’arbre</p></li>
+<li><p>Calculer la taille de l’arbre</p></li>
+<li><p>Parcours de l’arbre</p>
+<ul>
+<li>Parcours préfixe</li>
+<li>Parcours postfixe</li>
+<li>Parcours infixe</li>
+<li>Parcours en largeur</li>
+</ul></li>
+<li><p>Arbre binaire de recherche</p>
+<ul>
+<li>Insertion d’une clé</li>
+<li>Recherche d’une clé</li>
+</ul></li>
+</ul>
+<p>Pour le parcours en largeur, on pourra utiliser la classe <code>File</code> suivante.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span></span>
+<span class="k">class</span> <span class="nc">File</span><span class="p">:</span>
+<span class="c1">    # pas d'initialisation si on crée tjs des files vides</span>
+<span class="n">    _data</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+<span class="k">    
+    def</span> <span class="nf">enfiler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">élément</span><span class="p">):</span>
+<span class="bp">        self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="n">élément</span><span class="p">)</span>
+<span class="k">    
+    def</span> <span class="nf">défiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">        return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="k">    
+    def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">        return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
+<span></span>
+<span class="k">    def</span> <span class="nf">tête</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">        return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+<h2 id="version-itérative-des-parcours-en-profondeur" class="anchored">Version itérative des parcours en profondeur</h2>
+<p>Il est possible d’écrire des versions iteratives (et non récursive) des algorithmes de parcours en profondeur.</p>
+<p>Pour cela on utilisera une pile(<em>stack</em> en anglais).</p>
+<p>Voici les pseudo-codes proposés sur l’article <a href="https://en.wikipedia.org/wiki/Tree_traversal#Implementations">Wikipédia en anglais</a>.</p>
+<h3 id="parcours-préfixe-itératif" class="anchored">Parcours préfixe itératif</h3>
+<div class="highlight"><pre><span></span><span class="nv">iterativePreorder</span><span class="ss">(</span><span class="nv">node</span><span class="ss">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">null</span><span class="ss">)</span>
+<span class="w">    </span><span class="k">return</span>
+<span class="w">  </span><span class="nv">s</span><span class="w"> </span>←<span class="w"> </span><span class="nv">empty</span><span class="w"> </span><span class="nv">stack</span>
+<span class="w">  </span><span class="nv">s</span>.<span class="nv">push</span><span class="ss">(</span><span class="nv">node</span><span class="ss">)</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="ss">(</span><span class="nv">not</span><span class="w"> </span><span class="nv">s</span>.<span class="nv">isEmpty</span><span class="ss">())</span>
+<span class="w">    </span><span class="nv">node</span><span class="w"> </span>←<span class="w"> </span><span class="nv">s</span>.<span class="nv">pop</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">visit</span><span class="ss">(</span><span class="nv">node</span><span class="ss">)</span>
+<span class="w">    </span><span class="o">//</span><span class="nv">right</span><span class="w"> </span><span class="nv">child</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">pushed</span><span class="w"> </span><span class="nv">first</span><span class="w"> </span><span class="nv">so</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">left</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">processed</span><span class="w"> </span><span class="nv">first</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">node</span>.<span class="nv">right</span><span class="w"> </span>≠<span class="w"> </span><span class="nv">null</span>
+<span class="w">      </span><span class="nv">s</span>.<span class="nv">push</span><span class="ss">(</span><span class="nv">node</span>.<span class="nv">right</span><span class="ss">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">node</span>.<span class="nv">left</span><span class="w"> </span>≠<span class="w"> </span><span class="nv">null</span>
+<span class="w">      </span><span class="nv">s</span>.<span class="nv">push</span><span class="ss">(</span><span class="nv">node</span>.<span class="nv">left</span><span class="ss">)</span>
+</pre></div>
+
+<h3 id="parcours-infixe-itératif" class="anchored">Parcours infixe itératif</h3>
+<div class="highlight"><pre><span></span><span class="nv">iterativeInorder</span><span class="ss">(</span><span class="nv">node</span><span class="ss">)</span>
+<span class="w">  </span><span class="nv">s</span><span class="w"> </span>←<span class="w"> </span><span class="nv">empty</span><span class="w"> </span><span class="nv">stack</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="ss">(</span><span class="nv">not</span><span class="w"> </span><span class="nv">s</span>.<span class="nv">isEmpty</span><span class="ss">()</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">node</span><span class="w"> </span>≠<span class="w"> </span><span class="nv">null</span><span class="ss">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">node</span><span class="w"> </span>≠<span class="w"> </span><span class="nv">null</span><span class="ss">)</span>
+<span class="w">      </span><span class="nv">s</span>.<span class="nv">push</span><span class="ss">(</span><span class="nv">node</span><span class="ss">)</span>
+<span class="w">      </span><span class="nv">node</span><span class="w"> </span>←<span class="w"> </span><span class="nv">node</span>.<span class="nv">left</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">      </span><span class="nv">node</span><span class="w"> </span>←<span class="w"> </span><span class="nv">s</span>.<span class="nv">pop</span><span class="ss">()</span>
+<span class="w">      </span><span class="nv">visit</span><span class="ss">(</span><span class="nv">node</span><span class="ss">)</span>
+<span class="w">      </span><span class="nv">node</span><span class="w"> </span>←<span class="w"> </span><span class="nv">node</span>.<span class="nv">right</span>
+</pre></div>
+
+<h3 id="parcours-postfixe-itératif" class="anchored">Parcours postfixe itératif</h3>
+<div class="highlight"><pre><span></span><span class="nv">iterativePostorder</span><span class="ss">(</span><span class="nv">node</span><span class="ss">)</span>
+<span class="w">  </span><span class="nv">s</span><span class="w"> </span>←<span class="w"> </span><span class="nv">empty</span><span class="w"> </span><span class="nv">stack</span>
+<span class="w">  </span><span class="nv">lastNodeVisited</span><span class="w"> </span>←<span class="w"> </span><span class="nv">null</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="ss">(</span><span class="nv">not</span><span class="w"> </span><span class="nv">s</span>.<span class="nv">isEmpty</span><span class="ss">()</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">node</span><span class="w"> </span>≠<span class="w"> </span><span class="nv">null</span><span class="ss">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">node</span><span class="w"> </span>≠<span class="w"> </span><span class="nv">null</span><span class="ss">)</span>
+<span class="w">      </span><span class="nv">s</span>.<span class="nv">push</span><span class="ss">(</span><span class="nv">node</span><span class="ss">)</span>
+<span class="w">      </span><span class="nv">node</span><span class="w"> </span>←<span class="w"> </span><span class="nv">node</span>.<span class="nv">left</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">      </span><span class="nv">peekNode</span><span class="w"> </span>←<span class="w"> </span><span class="nv">s</span>.<span class="nv">peek</span><span class="ss">()</span>
+<span class="w">      </span><span class="o">//</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">right</span><span class="w"> </span><span class="nv">child</span><span class="w"> </span><span class="nv">exists</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">traversing</span><span class="w"> </span><span class="nv">node</span>
+<span class="w">      </span><span class="o">//</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="nv">left</span><span class="w"> </span><span class="nv">child</span>,<span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">move</span><span class="w"> </span><span class="nv">right</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">peekNode</span>.<span class="nv">right</span><span class="w"> </span>≠<span class="w"> </span><span class="nv">null</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">lastNodeVisited</span><span class="w"> </span>≠<span class="w"> </span><span class="nv">peekNode</span>.<span class="nv">right</span><span class="ss">)</span>
+<span class="w">        </span><span class="nv">node</span><span class="w"> </span>←<span class="w"> </span><span class="nv">peekNode</span>.<span class="nv">right</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="w">        </span><span class="nv">visit</span><span class="ss">(</span><span class="nv">peekNode</span><span class="ss">)</span>
+<span class="w">        </span><span class="nv">lastNodeVisited</span><span class="w"> </span>←<span class="w"> </span><span class="nv">s</span>.<span class="nv">pop</span><span class="ss">()</span>
+</pre></div>
+
+<p>Pour faire cet exercice, on pourra utiliser la classe <code>Pile</code> suivante.</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pile</span><span class="p">:</span>
+<span class="k">    def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="c1">        # Initialisation par une liste vide</span>
+<span class="bp">        self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">    
+    def</span> <span class="nf">empiler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">élément</span><span class="p">):</span>
+<span class="bp">        self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">élément</span><span class="p">)</span>
+<span class="k">    
+    def</span> <span class="nf">dépiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">        return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="k">    
+    def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">        return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
+<span></span>
+<span class="k">    def</span> <span class="nf">sommet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">        return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+<h2 id="un-arbre-de-compétition-daprès-bac-2021" class="anchored">Un arbre de compétition <em>(d’après BAC 2021)</em></h2>
+<!-- Amérique du Nord 2021 Ex4 -->
+<p>La fédération de badminton souhaite gérer ses compétitions à l’aide d’un logiciel. Pour ce faire, une structure <code>arbre de compétition</code> a été définie récursivement de la façon suivante: un arbre de compétition est soit l’arbre vide, noté ∅, soit un triplet composé d’une chaîne de caractères appelée valeur, d’un arbre de compétition appelé sous-arbre gauche et d’un arbre de compétition appelé sous-arbre droit.</p>
+<ol type="1">
+<li>On considère l’arbre de compétition <code>B</code> suivant:</li>
+</ol>
+<p><img src="./ex4-5.png" class="img-fluid"></p>
+<p>Créer l’arbre de compétition <code>B</code> à l’aide de la classe <code>ArbreBinaire</code> vue dans le <a href="/tg/nsi/1-structures-de-donnees/4-arbres">chapitre P1C4</a>.</p>
+<ol start="2" type="1">
+<li><p>Écrire les fonctions suivantes:</p>
+<ul>
+<li>La fonction <code>racine</code> qui prend en paramètre un arbre de compétition <code>arb</code> et renvoie la valeur de la racine.</li>
+</ul></li>
+</ol>
+<p>Exemple: en reprenant l’exemple d’arbre de compétition présenté ci-dessus, <code>racine(B)</code> vaut <code>"Lea"</code>.</p>
+<ul>
+<li><p>La fonction <code>gauche</code> qui prend en paramètre un arbre de compétition <code>arb</code> et renvoie son sous-arbre gauche.</p></li>
+<li><p>La fonction <code>droit</code> qui prend en argument un arbre de compétition <code>arb</code> et renvoie son sous-arbre droit.</p></li>
+<li><p>La fonction <code>est_vide</code> qui prend en argument un arbre de compétition et renvoie <code>True</code> si l’arbre est vide et <code>False</code> sinon.</p>
+<p>Exemple:en reprenant l’exemple d’arbre de compétition présenté ci-dessus, <code>est_vide(B)</code> vaut <code>False</code>.</p></li>
+</ul>
+<p>** Dans toute la suite de l’exercice, vous ne devrez utiliser que les fonctions définies dans les questions précédent la question posée.**</p>
+<ol start="3" type="1">
+<li><p>&nbsp;</p>
+<ol type="1">
+<li><p>Proposer une fonction Python <code>occurrences</code> ayant pour paramètre un arbre de compétition <code>arb</code> et le nom d’un joueur <code>nom</code> et qui renvoie le nombre d’occurrences (d’apparitions) du joueur <code>nom</code> dans l’arbre de compétition <code>arb</code>.</p>
+<p>Exemple: <code>occurences(B,"Anne")</code> vaut <code>2</code>.</p></li>
+<li><p>Proposer une fonction Python <code>a_gagne</code> prenant pour paramètres un arbre de compétition <code>arb</code> et le nom d’un joueur <code>nom</code> et qui renvoie le booléen <code>True</code> si le joueur <code>nom</code> a gagné au moins un match dans la compétition représenté par l’arbre de compétition <code>arb</code>.</p>
+<p>Exemple: <code>a_gagne(B,"Louis")</code> vaut True</p></li>
+</ol></li>
+<li><p>On souhaite programmer une fonction Python <code>nombre_matchs</code> qui prend pour arguments un arbre de compétition <code>arb</code> et le nom d’un joueur <code>nom</code> et qui renvoie le nombre de matchs joués par le joueur <code>nom</code> dans la compétition représentée par l’arbre de compétition <code>arb</code></p>
+<p>Exemple: <code>nombre_matchs(B,"Lea")</code> doit valoir <code>3</code> et <code>nombre_matchs(B,"Marc")</code> doit valoir <code>1</code>.</p>
+<ol type="1">
+<li><p>Expliquer pourquoi les instructions suivantes renvoient une valeur erronée. On pourra pour cela identifier le nœud de l’arbre qui provoque une erreur.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nombre_matchs</span><span class="p">(</span><span class="n">arb</span> <span class="p">,</span><span class="n">nom</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""arbre_competition , str -&gt; int"""</span>
+<span class="k">    return</span> <span class="n">occurrences</span><span class="p">(</span><span class="n">arb</span><span class="p">,</span> <span class="n">nom</span><span class="p">)</span>
+</pre></div>
+</li>
+<li><p>Proposer une correction pour la fonction <code>nombre_matchs</code>.</p></li>
+</ol></li>
+<li><p>Recopier et compléter la fonction <code>liste_joueurs</code> qui prend pour argument un arbre de compétition <code>arb</code> et qui renvoie un tableau contenant les participants au tournoi, chaque nom ne devant figurer qu’une seule fois dans le tableau.</p>
+<p>L’opération <code>+</code> à la ligne 8 permet de concaténer deux tableaux.</p>
+<p>Exemple: Si <code>L1 = [4, 6, 2]</code> et <code>L2 = [3 ,5 ,1 ]</code>, l’instruction <code>L1 + L2</code> va renvoyer le tableau <code>[4, 6, 2, 3, 5, 1]</code></p>
+
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">liste_joueurs</span><span class="p">(</span><span class="n">arb</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""arbre_competition -&gt; tableau"""</span>
+<span class="k">    if</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">arb</span><span class="p">):</span>
+<span class="k">         return</span> <span class="o">...</span>
+<span class="k">     elif</span> <span class="o">...</span> <span class="ow">and</span> <span class="o">...</span> <span class="p">:</span>
+<span class="k">         return</span> <span class="p">[</span><span class="n">racine</span><span class="p">(</span><span class="n">arb</span><span class="p">)]</span>
+<span class="k">     else</span><span class="p">:</span>
+<span class="k">         return</span> <span class="o">...</span> <span class="o">+</span> <span class="n">liste_joueurs</span><span class="p">(</span><span class="n">droit</span><span class="p">(</span><span class="n">arb</span><span class="p">))</span>
+</pre></div>
+</li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

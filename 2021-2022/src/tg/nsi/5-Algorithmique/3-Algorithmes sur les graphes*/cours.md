@@ -1,25 +1,25 @@
 ---
-tags: ["cours", "terminale", "lycée", "numérique et sciences informatiques", "nsi"]
+tags:
+  ["cours", "terminale", "lycée", "numérique et sciences informatiques", "nsi"]
 ---
 
 **Ce chapitre ne pourra pas faire l'objet d'une évaluation lors de l'épreuve terminale écrite et pratique de l'enseignement de spécialité.**
 [BO MENE2121274N](https://www.education.gouv.fr/bo/21/Hebdo30/MENE2121274N.htm){.cite-source}
 
-
 ::: programme
 
 +---------------------+--------------------------------+---------------------------------------+
-|      Contenus       |      Capacités attendues       |             Commentaires              |
+| Contenus | Capacités attendues | Commentaires |
 +=====================+================================+=======================================+
-| Algorithmes sur les | Parcourir un graphe en         | Le parcours d’un labyrinthe et le     |
-| graphes.            | profondeur d’abord, en largeur | routage dans Internet sont des        |
-|                     | d’abord.                       | exemples d’algorithme sur les         |
-|                     |                                | graphes.                              |
-|                     | Repérer la présence d’un cycle |                                       |
-|                     | dans un graphe.                | L’exemple des graphes permet          |
-|                     |                                | d’illustrer l’utilisation des classes |
-|                     | Chercher un chemin dans un     | en programmation.                     |
-|                     | graphe.                        |                                       |
+| Algorithmes sur les | Parcourir un graphe en | Le parcours d’un labyrinthe et le |
+| graphes. | profondeur d’abord, en largeur | routage dans Internet sont des |
+| | d’abord. | exemples d’algorithme sur les |
+| | | graphes. |
+| | Repérer la présence d’un cycle | |
+| | dans un graphe. | L’exemple des graphes permet |
+| | | d’illustrer l’utilisation des classes |
+| | Chercher un chemin dans un | en programmation. |
+| | graphe. | |
 +---------------------+--------------------------------+---------------------------------------+
 
 :::
@@ -35,7 +35,6 @@ tags: ["cours", "terminale", "lycée", "numérique et sciences informatiques", "
 
 :::
 
-
 ## Présentation du module `networkx`
 
 Pour travailler sur ce chapitre, nous allons utiliser la librairie [`networkx`](https://networkx.github.io/documentation/stable/index.html) qui permet de facilement créer, manipuler et représenter les graphes en Python.
@@ -49,7 +48,7 @@ La librairie étant écrite en anglais, il faut connaitre les traductions suivan
 - **Graphe**: _graph_
 - **Voisins**: _neighbors_
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -102,13 +101,11 @@ nx.draw(G, with_labels=True)  # Il s'agit du graphe et non d'une carte!
 
 </div>
 
-
 ![png](cours_files/cours_1_0.png){width=100%}
-
 
 On peut obtenir la **matrice d'adjacence** représentant le graphe.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -122,7 +119,6 @@ nx.to_numpy_matrix(G)
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     matrix([[0., 1., 0., 1., 1., 1., 0., 0.],
             [1., 0., 1., 0., 1., 0., 0., 0.],
             [0., 1., 0., 0., 0., 0., 0., 1.],
@@ -132,12 +128,11 @@ nx.to_numpy_matrix(G)
             [0., 0., 0., 0., 0., 1., 0., 1.],
             [0., 0., 1., 0., 0., 1., 1., 0.]])
 
-
 </div>
 
 Mais également sous la forme d'une liste d'adjacence comme nous l'avions vu dans le chapitre sur la structure de données [graphe](/tg/nsi/1-structures-de-donnees/4-graphes) (ou bien d'autres formes voir [doc](https://networkx.org/documentation/stable/reference/convert.html)).
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -152,7 +147,6 @@ nx.to_dict_of_lists(G)
 <div class="card">
 <div class="card-header"><small class="text-muted">Résultat</small></div>
 
-
     {'Lyon': ['Marseille', 'Nancy', 'Nice', 'Paris'],
      'Marseille': ['Lyon', 'Montpellier', 'Nice'],
      'Montpellier': ['Marseille', 'Toulouse'],
@@ -161,7 +155,6 @@ nx.to_dict_of_lists(G)
      'Paris': ['Lyon', 'Nancy', 'Rennes', 'Toulouse'],
      'Rennes': ['Paris', 'Toulouse'],
      'Toulouse': ['Montpellier', 'Paris', 'Rennes']}
-
 
 </div>
 
@@ -177,12 +170,11 @@ Cependant, contrairement aux arbres
 - il n'y a pas de racine, donc on doit choisir à partir de quel noeud on part: le noeud source.
 - il peut y avoir un nombre quelconque d'arêtes, et il faut donc _marquer_ les chemins déjà empruntés lors du parcours.
 
-
 ### Parcours en profondeur
 
-> L'exploration d'un parcours en profondeur depuis un sommet S fonctionne comme suit. Il poursuit alors un chemin dans le graphe jusqu'à un cul-de-sac ou alors jusqu'à atteindre un sommet déjà visité. Il revient alors sur le dernier sommet où on pouvait suivre un autre chemin puis explore un autre chemin (voir vidéo ci-contre). L'exploration s'arrête quand tous les sommets depuis S ont été visités. Bref, l'exploration progresse à partir d'un sommet S en s'appelant récursivement pour chaque sommet voisin de S. 
+> L'exploration d'un parcours en profondeur depuis un sommet S fonctionne comme suit. Il poursuit alors un chemin dans le graphe jusqu'à un cul-de-sac ou alors jusqu'à atteindre un sommet déjà visité. Il revient alors sur le dernier sommet où on pouvait suivre un autre chemin puis explore un autre chemin (voir vidéo ci-contre). L'exploration s'arrête quand tous les sommets depuis S ont été visités. Bref, l'exploration progresse à partir d'un sommet S en s'appelant récursivement pour chaque sommet voisin de S.
 
-*[Article Wikipédia sur l'Algorithme de parcours en profondeur][wkp_dfs]*{.cite-source}
+_[Article Wikipédia sur l'Algorithme de parcours en profondeur][wkp_dfs]_{.cite-source}
 
 Nous allons utiliser l'algorithme proposé sur l'article Wikipedia anglais:
 
@@ -198,7 +190,7 @@ parcours_en_profondeur(G graph, s sommet)
 
 Il parait préférable d'utiliser une liste d'adjacence ici puisque l'on a besoin d'accéder aux voisins fréquemment.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -218,7 +210,7 @@ def parcours_profondeur(g: dict, départ: str, visités=None)->list:
     else:
         # marquer s comme visté
         visités.append(départ)
-    
+
     for voisin in g[départ]:
         if voisin not in visités:
             parcours_profondeur(g, voisin, visités)
@@ -242,28 +234,25 @@ nx.draw(G, with_labels=True, pos=nx.spring_layout(G))
     Liste d'adjacence
     -----------------
     {'Lyon': ['Marseille', 'Nancy', 'Nice', 'Paris'], 'Marseille': ['Lyon', 'Montpellier', 'Nice'], 'Montpellier': ['Marseille', 'Toulouse'], 'Nancy': ['Lyon', 'Paris'], 'Nice': ['Lyon', 'Marseille'], 'Paris': ['Lyon', 'Nancy', 'Rennes', 'Toulouse'], 'Rennes': ['Paris', 'Toulouse'], 'Toulouse': ['Montpellier', 'Paris', 'Rennes']}
-    
+
     Liste des noeuds visités par notre algorithme
     ---------------------------------------------
     ['Nice', 'Lyon', 'Marseille', 'Montpellier', 'Toulouse', 'Paris', 'Nancy', 'Rennes']
-    
+
     Pour rappel: Forme du graphe
     ------------------------------
 
-
 </div>
 
------
-
+---
 
 ![png](cours_files/cours_8_1.png){width=100%}
-
 
 ### Vérification avec `networkx`
 
 La librairie `networkx` implémente cette traversée avec la méthode `dfs_preorder_nodes`, nous allons examiner sa sortie à partir du sommet `Nice` pour comparer les sorties.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -283,10 +272,9 @@ print(list(nx.dfs_preorder_nodes(G, source="Nice")))
     ------------------------
     ['Nice', 'Lyon', 'Marseille', 'Montpellier', 'Toulouse', 'Paris', 'Nancy', 'Rennes']
 
-
 </div>
 
------
+---
 
 ::: appli
 
@@ -300,7 +288,7 @@ print(list(nx.dfs_preorder_nodes(G, source="Nice")))
 
 > L'algorithme de parcours en largeur (ou BFS, pour Breadth First Search en anglais) permet le parcours d'un graphe ou d'un arbre de la manière suivante : on commence par explorer un nœud source, puis ses successeurs, puis les successeurs non explorés des successeurs, etc. L'algorithme de parcours en largeur permet de calculer les distances de tous les nœuds depuis un nœud source dans un graphe non pondéré (orienté ou non orienté).
 
-*[Article Wikipédia sur l'Algorithme de parcours en largeur][wkp_bfs]*{.cite-source}
+_[Article Wikipédia sur l'Algorithme de parcours en largeur][wkp_bfs]_{.cite-source}
 
 Nous allons implémenter cet algorithme à l'aide d'une file:
 
@@ -324,7 +312,7 @@ Nous allons implémenter la fonction `parcours_en_largeur` proposée précedemme
 
 Encore une fois je vais utiliser une liste d'adjacence pour facilement accéder aux voisins. On utilise une liste locale `visités` pour stocker les noeuds visités.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -388,24 +376,21 @@ nx.draw(G, with_labels=True, pos=nx.spring_layout(G))
     Liste des noeuds visités par notre algorithme
     ---------------------------------------------
     ['Nice', 'Lyon', 'Marseille', 'Nancy', 'Paris', 'Montpellier', 'Rennes', 'Toulouse']
-    
+
     Pour rappel: Forme du graphe
     ------------------------------
 
-
 </div>
 
------
-
+---
 
 ![png](cours_files/cours_13_1.png){width=100%}
-
 
 ### Vérification avec `networkx`
 
 La librairie `networkx` implémente cette traversée avec la méthode `bfs_edges`, nous allons examiner sa sortie à partir du sommet `Nice` pour comparer les sorties.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -429,18 +414,15 @@ nx.draw(tree, with_labels=True, pos=nx.spring_layout(G))
     Liste des chemins suivis
     ------------------------
     [('Nice', 'Lyon'), ('Nice', 'Marseille'), ('Lyon', 'Nancy'), ('Lyon', 'Paris'), ('Marseille', 'Montpellier'), ('Paris', 'Rennes'), ('Paris', 'Toulouse')]
-    
+
     Représentation sous forme d'arbre
     ---------------------------------
 
-
 </div>
 
------
-
+---
 
 ![png](cours_files/cours_15_1.png){width=100%}
-
 
 L'ordre de parcours des chemins dépend de l'ordre dans lequel les voisins sont visités par la méthode `neighbors`. Cependant on observe bien que l'algorithme explore toujours tous les voisins d'un sommet avant d'avancer d'une profondeur supplémentaire.
 
@@ -455,8 +437,7 @@ L'ordre de parcours des chemins dépend de l'ordre dans lequel les voisins sont 
 
 cycle}
 
-:   Un cycle est une suite d'arêtes consécutives (chaine simple) dont les deux sommets extrémités sont identiques.
-
+: Un cycle est une suite d'arêtes consécutives (chaine simple) dont les deux sommets extrémités sont identiques.
 
 ::: example
 
@@ -489,12 +470,11 @@ FONCTION recherche_cycle(G graph, s sommet)
     renvoyer FAUX
 ```
 
-
 ### Implémentation
 
 Voici le code proposé.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -508,7 +488,7 @@ dg = nx.to_dict_of_lists(G)
 
 def recherche_cycle(G, s, vus=None):
     # ATTENTION: Liste vide par défaut
-    # voir: https://lyceum.fr/blog/2021-04-02-comment-passer-une-liste-vide-par-defaut-a-une-fonction-en-python/
+    # voir: https://www.lyceum.fr/blog/2021-04-02-comment-passer-une-liste-vide-par-defaut-a-une-fonction-en-python/
     if vus is None:
         vus = []
     # on récupère la liste des voisins
@@ -549,20 +529,17 @@ nx.draw(G, with_labels=True, pos=nx.spring_layout(G))
     Présence d'un cycle
     -------------------
     True
-    
+
     Pour rappel: Forme du graphe
     ----------------------------
 
-
 </div>
 
------
-
+---
 
 ![png](cours_files/cours_17_1.png){width=100%}
 
-
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -611,18 +588,15 @@ nx.draw(G, with_labels=True, pos=nx.spring_layout(G))
     Présence d'un cycle
     -------------------
     False
-    
+
     Pour rappel: Forme du graphe
     ----------------------------
 
-
 </div>
 
------
-
+---
 
 ![png](cours_files/cours_18_1.png){width=100%}
-
 
 ::: {.plus titre="Recherche d'un cycle dans un graphe orienté"}
 
@@ -640,18 +614,17 @@ Le recherche d'un cycle dans un graphe orienté et plus délicate, on utilise cl
 
 La recherche de chemin(_pathfinding_), et un domaine important de recherche dans le développement de l'intelligence artificielle et de la robotique.
 
-
 ### Plus court chemin dans un graphe non pondéré
 
 Le plus court chemin à travers un graphe non pondéré est utilisé dans le protocole réseau [RIP](/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/3-protocoles-de-routage).
 
-Il se base simplement sur un *parcours en largeur* pour s'assurer que le nombre d'arêtes traversées est minimum.
+Il se base simplement sur un _parcours en largeur_ pour s'assurer que le nombre d'arêtes traversées est minimum.
 
 Si le sommet est rencontré, on renverra le chemin suivi.
 
 Pour cela on ajoute à notre algorithme un dictionnaire qui stocke la liste des prédecesseurs lors du parcours.
 
-------
+---
 
 <div class="card text-white bg-gradient-dark">
 <div class="card-header"><small class="text-muted">Entrée</small></div>
@@ -756,22 +729,19 @@ nx.draw(G, with_labels=True, pos=nx.spring_layout(G))
     Paris -> Rennes: ['Paris', 'Rennes']
     Paris -> Toulouse: ['Paris', 'Toulouse']
     Rennes -> Toulouse: ['Rennes', 'Toulouse']
-    
+
     Si la destination n'est pas trouvée
     -----------------------------------
     Nice -> Tokyo: []
-    
+
     Pour vérification: Forme du graphe
     ------------------------------------
 
-
 </div>
 
------
-
+---
 
 ![png](cours_files/cours_20_1.png){width=100%}
-
 
 ### Plus court chemin dans un graphe pondéré
 
@@ -803,9 +773,9 @@ G = create_graph()
 # FONCTION parcours_largeur(Graphe G, Sommet s):
 def recherche_chemin(G, départ=None, arrivée=None):
     """Recherche de chemin
-    
+
     On se contente d'indiquer si le chemin existe
-    
+
     Returns
     -------
     bool
@@ -823,7 +793,7 @@ def recherche_chemin(G, départ=None, arrivée=None):
         s = f.pop()
         #POUR TOUT voisin t de s dans G
         for t in G.neighbors(s):
-            node = G.nodes[t]            
+            node = G.nodes[t]
             if t == arrivée:
                 return True
             #SI t non marqué
@@ -834,7 +804,7 @@ def recherche_chemin(G, départ=None, arrivée=None):
                 # marquer le sommet s
                 node["visited"] =  True
     return False
-                
+
 
 print("Liste des noeuds visités par notre algorithme")
 print("---------------------------------------------")
@@ -854,9 +824,7 @@ nx.draw(G, with_labels=True, pos=nx.spring_layout(G))
 - [Article Wikipédia sur l'Algorithme de parcours en profondeur][wkp_dfs]
 - [Article Wikipédia sur l'Algorithme de parcours en largeur][wkp_dfs]
 
-
 [wkp_dfs]: https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_profondeur
-
 [wkp_bfs]: https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur
 
 :::

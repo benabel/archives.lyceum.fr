@@ -1,0 +1,215 @@
+---
+tags: ["html", "balises", "attributs"]
+---
+
+::: programme
++----------------------------+---------------------------------+-----------------------------------+
+| Contenus                   | Capacités attendues             | Commentaires                      |
++============================+=================================+===================================+
+| Modalités de l'interaction | Identifier les différents       | Il s’agit d’examiner le code HTML |
+| entre l'homme et la        | composants graphiques           | d’une page comprenant des         |
+| machine                    | permettant d'interagir avec une | composants graphiques et de       |
+|                            | application Web                 | distinguer ce qui relève de la    |
+|                            |                                 | description des composants        |
+|                            |                                 | graphiques en HTML de leur        |
+|                            |                                 | comportement (réaction aux        |
+|                            |                                 | événements) programmé par         |
+|                            |                                 | exemple en JavaScript.            |
+| Événements                 | Identifier les événements que   |                                   |
+|                            | les fonctions associées aux     |                                   |
+|                            | différents composants           |                                   |
+|                            | graphiques sont capables de     |                                   |
+|                            | traiter                         |                                   |
++----------------------------+---------------------------------+-----------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+Dans ce chapitre nous allons approfondir nos connaissances sur le langage `html` déjà étudié en
+seconde. Pour rappel, le W3C a défini deux langages afin de bien séparer *le fond et la forme*. Le
+`html` vu dans ce chapitre décrit le contenu du document: le *fond* et le `css` que l'on étudiera
+dans le prochain chapitre décrit sa *forme*.
+
+<wc-wikimage title="HTML5_logo_and_wordmark.svg" caption="Le html 5 est la dernière version du langage normalisée par le W3C."></wc-wikimage>
+
+
+:::
+
+Le `html` est un langage qui utilise des balises entre chevrons(`<balise>`) pour structurer les
+pages web et leur donner un sens.
+
+## Structure d'une page `html`
+
+### `<!doctype html>`, `<head>` et `<body>`
+
+Une page `html` commence toujours par indiquer le `doctype`. Depuis `html5` c'est très simple:
+
+```html
+<!doctype html>
+```
+
+_C'est quand même mieux que son ancêtre en html4:_
+
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+```
+
+Le document est séparé en deux grandes parties:
+
+- le `head`: qui contient des informations utiles au navigateur et aux robots qui consultent votre
+  page.
+- le `body`: qui contient les informations qui seront effectivement affichées à l’écran.
+
+### Structure modèle
+
+Voici une structure qui peut vous servir quand vous commencez une nouvelle page web.
+
+```html
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Un document minuscule</title>
+  </head>
+  <body>
+    <h1>Titre principal de mon document</h1>
+    <!-- Ceci est un commentaire -->
+    <p>
+      Regarde maman, je suis en train de coder en
+      <abbr title="Hyper Text Markup Language" lang="en">HTML</abbr> !
+    </p>
+  </body>
+</html>
+```
+
+## Les balises
+
+Le langage `html` utilise des balises pour indiquer le sens sémantique des éléments d'une page. Ces
+balises permettent de construire une hiérarchie au sein du document appelée DOM(Document Object
+Model).
+
+Toutes les balises sont référencées sur le site
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), en voici quelques-unes.
+
+### Exemples de balises
+
++---------------------------+-------------------------------------------+------------------------------------------------------------------------+
+| balise                    | rôle                                      | exemple                                                                |
++===========================+===========================================+========================================================================+
+| `<h1>`, `<h2>`, ...`<h6>` | Titres et sous-titres                     | `<h1>Titre principal de mon document</h1>`                             |
++---------------------------+-------------------------------------------+------------------------------------------------------------------------+
+| `<p>`                     | Paragraphe                                | `<p>Comme je descendais des Fleuves impassibles.</p>`                  |
++---------------------------+-------------------------------------------+------------------------------------------------------------------------+
+| `<strong>`                | texte important(en gras par défaut)       | `<p>Comme je <strong>descendais</strong> des Fleuves impassibles.</p>` |
++---------------------------+-------------------------------------------+------------------------------------------------------------------------+
+| `<em>`                    | texte en emphase(en italique par défaut)  | `<p>Comme je <em>descendais</em> des Fleuves impassibles.</p>`         |
++---------------------------+-------------------------------------------+------------------------------------------------------------------------+
+| `<a href="dest">`         | Lien vers la page d'URL `dest`            | `<a href="https://www.wikipedia.fr/">Se rendre sur Wikipedia</a>`      |
++---------------------------+-------------------------------------------+------------------------------------------------------------------------+
+| `<img src="image.png"/>`  | Affichage de l'image d'URI `image.png`    | `<img src="photo.jpg" alt="Photo de mon chat"/>`                       |
++---------------------------+-------------------------------------------+------------------------------------------------------------------------+
+| `<ul>`                    | liste à puce                              | ```html                                                                |
+|                           |                                           | <ul>                                                                   |
+|                           |                                           |   <li>1er élément de la liste</li>                                     |
+|                           |                                           |   <li>2e élément de la liste</li>                                      |
+|                           |                                           |   <li>3e ...</li>                                                      |
+| `<li>`                    | élément d'une liste                       | </ul>                                                                  |
+|                           |                                           | ```                                                                    |
++---------------------------+-------------------------------------------+------------------------------------------------------------------------+
+
+### Règles d'écriture
+
+Lorsqu'une `<balise>` est ouverte, elle doit être fermée `</balise>`.
+
+::: prop
+
+Seul le texte écrit entre les balises ouvrante et fermante s'affiche à l'écran.
+
+:::
+
+:::example
+
+Le code `<p>Ceci est un paragraphe.</p>`html affichera:
+
+<p>Ceci est un paragraphe.</p>
+
+:::
+
+
+::: prop
+
+Les balises ouvrantes et fermantes doivent toujours être correctement imbriquées, c'est-à-dire
+que les balises fermantes doivent être écrites dans l'ordre inverse des balises d'ouverture.[MDN](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Introduction#Les_balises){.cite-source}
+
+:::
+
+::: examples
+
+Voici un exemple de code valide :
+
+```html
+<em>Ceci est <strong>très</strong> important</em>.
+```
+
+Voici un exemple de code non-valide :
+
+```html
+<em>Ceci est <strong>très</em> important</strong>.
+```
+
+:::
+
+### Attributs d'une balise
+
+Les attributs d'un élément, permettent de modifier son comportement ou de fournir des métadonnées.
+
+::: examples
+
+- L'attribut `lang`.
+ 
+   ```html
+   <p>This paragraph is English, but the language is not specifically defined.</p>
+   
+   <p lang="en-GB">This paragraph is defined as British English.</p>
+   
+   <p lang="fr">Ce paragraphe est défini en français.</p>
+   ```
+- Les attributs `class` et `id` sont parmi les plus utilisés, on les verra dans les prochains chapitres car ils sont utiles à la mise en forme `css `et les interactions avec javascript.
+
+   ```html
+   <a id="special" class="important">Ce lien a l'air important.</p>
+   ```
+
+:::
+
+
+### Balises orphelines
+
+Certaines balises ne contiennent pas de texte, elles n'ont donc pas de balises fermantes.
+
+On les appelle des balises _orphelines_. Elles ont une syntaxe particulière: `<balise/>`.
+
+Par exemple la balise d'image `<img />`.
+
+```
+<img src="logo.png" alt="Logo du site" />
+```
+:::
+
+::: prop
+
+La balise `<img />` possède deux attributs obligatoires:
+
+- `src` pour préciser l'adresse de l'image à afficher
+- `alt` pour expliquer le contenu de l'image si l'image ne s'affiche pas ou pour décrire l'image
+  aux personnes non-voyantes.
+
+:::
+
+## Quelques petits plus
+
+- Les commentaires sont écrits `<!-- Ceci est un commentaire -->`
+- On écrit en général les balises en minuscules.
+- L'indentation n'est pas obligatoire, mais elle rend le fichier plus lisible.
+- Les balises `<div>`, `<header>`, `<article>`, `<footer>` ont été créé dans la version 5 de `html`
+  afin de créer des blocs spécifiques dans la page.

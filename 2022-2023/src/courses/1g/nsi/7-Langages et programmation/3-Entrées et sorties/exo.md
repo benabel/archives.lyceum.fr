@@ -1,0 +1,25 @@
+---
+tocHTML: '<ul><li><a href="#calcul-de-prix-ttc" data-localhref="true">Calcul de prix TTC</a></li><li><a href="#calcul-dune-vitesse" data-localhref="true">Calcul d’une vitesse</a></li><li><a href="#permutation-de-deux-variables" data-localhref="true">Permutation de deux variables</a></li></ul>'
+---
+
+
+
+
+
+<h2 id="calcul-de-prix-ttc" class="anchored">Calcul de prix TTC</h2>
+<p>Écrivez un programme qui fait <strong>saisir</strong> un prix hors taxes à l’utilisateur, puis qui <strong>affiche</strong> le prix TTC correspondant en se basant sur un taux de TVA à 20%.</p>
+<h2 id="calcul-dune-vitesse" class="anchored">Calcul d’une vitesse</h2>
+<p>Écrivez un programme qui fait <strong>saisir</strong> une distance en mètre et un temps en seconde, puis qui <strong>affiche</strong> la valeur de la vitesse en m/s et en km/h.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mfrac><mi>d</mi><mi>t</mi></mfrac></mrow><annotation encoding="application/x-tex">v=\frac{d}{t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
+</p>
+<h2 id="permutation-de-deux-variables" class="anchored">Permutation de deux variables</h2>
+<p>Écrivez un programme qui permute deux variables :</p>
+<div class="highlight"><pre><span></span><span class="n">nombre1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">nombre2</span> <span class="o">=</span> <span class="mi">3</span>
+<span></span>
+<span class="c1"># Tapez votre code ici (sans rien modifier au deux lignes au dessus et en dessous.)</span>
+<span></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre1</span><span class="p">);</span> <span class="c1"># Doit afficher 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre2</span><span class="p">);</span> <span class="c1"># Doit afficher 5</span>
+</pre></div>
+

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p-uplets. p-uplets nommés</td>
+<td>Écrire une fonction renvoyant un p-uplet de valeurs.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Dans la deuxième partie <a href="/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/">2-Représentation des données: types et valeurs de base</a>, nous avions vu certains types de <strong>variables simples</strong>: <code>int</code>(entiers), <code>float</code>(nombres à virgule flottante) <code>bool</code>(booléen), <code>str</code>(chaîne de caractères). Nous allons maintenant voir des <strong>types construits</strong> qui sont des <em>collections d’objets</em> de type simple assemblés dans ce que l’on appelle une structure de données.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><wc-wikimage title="Tableau_à_une_dimension.png" caption="Un ensemble de valeurs entières stockées dans un tableau à une dimension."></wc-wikimage></p>
+</div>
+</div>
+</div>
+<p>Nous verrons dans cette partie trois exemples de types construits:</p>
+<ul>
+<li>les p-uplets <code>tuple</code> et listes <code>list</code>: des collections d’éléments ordonnés dans lesquels les valeurs sont accédées via un <strong>indice de position</strong>.</li>
+<li>les p-uplet nommés <code>namedtuple</code> et les dictionnaires <code>dict</code>: ensemble d’éléments dans lesquels les valeurs sont accédées via une <strong>clef</strong>.</li>
+</ul>
+<h2 id="quest-ce-quun-tableau" class="anchored">Qu’est-ce qu’un tableau?</h2>
+<dl>
+<dt>
+Tableau
+</dt>
+<dd>
+<div>
+<p>En informatique, un tableau est une structure de données représentant une séquence finie d’éléments auxquels on peut accéder efficacement par leur indice, dans la séquence.</p>
+</div>
+</dd>
+</dl>
+<p>Il existe deux implémentations des tableaux en Python: les <code>tuple</code>s et les <code>list</code>es.</p>
+<h3 id="syntaxe-des-tuples-a-b-c" class="anchored">Syntaxe des tuples <code>(a, b, c)</code></h3>
+<p>Les tuples sont des valeurs séparées par des virgules <code>,</code> entourées de parenthèses <code>(..., ..., ...</code>)` qui peuvent parfois être <em>omises</em>.</p>
+<div class="cell" data-execution_count="1">
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="highlight"><pre><span></span>tuple
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="highlight"><pre><span></span><span class="c1"># sans parenthèses</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="highlight"><pre><span></span>tuple
+</pre></div>
+
+</div>
+</div>
+<h3 id="syntaxe-des-listes-a-b-c" class="anchored">Syntaxe des listes <code>[a, b, c]</code></h3>
+<p>Les valeurs de la collection sont entourées par des crochets <code>[]</code>, leurs éléments sont séparés par des virgules.</p>
+<div class="cell" data-execution_count="3">
+<div class="highlight"><pre><span></span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"a"</span><span class="p">,</span> <span class="s2">"z"</span> <span class="p">,</span> <span class="s2">"e"</span><span class="p">]</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="highlight"><pre><span></span>list
+</pre></div>
+
+</div>
+</div>
+<h3 id="différences-entre-tuple-et-liste" class="anchored">Différences entre tuple et liste</h3>
+<p>Outre la syntaxe, il y a plusieurs différences clés entre les tuples et les listes en Python:</p>
+<ul>
+<li><p><strong>Immutabilité</strong> : les tuples sont immuables, c’est-à-dire qu’une fois créés, ils ne peuvent pas être modifiés. Les listes, en revanche, sont mutables, c’est-à-dire que vous pouvez ajouter, supprimer ou remplacer des éléments dans une liste une fois qu’elle a été créée.</p></li>
+<li><p><strong>Performance</strong> : les tuples sont généralement plus rapides à créer et à accéder que les listes. Cela est dû à leur immutabilité, qui signifie qu’il n’y a pas besoin de gérer la modification des éléments dans un tuple.</p></li>
+<li><p><strong>Utilisation</strong> : les tuples sont souvent utilisés lorsque vous avez besoin de stocker des données qui ne doivent pas être modifiées, tandis que les listes sont utilisées lorsque vous avez besoin de stocker des données qui doivent être modifiées fréquemment.</p></li>
+</ul>
+<h2 id="différences-et-similitudes-entre-tuple-et-listes" class="anchored">Différences et similitudes entre tuple et listes</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="tuple quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><strong>Tuple</strong></p>
+<p>On peut stocker plusieurs valeurs de types différents.</p>
+<div class="cell" data-execution_count="4">
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">"trois"</span><span class="p">)</span>
+<span class="n">t</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="highlight"><pre><span></span>(1, 2.0, 'trois')
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="highlight"><pre><span></span>tuple
+</pre></div>
+
+</div>
+</div>
+<p>L’accès se fait par un indice entier de position qui <em>commence à 0</em>. On place l’indice entre des crochets.</p>
+<div class="cell" data-execution_count="6">
+<div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="highlight"><pre><span></span>1
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="highlight"><pre><span></span>2.0
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="highlight"><pre><span></span>'trois'
+</pre></div>
+
+</div>
+</div>
+<p>La longueur du tuple est obtenue grâce à la fonction <code>len()</code></p>
+<div class="cell" data-execution_count="9">
+<div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="highlight"><pre><span></span>3
+</pre></div>
+
+</div>
+</div>
+<p>Les tuples sont <a href="https://fr.wiktionary.org/wiki/immutable"><em>immutables</em></a>, c’est-à-dire qu’on ne peut les modifier une fois qu’ils ont été créés.</p>
+<div class="cell" data-execution_count="10">
+<div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"un"</span>
+</pre></div>
+
+<div class="cell-output cell-output-error">
+<div class="highlight"><pre><span></span>TypeError: 'tuple' object does not support item assignment
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="liste quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><strong>Liste</strong></p>
+<p>On peut stocker plusieurs valeurs de types différents.</p>
+<div class="cell" data-execution_count="11">
+<div class="highlight"><pre><span></span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">"trois"</span><span class="p">]</span>
+<span class="n">tab</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="highlight"><pre><span></span>[1, 2.0, 'trois']
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="highlight"><pre><span></span>list
+</pre></div>
+
+</div>
+</div>
+<p>L’accès se fait par un indice entier de position qui <em>commence à 0</em>. On place l’indice entre des crochets.</p>
+<div class="cell" data-execution_count="13">
+<div class="highlight"><pre><span></span><span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="highlight"><pre><span></span>1
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="highlight"><pre><span></span><span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="highlight"><pre><span></span>2.0
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="highlight"><pre><span></span><span class="n">tab</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="highlight"><pre><span></span>'trois'
+</pre></div>
+
+</div>
+</div>
+<p>La longueur de la liste est obtenue grâce à la fonction <code>len()</code></p>
+<div class="cell" data-execution_count="16">
+<div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="highlight"><pre><span></span>3
+</pre></div>
+
+</div>
+</div>
+<p>Les listes sont <a href="https://fr.wiktionary.org/wiki/mutable"><em>mutables</em></a>, c’est-à-dire qu’on peut les modifier une fois qu’elles ont été créés.</p>
+<div class="cell" data-execution_count="17">
+<div class="highlight"><pre><span></span><span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"un"</span>
+<span class="n">tab</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="highlight"><pre><span></span>['un', 2.0, 'trois']
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>ATTENTION: Dans les types construits, il faut bien distinguer l’indice et la valeur stockée à cet indice.</strong></p>
+<p><wc-wikimage title="Tableau_à_une_dimension.png" caption="Les valeurs stockées sont de type quelconque par contre les indice sont des entiers commençant à 0."></wc-wikimage></p>
+<h2 id="méthodes-et-fonctions" class="anchored">Méthodes et fonctions</h2>
+<h3 id="quest-ce-quune-méthode" class="anchored">Qu’est-ce qu’une méthode?</h3>
+<p>Python étant un <a href="/tg/nsi/1-structures-de-donnees/2-programmation-objet">langage objet</a>, des méthodes sont ajoutées aux tableaux pour interagir facilement avec eux.</p>
+<p>La différence entre méthode et fonction sera approfondie en terminale lors de l’étude de la <a href="/tg/nsi/1-structures-de-donnees/2-programmation-objet">programmation orientée objet</a>. Pour l’instant, nous pouvons simplement dire qu’il s’agit d’une fonction attachée à un objet qui s’appelle en utilisant une <strong>notation pointée</strong>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># appel d'une fonction</span>
+<span class="n">fonction</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span> <span class="c1"># ex: len(tab)</span>
+<span class="c1"># appel d'une méthode d'objet</span>
+<span class="n">objet</span><span class="o">.</span><span class="n">méthode</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span> <span class="c1"># ex: tab.append(5)</span>
+</pre></div>
+
+<h3 id="méthodes-des-tuples" class="anchored">Méthodes des tuples</h3>
+<p>Les tuples étant immuables ne présentent que deux méthodes qui sont décrites dans la <a href="https://docs.python.org/fr/3/library/stdtypes.html#sequence-types-list-tuple-range">documentation</a> ou grâce à l’appel <code>help(tuple)</code></p>
+<ul>
+<li>La méthode <code>index</code>: indice de la première occurrence de l’élément cherché donné en argument.</li>
+<li>La méthode <code>count</code>: nombre d’éléments de valeur donnée en argument.</li>
+</ul>
+<div class="cell" data-execution_count="18">
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+<div class="cell" data-execution_count="19">
+<div class="highlight"><pre><span></span><span class="c1"># appel de la méthode index()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="highlight"><pre><span></span>3
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="highlight"><pre><span></span>3
+</pre></div>
+
+</div>
+</div>
+<details class="plus"><summary>Documentation des tuples</summary>
+<div class="cell" data-execution_count="21">
+<div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+
+<div class="highlight"><pre><span></span>Help on class tuple in module builtins:
+<span></span>
+class tuple(object)
+ |  tuple(iterable=(), /)
+ |  
+ |  Built-in immutable sequence.
+ |  
+ |  If no argument is given, the constructor returns an empty tuple.
+ |  If iterable is specified the tuple is initialized from iterable's items.
+ |  
+ |  If the argument is a tuple, the return value is the same object.
+ |  
+ |  Built-in subclasses:
+ |      asyncgen_hooks
+ |      MonthDayNano
+ |      RefResolutionErrorAttributes
+ |      TypeCheckerAttributes
+ |      ... and 8 other subclasses
+ |  
+ |  Methods defined here:
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(self, key, /)
+ |      Return self[key].
+ |  
+ |  __getnewargs__(self, /)
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  count(self, value, /)
+ |      Return number of occurrences of value.
+ |  
+ |  index(self, value, start=0, stop=9223372036854775807, /)
+ |      Return first index of value.
+ |      
+ |      Raises ValueError if the value is not present.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  __class_getitem__(...) from builtins.type
+ |      See PEP 585
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+</pre></div>
+
+</div>
+</div>
+</details>
+
+<h3 id="méthodes-des-listes" class="anchored">Méthodes des listes</h3>
+<p>Les listes présentent de nombreuses méthodes en plus de celles des tuples qui vont permettre de les <a href="https://docs.python.org/fr/3/library/stdtypes.html#mutable-sequence-types">modifier</a>.</p>
+<p>Voici quelques utilisations courantes à retenir(la liste complète est dans la documentation!).</p>
+<ul>
+<li>ajouter des éléments à la liste à la fin avec la méthode <code>append</code>, ou à un indice quelconque avec la méthode <code>insert</code>.</li>
+</ul>
+<div class="cell" data-execution_count="22">
+<div class="highlight"><pre><span></span><span class="c1"># ajout à la fin</span>
+<span class="n">tab</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">tab</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="highlight"><pre><span></span>['un', 2.0, 'trois', 4]
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="23">
+<div class="highlight"><pre><span></span><span class="c1"># ajout à l'indice 0(au début)</span>
+<span class="n">tab</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'zéro'</span><span class="p">)</span>
+<span class="n">tab</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="highlight"><pre><span></span>['zéro', 'un', 2.0, 'trois', 4]
+</pre></div>
+
+</div>
+</div>
+<ul>
+<li>supprimer des éléments de la liste à la fin avec la méthode <code>pop()</code>, ou à un indice quelconque avec la méthode <code>pop(indice)</code>.</li>
+</ul>
+<div class="cell" data-execution_count="24">
+<div class="highlight"><pre><span></span><span class="n">tab</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">tab</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="highlight"><pre><span></span>['zéro', 'un', 2.0, 'trois']
+</pre></div>
+
+</div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="highlight"><pre><span></span><span class="n">tab</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">tab</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="highlight"><pre><span></span>['zéro', 2.0, 'trois']
+</pre></div>
+
+</div>
+</div>
+<details class="plus"><summary>Documentation des listes</summary>
+<div class="cell" data-execution_count="26">
+<div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+
+<div class="highlight"><pre><span></span>Help on class list in module builtins:
+<span></span>
+class list(object)
+ |  list(iterable=(), /)
+ |  
+ |  Built-in mutable sequence.
+ |  
+ |  If no argument is given, the constructor creates a new empty list.
+ |  The argument must be an iterable if specified.
+ |  
+ |  Methods defined here:
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __delitem__(self, key, /)
+ |      Delete self[key].
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(...)
+ |      x.__getitem__(y) &lt;==&gt; x[y]
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __iadd__(self, value, /)
+ |      Implement self+=value.
+ |  
+ |  __imul__(self, value, /)
+ |      Implement self*=value.
+ |  
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __reversed__(self, /)
+ |      Return a reverse iterator over the list.
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  __setitem__(self, key, value, /)
+ |      Set self[key] to value.
+ |  
+ |  __sizeof__(self, /)
+ |      Return the size of the list in memory, in bytes.
+ |  
+ |  append(self, object, /)
+ |      Append object to the end of the list.
+ |  
+ |  clear(self, /)
+ |      Remove all items from list.
+ |  
+ |  copy(self, /)
+ |      Return a shallow copy of the list.
+ |  
+ |  count(self, value, /)
+ |      Return number of occurrences of value.
+ |  
+ |  extend(self, iterable, /)
+ |      Extend list by appending elements from the iterable.
+ |  
+ |  index(self, value, start=0, stop=9223372036854775807, /)
+ |      Return first index of value.
+ |      
+ |      Raises ValueError if the value is not present.
+ |  
+ |  insert(self, index, object, /)
+ |      Insert object before index.
+ |  
+ |  pop(self, index=-1, /)
+ |      Remove and return item at index (default last).
+ |      
+ |      Raises IndexError if list is empty or index is out of range.
+ |  
+ |  remove(self, value, /)
+ |      Remove first occurrence of value.
+ |      
+ |      Raises ValueError if the value is not present.
+ |  
+ |  reverse(self, /)
+ |      Reverse *IN PLACE*.
+ |  
+ |  sort(self, /, *, key=None, reverse=False)
+ |      Sort the list in ascending order and return None.
+ |      
+ |      The sort is in-place (i.e. the list itself is modified) and stable (i.e. the
+ |      order of two equal elements is maintained).
+ |      
+ |      If a key function is given, apply it once to each list item and sort them,
+ |      ascending or descending, according to their function values.
+ |      
+ |      The reverse flag can be set to sort in descending order.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  __class_getitem__(...) from builtins.type
+ |      See PEP 585
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __hash__ = None
+</pre></div>
+
+</div>
+</div>
+</details>
+
+<h2 id="utilisations-courantes-des-tuples" class="anchored">Utilisations courantes des tuples</h2>
+<h3 id="déstructuration" class="anchored">Déstructuration</h3>
+<p>Il peut être <em>pratique</em> de récupérer les valeurs stockées dans le tuple dans des variables de type simple: on parle de <strong>déstructuration</strong>.</p>
+<div class="cell" data-execution_count="27">
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"α"</span><span class="p">,</span> <span class="s2">"β"</span><span class="p">,</span> <span class="s2">"γ"</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">t</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"t="</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"a="</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"b="</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"c="</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>t= ('α', 'β', 'γ')
+a= α
+b= β
+c= γ
+</pre></div>
+
+</div>
+</div>
+<h3 id="permuter-des-variables" class="anchored">Permuter des variables</h3>
+<p>Habituellement, lorsque l’on souhaite permuter deux variables, il est nécessaire de passer par une troisième variable auxiliaire. Grâce aux tuples, la permutation peut se faire en une instruction.</p>
+<div class="cell" data-execution_count="28">
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"a="</span><span class="p">,</span><span class="n">a</span><span class="p">,</span> <span class="s2">"b="</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Permutation"</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"a="</span><span class="p">,</span><span class="n">a</span><span class="p">,</span> <span class="s2">"b="</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>a= 3 b= 2
+Permutation
+a= 2 b= 3
+</pre></div>
+
+</div>
+</div>
+<h3 id="renvoyer-plusieurs-valeurs-dans-une-fonction" class="anchored">Renvoyer plusieurs valeurs dans une fonction</h3>
+<p>Il s’agit d’une application courante des tuples. Prenons l’exemple d’une fonction qui renvoie les deux racines du trinôme.</p>
+<div class="cell" data-execution_count="29">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">racines_du_trinome</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+<span class="n">    delta</span> <span class="o">=</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
+<span class="k">    if</span> <span class="n">delta</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">        return</span> <span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="n">delta</span><span class="o">**</span><span class="mf">0.5</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> <span class="o">-</span><span class="n">b</span><span class="o">+</span><span class="n">delta</span><span class="o">**</span><span class="mf">0.5</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span></span>
+<span class="n">racines_du_trinome</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="highlight"><pre><span></span>(-1.0, 1.0)
+</pre></div>
+
+</div>
+</div>
+<p>Ici on récupère les racines par déstructuration.</p>
+<div class="cell" data-execution_count="30">
+<div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">racines_du_trinome</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"racine 1:"</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"racine 2:"</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>racine 1: -1.4142135623730951
+racine 2: 1.4142135623730951
+</pre></div>
+
+</div>
+</div>
+<h2 id="savoir-si-un-tableau-contient-une-valeur" class="anchored">Savoir si un tableau contient une valeur</h2>
+<p>Outre la méthode <code>index()</code>, on peut utiliser l’opérateur booléen <code>in</code> pur savoir si une valeur est dans la liste.</p>
+<div class="cell" data-execution_count="31">
+<div class="highlight"><pre><span></span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>True
+False
+</pre></div>
+
+</div>
+</div>
+<h2 id="parcours-séquentiel-des-tableaux" class="anchored">Parcours séquentiel des tableaux</h2>
+<p>Les tableaux étant des structures ordonnées finies, il est facile de les parcourir dans l’ordre avec une boucle bornée <code>for</code>.</p>
+<p>En python, on peut réaliser l’itération sur les valeurs ou sur les indices si nécessaire. Cette dernière est plus compliquée, mais plus puissant, car on a alors accès à l’indice <code>i</code> <strong>et</strong> à la valeur <code>tab[i]</code>).</p>
+<h3 id="itération-sur-les-valeurs" class="anchored">Itération sur les valeurs</h3>
+<p>On fait une itération sur les valeurs du tableau en utilisant le mot-clé <code>in</code>.</p>
+<div class="cell" data-execution_count="32">
+<div class="highlight"><pre><span></span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>12
+-3
+15
+-9
+17
+7
+</pre></div>
+
+</div>
+</div>
+<h3 id="itération-sur-les-indices" class="anchored">Itération sur les indices</h3>
+<p>C’est la méthode classique utilisée dans les langages impératifs.</p>
+<div class="cell" data-execution_count="33">
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+<span class="n">    val</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="nb">    print</span><span class="p">(</span><span class="s2">"indice:"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">"valeur:"</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>indice: 0 valeur: 12
+indice: 1 valeur: -3
+indice: 2 valeur: 15
+indice: 3 valeur: -9
+indice: 4 valeur: 17
+indice: 5 valeur: 7
+</pre></div>
+
+</div>
+</div>
+<details class="plus"><summary>&nbsp;</summary>
+<p>Même si le choix du nom des variables d’itération vous appartient, on a l’habitude d’utiliser:</p>
+<ul>
+<li><code>i</code>, <code>idx</code>, <code>j</code>, <code>k</code>… pour les index</li>
+<li><code>val</code>, <code>v</code>, <code>e</code>… pour les valeurs des éléments du tableau.</li>
+</ul>
+</details>
+
+<div class="callout callout-style-default callout-note callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ces deux méthodes fonctionnent aussi bien avec les tuples que les listes, mais également avec les chaînes de caractères <code>str</code>.</p>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lettre <span class="kw">in</span> <span class="st">"Bonjour"</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(lettre)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>B
+o
+n
+j
+o
+u
+r</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mot <span class="op">=</span> <span class="st">"Bonjour"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(mot)):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    val <span class="op">=</span> mot[i]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"indice:"</span>, i, <span class="st">"valeur:"</span>, val)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>indice: 0 valeur: B
+indice: 1 valeur: o
+indice: 2 valeur: n
+indice: 3 valeur: j
+indice: 4 valeur: o
+indice: 5 valeur: u
+indice: 6 valeur: r</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

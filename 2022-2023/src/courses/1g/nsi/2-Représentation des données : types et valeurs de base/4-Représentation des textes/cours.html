@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Représentation d’un texte en machine.</p>
+<p>Exemples des encodages <code>ASCII</code>, <code>ISO-8859-1</code>, <code>Unicode</code></p></td>
+<td><p>Identifier l’intérêt des différents systèmes d’encodage.</p>
+<p>Convertir un fichier texte dans différents formats d’encodage.</p></td>
+<td>Aucune connaissance précise des normes d’encodage n’est exigible</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Dans ce chapitre, nous allons voir comment coder en binaire du texte, et donc apprendre quelles sont les méthodes utilisées pour encoder des caractères en binaire. Nous allons voir que le choix du codage des caractères dépend fortement des langues, ainsi la langue française comporte de nombreuses lettres spécifiques: <kbd>é</kbd>, <kbd>è</kbd>, <kbd>ê</kbd>, <kbd>ç</kbd>, <kbd>à</kbd>…</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/table-iso8859-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Table des caractères ISO-8859-1 qu’on utilisait pour encoder les textes français</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>Le premier codage à avoir été utilisé est le codage ASCII <em>(American Standard Code for Information Interchange)</em>, qui ne prévoit pas l’utilisation de lettres accentuées et qui peut vous amener parfois à lire des textes à la limite du compréhensible sur vos écrans.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/ascii-example.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Image d’un texte présentant une erreur d’encodage de caractères</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<h2 id="le-codage-ascii" class="anchored">Le codage ASCII</h2>
+<blockquote class="blockquote">
+<p>Le codage ASCII est une norme de codage de caractères en informatique ancienne et connue pour son influence incontournable sur les codages de caractères qui lui ont succédé. Elle était la plus largement compatible pour ce qui est des caractères latins non accentués. <strong>ASCII contient les caractères nécessaires pour écrire en anglais.</strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>L’ASCII définit seulement <strong>128 caractères</strong> numérotés de 0 à 127 et codés en binaire de 0000000 à 1111111. Sept bits suffisent donc pour représenter un caractère codé en ASCII. Toutefois, les ordinateurs travaillant presque tous sur un multiple de huit bits (multiple d’un octet) depuis les années 1970, chaque caractère d’un texte en ASCII est souvent stocké dans un octet dont le 8e bit est 0. &nbsp; <a href="https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange" class="cite-source">Article ASCII sur Wikipédia</a></p>
+</blockquote>
+<p>Voici la table ASCII:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/ascii-table.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Table ASCII</figcaption><p></p>
+</figure>
+</div>
+<p>Certains des caractères présents ne peuvent pas être affichés(repérés par un fond bleu), ce sont des caractères de contrôle. Vous pouvez trouver leur signification sur cette <a href="http://isn.fil.univ-lille1.fr/activite3/doc/ascii.txt">page</a>.</p>
+<p>Pour lire le tableau, on associe au caractère le code binaire suivant: <code>n°deligne_n°decolonne</code>. Par exemple, le caractère <kbd>a</kbd> est situé dans la case correspondant à la 7ᵉ ligne, 2ᵉ colonne. Sa représentation binaire est:<code>110_0001</code> soit sous la forme d’un octet: <code>01100001</code>. Ce qui correspond au caractère 97 en décimal.</p>
+<p>Pour faciliter la lecture des codes ASCII par un humain, il est plus commode de coder les numéros de ligne et de colonne en hexadécimal, et la lettre ‘a’ aura alors pour code <code>61</code> en hexadécimal.</p>
+<h2 id="lencodage-iso" class="anchored">L’encodage ISO</h2>
+<blockquote class="blockquote">
+<p>La nécessité de représenter des textes comportant des caractères non présents dans la table ASCII tels ceux de l’alphabet latin utilisés en français comme le ‘à’, le ‘é’ ou le ‘ç’ impose l’utilisation d’un autre codage que l’ASCII.</p>
+</blockquote>
+<div class="prop">
+<p>Les codages ISO sont des extensions du codage ASCII:</p>
+<ul>
+<li>Le codage des 128 caractères présents dans la table ASCII est conservé;</li>
+<li>les 128 caractères supplémentaires sont <em>régionalisés</em> en fonction des divers alphabets du monde.</li>
+</ul>
+</div>
+<blockquote class="blockquote">
+<p>L’ISO, organisation internationale de normalisation, propose de son côté plusieurs variantes de codages adaptées aux différentes langues. La plus utilisée concerne les langues européennes occidentales. Il s’agit de l’ISO-8859-1, aussi nommé <code>ISO-Latin1</code>. <a href="http://isn.fil.univ-lille1.fr/activite3/codcar.html" class="cite-source">Université de Lille</a></p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/table-iso8859-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Table des caractères ISO-8859-1</figcaption><p></p>
+</figure>
+</div>
+<p>On peut constater que cette table ne prend pas en charge le caractère <kbd>€</kbd>, ainsi une nouvelle norme mieux adaptée au français a été introduite l’<code>ISO 8859-15</code>.</p>
+<p>Certains caractères ont été ajoutés dont <kbd>€</kbd>, <kbd>œ</kbd>, <kbd>Œ</kbd>…</p>
+<p>Mais il existe d’autres variantes adaptées à d’autres langues:</p>
+<ul>
+<li><code>ISO-8859-2</code> pour les pays d’Europe de l’Est,</li>
+<li><code>ISO-8859-3</code> pour les pays du sud est de l’Europe…</li>
+</ul>
+<p>Du fait de l’internationalisation des pratiques en informatique, on a mis au point un standard international permettant d’encoder les caractères de toutes les langues: le standard <strong><code>Unicode</code></strong>.</p>
+<h2 id="lencodage-unicode-utf-8" class="anchored">L’encodage Unicode UTF-8</h2>
+<p>L’encodage UTF-8 est un encodage en élaboration qui permet d’encoder tous les caractères de toutes les langues, il est actuellement en train de s’imposer face aux antres encodages en raison de son universalité.</p>
+<p><wc-wikimage title="UnicodeGrow2b.png" caption="Après de nombreuses propositions pour remplacer le codage ASCII, il semble que l'encodage UTF-8 semble prendre le dessus."></wc-wikimage></p>
+<div class="prop">
+<p>La norme UTF-8 utilise un codage de longueurs variable sur un à quatre octets. Les caractères à un octet sont équivalents avec le code ASCII assurant ainsi la <strong>rétro-compatibilité avec le standard ASCII</strong>.</p>
+</div>
+<details class="plus"><summary>Statistiques actualisées</summary>
+<p>Au 21 septembre 2019, l’UTF-8 est utilisé par 94% des sites. <a href="https://w3techs.com/technologies/overview/character_encoding/all">Source</a></p>
+</details>
+
+<blockquote class="blockquote">
+<p>À l’évidence, 256 caractères ne suffisant pas pour représenter les lettres de tous les alphabets utilisés (pensons au russe, à l’hébreu, etc.), un nouveau standard a été introduit : Unicode. La table Unicode comporte la définition de près de cent cinquante mille caractères. &nbsp; Le codage de cette table est multiple. Le codage le plus couramment utilisé se nomme UTF-8. Son principe est le suivant : une première série de caractères sont codés sur un octet. D’autres caractères sont codés sur deux octets, le premier octet débute par ‘110’ pour l’indiquer, l’octet suivant débute par ‘10’. De même des codages sur 3 ou 4 octets sont utilisés pour d’autres caractères. (Cette rapide introduction à UTF-8 est volontairement simplifiée.) &nbsp; Les 128 premiers caractères de la table UTF-8 sont compatibles avec le codage ASCII. Ainsi le codage UTF-8 d’un texte ne comportant que des caractères présents dans la table ASCII sera le même que le codage ASCII de ce texte. &nbsp; Ce ne sera pas vrai pour un texte ISO-Latin-1. Il importe donc, quand on veut décoder un texte, de savoir quel est le codage utilisé sous peine de décoder improprement les caractères. <a href="http://isn.fil.univ-lille1.fr/activite3/codcar.html" class="cite-source">Université de Lille</a></p>
+</blockquote>
+<p>La table complète des caractères Unicode peut être consultée sur l’article <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Wikipédia</a></p>
+<p>Par exemple si on cherche dans cette table la lettre <kbd>é</kbd>, on trouve le code:<strong><code>U+00E9</code></strong> appelé point code, en binaire cela correspond au nombre décimal 233, et au nombre binaire <code>1110 1001</code>. Ce nombre binaire sera représenté en UTF-8 sur deux octets sous la forme: <code>110x_xxxx 10xx_xxxx</code>. Les chiffres binaires du point de code sont rangés de droite à gauche aux positions ‘x’ de ce schéma.</p>
+<p>On obtient donc <code>1100_0011 1010_1001</code> pour le caractère <kbd>é</kbd>.</p>
+<p>Ce qui représente en hexadécimal:<code>C3 A9</code>, il occupe donc deux octets.</p>
+<h2 id="lencodage-des-caractères-en-python" class="anchored">L’encodage des caractères en python</h2>
+<p>En <strong><code>python 3</code></strong>, tous les fichiers doivent être codés en UTF-8, et les chaînes de caractères <code>string</code> sont encodées en UTF-8, contrairement aux <code>bytes</code> qui ne doivent contenir que des caractères ASCII.</p>
+<h2 id="lencodage-des-caractères-en-html" class="anchored">L’encodage des caractères en <code>html</code></h2>
+<p>Pour obtenir un affichage correct des caractères spéciaux en <code>html</code>, il faut déclarer l’encodage utf-8 dans le fichier d’en-tête(<code>&lt;head&gt;</code>) de la page <code>html</code> en utilisant la balise <code>&lt;meta&gt;</code>.</p>
+<p>Voici la structure type d’un fichier <code>html5</code>.</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span></span>
+<span class="p">    &lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">        &lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+<span class="p">        &lt;</span><span class="nt">title</span><span class="p">&gt;</span>Titre du document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">    &lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span></span>
+<span class="p">    &lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        Contenu du document, avec d'éventuels accents!!!
+        et caractères étranges , de toutes les langues...
+        ...ظɶ
+        ...ऴ,ඛ
+        ...ტ,ላ,Ꮹ,ᜨ...
+<span class="p">    &lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Il est également possible d’afficher des caractères par leur code <code>html</code>, ces codes sont également présents sur l’article <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Wikipédia</a>.</p>
+<p>Par exemple le caractère <kbd>À</kbd> <code>U+00C0</code> peut être codé en <code>html</code> par <code>&amp;#192;</code>, ou encore en notation hexadécimale: <code>&amp;#xc0;</code></p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

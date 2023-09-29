@@ -1,0 +1,87 @@
+---
+title: "Comment passer une liste vide par défaut à une fonction en Python?"
+date: 2021-04-02
+author: "Benjamin Abel"
+image: "pytutor-liste.png"
+excerpt: |
+  Vous voulez passer une liste initialement vide à une fonction récursive, mais 
+  tout ne se passe pas comme prévu. Dès le deuxième appel, la fonction «garde» les restes de votre liste 
+  accumulée lors de l'appel précédent. Nous allons voir pourquoi, et comment y remédier.
+tags: ["python", "fonction", "paramètre optionnel", "liste"]
+---
+
+## Le problème
+
+Il est parfois nécessaire de passer des informations lors d'appels de fonctions récursifs.
+
+Par exemple, en tentant d'implémenter la [recherche d'un cycle dans un graphe](/tg/nsi/5-algorithmique/2-algorithmes-sur-les-graphes#rep%C3%A9rer-la-pr%C3%A9sence-dun-cycle) je souhaitais passer une liste de noeuds déjà visités au rappel de la fonction pour détecter le cycle. En donnant une liste vide comme valeur par défaut je pensais pourvoir m'affranchir du rajout de la liste aux arguments lors de appels.
+
+
+```python
+def recherche_cycle(graph, noeud, vus=[])
+    ...
+```
+
+Aurait pu s'appeler `recherche_cycle(g, n)` et non `recherche_cycle(g, n, [])`. Cependant seule la deuxième forme fonctionnait car la liste `vus` n'était pas _réinitialisée_ entre deux appels.
+
+**Etrange non?**
+
+voici un exemple minimal pour comprendre ce qui se passe.
+
+```{python}
+def liste_vide_par_défaut(vus=[]):
+    print("valeur de vus au moment de l'appel:", vus)
+    vus.extend([i for i in range(4)])
+liste_vide_par_défaut()
+liste_vide_par_défaut()
+liste_vide_par_défaut()
+liste_vide_par_défaut()
+```
+
+Ainsi la liste ne prend pas sa valeur par défaut à chaque appel, mais **quand la définition de la fonction est executée.**
+
+Voici le déroulement de cette suite d'instructions dans [pytutor](http://pythontutor.com/):
+
+![Python tutor liste](./pytutor-liste.gif)
+
+La [documentation](https://docs.python.org/fr/3/reference/compound_stmts.html#function-definitions) précise:
+
+> Les valeurs par défaut des paramètres sont évaluées de la gauche vers la droite quand la définition de la fonction est exécutée. Cela signifie que l'expression est évaluée une fois, lorsque la fonction est définie, et que c'est la même valeur « pré-calculée » qui est utilisée à chaque appel. C'est particulièrement important à comprendre lorsqu'un paramètre par défaut est un objet mutable, tel qu'une liste ou un dictionnaire : si la fonction modifie l'objet (par exemple en ajoutant un élément à une liste), la valeur par défaut est modifiée. En général, ce n'est pas l'effet voulu.
+
+## La solution
+
+La solution préconisée est d'utiliser `None` par défaut et de tester explicitement la valeur dans le corps de la fonction.
+
+```{python}
+def liste_vide_par_défaut(vus=None):
+    if vus is None:
+        vus = []
+    print("valeur de vus au moment de l'appel:", vus)
+    vus.extend([i for i in range(4)])
+liste_vide_par_défaut()
+liste_vide_par_défaut()
+liste_vide_par_défaut()
+liste_vide_par_défaut()
+```
+
+## Quand utiliser cette solution?
+
+Il faut bien comprendre que cette solution n'est nécessaire que lorsque le paramètre par défaut est mutable (listes, dictionnaire notamment).
+
+Un objet non mutable étant par construction non modifiable gradera la valeur qui lui a été donnée par défaut lors de la _définition de la fonction_.
+
+```{python}
+def str_vide_par_défaut(txt=""):
+    print("valeur de txt au moment de l'appel:", txt)
+    txt = txt + "0123"
+str_vide_par_défaut()
+str_vide_par_défaut()
+str_vide_par_défaut()
+str_vide_par_défaut()
+```
+
+Voici le déroulement de cette suite d'instructions dans [pytutor](http://pythontutor.com/):
+
+![Python tutor liste](./pytutor-str.gif)
+
+Une chaîne de caractère étant immutable, l'argument par défaut reste vide.

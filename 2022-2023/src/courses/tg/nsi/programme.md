@@ -1,0 +1,345 @@
+---
+'tags'  :    ['numérique  et   sciences  informatiques',  'nsi'  ,    'programme'  ,    'officiel'  ,    '2020'  ,    'terminale'  ,    'lycée'  ]
+tocHTML: '<ul><li><a href="#préambule" data-localhref="true">Préambule</a></li><ul><li><a href="#démarche-de-projet" data-localhref="true">Démarche de projet</a></li><li><a href="#modalités-de-mise-en-œuvre" data-localhref="true">Modalités de mise en œuvre</a></li></ul><li><a href="#éléments-de-programme" data-localhref="true">Éléments de programme</a></li><ul><li><a href="#histoire-de-linformatique" data-localhref="true">Histoire de l’informatique</a></li><li><a href="#structures-de-données" data-localhref="true">Structures de données</a></li><li><a href="#bases-de-données" data-localhref="true">Bases de données</a></li><li><a href="#architectures-matérielles-systèmes-dexploitation-et-réseaux" data-localhref="true">Architectures matérielles, systèmes d’exploitation et réseaux</a></li><li><a href="#langages-et-programmation" data-localhref="true">Langages et programmation</a></li><li><a href="#algorithmique" data-localhref="true">Algorithmique</a></li></ul></ul>'
+---
+
+
+
+
+
+<!-- Conversion initiale effectuée grâce à https://pdf2md.morethan.io/ -->
+<blockquote class="blockquote">
+<p>Ce document est une retranscription non officielle du programme de <em>numérique et sciences informatiques</em> de terminale générale applicable à la rentrée 2020. La version officielle est consultable sur <a href="https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/93/3/spe247_annexe_1158933.pdf">eduscol</a>.</p>
+</blockquote>
+<h2 id="préambule" class="anchored">Préambule</h2>
+<p>L’enseignement de spécialité de numérique et sciences informatiques du cycle terminal de la voie générale vise l’appropriation des fondements de l’informatique pour préparer les élèves à une poursuite d’études en les formant à la pratique d’une démarche scientifique et en développant leur appétence pour des activités de recherche.</p>
+<p>L’objectif de cet enseignement général est l’appropriation des concepts et des méthodes qui fondent l’informatique, dans ses dimensions scientifiques et techniques. Il s’appuie sur l’universalité de quatre concepts fondamentaux et la variété de leurs interactions :</p>
+<ul>
+<li>les <strong>données</strong>, qui représentent sous une forme numérique unifiée des informations très diverses: textes, images, sons, mesures physiques, sommes d’argent, etc. ;</li>
+<li>les <strong>algorithmes</strong>, qui spécifient de façon abstraite et précise des traitements à effectuer sur les données à partir d’opérations élémentaires ;</li>
+<li>les <strong>langages</strong>, qui permettent de traduire les algorithmes abstraits en programmes textuels ou graphiques de façon à ce qu’ils soient exécutables par les machines ;</li>
+<li>les <strong>machines</strong>, et leurs systèmes d’exploitation, qui permettent d’exécuter des programmes en enchaînant un grand nombre d’instructions simples, assurent la persistance des données par leur stockage et gèrent les communications. Y sont inclus les <strong>objets connectés</strong> et les <strong>réseaux</strong>.</li>
+</ul>
+<p>À ces concepts s’ajoute un élément transversal : les <strong>interfaces</strong> qui permettent la communication, la collecte des données et la commande des systèmes.</p>
+<p>Cet enseignement prolonge les enseignements d’informatique dispensés à l’école primaire, au collège en mathématiques et en technologie et, en classe de seconde, l’enseignement commun Sciences numériques et technologie. Il s’appuie aussi sur l’algorithmique pratiquée en mathématiques en classe de seconde. Il approfondit les notions étudiées et les compétences travaillées en classe de première dans l’enseignement de spécialité. Il autorise tous les choix de couplage avec les autres spécialités.</p>
+<p>L’enseignement de spécialité en classe terminale concerne les élèves ayant confirmé ce choix parmi les trois spécialités suivies en classe de première. À ce titre, dans le cadre des six heures hebdomadaires et dans une logique d’exigence disciplinaire et de préparation à l’enseignement supérieur, les élèves sont amenés à approfondir leurs connaissances et à développer un solide niveau de compétences.</p>
+<p>L’enseignement de spécialité de numérique et sciences informatiques permet de développer les compétences suivantes, constitutives de la pensée informatique :</p>
+<ul>
+<li>analyser et modéliser un problème en termes de flux et de traitement d’informations ;</li>
+<li>décomposer un problème en sous-problèmes, reconnaître des situations déjà analysées et réutiliser des solutions ;</li>
+<li>concevoir des solutions algorithmiques ;</li>
+<li>traduire un algorithme dans un langage de programmation, en spécifier les interfaces et les interactions, comprendre et réutiliser des codes sources existants, développer des processus de mise au point et de validation de programmes ;</li>
+<li>mobiliser les concepts et les technologies utiles pour assurer les fonctions d’acquisition, de mémorisation, de traitement et de diffusion des informations ;</li>
+<li>développer des capacités d’abstraction et de généralisation.</li>
+</ul>
+<p>Cet enseignement se déploie en mettant en activité les élèves, <strong>sous des formes variées</strong> qui permettent de développer des compétences transversales :</p>
+<ul>
+<li>faire preuve d’autonomie, d’initiative et de créativité ;</li>
+<li>présenter un problème ou sa solution, développer une argumentation dans le cadre d’un débat ;</li>
+<li>coopérer au sein d’une équipe dans le cadre d’un projet ;</li>
+<li>rechercher de l’information, partager des ressources ;</li>
+<li>faire un usage responsable et critique de l’informatique.</li>
+</ul>
+<p>La progression peut suivre un rythme annuel construit autour de périodes spécifiques favorisant une alternance entre divers types d’activités.</p>
+<p>L’enseignement de numérique et sciences informatiques permet l’acquisition des compétences numériques qui font l’objet d’une certification en fin de cycle terminal. Comme tous les enseignements de spécialité, il contribue au développement des compétences orales à travers notamment la pratique de l’argumentation. Celle-ci conduit à préciser sa pensée et à expliciter son raisonnement de manière à convaincre. Elle permet à chacun de faire évoluer sa pensée, jusqu’à la remettre en cause si nécessaire, pour accéder progressivement à la vérité par la preuve. Elle prend un relief particulier pour ceux qui choisiront de préparer l’épreuve orale terminale du baccalauréat en l’adossant à cet enseignement de spécialité.</p>
+<h3 id="démarche-de-projet" class="anchored">Démarche de projet</h3>
+<p>Un enseignement d’informatique ne saurait se réduire à une présentation de concepts ou de méthodes sans permettre aux élèves de se les approprier en développant des projets.</p>
+<p>Un quart au moins de l’horaire total de la spécialité est réservé à la conception et à l’élaboration de projets conduits par les élèves.</p>
+<p>Les projets réalisés par les élèves, sous la conduite du professeur, constituent un apprentissage fondamental tant pour l’appropriation des concepts informatiques que pour l’acquisition de compétences. En classe de première comme en classe terminale, ils peuvent porter sur des problématiques issues d’autres disciplines et ont essentiellement pour but d’imaginer des solutions répondant à un problème ; dans la mesure du possible, il convient de laisser le choix du thème du projet aux élèves. Il peut s’agir d’un approfondissement théorique des concepts étudiés en commun, d’une application à d’autres disciplines telle qu’une simulation d’expérience, d’exploitation de modules liés à l’intelligence artificielle et en particulier à l’apprentissage automatique, d’un travail sur des données socioéconomiques, du développement d’un logiciel de lexicographie, d’un projet autour d’un objet connecté ou d’un robot, de la conception d’une bibliothèque implémentant une structure de données complexe, d’un problème de traitement d’image ou de son, d’une application mobile, par exemple de réalité virtuelle ou augmentée, du développement d’un site Web associé à l’utilisation d’une base de données, de la réalisation d’un interpréteur d’un mini-langage, de la recherche d’itinéraire sur une carte (algorithme A*), d’un programme de jeu de stratégie, etc.</p>
+<p>La conduite d’un projet inclut des points d’étape pour faire un bilan avec le professeur, valider des éléments, contrôler l’avancement du projet ou en adapter les objectifs, voire le redéfinir partiellement, afin de maintenir la motivation des élèves.</p>
+<p>Les professeurs veillent à ce que les projets restent d’une ambition raisonnable afin de leur permettre d’aboutir.</p>
+<h3 id="modalités-de-mise-en-œuvre" class="anchored">Modalités de mise en œuvre</h3>
+<p>Les activités pratiques et la réalisation de projets supposent que chaque élève ait un accès individuel à un équipement relié à Internet.</p>
+<p>Un langage de programmation est nécessaire pour l’écriture des programmes : un langage simple d’usage, interprété, concis, libre et gratuit, multiplateforme, largement répandu, riche de bibliothèques adaptées et bénéficiant d’une vaste communauté d’auteurs dans le monde éducatif est à privilégier. Au moment de la conception de ce programme, le langage choisi est Python version 3 (ou supérieure).</p>
+<p>L’expertise dans tel ou tel langage de programmation n’est cependant pas un objectif de formation.</p>
+<p>Le professeur s’attachera à contextualiser le plus souvent possible les activités pratiques en s’appuyant sur des thèmes d’actualité et des problématiques du monde numérique et d’ingénierie numérique dans lesquels évoluent les élèves.</p>
+<p>La culture du numérique et les sciences informatiques s’acquièrent par la pratique. Il convient de placer au maximum l’élève en situation d’activité. L’emploi de démarche de résolution de problèmes est ainsi à privilégier pour mobiliser les différents contenus scientifiques du programme.</p>
+<h2 id="éléments-de-programme" class="anchored">Éléments de programme</h2>
+<p>Le programme, organisé en six rubriques, ne constitue pas un plan de cours. Il appartient aux professeurs de choisir leur progression. Les mêmes notions peuvent être développées et éclairées dans différentes rubriques et leurs interactions mises en évidence.</p>
+<h3 id="histoire-de-linformatique" class="anchored">Histoire de l’informatique</h3>
+<p>Cette rubrique transversale se décline dans chacune des cinq autres.</p>
+<p>Comme tous les concepts scientifiques et techniques, ceux de l’informatique ont une histoire et ont été forgés par des personnes. Les algorithmes sont présents dès l’Antiquité, les machines à calculer apparaissent progressivement au XVIIe siècle, les sciences de l’information sont fondées au XIXe siècle, mais c’est en 1936 qu’apparaît le concept de machine universelle, capable d’exécuter tous les algorithmes, et que les notions de machine, algorithme, langage et information sont pensées comme un tout cohérent. Les premiers ordinateurs ont été construits en 1948 et leur puissance a ensuite évolué exponentiellement. Parallèlement, les ordinateurs se sont diversifiés dans leurs tailles, leurs formes et leurs emplois : téléphones, tablettes, montres connectées, ordinateurs personnels, serveurs, fermes de calcul, méga-ordinateurs. Le réseau Internet, développé depuis 1969, relie aujourd’hui ordinateurs et objets connectés.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span> Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>       Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Événements clés de l’histoire de l’informatique</td>
+<td>Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.</td>
+<td><p>Identifier l’évolution des rôles relatifs des logiciels et des matériels.</p>
+<p>Ces repères viennent compléter ceux qui ont été introduits en première.</p>
+<p>Ces repères historiques sont construits au fur et à mesure de la présentation des concepts et techniques.</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="structures-de-données" class="anchored">Structures de données</h3>
+<p>L’écriture sur des exemples simples de plusieurs implémentations d’une même structure de données permet de faire émerger les notions d’interface et d’implémentation, ou encore de structure de données abstraite.</p>
+<p>Le paradigme de la programmation objet peut être utilisé pour réaliser des implémentations effectives des structures de données, même si ce n’est pas la seule façon de procéder.</p>
+<p>Le lien est établi avec la notion de modularité qui figure dans la rubrique « langages et programmation » en mettant en évidence l’intérêt d’utiliser des bibliothèques ou des API (Application Programming Interface).</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>   Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>   Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>          Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structures de données, interface et implémentation.</td>
+<td><p>Spécifier une structure de données par son interface.</p>
+<p>Distinguer interface et implémentation.</p>
+<p>Écrire plusieurs implémentations d’une même structure de données.</p></td>
+<td>L’abstraction des structures de données est introduite après plusieurs implémentations d’une structure simple comme la file (avec un tableau ou avec deux piles).</td>
+</tr>
+<tr class="even">
+<td>Vocabulaire de la programmation objet : classes, attributs, méthodes, objets.</td>
+<td><p>Écrire la définition d’une classe.</p>
+<p>Accéder aux attributs et méthodes d’une classe.</p></td>
+<td>On n’aborde pas ici tous les aspects de la programmation objet comme le polymorphisme et l’héritage.</td>
+</tr>
+<tr class="odd">
+<td><p>Listes, piles, files : structures linéaires.</p>
+<p>Dictionnaires, index et clé.</p></td>
+<td><p>Distinguer des structures par le jeu des méthodes qui les caractérisent.</p>
+<p>Choisir une structure de données adaptée à la situation à modéliser.</p>
+<p>Distinguer la recherche d’une valeur dans une liste et dans un dictionnaire.</p></td>
+<td>On distingue les modes FIFO(<em>first</em> <em>in first out</em>) et LIFO (<em>last in first</em> <em>out</em>) des piles et des files.</td>
+</tr>
+<tr class="even">
+<td><p>Arbres : structures hiérarchiques.</p>
+<p>Arbres binaires : nœuds, racines, feuilles, sous-arbres gauches, sous-arbres droits.</p></td>
+<td><p>Identifier des situations nécessitant une structure de données arborescente.</p>
+<p>Évaluer quelques mesures des arbres binaires (taille, encadrement de la hauteur, etc.).</p></td>
+<td>On fait le lien avec la rubrique « algorithmique ».</td>
+</tr>
+<tr class="odd">
+<td><p>Graphes : structures relationnelles.</p>
+<p>Sommets, arcs, arêtes, graphes orientés ou non orientés.</p></td>
+<td><p>Modéliser des situations sous forme de graphes.</p>
+<p>Écrire les implémentations correspondantes d’un graphe : matrice d’adjacence, liste de successeurs/de prédécesseurs.</p>
+<p>Passer d’une représentation à une autre.</p></td>
+<td><p>On s’appuie sur des exemples comme le réseau routier, le réseau électrique, Internet, les réseaux sociaux.</p>
+<p>Le choix de la représentation dépend du traitement qu’on veut mettre en place : on fait le lien avec la rubrique « algorithmique ».</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="bases-de-données" class="anchored">Bases de données</h3>
+<p>Le développement des traitements informatiques nécessite la manipulation de données de plus en plus nombreuses. Leur organisation et leur stockage constituent un enjeu essentiel de performance.</p>
+<p>Le recours aux bases de données relationnelles est aujourd’hui une solution très répandue. Ces bases de données permettent d’organiser, de stocker, de mettre à jour et d’interroger des données structurées volumineuses utilisées simultanément par différents programmes ou différents utilisateurs. Cela est impossible avec les représentations tabulaires étudiées en classe de première.</p>
+<p>Des systèmes de gestion de bases de données (SGBD) de très grande taille (de l’ordre du pétaoctet) sont au centre de nombreux dispositifs de collecte, de stockage et de production d’informations.</p>
+<p>L’accès aux données d’une base de données relationnelle s’effectue grâce à des requêtes d’interrogation et de mise à jour qui peuvent par exemple être rédigées dans le langage SQL (<em>Structured Query Language</em>). Les traitements peuvent conjuguer le recours au langage SQL et à un langage de programmation.</p>
+<p>Il convient de sensibiliser les élèves à un usage critique et responsable des données.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>    Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>    Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>       Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Modèle relationnel : relation, attribut, domaine, clef primaire, clef étrangère, schéma relationnel.</td>
+<td>Identifier les concepts définissant le modèle relationnel.</td>
+<td>Ces concepts permettent d’exprimer les contraintes d’intégrité (domaine, relation et référence).</td>
+</tr>
+<tr class="even">
+<td>Base de données relationnelle.</td>
+<td><p>Savoir distinguer la structure d’une base de données de son contenu.</p>
+<p>Repérer des anomalies dans le schéma d’une base de données.</p></td>
+<td><p>La structure est un ensemble de schémas relationnels qui respecte les contraintes du modèle relationnel.</p>
+<p>Les anomalies peuvent être des redondances de données ou des anomalies d’insertion, de suppression, de mise à jour.</p>
+<p>On privilégie la manipulation de données nombreuses et réalistes.</p></td>
+</tr>
+<tr class="odd">
+<td>Système de gestion de bases de données relationnelles.</td>
+<td>Identifier les services rendus par un système de gestion de bases de données relationnelles : persistance des données, gestion des accès concurrents, efficacité de traitement des requêtes, sécurisation des accès.</td>
+<td>Il s’agit de comprendre le rôle et les enjeux des différents services sans en détailler le fonctionnement.</td>
+</tr>
+<tr class="even">
+<td>Langage SQL : requêtes d’interrogation et de mise à jour d’une base de données.</td>
+<td><p>Identifier les composants d’une requête.</p>
+<p>Construire des requêtes d’interrogation à l’aide des clauses du langage SQL : <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>JOIN</code>.</p>
+<p>Construire des requêtes d’insertion et de mise à jour à l’aide de : <code>UPDATE</code>, <code>INSERT</code>, <code>DELETE</code>.</p></td>
+<td>On peut utiliser <code>DISTINCT</code>, <code>ORDER BY</code> ou les fonctions d’agrégation sans utiliser les clauses <code>GROUP BY</code> et <code>HAVING</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="architectures-matérielles-systèmes-dexploitation-et-réseaux" class="anchored">Architectures matérielles, systèmes d’exploitation et réseaux</h3>
+<p>La réduction de taille des éléments des circuits électroniques a conduit à l’avènement de systèmes sur puce (SoCs pour Systems on Chips en anglais) qui regroupent dans un seul circuit nombre de fonctions autrefois effectuées par des circuits séparés assemblés sur une carte électronique. Un tel système sur puce est conçu et mis au point de façon logicielle, ses briques électroniques sont accessibles par des API, comme pour les bibliothèques logicielles.</p>
+<p>Toute machine est dotée d’un système d’exploitation qui a pour fonction de charger les programmes depuis la mémoire de masse et de lancer leur exécution en leur créant des processus, de gérer l’ensemble des ressources, de traiter les interruptions ainsi que les entrées-sorties et enfin d’assurer la sécurité globale du système.</p>
+<p>Dans un réseau, les routeurs jouent un rôle essentiel dans la transmission des paquets sur Internet : les paquets sont routés individuellement par des algorithmes. Les pertes logiques peuvent être compensées par des protocoles reposant sur des accusés de réception ou des demandes de renvoi, comme TCP.</p>
+<p>La protection des données sensibles échangées est au cœur d’Internet. Les notions de chiffrement et de déchiffrement de paquets pour les communications sécurisées sont explicitées.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>   Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>    Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>         Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Composants intégrés d’un système sur puce.</td>
+<td>Identifier les principaux composants sur un schéma de circuit et les avantages de leur intégration en termes de vitesse et de consommation.</td>
+<td>Le circuit d’un téléphone peut être pris comme un exemple : microprocesseurs, mémoires locales, interfaces radio et filaires, gestion d’énergie, contrôleurs vidéo, accélérateur graphique, réseaux sur puce, etc.</td>
+</tr>
+<tr class="even">
+<td>Gestion des processus et des ressources par un système d’exploitation.</td>
+<td><p>Décrire la création d’un processus, l’ordonnancement de plusieurs processus par le système.</p>
+<p>Mettre en évidence le risque de l’interblocage (deadlock).</p></td>
+<td>À l’aide d’outils standard, il s’agit d’observer les processus actifs ou en attente sur une machine. Une présentation débranchée de l’interblocage peut être proposée.</td>
+</tr>
+<tr class="odd">
+<td>Protocoles de routage.</td>
+<td>Identifier, suivant le protocole de routage utilisé, la route empruntée par un paquet.</td>
+<td><p>En mode débranché, les tables de routage étant données, on se réfère au nombre de sauts (protocole RIP) ou au coût des routes (protocole OSPF).</p>
+<p>Le lien avec les algorithmes de recherche de chemin sur un graphe est mis en évidence.</p></td>
+</tr>
+<tr class="even">
+<td>Sécurisation des communications.</td>
+<td><p>Décrire les principes de chiffrement symétrique (clef partagée) et asymétrique (avec clef privée/clef publique).</p>
+<p>Décrire l’échange d’une clef symétrique en utilisant un protocole asymétrique pour sécuriser une communication HTTPS.</p></td>
+<td><p>Les protocoles symétriques et asymétriques peuvent être illustrés en mode débranché, éventuellement avec description d’un chiffrement particulier.</p>
+<p>La négociation de la méthode chiffrement du protocole SSL (Secure Sockets Layer) n’est pas abordée.</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="langages-et-programmation" class="anchored">Langages et programmation</h3>
+<p>Le travail entrepris en classe de première sur les méthodes de programmation est prolongé. L’accent est mis sur une programmation assurant une meilleure sûreté, c’est-à-dire minimisant le nombre d’erreurs. Parallèlement, on montre l’universalité et les limites de la notion de calculabilité.</p>
+<p>La récursivité est une méthode fondamentale de programmation. Son introduction permet également de diversifier les algorithmes étudiés. En classe terminale, les élèves s’initient à différents paradigmes de programmation pour ne pas se limiter à une démarche impérative.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span> Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>        Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Notion de programme en tant que donnée.</p>
+<p>Calculabilité, décidabilité.</p></td>
+<td><p>Comprendre que tout programme est aussi une donnée.</p>
+<p>Comprendre que la calculabilité ne dépend pas du langage de programmation utilisé.</p>
+<p>Montrer, sans formalisme théorique, que le problème de l’arrêt est indécidable.</p></td>
+<td>L’utilisation d’un interpréteur ou d’un compilateur, le téléchargement de logiciel, le fonctionnement des systèmes d’exploitation permettent de comprendre un programme comme donnée d’un autre programme.</td>
+</tr>
+<tr class="even">
+<td>Récursivité.</td>
+<td><p>Écrire un programme récursif.</p>
+<p>Analyser le fonctionnement d’un programme récursif.</p></td>
+<td>Des exemples relevant de domaines variés sont à privilégier.</td>
+</tr>
+<tr class="odd">
+<td>Modularité.</td>
+<td><p>Utiliser des API (Application Programming Interface) ou des bibliothèques.</p>
+<p>Exploiter leur documentation. Créer des modules simples et les documenter.</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Paradigmes de programmation.</td>
+<td>Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet.</td>
+<td>Choisir le paradigme de programmation selon le champ d’application d’un programme. Avec un même langage de programmation, on peut utiliser des paradigmes différents. Dans un même programme, on peut utiliser des paradigmes différents.</td>
+</tr>
+<tr class="odd">
+<td><p>Mise au point des programmes.</p>
+<p>Gestion des bugs.</p></td>
+<td>Dans la pratique de la programmation, savoir répondre aux causes typiques de bugs : problèmes liés au typage, effets de bord non désirés, débordements dans les tableaux, instruction conditionnelle non exhaustive, choix des inégalités, comparaisons et calculs entre flottants, mauvais nommage des variables, etc.</td>
+<td><p>On prolonge le travail entrepris en classe de première sur l’utilisation de la spécification, des assertions, de la documentation des programmes et de la construction de jeux de tests.</p>
+<p>Les élèves apprennent progressivement à anticiper leurs erreurs.</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="algorithmique" class="anchored">Algorithmique</h3>
+<p>Le travail de compréhension et de conception d’algorithmes se poursuit en terminale notamment via l’introduction des structures d’arbres et de graphes montrant tout l’intérêt d’une approche récursive dans la résolution algorithmique de problèmes.</p>
+<p>On continue l’étude de la notion de coût d’exécution, en temps ou en mémoire et on montre l’intérêt du passage d’un coût quadratique en n^2 à <em>n</em> log 2 n ou de n à log 2 n.&nbsp;Le logarithme en base 2 est ici manipulé comme simple outil de comptage (taille en bits d’un nombre entier).</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>   Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>   Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>        Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Algorithmes sur les arbres binaires et sur les arbres binaires de recherche.</td>
+<td><p>Calculer la taille et la hauteur d’un arbre.</p>
+<p>Parcourir un arbre de différentes façons (ordres infixe, préfixe ou suffixe ; ordre en largeur d’abord).</p>
+<p>Rechercher une clé dans un arbre de recherche, insérer une clé.</p></td>
+<td><p>Une structure de données récursive adaptée est utilisée.</p>
+<p>L’exemple des arbres permet d’illustrer la programmation par classe.</p>
+<p>La recherche dans un arbre de recherche équilibré est de coût logarithmique.</p></td>
+</tr>
+<tr class="even">
+<td>Algorithmes sur les graphes.</td>
+<td><p>Parcourir un graphe en profondeur d’abord, en largeur d’abord.</p>
+<p>Repérer la présence d’un cycle dans un graphe.</p>
+<p>Chercher un chemin dans un graphe.</p></td>
+<td><p>Le parcours d’un labyrinthe et le routage dans Internet sont des exemples d’algorithme sur les graphes.</p>
+<p>L’exemple des graphes permet d’illustrer l’utilisation des classes en programmation.</p></td>
+</tr>
+<tr class="odd">
+<td>Méthode « diviser pour régner ».</td>
+<td>Écrire un algorithme utilisant la méthode « diviser pour régner ».</td>
+<td><p>La rotation d’une image bitmap d’un quart de tour avec un coût en mémoire constant est un bon exemple.</p>
+<p>L’exemple du tri fusion permet également d’exploiter la récursivité et d’exhiber un algorithme de coût en n log 2 n dans les pires des cas.</p></td>
+</tr>
+<tr class="even">
+<td>Programmation dynamique.</td>
+<td>Utiliser la programmation dynamique pour écrire un algorithme.</td>
+<td><p>Les exemples de l’alignement de séquences ou du rendu de monnaie peuvent être présentés.</p>
+<p>La discussion sur le coût en mémoire peut être développée.</p></td>
+</tr>
+<tr class="odd">
+<td>Recherche textuelle.</td>
+<td>Étudier l’algorithme de Boyer- Moore pour la recherche d’un motif dans un texte.</td>
+<td><p>L’intérêt du prétraitement du motif est mis en avant.</p>
+<p>L’étude du coût, difficile, ne peut être exigée.</p></td>
+</tr>
+</tbody>
+</table>
+

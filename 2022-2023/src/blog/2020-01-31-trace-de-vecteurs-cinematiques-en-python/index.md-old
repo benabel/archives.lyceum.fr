@@ -1,0 +1,545 @@
+---
+title: "Tracé de vecteurs vitesse et variations de vitesse en Python"
+date: 2020-01-31
+author: "Benjamin Abel"
+image: "index_files/index_14_0.png"
+excerpt: "Comment tracer en Python des vecteurs cinématiques tels que les vecteurs vitesse et variation de vitesse à partir de pointages de vidéos?. Après avoir expliquer comment tracer des vecteurs grâce à la bibliothèque matplotlib de Python, nous créerons une fonction de tracé qui permettra aux élèves d'adapter les tracés à leurs besoins."
+tags: ["physique", "mécanique", "cinématique", "vecteur", "vitesse", "variation"]
+---
+
+## Exploration des possibilités offertes par Python
+
+Dans cette partie nous allons tiliser deux bibliothèques particulièrement adaptées à notre travail:
+
+- [pandas](https://pandas.pydata.org/): pour l'import de données sous format texte.
+- [matplotlib](https://matplotlib.org/): pour le tracé des vecteurs.
+
+A priori ces bibliothèques sont directement installées avec la plupart des distributions python.
+
+
+### Export csv depuis [Logger Pro©](https://www.vernier.com/product/logger-pro-3/)
+
+Une fois les pointages réalisés dans [Logger Pro©](https://www.vernier.com/product/logger-pro-3/), on les exporte au format `csv` dans le même dossier que le script python.
+
+On obtient un fichier `csv` qui a cette forme(ici, il s'agit d'un pointage de lancer de ballon de basket avec rebond, je l'ai appelé [`basket.csv`](./basket.csv)):
+
+```csv
+"Analyse Vidéo: Temps (s)";"Analyse Vidéo: X (m)";"Analyse Vidéo: Y (m)";"Analyse Vidéo: Vitesse X (m/s)";"Analyse Vidéo: Vitesse Y (m/s)"
+0;0,0524329864114;2,06735774994;2,13773602824;1,97072540103
+0,013;0,0898851195624;2,09731945646;0,65546386032;1,3425328963
+0,046;0,0823946929322;2,12728116298;0,416469595422;1,36256531621
+0,079;0,104865972823;2,17971414939;0,821528854964;1,84956069973
+```
+
+Les valeurs sont séparées par des `;` et le séparateur décimal est `,`.
+
+On les importe dans python grâce à la libraire Python `pandas` avec la fonction `read_csv()`, et on simplifie les noms de colonne pour y accéder simplement avec la notation pointée.
+
+- `data.x` pour les abscisses.
+- `data.vitesse_x` pour la composant horizontale de la vitesse.
+
+Nous allons maintenant les importer dans Python grâce à la bibliothèque pandas.
+
+### Import des données avec `pandas`
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+%matplotlib inline
+import pandas as pd
+import matplotlib.pyplot as plt
+## Format A4 pour les graphs(en pouces)
+plt.rcParams["figure.figsize"] = (11.7, 8.3)
+```
+
+</div>
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+data = pd.read_csv("basket.csv", sep=";", decimal=",")
+## On renomme les colonnes sans le Analyse Vidéo ni l'unité
+def rename_cols(col):
+    """Renomme les colonnes pour garder que le symbole"""
+    col = col.split(":")[-1].lower()
+    col = col.split("(")[0]
+    col = col.replace(" ", "_")
+    col = col.strip("_")
+    return col
+##data.head()    
+data = data.rename(rename_cols, axis='columns')
+data.head()
+```
+
+</div>
+
+<div class="card">
+<div class="card-header"><small class="text-muted">Résultat</small></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temps</th>
+      <th>x</th>
+      <th>y</th>
+      <th>vitesse_x</th>
+      <th>vitesse_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000</td>
+      <td>0.052433</td>
+      <td>2.067358</td>
+      <td>2.137736</td>
+      <td>1.970725</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.013</td>
+      <td>0.089885</td>
+      <td>2.097319</td>
+      <td>0.655464</td>
+      <td>1.342533</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.046</td>
+      <td>0.082395</td>
+      <td>2.127281</td>
+      <td>0.416470</td>
+      <td>1.362565</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.079</td>
+      <td>0.104866</td>
+      <td>2.179714</td>
+      <td>0.821529</td>
+      <td>1.849561</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.113</td>
+      <td>0.142318</td>
+      <td>2.247128</td>
+      <td>1.233414</td>
+      <td>2.783728</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+</div>
+
+### Tracé des vecteurs avec `matplotlib`
+
+Les positions sont tracées avec `plt.scatter`, les vecteurs avec `plt.quiver`. Les arguments utilisés peuvent être changés, notamment pour les échelles qui ne sont pas évidentes à régler.
+
+Voici les liens vers la doc.
+
+- https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.scatter.html
+- https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.quiver.html?highlight=quiver#matplotlib.pyplot.quiver
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+## Positions en vert
+plt.scatter(data.x, data.y, color='green', alpha=0.5)
+
+## vecteurs vitesse en bleu
+## TODO travailler sur l'échelle
+plt.quiver(data.x,
+           data.y,
+           data.vitesse_x,
+           data.vitesse_y,
+           color="blue",
+           scale_units="xy",
+           scale=3,
+           alpha=0.5,
+           label="$\\vec{v}$")
+
+## vecteurs accélération en rouge
+## TODO travailler sur l'échelle
+diff = data.diff()
+plt.quiver(data.x,
+           data.y,
+           diff.vitesse_x,
+           diff.vitesse_y,
+           color="red",
+           scale_units="xy",
+           scale=1,
+           alpha=0.5,
+           label="$\\vec{\Delta v}$")
+plt.legend()
+```
+
+</div>
+
+<div class="card">
+<div class="card-header"><small class="text-muted">Résultat</small></div>
+
+
+    <matplotlib.legend.Legend at 0x7f7b08a96e20>
+
+
+</div>
+
+
+![svg](index_files/index_4_1.svg){width=100%}
+
+
+### Améliorations possibles
+
+On peut utiliser une moyenne mobile sur les mesures pour avoir moins de points et améliorer la précison.
+
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+data2 = data.rolling(10, center=True).mean()
+data2
+```
+
+</div>
+
+<div class="card">
+<div class="card-header"><small class="text-muted">Résultat</small></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temps</th>
+      <th>x</th>
+      <th>y</th>
+      <th>vitesse_x</th>
+      <th>vitesse_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>2.2649</td>
+      <td>5.106973</td>
+      <td>1.858375</td>
+      <td>0.876044</td>
+      <td>-1.294343</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>74 rows × 5 columns</p>
+</div>
+
+
+</div>
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+def trace_vecteurs(data):
+    # Positions en vert
+    plt.scatter(data.x, data.y, color='green', alpha=0.5)
+
+    # vecteurs vitesse en bleu
+    # TODO travailler sur l'échelle
+    plt.quiver(data.x,
+               data.y,
+               data.vitesse_x,
+               data.vitesse_y,
+               color="blue",
+               scale_units="xy",
+               scale=3,
+               alpha=0.5,
+               label="$\\vec{v}$")
+
+    # vecteurs accélération en rouge
+    # TODO travailler sur l'échelle
+    diff = data.diff()
+    plt.quiver(data.x,
+               data.y,
+               diff.vitesse_x,
+               diff.vitesse_y,
+               color="red",
+               scale_units="xy",
+               scale=1,
+               alpha=0.5,
+               label= "$\\vec{\Delta v}$")
+    plt.legend()
+trace_vecteurs(data2)
+```
+
+</div>
+
+<div class="card text-white bg-gradient-light stream-output">
+<div class="card-header"><small class="text-muted">Sortie</small></div>
+
+    /usr/lib/python3.8/site-packages/matplotlib/quiver.py:748: RuntimeWarning: invalid value encountered in less
+      short = np.repeat(length < minsh, 8, axis=1)
+    /usr/lib/python3.8/site-packages/matplotlib/quiver.py:762: RuntimeWarning: invalid value encountered in less
+      tooshort = length < self.minlength
+
+
+</div>
+
+-----
+
+
+![svg](index_files/index_7_1.svg){width=100%}
+
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+## sous échantillonage
+N = 3
+data3 = data2.loc[[i for i in data2.index if i % N == 0]]
+trace_vecteurs(data3)
+
+```
+
+</div>
+
+
+![svg](index_files/index_8_0.svg){width=100%}
+
+
+## Création d'un module `trace_cinematique`
+
+Compte tenu de la complexité du code et des paramètres des tracés, j'ai créé un module `trace_cinematique` qui contient une fonction `trace_vecteurs` que les élèves peuvent importer simplement et utiliser en travaillant sur les paramètres proposés de la fonction.
+
+Le module `trace_cinematique` est disponible dans un dépôt sur [framagit](https://framagit.org/benabel/trace_cinematique/).
+
+Vous pouvez le télécharger à cette adresse: <https://framagit.org/benabel/trace_cinematique/-/archive/master/trace_cinematique-master.zip>
+
+N'hésitez pas à faire part de vos remarques en ouvrant un [ticket](https://framagit.org/benabel/trace_cinematique/issues).
+
+
+### Mode d'emploi
+
+Après avoir fait les pointages, les élèves exportent leurs pointages au format `csv` à partir de [Logger Pro©](https://www.vernier.com/product/logger-pro-3/) dans le même dossier que le fichier `trace_cinematique` .
+
+Ensuite dans un fichier nommé par exemple `fichier_eleve.py` placé toujours dans le même dossier, les élèves importent la fonction `trace_vecteurs` et donnent le nom du fichier csv en argument:
+
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+## import de la fonction de tracé
+from trace_cinematique import trace_vecteurs
+
+## appel de la fonction pour le tracé des vecteurs cinematiques
+trace_vecteurs("basket.csv")
+```
+
+</div>
+
+
+![svg](index_files/index_10_0.svg){width=100%}
+
+
+### Travail sur les paramètres du tracé
+
+une documentation de la fonction est disponible grâce à la fonction générique `help()`.
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+help(trace_vecteurs)
+```
+
+</div>
+
+<div class="card text-white bg-gradient-light stream-output">
+<div class="card-header"><small class="text-muted">Sortie</small></div>
+
+    Help on function trace_vecteurs in module trace_cinematique:
+    
+    trace_vecteurs(csv_file, echelle_v=1, echelle_dv=1, n_lissage=10, n_select=1)
+        Tracé de vecteurs vitesses et variations de vecteurs vitesse
+        
+        Arguments
+        ---------
+        csv_file
+            chemin vers le fichier csv des pointages
+        echelle_v
+            echelle de tracé des vecteurs vitesse: par défaut 1
+        echelle_dv
+            echelle de tracé des vecteurs variation de vecteurs vitesses: par défaut 1
+        n_lissage
+            nombre de points de lissage par défaut 10
+        n_select
+            fraction des points ou les vecteurs sont tracés
+            p.ex: pour n_s=3, 1 vecteur sur 3 st tracé
+    
+
+
+</div>
+
+-----
+
+Ensuite en jouant sur les paramètres envoyés à la fonction(échelles , fractions de vecteurs tracés…)
+
+On peut obtenir un tracé comme celui-ci:
+
+------
+
+<div class="card text-white bg-gradient-dark">
+<div class="card-header"><small class="text-muted">Entrée</small></div>
+
+```python
+trace_vecteurs("basket.csv",
+               echelle_v=3,
+               echelle_dv=1,
+               n_lissage=10,
+               n_select=3)
+```
+
+</div>
+
+
+![svg](index_files/index_14_0.svg){width=100%}
+
+
+### Licence et droits d'utilisation
+
+Le code mis à disposition dans le module `trace_cinematique` est sous licence [ISC](https://fr.wikipedia.org/wiki/Licence_ISC), une licence libre qui permet de l'utiliser et le modifier comme bon vous semble.
+
+Le logiciel [Logger Pro©](https://www.vernier.com/product/logger-pro-3/) est un logiciel sous droits d'auteurs, je n'ai aucun rapport avec l'entreprise qui le développe, vous pouvez certainement adapter le code au logiciel que vous utilisez dans votre établissement.

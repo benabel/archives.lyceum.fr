@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="définir-et-appeler-des-fonctions" class="anchored">Définir et appeler des fonctions</h2>
+<p>Écrire les fonctions suivantes, et pour chacune, donner un exemple d’appel avec la sortie attendue.</p>
+<ol type="1">
+<li><p>Une fonction <code>plus_grand(n1, n2)</code> qui <em>renvoie</em> la plus grande valeur de deux valeurs entières données en arguments.</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="1">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_grand</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">):</span>
+<span class="k">    if</span> <span class="n">n1</span> <span class="o">&gt;</span> <span class="n">n2</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">n1</span>
+<span class="c1">    # le else est facultatif</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">n2</span>
+<span></span>
+<span class="n">plus_grand</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># 24</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="highlight"><pre><span></span><span class="mf">24</span>
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Une procédure <code>repete_mot(mot, n)</code> qui <em>affiche</em> un même <code>mot</code> <code>n</code> fois.</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="2">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">repete_mot</span><span class="p">(</span><span class="n">mot</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">mot</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+<span></span>
+<span class="n">
+repete_mot</span><span class="p">(</span><span class="s2">"TO"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># affiche TOTO , NE RENVOIE RIEN</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>TOTO
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Écrivez une fonction <code>plus_grand3(n1, n2, n3)</code> qui <em>renvoie</em> le maximum de trois nombres.</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="3">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_grand3</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">):</span>
+<span class="k">    if</span> <span class="n">n1</span> <span class="o">&gt;</span> <span class="n">n2</span> <span class="ow">and</span> <span class="n">n1</span> <span class="o">&gt;</span> <span class="n">n3</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">n1</span>
+<span class="k">    elif</span> <span class="n">n2</span> <span class="o">&gt;</span> <span class="n">n1</span> <span class="ow">and</span> <span class="n">n2</span> <span class="o">&gt;</span> <span class="n">n3</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">n2</span>
+<span class="c1">    # le else est facultatif</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">n3</span>
+<span></span>
+<span class="n">plus_grand3</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">48</span><span class="p">)</span> <span class="c1"># 48</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="highlight"><pre><span></span><span class="mf">48</span>
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Écrivez une fonction <code>carres(n)</code> pour <em>afficher</em> les valeurs des carrés des nombres compris entre 1 et <code>n</code> (les deux inclus).</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="4">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">carres</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">    for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<span class="nb">        print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span></span>
+<span class="n">carres</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># affiche 1 4 9 16 25</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span><span class="mf">1</span>
+<span class="mf">4</span>
+<span class="mf">9</span>
+<span class="mf">16</span>
+<span class="mf">25</span>
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Écrivez une fonction <code>est_pair(n)</code> pour vérifier si un nombre <code>n</code> donné en argument est pair.</p>
+<p>Cette fonction doit <em>renvoyer</em> un booléen.</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="5">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">est_pair</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">    if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">        return</span> <span class="kc">True</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="k">        return</span> <span class="kc">False</span>
+<span></span>
+<span class="n">est_pair</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span> <span class="c1"># renvoie False</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="highlight"><pre><span></span>False
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Écrivez une fonction <code>factorielle(n)</code> qui <em>renvoie</em> la factorielle d’un entier naturel <code>n</code>.</p>
+<p>Par définition, la factorielle est le résultat de la multiplication d’un nombre entier par tous les nombres entiers inférieurs à celui-ci.</p>
+<p>exemple: La factorielle de 5, qu’on note 5!, est égale à <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>×</mo><mn>4</mn><mo>×</mo><mn>3</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">5\times4\times3\times2\times1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>
+, soit 120.</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="6">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="n">    res</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">    for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<span class="n">        res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">i</span>
+<span class="k">    return</span> <span class="n">res</span>
+<span></span>
+<span class="n">factorielle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># renvoie 120</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="highlight"><pre><span></span><span class="mf">120</span>
+</pre></div>
+
+</div>
+</div></li>
+<li><p><strong>Niveau avancé</strong> Écrivez une fonction <code>est_premier(n)</code> qui prend un nombre <code>n</code> en paramètre et vérifie si le nombre est premier ou non. La fonction doit renvoyer un booléen.</p>
+<p>Par définition, un nombre premier est un nombre naturel supérieur à 1 et qui n’a pas de diviseur positif autre que 1 et lui-même.</p></li>
+<li><p><strong>Niveau avancé</strong> Écrivez une fonction <code>triangle_pascal(n)</code> qui affiche les n premières lignes du triangle de Pascal.</p>
+<p>Le triangle de Pascal est une figure arithmétique et géométrique imaginée par Blaise Pascal.</p>
+<p>Exemple de triangle de Pascal:</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Triangle de Pascal: Chaque nombre est la somme deux chiffres au-dessus.</figcaption><p></p>
+</figure>
+</div>
+</div></li>
+</ol>
+<h2 id="prototyper-des-fonctions" class="anchored">Prototyper des fonctions</h2>
+<p>Donner le prototype des fonctions</p>
+<ul>
+<li><code>plus_grand(n1, n2)</code>,</li>
+<li><code>repete_mot(mot, n)</code>,</li>
+<li><code>est_pair(n)</code></li>
+</ul>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="7">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_grand</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Renvoie la plus grande valeur de deux valeurs entières</span>
+<span class="sd">    données en arguments</span>
+<span class="sd">    </span>
+<span class="sd">    Paramètres</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n1: int</span>
+<span class="sd">    n2: int</span>
+<span class="sd">    </span>
+<span class="sd">    Renvoie</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        n1 si n1 &gt; n2 sinon n2</span>
+<span class="sd">    """</span>
+<span class="k">    if</span> <span class="n">n1</span> <span class="o">&gt;</span> <span class="n">n2</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">n1</span>
+<span class="c1">    # le else est facultatif</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="k">        return</span> <span class="n">n2</span>
+</pre></div>
+
+</div>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="8">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">repete_mot</span><span class="p">(</span><span class="n">mot</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""affiche un même mot n fois</span>
+<span class="sd">    </span>
+<span class="sd">    Paramètres</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mot: str</span>
+<span class="sd">    n: int</span>
+<span class="sd">    </span>
+<span class="sd">    Renvoie</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">        pas de valeur renvoyée que des affichages</span>
+<span class="sd">    """</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">mot</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+
+</div>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="9">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">est_pair</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Vérifie si un nombre n donné en argument est pair</span>
+<span class="sd">    </span>
+<span class="sd">    Paramètres</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n: int</span>
+<span class="sd">    </span>
+<span class="sd">    Renvoie</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True si n est pair et False sinon</span>
+<span class="sd">    """</span>
+<span class="k">    if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">        return</span> <span class="kc">True</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="k">        return</span> <span class="kc">False</span>
+</pre></div>
+
+</div>
+<h2 id="tests-dassertion" class="anchored">Tests d’assertion</h2>
+<ol type="1">
+<li><p>Écrire trois tests d’assertion pour les fonctions:</p>
+<ul>
+<li><code>plus_grand(n1, n2)</code>,</li>
+<li><code>est_pair(n)</code></li>
+</ul>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="10">
+<div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">plus_grand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span>
+<span class="k">assert</span> <span class="n">plus_grand</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">11</span>
+<span class="k">assert</span> <span class="n">plus_grand</span><span class="p">(</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span>
+<span></span>
+<span class="k">assert</span> <span class="n">est_pair</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">est_pair</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+<span class="k">assert</span> <span class="n">est_pair</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+
+</div></li>
+<li><p>Expliquer pourquoi on ne peut pas écrire de test d’assertion pour la fonction <code>repete_mot(mot, n)</code>.</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="11">
+<div class="highlight"><pre><span></span><span class="c1"># assert repete_mot("TO", 2) == "TOTO"</span>
+<span class="k">assert</span> <span class="n">repete_mot</span><span class="p">(</span><span class="s2">"TO"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>TOTO
+</pre></div>
+
+</div>
+</div></li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

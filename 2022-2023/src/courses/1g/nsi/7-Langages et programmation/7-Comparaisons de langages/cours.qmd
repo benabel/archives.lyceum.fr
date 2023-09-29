@@ -1,0 +1,181 @@
+---
+"tags": ["comparaison", "python", "javascript"]
+---
+
+::: programme
++------------------------+-------------------------------+-------------------------------+
+| Contenus               | Capacités attendues           | Commentaires                  |
++========================+===============================+===============================+
+| Diversité et unité des | Repérer, dans un nouveau      | Les manières dont un même     |
+| langages de            | langage de programmation, les | programme simple s’écrit dans |
+| programmation          | traits communs et les traits  | différents langages sont      |
+|                        | particuliers à ce langage.    | comparées.                    |
++------------------------+-------------------------------+-------------------------------+
+:::
+
+Comme nous l'avons vu précédemment un programme permet d'écrire un algorithme afin qu'il soit
+exécuté par un ordinateur.
+
+Il existe de très nombreux langages de programmation aujourd'hui, chacun ayant ses forces et ses
+faiblesses et sera donc adapté à un domaine plutôt qu'à un autre.
+
+Cette année nous utiliserons deux langages: [Python](https://www.python.org/) et [javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript):
+
+- `Python` est très apprécié dans la communauté scientifique
+- alors que le `javascript` est le langage implémenté nativement dans tous les navigateurs web.
+
+Nous allons voir sur l'exemple de ces deux langages qu'il est possible d'écrire les mêmes
+algorithmes avec des syntaxes assez proches.
+
+## Commentaires
+
+Les commentaires sont indispensables pour expliquer votre code à ceux qui le lisent(souvent
+vous-même quelques jours, semaines ou mois après). En `javascript` on utilise le double slash pour le
+commentaire de ligne `//`.
+
+
++---------------------------+----------------------------+
+| python                    | javascript                 |
++===========================+============================+
+| ```python                 | ```js                      |
+| # ceci est un commentaire | // ceci est un commentaire |
+| ```                       | ```                        |
++---------------------------+----------------------------+
+
+
+## Affectation de variable
+
+Dans les deux langages on utilise le simple signe égal `=`, on utilise cependant le mot clé `var` en `js`.
+
++-----------+------------+
+|  python   | javascript |
++===========+============+
+| ```python | ```js      |
+| a = 3     | var a = 3  |
+| ```       | ```        |
++-----------+------------+
+
+::: {.plus titre="let et const"}
+
+Les nouvelles versions de javascript ont ajouté les mots-clés `const` et `let` pour déclarer des
+variables respectivement immutables ou mutables.
+
+:::
+
+## Entrées et sorties
+
+Les entrées permettent de récupérer des données de l'utilisateur pour adapter son fonctionnement
+aux exigences de ce dernier.
+
+Les sorties permettent d'afficher les résultats à l'utilisateur.
+
++----------------------------------------+----------------------------------------------+
+| python                                 | javascript                                   |
++========================================+==============================================+
+| ```python                              | ```js                                        |
+| # entrée                               | // entrée                                    |
+| age = input("Quel age avez-vous?)      | var age = prompt("Quel age avez-vous?")      |
+| # sortie                               | // sortie                                    |
+| print("Votre âge est " + age + " ans") | console.log("Votre âge est " + age + " ans") |
+| ```                                    | ```                                          |
++----------------------------------------+----------------------------------------------+
+
+## Instructions conditionnelles
+
+Dans les deux langages on utilise les mots-clef `if` et `else` cependant le `elif` n'existe pas en
+`js`. On utilise `else if`.
+
+D'autre part, le javascript n'utilise pas l'indentation pour définir les blocs de code, il les
+place entre accolades `{}`
+
+
++----------------------------------------+----------------------------------------------+
+| python                                 | javascript                                   |
++========================================+==============================================+
+| ```python                              | ```js                                        |
+| if age > 18:                           | if (age > 18) {                              |
+|     print("Vous êtes majeur")          |   console.log(`Vous êtes majeur`)            |
+| elif age >16:                          | } else if (age > 16) {                       |
+|     print("Bientôt majeur")            | console.log(`Bientôt majeur`)                |
+| else:                                  | } else {                                     |
+|     print("Soyez patient")             |   console.log(`Soyez patient`)               |
+|                                        | }                                            |
+| ```                                    | ```                                          |
++----------------------------------------+----------------------------------------------+
+
+
+## Boucles
+
+Les deux langages définissent les boucles `for` et `while`.
+
+### Boucle `for`
+
++---------------------+--------------------------------+
+| python              | javascript                     |
++=====================+================================+
+| ```python           | ```js                          |
+| for i in range(10): | for (var i = 0; i < 10; i++) { |
+|     print(i)        |     console.log(i)             |
+|                     | }                              |
+| ```                 | ```                            |
++---------------------+--------------------------------+
+
+### Boucle `while`
+
++-----------------------------------+---------------------------------------+
+| python                            | javascript                            |
++===================================+=======================================+
+| ```python                         | ```js                                 |
+| i = 0 # initialisation            | var i = 0 // initialisation           |
+| while i < 10: # condition d'arrêt | while (i < 10) { // condition d'arrêt |
+|     print(i)                      |     console.log(i)                    |
+|     # incrémentation de l'indice  |     // incrémentation de l'indice     |
+|     i = i + 1                     |     i = i + 1                         |
+| else:                             | }                                     |
+|     print("Soyez patient")        |     console.log(`Soyez patient`)      |
+|                                   | }                                     |
+| ```                               | ```                                   |
++-----------------------------------+---------------------------------------+
+
+
+## Fonctions
+
+### Définition de la fonction
+
+En python le mot clef utilisé est `def` et `function` en javascript, dans les deux cas le retour de
+fonction se fait par le mot-clé `return`.
+
++--------------------+-----------------------+
+| python             | javascript            |
++====================+=======================+
+| ```python          | ```js                 |
+| def carré(nb):     | function carré (nb) { |
+|     return nb**2   |     return nb**2      |
+|                    | }                     |
+| ```                | ```                   |
++--------------------+-----------------------+
+
+### Appel de la fonction
+
+Même syntaxe, on écrit le nom de la fonction avec le ou les arguments de la fonction entre parenthèse.
+
++-----------+------------+
+|  python   | javascript |
++===========+============+
+| ```python | ```js      |
+| carré(2)  | carré(2)   |
+| ```       | ```        |
++-----------+------------+
+
+
+
+
+::: {.plus titre="Fonction sans paramètres"}
+
+Une fonction peut ne pas avoir de paramètres, mais son appel **nécessite** la présence des
+parenthèses.
+
+```
+compte()
+```
+:::

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="graphe-dun-réseau-électrique" class="anchored">Graphe d’un réseau électrique</h2>
+<p>Un de vos amis travaille pour un distributeur d’électricité.</p>
+<p>Il doit proposer à son supérieur une représentation du réseau reliant différentes villes. Comme il n’y arrive pas trop, il voudrait que vous la lui fassiez.</p>
+<p>Pour simplifier le problème, il a déjà renommé les villes en A, B, C, D, E et F. De plus, il vous donne les informations suivantes :</p>
+<ul>
+<li>la ville A est reliée par un réseau électrique aux villes B, E et F,</li>
+<li>la ville B est reliée par un réseau électrique aux villes A, C et D,</li>
+<li>la ville C est reliée par un réseau électrique aux villes B, D, E et F,</li>
+<li>la ville D est reliée par un réseau électrique aux villes B, C et F,</li>
+<li>la ville E est reliée par un réseau électrique aux villes A, C et F,</li>
+<li>la ville F est relié par un réseau électrique aux villes A, C, D et E.</li>
+</ul>
+<ol type="1">
+<li>Proposer un graphe qui modélise la situation.</li>
+<li>Ce graphe est-il complet ? Pourquoi ?</li>
+</ol>
+<p><a href="mln" class="cite-source">CC-BY-SA-NC Mon lycée numérique</a></p>
+<h2 id="représentation-dun-graphe-non-orienté" class="anchored">Représentation d’un graphe non orienté</h2>
+<p>Voici un ensemble des relations :</p>
+<ul>
+<li>A est ami avec tout le monde sauf G,</li>
+<li>B est ami avec A, D et H,</li>
+<li>C est ami avec A, F, G et H,</li>
+<li>D est ami avec A, B et H,</li>
+<li>E est ami avec A et H,</li>
+<li>F est ami avec A et C,</li>
+<li>G est ami avec C et H,</li>
+<li>H est ami avec A, B, C, D, E et G.</li>
+</ul>
+<ol type="1">
+<li>Représenter ce graphe et vérifier qu’il est non orienté.</li>
+<li>Implémenter ce graphe sous la forme d’un dictionnaire de liste dans lequel chaque clé représente le nœud étudié et les sommets adjacents sont représentés sous la forme d’une liste.</li>
+<li>Écrire la matrice d’adjacence et vérifier qu’elle est symétrique(<em>on utilisera l’ordre alphabétique pour indexer les nœuds</em>).</li>
+<li>Implémenter la matrice en python sous la forme d’une liste de liste.</li>
+</ol>
+<p><a href="mln" class="cite-source">CC-BY-SA-NC Mon lycée numérique</a></p>
+<h2 id="représentation-dun-graphe-orienté" class="anchored">Représentation d’un graphe orienté</h2>
+<p>Voici un ensemble de relations de suivi sur un réseau social.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/medium-social-graph-directed.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Réseau social d’amis avec suivi</figcaption><p></p>
+</figure>
+</div>
+<ol type="1">
+<li>Implémenter ce graphe sous la forme d’un dictionnaire de liste dans lequel chaque clé représente le nœud étudié et les sommets successeurs sont représentés sous la forme d’une liste.</li>
+<li>Écrire la matrice d’adjacence et vérifier qu’elle n’est pas symétrique(<em>on utilisera l’ordre alphabétique pour indexer les nœuds</em>).</li>
+</ol>
+<h2 id="représentation-et-parcours-dun-graphe-pondéré-non-orienté" class="anchored">Représentation et parcours d’un graphe pondéré non-orienté</h2>
+<p>Voici un graphe représentant les distances dans le réseau sud-est.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../../2gt/snt/images/reseau-routier-sud-est.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Réseau sud-Est</figcaption><p></p>
+</figure>
+</div>
+<ol type="1">
+<li>Implémenter ce graphe sous la forme d’un dictionnaire de liste dans lequel chaque clé représente le nœud étudié et les sommets adjacents sont représentés sous la forme d’une liste de dictionnaires clé(sommet adjacent): valeur(distance).</li>
+<li>Écrire la matrice d’adjacence et vérifier qu’elle est symétrique(<em>on utilisera l’ordre alphabétique pour indexer les nœuds</em>).</li>
+<li>Proposer un algorithme qui renvoie tous les chemins possibles pour aller de Nice à Lyon sans jamais passer deux fois par la même ville. On utilisera trois paramètres d’entrée: le graphe implémenté sous la forme d’un dictionnaire d’adjacence comme celui de la question 2 et les deux villes de départ et d’arrivée.</li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

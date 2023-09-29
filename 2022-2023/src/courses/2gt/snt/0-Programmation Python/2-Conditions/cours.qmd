@@ -1,0 +1,186 @@
+---
+tags: ["cours", "seconde", "lycée", "snt", "seconde générale et technologique",
+       "sciences numériques et technologie"]
+---
+
+::: programme
+
++------------------------------+---------------------------------------------------------+
+|         **Contenus**         |                 **Capacités attendues**                 |
++==============================+=========================================================+
+| Instructions conditionnelles | Écrire et développer des programmes pour répondre à des |
+|                              | problèmes et modéliser des phénomènes physiques,        |
+|                              | économiques et sociaux.                                 |
++------------------------------+---------------------------------------------------------+
+
+:::
+
+::: {.intro layout-ncol=2}
+
+Dans ce chapitre, nous allons voir comment utiliser des conditions dans un programme pour que son
+fonctionnement change en fonction des valeurs des variables.
+
+<wc-wikimage title="110_to_91_interchange_-_panoramio.jpg" caption="Beaucoup de chemins ont possibles, reste à aller sur le bon en fonction de notre destination."></wc-wikimage>
+
+:::
+
+## La logique booléenne
+
+Les booléens sont un type particulier de variables qui n'ont que deux valeurs possibles:
+
+- `True`: Vrai
+- `False`: Faux
+
+### Les opérateurs de comparaison
+
+Pour comparer des variables en Python, on utilise les opérateurs suivants:
+
+- `x < y`: x est-il inférieur à y ?
+- `x <= y`: x est-il inférieur ou égal à y ?
+- `x > y`: x est-il supérieur à y ?
+- `x >= y`: x est-il supérieur ou égal à y ?
+- `x == y`: x est-il égal à y ?
+- `x != y`: x est-il différent y ?
+
+Les opérateurs de comparaison retournent un booléen: `True` ou `False`.
+
+::: examples
+
+```{python}
+# affectation des variables
+a = 7
+b = 13
+c = 7
+
+# comparaisons
+print(a < b) 
+print(a == b)
+print(a != b)
+print(a == c)
+```
+:::
+
+
+::: callout-warning
+
+Il faut bien distinguer le simple égal `=` utilisé pour l'_affectation des variables_
+et le double égal `==` utilisé pour la _condition d'égalité_.
+
+:::
+
+### Opérateurs booléens
+
+On peut réaliser des combinaisons de valeurs booléennes avec les opérateurs:
+
+- `and`: _ET LOGIQUE_ vrai si deux conditions sont vraies.
+- `or`: _OU LOGIQUE_ vrai si au moins une des deux conditions est vraie.
+
+::: examples
+
+```{python}
+age = 15
+
+# comparaisons
+print(age > 10)  
+print(age >= 18) 
+
+# combinaisons
+print(age > 10 and age >= 18)  
+print(age > 10 or age >= 18)   
+```
+:::
+
+## Les instructions conditionnelles
+
+En fonction de conditions on va exécuter des blocs de code différents.
+
+En Python, les blocs sont précédés de `:` et sont indentés avec 4 espaces.
+
+```
+entrée dans le bloc:
+    1ère instruction du bloc
+    2e instruction du bloc
+    ...
+sortie du bloc
+```
+
+### L'instruction SI `if` 
+
+Le bloc d'instruction contenu n'est exécuté que si la condition est vérifiée.
+
+**Syntaxe**
+
+```python
+if condition:
+    instruction 1
+    instruction 2
+    ...
+```
+
+::: example
+
+```python
+mdp = input("Entrez votre mot de passe.")
+if mdp == "azerty :
+    print("Connexion réussie")
+```
+
+:::
+
+### L'instruction SINON `else`
+
+Indique le bloc d'instruction a exécuté si la condition n'est pas vérifiée.
+
+**Syntaxe**
+
+```python
+if condition:
+    bloc d'instructions exécuté si la condition est vraie
+else:
+    bloc d'instructions exécuté si la condition est fausse
+```
+
+::: example
+
+```python
+mdp = input("Entrez votre mot de passe.")
+if mdp == "azerty :
+    print("Connexion réussie")
+else:
+    print("Mot de passe faux")
+```
+
+:::
+
+### L'instruction SINON SI `elif`
+
+Cette instruction permet de réaliser des tests imbriqués, c'est un raccourci pour les instructions
+`else` et `if`.
+
+**Syntaxe**
+
+```python
+if condition 1:
+    bloc d'instructions exécuté si la condition 1 est vraie
+elif condition 2:
+    bloc d'instructions exécuté si la condition 1 est fausse et la condition 2 vraie
+else:
+    bloc d'instructions exécuté si les conditions 1 et 2 sont fausses
+```
+
+::: example
+
+```python
+nom = input("Entrez votre nom d'utilisateur.")
+mdp = input("Entrez votre mot de passe.")
+if nom != "nice06" :
+    print("Nom d'utilisateur inconnu")
+elif mdp != "azerty":
+    print("Mot de passe incorrect")
+else:
+    # le mot de passe et le nom d'utilisateurs sont corrects
+    print("Connexion réussie")
+
+```
+
+:::

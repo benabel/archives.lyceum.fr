@@ -1,0 +1,48 @@
+## Utilisation du module `math`
+
+Donner deux façons d'importer la fonction `sqrt()` du module `math` et de
+   calculer ensuite la racine carrée de 2.
+
+## Création d'un projet sur les nombres premiers
+
+**Cahier des charges:**
+
+Votre projet doit contenir 4 modules:
+
+- `premier.py`: module contenant quatre fonctions qui permettent de savoir si un nombre est premier
+  telles que décrites
+  [ici](https://fr.wikipedia.org/wiki/Test_de_primalit%C3%A9#M%C3%A9thode_na%C3%AFve). 
+
+- `eratosthene.py`: module permettant la génération de nombres premiers par le [crible
+  d'Eratosthène](https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne#Pseudo-code). Ce
+  module devra être importé dans le module `premier.py` pour implémenter le 4e algorithme proposé
+  dans l'article Wikipédia.
+
+- `test_premier.py`: module qui importe les fonctions définies dans `premier.py` et qui vérifie que
+  toutes les fonctions de test de primalité définies dans le module `premier.py` ont des résultats
+  justes. On pourra utiliser cet [article
+  Wikipédia](https://fr.wikipedia.org/wiki/Liste_de_nombres_premiers) ainsi que ces références pour
+  trouver des nombres premiers à tester.
+
+  **Ne pas oublier de tester des nombres non premiers**
+
+  _Facultatif, vous pouvez également chronométrer le temps d'exécution des tests grâce au module
+  `time` de python et afficher les résultats en cas de succès._
+
+- `main.py`: le module principal destiné à l'utilisateur. Ce programme demande à l'utilisateur de
+  choisir un nombre entier et un algorithme, et lui indique si ce nombre est premier ou pas. 
+
+  **Attention: Le programme devra recommencer _tant que_ l'utilisateur le souhaite sans être
+  relancé à chaque fois.**
+
+Le projet doit être documenté:
+
+- Toutes les fonctions ont une `Docstring`.
+- Tous les modules ont une `Docstring`.
+
+
+Ajouter un fichier `README` qui explique la nature du projet et les détails pratiques comme:
+
+- comment lancer le programme principal,
+- comment lancer les tests,
+- les limites de votre programme..._

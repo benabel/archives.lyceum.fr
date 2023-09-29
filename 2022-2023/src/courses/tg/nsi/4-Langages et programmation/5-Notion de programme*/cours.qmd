@@ -1,0 +1,178 @@
+---
+tags: ["calculabilité", "décidabilité", "problème de l'arrêt"]
+---
+
+**Ce chapitre ne pourra pas faire l'objet d'une évaluation lors de l'épreuve terminale écrite et pratique de l'enseignement de spécialité.**
+[BO MENE2121274N](https://www.education.gouv.fr/bo/21/Hebdo30/MENE2121274N.htm){.cite-source}
+
+::: programme
+
++---------------------+----------------------------------+--------------------------------------+
+| Contenus            | Capacités attendues              | Commentaires                         |
++=====================+==================================+======================================+
+| Notion de programme | Comprendre que tout              | L’utilisation d’un interpréteur ou   |
+| en tant que donnée. | programme est aussi une          | d’un compilateur, le                 |
+|                     | donnée.                          | téléchargement de logiciel, le       |
+| Calculabilité,      |                                  | fonctionnement des systèmes          |
+| décidabilité.       | Comprendre que la calculabilité  | d’exploitation permettent de         |
+|                     | ne dépend pas du langage de      | comprendre un programme              |
+|                     | programmation utilisé.           | comme donnée d’un autre              |
+|                     |                                  | programme.                           |
+|                     | Montrer, sans formalisme         |                                      |
+|                     | théorique, que le problème de    |                                      |
+|                     | l’arrêt est indécidable.         |                                      |
++---------------------+----------------------------------+--------------------------------------+
+
+:::
+
+> Comme nous l'avons vu en première, un programme est la traduction électronique d'un algorithme
+> afin qu'il puisse être compris par une machine. Dans ce chapitre, nous allons montrer qu'un
+> programme ne peut pas tout calculer ou décider.
+
+## Notion de programme en tant que donnée
+
+Certains programmes utilisent comme données le code source d'autres programmes.
+
+::: examples
+
+- un système d'exploitation(linux p.ex) est un programme qui éxecute d'autres programmes(traitement
+  de textes p.ex).
+- l'interpréteur Python, est un programme qui traduit le code source de votre programme Python en
+  instructions exécutables par machine: du [langage machine](/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/2-jeu-dinstructions-du-processeur).
+
+:::
+
+## Calculabilité
+
+La notion de calculabilité date de 1936, il s'agit de savoir ce qui peut être calculé par un
+ordinateur, et donc permet de voir les **limites des problèmes** que peuvent résoudre les
+ordinateurs.
+
+::: prop
+
+On dira qu’une fonction est **calculable** si elle peut être programmée dans l’un ou l’autre des
+langages de programmation usuels. Cette année, nous utiliserons le langage Python comme témoin :
+une fonction est calculable si on peut la programmer en Python.
+
+:::
+
+::: plus
+
+Il existe d’autres modèles de calcul, comme le λ-calcul, les fonctions récursives, les machines de
+Turing, que nous ne développerons pas ici, et qui ne font pas partie des attendus du programme. 
+
+La thèse de Church postule que tous ces modèles de calcul sont équivalents : une fonction
+calculable pour un modèle l’est pour un autre. Cela nous permet d’utiliser le modèle des fonctions
+programmables en Python sans perdre de généralité.
+
+:::
+
+[Calculabilité et décidabilité sur eduscol](https://cache.media.eduscol.education.fr/file/NSI/63/6/RA20_NSI_G_T_calculabilite_1298636.pdf){.cite-source}
+
+On peut calculer beaucoup de choses avec un ordinateur comme le nombre $\pi$, les nombres
+rationnels $\sqrt{2}$, $\sqrt{3}$...
+
+Par contre, il a été prouvé que certains problèmes n'étaient pas calculables comme par exemple :
+
+- Savoir si un énoncé mathématique est un théorème ou pas_(s'il peut être démontré)_.
+- Créer un programme qui prend un programme en entrée, et qui indiquera si le programme s'arrête ou
+  pas : le problème de l'arrêt.
+
+Il s'agit de problèmes de **décidabilité**.
+
+## Décidabilité
+
+décidabilité
+
+:   Un problème de décision est dit décidable s'il existe un algorithme, une procédure mécanique qui se
+    termine en un nombre fini d'étapes, qui le décide, c'est-à-dire qui réponde par oui ou par non à la
+    question posée par le problème. S'il n'existe pas de tels algorithmes, le problème est dit
+    indécidable. Par exemple, le problème de l'arrêt est indécidable. 
+
+    [Article Wikipédia sur la décidabilité](https://fr.wikipedia.org/wiki/D%C3%A9cidabilit%C3%A9#D%C3%A9finition){.cite-source}
+
+### Exemples de problèmes décidables
+
+Tous les sous-ensembles finis des entiers sont décidables, par exemple:
+
+- Décider si un entier naturel est pair ou non;
+- décider si un entier naturel est premier ou non.
+
+::: {.plus titre="Décidable ne signifie pas résolvable"}
+
+Notons qu'un ensemble peut être théoriquement décidable sans qu'en pratique la décision puisse être
+faite, parce que celle-ci nécessiterait trop de temps (plus que l'âge de l'univers) ou trop de
+ressources (plus que le nombre d'atomes de l'univers). L'objet de la théorie de la complexité des
+algorithmes est d'étudier les problèmes de décision en prenant en compte ressources et temps de
+calcul. 
+
+[Article Wikipédia sur la décidabilité](https://fr.wikipedia.org/wiki/D%C3%A9cidabilit%C3%A9#Exemples_d'ensembles_et_de_probl%C3%A8mes_d%C3%A9cidables){.cite-source}
+
+:::
+
+### Exemple de problème indécidable : le problème de l'arrêt
+
+L'indécidabilité du problème de l'arrêt a été démontrée par Alan Turing en 1936.
+
+On peut l'interpréter ainsi : il n'existe pas de programme permettant de tester n'importe quel
+programme informatique afin de conclure dans tous les cas s'il s'arrêtera en un temps fini ou
+bouclera à jamais.
+
+**Preuve par l'absurde de non-décidabilité de l'arrêt**
+
+Supposons qu'il existe une fonction calculable `termine(programme, données)` qui prend 2 arguments :
+
+- un programme
+- des données d'entrée pour ce programme
+
+et qui renverra `True` si le programme termine et `False` s'il entre dans une boucle infinie.
+
+::: examples
+
+- en utilisant la fonction `est_pair()` définie dans la partie [exercice](./exo)
+
+`termine(est_pair, 128)` ou `termine(est_pair, 127)` renverraient `True`.
+
+- une fonction définie ainsi :
+
+```python
+def est_positif(n):
+    if n >= 0:
+        return True
+    else:
+        while n < 0:
+            n = n - 1 # boucle infinie
+        return False
+
+```
+
+entrainerait une boucle infinie pour les nombres négatifs, et on aurait :
+
+`termine(est_positif, 128)` renvoie `True` alors que `termine(est_positif, -2)` renverrait `False`
+non pas car -2 n'est pas positif mais parce que l'appel `positif(-2)` ne se terminerait jamais.
+
+:::
+
+Définissons une fonction `test_sur_soi`.
+
+```python
+def test_sur_soi(programme):
+    if termine(programme, programme):
+        while True: pass # boucle infinie
+```
+
+On obtient alors une contradiction si on appelle `test_sur_soi` sur elle-même :
+
+```python
+test_sur_soi(test_sur_soi)
+
+# l'appel éxecutera l'algorithme suivant
+if termine(test_sur_soi, test_sur_soi):
+    while True: pass
+```
+
+On arrive au paradoxe suivant :
+
+$$
+{\displaystyle {\it {{test\_sur\_soi}({\it {{test\_sur\_soi}){\text{ termine}}\iff {\it {{test\_sur\_soi}({\it {{test\_sur\_soi}){\text{ boucle indéfiniment}}}}}}}}}}}
+$$

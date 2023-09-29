@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="spécification-et-tests-de-la-division-euclidienne" class="anchored">Spécification et tests de la division euclidienne</h2>
+<p>Copier le code suivant dans un notebook et complétez-le en ajoutant le prototype et les commentaires.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">division_euclidienne</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">""" Ecrire la spécification de la fonction</span>
+<span></span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span></span>
+<span class="sd">
+    Returns</span>
+<span class="sd">    -------</span>
+<span></span>
+<span class="sd">    """</span>
+<span class="c1">    # Ajouter des commentaires pour expliquer </span>
+<span class="k">    if</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">:</span>
+<span class="k">        return</span> <span class="o">-</span><span class="mi">1</span>
+<span></span>
+<span class="k">    if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">        return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">    
+    # mes commentaires ici sur une ligne</span>
+<span></span>
+<span class="n">    r</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">    q</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">    while</span> <span class="p">(</span><span class="n">r</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>
+<span class="n">        r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">        q</span> <span class="o">=</span> <span class="n">q</span> <span class="o">+</span> <span class="mi">1</span>
+<span></span>
+<span class="k">    return</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span></span>
+<span class="c1"># Tests</span>
+<span class="k">def</span> <span class="nf">test_division_euclidienne</span><span class="p">():</span>
+<span class="c1">    # Ajouter des commentaires pour expliquer</span>
+<span class="c1">    # quelles sont les vérifications effectuées</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">    # Verifications d'erreurs</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mf">10.3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="c1">    # ...</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">    assert</span> <span class="n">division_euclidienne</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="c1">    
+# Lancement du test</span>
+<span class="n">test_division_euclidienne</span><span class="p">()</span>
+</pre></div>
+
+<h2 id="créer-est-prototyper-une-fonction-qui-satisfait-à-des-tests" class="anchored">Créer est prototyper une fonction qui satisfait à des tests</h2>
+<ol type="1">
+<li>Créer et prototyper une fonction <code>appartient()</code> qui indique si un élément est présent dans une liste, et qui passe le jeu de tests suivants:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_appartient</span><span class="p">():</span>
+<span class="k">   assert</span> <span class="n">appartient</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="ow">is</span> <span class="kc">True</span>
+<span class="k">   assert</span> <span class="n">appartient</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="ow">is</span> <span class="kc">False</span>
+</pre></div>
+
+<ol start="2" type="1">
+<li>Compléter le jeu de tests avec des cas limites: liste vide, types de données différents…</li>
+</ol>
+<h2 id="algorithmes-classiques" class="anchored">Algorithmes classiques</h2>
+<p>Reprenez les algorithmes classiques du <a href="../../8-algorithmique/1-parcours-sequentiel-dun-tableau">chapitre 1 de la partie 8</a>: et les implémenter sous forme de fonctions prototypées et testées:</p>
+<ol type="1">
+<li>Recherche d’un extremum, au choix: maximum ou minimum d’un tableau.</li>
+<li>Calcul d’une moyenne des valeurs d’un tableau.</li>
+</ol>
+<p><strong>Attention: il conviendra d’écrire l’algorithme de parcours du tableau et de ne pas utiliser les méthodes prédéfinies dans python <code>max</code>, <code>min</code>…</strong></p>
+<h2 id="recherche-dans-une-documentation" class="anchored">Recherche dans une documentation</h2>
+<ol type="1">
+<li><p>Rechercher dans la documentation du module <code>random</code> comment créer un dé numérique qui renvoie de façon équiprobable les valeurs entières de 1 à 6. Tester la fonction pour vérifier son fonctionnement.</p></li>
+<li><p>Rechercher dans la documentation du module <code>math</code> comment calculer le logarithme en base 2 d’un nombre. Tester la fonction pour vérifier son fonctionnement: p.ex <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mo stretchy="false">(</mo><mn>16</mn><mo stretchy="false">)</mo><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\log_2(16) = 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">16</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span>
+; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mo stretchy="false">(</mo><mn>256</mn><mo stretchy="false">)</mo><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">\log_2(256) = 8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">256</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span></span></span></span>
+. Expliquer ce que calcule cette fonction.</p></li>
+<li><p>Rechercher dans la documentation de la librairie <code>pandas</code> plusieurs méthodes permettant d’itérer sur les valeurs d’une <code>Dataframe</code>.</p></li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

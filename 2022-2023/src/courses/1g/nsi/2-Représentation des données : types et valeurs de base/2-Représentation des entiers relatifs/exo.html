@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="intervalles-de-valeurs" class="anchored">Intervalles de valeurs</h2>
+<ol type="1">
+<li><p>En complément à deux, quel intervalle d’entiers relatifs peut-on représenter avec des mots de 8 bits? Combien de valeurs sont représentées?</p></li>
+<li><p>Même question avec des mots de 32 bits et 64 bits.</p></li>
+</ol>
+<p><a href="http://www.editions-eyrolles.com/Livre/9782212135435/" class="cite-source">Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés et des idées de projets par Gilles Dowek</a></p>
+<h2 id="coder-sur-4-bits-des-entiers-relatifs" class="anchored">Coder sur 4 bits des entiers relatifs</h2>
+<p>Dans cet exercice, on utilise un codage en complément à <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2^{4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span>
+sur 4 bits.</p>
+<ol type="1">
+<li><p>Quels sont les nombres minimum et maximum que l’on peut représenter?</p></li>
+<li><p>Compléter le tableau suivant:</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th>Base 10</th>
+<th>Complément à 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-8</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>-1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>-5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>0111</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>1001</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>1100</code></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Réaliser les calculs suivants en binaire: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">7-5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span>
+et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>2</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">-2\times 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span>
+.</p></li>
+</ol>
+<h2 id="complément-à-2-sur-un-octet" class="anchored">Complément à 2 sur un octet</h2>
+<ol type="1">
+<li><p>Trouver la représentation binaire sur huit bits des entiers relatifs <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>
+et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>128</mn></mrow><annotation encoding="application/x-tex">-128</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">128</span></span></span></span>
+.</p></li>
+<li><p>Trouver la représentation décimale des entiers relatifs dont la représentation binaire sur huit bits est <code>0000 1000</code> et <code>1000 1000</code>.</p></li>
+<li><p>Calculer la représentation binaire sur huit bits de l’entier relatif <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">-16</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">16</span></span></span></span>
+, puis de son opposé.</p></li>
+<li><p>Représenter les entiers relatifs <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>96</mn></mrow><annotation encoding="application/x-tex">96</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">96</span></span></span></span>
+et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>48</mn></mrow><annotation encoding="application/x-tex">48</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">48</span></span></span></span>
+en binaire sur huit bits. Ajouter les deux nombres binaires obtenus en utilisant l’algorithme de l’addition binaire. Quel est l’entier relatif obtenu ? Pourquoi est-il négatif ?</p></li>
+<li><p>Calculer en binaire <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn><mo>−</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">15 - 7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">15</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span>
+.</p></li>
+</ol>
+<p><a href="http://www.editions-eyrolles.com/Livre/9782212135435/" class="cite-source">Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés et des idées de projets par Gilles Dowek</a></p>
+<h2 id="le-bug-de-lan-2038-de-linux" class="anchored"><a href="https://fr.wikipedia.org/wiki/Bug_de_l%27an_2038">Le bug de l’an 2038</a> de linux ***</h2>
+<p>Voici un extrait d’un article developpez.com sur le bug de l’an 2038.</p>
+<blockquote class="blockquote">
+<p>Depuis la version 5.6 du noyau, publié en mars dernier, l’équipe a commencé à proposer des correctifs pour résoudre le problème de l’année 2038. Il s’agit d’un bogue détecté il y a longtemps dans l’encodage du temps sur les systèmes de type Unix, dont Linux, macOS, et d’autres systèmes d’exploitation compatibles POSIX. Sur ces systèmes, le calcul du temps est effectué en fonction des secondes écoulées à partir du 1er janvier 1970 à 00:00:00 UTC (nommée également epoch). Un jour donnera par exemple 86 400 secondes et une année 31 536 000 secondes.</p>
+<p>Et plus les années passeront, plus il faudra de nombres pour représenter les dates. Pour effectuer le décompte sur ces systèmes, lorsque la fonction <code>time()</code> est appelée, elle retourne un entier signé de type “time_t”. Si le système est 32 bits, la valeur retournée est un entier signé 32 bits et si le système est 64 bits, la valeur retournée est 64 bits. Sur un système 64 bits, les limites sont supérieures à 292 milliards d’années. Il n’y a donc pas de soucis à se faire ici (ce sera beaucoup plus que l’âge de notre planète ou l’estimation de son espérance de vie).</p>
+<p>Mais sur les systèmes 32 bits, le nombre de secondes total que la fonction peut retourner est <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>31</mn></msup><mtext>–</mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{31}–1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span><span class="mord">–1</span></span></span></span>
+, c’est-à-dire environ 136 ans. La date de référence étant le 1er janvier 1970 à 00:00:00 UTC, la date minimale représentable est le vendredi 13 décembre 1901 et la date maximale représentable est le mardi 19 janvier 2038 à 3 h 14 min 8 s. Lorsqu’il sera 3 h 14 min 8 s le 19 janvier 2038, le système passera au 13 décembre 1901 à la seconde suivante (également appelé le bogue de l’an 2038 abrégé en anglais Y2038). Bien évidemment, ce ne sera pas la fin du monde. <a href="https://linux.developpez.com/actu/309958/Linux-5-10-rc1-se-separe-d-une-fonctionnalite-vieille-de-plusieurs-decennies-qui-a-cause-des-bogues-de-securite-et-repousse-le-probleme-de-l-an-2038-a-l-an-2486-via-un-reglage-de-l-horodatage-XFS/" class="cite-source">article developpez.com</a></p>
+</blockquote>
+<ol type="1">
+<li><p>Quelle est la plus grande valeur pouvant être encodé sur 32 bits en complément à deux?</p></li>
+<li><p>Convertir la valeur précédente en ans jours heures minute seconde en considérant que les années font toutes 365 jours.</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="1">
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>68 ans 35 jours 3 heures 14 minutes 7 secondes
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Vérifier la date indiquée par l’article sachant que les années bissextiles entre 1970 et 2038 sont:</p>
+<p>1972; 1976; 1980; 1984; 1988; 1992; 1996; 2000; 2004; 2008; 2012; 2016; 2020; 2024; 2028; 2032; 2036.</p></li>
+<li><p>Vérifier alors l’affirmation suivante concernant l’heure affichée une seconde plus tard si le bug n’était pas réparé.</p>
+<blockquote class="blockquote">
+<p>Le bug de l’an 2038, ou bogue de l’an 2038 (au Canada), aussi appelé Y2038, est un bug informatique similaire au bug de l’an 2000 qui pourrait perturber le fonctionnement d’un grand nombre de systèmes informatiques le 19 janvier 2038 à 3 h 14 min 8 s, temps universel. Ils afficheront alors 13 décembre 1901 et 20 h 45 min 52 s.</p>
+</blockquote>
+<p><a href="https://fr.wikipedia.org/wiki/Bug_de_l%27an_2038" class="cite-source">Article Bug de l’an 2038 sur Wikipédia</a></p></li>
+<li><p>Repérer deux erreurs de l’article du site developpez.com.</p></li>
+</ol>
+<h2 id="codage-et-décodage-en-python" class="anchored">Codage et décodage en Python</h2>
+<ol type="1">
+<li><p>Créer un programme qui demande un nombre à encoder et un nombre <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>
+de bits d’encodage, et qui renvoie la représentation binaire du nombre en complément <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span>
+de ce nombre.</p>
+<p>P.ex:</p>
+<ul>
+<li>si vous demandez le codage de -1 sur 4 bits, le programme affiche: <code>"1111"</code>.</li>
+<li>si vous demandez le codage de 5 sur 4 bits, le programme affiche: <code>"0101"</code>.</li>
+</ul>
+<p>Pour simplifier, on supposera que l’utilisateur ne demande pas l’impossible, et que le nombre demandé peut être codé sur le nombre de bits donnés.</p></li>
+</ol>
+<p><strong>Aides:</strong></p>
+<ul>
+<li><p>Pour obtenir la représentation binaire d’un nombre entier naturel on utilise: <code>bin(nombre)[2:]</code>.</p>
+<p>P.ex: <code>bin(127)[2:]</code> renvoie <code>'1111111'</code></p></li>
+<li><p>Pour parcourir un à un les éléments d’une chaîne de caractère, on utilise la syntaxe <code>for élément in chaine_de_caractères:</code></p>
+<p>P.ex:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">chiffre</span> <span class="ow">in</span> <span class="s1">'1111111'</span><span class="p">:</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">chiffre</span><span class="p">)</span>
+</pre></div>
+</li>
+<li><p>Pour forcer l’écriture sur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>
+bits d’un nombre binaire, on utilise: <code>'{:0nd}'.format(nombre)</code></p>
+<p>P.ex: <code>'{:08d}'.format(1000)</code> renvoie <code>'00001000'</code></p></li>
+</ul>
+<p><strong>Une des difficultés notables de cet exercice est qu’il faut traiter les nombres binaires comme des <code>str</code>. Réfléchissez bien aux types utilsés.</strong></p>
+<ol start="2" type="1">
+<li><p>Créer un programme qui demande un code binaire à décoder écrit sur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>
+bits, et qui renvoie la valeur décimale de ce nombre par décodage du nombre en complément <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span>
+.</p>
+<p>P.ex:</p>
+<ul>
+<li>si vous demandez le décodage de <code>"1111"</code>, le programme affiche: <code>-1</code>.</li>
+<li>si vous demandez le décodage de <code>"0101"</code>, le programme affiche: <code>5</code>.</li>
+</ul>
+<p>le codage binaire donnant implicitement la valeur de n pour le complément à 2.</p></li>
+</ol>
+<p><strong>Aide</strong></p>
+<p>Pour obtenir la longueur d’une chaîne de caractères, on utilise la fonction <code>len()</code>.</p>
+<p>P.ex: <code>len("0101")</code> renvoie <code>4</code>.</p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>programme</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="programme_files/libs/clipboard/clipboard.min.js"></script>
+<script src="programme_files/libs/quarto-html/quarto.js"></script>
+<script src="programme_files/libs/quarto-html/popper.min.js"></script>
+<script src="programme_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="programme_files/libs/quarto-html/anchor.min.js"></script>
+<link href="programme_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="programme_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="programme_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="programme_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="programme_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<blockquote class="blockquote">
+<p>Ce document est une retranscription non officielle du programme de Numérique et sciences du numérique de première générale applicable à la rentrée 2019. La version officielle est consultable sur <a href="http://cache.media.education.gouv.fr/file/CSP/41/2/1e_Numerique_et_sciences_informatiques_Specialite_Voie_G_1025412.pdf">eduscol</a>.</p>
+</blockquote>
+<h2 id="préambule" class="anchored">Préambule</h2>
+<p>L’enseignement de spécialité de numérique et sciences informatiques du cycle terminal de la voie générale vise l’appropriation des fondements de l’informatique pour préparer les élèves à une poursuite d’études dans l’enseignement supérieur, en les formant à la pratique d’une démarche scientifique et en développant leur appétence pour des activités de recherche.</p>
+<p>L’objectif de cet enseignement, non professionnalisant, est l’appropriation des concepts et des méthodes qui fondent l’informatique, dans ses dimensions scientifiques et techniques. Cet enseignement s’appuie sur l’universalité de quatre concepts fondamentaux et la variété de leurs interactions:</p>
+<ul>
+<li>Les <strong>données</strong>, qui représentent sous une forme numérique unifiée des informations très diverses : textes, images, sons, mesures physiques, sommes d’argent, etc.</li>
+<li>Les <strong>algorithmes</strong>, qui spécifient de façon abstraite et précise des traitements à effectuer sur les données à partir d’opérations élémentaires.</li>
+<li>Les <strong>langages</strong>, qui permettent de traduire les algorithmes abstraits en <strong>programmes</strong> textuels ou graphiques de façon à ce qu’ils soient exécutables par les machines.</li>
+<li>Les <strong>machines</strong>, et leurs systèmes d’exploitation, qui permettent d’exécuter des programmes en enchaînant un grand nombre d’instructions simples, assurant la persistance des données par leur stockage, et de gérer les communications. On y inclut les <strong>objets connectés</strong> et les <strong>réseaux</strong>.</li>
+</ul>
+<p>À ces concepts s’ajoute un élément transversal : les interfaces qui permettent la communication avec les humains, la collecte des données et la commande des systèmes.</p>
+<p>Cet enseignement prolonge les enseignements d’informatique dispensés à l’école primaire, au collège en mathématiques et en technologie et, en seconde, l’enseignement commun de sciences numériques et technologie . Il s’appuie aussi sur l’algorithmique pratiquée en mathématiques en seconde. Il permet de développer des compétences :</p>
+<ul>
+<li>analyser et modéliser un problème en termes de flux et de traitement d’informations ;</li>
+<li>décomposer un problème en sous-problèmes, reconnaître des situations déjà analysées et réutiliser des solutions ;</li>
+<li>concevoir des solutions algorithmiques ;</li>
+<li>traduire un algorithme dans un langage de programmation, en spécifier les interfaces et les interactions, comprendre et réutiliser des codes sources existants, développer des processus de mise au point et de validation de programmes ;</li>
+<li>mobiliser les concepts et les technologies utiles pour assurer les fonctions d’acquisition, de mémorisation, de traitement et de diffusion des informations ;</li>
+<li>développer des capacités d’abstraction et de généralisation.</li>
+</ul>
+<p>Cet enseignement a vocation à multiplier les occasions de mise en activité des élèves, sous des <strong>formes variées</strong> qui permettent de développer des compétences transversales :</p>
+<ul>
+<li>faire preuve d’autonomie, d’initiative et de créativité ;</li>
+<li>présenter un problème ou sa solution, développer une argumentation dans le cadre d’un débat ;</li>
+<li>coopérer au sein d’une équipe dans le cadre d’un projet ;</li>
+<li>rechercher de l’information, partager des ressources ;</li>
+<li>faire un usage responsable et critique de l’informatique.</li>
+</ul>
+<p>La progression peut suivre un rythme annuel construit autour de périodes spécifiques favorisant une alternance entre divers types d’activités.</p>
+<p>Cet enseignement contribue à l’acquisition des compétences numériques qui font l’objet d’une certification en fin de cycle terminal.</p>
+<p>Comme tous les enseignements, cette spécialité contribue au développement des compétences orales à travers notamment la pratique de l’argumentation. Celle-ci conduit à préciser sa pensée et à expliciter son raisonnement de manière à convaincre. Elle permet à chacun de faire évoluer sa pensée, jusqu’à la remettre en cause si nécessaire, pour accéder progressivement à la vérité par la preuve. Si ces considérations sont valables pour tous les élèves, elles prennent un relief particulier pour ceux qui choisiront de poursuivre cet enseignement de spéciali té en terminale et qui ont à préparer l’épreuve orale terminale du baccalauréat. Il convient que les travaux proposés aux élèves y contribuent dès la classe de première.</p>
+<h2 id="démarche-de-projet" class="anchored">Démarche de projet</h2>
+<p>Un enseignement d’informatique ne saurait se réduire à une présentation de concepts ou de méthodes sans permettre aux élèves de se les approprier en développant des projets applicatifs.</p>
+<p>Une part de l’horaire de l’enseignement d’au moins un quart du total en classe de première doit être réservée à la conception et à l’élaboration de projets conduits par des groupes de deux à quatre élèves.</p>
+<p>Les projets réalisés par les élèves, sous la conduite du professeur, constituent un apprentissage fondamental tant pour la compréhension de l’informatique que pour l’acquisition de compétences. En classe de première comme en classe terminale, ils peuvent porter sur des problématiques issues d’autres disciplines et ont essentiellement pour but d’imaginer des solutions répondant à l’expression d’un besoin ; dans la mesure du possible, il convient de laisser le choix du thème du projet aux élèves eux-mêmes. Il peut s’agir d’un approfondissement théorique des concepts étudiés en commun, d’une application à d’autres disciplines telle qu’une simulation d’expérience, d’un travail sur des données socioéconomiques, du développement d’un logiciel de lexicographie, d’un projet autour d’un objet connecté ou d’un robot, de la conception d’une bibliothèque implémentant une structure de données complexe, d’un problème de traitement d’image ou de son, d’une application mobile, par exemple de réalité virtuelle ou augmentée, du développement d’un site Web associé à l’utilisation d’une base de données, de la réalisation d’un interprète d’un mini-langage, d ’un programme de jeu de stratégie, etc.</p>
+<p>La gestion d’un projet inclut des points d’étape pour faire un bilan avec le professeur, valider des éléments, contrôler l’avancement du projet ou adapter ses objectifs, voire le redéfinir partiellement, afin de maintenir la motivation des élèves.</p>
+<p>Les professeurs veillent à ce que les projets restent d’une ambition raisonnable afin de leur permettre d’aboutir.</p>
+<h2 id="modalités-de-mise-en-œuvre" class="anchored">Modalités de mise en œuvre</h2>
+<p>Les activités pratiques et la réalisation de projets supposent, pour chaque élève, l’accès à un équipement relié à internet.</p>
+<p>Un langage de programmation est nécessaire pour l’écriture des programmes : un langage simple d’usage, interprété, concis, libre et gratuit, multiplateforme, largement répandu, riche de bibliothèques adaptées et bénéficiant d’une vaste communauté d’auteurs dans le monde éducatif est à privilégier. Au moment de la conception de ce programme, le langage choisi est Python version 3 (ou supérieure). L’expertise dans tel ou tel langage de programmation n’est cependant pas un objectif de formation.</p>
+<h2 id="éléments-de-programme" class="anchored">Éléments de programme</h2>
+<p>Le programme est organisé autour de huit rubriques. Il ne constitue cependant pas un plan de cours. Il appartient aux professeurs de choisir leur progression, sans faire de chaque partie un tout insécable et indépendant des autres. Au contraire, les mêmes notions peuvent être développées et éclairées dans différentes rubriques, en mettant en lumière leurs interactions.</p>
+<h3 id="histoire-de-linformatique" class="anchored">Histoire de l’informatique</h3>
+<p>Cette rubrique transversale se décline dans chacune des sept autres.</p>
+<p>Comme toute connaissance scientifique et technique, les concepts de l’informatique ont une histoire et ont été forgés par des personnes. Les algorithmes sont présents dès l’Antiquité, les machines à calculer apparaissent progressivement au XVII e siècle, les sciences de l’information sont fondées au XIX e siècle, mais c’est en 1936 qu’apparaît le concept de machine universelle, capable d’exécuter tous les algorithmes, et que les notions de machine, algorithme, langage et information sont pensées comme un tout cohérent. Les premiers ordinateurs ont été construits en 1948 et leur puissance a ensuite évolué exponentiellement. Parallèlement, les ordinateurs se sont diversifiés dans leur taille, leur forme et leur emploi : téléphones, tablettes, montres connectées, ordinateurs personnels, serveurs, fermes de calcul, méga-ordinateurs. Le réseau internet, développé depuis 1969, relie aujourd’hui ordinateurs et objets connectés.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span> Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>       Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Événements clés de l’histoire de l’informatique</td>
+<td>Situer dans le temps les principaux événements de l’histoire de l’informatique et leurs protagonistes.</td>
+<td>Ces repères historiques seront construits au fur et à mesure de la présentation des concepts et techniques.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="représentation-des-données-types-et-valeurs-de-base" class="anchored">Représentation des données : types et valeurs de base</h3>
+<p>Toute machine informatique manipule une représentation des données dont l’unité minimale est le bit 0/1, ce qui permet d’unifier logique et calcul. Les données de base sont représentées selon un codage dépendant de leur nature : entiers, flottants, caractères et chaînes de caractères. Le codage conditionne la taille des différentes valeurs en mémoire.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>       Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>    Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>        Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Écriture d’un entier positif dans une base b ⩾ 2</td>
+<td>Passer de la représentation d’une base dans une autre.</td>
+<td>Les bases 2, 10 et 16 sont privilégiées.</td>
+</tr>
+<tr class="even">
+<td>Représentation binaire d’un entier relatif</td>
+<td>Évaluer le nombre de bits nécessaires à l’écriture en base 2 d’un entier, de la somme ou du produit de deux nombres entiers. Utiliser le complément à 2.</td>
+<td>Il s’agit de décrire les tailles courantes des entiers (8, 16, 32 ou 64 bits). Il est possible d’évoquer la représentation des entiers de taille arbitraire de Python.</td>
+</tr>
+<tr class="odd">
+<td>Représentation approximative des nombres réels : notion de nombre flottant</td>
+<td>Représentation approximative des nombres réels : notion de nombre flottant</td>
+<td>0.2 + 0.1 n’est pas égal à 0.3. Il faut éviter de tester l’égalité de deux flottants. Aucune connaissance précise de la norme IEEE-754 n’est exigible.</td>
+</tr>
+<tr class="even">
+<td><p>Valeurs booléennes : <code>0</code>, <code>1</code>.</p>
+<p>Opérateurs booléens : <code>and</code>, <code>or</code>, <code>not</code>.</p>
+<p>Expressions booléennes</p></td>
+<td>Dresser la table d’une d’une expression booléenne.</td>
+<td><p>Le ou exclusif (<code>xor</code>) est évoqué.</p>
+<p>Quelques applications directes comme l’addition binaire sont présentées.</p>
+<p>L’attention des élèves est attirée sur le caractère séquentiel de certains opérateurs booléens.</p></td>
+</tr>
+<tr class="odd">
+<td><p>Représentation d’un texte en machine.</p>
+<p>Exemples des encodages <code>ASCII</code>, <code>ISO-8859-1</code>, <code>Unicode</code></p></td>
+<td><p>Identifier l’intérêt des différents systèmes d’encodage.</p>
+<p>Convertir un fichier texte dans différents formats d’encodage.</p></td>
+<td>Aucune connaissance précise des normes d’encodage n’est exigible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="représentation-des-données-types-construits" class="anchored">Représentation des données : types construits</h3>
+<p>À partir des types de base se constituent des types construits, qui sont introduits au fur et à mesure qu’ils sont nécessaires. Il s’agit de présenter tour à tour les p-uplets ( tuples), les enregistrements qui collectent des valeurs de types différents dans des champs nommés et les tableaux qui permettent un accès calculé direct aux éléments. En pratique, on utilise les appellations de Python, qui peuvent être différentes de celles d’autres langages de programmation.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>    Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span> Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>        Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p-uplets. p-uplets nommés</td>
+<td>Écrire une fonction renvoyant un p-uplet de valeurs.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Tableau indexé, tableau donné en compréhension</td>
+<td><p>Lire et modifier les éléments d’un tableau grâce à leurs index.</p>
+<p>Constuire un tableau par compréhension.</p>
+<p>Utiliser des tableaux de tableaux pour représenter des matrices, notation <code>a[i][j]</code></p>
+<p>Itérer sur les éléments d’un tableau.</p></td>
+<td><p>Seuls les tableaux dont les éléments sont du même type sont présentés.</p>
+<p>Aucune connaissance des tranches (slices) n’est exigible.</p>
+<p>L’aspect dynamique des tableaux de Python n’est pas évoqué.</p>
+<p>Python identifie listes et tableaux.</p>
+<p>Il n’est pas fait référence aux tableaux de la bibliothèque NumPy.</p></td>
+</tr>
+<tr class="odd">
+<td>Dictionnaires par clés et valeurs</td>
+<td><p>Construire une entrée de dictionnaire</p>
+<p>Itérer sur les éléments d’un dictionnaire.</p></td>
+<td><p>Il est possible de présenter les données EXIF d’une image sous la forme d’un enregistrement.</p>
+<p>En Python, les p-uplets nommés sont implémentés par des dictionnaires.</p>
+<p>Utiliser les méthodes <code>keys()</code>, <code>values()</code> et <code>items()</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="traitement-de-données-en-tables" class="anchored">Traitement de données en tables</h3>
+<p>Les données organisées en table correspondent à une liste de p-uplets nommés qui partagent les mêmes descripteurs. La mobilisation de ce type de structure de données permet de préparer les élèves à aborder la notion de base de données qui ne sera présentée qu’en classe terminale. Il s’agit d’utiliser un tableau doublement indexé ou un tableau de p-uplets, dans un langage de programmation ordinaire et non dans un système de gestion de bases de données.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>  Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>   Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>      Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Indexation de tables</td>
+<td>Importer une table depuis un fichier texte tabulé ou un fichier CSV.</td>
+<td>Est utilisé un tableau doublement indexé ou un tableau de p-uplets qui partagent les mêmes descripteurs.</td>
+</tr>
+<tr class="even">
+<td>Recherche dans une table</td>
+<td>Rechercher les lignes d’une table vérifiant des critères exprimés en logique propositionnelle.</td>
+<td>La recherche de doublons, les tests de cohérence d’une table sont présentés.</td>
+</tr>
+<tr class="odd">
+<td>Tri d’une table</td>
+<td>Trier une table suivant une colonne.</td>
+<td>Une fonction de tri intégrée au système ou à une bibliothèque peut être utilisée.</td>
+</tr>
+<tr class="even">
+<td>Fusion de tables</td>
+<td>Construire une nouvelle table en combinant les données de deux tables.</td>
+<td>La notion de domaine de valeurs est mise en évidence.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interactions-entre-lhomme-et-la-machine-sur-le-web" class="anchored">Interactions entre l’homme et la machine sur le <em>Web</em></h3>
+<p>Lors de la navigation sur le Web, les internautes interagissent avec leur machine par le biais des pages Web.</p>
+<p>L’Interface Homme-Machine (IHM) repose sur la gestion d’événements associés à des éléments graphiques munis de méthodes algorithmiques.</p>
+<p>La compréhension du dialogue client-serveur déjà abordé en classe de seconde est consolidée, sur des exemples simples, en identifiant les requêtes du client, les calculs puis les réponses du serveur traitées par le client.</p>
+<p>Il ne s’agit pas de décrire exhaustivement les différents éléments disponibles, ni de développer une expertise dans les langages qui permettent de mettre en œuvre le dialogue tels que <code>PHP</code> ou <code>JavaScript</code>.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>     Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>      Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>          Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Modalités de l’interaction entre l’homme et la machine</p>
+<p>Événements</p></td>
+<td><p>Identifier les différents composants graphiques permettant d’interagir avec une application Web</p>
+<p>Identifier les événements que les fonctions associées aux différents composants graphiques sont capables de traiter</p></td>
+<td>Il s’agit d’examiner le code HTML d’une page comprenant des composants graphiques et de distinguer ce qui relève de la description des composants graphiques en HTML de leur comportement (réaction aux événements) programmé par exemple en JavaScript.</td>
+</tr>
+<tr class="even">
+<td>Interaction avec l’utilisateur dans une page Web</td>
+<td>Analyser et modifier les méthodes exécutées lors d’un clic sur un bouton d’une page Web.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Interaction client- serveur.</p>
+<p>Requêtes HTTP, réponses du serveur</p></td>
+<td><p>Distinguer ce qui est exécuté sur le client ou sur le serveur et dans quel ordre.</p>
+<p>Distinguer ce qui est mémorisé dans le client et retransmis au serveur.</p>
+<p>Reconnaître quand et pourquoi la transmission est chiffrée.</p></td>
+<td>Il s’agit de faire le lien avec ce qui a été vu en classe de seconde et d’expliquer comment on peut passer des paramètres à un site grâce au protocole HTTP.</td>
+</tr>
+<tr class="even">
+<td>Formulaire d’une page Web</td>
+<td><p>Analyser le fonctionnement d’un formulaire simple.</p>
+<p>Distinguer les transmissions de paramètres par les requêtes POST ou GET.</p></td>
+<td>Discuter les deux types de requêtes selon le type des valeurs à transmettre et/ou leur confidentialité.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="architectures-matérielles-et-systèmes-dexploitation" class="anchored">Architectures matérielles et systèmes d’exploitation</h3>
+<p>Exprimer un algorithme dans un langage de programmation a pour but de le rendre exécutable par une machine dans un contexte donné. La découverte de l’architecture des machines et de leur système d’exploitation constitue une étape importante.</p>
+<p>Les circuits électroniques sont au cœur de toutes les machines informatiques. Les réseaux permettent de transmettre l’information entre machines. Les systèmes d’exploitation gèrent et optimisent l’ensemble des fonctions de la machine, de l’exécution des programmes aux entrées-sorties et à la gestion d’énergie.</p>
+<p>On étudie aussi le rôle des capteurs et actionneurs dans les entrées-sorties clavier, interfaces graphiques et tactiles, dispositifs de mesure physique, commandes de machines, etc.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>    Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>   Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>       Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Modèle d’architecture séquentielle (von Neumann)</td>
+<td><p>Distinguer les rôles et les caractéristiques des différents constituants d’une machine.</p>
+<p>Dérouler l’exécution d’une séquence d’instructions simples du type langage machine.</p></td>
+<td><p>La présentation se limite aux concepts généraux.</p>
+<p>On distingue les architectures monoprocesseur et les architectures multiprocesseur.</p>
+<p>Des activités débranchées sont proposées.</p>
+<p>Les circuits combinatoires réalisent des fonctions booléennes.</p></td>
+</tr>
+<tr class="even">
+<td><p>Transmission de données dans un réseau</p>
+<p>Protocoles de communication</p>
+<p>Architecture d’un réseau</p></td>
+<td><p>Mettre en évidence l’intérêt du découpage des données en paquets et de leur encapsulation.</p>
+<p>Dérouler le fonctionnement d’un protocole simple de récupération de perte de paquets(bit alterné).</p>
+<p>Simuler ou mettre en œuvre un réseau.</p></td>
+<td><p>Le protocole peut être expliqué et simulé en mode débranché.</p>
+<p>Le lien est fait avec ce qui a été vu en classe de seconde sur le protocole TCP/IP.</p>
+<p>Le rôle des différents constituants du réseau local de l’établissement est présenté.</p></td>
+</tr>
+<tr class="odd">
+<td>Systèmes d’exploitation</td>
+<td><p>Identifier les fonctions d’un système d’exploitation.</p>
+<p>Utiliser les commandes de base en ligne de commande.</p>
+<p>Gérer les droits et permissions d’accès aux fichiers.</p></td>
+<td><p>Les différences entre systèmes d’exploitation libres et propriétaires sont évoquées.</p>
+<p>Les élèves utilisent un système d’exploitation libre.</p>
+<p>Il ne s’agit pas d’une étude théorique des systèmes d’exploitation.</p></td>
+</tr>
+<tr class="even">
+<td><p>Périphériques d’entrée et de sortie</p>
+<p>Interface Homme- Machine (IHM)</p></td>
+<td><p>Identifier le rôle des capteurs et actionneurs.</p>
+<p>Réaliser par programmation une IHM répondant à un cahier des charges donné.</p></td>
+<td>Les activités peuvent être développées sur des objets connectés, des systèmes embarqués ou robots.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="langages-et-programmation" class="anchored">Langages et programmation</h3>
+<p>Les langages de programmation Turing-complets sont caractérisés par un corpus de « constructions élémentaires ». Sans introduire cette terminologie, il s’agit de montrer qu’il existe de nombreux langages de programmation, différents par leur style (impératif, fonctionnel, objet, logique, événementiel, etc.), ainsi que des langages formalisés de description ou de requêtes qui ne sont pas des langages de programmation.</p>
+<p>L’importance de la spécification, de la documentation et des tests est à présenter, ainsi que l’intérêt de la modularisation qui permet la réutilisation de programmes et la mise à disposition de bibliothèques. Pour les programmes simples écrits par les élèves, on peut se contenter d’une spécification rapide mais précise.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>   Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>      Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Constructions élémentaires</td>
+<td>Mettre en évidence un corpus de constructions élémentaires. boucles non bornées, appels de fonction.</td>
+<td>Séquences, affectation, conditionnelles, boucles bornées,</td>
+</tr>
+<tr class="even">
+<td>Diversité et unité des langages de programmation</td>
+<td>Repérer, dans un nouveau langage de programmation, les traits communs et les traits particuliers à ce langage.</td>
+<td>Les manières dont un même programme simple s’écrit dans différents langages sont comparées.</td>
+</tr>
+<tr class="odd">
+<td>Spécification</td>
+<td><p>Prototyper une fonction.</p>
+<p>Décrire les préconditions sur les arguments.</p>
+<p>Décrire des postconditions sur les résultats.</p></td>
+<td>Des assertions peuvent être utilisées pour garantir des préconditions ou des postconditions.</td>
+</tr>
+<tr class="even">
+<td>Mise au point de programmes</td>
+<td>Utiliser des jeux de tests.</td>
+<td><p>L’importance de la qualité et du nombre des tests est mise en évidence.</p>
+<p>Le succès d’un jeu de tests ne garantit pas la correction d’un programme.</p></td>
+</tr>
+<tr class="odd">
+<td>Utilisation de bibliothèques</td>
+<td>Utiliser la documentation d’une bibliothèque.</td>
+<td>Aucune connaissance exhaustive d’une bibliothèque particulière n’est exigible.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="algorithmique" class="anchored">Algorithmique</h3>
+<p>Le concept de méthode algorithmique est introduit ; de nouveaux exemples seront vus en terminale. Quelques algorithmes classiques sont étudiés. L’étude de leurs coûts respectifs prend tout son sens dans le cas de données nombreuses, qui peuvent être préférentiellement des données ouvertes.</p>
+<p>Il est nécessaire de montrer l’intérêt de prouver la correction d’un algorithme pour lequel on dispose d’une spécification précise, notamment en mobilisant la notion d’invariant sur des exemples simples. L a nécessité de prouver la terminaison d’un programme est mise en évidence dès qu’on utilise une boucle non bornée (ou, en terminale, des fonctions récursives) grâce à la mobilisation de la notion de variant sur des exemples simples.</p>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>    Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>   Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>       Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Parcours séquentiel d’un tableau</td>
+<td><p>Écrire un algorithme de recherche d’une occurence sur des valeurs de type quelconque</p>
+<p>Écrire un algorithme de recherche d’un extremum, de calcul d’une moyenne.</p></td>
+<td>On montre que le coût est linéaire</td>
+</tr>
+<tr class="even">
+<td>Tris par insertion, par sélection</td>
+<td><p>Écrire un algorithme de tri.</p>
+<p>Décrire un invariant de boucle qui prouve la correction des tris par insertion, par sélection.</p></td>
+<td><p>La terminaison de ces algorithmes est à justifier.</p>
+<p>On montre que leur coût est quadratique dans le pire cas.</p></td>
+</tr>
+<tr class="odd">
+<td>Algorithme des k plus proches voisins</td>
+<td>Écrire un algorithme qui prédit la classe d’un élément en fonction de la classe majoritaire de ses k plus proches voisins.</td>
+<td>Il s’agit d’un exemple d’algorithme d’apprentissage.</td>
+</tr>
+<tr class="even">
+<td>Recherche dichotomique dans un tableau trié</td>
+<td>Montrer la terminaison de la recherche dichotomique à l’aide d’un variant de boucle.</td>
+<td><p>Des assertions peuvent être utilisées.</p>
+<p>La preuve de la correction peut être présentée par le professeur.</p></td>
+</tr>
+<tr class="odd">
+<td>Algorithmes gloutons</td>
+<td>Résoudre un problème grâce à un algorithme glouton.</td>
+<td><p>Exemples : problèmes du sac à dos ou du rendu de monnaie.</p>
+<p>Les algorithmes gloutons constituent une méthode algorithmique parmi d’autres qui seront vues en terminale.</p></td>
+</tr>
+</tbody>
+</table>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

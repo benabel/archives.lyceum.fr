@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span>   Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>          Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structures de données, interface et implémentation.</td>
+<td><p>Spécifier une structure de données par son interface.</p>
+<p>Distinguer interface et implémentation.</p>
+<p>Écrire plusieurs implémentations d’une même structure de données.</p></td>
+<td>L’abstraction des structures de données est introduite après plusieurs implémentations d’une structure simple comme la file (avec un tableau ou avec deux piles).</td>
+</tr>
+<tr class="even">
+<td>Listes, piles, files : structures linéaires.</td>
+<td><p>Distinguer des structures par le jeu des méthodes qui les caractérisent.</p>
+<p>Choisir une structure de données adaptée à la situation à modéliser.</p></td>
+<td>On distingue les modes FIFO(`first_ <em>in first out</em>) et LIFO (<em>last in first</em> <em>out</em>) des piles et des files.</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<div class="intro">
+<p><wc-wikimage class="half right" title="QUEUE_VS_STACK.svg" caption="Différences entre les piles et files"></wc-wikimage></p>
+<blockquote class="blockquote">
+<p>Dans ce chapitre nous allons décrire des structures de données linéaires appelées <strong>listes</strong>, dont nous verrons deux formes restreintes <em>très efficaces</em>: les <strong>piles</strong> et les <strong>files</strong>. Il faut bien comprendre que lorsqu’on parle de structure de données, on parle d’une <em>représentation abstraite</em> qui n’est pas en lien direct avec son implémentation qui peut-être réalisé de diverses manières suivant le langage de programmation, voire au sein d’un même langage de programmation.</p>
+</blockquote>
+</div>
+<!-- TODO implémentation en python avec des classes queue from collections ou sinon fonction(voir IPT Eyrolles) ou Prpeabac -->
+<h2 id="les-piles-lifo" class="anchored">Les piles: <em>LIFO</em></h2>
+<p>Les <strong>pile</strong>s(<em>stacks</em> en anglais) correspondent exactement à la notion de pile dans la vie courante:</p>
+<ul>
+<li>Une pile de cartes,</li>
+<li>Une pile d’assiettes…</li>
+</ul>
+<p><wc-wikimage class="half center" title="Data_stack.svg" caption="La pile est une structure de données LIFO: dernier arrivé premier sorti."></wc-wikimage></p>
+<p>Pour ajouter un élément on l’empile, il se retrouve donc au-dessus, et pour retirer un élément on ne peut retirer <strong>que l’élément se trouvant au sommet de la pile</strong>.</p>
+<p>En anglais on dit <em>last in, first out</em> ou <em>LIFO</em> pour dire: dernier arrivé premier sorti.</p>
+<div class="examples">
+<p>Ce type de structure de données est par exemple utilisé dans:</p>
+<ul>
+<li>les éditeurs avec la fonction <em>Annuler</em> (CTRL+Z)</li>
+<li>les navigateurs pour reculer d’une page.</li>
+<li>les compilateurs et interpréteurs pour évaluer des séries de fonctions (voir <a href="/tg/nsi/4-langages-et-programmation/3-recursivite">fonctions récursives</a>)</li>
+<li>Sans l’évaluation des expressions mathématiques avec parenthèses <code>((ax + b) * c)</code></li>
+</ul>
+</div>
+<h3 id="interface" class="anchored">Interface</h3>
+<p>Une pile est définie par l’interface comprenant les opérations suivantes:</p>
+<ul>
+<li><strong>Consulter</strong> le dernier élément de la pile: <code>sommet()</code></li>
+<li>Savoir si la pile <strong>est vide</strong>: <code>est_vide()</code></li>
+<li><strong>Empiler</strong> un élément pour le mettre au sommet de la pile: <code>empiler(élément)</code>.</li>
+<li><strong>Dépiler</strong> un élément pour le retirer du sommet de la pile: <code>dépiler()</code>.</li>
+</ul>
+<div class="prop">
+<p>Les méthodes <code>empiler</code> et <code>dépiler</code> doivent s’effectuer en temps constant (Complexité <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+)</p>
+</div>
+<h3 id="implémentation-en-python" class="anchored">Implémentation en Python</h3>
+<p>L’objet <code>list</code> en Python présente deux méthodes qui lui permettent d’implémenter la pile:</p>
+<ul>
+<li><code>list.append(el)</code>: ajoute l’élément en fin de liste.</li>
+<li><code>list.pop()</code>: supprime le dernier élément de la liste et le renvoie.</li>
+</ul>
+<p>De plus ces deux méthodes s’effectuent en temps constant (voir ce <a href="/tg/nsi/1-structures-de-donnees/1-interface-et-implementation/#cas-des-listes">tableau</a> pour plus de détails.)</p>
+<div class="highlight"><pre><span></span><span class="n">pile</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">pile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">pile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pile</span><span class="p">)</span>    <span class="c1"># affiche [3, 4, 5, 6, 7]</span>
+<span class="n">pile</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># renvoie 7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pile</span><span class="p">)</span>    <span class="c1"># affiche [3, 4, 5, 6]</span>
+<span class="n">pile</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># renvoie 6</span>
+<span class="n">pile</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># renvoie 5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pile</span><span class="p">)</span>    <span class="c1"># affiche [3, 4]</span>
+</pre></div>
+
+<p><a href="https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-stacks" class="cite-source">Documentation de Python</a></p>
+<details class="appli"><summary>&nbsp;</summary>
+<p>Créer une classe <code>Pile</code> qui implémente le type abstrait pile en stockant les données de la pile dans un attribut privé <code>_data</code> de type <code>list</code>. Voir cet <a href="./exo/#exo1">exercice</a> pour plus de détails.</p>
+</details>
+
+<h2 id="les-files-fifo" class="anchored">Les files: <em>FIFO</em></h2>
+<p>Les files(<em>queues</em> en anglais) correspondent également à la notion de file dans la vie courante:</p>
+<ul>
+<li>Une file d’attente à la caisse,</li>
+<li>à un feu rouge…</li>
+</ul>
+<p><wc-wikimage title="Data_Queue.svg" caption="La file est une structure de données FIFO: premier arrivé premier sorti."></wc-wikimage></p>
+<p>Lorsqu’on ajoute un élément, celui-ci se retrouve à la fin de la file, et on <strong>retire les éléments dans l’ordre dans lequel ils sont arrivés</strong>.</p>
+<p>En anglais on dit <em>first in, first out</em> ou <em>FIFO</em> pour dire: <strong>premier arrivé premier sorti</strong>.</p>
+<div class="examples">
+<p>Ce type de structure de données est par exemple utilisé dans:</p>
+<ul>
+<li>Un gestionnaire d’impression pour ordonner l’ordre des impressions.</li>
+<li>Un processeur pour planifier l’ordre des opérations.</li>
+<li>Un serveur web pour ordonner les réponses en fonction de l’ordre des demandes.</li>
+</ul>
+</div>
+<h3 id="interface-1" class="anchored">Interface</h3>
+<p>Une file est une liste sur laquelle on autorise seulement 4 opérations:</p>
+<ul>
+<li><strong>Consulter</strong> le premier élément de la file: la tête: <code>tête()</code>.</li>
+<li>Tester si la file <strong>est vide</strong>: <code>est_vide()</code>.</li>
+<li><strong>Enfiler</strong> un nouvel élément: le mettre en dernier dans la queue: <code>enfiler(élément)</code>.</li>
+<li><strong>Défiler</strong> un élément, supprimer et renvoyer le premier élément: <code>défiler()</code>.</li>
+</ul>
+<div class="prop">
+<p>Les méthodes <code>enfiler</code> et <code>défiler</code> doivent s’effectuer en temps constant (Complexité <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+)</p>
+</div>
+<h3 id="implémentation-en-python-1" class="anchored">Implémentation en Python</h3>
+<p>L’objet <code>list</code> en Python présente deux méthodes qui lui permettent d’implémenter la file:</p>
+<ul>
+<li><code>list.append(el)</code>: ajoute l’élément en fin de liste.</li>
+<li><code>list.pop(0)</code>: supprime le premier élément de la liste et le renvoie.</li>
+</ul>
+<p>Toutefois, les listes ne sont pas très efficaces pour réaliser ce type de traitement. Alors que les ajouts et suppressions en fin de liste sont rapides, les opérations d’insertions ou de retraits en début de liste sont lentes (car tous les autres éléments doivent être décalés d’une position <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>
+).</p>
+<p>Pour implémenter une file avec des opérations en temps constant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+, on peut utiliser la classe <a href="https://docs.python.org/fr/3/library/collections.html#collections.deque"><code>collections.deque</code></a>. Les <code>deques</code> sont une généralisation des piles et des files appelée <strong>liste chainée double</strong> (en anglais <em>double-ended queue</em>).</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+<span class="c1"># On considère une file allant de gauche à droite</span>
+<span class="c1"># on enfile à gauche</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s2">"Jobi"</span><span class="p">)</span>    <span class="c1"># enfile 'Jobi'</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s2">"Joba"</span><span class="p">)</span>    <span class="c1"># enfile 'Joba'</span>
+<span></span>
+<span class="c1"># L'élément en tête est à droite au dernier indice</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>            <span class="c1"># affiche "Jobi"</span>
+<span></span>
+<span class="c1"># on défile à droite</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>                 <span class="c1"># défile 'Jobi' et le renvoie</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>            <span class="c1"># affiche "Joba" qui est en tête de queue maintenant</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>                 <span class="c1"># défile 'Joba' et le renvoie</span>
+<span></span>
+<span class="c1"># on vérifie que la queue est bien vide</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>             <span class="c1"># renvoie True</span>
+</pre></div>
+
+<p><a href="https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-queues" class="cite-source">Documentation de Python</a></p>
+<details class="appli"><summary>&nbsp;</summary>
+<p>Créer une classe <code>File</code> qui implémente le type abstrait file en stockant les données de la file dans un attribut privé <code>_data</code> de type <code>collections.deque</code>. Voir cet <a href="./exo/#exo2">exercice</a> pour plus de détails.</p>
+</details>
+
+<h2 id="comment-réaliser-une-boucle" class="anchored">Comment réaliser une boucle?</h2>
+<p>L’interface des piles et files étant volontairement très réduite, il est impossible d’accéder aux éléments présents au milieu sans les sortir.</p>
+<p>Donc pour itérer sur les éléments, on les retire jusqu’à ce que la structure soit vide.</p>
+<h3 id="avec-une-pile" class="anchored">Avec une pile</h3>
+<div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">pile</span>.<span class="nv">est_vide</span><span class="ss">()</span>:
+<span class="w">    </span><span class="nv">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pile</span>.<span class="nv">d</span>é<span class="nv">piler</span><span class="ss">()</span>
+</pre></div>
+
+<p>L’ordre de sortie est l’inverse de l’ordre d’entrée.</p>
+<div class="highlight"><pre><span></span><span class="c1"># instanciation</span>
+<span class="n">pile</span> <span class="o">=</span> <span class="p">[]</span>
+<span></span>
+<span class="c1"># empile au sommet Jobi Joba</span>
+<span class="n">pile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'Jobi'</span><span class="p">)</span>
+<span class="n">pile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'Joba'</span><span class="p">)</span>
+<span></span>
+<span class="c1"># dépile tout</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">pile</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="n">    e</span> <span class="o">=</span> <span class="n">pile</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' | '</span><span class="p">)</span>
+</pre></div>
+
+<p><strong>Sortie</strong> <code>Joba | Jobi |</code></p>
+<h3 id="avec-une-file" class="anchored">Avec une file</h3>
+<div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">file</span>.<span class="nv">est_vide</span><span class="ss">()</span>:
+<span class="w">    </span><span class="nv">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">file</span>.<span class="nv">d</span>é<span class="nv">filer</span><span class="ss">()</span>
+</pre></div>
+
+<p>L’ordre de sortie est le même que l’ordre d’entrée.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="c1"># instanciation</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+<span></span>
+<span class="c1"># enfile à gauche  Jobi Joba</span>
+<span class="n">file</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s1">'Jobi'</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s1">'Joba'</span><span class="p">)</span>
+<span></span>
+<span class="c1"># défile tout</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="n">    e</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' | '</span><span class="p">)</span>
+</pre></div>
+
+<p><strong>Sortie</strong> <code>Jobi | Joba |</code></p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

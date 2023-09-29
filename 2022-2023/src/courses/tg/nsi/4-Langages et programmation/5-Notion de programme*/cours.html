@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cours</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/quarto.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cours_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cours_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cours_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cours_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<p><strong>Ce chapitre ne pourra pas faire l’objet d’une évaluation lors de l’épreuve terminale écrite et pratique de l’enseignement de spécialité.</strong> <a href="https://www.education.gouv.fr/bo/21/Hebdo30/MENE2121274N.htm" class="cite-source">BO MENE2121274N</a></p>
+<details class="programme"><summary>Programme Officiel</summary>
+<table class="table table-bordered table-hover">
+<thead class="table-warning">
+<tr class="header">
+<th><div class="highlight"><pre><span></span> Contenus
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>  Capacités attendues
+</pre></div>
+</th>
+<th><div class="highlight"><pre><span></span>        Commentaires
+</pre></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Notion de programme en tant que donnée.</p>
+<p>Calculabilité, décidabilité.</p></td>
+<td><p>Comprendre que tout programme est aussi une donnée.</p>
+<p>Comprendre que la calculabilité ne dépend pas du langage de programmation utilisé.</p>
+<p>Montrer, sans formalisme théorique, que le problème de l’arrêt est indécidable.</p></td>
+<td>L’utilisation d’un interpréteur ou d’un compilateur, le téléchargement de logiciel, le fonctionnement des systèmes d’exploitation permettent de comprendre un programme comme donnée d’un autre programme.</td>
+</tr>
+</tbody>
+</table>
+<a class="lien-programme" href="../programme/">Lien vers le programme complet</a></details>
+
+<blockquote class="blockquote">
+<p>Comme nous l’avons vu en première, un programme est la traduction électronique d’un algorithme afin qu’il puisse être compris par une machine. Dans ce chapitre, nous allons montrer qu’un programme ne peut pas tout calculer ou décider.</p>
+</blockquote>
+<h2 id="notion-de-programme-en-tant-que-donnée" class="anchored">Notion de programme en tant que donnée</h2>
+<p>Certains programmes utilisent comme données le code source d’autres programmes.</p>
+<div class="examples">
+<ul>
+<li>un système d’exploitation(linux p.ex) est un programme qui éxecute d’autres programmes(traitement de textes p.ex).</li>
+<li>l’interpréteur Python, est un programme qui traduit le code source de votre programme Python en instructions exécutables par machine: du <a href="/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/2-jeu-dinstructions-du-processeur">langage machine</a>.</li>
+</ul>
+</div>
+<h2 id="calculabilité" class="anchored">Calculabilité</h2>
+<p>La notion de calculabilité date de 1936, il s’agit de savoir ce qui peut être calculé par un ordinateur, et donc permet de voir les <strong>limites des problèmes</strong> que peuvent résoudre les ordinateurs.</p>
+<div class="prop">
+<p>On dira qu’une fonction est <strong>calculable</strong> si elle peut être programmée dans l’un ou l’autre des langages de programmation usuels. Cette année, nous utiliserons le langage Python comme témoin : une fonction est calculable si on peut la programmer en Python.</p>
+</div>
+<details class="plus"><summary>&nbsp;</summary>
+<p>Il existe d’autres modèles de calcul, comme le λ-calcul, les fonctions récursives, les machines de Turing, que nous ne développerons pas ici, et qui ne font pas partie des attendus du programme.</p>
+<p>La thèse de Church postule que tous ces modèles de calcul sont équivalents : une fonction calculable pour un modèle l’est pour un autre. Cela nous permet d’utiliser le modèle des fonctions programmables en Python sans perdre de généralité.</p>
+</details>
+
+<p><a href="https://cache.media.eduscol.education.fr/file/NSI/63/6/RA20_NSI_G_T_calculabilite_1298636.pdf" class="cite-source">Calculabilité et décidabilité sur eduscol</a></p>
+<p>On peut calculer beaucoup de choses avec un ordinateur comme le nombre <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span></span></span></span>
+, les nombres rationnels <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">2</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewbox="0 0 400000 1080" preserveaspectratio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span></span></span></span>
+, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>3</mn></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">3</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewbox="0 0 400000 1080" preserveaspectratio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span></span></span></span>
+…</p>
+<p>Par contre, il a été prouvé que certains problèmes n’étaient pas calculables comme par exemple :</p>
+<ul>
+<li>Savoir si un énoncé mathématique est un théorème ou pas_(s’il peut être démontré)_.</li>
+<li>Créer un programme qui prend un programme en entrée, et qui indiquera si le programme s’arrête ou pas : le problème de l’arrêt.</li>
+</ul>
+<p>Il s’agit de problèmes de <strong>décidabilité</strong>.</p>
+<h2 id="décidabilité" class="anchored">Décidabilité</h2>
+<dl>
+<dt>
+décidabilité
+</dt>
+<dd>
+<div>
+<p>Un problème de décision est dit décidable s’il existe un algorithme, une procédure mécanique qui se termine en un nombre fini d’étapes, qui le décide, c’est-à-dire qui réponde par oui ou par non à la question posée par le problème. S’il n’existe pas de tels algorithmes, le problème est dit indécidable. Par exemple, le problème de l’arrêt est indécidable.</p>
+<p><a href="https://fr.wikipedia.org/wiki/D%C3%A9cidabilit%C3%A9#D%C3%A9finition" class="cite-source">Article Wikipédia sur la décidabilité</a></p>
+</div>
+</dd>
+</dl>
+<h3 id="exemples-de-problèmes-décidables" class="anchored">Exemples de problèmes décidables</h3>
+<p>Tous les sous-ensembles finis des entiers sont décidables, par exemple:</p>
+<ul>
+<li>Décider si un entier naturel est pair ou non;</li>
+<li>décider si un entier naturel est premier ou non.</li>
+</ul>
+<details class="plus"><summary>Décidable ne signifie pas résolvable</summary>
+<p>Notons qu’un ensemble peut être théoriquement décidable sans qu’en pratique la décision puisse être faite, parce que celle-ci nécessiterait trop de temps (plus que l’âge de l’univers) ou trop de ressources (plus que le nombre d’atomes de l’univers). L’objet de la théorie de la complexité des algorithmes est d’étudier les problèmes de décision en prenant en compte ressources et temps de calcul.</p>
+<p><a href="https://fr.wikipedia.org/wiki/D%C3%A9cidabilit%C3%A9#Exemples_d'ensembles_et_de_probl%C3%A8mes_d%C3%A9cidables" class="cite-source">Article Wikipédia sur la décidabilité</a></p>
+</details>
+
+<h3 id="exemple-de-problème-indécidable-le-problème-de-larrêt" class="anchored">Exemple de problème indécidable : le problème de l’arrêt</h3>
+<p>L’indécidabilité du problème de l’arrêt a été démontrée par Alan Turing en 1936.</p>
+<p>On peut l’interpréter ainsi : il n’existe pas de programme permettant de tester n’importe quel programme informatique afin de conclure dans tous les cas s’il s’arrêtera en un temps fini ou bouclera à jamais.</p>
+<p><strong>Preuve par l’absurde de non-décidabilité de l’arrêt</strong></p>
+<p>Supposons qu’il existe une fonction calculable <code>termine(programme, données)</code> qui prend 2 arguments :</p>
+<ul>
+<li>un programme</li>
+<li>des données d’entrée pour ce programme</li>
+</ul>
+<p>et qui renverra <code>True</code> si le programme termine et <code>False</code> s’il entre dans une boucle infinie.</p>
+<div class="examples">
+<ul>
+<li>en utilisant la fonction <code>est_pair()</code> définie dans la partie <a href="./exo">exercice</a></li>
+</ul>
+<p><code>termine(est_pair, 128)</code> ou <code>termine(est_pair, 127)</code> renverraient <code>True</code>.</p>
+<ul>
+<li>une fonction définie ainsi :</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">est_positif</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">    if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">        return</span> <span class="kc">True</span>
+<span class="k">    else</span><span class="p">:</span>
+<span class="k">        while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="n">            n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># boucle infinie</span>
+<span class="k">        return</span> <span class="kc">False</span>
+</pre></div>
+
+<p>entrainerait une boucle infinie pour les nombres négatifs, et on aurait :</p>
+<p><code>termine(est_positif, 128)</code> renvoie <code>True</code> alors que <code>termine(est_positif, -2)</code> renverrait <code>False</code> non pas car -2 n’est pas positif mais parce que l’appel <code>positif(-2)</code> ne se terminerait jamais.</p>
+</div>
+<p>Définissons une fonction <code>test_sur_soi</code>.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_sur_soi</span><span class="p">(</span><span class="n">programme</span><span class="p">):</span>
+<span class="k">    if</span> <span class="n">termine</span><span class="p">(</span><span class="n">programme</span><span class="p">,</span> <span class="n">programme</span><span class="p">):</span>
+<span class="k">        while</span> <span class="kc">True</span><span class="p">:</span> <span class="k">pass</span> <span class="c1"># boucle infinie</span>
+</pre></div>
+
+<p>On obtient alors une contradiction si on appelle <code>test_sur_soi</code> sur elle-même :</p>
+<div class="highlight"><pre><span></span><span class="n">test_sur_soi</span><span class="p">(</span><span class="n">test_sur_soi</span><span class="p">)</span>
+<span></span>
+<span class="c1"># l'appel éxecutera l'algorithme suivant</span>
+<span class="k">if</span> <span class="n">termine</span><span class="p">(</span><span class="n">test_sur_soi</span><span class="p">,</span> <span class="n">test_sur_soi</span><span class="p">):</span>
+<span class="k">    while</span> <span class="kc">True</span><span class="p">:</span> <span class="k">pass</span>
+</pre></div>
+
+<p>On arrive au paradoxe suivant :</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow><mi>t</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>_</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>_</mi><mi>s</mi><mi>o</mi><mi>i</mi></mrow><mo stretchy="false">(</mo><mrow><mrow><mi>t</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>_</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>_</mi><mi>s</mi><mi>o</mi><mi>i</mi></mrow><mo stretchy="false">)</mo><mtext>&nbsp;termine</mtext><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mrow><mrow><mi>t</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>_</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>_</mi><mi>s</mi><mi>o</mi><mi>i</mi></mrow><mo stretchy="false">(</mo><mrow><mrow><mi>t</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>_</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>_</mi><mi>s</mi><mi>o</mi><mi>i</mi></mrow><mo stretchy="false">)</mo><mrow><mtext>&nbsp;boucle&nbsp;ind</mtext><mover accent="true"><mtext>e</mtext><mo>ˊ</mo></mover><mtext>finiment</mtext></mrow></mrow></mrow></mrow></mrow></mstyle></mrow><annotation encoding="application/x-tex">
+{\displaystyle {\it {{test\_sur\_soi}({\it {{test\_sur\_soi}){\text{ termine}}\iff {\it {{test\_sur\_soi}({\it {{test\_sur\_soi}){\text{ boucle indéfiniment}}}}}}}}}}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord"><span class="mord"><span class="mord mathit">test_sur_soi</span></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord"><span class="mord"><span class="mord mathit">test_sur_soi</span></span><span class="mclose">)</span><span class="mord"><span class="mord text"><span class="mord">&nbsp;termine</span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord"><span class="mord mathit">test_sur_soi</span></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord"><span class="mord"><span class="mord mathit">test_sur_soi</span></span><span class="mclose">)</span><span class="mord"><span class="mord text"><span class="mord">&nbsp;boucle&nbsp;ind</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">ˊ</span></span></span></span></span></span></span><span class="mord">finiment</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+</p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

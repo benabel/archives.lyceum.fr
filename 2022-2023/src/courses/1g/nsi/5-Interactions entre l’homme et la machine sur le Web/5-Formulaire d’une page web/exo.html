@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="formulaire-en-html" class="anchored">Formulaire en HTML</h2>
+<p>Recopier le code suivant dans un fichier que vous nommerez <code>index.html</code>.</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
+<span></span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">  &lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span> <span class="p">/&gt;</span>
+<span class="p">  &lt;</span><span class="nt">title</span><span class="p">&gt;</span>Les formulaires en HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span></span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">  &lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Les formulaires en html<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="cm">  &lt;!-- Le formulaire ci-dessous --&gt;</span>
+<span class="p">  &lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"GET"</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"nom"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Entrer votre nom"</span><span class="p">&gt;</span>
+<span class="p">    &lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Envoyer les données<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">  &lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span></span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Enregistrer ce fichier puis l’ouvrir dans le navigateur grâce en lançant le serveur fourni par votre professeur: <code>python http_server.py</code>.</p>
+<ol type="1">
+<li><p>Entrer une valeur dans le formulaire et appuyer sur le bouton pour le soumettre et observer la barre d’adresse du navigateur.</p></li>
+<li><p>Supprimer les paramètres présents dans l’URL et modifier la méthode du formulaire en <code>POST"</code> eu lieu de <code>GET</code> et observer ou sont placés les valeurs du formulaire dans l’onglet réseau de la console de développement.</p></li>
+<li><p>Poursuivre votre apprentissage <em>actif</em> pour créer un formulaire complet en utilisant ces pages de <a href="https://developer.mozilla.org/fr/docs/Learn/Forms">MDN</a>:</p>
+<ul>
+<li><p><a href="https://developer.mozilla.org/fr/docs/Learn/Forms/How_to_structure_a_web_form">Comment structurer un formulaire HTML?</a> pour ajouter des balises <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code> et <code>&lt;label&gt;</code>.</p></li>
+<li><p><a href="https://developer.mozilla.org/fr/docs/Learn/Forms/Basic_native_form_controls">Les contrôles de formulaire natifs</a> pour ajouter des entrées:</p>
+<ul>
+<li><code>&lt;input type="button"&gt;</code>,</li>
+<li><code>&lt;input type="checkbox"&gt;</code>,</li>
+<li><code>&lt;input type="file"&gt;</code>,</li>
+<li><code>&lt;input type="hidden"&gt;</code>,</li>
+<li><code>&lt;input type="image"&gt;</code>,</li>
+<li><code>&lt;input type="password"&gt;</code>,</li>
+<li><code>&lt;input type="radio"&gt;</code>,</li>
+<li><code>&lt;input type="reset"&gt;</code>,</li>
+<li><code>&lt;input type="submit"&gt;</code>,</li>
+<li><code>&lt;input type="text"&gt;</code>, ainsi que les attributs <code>readonly</code>, <code>disabled</code>, <code>placeholder</code>, <code>size</code>, <code>maxlength</code>, <code>spellcheck</code>.</li>
+</ul></li>
+<li><p><a href="https://developer.mozilla.org/fr/docs/Learn/Forms/HTML5_input_types">Les types de champs de formulaire HTML5</a></p>
+<ul>
+<li>Champ pour une adresse électronique</li>
+<li>Champ de recherche</li>
+<li>Champ pour un numéro de téléphone</li>
+<li>Champ pour une URL</li>
+<li>Champ numérique</li>
+<li>Curseurs</li>
+<li>Sélecteurs de date et d’heure</li>
+<li>Contrôle de sélection de couleur</li>
+</ul></li>
+<li><p><a href="https://developer.mozilla.org/fr/docs/Learn/Forms/Other_form_controls">Les autres contrôles de formulaire</a></p>
+<ul>
+<li>Champ texte sur plusieurs lignes <code>&lt;textarea&gt;</code></li>
+<li>Contrôles de listes déroulantes <code>&lt;select&gt;</code>.</li>
+</ul></li>
+<li><p><a href="https://developer.mozilla.org/fr/docs/Learn/Forms/Styling_web_forms">Mise en forme des formulaires HTML</a></p>
+<p>Ne traiter que la mise en forme des éléments dits «bons»:</p>
+<ul>
+<li><code>&lt;form&gt;</code></li>
+<li><code>&lt;fieldset&gt;</code></li>
+<li><code>&lt;label&gt;</code></li>
+<li><code>&lt;output&gt;</code></li>
+<li><code>&lt;input&gt;</code></li>
+<li><code>&lt;button&gt;</code></li>
+</ul></li>
+<li><p><a href="https://developer.mozilla.org/fr/docs/Learn/Forms/UI_pseudo-classes">Pseudo-classes relatives à l’interface utilisateur</a></p>
+<ul>
+<li>Mettre en forme les champs selon qu’ils sont obligatoires ou non: <code>required</code> <code>optionnal</code>.</li>
+<li>Mettre en forme les contrôles selon la validité des données: <code>valid</code> <code>invalid</code>.</li>
+<li>Mettre en forme les champs actifs ou désactivés, en lecture seule ou non: <code>disabled</code>.</li>
+<li>État des cases à cocher et boutons radio : coché, par défaut, indéterminé: <code>checked</code>.</li>
+</ul></li>
+<li><p><a href="https://developer.mozilla.org/fr/docs/Learn/Forms/Sending_and_retrieving_form_data">Envoyer et extraire les données des formulaires</a></p>
+<p>Cette partie sera traitée dans le prochain chapitre.</p></li>
+</ul></li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

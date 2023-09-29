@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Benjamin Abel">
+
+<title>Tracé de vecteurs vitesse et variations de vitesse en Python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tracé de vecteurs vitesse et variations de vitesse en Python</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Benjamin Abel </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">31 janvier 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<h2 id="exploration-des-possibilités-offertes-par-python" class="anchored">Exploration des possibilités offertes par Python</h2>
+<p>Dans cette partie nous allons tiliser deux bibliothèques particulièrement adaptées à notre travail:</p>
+<ul>
+<li><a href="https://pandas.pydata.org/">pandas</a>: pour l’import de données sous format texte.</li>
+<li><a href="https://matplotlib.org/">matplotlib</a>: pour le tracé des vecteurs.</li>
+</ul>
+<p>A priori ces bibliothèques sont directement installées avec la plupart des distributions python.</p>
+<h3 id="export-csv-depuis-logger-pro" class="anchored">Export csv depuis <a href="https://www.vernier.com/product/logger-pro-3/">Logger Pro©</a></h3>
+<p>Une fois les pointages réalisés dans <a href="https://www.vernier.com/product/logger-pro-3/">Logger Pro©</a>, on les exporte au format <code>csv</code> dans le même dossier que le script python.</p>
+<p>On obtient un fichier <code>csv</code> qui a cette forme(ici, il s’agit d’un pointage de lancer de ballon de basket avec rebond, je l’ai appelé <a href="./basket.csv"><code>basket.csv</code></a>):</p>
+<div class="highlight"><pre><span></span>"Analyse Vidéo: Temps (s)";"Analyse Vidéo: X (m)";"Analyse Vidéo: Y (m)";"Analyse Vidéo: Vitesse X (m/s)";"Analyse Vidéo: Vitesse Y (m/s)"
+0;0,0524329864114;2,06735774994;2,13773602824;1,97072540103
+0,013;0,0898851195624;2,09731945646;0,65546386032;1,3425328963
+0,046;0,0823946929322;2,12728116298;0,416469595422;1,36256531621
+0,079;0,104865972823;2,17971414939;0,821528854964;1,84956069973
+</pre></div>
+
+<p>Les valeurs sont séparées par des <code>;</code> et le séparateur décimal est <code>,</code>.</p>
+<p>On les importe dans python grâce à la libraire Python <code>pandas</code> avec la fonction <code>read_csv()</code>, et on simplifie les noms de colonne pour y accéder simplement avec la notation pointée.</p>
+<ul>
+<li><code>data.x</code> pour les abscisses.</li>
+<li><code>data.vitesse_x</code> pour la composant horizontale de la vitesse.</li>
+</ul>
+<p>Nous allons maintenant les importer dans Python grâce à la bibliothèque pandas.</p>
+<h3 id="import-des-données-avec-pandas" class="anchored">Import des données avec <code>pandas</code></h3>
+<div class="cell" data-execution_count="1">
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1">## Format A4 pour les graphs(en pouces)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">"figure.figsize"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+<div class="cell" data-execution_count="2">
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"basket.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
+<span class="c1">## On renomme les colonnes sans le Analyse Vidéo ni l'unité</span>
+<span class="k">def</span> <span class="nf">rename_cols</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Renomme les colonnes pour garder que le symbole"""</span>
+<span class="n">    col</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">":"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">    col</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"("</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">    col</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
+<span class="n">    col</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)</span>
+<span class="k">    return</span> <span class="n">col</span>
+<span class="c1">##data.head()    </span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">rename_cols</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="table table-bordered table-hover table-sm table-striped" data-border="1">
+<thead class="table-warning">
+<tr class="header" style="text-align: right;">
+<th></th>
+<th>temps</th>
+<th>x</th>
+<th>y</th>
+<th>vitesse_x</th>
+<th>vitesse_y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th>0</th>
+<td>0.000</td>
+<td>0.052433</td>
+<td>2.067358</td>
+<td>2.137736</td>
+<td>1.970725</td>
+</tr>
+<tr class="even">
+<th>1</th>
+<td>0.013</td>
+<td>0.089885</td>
+<td>2.097319</td>
+<td>0.655464</td>
+<td>1.342533</td>
+</tr>
+<tr class="odd">
+<th>2</th>
+<td>0.046</td>
+<td>0.082395</td>
+<td>2.127281</td>
+<td>0.416470</td>
+<td>1.362565</td>
+</tr>
+<tr class="even">
+<th>3</th>
+<td>0.079</td>
+<td>0.104866</td>
+<td>2.179714</td>
+<td>0.821529</td>
+<td>1.849561</td>
+</tr>
+<tr class="odd">
+<th>4</th>
+<td>0.113</td>
+<td>0.142318</td>
+<td>2.247128</td>
+<td>1.233414</td>
+<td>2.783728</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<h3 id="tracé-des-vecteurs-avec-matplotlib" class="anchored">Tracé des vecteurs avec <code>matplotlib</code></h3>
+<p>Les positions sont tracées avec <code>plt.scatter</code>, les vecteurs avec <code>plt.quiver</code>. Les arguments utilisés peuvent être changés, notamment pour les échelles qui ne sont pas évidentes à régler.</p>
+<p>Voici les liens vers la doc.</p>
+<ul>
+<li>https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.scatter.html</li>
+<li>https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.quiver.html?highlight=quiver#matplotlib.pyplot.quiver</li>
+</ul>
+<div class="cell" data-execution_count="3">
+<div class="highlight"><pre><span></span><span class="c1">## Positions en vert</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span></span>
+<span class="c1">## vecteurs vitesse en bleu</span>
+<span class="c1">## TODO travailler sur l'échelle</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+<span class="n">           data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+<span class="n">           data</span><span class="o">.</span><span class="n">vitesse_x</span><span class="p">,</span>
+<span class="n">           data</span><span class="o">.</span><span class="n">vitesse_y</span><span class="p">,</span>
+<span class="n">           color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span>
+<span class="n">           scale_units</span><span class="o">=</span><span class="s2">"xy"</span><span class="p">,</span>
+<span class="n">           scale</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="n">           alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">           label</span><span class="o">=</span><span class="s2">"$</span><span class="se">\\</span><span class="s2">vec</span><span class="si">{v}</span><span class="s2">$"</span><span class="p">)</span>
+<span></span>
+<span class="c1">## vecteurs accélération en rouge</span>
+<span class="c1">## TODO travailler sur l'échelle</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+<span class="n">           data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+<span class="n">           diff</span><span class="o">.</span><span class="n">vitesse_x</span><span class="p">,</span>
+<span class="n">           diff</span><span class="o">.</span><span class="n">vitesse_y</span><span class="p">,</span>
+<span class="n">           color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
+<span class="n">           scale_units</span><span class="o">=</span><span class="s2">"xy"</span><span class="p">,</span>
+<span class="n">           scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">           alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">           label</span><span class="o">=</span><span class="s2">"$</span><span class="se">\\</span><span class="s2">vec{\Delta v}$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fec0d7aaad0&gt;
+</pre></div>
+
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-4-output-2.png" width="920" height="655"></p>
+</div>
+</div>
+<h3 id="améliorations-possibles" class="anchored">Améliorations possibles</h3>
+<p>On peut utiliser une moyenne mobile sur les mesures pour avoir moins de points et améliorer la précison.</p>
+<div class="cell" data-execution_count="4">
+<div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">data2</span>
+</pre></div>
+
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="table table-bordered table-hover table-sm table-striped" data-border="1">
+<thead class="table-warning">
+<tr class="header" style="text-align: right;">
+<th></th>
+<th>temps</th>
+<th>x</th>
+<th>y</th>
+<th>vitesse_x</th>
+<th>vitesse_y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th>0</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th>1</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th>2</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th>3</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th>4</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th>69</th>
+<td>2.2649</td>
+<td>5.106973</td>
+<td>1.858375</td>
+<td>0.876044</td>
+<td>-1.294343</td>
+</tr>
+<tr class="even">
+<th>70</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th>71</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th>72</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th>73</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>74 rows × 5 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trace_vecteurs</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="c1">    # Positions en vert</span>
+<span class="n">    plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span></span>
+<span class="c1">    # vecteurs vitesse en bleu</span>
+<span class="c1">    # TODO travailler sur l'échelle</span>
+<span class="n">    plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+<span class="n">               data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+<span class="n">               data</span><span class="o">.</span><span class="n">vitesse_x</span><span class="p">,</span>
+<span class="n">               data</span><span class="o">.</span><span class="n">vitesse_y</span><span class="p">,</span>
+<span class="n">               color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span>
+<span class="n">               scale_units</span><span class="o">=</span><span class="s2">"xy"</span><span class="p">,</span>
+<span class="n">               scale</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="n">               alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">               label</span><span class="o">=</span><span class="s2">"$</span><span class="se">\\</span><span class="s2">vec</span><span class="si">{v}</span><span class="s2">$"</span><span class="p">)</span>
+<span></span>
+<span class="c1">    # vecteurs accélération en rouge</span>
+<span class="c1">    # TODO travailler sur l'échelle</span>
+<span class="n">    diff</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">    plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+<span class="n">               data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+<span class="n">               diff</span><span class="o">.</span><span class="n">vitesse_x</span><span class="p">,</span>
+<span class="n">               diff</span><span class="o">.</span><span class="n">vitesse_y</span><span class="p">,</span>
+<span class="n">               color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
+<span class="n">               scale_units</span><span class="o">=</span><span class="s2">"xy"</span><span class="p">,</span>
+<span class="n">               scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">               alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">               label</span><span class="o">=</span> <span class="s2">"$</span><span class="se">\\</span><span class="s2">vec{\Delta v}$"</span><span class="p">)</span>
+<span class="n">    plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">trace_vecteurs</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-6-output-1.png" width="920" height="655"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="highlight"><pre><span></span><span class="c1">## sous échantillonage</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">data3</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data2</span><span class="o">.</span><span class="n">index</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">trace_vecteurs</span><span class="p">(</span><span class="n">data3</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-7-output-1.png" width="920" height="655"></p>
+</div>
+</div>
+<h2 id="création-dun-module-trace_cinematique" class="anchored">Création d’un module <code>trace_cinematique</code></h2>
+<p>Compte tenu de la complexité du code et des paramètres des tracés, j’ai créé un module <code>trace_cinematique</code> qui contient une fonction <code>trace_vecteurs</code> que les élèves peuvent importer simplement et utiliser en travaillant sur les paramètres proposés de la fonction.</p>
+<p>Le module <code>trace_cinematique</code> est disponible dans un dépôt sur <a href="https://framagit.org/benabel/trace_cinematique/">framagit</a>.</p>
+<p>Vous pouvez le télécharger à cette adresse: <a href="https://framagit.org/benabel/trace_cinematique/-/archive/master/trace_cinematique-master.zip" class="uri">https://framagit.org/benabel/trace_cinematique/-/archive/master/trace_cinematique-master.zip</a></p>
+<p>N’hésitez pas à faire part de vos remarques en ouvrant un <a href="https://framagit.org/benabel/trace_cinematique/issues">ticket</a>.</p>
+<h3 id="mode-demploi" class="anchored">Mode d’emploi</h3>
+<p>Après avoir fait les pointages, les élèves exportent leurs pointages au format <code>csv</code> à partir de <a href="https://www.vernier.com/product/logger-pro-3/">Logger Pro©</a> dans le même dossier que le fichier <code>trace_cinematique</code> .</p>
+<p>Ensuite dans un fichier nommé par exemple <code>fichier_eleve.py</code> placé toujours dans le même dossier, les élèves importent la fonction <code>trace_vecteurs</code> et donnent le nom du fichier csv en argument:</p>
+<div class="cell" data-execution_count="7">
+<div class="highlight"><pre><span></span><span class="c1">## import de la fonction de tracé</span>
+<span class="kn">from</span> <span class="nn">trace_cinematique</span> <span class="kn">import</span> <span class="n">trace_vecteurs</span>
+<span></span>
+<span class="c1">## appel de la fonction pour le tracé des vecteurs cinematiques</span>
+<span class="n">trace_vecteurs</span><span class="p">(</span><span class="s2">"basket.csv"</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-8-output-1.png" width="920" height="655"></p>
+</div>
+</div>
+<h3 id="travail-sur-les-paramètres-du-tracé" class="anchored">Travail sur les paramètres du tracé</h3>
+<p>une documentation de la fonction est disponible grâce à la fonction générique <code>help()</code>.</p>
+<div class="cell" data-execution_count="8">
+<div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">trace_vecteurs</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>Help on function trace_vecteurs in module trace_cinematique:
+<span></span>
+trace_vecteurs(csv_file, echelle_v=1, echelle_dv=1, n_lissage=10, n_select=1)
+    Tracé de vecteurs vitesses et variations de vecteurs vitesse
+    
+    Arguments
+    ---------
+    csv_file
+        chemin vers le fichier csv des pointages
+    echelle_v
+        echelle de tracé des vecteurs vitesse: par défaut 1
+    echelle_dv
+        echelle de tracé des vecteurs variation de vecteurs vitesses: par défaut 1
+    n_lissage
+        nombre de points de lissage par défaut 10
+    n_select
+        fraction des points ou les vecteurs sont tracés
+        p.ex: pour n_s=3, 1 vecteur sur 3 st tracé
+</pre></div>
+
+</div>
+</div>
+<p>Ensuite en jouant sur les paramètres envoyés à la fonction(échelles , fractions de vecteurs tracés…)</p>
+<p>On peut obtenir un tracé comme celui-ci:</p>
+<div class="cell" data-execution_count="9">
+<div class="highlight"><pre><span></span><span class="n">trace_vecteurs</span><span class="p">(</span><span class="s2">"basket.csv"</span><span class="p">,</span>
+<span class="n">               echelle_v</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="n">               echelle_dv</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">               n_lissage</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="n">               n_select</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="920" height="655"></p>
+</div>
+</div>
+<h3 id="licence-et-droits-dutilisation" class="anchored">Licence et droits d’utilisation</h3>
+<p>Le code mis à disposition dans le module <code>trace_cinematique</code> est sous licence <a href="https://fr.wikipedia.org/wiki/Licence_ISC">ISC</a>, une licence libre qui permet de l’utiliser et le modifier comme bon vous semble.</p>
+<p>Le logiciel <a href="https://www.vernier.com/product/logger-pro-3/">Logger Pro©</a> est un logiciel sous droits d’auteurs, je n’ai aucun rapport avec l’entreprise qui le développe, vous pouvez certainement adapter le code au logiciel que vous utilisez dans votre établissement.</p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

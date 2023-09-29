@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.146">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="exo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exo_files/libs/quarto-html/quarto.js"></script>
+<script src="exo_files/libs/quarto-html/popper.min.js"></script>
+<script src="exo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<h2 id="codages-ascii-latin-1-et-utf-8" class="anchored">Codages ASCII, Latin-1 et UTF-8</h2>
+<ol type="1">
+<li><p>Peut-on encoder en ASCII le texte « Ne désire que ce que tu as. »?</p></li>
+<li><p>Trouver le texte représenté en ASCII binaire par la suite de bits <code>01000011 00100111 01100101 01110011 01110100 00100000 01100110 01100001 01100011 01101001 01101100 01100101</code></p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="1">
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>01000011|C 00100111|' 01100101|e 01110011|s 01110100|t 00100000|  01100110|f 01100001|a 01100011|c 01101001|i 01101100|l 01100101|e 
+<span></span>
+C'est facile
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Traduire une phrase en ASCII binaire, puis la passer à son voisin pour qu’il la décode. Si vous n’avez pas de voisin utilisez: « Parler ne fait pas cuire le riz. »</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>P|01010000 a|01100001 r|01110010 l|01101100 e|01100101 r|01110010  |00100000 n|01101110 e|01100101  |00100000 f|01100110 a|01100001 i|01101001 t|01110100  |00100000 p|01110000 a|01100001 s|01110011  |00100000 c|01100011 u|01110101 i|01101001 r|01110010 e|01100101  |00100000 l|01101100 e|01100101  |00100000 r|01110010 i|01101001 z|01111010 .|00101110 
+<span></span>
+01010000 01100001 01110010 01101100 01100101 01110010 00100000 01101110 01100101 00100000 01100110 01100001 01101001 01110100 00100000 01110000 01100001 01110011 00100000 01100011 01110101 01101001 01110010 01100101 00100000 01101100 01100101 00100000 01110010 01101001 01111010 00101110 
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Traduire une phrase en ASCII hexadécimal, puis la passer à son voisin qui la décode. Si vous n’avez pas de voisin utilisez: « Lever la voix ne donne pas raison. ».</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>L|4C e|65 v|76 e|65 r|72  |20 l|6C a|61  |20 v|76 o|6F i|69 x|78  |20 n|6E e|65  |20 d|64 o|6F n|6E n|6E e|65  |20 p|70 a|61 s|73  |20 r|72 a|61 i|69 s|73 o|6F n|6E .|2E 
+<span></span>
+4C 65 76 65 72 20 6C 61 20 76 6F 69 78 20 6E 65 20 64 6F 6E 6E 65 20 70 61 73 20 72 61 69 73 6F 6E 2E 
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Recommencer en utilisant une phrase avec des accents que vous coderez en hexadécimal avec l’encodage <code>latin-1</code>(<code>ISO 8859-1</code>). Si vous n’avez pas de voisin utilisez: « Les excès tuent plus sûrement que les épées. »</p>
+<div class="cell" data-tags="[&quot;correction&quot;]" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<div class="highlight"><pre><span></span>L|4c e|65 s|73  |20 e|65 x|78 c|63 è|e8 s|73  |20 t|74 u|75 e|65 n|6e t|74  |20 p|70 l|6c u|75 s|73  |20 s|73 û|fb r|72 e|65 m|6d e|65 n|6e t|74  |20 q|71 u|75 e|65  |20 l|6c e|65 s|73  |20 é|e9 p|70 é|e9 e|65 s|73 .|2e 
+<span></span>
+4c 65 73 20 65 78 63 e8 73 20 74 75 65 6e 74 20 70 6c 75 73 20 73 fb 72 65 6d 65 6e 74 20 71 75 65 20 6c 65 73 20 e9 70 e9 65 73 2e 
+</pre></div>
+
+</div>
+</div></li>
+<li><p>Rédiger un paragraphe expliquant l’intérêt du codage <code>UTF-8</code>, ses avantages et ses inconvénients par rapport l’<code>ASCII</code> ou au codage <code>ISO-8859-1</code>.</p></li>
+</ol>
+<p><a href="http://www.editions-eyrolles.com/Livre/9782212135435/" class="cite-source">Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés et des idées de projets par Gilles Dowek</a></p>
+<h2 id="encodage-et-décodage-en-python" class="anchored">Encodage et décodage en Python</h2>
+<h3 id="encodage" class="anchored">Encodage</h3>
+<p>Tenter d’encoder la première phrase du texte avec python.</p>
+<div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">"Grace Murray Hopper, née le 9 décembre 1906 à New York et morte le 1er janvier"</span>
+<span class="n">phrase</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span>
+</pre></div>
+
+<ol type="1">
+<li>Recommencer avec les encodages ISO-8859-1 et ISO-8859-11. Noter vos observations.</li>
+<li>Montrer que le caractère € peut être encodé en UTF-8, ISO-8859-15, mais pas ISO-8859-1.</li>
+</ol>
+<h3 id="décodage" class="anchored">Décodage</h3>
+<p>Tenter de décoder quelques caractères de leur forme binaire <em>(hexadécimale)</em> vers leur représentation réelle.</p>
+<div class="highlight"><pre><span></span><span class="sa">b</span><span class="s1">'</span><span class="se">\xc3\xa9</span><span class="s1">'</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+</pre></div>
+
+<ol type="1">
+<li>Rechercher d’autres codes hexadécimaux de caractères UTF-8 à décoder sur l’article <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Wikipédia</a>.</li>
+<li>Rechercher des codes de caractères hexadécimaux <code>iso-8859-1</code> à décoder.</li>
+</ol>
+<h2 id="lecture-et-écriture-de-fichiers-en-python" class="anchored">Lecture et écriture de fichiers en Python</h2>
+<h3 id="lecture-de-fichier" class="anchored">Lecture de fichier</h3>
+<p>Pour lire un fichier texte depuis Python, la syntaxe est la suivante:</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'file-utf-8.md'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">    read_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">read_data</span><span class="p">)</span>
+</pre></div>
+
+<p>Dans ce cas, on lit le fichier sous forme de texte encodé (par défaut utf-8)</p>
+<p>Mais si on a besoin, on peut aussi lire le texte sous forme de bits, en ajoutant un deuxième argument à la fonction open (ici <code>"rb"</code> pour read bytes):</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'file-utf-8.md'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">    read_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">read_data</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="écriture-de-fichiers" class="anchored">Écriture de fichiers</h3>
+<p>Dans ce cas le deuxième argument est <code>"w"</code> pour <em>write</em> ou <code>"wb"</code> pour <em>write bytes</em>.</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'file-from-python-utf-8.md'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">    f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"À l'origine, ce fichier texte a été écrit depuis python"</span><span class="p">)</span>
+<span></span>
+<span class="c1"># Vérification</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'file-from-python-utf-8.md'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">    read_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">    print</span><span class="p">(</span><span class="n">read_data</span><span class="p">)</span>
+</pre></div>
+
+<ol type="1">
+<li>En utilisant les fonctions vues, écrire un fichier texte depuis Python que vous encoderez d’abord en <code>utf-8</code>, puis en <code>iso-8859-15</code>.</li>
+<li>Comparer les codes binaires des deux fichiers.</li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

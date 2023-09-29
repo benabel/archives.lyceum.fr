@@ -1,0 +1,134 @@
+---
+"tags": ["Python", "algorithmique", "algorithme de force brute"]
+---
+
+::: programme
++--------------------------+-----------------------------------+-------------------------------------+
+| Contenus                 | Capacités attendues               | Commentaires                        |
++==========================+===================================+=====================================+
+| Parcours séquentiel d'un | Écrire un algorithme de           | On montre que le coût est linéaire  |
+| tableau                  | recherche d'un extremum, de       |                                     |
+|                          | calcul d'une moyenne.             |                                     |
++--------------------------+-----------------------------------+-------------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+:::: g
+Dans ce chapitre, nous allons étudier des algorithmes de parcours séquentiel d'un tableau pour:
+
+1. Rechercher un élément d'un type donné.
+2. Rechercher le maximum d'un tableau.
+3. Calculer la moyenne d'un tableau.
+
+Ces algorithmes «séquentiels» ne sont pas du tout efficace, on les appelle en anglais _Brute force algorithms_.
+
+::::
+
+<wc-wikimage title="Sudoku_solved_by_bactracking.gif" caption="Exemple de résolution d'un sudoku par force brute. Toutes les solutions sont explorées jusqu'à trouver la bonne."></wc-wikimage>
+
+
+:::
+
+## Méthodes de parcours séquentiel d'un tableau
+
+Comme vu dans le chapitre P3C2, on peut itérer sur les valeurs ou sur les index.
+
+### Itération sur les valeurs
+
+On fait une itération sur les valeurs du tableau en utilisant le mot-clé `in`.
+
+```{python}
+tab = [12, -3, 15, -9, 17, 7]
+for val in tab:
+    print(val)
+```
+
+### Itération sur les index
+
+C'est la méthode classique utilisée dans les langages impératifs.
+
+```{python}
+for i in range(len(tab)):
+    val = tab[i]
+    print("indice:", i, "valeur:", val)
+```
+
+## Recherche d'un extrémum
+
+On initialise la valeur au premier élément du tableau puis on parcourt le tableau pour vérifier
+s'il existe un élément soit plus petit soit plus grand.
+
+### Recherche du maximum
+
+```{python}
+def maximum(liste):
+    # ne pas utiliser max pour le nom de variable
+    # car la fonction max existe en Python(on l'écraserait!)
+    maxi = liste[0]
+    for e in liste:
+        if e > maxi:
+            maxi = e
+    return maxi
+
+# appel de la fonction sur tab
+maximum(tab)
+```
+
+### Recherche du minimum
+
+```{python}
+def minimum(liste):
+    mini = liste[0]
+    for e in liste:
+        if e < mini:
+            mini = e
+    return mini
+
+# appel de la fonction avec la liste tab en argument
+minimum(tab)
+```
+
+## Calculer la moyenne d'un tableau
+
+On initialise une valeur accumulatrice à 0, puis on additionne tous les éléments du tableau. Enfin
+on divise la somme des éléments par le nombre d'éléments du tableau.
+
+```{python}
+def moyenne(liste):
+    somme = 0
+    for e in liste:
+        somme = somme + e
+    # On divise la somme de tpus les éléments par leur nombre
+    moyenne = somme / len(liste)
+    return moyenne
+
+# appel de la fonction
+moyenne(tab)
+```
+
+## Coût de l'algorithme: notion de complexité
+
+Pour mesurer l'efficacité _temporelle_ d'un algorithme, on introduit la notion de complexité.
+
+Complexité
+
+:   La complexité d'un algorithme est le nombre d'opérations élémentaires(opération arithmétique,
+    comparaison, affectation...) effectuées pour obtenir un résultat.
+
+::: prop
+
+La complexité d'un algorithme dépend souvent de la taille des données d'entrée notée $N$. Dans
+notre cas la taille du tableau dans lequel on recherche l'élément.
+
+:::
+
+Pour comparer facilement les algorithmes on se place dans le pire des cas, dans les algorithmes
+présentés il faut _toujours_ parcourir entièrement la liste pour trouver le maximum, le minimum ou
+la moyenne: il y a donc $N$ itérations.
+
+On dit que le coût de l'algorithme est _linéaire_ ou encore que c'est un algorithme de complexité
+$O(N)$.
+
+
+
