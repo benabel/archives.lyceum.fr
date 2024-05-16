@@ -1,0 +1,5 @@
+---
+title: Première
+listing:
+  contents: /*/index.qmd
+---

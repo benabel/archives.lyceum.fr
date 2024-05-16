@@ -1,0 +1,9 @@
+---
+title: Exercices
+subtitle: "Partie 2: Internet"
+exo: true
+type: exo
+tabnav: true
+---
+
+Aucun exercice pour l'instant.

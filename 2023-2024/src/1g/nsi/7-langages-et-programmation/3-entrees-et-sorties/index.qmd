@@ -1,0 +1,145 @@
+---
+tags:
+  - python
+  - type
+  - print
+  - input
+title: "Chapitre 3: Entrées et sorties"
+order: 3
+cours: true
+tabnav: true
+categories:
+  - 1NSI
+---
+
+::: programme
++------------------------+---------------------------------+-----------------------------------+
+| Contenus               | Capacités attendues             | Commentaires                      |
++========================+=================================+===================================+
+| Constructions          | Mettre en évidence un corpus    | Séquences, affectation,           |
+| élémentaires           | de constructions élémentaires.  | conditionnelles, boucles bornées, |
+|                        | boucles non bornées, appels de  |                                   |
+|                        | fonction.                       |                                   |
++------------------------+---------------------------------+-----------------------------------+
+:::
+
+::: intro
+
+Un programme est avant tout là pour nous servir à résoudre des problèmes, l'utilisateur doit
+pouvoir interagir avec celui-ci.
+
+Cela s'effectue par l'intermédiaire d'entrées et des sorties.
+
+- Les **entrées** permettent à l'utilisateur d'entrer des données dans le programme.
+
+- Les **sorties** permettent d'afficher les résultats à l'utilisateur.
+
+:::
+
+## Entrée des données avec la fonction `input()`
+
+La fonction `input()` permet d'afficher une phrase(plus exactement une chaîne de caractères, c'est
+pour cela qu'on doit placer cette phrase entre guillemets `"ma phrase"`), d'attendre que
+l'utilisateur entre une donnée et tape sur *Entrée*.
+
+_Dans la suite, les lignes commençant par `>>>` désignent les entrées, les autres sont des
+sorties._
+
+```python
+>>> input("Qu'est-ce qui est apparu en premier : l'œuf ou la poule ? ")
+Qu'est-ce qui est apparu en premier : l'œuf ou la poule ? la poule
+```
+
+La donnée entrée par l'utilisateur est renvoyée par la fonction `input()` et peut être stockée dans
+une variable pour une utilisation ultérieure.
+
+Par exemple stockons cette réponse dans une variable appelée `réponse`:
+
+```python
+>>> réponse = input("Quel jour du mois sommes nous ? ")
+Quel jour du mois sommes nous ? 13
+```
+
+**ATTENTION** la fonction `input()` stocke la valeur sous la forme d'une chaîne de caractères si
+vous voulez effectuer des opérations mathématiques, commencez par la convertir en nombre(entier ou
+réel), sinon vous risquez d'avoir de mauvaises surprises!
+
+```python
+>>> réponse = input("Quel jour du mois sommes nous ? ")
+Quel jour du mois sommes nous ? 13
+>>> type(réponse)
+<class 'str'>
+>>> réponse * 2
+'1313'
+```
+
+Convertissons l'entrée de l'utilisateur en entier avec la fonction `int()`
+
+```python
+>>> réponse = int(input("Quel jour du mois sommes nous ? "))
+Quel jour du mois sommes nous ? 13
+>>> type(réponse)
+<class 'int'>
+>>> réponse * 2
+26
+```
+
+## Affichage de résultats pour l'utilisateur avec la fonction `print()`
+
+Pour afficher du texte ou des valeurs de variables on utilise la fonction `print()`.
+
+**ATTENTION** Lorsque vous affichez du texte il doit être entouré de guillemets, mais pas lorsque
+vous souhaitez afficher des valeurs de variables.
+
+```python
+>>> print("Votre réponse est: ")
+Votre réponse est:
+
+>>> print(réponse)
+13
+```
+
+Vous pouvez même afficher plusieurs objets en les séparant par des virgules.
+
+```python
+>>> print("Nous sommes le", réponse, "du mois de septembre")
+Nous sommes le 13 du mois de septembre
+```
+
+On peut même créer des chaînes de caractères sur plusieurs lignes en utilisant trois guillemets.
+
+```python
+>>> print("""Nous allons faire une si longue phrase qu'il
+... est indispensable de l'écrire
+... sur au moins trois
+... , que dis-je,
+... cinq lignes""")
+Nous allons faire une si longue phrase qu'il
+est indispensable de l'écrire
+sur au moins trois
+, que dis-je,
+cinq lignes
+```
+
+::: {.plus titre="Les f-strings"}
+
+Depuis la version 3.6 de python, il est possible de d'inclure directement des variables dans les
+chaines de caractères, c'est ce que l'on appelle les
+[`f-strings`](https://www.python.org/dev/peps/pep-0498/), pour les utiliser, il faut:
+
+- précéder le guillement ouvrant d'un `f`,
+- écrire les noms des variables entre accolades `{variable}`.
+
+::: example
+
+```python
+>>> nom = "Ada"
+>>> age = 16
+>>> print(f"Bonjour, {nom}. Vous avez {age} ans.")
+Bonjour, Ada. Vous avez 16 ans.
+
+```
+
+:::
+
+:::

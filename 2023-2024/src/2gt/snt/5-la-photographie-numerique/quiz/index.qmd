@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Partie 5: La photographie numérique"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```

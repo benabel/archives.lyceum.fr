@@ -1,0 +1,191 @@
+---
+tags:
+  - cours
+  - seconde
+  - lycée
+  - snt
+  - python
+  - boucle
+  - fonction
+title: "Chapitre 3: Boucles et fonctions"
+order: 3
+cours: true
+tabnav: true
+categories:
+  - 2SNT
+---
+
+::: programme
+
++------------------------------------+---------------------------------------------------------+
+| Contenus                           | Capacités attendues                                     |
++====================================+=========================================================+
+| Boucles bornées et non bornées     | Écrire et développer des programmes pour répondre à des |
+|                                    | problèmes et modéliser des phénomènes physiques,        |
+| Définitions et appels de fonctions | économiques et sociaux.                                 |
++------------------------------------+---------------------------------------------------------+
+
+:::
+
+::: {.intro layout-ncol=2}
+
+Dans ce chapitre, nous allons nous intéresser aux boucles qui permettent de **répéter** des
+instructions dans un programme, ainsi qu'aux fonctions qui permettent d'exécuter des portions de
+programme à la demande.
+
+
+<wc-wikimage title="RepeatUntil.svg" caption="Il existe deux types de boucles, les boucles bornées et le boucles non bornées."></wc-wikimage>
+
+:::
+
+## Les boucles
+
+
+Les boucles permettent de **répéter** des blocs d'instructions.
+
+Il en existe deux types:
+
+- Les boucles bornées avec le mot-clé `for`.
+- Les boucles non bornées avec le mot-clé `while`.
+
+### Les boucles bornées: `for`
+
+Lorsqu'_on connait le nombre de répétitions_ à effectuer, on utilise la boucle `for` associée à la
+fonction `range()`.
+
+::: example
+
+Pour répéter 7 fois un bloc d'instructions, on utilise:
+
+```{python}
+for i in range(7):
+    print(i)
+```
+
+
+
+:::
+
+::: plus
+
+On peut aussi réaliser des boucles sur des types construits qui seront vus en
+[première](/1g/nsi/3-representation-des-donnees-types-construits).
+
+- Sur des chaînes de caractères:
+
+  ```{python}
+  for lettre in "Bonjour!":
+      print(lettre)
+  ```
+  
+
+- Sur des listes:
+
+  ```{python}
+  for premier in [2, 3, 5, 7, 11, 13]:
+      print(premier)
+  ```
+  
+:::
+
+### Les boucles non bornées: `while`
+
+Lorsqu'_on ne connait pas le nombre de répétitions_ à effectuer, on utilise la boucle `while`
+associée à une _variable de contrôle_.
+
+::: example
+
+Voici un programme qui permet de vérifier la saisie d'un mot de passe par un utilisateur.
+
+```python
+mdp = ""                # initialisation
+while mdp != "azerty":  # condition d'arrêt de la boucle
+    mdp = input("Entrez votre mot de passe.")   # mise à jour de
+                                                # la variable de boucle
+
+# On sort de la boucle
+print("Vous êtes connecté")
+```
+
+:::
+
+::: callout-caution
+
+Attention à bien vérifier que votre boucle finira par se terminer sinon votre programme rentrera
+dans une boucle infinie, et il faudra obligatoirement le stopper.
+
+:::
+
+## Les fonctions
+
+Il s'agit de blocs d'instructions exécutés à la demande, on les définit par le mot-clef `def`.
+
+::: example
+```{python}
+# définition de la fonction
+def dit_bonjour(prenom):
+    print("Bonjour " + prenom)
+```
+
+Nous venons de définir la fonction, mais pour l'instant, il ne se passe rien.
+
+Pour exécuter le code de la fonction, il faut maintenant appeler la fonction avec un paramètre pour
+l'exécuter.
+
+```{python}
+# appel de la fonction avec l'argument Ada
+dit_bonjour("Ada")
+```
+
+:::
+
+### Renvoyer une valeur avec `return`
+
+Au lieu d'afficher une valeur, il est préférable de _renvoyer_ une valeur grâce au mot-clé
+`return`.
+
+::: example
+
+```{python}
+def périmètre(rayon):
+    p = 2*3.14*rayon
+    return p
+```
+
+Cette fois-ci l'appel renverra la valeur du périmètre, on peut alors l'affecter à une variable.
+
+```{python}
+# on appelle la fonction avec l'argument 0.5
+p = périmètre(0.5)
+print(p)
+```
+
+:::
+
+### Les paramètres de fonction
+
+Une fonction peut accepter un nombre quelconque de paramètres, il suffit de les séparer par des
+virgules.
+
+::: examples
+
+Avec deux paramètres. 
+
+```{python}
+def surface_rectangle(l, L):
+    return l*L
+# appel
+surface_rectangle(2, 3) # renvoie 6
+```
+
+Avec aucun paramètre:
+
+```{python}
+import time
+def affiche_heure():
+    print(time.asctime())
+
+# Pour l'appel on met les parénthèses même s'il n'y a pas d'arguments
+affiche_heure()
+```
+:::

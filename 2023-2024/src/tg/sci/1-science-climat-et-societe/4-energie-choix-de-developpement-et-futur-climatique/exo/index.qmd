@@ -1,0 +1,24 @@
+---
+title: Exercices
+subtitle: "Chapitre 4: Énergie choix de développement et futur climatique"
+exo: true
+type: exo
+tabnav: true
+---
+## Unités d'énergie et de puissance
+
+En utilisant cette
+[infographie](https://www.planete-energies.com/fr/medias/infographies/les-unites-de-mesure-de-l-energie)
+du site planete-energie.com, répondre aux questions suivantes.
+
+
+1. Quelles sont les unités d'énergie et de puissance dans le système international d'unités(SI)?
+2. Donner trois autres unités dont vous avez déjà entendu parler en précisant
+   s'il s'agit d'unités d'énergie ou de puissance. Donner leur équivalent dans
+   le système international.
+3. Rappeler les valeurs des préfixes multiplicatifs SI.
+4. Comparer la puissance d'un ordinateur portable et d'un humain.
+5. Combien de villes de 100 mille habitants peut alimenter un réacteur nucléaire
+   standard.
+
+Voir la version [pdf](https://www.planete-energies.com/sites/default/files/dossier_infographies/5G/tableaux-unites/PE-tableaux-unites-A3.pdf)

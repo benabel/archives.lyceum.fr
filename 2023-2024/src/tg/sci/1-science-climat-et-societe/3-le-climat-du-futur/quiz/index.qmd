@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Chapitre 3: Le climat du futur"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```

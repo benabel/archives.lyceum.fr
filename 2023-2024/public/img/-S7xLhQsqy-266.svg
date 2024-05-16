@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="266pt" height="212pt" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.1" viewBox="-1 -1 265 211" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(108,-54)">
+  <g font-family="Times-Roman">
+   <g class="node">
+    <circle cx="60" cy="185" r="18" fill="#eee" stroke="#000"/>
+    <text x="60" y="190" text-anchor="middle">D</text>
+   </g>
+   <g class="node">
+    <circle cx="132" cy="185" r="18" fill="#eee" stroke="#000"/>
+    <text x="132" y="190" text-anchor="middle">E</text>
+   </g>
+   <g class="node">
+    <circle cx="96" cy="131" r="18" fill="#eee" stroke="#000"/>
+    <text x="96" y="136" text-anchor="middle">+</text>
+   </g>
+   <g class="edge">
+    <path d="m86 147c-3 4-7 9-10 14" fill="none" stroke="#000"/>
+    <polygon points="70 170 73 160 78 164" stroke="#000"/>
+   </g>
+   <g class="edge">
+    <path d="m106 147c3 4 7 9 10 14" fill="none" stroke="#000"/>
+    <polygon points="122 170 114 164 119 160" stroke="#000"/>
+   </g>
+  </g>
+ </g>
+ <g class="node" font-family="Times-Roman">
+  <circle cx="24" cy="131" r="18" fill="#eee" stroke="#000"/>
+  <text x="24" y="136" text-anchor="middle">A</text>
+ </g>
+ <g>
+  <g font-family="Times-Roman">
+   <g class="node">
+    <circle cx="60" cy="185" r="18" fill="#eee" stroke="#000"/>
+    <text x="60" y="190" text-anchor="middle">B</text>
+   </g>
+   <g class="node">
+    <circle cx="132" cy="185" r="18" fill="#eee" stroke="#000"/>
+    <text x="132" y="190" text-anchor="middle">C</text>
+   </g>
+   <g class="node">
+    <circle cx="96" cy="131" r="18" fill="#eee" stroke="#000"/>
+    <text x="96" y="136" text-anchor="middle">-</text>
+   </g>
+   <g class="edge">
+    <path d="m86 147c-3 4-7 9-10 14" fill="none" stroke="#000"/>
+    <polygon points="73 160 78 164 70 170" stroke="#000"/>
+   </g>
+   <g class="edge">
+    <path d="m106 147c3 4 7 9 10 14" fill="none" stroke="#000"/>
+    <polygon points="114 164 119 160 122 170" stroke="#000"/>
+   </g>
+  </g>
+ </g>
+ <g font-family="Times-Roman">
+  <g class="node">
+   <circle cx="60" cy="77" r="18" fill="#eee" stroke="#000"/>
+   <text x="60" y="82" text-anchor="middle">*</text>
+  </g>
+  <g class="edge">
+   <path d="m50 92c-3 5-6 10-10 15" fill="none" stroke="#000"/>
+   <polygon points="37 105 43 109 34 115" stroke="#000"/>
+  </g>
+  <g class="edge">
+   <path d="m70 92c3 5 6 10 10 15" fill="none" stroke="#000"/>
+   <polygon points="77 109 83 105 86 115" stroke="#000"/>
+  </g>
+  <g class="node">
+   <circle cx="132" cy="23" r="18" fill="#eee" stroke="#000"/>
+   <text x="132" y="28" text-anchor="middle">+</text>
+  </g>
+  <g class="edge">
+   <path d="m117 34c-11 8-23 17-34 26" fill="none" stroke="#000"/>
+   <polygon points="81 57 85 63 75 66" stroke="#000"/>
+  </g>
+  <g class="edge">
+   <path d="m147 34c11 8 23 17 34 26" fill="none" stroke="#000"/>
+   <polygon points="179 63 183 57 189 66" stroke="#000"/>
+  </g>
+ </g>
+</svg>

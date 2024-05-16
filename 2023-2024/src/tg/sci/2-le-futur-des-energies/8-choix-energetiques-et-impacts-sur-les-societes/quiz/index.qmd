@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Chapitre 8: Choix énergétiques et impacts sur les sociétés"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```

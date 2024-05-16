@@ -1,0 +1,5 @@
+---
+title: Seconde
+listing:
+  contents: /*/index.qmd
+---

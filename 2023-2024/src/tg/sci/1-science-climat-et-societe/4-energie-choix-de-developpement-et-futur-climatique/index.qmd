@@ -1,0 +1,432 @@
+---
+tags:
+  - cours
+  - pc
+  - terminale
+  - lycée
+  - enseignement scientifique
+title: "Chapitre 4: Énergie choix de développement et futur climatique"
+order: 4
+cours: true
+tabnav: true
+categories:
+  - TSCI
+---
+
+::: programme
+
++----------------------------------------------------------+------------------------------------------+
+|                         Savoirs                          |               Savoir-faire               |
++==========================================================+==========================================+
+| L’énergie utilisée dans le monde provient d’une          | Utiliser les différentes                 |
+| diversité de ressources parmi lesquelles les             | unités d’énergie employées               |
+| combustibles fossiles dominent.                          | (Tonne Équivalent Pétrole                |
+|                                                          | (TEP), kWh...) et les                    |
+| La consommation en est très inégalement répartie         | convertir en joules – les                |
+| selon la richesse des pays et des individus.             | facteurs de conversion étant             |
+|                                                          | fournis.                                 |
++----------------------------------------------------------+------------------------------------------+
+| La croissance de la consommation globale                 | Exploiter des données de                 |
+| (doublement dans les 40 dernières années) est            | production et d’utilisation              |
+| directement liée au modèle industriel de                 | d’énergie à différentes                  |
+| production et de consommation des sociétés.              | échelles (mondiale, nationale,           |
+|                                                          | individuelle...).                        |
++----------------------------------------------------------+------------------------------------------+
+| En moyenne mondiale, cette énergie est utilisée à        | Comparer quelques ordres de              |
+| parts comparables par le secteur industriel, les         | grandeur d’énergie et de                 |
+| transports, le secteur de l’habitat et dans une          | puissance : corps humain,                |
+| moindre mesure par le secteur agricole.                  | objets du quotidien, centrale            |
+|                                                          | électrique, flux radiatif                |
+| Les énergies primaires sont disponibles sous forme       | solaire...                               |
+| de stocks (combustibles fossiles, uranium) et de         |                                          |
+| flux (flux radiatif solaire, flux géothermique,          |                                          |
+| puissance gravitationnelle à l’origine des               |                                          |
+| marées).                                                 |                                          |
++----------------------------------------------------------+------------------------------------------+
+| La combustion de carburants fossiles et de               | Calculer la masse de dioxyde de carbone  |
+| biomasse libère du dioxyde de carbone et également       | produite par unité d’énergie dégagée     |
+| des aérosols et d’autres substances (\ce{N_2O}, \ce{O3}, | pour différents combustibles (l’équation |
+| suies, produits soufrés), qui affectent la qualité       | de réaction et l’énergie massique        |
+| de l’air respiré et la santé.                            | dégagée étant fournies).                 |
+|                                                          |                                          |
+|                                                          | À partir de documents épidémiologiques,  |
+|                                                          | identifier et expliquer les conséquences |
+|                                                          | sur la santé de certains polluants       |
+|                                                          | atmosphériques, telles les particules    |
+|                                                          | fines résultant de combustions.          |
++----------------------------------------------------------+------------------------------------------+
+| L’empreinte carbone d’une activité ou d’une              | Comparer sur l’ensemble de leur cycle de |
+| personne est la masse de CO2 produite directement        | vie les impacts d’objets industriels     |
+| ou indirectement par sa consommation d’énergie           | (par exemple, voiture à moteur           |
+| et/ou de matière première.                               | électrique ou à essence).                |
+|                                                          |                                          |
+|                                                          | À partir de documents, analyser          |
+|                                                          | l’empreinte carbone de différentes       |
+|                                                          | activités humaines et proposer des       |
+|                                                          | comportements pour la minimiser ou la    |
+|                                                          | compenser.                               |
++----------------------------------------------------------+------------------------------------------+
+| Les scénarios de transition écologique font              | Analyser l’impact de l’augmentation du   |
+| différentes hypothèses sur la quantité de GES            | CO2 sur le développement de la           |
+| émise dans le futur. Ils évaluent les changements        | végétation, écosystèmes et les           |
+| prévisibles, affectant principalement les plus           | conditions de vie des êtres humains,     |
+| fragiles.                                                |                                          |
++----------------------------------------------------------+------------------------------------------+
+| Les projections fournies par les modèles                 | Analyser des extraits de documents du    |
+| permettent de définir les aléas et peuvent               | GIEC ou d’accords internationaux         |
+| orienter les prises de décision. Les mesures             | proposant différents scénarios.          |
+| d’adaptation découlent d’une analyse des risques         |                                          |
+| et des options pour y faire face.                        |                                          |
++----------------------------------------------------------+------------------------------------------+
+
+
+:::
+
+<!-- `youtube: HQoIAs3JGkQ` -->
+
+::: {.intro layout-ncol=2}
+
+Les sociétés modernes sont dépendantes de l'énergie, or les choix énergétiques ont un impact sur le
+réchauffement climatique. Comment faire des choix responsables dans ce domaine?
+
+<wc-wikimage title="20160411_Global_warming_line_chart_(1850-2016)_-_Ed_Hawkins.png" caption="Représentation graphique de l'élévation de températures depuis l'ère pré-industrielle."></wc-wikimage>
+
+:::
+
+::: appli
+
+Évaluation diagnostique P69 du [manuel Hachette Ed.2020](https://fr.calameo.com/read/004822953a13311d337ec).
+
+:::
+
+<!-- ## Énergie et puissance
+
+Énergie
+
+: L'énergie est une grandeur qui peut être transféré à un corps pour le déplacer ou le
+chauffer. On la mesure en joule(J) dans le système international(SI).
+
+Puissance
+
+: C'est l'énergie transférée par unité de temps. On la mesure en watt(W) dans le système
+international(SI).
+
+::: prop
+
+$$
+1W=1J/s
+$$
+
+ou $1J.s^{-1}$ pour les spécialistes!
+:::
+
+::: example
+
+Dans une voiture l'énergie est stockée dans le réservoir(ou la batterie).
+
+Le moteur est plus ou moins puissant pour accélérer plus ou moins vite en
+consommant plus ou moins d'énergie à la seconde.
+
+:::
+
+TODO: Ordres de grandeurs 
+
+
+::: {.exp titre="Utilisation d'une bouilloire"}
+
+On lit sur une bouilloire une puissance de __________.
+
+1. Combien de temps faut-il pour élever de 10 °C la température d'un litre
+   d'eau.
+2. En déduire la durée nécessaire pour faire bouillir 1L d'eau initialement à
+   20°C.
+
+_Données:_
+
+- _il faut une calorie pour élever de 1°C la température d'1g d'eau._
+- _1 calorie = 4,18J._
+
+:::
+
+-->
+
+## Production et consommation d'énergie dans le monde
+
+::: appli
+
+Faire l'activité PP68-69 du Livre Scolaire: <https://lls.fr/ESTP68>
+
+:::
+
+::: callout-important
+
+L'énergie utilisée dans le monde provient d'une diversité de ressources parmi lesquelles les
+combustibles fossiles dominent.
+
+:::
+
+```{python}
+#| echo: false
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame.from_dict(
+    {
+        "Monde": {
+            "Pétrole": 4055,
+            "Gaz naturel": 2047,
+            "Charbon": 1845,
+            "Nucléaire": 189,
+            "Biomasse et déchets": 1102,
+            "Hydraulique": 300,
+            "Eolien": 81,
+            "Géothermie": 52,
+            "Solaire": 32,
+        },
+        "France": {
+            "Pétrole": 68,
+            "Gaz naturel": 34,
+            "Charbon": 4,
+            "Nucléaire": 27,
+            "Biomasse et déchets": 15,
+            "Hydraulique": 3.7,
+            "Eolien": 1.7,
+            "Géothermie": 0.15,
+            "Solaire": 0.6,
+        },
+        "Type": {
+            "Pétrole": "stock",
+            "Gaz naturel": "stock",
+            "Charbon": "stock",
+            "Nucléaire": "stock",
+            "Biomasse et déchets": "flux",
+            "Hydraulique": "flux",
+            "Eolien": "flux",
+            "Géothermie": "flux",
+            "Solaire": "flux",
+        },
+    }
+)
+
+
+
+X = df.index
+y = df.Monde
+z = df.France
+X_axis = np.arange(len(X))
+
+fig, ax1 = plt.subplots()
+
+bar1 = ax1.bar(X_axis-0.15, y, width=0.3, color='tab:blue', align='center')
+
+ax1.set_ylabel("Énergie Monde(Mtep)")
+
+# Twin Axes
+ax2 = ax1.twinx()
+ax2.set_ylabel("Énergie France(Mtep)")
+
+bar2 = ax2.bar(X_axis + 0.15, z, width=0.3, color='tab:orange', align='center')
+
+ax1.set_xticks(X_axis)
+ax1.set_xticklabels(labels=X,rotation=45, ha='right');
+plt.title("Énergie produite et ses sources en France et dans le monde en 2020")
+plt.legend([bar1, bar2],["Monde", "France"])
+
+plt.show()
+```
+
+::: callout-important
+
+La consommation d'énergie est très inégalement répartie selon la
+richesse des pays(et des individus).
+
+:::
+
+```{python}
+#| echo: false
+df = pd.DataFrame.from_dict({'Pop(millions)': {'Chine': 1386,
+  'Etats-Unis': 326,
+  'Indonésie': 264,
+  'France': 67,
+  'Canada': 35},
+ 'Conso nrj(Mtep)': {'Chine': 1995,
+  'Etats-Unis': 1520,
+  'Indonésie': 174,
+  'France': 154,
+  'Canada': 196},
+ 'PIB(G\\$)': {'Chine': 13300,
+  'Etats-Unis': 19390,
+  'Indonésie': 3242,
+  'France': 2876,
+  'Canada': 1714},
+ 'Conso/hab': {'Chine': 1.44,
+  'Etats-Unis': 4.66,
+  'Indonésie': 0.66,
+  'France': 2.3,
+  'Canada': 5.6},
+ 'PIB/hab': {'Chine': 9596,
+  'Etats-Unis': 59479,
+  'Indonésie': 12280,
+  'France': 42925,
+  'Canada': 48971}})
+X = df.index
+y = df["Conso/hab"]
+z = df["PIB/hab"]
+X_axis = np.arange(len(X))
+
+fig, ax1 = plt.subplots()
+
+bar1 = ax1.bar(X_axis-0.15, y, width=0.3, color='tab:blue', align='center')
+
+ax1.set_ylabel("Conso/hab(tep/an)")
+
+# Twin Axes
+ax2 = ax1.twinx()
+ax2.set_ylabel("PIB/hab($/an)")
+
+bar2 = ax2.bar(X_axis + 0.15, z, width=0.3, color='tab:orange', align='center')
+
+plt.xticks(X_axis, X)
+plt.title("Lien entre consommation énergétique et richesse par habitant en 2017")
+plt.legend([bar1, bar2],["Conso/hab", "PIB/hab"], loc="upper left" )
+
+plt.show()
+```
+
+<wc-wikimage title="Energy_consumption_per_capita_2003_(French).png" caption="Consommation énergétique par habitant dans le monde en 2003."></wc-wikimage>
+
+::: callout-important
+
+La croissance de la consommation globale (doublement dans les 40 dernières années) est directement
+liée au modèle industriel de production et de consommation des sociétés.
+
+:::
+
+<wc-wikimage title="Energy_consumption_by_source,_OWID.svg" caption="A l'image de la population, la consommation globale d'énergie n'a cessé de croitre ces 40 dernières années."></wc-wikimage>
+
+::: callout-important
+
+En moyenne mondiale, l'énergie est utilisée à parts comparables par le secteur industriel, les
+transports, le secteur de l'habitat et dans une moindre mesure par le secteur agricole.
+
+:::
+
+```{python}
+#| echo: false
+COLS = ["Secteur", "Pourcentage"]
+df = pd.DataFrame(
+    [
+        ["Transports et secteur tertiare", 37],
+        ["Industrie", 30],
+        ["Habitat", 20],
+        ["Autre", 11],
+        ["Agriculture", 2],
+    ],
+    columns=COLS,
+)
+
+plt.pie(df[COLS[1]], labels=df[COLS[0]], autopct="%.0f%%")
+plt.show()
+```
+
+
+::: callout-important
+
+Les énergies primaires sont disponibles sous forme de stocks (combustibles fossiles, uranium) et de
+flux (flux radiatif solaire, flux géothermique, puissance gravitationnelle à l'origine des marées).
+
+:::
+
+## La pollution de l’air et ses conséquences
+
+::: appli
+
+Faire l'activité PP72-73 du Livre Scolaire: <https://lls.fr/ESTP73>
+
+:::
+
+
+::: callout-important
+
+La combustion de carburants fossiles et de biomasse libère du dioxyde de carbone et également des
+aérosols et d’autres substances (\ce{N_2O}, \ce{O_3}, suies, produits soufrés), qui affectent la
+qualité de l’air respiré et la santé.
+
+:::
+
+
+
+
+
+<!-- 
+
+:::{.exp titre="Rendement d'un panneau solaire"} 
+
+On éclaire perpendiculairement un panneau solaire rectangulaire (15cmx8cm) avec une lampe halogène.
+
+![Photo de l'expérience](../../images/exp_panneau_solaire.jpg)
+
+Le panneau solaire permet d'alimenter une lampe en lui fournissant une tension U=3,58V et une
+intensité I=166,5mA. On rappelle que la puissance électrique s'écrit $P=UI$.
+
+![Mesures](../../image/../images/exp_panneau_solaire_mesures.jpg)
+
+On mesure l'éclairement avec un luxmètre au niveau du panneau solaire $E_v=250 lux$. On considérera que dans les conditions de l'expérience $1lux = 4 W.m^{-2}$.
+
+_Calculer le rendement de la conversion énergie lumineuse → énergie électrique._
+
+:::
+
+-->
+
+<!--
+
+::: plus
+
+En utilisant cette page web:
+
+https://www.planete-energies.com/fr/medias/infographies/la-carte-du-monde-de-l-energie-3
+
+Montrer sur des exemples que la consommation d'énergie est très inégalement répartie selon la
+richesse des pays(et des individus).
+
+:::
+
+## L'empreinte carbone
+
+Empreinte carbone
+
+: L'empreinte carbone d'une activité ou d'une personne est la masse de CO~2~ produite directement
+ou indirectement par sa consommation d'énergie et/ou de matière première.
+
+::: appli
+
+Questions 1 et 3 de l'activité 2 PP72-73 du [manuel Hachette Ed.2020](https://fr.calameo.com/read/004822953a13311d337ec)
+
+:::
+
+La combustion de carburants fossiles et de biomasse libère du dioxyde de carbone et également des
+aérosols et d'autres substances (N~2~O, O~3~, suies, produits soufrés), qui affectent la qualité de
+l'air respiré et la santé.
+
+
+::: appli
+
+Activité 2 PP72-73 du [manuel Hachette Ed.2020](https://www.enseignants.hachette-education.com/livres/enseignement-scientifique-terminales-livre-eleve-ed-2020-9782017866138)
+
+1. Doc 1. Comparer l'impact carbone d'un véhicule électrique et d'un véhicule thermique au cours de
+   son cycle de vie.
+2. Doc 2 et 3. Expliquer à l'oral quel peut-être l'impact de notre mode de vie sur nos émissions de
+   carbone.
+
+:::
+
+
+
+
+::: ref
+
+- [Manuel Hachette Ed.2020](https://www.enseignants.hachette-education.com/livres/enseignement-scientifique-terminales-livre-eleve-ed-2020-9782017866138)
+
+::: -->

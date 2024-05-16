@@ -1,0 +1,136 @@
+---
+title: "Densité des nombres flottants"
+date: "2022-11-22"
+author: "Benjamin Abel"
+image: "index_files/figure-html/cell-2-output-1.png"
+excerpt: |
+  Nous allons représenter visuellement la densité des nombres flottants en Python.
+tags: ["python", "nombres flottants", "graphique"]
+---
+::: intro
+
+Pour rappel, il est très fréquent d'encoder les nombres à virgule sous forme de nombre flottant sous la forme:
+
+$$
+s\ m \cdot 2^n
+$$
+
+
+<wc-wikimage title="General_floating_point.svg" caption="Pour encoder un nombre flottant on
+utilise 1 bit de signe f bits pour la mantisse et e bits pour l'exposant."></wc-wikimage>
+
+Il faut cependant bien comprendre que la représentation des nombres flottants est loin d'être
+continue comme les nombres réels mathématiques.
+
+:::
+
+## Représentation d'un nombre normalisée
+
+- le signe, +1 ou -1, sous la forme d'un bit ;
+- l'exposant décalé, sous la forme de e bits représentant un nombre entier ;
+- la mantisse, sous la forme de m bits représentant un nombre positif strictement inférieur à 1.
+
+La valeur du nombre représenté vaut : valeur = signe × (1 + mantisse) × 2^(exposant − décalage)^
+
+C'est ce qu'on appelle la représentation d'un [nombre normalisé](https://fr.wikipedia.org/wiki/Nombre_d%C3%A9normalis%C3%A9#Repr%C3%A9sentation_d'un_nombre_normalis%C3%A9).
+
+
+Tous les nombres réels ne sont pas représentés et les nombres ne sont pas régulièrement espacés
+comme le montre la représentation graphique ci-dessous pour des nombres flottants représentés sur 7 bits avec 3 bits de mantisse et 3 bits d'exposant.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import ticker
+from scipy.stats import gaussian_kde
+from lyceum.repr import bin2float
+# On limite les points pour y voir quelquechose
+NBITS = 7
+EXPOSANT=3
+MANTISSE=3
+x_list= [i for i in range(2**NBITS)]
+N = len(x_list)
+x = np.array(x_list)
+x_bin = np.array([format(i, f'0{NBITS}b') for i in x])
+
+y = np.array([bin2float(i, e=EXPOSANT, f=MANTISSE) for i in x_bin])
+
+# Calculate the point density
+xy = np.vstack([x,y])
+z = gaussian_kde(xy)(xy)
+# Sort the points by density, so that the densest points are plotted last
+idx = z.argsort()
+x, y, z = x[idx], y[idx], z[idx]
+
+fig, ax = plt.subplots()
+im = ax.scatter(x, y, marker='+', c=z, s=100, alpha=0.5)
+
+xs = [i for i in x_list if 10*i % 2**(NBITS-2) == 0] + [2**(NBITS)-1]
+x_labels = [format(i, f'0{NBITS}b') for i in xs]
+plt.xticks(xs, x_labels, rotation='vertical')
+plt.xlabel("Valeur binaire")
+plt.ylabel("Valeur décimale du nombre flottant")
+plt.title('Densité des valeurs flottantes sur 7 bits(e=3, f=3)',pad=30)
+
+
+# Add colorbar
+cbar = fig.colorbar(im, label="Densité des nombres")
+#ax.set_yscale('log')
+plt.show()
+```
+
+On voit que la densité est plus importante pour les nombres autour de $10^0 = 1$ et plus faible
+pour les très petits et très grands nombres.
+
+
+## Représentation d'un nombre dénormalisée
+
+La norme IEEE-754 prévoit d'attribuer des valeurs spéciales aux nombres ayant un exposant nul ou
+maximum.
+
+Notamment pour les nombres avec un exposant nul et une mantisse non nulle, on utilise une
+représentation d'un
+[nombre dénormalisé](https://fr.wikipedia.org/wiki/Nombre_d%C3%A9normalis%C3%A9#Repr%C3%A9sentation_d'un_nombre_d%C3%A9normalis%C3%A9).
+
+La valeur du nombre représenté vaut : valeur = signe × (mantisse) × 2^− décalage^
+
+
+
+```{python}
+# On limite les points pour y voir quelquechose
+NBITS = 7
+EXPOSANT=3
+MANTISSE=3
+x_list= [i for i in range(2**NBITS)]
+N = len(x_list)
+x = np.array(x_list)
+x_bin = np.array([format(i, f'0{NBITS}b') for i in x])
+
+y = np.array([bin2float(i, e=EXPOSANT, f=MANTISSE, ieee=True) for i in x_bin])
+np.nan_to_num(y, copy=False, nan=2**(NBITS-2.5), posinf=2**(NBITS-2), neginf=-2**(NBITS-2))
+# Calculate the point density
+xy = np.vstack([x,y])
+z = gaussian_kde(xy)(xy)
+# Sort the points by density, so that the densest points are plotted last
+idx = z.argsort()
+x, y, z = x[idx], y[idx], z[idx]
+
+fig, ax = plt.subplots()
+im = ax.scatter(x, y, marker='+', c=z, s=100, alpha=0.5)
+
+xs = [i for i in x_list if 10*i % 2**(NBITS-2) == 0] + [2**(NBITS)-1]
+x_labels = [format(i, f'0{NBITS}b') for i in xs]
+plt.xticks(xs, x_labels, rotation='vertical')
+plt.xlabel("Valeur binaire")
+plt.ylabel("Valeur décimale du nombre flottant")
+plt.title('Densité des valeurs flottantes sur 7 bits(e=3, f=3)',pad=15)
+plt.suptitle('La norme IEEE754 est appliquée avec les valeurs normalisés les nan et les infinis')
+# Add colorbar
+cbar = fig.colorbar(im, label="Densité des nombres")
+#ax.set_yscale('log')
+plt.show()
+```
+
+On peut voir que l'on a perdu en étendue, mais cela d'avoir des points trop éloignés pour les grandes valeurs. 
+
+D'autre part, grâce à la normalisation la densité semble plus uniforme.

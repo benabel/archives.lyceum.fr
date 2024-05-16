@@ -1,0 +1,195 @@
+---
+tags:
+  - python
+  - dictionnaire
+title: "Chapitre 3: Dictionnaires"
+order: 3
+cours: true
+tabnav: true
+categories:
+  - 1NSI
+---
+
+::: programme
++---------------------------+-------------------------------+--------------------------------------+
+| Contenus                  | Capacités attendues           | Commentaires                         |
++===========================+===============================+======================================+
+| Dictionnaires par clés et | Construire une entrée de      | Il est possible de présenter les     |
+| valeurs                   | dictionnaire                  | données EXIF d’une image sous        |
+|                           |                               | la forme d’un enregistrement.        |
+|                           |                               |                                      |
+|                           | Itérer sur les éléments d'un  | En Python, les p-uplets nommés       |
+|                           | dictionnaire.                 | sont implémentés par des             |
+|                           |                               | dictionnaires.                       |
+|                           |                               |                                      |
+|                           |                               | Utiliser les méthodes `keys()`,      |
+|                           |                               | `values()` et `items()`              |
++---------------------------+-------------------------------+--------------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+Dans un dictionnaire les valeurs de la collection ne sont pas repéré par un index, mais par une
+_clé_. Ils ne possèdent donc pas d'ordre a priori, c'est une structure _non-ordonnée_. Les dernières versions de Python assurent cependant un ordre lors de leur itération.
+
+<wc-wikimage title="Associative_array_as_linked_list.svg" caption="Les dictionnaires en Python sont ce que l'on appelle un tableau associatif."></wc-wikimage>
+
+:::
+
+## Syntaxe
+
+ Les dictionnaires sont entourés d'accolades `{}`. Les clés doivent être des objets _imuables_,
+ typiquement des `str`.
+
+```python
+{'clé_1': valeur_1, 'clé_n': valeur_n, ...'clé_n': valeur_n}
+```
+
+```{python}
+D = { 'nom': 'Lagaffe' , 'prenom': 'Gaston', 'age': 22 }
+type(D)
+```
+
+Pour accéder aux éléments du dictionnaire, il suffit d'appeler la clé correspondante, d'autre part
+la fonction `len()` est également disponible.
+
+```{python}
+len(D)
+```
+
+```{python}
+D['nom']
+```
+
+```{python}
+D['age']
+```
+
+## Ajout et suppression d'éléments
+
+Les dictionnaires étant *[mutables](https://fr.wiktionary.org/wiki/mutable)*, on peut ajouter des
+éléments au dictionnaire en **assignant* des clés paire valeur à notre guise.
+
+```{python}
+D["expression"] = "M'enfin"
+D
+```
+
+On peut au contraire supprimer des éléments du dictionnaire avec la méthode `pop()`.
+
+```{python}
+D.pop("age")
+D
+```
+
+## Autres méthodes des dictionnaires
+
+Les méthodes des `dict`ionnaires sont décrites dans la
+[documentation](https://docs.python.org/fr/3/library/stdtypes.html#sequence-types-list-tuple-range)
+ou grâce à l'appel `help(tuple)`, outre les méthodes d'itération il peut être utile de connaitre la méthode `get(clé)` qui renvoie la valeur associée à l clé ou `None` si la clé n'existe pas.
+
+Cela permet d'éviter les exceptions du type `KeyError` si la clé n'existe pas.
+
+```{python}
+D
+```
+
+Par exemple, la clé `age` n'existe plus donc la syntaxe d'accés par clé renvoir une erreur.
+
+```{python}
+#| error: true
+print(D["nom"])
+print(D["prenom"])
+print(D["age"])
+```
+
+Par contre, la méthode `get()` ne générera pas la `KeyError` et renverra `None` la clé n'existe
+pas.
+
+```{python}
+print(D.get("nom"))
+print(D.get("prenom"))
+print(D.get("age"))
+```
+
+
+
+::: {.plus titre="Documentation des dictionnaires"}
+
+```{python}
+help(dict)
+```
+
+:::
+
+## Itération sur les dictionnaires
+
+
+Les dictionnaires étant des associations de clés(_keys_) et de valeurs(_values_), il existe trois
+méthodes pour _itérer_ sur les clés, les valeurs ou les deux.
+
+### Itération sur les clés: `keys()`
+
+```{python}
+for key in D.keys():
+    print(key)
+```
+
+Ou plus simplement.
+
+```{python}
+for key in D:
+    print(key)
+```
+
+### Itération sur les valeurs: `values()`
+
+```{python}
+for value in D.values():
+    print(value)
+```
+
+### Itération sur les paires clé, valeurs: `items()`
+
+```{python}
+for key, value in D.items():
+    print(key, '=>', value)
+```
+
+## p-uplets nommés
+
+Il est possible de créer des p-uplets nommés afin de pouvoir accéder aux éléments de la collection
+par clé. Contrairement aux dictionnaires, ils sont immutables et donc potentiellement plus
+performants, ils sont cependant peu utilisés et nécessite d'être importé par le module
+`collections` avant d'être utilisé.
+
+```{python}
+from collections import namedtuple
+
+Eleve = namedtuple('Eleve', 'nom, age, classe, spécialité')
+e = Eleve("John", 17, "1g", "nsi" )
+e
+```
+
+L'accès peut se faire en ajoutant un point et le nom de la clé. Il s'agit d'une _notation
+pointée_ comme dans le cas d'appel de méthodes, cependant il n'y a pas de parenthèses, car il
+s'agit de valeurs et non de fonctions(On parle d'attributs de l'objet).
+
+```{python}
+e.age
+```
+
+```{python}
+e.spécialité
+```
+
+## Structures imbriquées avec les dictionnaires
+
+Tout comme nous avons vu les tableaux de tableau dans le chapitre précédent, il est possible
+d'imaginer des structures imbriquées avec des dictionnaires.
+
+On va s'intéresser plus particulièrement à une liste de dictionnaire qui pourrait être obtenue par lecture d'un fichier de données `csv`.
+
+
+
+

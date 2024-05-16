@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg:svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="201.00383mm"
+   height="134.48076mm"
+   viewBox="0 0 201.00383 134.48076"
+   version="1.1"
+   id="svg8"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="Architecture_de_Von_Neumann_Princeton_multi_processeurs.svg">
+  <svg:defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.46445606"
+     inkscape:cx="492.35114"
+     inkscape:cy="0.73699323"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="960"
+     inkscape:window-height="1015"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:document-rotation="0"
+     fit-margin-top="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10"
+     fit-margin-left="10"
+     lock-margins="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       originx="-18.42793"
+       originy="-148.305" />
+  </sodipodi:namedview>
+  <svg:metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </svg:metadata>
+  <svg:g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-4.7139652,-69.652502)">
+    <svg:g
+       id="g1370"
+       transform="matrix(0.45439614,0,0,0.45439614,65.466696,67.825826)">
+      <svg:rect
+         ry="15.73469"
+         rx="15.73469"
+         y="58.052864"
+         x="41.692921"
+         height="199.83043"
+         width="133.22028"
+         id="rect817-5"
+         style="opacity:1;fill:#a2ffef;fill-opacity:1;stroke:#000000;stroke-width:1.10143;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <svg:text
+         id="text842"
+         y="244.17242"
+         x="108.00384"
+         style="font-style:normal;font-weight:normal;font-size:16.9333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.416313"
+         xml:space="preserve"><svg:tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.416313"
+           y="244.17242"
+           x="108.00384"
+           id="tspan840"
+           sodipodi:role="line">Mémoire</svg:tspan></svg:text>
+      <svg:g
+         transform="matrix(1.5734679,0,0,1.5734679,191.56574,-9.6062511)"
+         id="g987">
+        <svg:rect
+           style="opacity:1;fill:#c2ffef;fill-opacity:1;stroke:#000000;stroke-width:0.674537;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect817-5-7-1"
+           width="74.083336"
+           height="37.041668"
+           x="-89.958336"
+           y="48.291668"
+           rx="9.2857227"
+           ry="10.000007" />
+        <svg:text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:8.46667px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="-53.106838"
+           y="69.018051"
+           id="text926"><svg:tspan
+             sodipodi:role="line"
+             id="tspan924"
+             x="-53.106838"
+             y="69.018051"
+             style="font-size:8.46667px;stroke-width:0.264583">Programmes</svg:tspan></svg:text>
+      </svg:g>
+      <svg:g
+         transform="matrix(1.5734679,0,0,1.5734679,191.56574,-9.6062511)"
+         id="g992">
+        <svg:rect
+           style="opacity:1;fill:#c2ffef;fill-opacity:1;stroke:#000000;stroke-width:0.674537;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect817-5-7-1-5"
+           width="74.083336"
+           height="37.041668"
+           x="-89.958336"
+           y="95.916664"
+           rx="9.2857227"
+           ry="10.000007" />
+        <svg:text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="-53.123375"
+           y="117.76339"
+           id="text930"><svg:tspan
+             sodipodi:role="line"
+             id="tspan928"
+             x="-53.123375"
+             y="117.76339"
+             style="font-size:8.46667px;stroke-width:0.264583">Données</svg:tspan></svg:text>
+      </svg:g>
+    </svg:g>
+    <svg:g
+       id="g1416"
+       transform="matrix(0.55893932,0,0,0.55893932,41.873823,56.643379)">
+      <svg:text
+         id="text871"
+         y="46.91975"
+         x="244.21431"
+         style="font-style:normal;font-weight:normal;font-size:2.58428px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.161517"
+         xml:space="preserve"><svg:tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.75284px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.161517"
+           y="46.91975"
+           x="244.21431"
+           id="tspan869"
+           sodipodi:role="line">PROCESSEURS</svg:tspan></svg:text>
+      <svg:g
+         transform="matrix(0.39886459,0,0,0.39886459,204.1793,39.815476)"
+         id="g890">
+        <svg:rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect867"
+           width="111.125"
+           height="148.16667"
+           x="44.985527"
+           y="38.742718"
+           rx="10.000007"
+           ry="10.000007" />
+        <svg:g
+           id="g1023"
+           transform="translate(26.464694,33.818784)">
+          <svg:rect
+             ry="10.000007"
+             rx="10.000007"
+             y="90.625"
+             x="31.750002"
+             height="47.625"
+             width="84.666664"
+             id="rect817"
+             style="opacity:1;fill:#efa1ef;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <svg:text
+             id="text821"
+             y="111.65111"
+             x="73.715393"
+             style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             xml:space="preserve"><svg:tspan
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="111.65111"
+               x="73.715393"
+               id="tspan819"
+               sodipodi:role="line">Unité Arithmétique </svg:tspan><svg:tspan
+               id="tspan823"
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="122.23444"
+               x="73.715393"
+               sodipodi:role="line">et Logique</svg:tspan></svg:text>
+        </svg:g>
+        <svg:g
+           id="g1017"
+           transform="translate(32.539021,33.818784)">
+          <svg:rect
+             ry="10.000007"
+             rx="10.000007"
+             y="19.764549"
+             x="25.675674"
+             height="47.625"
+             width="84.666664"
+             id="rect817-5-6"
+             style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <svg:text
+             id="text863"
+             y="41.611279"
+             x="67.996605"
+             style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             xml:space="preserve"><svg:tspan
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="41.611279"
+               x="67.996605"
+               id="tspan861"
+               sodipodi:role="line">Unité de</svg:tspan><svg:tspan
+               id="tspan865"
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="52.194614"
+               x="67.996605"
+               sodipodi:role="line">Commande</svg:tspan></svg:text>
+        </svg:g>
+      </svg:g>
+      <svg:path
+         inkscape:connector-curvature="0"
+         id="rect1066"
+         d="m 212.78321,80.04572 v 2.006478 h -19.1868 v -1.957227 l -8.22292,4.747456 8.22292,4.74744 v -2.05572 h 19.1868 v 2.00647 l 8.22292,-4.74745 z"
+         style="opacity:1;fill:#ffff96;fill-opacity:1;stroke:#000000;stroke-width:0.518;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <svg:path
+         inkscape:connector-curvature="0"
+         id="rect1066-9"
+         d="m 212.78321,145.55483 v 2.00647 H 193.5964 v -1.95722 l -8.22292,4.74745 8.22292,4.74745 v -2.05573 h 19.18681 v 2.00648 l 8.22292,-4.74745 z"
+         style="opacity:1;fill:#ffff96;fill-opacity:1;stroke:#000000;stroke-width:0.518;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <svg:g
+         transform="matrix(0.39886459,0,0,0.39886459,204.1793,105.32459)"
+         id="g890-2">
+        <svg:rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect867-1"
+           width="111.125"
+           height="148.16667"
+           x="44.985527"
+           y="38.742718"
+           rx="10.000007"
+           ry="10.000007" />
+        <svg:g
+           id="g1023-1"
+           transform="translate(26.464694,33.818784)">
+          <svg:rect
+             ry="10.000007"
+             rx="10.000007"
+             y="90.625"
+             x="31.750002"
+             height="47.625"
+             width="84.666664"
+             id="rect817-59"
+             style="opacity:1;fill:#efa1ef;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <svg:text
+             id="text821-3"
+             y="111.65111"
+             x="73.715393"
+             style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             xml:space="preserve"><svg:tspan
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="111.65111"
+               x="73.715393"
+               id="tspan819-0"
+               sodipodi:role="line">Unité Arithmétique </svg:tspan><svg:tspan
+               id="tspan823-5"
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="122.23444"
+               x="73.715393"
+               sodipodi:role="line">et Logique</svg:tspan></svg:text>
+        </svg:g>
+        <svg:g
+           id="g1017-0"
+           transform="translate(32.539021,33.818784)">
+          <svg:rect
+             ry="10.000007"
+             rx="10.000007"
+             y="19.764549"
+             x="25.675674"
+             height="47.625"
+             width="84.666664"
+             id="rect817-5-6-4"
+             style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <svg:text
+             id="text863-4"
+             y="41.611279"
+             x="67.996605"
+             style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             xml:space="preserve"><svg:tspan
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="41.611279"
+               x="67.996605"
+               id="tspan861-1"
+               sodipodi:role="line">Unité de</svg:tspan><svg:tspan
+               id="tspan865-7"
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="52.194614"
+               x="67.996605"
+               sodipodi:role="line">Commande</svg:tspan></svg:text>
+        </svg:g>
+      </svg:g>
+      <svg:g
+         transform="matrix(0.39886459,0,0,0.39886459,204.1793,170.83371)"
+         id="g890-2-5">
+        <svg:rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect867-1-6"
+           width="111.125"
+           height="148.16667"
+           x="44.985527"
+           y="38.742718"
+           rx="10.000007"
+           ry="10.000007" />
+        <svg:g
+           id="g1023-1-0"
+           transform="translate(26.464694,33.818784)">
+          <svg:rect
+             ry="10.000007"
+             rx="10.000007"
+             y="90.625"
+             x="31.750002"
+             height="47.625"
+             width="84.666664"
+             id="rect817-59-0"
+             style="opacity:1;fill:#efa1ef;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <svg:text
+             id="text821-3-7"
+             y="111.65111"
+             x="73.715393"
+             style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             xml:space="preserve"><svg:tspan
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="111.65111"
+               x="73.715393"
+               id="tspan819-0-2"
+               sodipodi:role="line">Unité Arithmétique </svg:tspan><svg:tspan
+               id="tspan823-5-7"
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="122.23444"
+               x="73.715393"
+               sodipodi:role="line">et Logique</svg:tspan></svg:text>
+        </svg:g>
+        <svg:g
+           id="g1017-0-5"
+           transform="translate(32.539021,33.818784)">
+          <svg:rect
+             ry="10.000007"
+             rx="10.000007"
+             y="19.764549"
+             x="25.675674"
+             height="47.625"
+             width="84.666664"
+             id="rect817-5-6-4-5"
+             style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <svg:text
+             id="text863-4-9"
+             y="41.611279"
+             x="67.996605"
+             style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             xml:space="preserve"><svg:tspan
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="41.611279"
+               x="67.996605"
+               id="tspan861-1-3"
+               sodipodi:role="line">Unité de</svg:tspan><svg:tspan
+               id="tspan865-7-9"
+               style="font-size:8.46667px;stroke-width:0.264583"
+               y="52.194614"
+               x="67.996605"
+               sodipodi:role="line">Commande</svg:tspan></svg:text>
+        </svg:g>
+      </svg:g>
+      <svg:path
+         inkscape:connector-curvature="0"
+         id="rect1066-7"
+         d="m 212.78321,211.06395 v 2.00648 h -19.1868 v -1.95722 l -8.22292,4.74745 8.22292,4.74744 v -2.05572 h 19.1868 v 2.00647 l 8.22292,-4.74745 z"
+         style="opacity:1;fill:#ffff96;fill-opacity:1;stroke:#000000;stroke-width:0.518;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <svg:path
+         inkscape:connector-curvature="0"
+         id="rect1066-2"
+         d="m 246.61339,89.499913 h -0.97928 v -9.364239 h 0.95524 l -2.31703,-4.013244 -2.31702,4.013244 h 1.00331 v 9.364239 h -0.97927 l 2.31703,4.013245 z"
+         style="opacity:1;fill:#ffff96;fill-opacity:1;stroke:#000000;stroke-width:0.252813;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <svg:path
+         inkscape:connector-curvature="0"
+         id="rect1066-2-7"
+         d="m 246.61339,155.00903 h -0.97928 v -9.36424 h 0.95524 l -2.31703,-4.01325 -2.31702,4.01325 h 1.00331 v 9.36424 h -0.97927 l 2.31703,4.01325 z"
+         style="opacity:1;fill:#ffff96;fill-opacity:1;stroke:#000000;stroke-width:0.252813;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <svg:path
+         inkscape:connector-curvature="0"
+         id="rect1066-2-4"
+         d="m 246.61339,220.51814 h -0.97928 v -9.36424 h 0.95524 l -2.31703,-4.01324 -2.31702,4.01324 h 1.00331 v 9.36424 h -0.97927 l 2.31703,4.01325 z"
+         style="opacity:1;fill:#ffff96;fill-opacity:1;stroke:#000000;stroke-width:0.252813;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </svg:g>
+    <svg:g
+       id="g1457"
+       transform="matrix(0.55893932,0,0,0.55893932,70.898025,54.082418)">
+      <svg:g
+         transform="translate(-258.9318,30.696903)"
+         id="g1054">
+        <svg:rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.674537;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect817-5-7-1-1"
+           width="68.791664"
+           height="21.166672"
+           x="158.75"
+           y="85.333328"
+           rx="9.2857227"
+           ry="10.000007" />
+        <svg:text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:8.46667px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="192.966"
+           y="98.99865"
+           id="text949"><svg:tspan
+             sodipodi:role="line"
+             id="tspan947"
+             x="192.966"
+             y="98.99865"
+             style="font-size:8.46667px;stroke-width:0.264583">ENTREES</svg:tspan></svg:text>
+      </svg:g>
+      <svg:g
+         transform="translate(-243.0568,-7.7549785)"
+         id="g1049">
+        <svg:rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.674537;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect817-5-7-1-1-4"
+           width="68.791664"
+           height="21.166674"
+           x="142.875"
+           y="170"
+           rx="9.2857227"
+           ry="10.000007" />
+        <svg:text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:8.46667px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="177.22742"
+           y="183.66531"
+           id="text949-5"><svg:tspan
+             sodipodi:role="line"
+             id="tspan947-9"
+             x="177.22742"
+             y="183.66531"
+             style="font-size:8.46667px;stroke-width:0.264583">SORTIES</svg:tspan></svg:text>
+      </svg:g>
+      <svg:g
+         transform="matrix(-1,0,0,1,-44.262564,106.64055)"
+         id="g1420">
+        <svg:path
+           style="opacity:1;fill:#ffff96;fill-opacity:1;stroke:#000000;stroke-width:0.7578;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           d="m -67.613485,70.269718 h 41.616395 v 2.863298 l 12.029587,-6.945205 -12.029587,-6.945204 v 3.007397 h -41.616395 z"
+           id="rect1066-4-0"
+           inkscape:connector-curvature="0"
+           inkscape:transform-center-x="2.6265261"
+           inkscape:transform-center-y="-8.2943173"
+           sodipodi:nodetypes="cccccccc" />
+        <svg:rect
+           style="opacity:1;fill:#ff93c5;fill-opacity:1;stroke:#000000;stroke-width:0.518;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect1207"
+           width="20"
+           height="20"
+           x="-53.246876"
+           y="56.187813"
+           rx="1"
+           ry="1" />
+      </svg:g>
+      <svg:g
+         transform="translate(36.939517,60.425754)"
+         id="g1420-7">
+        <svg:path
+           style="opacity:1;fill:#ffff96;fill-opacity:1;stroke:#000000;stroke-width:0.7578;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           d="m -67.613485,70.269718 h 41.616395 v 2.863298 l 12.029587,-6.945205 -12.029587,-6.945204 v 3.007397 h -41.616395 z"
+           id="rect1066-4-0-3"
+           inkscape:connector-curvature="0"
+           inkscape:transform-center-x="2.6265261"
+           inkscape:transform-center-y="-8.2943173"
+           sodipodi:nodetypes="cccccccc" />
+        <svg:rect
+           style="opacity:1;fill:#ff93c5;fill-opacity:1;stroke:#000000;stroke-width:0.518;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect1207-7"
+           width="20"
+           height="20"
+           x="-53.246876"
+           y="56.187813"
+           rx="1"
+           ry="1" />
+      </svg:g>
+    </svg:g>
+  </svg:g>
+</svg:svg>

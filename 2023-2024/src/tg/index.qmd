@@ -1,0 +1,5 @@
+---
+title: Terminale
+listing:
+  contents: /*/index.qmd
+---

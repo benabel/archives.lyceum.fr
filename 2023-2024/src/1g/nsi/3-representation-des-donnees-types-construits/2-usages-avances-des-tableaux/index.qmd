@@ -1,0 +1,168 @@
+---
+tags:
+  - python
+  - tableaux
+  - listes
+  - array
+title: "Chapitre 2: Usages avancés des tableaux"
+order: 2
+cours: true
+tabnav: true
+categories:
+  - 1NSI
+---
+
+::: programme
++---------------------------+-------------------------------+--------------------------------------+
+| Contenus                  | Capacités attendues           | Commentaires                         |
++===========================+===============================+======================================+
+| Tableau indexé, tableau   | Lire et modifier les éléments | Seuls les tableaux dont les          |
+| donné en                  | d’un tableau grâce à leurs    | éléments sont du même type sont      |
+| compréhension             | index.                        | présentés.                           |
+|                           |                               |                                      |
+|                           | Construire un tableau par     | Aucune connaissance des              |
+|                           | compréhension.                | tranches (slices) n’est exigible.    |
+|                           |                               |                                      |
+|                           | Utiliser des tableaux de      | L’aspect dynamique des tableaux      |
+|                           | tableaux pour représenter des | de Python n’est pas évoqué.          |
+|                           | matrices, notation `a[i][j]`  |                                      |
+|                           |                               | Python identifie listes et tableaux. |
+|                           |                               |                                      |
+|                           | Itérer sur les éléments d'un  | Il n’est pas fait référence aux      |
+|                           | tableau.                      | tableaux de la bibliothèque          |
+|                           |                               | NumPy.                               |
++---------------------------+-------------------------------+--------------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+Nous nous intéressons dans ce chapitre à quelques fonctions avancées des tableaux comme leur
+création _par compréhension_ et l'utilisation de tableaux de tableaux pour représenter des données
+à deux dimensions comme une image par exemple.
+
+<wc-wikimage title="Dynamic_array.svg" caption="Un tableau (dynamique) possède une taille varaiable, et on peut lui ajouter ou lui enlever des éléments après sa création et son stockage en mémoire."></wc-wikimage>
+
+:::
+
+
+
+## Tableau donné en compréhension
+
+Plutôt que de remplir un tableau par énumération de ces éléments dans une boucle, on peut définir des [listes en compréhension](), c'est-à-dire des listes dont le contenu est *défini par filtrage du contenu d'une autre liste*.
+
+### Boucle classique
+
+On commence par créer une liste vide, puis, on ajoute grâce à une boucle les éléments un à un à la
+liste grâce à la méthode `append()`.
+
+Voici par exemple comment créer une liste contenant les puissances de 2 de $2^1$ à $2^{12}$.
+
+```{python}
+t = []
+for i in range(13):
+    t.append(2**i)
+t
+```
+
+### Écriture en compréhension
+
+Cette construction syntaxique offre des avantages de lisibilité et de concision et se rapproche de
+la notation utilisée en mathématiques :
+
+$$
+S=\{2^{n} | n\in {\mathbb{N}}, n<13\}
+$$
+
+```{python}
+t = [2**n for n in range(13)]
+t
+```
+
+On peut même ajouter des conditions. Par exemple ici on crée une liste des puissances de 2 des
+puissances paires.
+
+```{python}
+t = [2**n for n in range(13) if n % 2 == 0]
+t
+```
+
+::: {.plus titre="Syntaxe complète avec `else`"}
+
+Il est possible d'utiliser une clause `else` dans
+les conditions grâce à l'opérateur ternaire: `valeur_si_vrai if condition else valeur_si_faux`
+
+```python
+[f(x) if condition else g(x) for x in sequence]
+```
+Par exemple:
+
+```python
+[str(i) + " est pair" if i % 2 == 0 else str(i) + " est impair" for i in range(5)]
+```
+renvoie: `['0 est pair', '1 est impair', '2 est pair', '3 est impair', '4 est pair']`
+:::
+
+## Tableaux à deux dimensions: les matrices
+
+::: {layout-ncol=2}
+Pour représenter un tableau de données, on peut utiliser une liste de liste.
+$$
+\begin{pmatrix}
+   1 & 2 & 3\\
+   4 & 5 & 6\\
+   7 & 8 & 9 
+\end{pmatrix}
+$$
+
+<wc-wikimage title="Array_of_array_storage.svg" caption="Stockage d'un tableau dans une liste de listes."></wc-wikimage>
+:::
+
+```{python}
+mat = [[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]]
+mat
+```
+
+### Accès aux éléments
+
+On accède alors aux éléments en précisant l'index de ligne et de colonne: `mat[i ligne][j colonne]`.
+
+Par exemple pour accéder au troisième élément de la première ligne.
+
+```{python}
+mat[0][2]
+```
+
+Accès au deuxième élément de la troisième ligne.
+
+```{python}
+mat[2][1]
+```
+
+### Accès aux lignes et colonnes
+
+L'accès à une ligne est aisé, par exemple pour la deuxième ligne.
+
+```{python}
+mat[1]
+```
+
+L'accès aux colonnes est plus délicat, on peut par exemple utiliser une liste en compréhension, par
+exemple pour accéder à la première colonne.
+
+```{python}
+[ligne[0] for ligne in mat]
+```
+
+### Itérations sur les valeurs
+
+Comme il s'agit d'une structure imbriquée, nous devons utiliser deux boucles imbriquées.
+
+On peut par exemple itérer sur les valeurs des lignes.
+
+```{python}
+for ligne in mat:
+    for val in ligne:
+        print(val)
+```

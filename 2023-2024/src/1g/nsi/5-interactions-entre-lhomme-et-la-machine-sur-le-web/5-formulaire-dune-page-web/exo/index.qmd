@@ -1,0 +1,97 @@
+---
+title: Exercices
+subtitle: "Chapitre 5: Formulaire d’une page web"
+exo: true
+type: exo
+tabnav: true
+---
+## Formulaire en HTML
+
+Recopier le code suivant dans un fichier que vous nommerez `index.html`.
+
+```html
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Les formulaires en HTML</title>
+</head>
+
+<body>
+  <h1>Les formulaires en html</h1>
+  <!-- Le formulaire ci-dessous -->
+  <form method="GET">
+    <input type="text" name="nom" placeholder="Entrer votre nom">
+    <button type="submit">Envoyer les données</button>
+  </form>
+</body>
+
+</html>
+
+```
+
+Enregistrer ce fichier puis l'ouvrir dans le navigateur grâce en lançant le serveur fourni par votre professeur: `python http_server.py`.
+
+1. Entrer une valeur dans le formulaire et appuyer sur le bouton pour le soumettre et observer la
+   barre d'adresse du navigateur.
+
+2. Supprimer les paramètres présents dans l'URL et modifier la méthode du formulaire en `POST"` eu
+   lieu de `GET` et observer ou sont placés les valeurs du formulaire dans l'onglet réseau de la
+   console de développement.
+   
+3. Poursuivre votre apprentissage _actif_ pour créer un formulaire complet en utilisant ces pages de [MDN](https://developer.mozilla.org/fr/docs/Learn/Forms):
+
+   - [Comment structurer un formulaire HTML?](https://developer.mozilla.org/fr/docs/Learn/Forms/How_to_structure_a_web_form) pour ajouter des balises `<fieldset>`, `<legend>` et `<label>`. 
+   - [Les contrôles de formulaire natifs](https://developer.mozilla.org/fr/docs/Learn/Forms/Basic_native_form_controls) pour ajouter des entrées:
+  
+     - `<input type="button">`,
+     - `<input type="checkbox">`,
+     - `<input type="file">`,
+     - `<input type="hidden">`,
+     - `<input type="image">`,
+     - `<input type="password">`,
+     - `<input type="radio">`,
+     - `<input type="reset">`,
+     - `<input type="submit">`,
+     - `<input type="text">`,
+     ainsi que les attributs `readonly`, `disabled`, `placeholder`, `size`, `maxlength`, `spellcheck`.
+   - [Les types de champs de formulaire HTML5](https://developer.mozilla.org/fr/docs/Learn/Forms/HTML5_input_types)
+
+     - Champ pour une adresse électronique
+     - Champ de recherche
+     - Champ pour un numéro de téléphone
+     - Champ pour une URL
+     - Champ numérique
+     - Curseurs
+     - Sélecteurs de date et d'heure
+     - Contrôle de sélection de couleur
+    
+   - [Les autres contrôles de formulaire](https://developer.mozilla.org/fr/docs/Learn/Forms/Other_form_controls)
+     
+     - Champ texte sur plusieurs lignes `<textarea>`
+     - Contrôles de listes déroulantes `<select>`.
+  
+   - [Mise en forme des formulaires HTML](https://developer.mozilla.org/fr/docs/Learn/Forms/Styling_web_forms)
+
+     Ne traiter que la mise en forme des éléments dits «bons»: 
+
+
+     - `<form>`
+     - `<fieldset>`
+     - `<label>`
+     - `<output>`
+     - `<input>`
+     - `<button>`
+     
+   - [Pseudo-classes relatives à l'interface utilisateur](https://developer.mozilla.org/fr/docs/Learn/Forms/UI_pseudo-classes)
+
+     - Mettre en forme les champs selon qu'ils sont obligatoires ou non: `required` `optionnal`.
+     - Mettre en forme les contrôles selon la validité des données: `valid` `invalid`.
+     - Mettre en forme les champs actifs ou désactivés, en lecture seule ou non: `disabled`.
+     - État des cases à cocher et boutons radio : coché, par défaut, indéterminé: `checked`.
+
+   
+   - [Envoyer et extraire les données des formulaires](https://developer.mozilla.org/fr/docs/Learn/Forms/Sending_and_retrieving_form_data)
+
+     Cette partie sera traitée dans le prochain chapitre.

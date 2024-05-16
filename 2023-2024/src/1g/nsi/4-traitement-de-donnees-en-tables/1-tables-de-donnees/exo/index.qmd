@@ -1,0 +1,9 @@
+---
+title: Exercices
+subtitle: "Chapitre 1: Tables de données"
+exo: true
+type: exo
+tabnav: true
+---
+
+Aucun exercice pour l'instant.

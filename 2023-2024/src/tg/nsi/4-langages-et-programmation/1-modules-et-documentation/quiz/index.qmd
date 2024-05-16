@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Chapitre 1: Modules et documentation"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```

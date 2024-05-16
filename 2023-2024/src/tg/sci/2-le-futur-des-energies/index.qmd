@@ -1,0 +1,6 @@
+---
+title: "Partie 2: Le futur des énergies"
+listing:
+  contents: /*/index.qmd
+order: 2
+---

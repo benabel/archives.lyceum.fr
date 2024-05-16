@@ -1,0 +1,176 @@
+---
+tags:
+  - cours
+  - pc
+  - terminale
+  - lycée
+  - enseignement scientifique
+title: "Chapitre 5: Deux siècles d’énergie électrique"
+order: 5
+cours: true
+tabnav: true
+categories:
+  - TSCI
+---
+
+::: programme
+
++---------------------------------------------------+------------------------------------------+
+| Savoirs                                           | Savoir-faire                             |
++===================================================+==========================================+
+| Les alternateurs électriques exploitent le        | Reconnaître les éléments principaux d’un |
+| phénomène d’induction électromagnétique découvert | alternateur (source de champ magnétique  |
+| par Faraday puis théorisé par Maxwell au XIXe     | et fil conducteur mobile) dans un schéma |
+| siècle.                                           | fourni.                                  |
+|                                                   |                                          |
+| Ils réalisent une conversion d’énergie mécanique  | Analyser les propriétés d’un alternateur |
+| en énergie électrique avec un rendement           | modèle étudié expérimentalement en       |
+| potentiellement très proche de 1.                 | classe. Définir le rendement d’un        |
+|                                                   | alternateur et citer un phénomène        |
+|                                                   | susceptible de l’influencer.             |
++---------------------------------------------------+------------------------------------------+
+| Au début du XXe siècle, la physique a connu une   | Interpréter et exploiter un spectre      |
+| révolution conceptuelle à travers la vision       | d’émission atomique.                     |
+| quantique qui introduit un comportement           |                                          |
+| probabiliste de la nature. Le caractère discret   |                                          |
+| des spectres de raies d’émission des atomes       |                                          |
+| s’explique de cette façon.                        |                                          |
++---------------------------------------------------+------------------------------------------+
+| L’exploitation technologique des matériaux        | Comparer le spectre d’absorption d’un    |
+| semi-conducteurs, en particulier du silicium, en  | matériau semi-conducteur et le spectre   |
+| est également une conséquence.                    | solaire pour décider si ce matériau est  |
+|                                                   | susceptible d’être utilisé pour          |
+| Ces matériaux sont utilisés en électronique et    | fabriquer un capteur photovoltaïque.     |
+| sont constitutifs des capteurs photovoltaïques.   |                                          |
+| Ceux-ci absorbent l’énergie radiative et la       | Tracer la caractéristique i(u) d’une     |
+| convertissent en énergie électrique.              | cellule photovoltaïque et exploiter      |
+|                                                   | cette représentation pour déterminer la  |
+|                                                   | résistance d'utilisation maximisant la   |
+|                                                   | puissance électrique délivrée.           |
++---------------------------------------------------+------------------------------------------+
+
+:::
+
+Dans ce chapitre nous allons voir deux inventions qui permettent la production d'énergie électrique:
+
+- l'alternateur
+- les cellules photovoltaïques
+
+Voici une vidéo d'excellente qualité produite par la BBC qui retrace l"«âge des inventions» de
+l'électricité durant le XIXe siècle et diffusée sur [arte.tv](https://www.arte.tv/).
+
+
+`youtube: Im2G3FCk-fk`
+
+
+<!-- 
+ARTE: Histoire de l'électricité e, trois parties: https://www.arte.tv/fr/videos/RC-018190/l-histoire-de-l-electricite/
+
+`youtube: oce00LbvndU` Marche plus: 
+
+`youtube: Im2G3FCk-fk` OK
+
+`youtube: 2tm8IdoxHbk` Voir sur dailymotion: https://www.dailymotion.com/video/x4jg4nw
+
+
+ARTE:
+<iframe allowfullscreen="true" style="transition-duration:0;transition-property:no;margin:0 auto;position:relative;display:block;background-color:#000000;" frameborder="0" scrolling="no" width="100%" height="100%" src="https://www.arte.tv/player/v6/index.php?json_url=https%3A%2F%2Fapi.arte.tv%2Fapi%2Fplayer%2Fv2%2Fconfig%2Ffr%2F050724-002-A&lang=fr&autoplay=false&mute=0&previewData=%7B%22title%22%3A%22L'histoire%20de%20l'%C3%A9lectricit%C3%A9%20(2%2F3)%22%2C%22subtitle%22%3A%22L'%C3%A2ge%20des%20inventions%22%2C%22image%22%3A%22https%3A%2F%2Fapi-cdn.arte.tv%2Fapi%2Fmami%2Fv1%2Fprogram%2Ffr%2F050724-002-A%2F940x530%3Fts%3D1589790560%22%7D"></iframe>
+
+-->
+
+## L'alternateur
+
+L'alternateur permet la conversion d'énergie mécanique en énergie électrique.
+
+::: example
+
+Alternateur d'une voiture thermique
+
+<wc-wikimage class="half center" title="Tendeur courroie alternateur automobile.jpg" caption="Pour recharger la batterie du véhicule, l'alternateur est entraîné par le moteur via une courroie."></wc-wikimage>
+
+:::
+
+### Principe de l'alternateur
+
+L'alternateur utilise le phénomène d'_induction électromagnétique_ découvert par Faraday au XIXe siècle.
+
+<iframe src="https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_fr.html" width="800" height="600" allowfullscreen>
+</iframe>
+
+
+Un fil électrique fixe(le _stator_) soumis à un champ magnétique tournant (le _rotor_) produit un
+mouvement alternatif des électrons au sein du stator: on crée ainsi un **courant alternatif**.
+
+
+<wc-wikimage class="half center" title="Alternator_1.svg" caption="Le mouvement de rotation de l'aimant produit un courant alternatif par l'effet d 'induction éléctromagnétique dans le fil conducteur électrique."></wc-wikimage>
+
+::: {.plus titre="La bobine"}
+
+On utilise souvent une bobine pour produire le courant électrique. Une bobine est enroulement de
+fil électrique qui lorsqu'elle est parcourue un courant produit un champ magnétique.
+
+<wc-wikimage class="half center" title="Common_mode_choke_2A_with_20mH_inductance.jpg" caption="Une bobine électronique de faible puissance. Les bobines haute-puissance dont au contraire utilisées en électrotechnique."></wc-wikimage>
+
+:::
+
+### Rendement d'un alternateur
+
+Le rendement $\eta$ de l'alternateur est le quotient de l'énergie électrique obtenue par de
+l'énergie mécanique fournie.
+
+$$
+\eta = \frac{P_{électrique}}{P_{mécanique}}
+$$
+
+
+:::prop
+
+Les alternateurs réalisent une conversion d'énergie mécanique en énergie électrique avec un
+**rendement potentiellement très proche de 1**.
+
+:::
+
+## Les cellules photovoltaïques
+
+`youtube:7BUjVyw5LaM`
+
+Les cellules photovoltaïques sont aujourd'hui utilisées pour convertir l'énergie radiative solaire
+en énergie électrique. C'est une technologie autour de laquelle la recherche est acharnée compte
+tenu des impacts économiques et environnementaux envisageables.
+
+Ce type de cellules utilise des matériaux bien particuliers utilisés en électronique: les
+_semi-conducteurs_ comme le silicium.
+
+### Qu'est-ce qu'un semi-conducteur?
+
+Vous avez déjà vu que les atomes présentent des spectres _discrets_ qui ont été expliqués au début
+du _XXe siècle_ par la description _quantique_ de la matière à l'échelle de l'infiniment petit.
+
+<wc-wikimage class="half center" title="Hydrogen_transitions.svg" caption="Les raies d'émission de l'hydrogène sont dues à la liberation de photons lors du passage d'un atome d'un niveau d'énergie à un autre."></wc-wikimage>
+
+Les spectres des solides présentent quant à eux des _bandes d'énergie_.
+
+Un matériau semi-conducteur est un matériau dont les bandes de conduction et de valence sont
+disjointes, mais proches.
+
+
+<wc-wikimage class="half center" title="Semiconductor_band_structure_(lots_of_bands_2).svg" caption="Dans un matériau semi-conducteur la bande de conduction est proche de la bande de valence."></wc-wikimage>
+
+### Rendement de la conversion
+
+::: prop
+
+Pour être efficace et rentable, le matériau semi-conducteur doit absorber un maximum de l'énergie
+radiative solaire pour la convertir en énergie électrique.
+
+<wc-wikimage class="half center" title="Solar_Spectrum_and_Spectral-Response.png" caption="Le maximum d’émission du spectre solaire est dans le vert (λ=504 nm). Une cellule photodiode en silicium a son maximum d'absorption aux alentours de 1µm(IR), absorbe tout de même une grande partie du spectre solaire."></wc-wikimage>
+
+:::
+
+::: {.plus titre="Rendement des cellules photovoltaïques"}
+
+<wc-wikimage title="CellPVeff(rev200406).png" caption="La limite théorique de rendement dite limite de Shockley-Queisser est de l'ordre de 33% pour une
+cellule unijonction, les meilleures cellules de ce type ont actuellement un rendement de 20 à 25%,
+mais on peut améliorer le rendement en utilisant par exemple des cellules à jonctions multiples."></wc-wikimage>
+
+:::

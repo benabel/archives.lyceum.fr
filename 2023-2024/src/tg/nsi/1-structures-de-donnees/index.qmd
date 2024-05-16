@@ -1,0 +1,6 @@
+---
+title: "Partie 1: Structures de données"
+listing:
+  contents: /*/index.qmd
+order: 1
+---

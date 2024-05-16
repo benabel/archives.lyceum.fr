@@ -1,0 +1,8 @@
+---
+title: Exercices
+subtitle: "Chapitre 4: Algorithmes gloutons"
+exo: true
+type: exo
+tabnav: true
+---
+Pas d'exercices pour l'instant.

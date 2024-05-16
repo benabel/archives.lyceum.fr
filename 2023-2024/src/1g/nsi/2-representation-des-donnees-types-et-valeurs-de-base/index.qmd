@@ -1,0 +1,6 @@
+---
+title: "Partie 2: Représentation des données : types et valeurs de base"
+listing:
+  contents: /*/index.qmd
+order: 2
+---

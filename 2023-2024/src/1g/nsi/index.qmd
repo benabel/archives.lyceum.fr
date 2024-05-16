@@ -1,0 +1,5 @@
+---
+title: NSI
+listing:
+  contents: /*/index.qmd
+---

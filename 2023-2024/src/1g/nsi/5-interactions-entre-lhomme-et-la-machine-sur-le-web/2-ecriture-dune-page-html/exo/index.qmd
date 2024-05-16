@@ -1,0 +1,9 @@
+---
+title: Exercices
+subtitle: "Chapitre 2: Ecriture d’une page HTML"
+exo: true
+type: exo
+tabnav: true
+---
+
+Aucun exercice pour l'instant.

@@ -1,0 +1,8 @@
+---
+title: Exercices
+subtitle: "Chapitre 1: L’atmosphère terrestre et la vie"
+exo: true
+type: exo
+tabnav: true
+---
+ Aucun exercice pour l'instant.

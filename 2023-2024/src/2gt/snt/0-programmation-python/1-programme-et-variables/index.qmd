@@ -1,0 +1,145 @@
+---
+tags:
+  - cours
+  - seconde
+  - lycée
+  - snt
+  - seconde générale et technologique
+  - sciences numériques et technologie
+title: "Chapitre 1: Programme et variables"
+order: 1
+cours: true
+tabnav: true
+categories:
+  - 2SNT
+---
+
+::: programme
+
++------------------------------------+---------------------------------------------------------+
+| Contenus                           | Capacités attendues                                     |
++====================================+=========================================================+
+| Affectations, variables            | Écrire et développer des programmes pour répondre à des |
+|                                    | problèmes et modéliser des phénomènes physiques,        |
+| Séquences                          | économiques et sociaux.                                 |
+|                                    |                                                         |
++------------------------------------+---------------------------------------------------------+
+
+:::
+
+
+::: {.intro layout-ncol=2}
+
+Dans cette partie, nous allons nous intéresser à la programmation en utilisant le langage
+[Python](https://www.python.org/) qui permet d'utiliser les outils de la programmation dans des
+domaines très variés: sciences, analyse de données, web...
+On commence par les variables, les entrées et les sorties d'un programme.
+
+<wc-wikimage title="Python-logo-notext.svg" caption="Le langage Python est un langage de haut niveau simple à apprendre."></wc-wikimage>
+ 
+
+:::
+
+## Algorithme et programme
+
+Programme
+
+:   Un programme est une séquence d'instructions destinées à être exécutées par la machine.
+
+::: example
+
+```python
+print("Bonjour")
+nom = input("Comment vous appelez-vous?")
+print("Bienvenue", nom)
+```
+
+:::
+
+::: {.plus titre="Algorithme et programme"}
+
+En informatique, on parle souvent d'algorithmes, car nos programmes sont en fait des algorithmes
+exécutés par les ordinateurs.
+
+Algorithme
+
+: Un algorithme est une méthode, une suite d'instructions permettant d'obtenir un résultat.
+
+Ce type de méthode est utilisé depuis la nuit des temps pour fabriquer des tissus, nouer des
+cordages, ou bien préparer des aliments.
+
+La révolution de l'informatique survenue au milieu du XXe siècle vient du fait que l'on a pu faire
+exécuter ces algorithmes à des machines. Pour cela il a fallu exprimer ces algorithmes dans des
+langages de programmation afin qu'ils puissent être exécutés par les ordinateurs.
+
+:::
+
+## Variables
+
+Variable
+
+:   Les variables sont des noms permettant de désigner des valeurs stockées par le programme.
+
+::: example
+
+Voici trois types de variables simples utilisées en Python.
+
+```python
+# type int (integer)
+entier = 13
+# type float (nombre à virgule flottante)
+flottant = 13.0
+# type str (string) les chaînes de caractères
+texte = "treize"
+```
+
+Il existe aussi le type booléen: `True` ou `False`
+:::
+
+::: callout-warning
+
+Attention à bien distinguer une variable comme `age` d'une chaine de caractère `"age"`.
+
+:::
+
+## La fonction `print()`: Afficher une sortie
+
+La fonction `print` permet au programme d'afficher du texte en **sortie**.
+
+On peut utiliser _plusieurs arguments_ séparés par des virgules qui seront alors ajoutés les uns à
+côté des autres (on dit concaténés).
+
+::: example
+
+```{python}
+nom = "Sy"
+prenom = "Omar"
+age = 42
+print(prenom, nom, "a", age, "ans.")
+```
+
+
+:::
+
+## La fonction `input()`: Récupérer une entrée
+
+La fonction `input` permet au programme de récupérer du texte en **entrée**.
+
+Généralement, on récupère le texte entré par l'utilisateur dans un variable en le convertissant
+dans le type souhaité.
+
+::: example
+
+```python
+# récupère une chaîne de caractère par défaut
+nom = input("Comment vous appelez-vous?")
+# on converti la réponse de l'utilisateur en entier avec la fonction int
+age = int(input("Quel âge avez-vous?"))
+# on converti la réponse de l'utilisateur en fottant avec la fonction float
+taille = float(input("Donnez votre taille en mètre"))
+```
+
+Lorsque le programme est lancé, l'utilisateur devra répondre aux questions posées, et on pourra
+utiliser ces réponses grâce aux variables `nom`, `age` et `taille`.
+
+::: 

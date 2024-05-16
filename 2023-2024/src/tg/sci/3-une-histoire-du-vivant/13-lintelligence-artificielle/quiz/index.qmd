@@ -1,0 +1,141 @@
+---
+title: Quiz
+subtitle: "Chapitre 13: L’intelligence artificielle"
+quiz: true
+tabnav: true
+---
+```ed-pb
+
+## Les ordinateurs dans la vie courante
+
+Un ordinateur doit avoir un processeur. Le processeur est un composant électronique qui exécute les instructions du programme.
+
+Un ordinateur doit avoir de la mémoire. La mémoire est un composant électronique qui stocke les données et les programmes.
+
+Un ordinateur doit avoir des périphériques d'entrée/sortie. Les périphériques d'entrée/sortie permettent à l'utilisateur d'interagir avec l'ordinateur et à l'ordinateur de communiquer avec le monde extérieur.
+
+1. Parmi les objets suivants, lesquels sont des ordinateurs ?
+
+
+   - [ ] Télévision
+   - [x] Ordinateur de bureau
+   - [ ] Four
+   - [x] Smartphone
+   - [ ] Machine à laver
+   - [x] Console de jeux vidéo
+   - [x] Objet connecté
+   - [ ] Lecteur DVD
+   - [ ] Radio
+   - [x] Tablette
+   - [x] Serveur
+   - [ ] Lampadaire
+   - [x] Ordinateur portable
+
+Parmi ces ordinateurs, certains ordinateurs ne sont pas programmables car leur programme est défini par le fabricant et ne peut pas être modifié par l'utilisateur.
+
+2. Cocher les ordinateurs non programmables dans cette liste.
+
+
+   - [ ] smartphone
+   - [x] Les thermostats
+   - [ ] ordinateur portable
+   - [x] Box internet
+   - [ ] ordinateur de bureau
+   - [x] calculatrice collège
+
+
+
+## Savoir reconnaitre un fichier exécutable
+
+Un fichier exécutable, c'est un fichier qui contient un programme. Ce programme peut être un jeu, un logiciel de bureautique, un navigateur web, etc.
+
+En général on peut reconnaitre les fichiers exécutables par leur extension
+
+Sous Windows, les fichiers exécutables ont généralement une extension de type .exe, .msi ou .bat.
+
+Sous Linux, les fichiers exécutables n'ont pas d'extension spécifique. Cependant, ils ont un drapeau qui indique au système d'exploitation qu'ils sont exécutables.
+
+1. Sous Windows, quels sont les types d'extension les plus courants pour les fichiers exécutables ?
+
+   - [x] `.exe`
+   - [ ] `.com`
+   - [x] `.msi`
+   - [x] `.bat`
+
+2. Sous Linux, les fichiers exécutables ont-ils une extension ?
+
+   - [ ] Oui
+   - [x] Non
+
+
+## Savoir calculer la taille en octets d’une page de texte (en ASCII et non compressé).
+
+Le codage ASCII est un codage de caractères. Il permet de représenter les caractères de la langue américaine (lettres, chiffres, ponctuation, etc.) ainsi que certains caractères spéciaux (retour à la ligne, tabulation, etc.).
+
+Pour cela il utilise 7 bits pour représenter un caractère. Cela signifie qu'il peut représenter 2^7 = 128 caractères différents.
+
+Par commodité chaque caractère est codé sur 8 bits: 1 octet.
+
+<a title="ZZT32, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:ASCII-Table.svg"><img width="512" alt="ASCII-Table" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/ASCII-Table.svg/512px-ASCII-Table.svg.png"></a>
+
+1. Quelle est la taille de cette phrase codée en ASCII: «Un ordinateur peut manipuler des
+   donnees de natures diverses une fois qu'elles ont ete numerisees : textes, images, sons.» _(On
+   ne compte pas les guillemets.)_
+        
+   - [ ] 121 bits.
+   - [x] 121 octets.
+   - [ ] 121 kilobits.
+   - [ ] 121 kilooctets.
+
+## Taille des fichiers compressés image, son et vidéo
+
+Les fichiers son, image et vidéo sont des types de fichiers qui contiennent des informations numériques. Ces informations sont stockées sous forme de bits, qui sont les unités de base de l'information numérique.
+
+La taille d'un fichier est mesurée en octets, qui sont des groupes de 8 bits.
+
+Un fichier son contient des informations sur la hauteur, l'intensité et la durée des sons. La taille d'un fichier son dépend de la qualité du son, de la durée du son et du format du fichier.
+
+En général, un fichier son de qualité CD (44,1 kHz, 16 bits) dure environ 1 minute et pèse environ 10 Mo.
+
+Un fichier image contient des informations sur la couleur et la luminosité des pixels. La taille d'un fichier image dépend de la résolution de l'image, de la profondeur de couleur et du format du fichier.
+
+En général, une image JPEG de résolution 1080p (1920 x 1080 pixels) pèse environ 1 Mo.
+
+Un fichier vidéo contient des informations sur les images, le son et les mouvements. La taille d'un fichier vidéo dépend de la résolution de la vidéo, de la fréquence d'images, de la profondeur de couleur, du format du fichier et de la durée de la vidéo.
+
+En général, une vidéo MP4 de résolution 1080p (1920 x 1080 pixels), d'une fréquence d'images de 25 images par seconde et d'une durée de 1 minute pèse environ 100 Mo.
+
+Voici quelques quiz pour vérifier que l'élève a compris :
+
+1. Quel est l'ordre de grandeur de la taille d'un fichier son de 1 minute de qualité CD ?
+
+   - [ ] 1 Mo.
+   - [x] 10 Mo.
+   - [ ] 100 Mo.
+
+2. Quel est l'ordre de grandeur de la taille d'une image JPEG de résolution 1080p ?
+
+   - [ ] 1 ko
+   - [x] 1 Mo
+   - [ ] 1 go
+
+3. Quel est l'ordre de grandeur de la taille d'une vidéo MP4 de résolution 1080p, d'une fréquence d'images de 25 images par seconde et d'une durée de 1 minute ?
+
+   - [ ] 1 Mo
+   - [x] 100 Mo
+   - [ ] 1 Go
+
+4. Quel est le format de fichier le plus utilisé pour les fichiers son ?
+
+   - :100: MP3
+
+5. Quel est le format de fichier le plus utilisé pour les fichiers image ?
+
+   - :100: JPEG
+   - :100: JPG
+
+6. Quel est le format de fichier le plus utilisé pour les fichiers vidéo ?
+
+   - :100: MP4
+
+```

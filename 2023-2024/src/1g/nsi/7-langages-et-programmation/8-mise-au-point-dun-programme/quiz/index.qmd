@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Chapitre 8: Mise au point d’un programme"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```

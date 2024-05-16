@@ -1,0 +1,359 @@
+---
+tags:
+  - Python
+  - algorithmique
+  - algorithme de recherche
+title: "Chapitre 2: Algorithmes de recherche"
+order: 2
+cours: true
+tabnav: true
+categories:
+  - 1NSI
+---
+
+::: programme
++--------------------------+-----------------------------------+-------------------------------------+
+| Contenus                 | Capacités attendues               | Commentaires                        |
++==========================+===================================+=====================================+
+| Parcours séquentiel d'un | Écrire un algorithme de           | On montre que le coût est linéaire  |
+| tableau                  | recherche d'une occurence sur     |                                     |
+|                          | des valeurs de type               |                                     |
+|                          | quelconque                        |                                     |
++--------------------------+-----------------------------------+-------------------------------------+
+| Recherche dichotomique   | Montrer la terminaison de la      | Des assertions peuvent être         |
+| dans un tableau trié     | recherche dichotomique à l’aide   | utilisées.                          |
+|                          | d’un variant de boucle.           |                                     |
+|                          |                                   | La preuve de la correction peut     |
+|                          |                                   | être présentée par le professeur.   |
++--------------------------+-----------------------------------+-------------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+Dans ce chapitre, nous allons étudier un algorithme très efficace de recherche d'élément dans un
+tableau: la recherche dichotomique. Il illustre une méthode algorithmique très efficace et utile
+appelée: «Diviser pour régner».
+
+<wc-wikimage title="Binary_Search_Depiction.svg" caption="Dichotomie vient du grec ancien διχοτομία, dikhotomia (« division en deux parties »),"></wc-wikimage>
+
+:::
+
+Commençons par créer une liste d'éléments pour cela nous allons écrire une fonction pour créer
+facilement des listes de mots.
+
+```{python}
+from itertools import product
+from string import ascii_uppercase as alphabet
+
+def lister_mots(l=3):
+    """Renvoie une liste ordonnés de mots ayant l lettres"""
+    return [''.join(lettres) for lettres in product(alphabet, repeat=l)]
+
+mots5 =  lister_mots(5)
+# le nombre de noms générés est exponentiel par rapport à sa longueur
+assert len(mots5) == 26**5
+print(len(mots5), "mots")
+print("Voici les sept premiers")
+print(mots5[:7])
+print("Et les sept derniers")
+print(mots5[-7:])
+```
+
+## Algorithme de recherche dans un tableau non trié
+
+Nous allons voir comment chercher une valeur dans un tableau par une méthode de parcours du
+tableau: _la recherche en table_.
+
+Cet algorithme naïf est couteux, mais on _ne peut pas faire mieux si les données ne sont pas
+triées_.
+
+On parcourt l'ensemble du tableau et on s'arrête lorsqu'on trouve l'élément.
+
+Dans une fonction **le `return` est définitif**, on peut donc facilement arrêter la boucle dès que
+la valeur est trouvée. Si on est arrivé au bout de la boucle on est donc certains que l'élément
+cherché n'est pas présent.
+
+```{python}
+def recherche(élément, liste):
+    """Fonction de recherche de l'élément dans la liste
+
+    Arguments
+    ---------
+    élement: str
+        l'élément cherché
+    l: liste
+        la liste dans laquelle on cherche
+    Retourne
+    --------
+    bool
+        True si l'élément est trouvé et False sinon
+    """
+    for e in liste:
+        if e == élément:
+            return True
+    return False
+```
+
+```{python}
+#| echo: false
+def recherche(élément, liste):
+    # avec compteur mais caché
+    cpt = 0
+    for e in liste:
+        cpt += 1
+        if e == élément:
+            print(f"{élément} trouvé en {cpt} tours de boucle.")
+            return True
+    # non trouvé
+    print(f"{élément} non trouvé en {cpt} tours de boucle.")      
+    return False
+```
+
+Appelons la fonction sur un mot présent dans le tableau.
+
+```{python}
+recherche("EULER", mots5)
+```
+
+
+Regardons maintenant, si le mot n'est pas trouvé.
+
+```{python}
+recherche("€UL€R", mots5)
+```
+
+## La recherche dichotomique
+
+Nous allons maintenant étudier l'algorithme de recherche par dichotomie. On peut comparer ça à une
+recherche dans un dictionnaire (*qui a eu la bonne idée d'être trié!*)
+
+### Principe
+
+> La recherche dichotomique ou recherche par dichotomie, est un algorithme de recherche pour
+> trouver la position d'un élément dans un tableau trié. Le principe est le suivant : comparer
+> l'élément avec la valeur de la case au milieu du tableau ; si les valeurs sont égales, la tâche
+> est accomplie, sinon on recommence dans la moitié du tableau pertinente.
+> [Source Wikipedia](https://fr.wikipedia.org/wiki/Recherche_dichotomique)
+
+<wc-wikimage title="Binary-search-work.gif" caption=""></wc-wikimage>
+
+
+### Définition de la fonction de recherche
+
+```{python}
+def recherche_dichotomique(élément, liste):
+    N = len(liste)
+    
+    # on initialise les indices début 
+    # et fin aux extrémités de la liste
+    début = 0
+    fin = N - 1
+    
+    while début <= fin and fin < N:
+        # On se place au milieu de la liste
+        milieu = (début + fin) // 2 # il, s'agit d'une division entière
+        # trois cas possibles
+        
+        if liste[milieu] < élément:       
+            début = milieu + 1
+        elif liste[milieu] > élément: 
+            fin = milieu - 1
+        else:
+            return True
+    return False
+```
+
+
+
+```{python}
+#| echo: false
+def recherche_dichotomique(élément, liste):
+    # avec le compteur mais caché des élèves
+    N = len(liste)
+    
+    # on initialise les indices début 
+    # et fin aux extrémités de la liste
+    début = 0
+    fin = N - 1
+    
+    cpt = 0
+    while début <= fin and fin < N:
+        cpt += 1
+        # On se place au milieu de la liste
+        milieu = (début + fin) // 2 # il, s'agit d'une division entière
+        # trois cas possibles
+        
+        if liste[milieu] < élément:       
+            début = milieu + 1
+        elif liste[milieu] > élément: 
+            fin = milieu - 1
+        else:
+            print(f"{élément} trouvé en {cpt} tours de boucle.")
+            return True
+    print(f"{élément} non trouvé en {cpt} tours de boucle.")        
+    return False
+```
+
+### Appels de la fonction
+
+Recherchons le mot `EULER` de la liste.
+
+```{python}
+recherche_dichotomique('EULER', mots5)
+```
+
+Incroyable on a trouvé en 23 fois au lieu de 2186982 avec la recherche en table.
+
+```{python}
+recherche_dichotomique('€UL€R', mots5)
+```
+
+24 tours au lieu de 11881376 dans le pire cas: _le mot est absent_.
+
+
+L'algorithme de recherche dichotomique est incroyablement plus efficace que l'algorithme de
+recherche en table.
+
+Il s'agit d'un logarithme ayant une complexité en $log_2 (n)$, c'est-à-dire le nombre de fois qu'il
+faut couper la liste en deux pour qu'elle ne contienne qu'un élément.
+
+Par exemple:
+
+- si n= $8$: $log_2(8) = 3$
+- si n= $256$: $log_2(256) = 8$
+- si n= $1024$: $log_2 (1024) = 10$
+- si n= $11881376$: $log_2 (11881376) = 23,5$
+
+**Au lieu de 11881376 d'opérations, on en effectue 24 au maximum!**
+
+## Complexité temporelle
+
+Comme on l'a vu, si on utilise un tableau trié, la recherche dichotomique est beaucoup plus
+efficace que la recherche en table. Cela se traduit par un temps d'exécution infime en raison de sa
+_complexité logarithmique_.
+
+::: {layout-ncol=2}
+
+:::: rtbl
+
+**Recherche en table: Complexité linéaire**
+
+$$
+O(N)
+$$
+
+_Benchmark_
+
+```{python}
+%%timeit -n1 -r1
+recherche('€UL€R', mots5)
+```
+
+
+
+
+::::
+
+:::: dicho
+
+**Recherche dichotomique: Complexité logarithmique**
+
+$$
+O(\log(N))
+$$
+
+_Benchmark_
+
+```{python}
+%%timeit -n1 -r1
+recherche_dichotomique('€UL€R', mots5)
+```
+
+
+::::
+
+:::
+
+<!-- 
+## Aspects théoriques
+
+Nous allons **démontrer la terminaison et la correction de l'algorithme de façon théorique**.
+
+Nous avons vu qu'il était possible d'utiliser des jeu de tests pour vérifier qu'un programme fonctionne, cependant il n'est jamais possible de créer des tests pour toutes les situations connues.
+
+C'est pour cela qu'on utilise parfois des outils *plus abstarits* pour démontrer que nos algorithmes "fonctionnent" dans tous les cas.
+
+### Terminaison: est-ce que l'algorithme s'arrête?
+
+On voit qu'à chaque tour de boucle, le nombre d'éléments à tester entre $i$ et $j$ est divisé par 2. 
+
+Après un nombre d'itérations fini, ce nombre d'éléments est inférieur ou égal à 1 et la boucle s'arrête. (Si N est le nombre d'éléments ce nombre d'itérations est $log_2(N)$
+
+```{python}
+# On prend 128 éléments = 2**8
+i = 0
+j = 127
+compteur = 0
+while i < j:
+    j = (i + j) //2
+    compteur += 1
+print(compteur) # 8 tours
+```
+
+```{python}
+# On prend 2048 éléments = 2**11
+i = 1
+j = 2048
+compteur = 0
+while i < j:
+    j = (i + j) //2
+    compteur += 1
+print(compteur) # 11 tours
+```
+
+
+### En plus: Correction: Est-ce que le résultat est juste?
+
+L'algorithme renvoie-t-il la bonne valeur?
+
+**La démonstration est délicate est non exigible.**
+
+
+[Informatique et sciences du numérique Spécialité ISN en terminale S - Avec des exercices corrigés
+et des idées de projets par Gilles
+Dowek](http://www.editions-eyrolles.com/Livre/9782212135435/){.cite-source}
+
+> Ensuite, pour démontrer que la réponse donnée par l’algorithme est correcte, on commence par
+montrer que si la chaîne de caractères $s$ est dans la table, alors son indice appartient toujours
+à l’intervalle $[i, j]$. Cette propriété est un **invariant de la boucle**, c’est-à-dire une
+propriété qui reste vraie à chaque exécution du corps de la boucle.
+
+>  Ici, quand on réduit l’intervalle $[i, j]$ à l’intervalle $[i, k - 1]$ par exemple, c’est parce
+que l’on sait que la chaîne $s$ est avant la chaîne $nom[k]$ dans l’ordre alphabétique et donc que
+l’indice de la chaîne $s$, s’il existe, n’est pas dans l’intervalle $[k, j]$. La propriété reste donc
+vraie jusqu’à la fin de l’exécution de la boucle. Enfin, on montre que quand on sort de la boucle,
+l’intervalle $[i, j]$ est soit le singleton $[i, i]$, soit l’intervalle vide $[i , i-1]$. Dans les deux
+cas, $i$ est compris entre les valeurs minimale et maximale de départ.
+
+>  Pour cela, on montre un autre invariant de la boucle : si l’intervalle $[i, j]$ n’est pas vide,
+alors ses bornes $i$ et $j$ sont comprises entre les valeurs minimale et maximale de départ, et s’il
+est vide, alors sa borne inférieure $i$ est comprise entre les valeurs minimale et maximale de
+départ.
+
+> - Si l’intervalle $[i, j]$ contient au moins trois points, c’est-à-dire si $i + 2 \le j$, il
+  n’est pas difficile de montrer que les nombres $k - 1$ et $k + 1$, où $k = (i + j) // 2$, sont
+  tous les deux compris entre $i$ et $j$ au sens large. Le nouvel intervalle $[k, k]$, $[i, k - 1]$
+  ou $[k + 1, j]$ est contenu dans $[i, j]$ et donc ses bornes sont comprises entre les valeurs
+  minimale et maximale de départ.
+> - Si l’intervalle $[i, j]$ contient deux points, c’est-à-dire si $j = i + 1$, alors $k = (i + j) // 2$
+   est égal à $i$. Le nombre $k + 1$ est égal à $j$ : il est compris entre $i$ et $j$ au sens large. En revanche, le nombre $k - 1$ est égal à $i - 1$.
+  Dans ce cas, le nouvel intervalle est $[i, i]$ ou $[ j, j]$ dont les bornes sont comprises entre les valeurs minimale et
+  maximale de départ, ou l’intervalle vide $[i, i - 1]$ dont la borne inférieure $i$ est comprise entre
+  les valeurs minimale et maximale de départ.
+  
+> On sort de la boucle quand l’intervalle $[i, j]$ contient zéro ou un point. Dans un cas 
+  comme dans l’autre, l’indice $i$ est compris entre les
+  valeurs minimale et maximale de départ. Si la chaîne de caractères `nom[i]` est identique à $s$, on a
+  trouvé l’indice de la chaîne $s$ dans la liste $nom$ ; si ce n’est pas le cas, la chaîne $s$ n’est pas
+  dans la table.
+  -->

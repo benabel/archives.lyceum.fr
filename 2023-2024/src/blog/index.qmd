@@ -1,0 +1,11 @@
+---
+title: "Blog"
+listing:
+  #   need to move tags to category categories: true
+  filter-ui: [title]
+  sort-ui: [title, date]
+  sort:
+    - "date desc"
+---
+
+Quelques articles de blog en rapport avec le contenu du site.

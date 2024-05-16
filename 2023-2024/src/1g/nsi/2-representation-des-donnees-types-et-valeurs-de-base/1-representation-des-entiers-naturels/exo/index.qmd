@@ -1,0 +1,369 @@
+---
+title: Exercices
+subtitle: "Chapitre 1: Représentation des entiers naturels"
+exo: true
+type: exo
+tabnav: true
+---
+## Représentation binaire des entiers naturels
+
+<https://h5p.lyceum.fr/3402212386/>
+
+## Entiers naturels en base deux
+
+1. Trouver la représentation en base deux du nombre 1000.
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   from IPython.display import display, Math
+   from lyceum.repr import dec2bin
+   display(Math(r"1000_{{10}}={}_2".format(dec2bin(1000).replace("_", "~"))))
+   ```
+   :::
+
+2. Donner les représentations en base deux des nombres 1, 3, 7, 15, 31 et 63. Expliquer le
+   résultat.
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   for n in [1,3,7,15,31,63]:
+        display(Math(r"{}_{{10}}={}_2".format(n, dec2bin(n).replace("_", "~"))))
+   ```
+   :::
+
+   Ces nombres sont égaux à une puissance de 2 moins 1, $2^n - 1$ ce sont les plus grands nombres
+   pouvant être encodés sur $n$ bits.
+
+
+3. Trouver la représentation en base dix du nombre $1001~0110_2$.
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   from lyceum.repr import bin2dec
+   n = 10010110
+   b = bin2dec(n)
+   display(Math(r"{}_2={}_{{10}}".format(n, b)))
+   ```
+   :::
+
+
+4. C'est en $111~1001~0000_2$ qu'a été démontré le théorème fondamental de l'informatique. Exprimer
+   ce nombre en base dix.
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   from lyceum.repr import bin2dec
+   n = 11110010000
+   b = bin2dec(n)
+   display(Math(r"{}_2={}_{{10}}".format(n, b)))
+   ```
+   :::
+
+5. Pour multiplier par dix un entier naturel exprimé en base dix, il suffit d'ajouter un 0 à sa
+   droite, par exemple, $12 \times 10 = 120$. Quelle est l'opération équivalente pour les entiers naturels
+   exprimés en base deux ? Exprimer en base deux les nombres 3, 6 et 12 pour illustrer cette
+   remarque.
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   for n in [3,6,12]:
+        display(Math(r"{}_{{10}}={}_2".format(n, dec2bin(n).replace("_", "~"))))
+   ```
+   :::
+
+   Lorsqu'n ajoute un zéro en base deux, le nombre est multiplié par deux.
+
+
+
+
+## Octet et information
+
+1. Combien de bits d'informations contient un octet ? Combien un octet peut-il représenter de
+   valeurs différentes ?
+
+   :::correction
+
+   Un octet contient 8 bits, il peut représenter $2^8=256$ informations.
+
+   :::
+
+
+2. On imagine un ordinateur dont la mémoire est constituée de quatre circuits mémoire un bit. Quel
+   est le nombre d'états possibles de la mémoire de cet ordinateur ? Même question pour un
+   ordinateur dont la mémoire est constituée de dix circuits mémoires un bit. Et pour un ordinateur
+   dont la mémoire est constituée de 34 milliards de tels circuits.
+
+   ::: correction
+
+   - $2^4$ = 16
+   - $2^{10}$ = 1024
+   - $2^{34000000000}$ non calculable avec un ordinateur grand public.
+
+   :::
+
+3. On veut représenter chacune des sept couleurs de l'arc-en-ciel par un mot, les sept mots devant
+   être distincts et de même longueur. Quelle est la longueur minimale de ces mots ?
+
+   ::: correction
+
+   La puissance de deux immédiatement supérieure à 7 et $8=2^3$. Trois bits suffisent.
+
+   - 000: violet
+   - 001: indigo (on l'utilise plus depuis Newton, mais bon il en faut 7 d'après l'énoncé.)
+   - 010: bleu
+   - 011: vert
+   - 100: jaune
+   - 101: orange
+   - 110: rouge
+   - 111 non utilisé
+
+   :::
+
+
+
+## Entiers naturels en base 16
+
+1. Trouver la représentation en base 16 du nombre binaire: $111100011001_2$.
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   from lyceum.repr import dec2hex
+   b = 111100011001
+   n = bin2dec(b)
+   x = dec2hex(n)
+   display(Math(r"{}_2={}_{{16}}".format(b, x)))
+   ```
+   :::
+
+2. Trouver la représentation en base dix du nombre $4e2c_{16}$.
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   from lyceum.repr import hex2dec
+   x = "4e2c"
+   d= hex2dec(x)
+   display(Math(r"{}_{{16}}={}_{{10}}".format(x, d)))
+   ```
+   :::
+
+3. Trouver la représentation en base seize du nombre $965_{10}$.
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   d= 965
+   x = dec2hex(d)
+   display(Math(r"{}_{{10}}={}_{{16}}".format(d, x)))
+   ```
+   :::
+
+
+
+## Effectuer des opérations
+
+1. Poser les opérations _binaires_ suivantes et vérifier votre résultat en base 10: 
+
+   ```
+      11010
+   + 110011
+   --------
+   ```
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   n1= bin2dec(11010)
+   n2 = bin2dec(110011)
+   print("= "+dec2bin(n1+n2))
+   print()
+   print("Vérification:")
+   print(f"{n1} + {n2} = {n1+n2}")
+   ```
+
+   :::
+
+   
+   ```
+    110011
+   - 11010
+   --------
+   ```
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   n1= bin2dec(11010)
+   n2 = bin2dec(110011)
+   print("= "+dec2bin(n2-n1))
+   print()
+   print("Vérification:")
+   print(f"{n2} - {n1} = {-n1+n2}")
+   ```
+
+   :::
+
+2. Poser les opérations _hexadécimales_ suivantes et vérifier votre résultat en base 10: 
+
+   ```
+      FF0
+   +   1E
+   ------
+   ```
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   n1= hex2dec("FF0")
+   n2 = hex2dec("1E")
+   print("= "+dec2hex(n2+n1))
+   print()
+   print("Vérification:")
+   print(f"{n2} - {n1} = {n1+n2}")
+   ```
+
+   :::
+
+   ```
+    FF0
+   - 1E
+   ----
+   ```
+
+   ::: correction
+   ```{python}
+   #|echo: false
+   n1= hex2dec("FF0")
+   n2 = hex2dec("1E")
+   print("= "+dec2hex(n1-n2))
+   print()
+   print("Vérification:")
+   print(f"{n1} - {n2} = {n1-n2}")
+   ```
+
+   :::
+
+## Représenter des couleurs en hexadécimal
+
+En HTML et en CSS, les couleurs peuvent être codées sous la forme d'un sextuplet hexadécimal
+représentant ainsi la couleur sur 3 octets. Par exemple: `12AB5F`.
+
+Chaque **octet** est écrit avec deux chiffres hexadécimaux, et représente un niveau parmi 256 de
+chacune des trois couleurs primaires de la synthèse additive **Rouge, Vert et Bleu** dans l'ordre.
+
+_Par exemple, le code `#FF0000` représente un niveau maximal à 255 sur le rouge, et des niveaux
+nuls pour le vert et le bleu._
+
+Une animation est disponible à l'adresse suivante: <https://apps.lyceum.fr/css-colors/>
+
+1. Chaque composante de couleur étant codé sur un octet, donner en décimal et en hexadécimal les
+   valeurs minimale, maximale et médiane.
+
+   :::correction
+   - Valeur maximale : $255_{10}$ = $FF_{16}$
+   - Valeur minimale : $0_{10}$ = $00_{16}$
+   - Valeur médiane :$128_{10}$ = $80_{16}$
+
+   :::
+
+2. Compléter le tableau suivant:
+
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | couleur | Code hexadécimal | R(décimal) | V(décimal | B(décimal) | Codage 3bits(quest. 4) |
+   +=========+==================+============+===========+============+========================+
+   |         | `#000000`        |            |           |            |                        |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   |         |                  | 0          | 0         | 255        | `001`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Vert    |                  |            |           |            |                        |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   |         | `#00FFFF`        |            |           |            |                        |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   |         |                  | 255        | 0         | 0          | `100`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Magenta |                  |            |           |            |                        |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   |         | `#FFFF00`        |            |           |            |                        |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Blanc   |                  |            |           |            |                        |
+   +---------+------------------+------------+-----------+------------+------------------------+
+
+   ::: correction
+
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | couleur | Code hexadécimal | R(décimal) | V(décimal | B(décimal) | Codage 3bits(quest. 4) |
+   +=========+==================+============+===========+============+========================+
+   | Noir    | `#000000`        | 0          | 0         | 0          | `000`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Bleu    | `#0000FF`        | 0          | 0         | 255        | `001`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Vert    | `#00FF00`        | 0          | 255       | 0          | `010`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Cyan    | `#00FFFF`        | 0          | 255       | 255        | `011`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Rouge   | `#FF0000`        | 255        | 0         | 0          | `100`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Magenta | `#FF00FF`        | 255        | 0         | 255        | `101`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Jaune   | `#FFFF00`        | 255        | 255       | 0          | `110`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   | Blanc   | `#FFFFFF`        | 255        | 255       | 255        | `111`                  |
+   +---------+------------------+------------+-----------+------------+------------------------+
+   
+   :::
+
+3. La complémentaire d'une couleur est obtenue en allumant les lampes éteintes et en éteignant les
+   lampes allumées. Déterminer les couleurs complémentaires des couleurs précédentes.
+   
+   :::correction
+   ----------- ----------------
+   Couleur     Complémentaire
+   Bleu(B)     Jaune(R+V)
+   Vert(V)     Magenta(R+B)
+   Noir(000)   Blanc(R+V+B)
+   Rouge(R)    Cyan(V+B)
+   ----------- ----------------
+   :::
+
+
+4. En utilisant comme précédemment uniquement les éclairages nuls et maximum, combien de couleurs
+   sont codées? En déduire comment aurait-on pu coder ces données sur 3 bits et compléter le
+   tableau de la question 2?
+   
+   ::: correction
+   Avec des éclairages nuls ou maximum on obtient 8 couleurs comme dans
+   le tableau. Il suffit de 3 bits pour code 8 informations, car $2^3=8$.
+   :::
+
+5. Quel est le nombre de couleurs qui peut être codé si on considère toutes les combinaisons
+   d'éclairage rendues possibles par le codage hexadécimal utilisé par le HTML et CSS.
+   
+   ::: correction
+   Le nombre de couleurs possibles est : comme il y a 24 bits : $2^{24}$ = 16 millions de couleurs.
+   :::
+
+6. Grâce à l'animation expliquer comment:
+
+   - Créer des nuances de gris.
+
+     ::: correction
+     Mettre les trois niveaux RVB à une valeur égale
+     :::
+   
+   - Comment obscurcir une couleur par exemple le rouge.
+  
+     ::: correction
+     Diminuer la valeur de la composante R en laissant les autres à 0. Exemple: `#AA0000`
+     :::
+   
+   - Comment éclaircir une couleur par exemple le rouge.
+   
+     ::: correction
+     Augmenter la valeur des deux autres composantes à une valeur égale. Exemple: `#FF7777`
+     :::

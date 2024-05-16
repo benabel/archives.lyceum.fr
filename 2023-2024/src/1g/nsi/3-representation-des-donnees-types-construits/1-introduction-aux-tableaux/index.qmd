@@ -1,0 +1,416 @@
+---
+tags:
+  - python
+  - type construit
+  - p-uplet
+  - tuple
+title: "Chapitre 1: Introduction aux tableaux"
+order: 1
+cours: true
+tabnav: true
+categories:
+  - 1NSI
+---
+
+::: programme
++---------------------------+-------------------------------+--------------------------------------+
+| Contenus                  | Capacités attendues           | Commentaires                         |
++===========================+===============================+======================================+
+| p-uplets.                 | Écrire une fonction renvoyant |                                      |
+| p-uplets nommés           | un p-uplet de valeurs.        |                                      |
++---------------------------+-------------------------------+--------------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+Dans la deuxième partie
+[2-Représentation des données: types et valeurs de base](/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/),
+nous avions vu certains types de **variables simples**: `int`(entiers), `float`(nombres à virgule
+flottante) `bool`(booléen), `str`(chaîne de caractères). Nous allons maintenant voir des **types
+construits** qui sont des _collections d'objets_ de type simple assemblés dans ce que l'on appelle
+une structure de données.
+
+<wc-wikimage title="Tableau_à_une_dimension.png" caption="Un ensemble de valeurs entières stockées dans un tableau à une dimension."></wc-wikimage>
+
+:::
+
+Nous verrons dans cette partie trois exemples de types construits:
+
+- les p-uplets `tuple ` et listes `list`: des collections d'éléments ordonnés dans lesquels les
+  valeurs sont accédées via un **indice de position**.
+- les p-uplet nommés `namedtuple` et les dictionnaires `dict`: ensemble d'éléments dans lesquels
+  les valeurs sont accédées via une **clef**.
+
+## Qu'est-ce qu'un tableau?
+
+Tableau
+
+: En informatique, un tableau est une structure de données représentant une séquence finie
+d'éléments auxquels on peut accéder efficacement par leur indice, dans la séquence.
+
+Il existe deux implémentations des tableaux en Python: les `tuple`s et les `list`es.
+
+### Syntaxe des tuples `(a, b, c)`
+
+Les tuples sont des valeurs séparées par des virgules `,` entourées de parenthèses
+`(..., ..., ...`)` qui peuvent parfois être *omises*.
+
+```{python}
+t = (1, 2, 3)
+type(t)
+```
+
+```{python}
+# sans parenthèses
+t = 1, 2, 3
+type(t)
+```
+
+### Syntaxe des listes `[a, b, c]`
+
+Les valeurs de la collection sont entourées par des crochets `[]`, leurs éléments sont séparés par des
+virgules.
+
+```{python}
+tab = [ "a", "z" , "e"]
+type(tab)
+```
+
+### Différences entre tuple et liste
+
+Outre la syntaxe, il y a plusieurs différences clés entre les tuples et les listes en Python:
+
+- **Immutabilité** : les tuples sont immuables, c'est-à-dire qu'une fois créés, ils ne peuvent pas être
+  modifiés. Les listes, en revanche, sont mutables, c'est-à-dire que vous pouvez ajouter, supprimer
+  ou remplacer des éléments dans une liste une fois qu'elle a été créée.
+
+- **Performance** : les tuples sont généralement plus rapides à créer et à accéder que les listes. Cela
+  est dû à leur immutabilité, qui signifie qu'il n'y a pas besoin de gérer la modification des
+  éléments dans un tuple.
+
+- **Utilisation** : les tuples sont souvent utilisés lorsque vous avez besoin de stocker des
+  données qui ne doivent pas être modifiées, tandis que les listes sont utilisées lorsque vous avez
+  besoin de stocker des données qui doivent être modifiées fréquemment.
+
+## Différences et similitudes entre tuple et listes
+
+::: {layout-ncol=2}
+
+::::tuple
+
+**Tuple**
+
+On peut stocker plusieurs valeurs de types différents.
+
+```{python}
+t = (1, 2.0, "trois")
+t
+```
+
+```{python}
+type(t)
+```
+
+L'accès se fait par un indice entier de position qui _commence à 0_. On place l'indice entre des
+crochets.
+
+```{python}
+t[0]
+```
+
+```{python}
+t[1]
+```
+
+```{python}
+t[2]
+```
+
+La longueur du tuple est obtenue grâce à la fonction `len()`
+
+```{python}
+len(t)
+```
+
+Les tuples sont [*immutables*](https://fr.wiktionary.org/wiki/immutable), c'est-à-dire qu'on ne
+peut les modifier une fois qu'ils ont été créés.
+
+```{python}
+#| error: true
+t[0] = "un"
+```
+
+
+
+::::
+
+::::liste
+
+**Liste**
+
+On peut stocker plusieurs valeurs de types différents.
+
+```{python}
+tab = [1, 2.0, "trois"]
+tab
+```
+
+```{python}
+type(tab)
+```
+
+L'accès se fait par un indice entier de position qui _commence à 0_. On place l'indice entre des
+crochets.
+
+```{python}
+tab[0]
+```
+
+```{python}
+tab[1]
+```
+
+```{python}
+tab[2]
+```
+
+La longueur de la liste est obtenue grâce à la fonction `len()`
+
+```{python}
+len(tab)
+```
+
+Les listes sont [*mutables*](https://fr.wiktionary.org/wiki/mutable), c'est-à-dire qu'on peut les
+modifier une fois qu'elles ont été créés.
+
+```{python}
+tab[0] = "un"
+tab
+```
+
+::::
+
+:::
+
+
+**ATTENTION: Dans les types construits, il faut bien distinguer l'indice et la valeur stockée à cet
+indice.**
+
+<wc-wikimage title="Tableau_à_une_dimension.png" caption="Les valeurs stockées sont de type quelconque par contre les indice sont des entiers commençant à 0."></wc-wikimage>
+
+## Méthodes et fonctions
+
+### Qu'est-ce qu'une méthode?
+
+Python étant un [langage objet](/tg/nsi/1-structures-de-donnees/2-programmation-objet), des
+méthodes sont ajoutées aux tableaux pour interagir facilement avec eux.
+
+La différence entre méthode et fonction sera approfondie en terminale lors de l'étude de la
+[programmation orientée objet](/tg/nsi/1-structures-de-donnees/2-programmation-objet). Pour
+l'instant, nous pouvons simplement dire qu'il s'agit d'une fonction attachée à un objet qui
+s'appelle en utilisant une **notation pointée**.
+
+```python
+# appel d'une fonction
+fonction(arguments) # ex: len(tab)
+# appel d'une méthode d'objet
+objet.méthode(arguments) # ex: tab.append(5)
+```
+
+### Méthodes des tuples
+
+Les tuples étant immuables ne présentent que deux méthodes qui sont décrites dans la
+[documentation](https://docs.python.org/fr/3/library/stdtypes.html#sequence-types-list-tuple-range)
+ou grâce à l'appel `help(tuple)`
+
+- La méthode `index`: indice de la première occurrence de l'élément cherché donné en argument.
+- La méthode `count`: nombre d'éléments de valeur donnée en argument.
+
+```{python}
+t = (1, 1, 1, 2, 2)
+```
+
+
+```{python}
+# appel de la méthode index()
+t.index(2)
+```
+
+```{python}
+t.count(1)
+```
+
+::: {.plus titre="Documentation des tuples"}
+
+```{python}
+help(tuple)
+```
+
+:::
+
+### Méthodes des listes
+
+Les listes présentent de nombreuses méthodes en plus de celles des tuples qui vont permettre de les
+[modifier](https://docs.python.org/fr/3/library/stdtypes.html#mutable-sequence-types).
+
+Voici quelques utilisations courantes à retenir(la liste complète est dans la documentation!).
+
+- ajouter des éléments à la liste à la fin avec la méthode `append`, ou à un indice quelconque avec
+  la méthode `insert`.
+
+```{python}
+# ajout à la fin
+tab.append(4)
+tab
+```
+
+```{python}
+# ajout à l'indice 0(au début)
+tab.insert(0, 'zéro')
+tab
+```
+
+-  supprimer des éléments de la liste à la fin avec la méthode `pop()`, ou à un indice quelconque
+   avec la méthode `pop(indice)`.
+
+```{python}
+tab.pop()
+tab
+```
+
+```{python}
+tab.pop(1)
+tab
+```
+
+
+::: {.plus titre="Documentation des listes"}
+
+```{python}
+help(list)
+```
+
+:::
+
+## Utilisations courantes des tuples
+
+### Déstructuration
+
+Il peut être _pratique_ de récupérer les valeurs stockées dans le tuple dans des variables de type
+simple: on parle de **déstructuration**.
+
+```{python}
+t = ("α", "β", "γ")
+a, b, c = t
+print("t=", t)
+print("a=", a)
+print("b=", b)
+print("c=", c)
+```
+
+### Permuter des variables
+
+Habituellement, lorsque l'on souhaite permuter deux variables, il est nécessaire de passer par une
+troisième variable auxiliaire. Grâce aux tuples, la permutation peut se faire en une instruction.
+
+```{python}
+a = 3
+b = 2
+print("a=",a, "b=", b)
+print("Permutation")
+a, b = b, a
+print("a=",a, "b=", b)
+```
+
+### Renvoyer plusieurs valeurs dans une fonction
+
+Il s'agit d'une application courante des tuples. Prenons l'exemple d'une fonction qui renvoie les
+deux racines du trinôme.
+
+```{python}
+def racines_du_trinome(a,b,c):
+    delta = b**2-4*a*c
+    if delta >= 0:
+        return -b-delta**0.5/(2*a), -b+delta**0.5/(2*a)
+
+racines_du_trinome(1,0,-1)
+```
+
+Ici on récupère les racines par déstructuration.
+
+```{python}
+x1, x2 = racines_du_trinome(1,0,-2)
+print("racine 1:", x1)
+print("racine 2:", x2)
+```
+
+## Savoir si un tableau contient une valeur
+
+Outre la méthode `index()`, on peut utiliser l'opérateur booléen `in` pur savoir si une valeur est
+dans la liste.
+
+```{python}
+tab = [1, 3, 5]
+print(3 in tab)
+print(4 in tab)
+```
+
+## Parcours séquentiel des tableaux
+
+Les tableaux étant des structures ordonnées finies, il est facile de les parcourir dans l'ordre
+avec une boucle bornée `for`.
+
+En python, on peut réaliser l'itération sur les valeurs ou sur les indices si nécessaire. Cette
+dernière est plus compliquée, mais plus puissant, car on a alors accès à l'indice `i` **et** à la
+valeur `tab[i]`).
+
+### Itération sur les valeurs
+
+On fait une itération sur les valeurs du tableau en utilisant le mot-clé `in`.
+
+```{python}
+tab = [12, -3, 15, -9, 17, 7]
+for val in tab:
+    print(val)
+```
+
+### Itération sur les indices
+
+C'est la méthode classique utilisée dans les langages impératifs.
+
+```{python}
+t = (12, -3, 15, -9, 17, 7)
+for i in range(len(t)):
+    val = t[i]
+    print("indice:", i, "valeur:", val)
+```
+
+::: plus
+   
+Même si le choix du nom des variables d'itération vous appartient, on a l'habitude d'utiliser:
+
+- `i`, `idx`, `j`, `k`... pour les index
+- `val`, `v`, `e`... pour les valeurs des éléments du tableau.
+
+:::
+
+
+::: callout-note
+
+Ces deux méthodes fonctionnent aussi bien avec les tuples que les listes, mais également avec les
+chaînes de caractères `str`.
+
+```{python}
+for lettre in "Bonjour":
+    print(lettre)
+```
+
+```{python}
+mot = "Bonjour"
+for i in range(len(mot)):
+    val = mot[i]
+    print("indice:", i, "valeur:", val)
+```
+:::
+
+

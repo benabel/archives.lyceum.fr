@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Chapitre 7: Comparaisons de langages"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```

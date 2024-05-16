@@ -1,0 +1,1142 @@
+---
+tags:
+  - enseignement scientifique
+  - physique
+  - chimie
+  - svt
+  - programme
+  - officiel
+  - "2024"
+  - terminale
+  - lycée
+title: Programme de {{< meta matter >}}
+subtitle: "{{< meta classe >}}"
+number-sections: false
+toc-depth: 3
+---
+
+<!-- Conversion effectuée grâce à pdftotxt -layout prog.pdf pour à peu près garder la forme des tableaux -->
+
+> Ce document est une retranscription non officielle du programme d'_enseignement scientifique_ de
+> terminale générale publié au Bulletin officiel n° 25 du 22 juin 2023 et applicable à la rentrée
+> 2024. La version officielle est consultable sur
+> [eduscol](https://www.education.gouv.fr/sites/default/files/ensel807_annexe.pdf).
+
+
+# Préambule
+
+L’ensemble des disciplines scientifiques concourt à la compréhension du monde, de son organisation, de son
+fonctionnement et des lois qui le régissent. Elles permettent aussi de maîtriser les outils et les technologies imaginés
+et mis en œuvre par les êtres humains. L’histoire des sciences raconte une aventure de l’esprit humain, lancé dans
+une exploration du monde (la science pour savoir) et dans une action sur le monde (la science pour faire).
+
+Le développement des sciences et des technologies a profondément modifié les conditions de vie des êtres humains
+et les sociétés dans lesquelles ils vivent. Cela s’est traduit par d’importants progrès, dans les domaines de
+l’alimentation, de la santé, de la communication, des transports, etc. Grâce à ses inventions, l’être humain a les
+moyens de transformer son environnement immédiat. Les activités humaines utilisent massivement des ressources
+naturelles et produisent des déchets. Elles peuvent modifier les équilibres à l’échelle de la planète (biodiversité,
+climat, etc.).
+
+Par, notamment, l’approche scientifique, l’être humain dispose des outils intellectuels nécessaires pour devenir un
+acteur conscient et responsable de sa relation au monde et de la transformation des sociétés. L’approche
+scientifique nourrit le jugement critique et rencontre des préoccupations d’ordre éthique. Ainsi, de façon
+rationnellement éclairée, chacun doit être en mesure de participer à la prise de décisions, individuelles et collectives,
+locales ou globales.
+
+La science construit peu à peu un corpus de connaissances grâce à des méthodes spécifiques. Elle élabore un
+ensemble de théories, établit des lois, invente des concepts, découvre des mécanismes, effectue des mesures,
+analyse et traite des données, explique des processus, etc. ; cet ensemble se perfectionne par la confrontation à des
+faits nouvellement connus, souvent en lien avec l’évolution des techniques. Le savoir scientifique est une
+construction collective qui a une histoire. Il est fondé sur le raisonnement rationnel et la recherche de causes
+matérielles ; il se développe parfois en réfutation des intuitions premières au-delà desquelles la recherche doit
+s’aventurer.
+
+La compréhension de l’histoire des savoirs scientifiques et de leur mode de construction, la pratique véritable d’une
+démarche scientifique (y compris dans sa dimension concrète) cultivent des qualités de l’esprit utiles à tous. En
+pratiquant la science, chacun fait croître ses connaissances, son intelligence, sa curiosité, sa raison, son habileté
+manuelle, son humilité devant les faits et les idées, pour enrichir son savoir.
+
+Le but essentiel de l’enseignement scientifique dispensé dans le tronc commun de la filière générale du lycée est de
+donner une formation scientifique à tous les élèves, tout en offrant un solide ancrage à ceux qui poursuivent des
+études scientifiques. Il ne vise pas à construire un savoir encyclopédique, mais cherche plutôt à atteindre trois buts
+intimement liés :
+
+-  contribuer à faire de chaque élève une personne lucide, consciente de ce qu’elle est, de ce
+   qu’est le monde et de ce qu’est sa relation au monde ;
+-  contribuer à faire des élèves des citoyens responsables, qui connaissent les conséquences de
+   leurs actions sur le monde et disposent des outils nécessaires pour les analyser et les
+   anticiper ;
+-  contribuer au développement en chaque élève d’un esprit rationnel, autonome et éclairé́,
+   capable d’exercer une analyse critique face aux fausses informations et aux rumeurs.
+
+# Programme
+
+Pour atteindre les trois enjeux définis en préambule, ce programme précise, d’une part, des objectifs généraux de
+formation et présente, d’autre part, un ensemble d’objectifs thématiques dont les contenus sont largement
+interdisciplinaires.
+
+Les objectifs généraux ont pour but d’aider les élèves à cerner la spécificité de la connaissance scientifique, dans ses
+pratiques, dans ses méthodes d’élaboration et dans ses enjeux de société. Les objectifs thématiques visent à
+consolider et à accroître la culture scientifique des élèves tout en leur fournissant les éléments d’une pratique
+autonome du raisonnement scientifique, dans des contextes variés.
+
+Ces deux aspects sont complémentaires. Les professeurs décident comment satisfaire aux objectifs de formation
+générale en traitant les contenus de chaque thème. Ils doivent veiller à respecter un juste équilibre entre ces deux
+
+composantes de l’enseignement.
+
+Les objectifs généraux de formation et les suggestions pédagogiques qui suivent concernent les deux années du cycle
+terminal dont les programmes constituent un ensemble cohérent. Certaines thématiques aux enjeux
+particulièrement importants (biodiversité, énergie, climat) sont abordées dans les programmes des deux années du
+cycle terminal.
+
+# I - Objectifs généraux de formation
+
+L’enseignement scientifique cherche à développer des compétences générales par la pratique de la réflexion
+scientifique. Les objectifs ci-dessous énoncés constituent une dimension essentielle de l’enseignement scientifique et
+ne doivent pas être négligés au profit du seul descriptif thématique. Ils sont regroupés autour de trois idées liées entre
+elles.
+
+## A - Comprendre la nature du savoir scientifique et ses méthodes d’élaboration
+
+Le savoir scientifique résulte d’une construction rationnelle. Il se distingue d’une croyance ou d’une opinion. Il
+s’appuie sur la description et l’analyse de faits extraits de la réalité complexe ou produits au cours d’expériences. Il
+cherche à comprendre et à expliquer la réalité par des causes matérielles.
+
+Le savoir scientifique résulte d’une longue construction collective jalonnée d’échanges d’arguments, de controverses
+parfois vives. Une certitude raisonnable s’installe et se précise progressivement, au gré de la prise en compte de faits
+nouveaux, souvent en lien avec les progrès techniques. Ce long travail intellectuel met en jeu l’énoncé d’hypothèses
+dont on tire des conséquences selon un processus logique. Ces modalités sont d’ailleurs en partie variables selon les
+disciplines concernées.
+
+Dans le cadre de l’enseignement scientifique, il s’agit donc, en permanence, d’associer l’acquisition de quelques savoirs
+et savoir-faire exigibles à la compréhension de leur nature et de leur construction.
+
+## B - Identifier et mettre en œuvre des pratiques scientifiques
+
+Au cours de leur activité de production du savoir, les scientifiques mettent en œuvre un certain nombre de pratiques
+qui, si elles ne sont pas spécifiques de leur travail, en sont néanmoins des aspects incontournables.
+
+Quelques mots-clés permettent de les présenter : observer, décrire, mesurer, quantifier, calculer, analyser, imaginer,
+proposer, tester, modéliser, simuler, raisonner, expliquer, créer des scénarios pour envisager des futurs possibles ou
+remonter dans le passé.
+
+Cet enseignement contribue au développement des compétences langagières orales à travers notamment la
+pratique de l’argumentation. Celle-ci conduit à préciser sa pensée et à expliciter son raisonnement de manière à
+convaincre.
+
+Dans le cadre de l’enseignement scientifique, il s’agit, chaque fois que l’on met en œuvre une authentique pratique
+scientifique, de l’expliciter et de prendre conscience de sa nature.
+
+## C - Identifier et comprendre les effets de la science sur les sociétés et sur l’environnement
+
+Les sociétés modernes sont profondément transformées par la science et ses applications technologiques, dont les
+effets touchent l’alimentation (agriculture et agroalimentaire), la santé (médecine), les communications (transports,
+échanges d’informations), l’apprentissage et la réflexion (intelligence artificielle), la maîtrise des risques naturels et
+technologiques, la protection de l’environnement, etc.
+
+La compréhension de ces transformations est indispensable à la prise de décision ; elle distingue l’approche
+purement scientifique d’autres approches (économiques, éthiques, etc.).
+
+De même, les activités humaines exercent sur l’environnement des effets que la science permet de comprendre et
+de contrôler.
+
+Dans le cadre de l’enseignement scientifique, il s’agit de faire comprendre en quoi la culture scientifique est
+aujourd’hui indispensable pour saisir l’évolution des sociétés comme celle de l’environnement et limiter les aspects
+négatifs de ces évolutions.
+
+En classe terminale, l’enseignement scientifique peut être mis en relation avec le programme de philosophie
+concernant les questions d’épistémologie et d’éthique.
+
+# II - Suggestions pédagogiques
+
+Si les objectifs généraux ou thématiques sont clairement identifiés dans le programme, la manière de les atteindre
+relève de la liberté pédagogique de l’équipe de professeurs. Ce paragraphe ne limite nullement cette liberté
+pédagogique ni n’en canalise l’expression. Cependant, quelques principes pédagogiques généraux méritent d’être
+pris en compte pour atteindre les objectifs fixés.
+
+## A - Un enseignement en prise avec le réel complexe
+
+Le scientifique rend intelligible le monde en déchiffrant la réalité complexe dont il extrait des éléments qu’il analyse
+et dont il élucide les interactions. Il est néanmoins opportun de saisir une ou des occasion(s) de montrer la
+
+
+complexité du réel lui-même. Une manière privilégiée de le faire consiste à travailler ponctuellement hors des murs
+de la classe ou de l’établissement (terrain, laboratoire, entreprise, musée, etc.).
+
+La prise en compte de la complexité impose aussi le croisement des approches de plusieurs disciplines, ce qui se
+traduit par le caractère interdisciplinaire de cet enseignement (y compris en dehors du champ scientifique).
+
+## B - Une place particulière pour les mathématiques
+
+Selon Galilée, le grand livre de la Nature est écrit en langage mathématique. En effet, les modèles mathématiques
+aident à comprendre le monde. C’est dans cet esprit que les mathématiques trouvent leur place dans ce programme
+d’enseignement scientifique. De surcroît, l’omniprésence (quoique souvent invisible) des mathématiques dans la vie
+quotidienne (professionnelle et sociale) invite aujourd’hui tout individu à disposer de savoirs et de savoir-faire
+mathématiques. Le traitement des thèmes figurant au programme permet de présenter des méthodes, modèles et
+
+outils mathématiques qui visent à décrire et expliquer la réalité complexe du monde, mais aussi à prédire ses
+évolutions. Parallèlement, le programme offre de nombreuses occasions de confronter les élèves à une pratique
+effective des mathématiques dans des contextes issus d’autres disciplines. Cette pratique leur permet à la fois de
+consolider, dans des contextes nouveaux, des compétences de calcul, de raisonnement logique et de représentation
+et d’exercer leur esprit critique en interrogeant les résultats d’un modèle mathématique.
+
+## C - Une place réservée à l’observation et l’expérience en laboratoire
+
+Si des études documentaires, des expériences de pensée ou la résolution d’exercices permettent la mise en œuvre
+d’une démarche scientifique, la pratique expérimentale des élèves est essentielle. En particulier, il est bienvenu,
+chaque fois que possible, de créer les conditions permettant un travail de laboratoire fondé sur diverses formes de
+manipulations et d’observations. Ainsi, en se livrant à la confrontation entre faits et idées, l’élève comprend, en la
+pratiquant, la construction du savoir scientifique.
+
+## D - Une place importante pour l’histoire raisonnée des sciences
+
+L’une des manières de comprendre comment se construit le savoir scientifique est de retracer le cheminement
+effectif de sa construction au cours de l’histoire des sciences. Il ne s’agit pas de donner à l’élève l’illusion qu’il trouve
+en quelques minutes ce qui a demandé le travail de nombreuses générations de chercheurs, mais plutôt, en se
+focalisant sur un petit nombre d’étapes bien choisies de l’histoire des sciences, de faire comprendre le rôle-clé joué
+par certaines découvertes et de replacer celles-ci dans le contexte sociétal de l’époque. Le rôle prépondérant de
+grandes figures de la science, dans l’histoire et dans le monde contemporain, sera souligné. Ce sera aussi l’occasion
+de montrer que les avancées majeures du savoir scientifique sont des aventures humaines. Cela permettra de poser
+la question de la dimension sociale et culturelle de la construction du savoir scientifique, en particulier celle de la
+place des femmes dans l’histoire des sciences. Des controverses agitent la communauté scientifique et conduisent à
+de nouvelles investigations, et ainsi, peu à peu, le savoir progresse et se précise.
+
+## E - Un usage explicité des outils numériques
+
+Des outils numériques variés trouvent des applications dans le cadre de l’enseignement scientifique : logiciels de
+calcul ou de simulation, environnements de programmation, logiciels tableurs, etc. Il convient d’associer leur
+utilisation par les élèves à la compréhension au moins élémentaire de leur nature et de leur fonctionnement.
+
+# III - Objectifs thématiques
+
+La suite du programme se présente comme une succession de trois thèmes, présentant de forts enjeux de société.
+
+Ces thèmes sont au service des trois grands objectifs de formation (Comprendre la nature du savoir scientifique et ses
+
+modes d’élaboration, Identifier et mettre en œuvre des pratiques scientifiques, Identifier et comprendre les effets de la
+science sur les sociétés et sur l’environnement). Sa structure est explicitée ci-dessous.
+
+Après une courte introduction, la rubrique Objectifs explicite, au-delà des savoirs et des savoir-faire, les lignes de
+force visées pour chaque thème étudié.
+
+Une disposition en colonnes indique des savoirs et savoir-faire exigibles. Ce sont des objectifs précisément identifiés
+(notamment en vue de l’évaluation). Ils laissent au professeur ou à l’équipe de professeurs toute latitude pour
+construire la démarche. Cette double colonne indique les attendus spécifiques des thèmes. L’objectif de
+
+l’enseignement est à la fois de construire ces attendus, de former l’esprit et d’atteindre les objectifs généraux listés
+plus haut.
+
+Des liens avec les mathématiques sont indiqués par une flèche double dans la colonne des savoir-faire. La double-
+flèche permet de mettre en avant les allers-retours entre situation contextualisée et formalisme mathématique. Il
+appartient au professeur de souligner ces aspects.
+
+Pour atteindre les deux objectifs (Comprendre la nature du savoir scientifique et ses méthodes d’élaboration, et
+Identifier et comprendre les effets de la science sur les sociétés et sur l’environnement), la rubrique Pistes de mise en
+œuvre du programme propose des thématiques aptes à inspirer et à aider le professeur. Elle ne contient aucun savoir
+ou savoir-faire exigible. Le professeur peut, dans le cadre de sa liberté pédagogique, choisir d’autres exemples pour
+travailler les deux objectifs précités.
+
+Enfin, le professeur peut avantageusement, comme en classe de première, mais sans pour autant que cela ne
+constitue une obligation, s’appuyer sur une démarche de projet pour aborder un ou plusieurs éléments constitutifs
+du programme de terminale.
+
+
+## Thème 1 — Science, climat et société
+
+**Introduction et enjeux.** L’atmosphère primitive de la Terre était différente de celle d’aujourd’hui. Sa transformation
+au cours des 4,6 milliards d’années est liée aux processus géologiques et biologiques. Depuis la révolution industrielle,
+l’activité humaine modifie de manière significative et rapide la composition atmosphérique. Ces modifications
+affectent l’équilibre dynamique des enveloppes fluides de la Terre.
+
+Les conséquences de l’activité́ humaine sur la composition atmosphérique, celles qui sont déjà observées et celles
+qui sont prévisibles, sont multiples et importantes, tant pour l’humanité́ que pour les écosystèmes. Les choix
+raisonnés des individus et des sociétés dans ce domaine s’appuient sur les apports des sciences et des technologies.
+
+**Objectifs.** Cette partie du programme s’applique à démontrer que la composition de l’atmosphère terrestre résulte
+d’interactions complexes avec les autres enveloppes superficielles.
+
+Présente parmi les gaz de l’atmosphère primitive, l’eau s’est rapidement condensée. L’apparition de l’eau liquide est
+une condition indispensable à l’émergence de la vie. Le développement des organismes vivants a eu un effet majeur
+sur l’évolution de la teneur relative des différents gaz au cours du temps. Certains gaz atmosphériques participent de
+manière importante au bilan radiatif de la planète Terre.
+
+Ce thème met en évidence que les connaissances acquises permettent aujourd’hui aux scientifiques de proposer des
+
+modèles robustes du fonctionnement des systèmes climatiques et d’envisager, malgré leur grande complexité, des
+scénarios des climats du futur.
+
+### 1.1 - L’atmosphère terrestre et la vie
+
+Depuis l’époque de sa formation, quasi concomitante de celle du Soleil et des autres planètes du système solaire, la
+Terre a connu une évolution spécifique de sa surface et de la composition de son atmosphère. Sa température
+moyenne et sa pression atmosphérique de surface permettent l’existence d’eau liquide, formant l’hydrosphère. Aux
+facteurs physiques et géologiques (activité́ solaire, distance au Soleil, tectonique) s’est ajoutée l’émergence des êtres
+vivants et de leurs métabolismes.
+
++------------------------------------------------------------------------------+--------------------------------------------+
+| Savoirs                                                                      | Savoir-faire                               |
++==============================================================================+============================================+
+| Il y a environ 4,6 milliards d’années, l’atmosphère primitive était          | Analyser des données, en lien avec         |
+| composée de N2, CO2 et H2O. Sa composition actuelle est d’environ 78 %       | l’évolution de la composition de           |
+| de N2 et 21 % de O2, avec des traces d’autres gaz (dont H2O, CO2, CH4,       | l’atmosphère au cours des temps            |
+| N2O).                                                                        | géologiques.                               |
++------------------------------------------------------------------------------+--------------------------------------------+
+| Le refroidissement de la surface de la Terre primitive a conduit à la        | Déterminer l’état physique de l’eau pour   |
+| liquéfaction très rapide (à l’échelle des temps géologiques) de la vapeur    | une température et une pression            |
+| d’eau présente dans l’atmosphère initiale. Dans l’hydrosphère ainsi          | données à partir de la lecture de son      |
+| formée s’est développée la vie.                                              | diagramme d’état.                          |
++------------------------------------------------------------------------------+--------------------------------------------+
+| Les premières traces de bactéries photosynthétiques sont datées d’il y a     | Mettre en relation la production de        |
+| au moins 3,5 milliards d’années. Par leur métabolisme photosynthétique,      | dioxygène dans l’atmosphère avec des       |
+| ces bactéries ont contribué à l’oxygénation de l’atmosphère terrestre il y a | indices géologiques.                       |
+| 2,4 milliards d’années. Les interactions entre l’atmosphère et la biosphère  | Suivre l’évolution de la teneur            |
+| ont contribué à des modifications de la biodiversité.                        | atmosphérique en dioxygène au cours        |
+| Les sources et puits de dioxygène atmosphérique sont aujourd’hui             | des temps géologiques et la relier à       |
+| essentiellement liés aux êtres vivants (photosynthèse et respiration) et aux | l’évolution de la biodiversité.            |
+| combustions.                                                                 |                                            |
++------------------------------------------------------------------------------+--------------------------------------------+
+| Sous l’effet du rayonnement ultraviolet solaire, le dioxygène de la          | Mettre en relation des spectres            |
+| stratosphère peut se dissocier, engageant une transformation chimique        | d’absorption de l’ozone et de l’ADN dans   |
+| qui aboutit à la formation d’ozone. Cet ozone stratosphérique absorbe        | le domaine ultraviolet.                    |
+| une partie du rayonnement ultraviolet solaire et protège les êtres vivants   | ↔ Organisation et exploitation de données. |
+| de ses effets mutagènes.                                                     |                                            |
+|                                                                              |                                            |
+|                                                                              | ↔ Lectures graphiques.                     |
+|                                                                              | ↔ Ordres de grandeur. Puissances de 10.    |
++------------------------------------------------------------------------------+--------------------------------------------+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+La présence d’eau dans les corps célestes du système solaire.
+
+Histoire des sciences : l’apparition de la vie sur Terre, expériences de Ruben et Kamen (1941).
+
+Esprit critique : l’expression « trou dans la couche d’ozone » est-elle scientifiquement robuste ?
+Élaboration de l’unité Dobson.
+
+**Sciences, société et environnement**
+
+La diminution d’ozone stratosphérique, une origine purement anthropique ?
+« Le trou dans la couche d’ozone » : de sa découverte à des prises de décisions mondiales.
+
+La vie sans dioxygène.
+
+### 1.2 -  La complexité du système climatique
+
+Le système climatique et son évolution dans le temps résultent de plusieurs facteurs naturels et d’interactions entre
+océans, atmosphère, biosphère, lithosphère et cryosphère. Il est nécessaire de prendre en compte ces interactions à
+différentes échelles spatiales et temporelles (de l’année au million d’années, voire davantage). Le système climatique
+présente une variabilité spontanée et réagit aux perturbations de son bilan énergétique par des mécanismes appelés
+rétroactions. Les facteurs anthropiques ont des conséquences irréversibles à court terme. Les notions d’équilibre
+radiatif de la Terre et d’effet de serre atmosphérique, étudiées en classe de première, sont mobilisées.
+
++--------------------------------------------------------------------------------+--------------------------------------------+
+| Savoirs                                                                        | Savoir-faire                               |
++================================================================================+============================================+
+| La climatologie étudie les variations du climat local ou global à moyen ou     | Distinguer sur un document des données     |
+| long terme (années, siècles, millénaires, etc.).                               | relevant du climat, d’une part, de la      |
+| La météorologie étudie les phénomènes atmosphériques qu’elle prévoit à         | météorologie, d’autre part.                |
+| court terme (jours, semaines).                                                 | Identifier des tendances d’évolution de    |
+| La température moyenne de la Terre, calculée à partir de mesures de            | la température sur plusieurs échelles de   |
+| terrain et depuis l’espace par des satellites, est l’un des indicateurs du     | temps à partir de graphiques.              |
+| climat global. Il en existe d’autres : niveau des océans, étendue des glaces   | Identifier des indices de variations       |
+| polaires et des glaciers, etc. Le climat de la Terre présente une variabilité  | climatiques passées (pollens, glaciers,    |
+| naturelle sur différentes échelles de temps. Toutefois, depuis plusieurs       | etc.).                                     |
+| centaines de milliers d’années, jamais la concentration du dioxyde de          | ↔ Lectures graphiques.                     |
+| carbone atmosphérique n’a augmenté aussi rapidement qu’actuellement.           |                                            |
+|                                                                                | ↔ Puissance de 10.                         |
+|                                                                                | ↔ Organisation et exploitation de          |
+|                                                                                | données.                                   |
++--------------------------------------------------------------------------------+--------------------------------------------+
+| Depuis un siècle et demi, on mesure un réchauffement climatique global         | Déterminer la capacité d’un gaz à          |
+| (environ +1°C). Celui-ci est la réponse du système climatique à                | influencer l’effet de serre atmosphérique  |
+| l’augmentation du forçage radiatif (différence entre l’énergie radiative       | à partir de son spectre d’absorption des   |
+| reçue et l’énergie radiative émise) due aux émissions de gaz à effet de        | ondes électromagnétiques et de son         |
+| serre (GES) dans l’atmosphère : CO2, CH4, N2O et vapeur d’eau,                 | abondance.                                 |
+| principalement.                                                                | Interpréter des documents donnant la       |
+| Lorsque la concentration des GES augmente, l’atmosphère absorbe                | variation d’un indicateur climatique en    |
+| davantage le rayonnement thermique infrarouge émis par la surface de la        | fonction du temps (occurrence et           |
+| Terre. Il en résulte une augmentation de la puissance radiative reçue par la   | intensité des événements                   |
+| surface terrestre de l’atmosphère. Cette puissance additionnelle entraîne      | météorologiques extrêmes, niveau des       |
+| une perturbation de l’équilibre radiatif qui existait à l’ère préindustrielle. | océans, extension d’un glacier, etc.).     |
+| L’énergie supplémentaire associée est essentiellement stockée par les          | Analyser la variation au cours du temps    |
+| océans, mais également par l’air et les sols, ce qui se traduit par une        | de la teneur atmosphérique en CO2 et la    |
+| augmentation de la température moyenne à la surface de la Terre et la          | variation de la température moyenne.       |
+| montée du niveau des océans.                                                   | ↔ Lectures graphiques.                     |
+|                                                                                | ↔ Pourcentages.                            |
+|                                                                                | ↔ Calculs de moyennes.                     |
+|                                                                                | ↔ Variation absolue, variation relative.   |
++--------------------------------------------------------------------------------+--------------------------------------------+
+| L’évolution de la température terrestre moyenne résulte de plusieurs           | Identifier les relations de causalité      |
+| effets amplificateurs (rétroaction positive), dont :                           | (actions et rétroactions) qui agissent sur |
+| -   l’augmentation de la concentration en vapeur d’eau (gaz à effet de         | la dynamique du système climatique.        |
+| serre) dans l’atmosphère ;                                                     | Expliquer la différence d’incidence entre  |
+| -   la décroissance de la surface couverte par les glaces et la diminution de  | la fusion des glaces continentales et des  |
+| l’albédo terrestre ;                                                           | glaces de mer.                             |
+| -   le dégel partiel du permafrost provoquant une libération de GES dans       | Estimer la variation du volume de l’océan  |
+| l’atmosphère.                                                                  | associée à une variation de température    |
+|                                                                                | donnée.                                    |
++--------------------------------------------------------------------------------+--------------------------------------------+
+| L’océan a un rôle amortisseur en absorbant à sa surface une fraction           |                                            |
+| importante de l’apport additionnel d’énergie. Cela conduit à une               | ↔ Taux de variation.                       |
+| élévation du niveau des océans causée par la dilatation thermique de           | ↔ Logique.                                 |
+| l’eau. À celle-ci s’ajoute la fusion des glaces continentales.                 | ↔ Géométrie : calculs d’aires et de        |
+| Cette accumulation d’énergie dans les océans rend le changement                | volumes.                                   |
+| climatique irréversible à des échelles de temps de plusieurs siècles.          |                                            |
+| L’océan joue également un rôle d’amortisseur en absorbant une partie du        |                                            |
+| CO2 émis par les activités humaines.                                           |                                            |
+| À court terme, les organismes chlorophylliens constituent un puits de          |                                            |
+| CO2, ce qui a donc un effet de rétroaction négative (stabilisatrice).          |                                            |
++--------------------------------------------------------------------------------+--------------------------------------------+
+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+Développement des données satellitaires et combinaison avec des mesures de terrain.
+
+Histoire des sciences : le développement des modèles climatiques des années 1970 à nos jours.
+
+Les bases physiques de la climatologie (prix Nobel 2021 pour Hasselmann et Manabe).
+
+Climato-scepticisme : débat scientifique ou biais de raisonnement et d’argumentation.
+
+**Sciences, société et environnement**
+
+Émergence et propagation de maladies vectorielles à la suite des changements climatiques.
+
+Effet du réchauffement climatique sur les activités et productions agricoles.
+
+Lien entre phénomènes météorologiques extrêmes et réchauffement climatique.
+
+La petite ère glaciaire en Europe.
+
+Les territoires littoraux et le réchauffement climatique (pêche, montée des eaux, etc.).
+
+Changement climatique et incidence sur les populations : déplacement, taux de reproduction, survie, etc.
+
+
+### 1.3 - Le climat du futur
+
+L’analyse du système climatique, réalisée à l’aide de modèles numériques, repose sur des mesures et des calculs faisant
+appel à des lois physiques, chimiques, biologiques connues. Assorties d’hypothèses portant sur l’évolution de la
+production des gaz à effet de serre, les projections issues de ces modèles dessinent des fourchettes d’évolution et des
+scénarios du système climatique au XXIe siècle.
+
++-------------------------------------------------------------------------------+---------------------------------------------+
+| Savoirs                                                                       | Savoir-faire                                |
++===============================================================================+=============================================+
+| Les modèles climatiques s’appuient sur :                                      | Mettre en évidence le rôle des différents   |
+| -   la mise en équation des mécanismes essentiels qui agissent sur le         | paramètres de l’évolution climatique, en    |
+| système Terre ;                                                               | exploitant un logiciel de simulation de     |
+|                                                                               | celle-ci, ou par la lecture de graphiques.  |
+| -   des méthodes numériques de résolution.                                    |                                             |
+|                                                                               | ↔ Lectures graphiques                       |
+| Pour évaluer les modèles, et ainsi les valider ou les faire évoluer, les      |                                             |
+| résultats obtenus sont comparés aux observations de terrain et                | ↔ Corrélation et causalité                  |
+| observations spatiales ainsi qu’à la connaissance des paléoclimats.           |                                             |
+| Ces modèles, nombreux et indépendants, produisent des projections             |                                             |
+| climatiques. Après avoir anticipé les évolutions des dernières décennies, ils |                                             |
+| estiment les variations climatiques globales et locales à venir sur des       |                                             |
+| décennies ou des siècles.                                                     |                                             |
++-------------------------------------------------------------------------------+---------------------------------------------+
+| L’analyse scientifique combinant observations, éléments théoriques et         | Exploiter les résultats d’un modèle         |
+| modélisations numériques permet aujourd’hui de conclure que                   | climatique pour justifier que certaines     |
+| l’augmentation de température moyenne depuis le début de l’ère                | corrélations sont explicables par des liens |
+| industrielle est liée à l’activité humaine : le dioxyde de carbone produit    | de cause à effet.                           |
+| par la combustion de substances carbonées fossiles, l’artificialisation des   | ↔ Lectures graphiques.                      |
+| sols, la calcination des carbonates, le méthane issu de fuites de gaz naturel |                                             |
+|                                                                               | ↔ Corrélation et causalité.                 |
+| ou de pétrole, ou produit par la fermentation dans les décharges et           |                                             |
+| certaines activités agricoles.                                                | ↔ Logique.                                  |
+|                                                                               |                                             |
+| Les modèles s’accordent à prévoir avec une forte probabilité                  |                                             |
+| d’occurrence :                                                                |                                             |
+| -   une augmentation de 1,5 à 5°C de la température moyenne avant la fin      |                                             |
+| du XXIe siècle ;                                                              |                                             |
+| -   une élévation du niveau moyen des océans entre le début et la fin du      |                                             |
+| XXIe siècle pouvant atteindre le mètre ;                                      |                                             |
+|                                                                               |                                             |
+| -   des modifications des régimes de pluie et des événements                  |                                             |
+| météorologiques extrêmes ;                                                    |                                             |
+| -   une acidification des océans ;                                            |                                             |
+| -   des incidences majeures sur les écosystèmes terrestres et marins.         |                                             |
++-------------------------------------------------------------------------------+---------------------------------------------+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+La notion de modèle en sciences : les différents modèles climatiques et leurs prédictions.
+
+Pourquoi les scientifiques ne s’accordent-ils pas sur un modèle unique ?
+La notion d’incertitude en sciences.
+
+**Sciences, société et environnement**
+
+Les acteurs des analyses climatiques : recherche et programmes mondiaux (Organisation météorologique mondiale,
+modèles climatiques) ; coordination (Organisation des nations unies) ; évaluation (Groupe intergouvernemental pour
+l’étude du climat).
+
+Les conséquences du réchauffement climatique et les enjeux géopolitiques (COP).
+
+Les pistes d’atténuation et d’adaptation au réchauffement climatique.
+
+Les émissions de CO2 causées par la production du ciment.
+
+Les différentes sources de production du méthane liées aux activités humaines.
+
+
+
+## Thème 2 — Le futur des énergies
+
+**Introduction et enjeux.** La consommation d’énergie joue un rôle essentiel dans le développement des sociétés
+humaines. Depuis la révolution industrielle, ce dernier s’est appuyé largement sur les combustibles fossiles dont
+l’utilisation est la principale cause du changement climatique. Produire de l’énergie sans contribuer au changement
+climatique ou à la dégradation de la planète est devenu un enjeu majeur de la transition écologique.
+
+**Objectifs.** Il est essentiel d’identifier les effets, sur la production de gaz à effet de serre, de la fabrication puis de
+l’usage de tout produit de consommation. L’identification d’autres effets collatéraux, notamment sur
+l’environnement et la santé, est importante.
+
+Dans le secteur de l’énergie, l’électricité joue depuis deux siècles un rôle particulier. Produire de l’électricité sans
+contribuer au réchauffement climatique, en concevoir le stockage sous d’autres formes, assurer son transport, sont
+des enjeux fondamentaux à prendre en compte dans un contexte de transition écologique.
+
+### 2.1 - Deux siècles d’énergie électrique
+
+Depuis le XIXe siècle, les progrès de la recherche scientifique fondamentale et de l’invention technique ont conduit à
+développer des générateurs électriques performants.
+
+Historiquement, le développement des techniques d’obtention d’énergie électrique s’est appuyé sur des
+découvertes expérimentales et des avancées théoriques qui furent souvent le résultat de recherches dont ce
+développement n’était pas le but premier. Il est ainsi fréquent que les résultats de la recherche fondamentale
+aboutissent à des innovations technologiques non anticipées.
+
++------------------------------------------------------+-----------------------------------------------------------+
+| Savoirs                                              | Savoir-faire                                              |
++======================================================+===========================================================+
+| Les alternateurs électriques exploitent le phénomène | Reconnaître les éléments principaux d’un alternateur      |
+| d’induction électromagnétique découvert par Faraday  | (source de champ magnétique et fil conducteur en          |
+| puis théorisé par Maxwell au XIXe siècle.            | mouvement relatif) dans un schéma fourni. Relier la       |
+| Ils réalisent une conversion d’énergie mécanique en  | vitesse de rotation du rotor et la fréquence du courant   |
+| énergie électrique avec un rendement potentiellement | électrique.                                               |
+| proche de 1.                                         | Définir le rendement d’un alternateur et citer un         |
+| Au début du XXe siècle, la physique a connu une      | phénomène susceptible de l’influencer.                    |
+| révolution conceptuelle avec la mécanique quantique, | Comparer le spectre d’absorption d’un matériau semi-      |
+| qui traite du comportement fondamentalement          | conducteur et le spectre solaire pour discuter si ce      |
+| probabiliste de la nature à l’échelle microscopique. | matériau est susceptible d’être utilisé pour fabriquer un |
+| L’exploitation technologique des matériaux semi-     | capteur photovoltaïque.                                   |
+| conducteurs, en particulier du silicium, en est une  | Argumenter autour de la mise en place d’une installation  |
+| conséquence.                                         | photovoltaïque domestique ou industrielle.                |
+| Ces matériaux sont utilisés en électronique et sont  | ↔ Lectures graphiques.                                    |
+| constitutifs des capteurs photovoltaïques. Ceux-ci   | ↔ Grandeurs et mesures. Grandeurs quotients.              |
+| absorbent l’énergie radiative et la convertissent    |                                                           |
+| partiellement en énergie électrique.                 |                                                           |
++------------------------------------------------------+-----------------------------------------------------------+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+Histoire des sciences : l’essor de l’électromagnétisme au XIXe siècle.
+
+Histoire des sciences et des technologies : « La bataille des courants », le choix entre le courant continu et le courant
+alternatif.
+
+Histoire des sciences : Einstein et les quanta.
+
+**Sciences, société et environnement**
+
+Incidence environnementale de l’exploitation du silicium pour la fabrication des panneaux solaires.
+
+Choix de la fréquence du courant alternatif du réseau électrique.
+
+Enjeux économiques des usages des matériaux semi-conducteurs.
+
+Interaction entre savoirs scientifiques et société : La Fée Électricité (Raoul Dufy) à l’Exposition universelle de 1937.
+
+### 2.2 - Conversion et transport de l’énergie électrique
+
+L’énergie électrique joue un rôle central aujourd’hui et présente plusieurs avantages : une distribution sûre, des
+réseaux de distribution étendus, des convertisseurs de bon rendement permettant d’obtenir l’énergie électrique ou
+de la transformer en d’autres formes d’énergie.
+
+L’existence de procédés d’obtention d’énergie électrique sans combustion justifie son importance actuelle et future.
+
++---------------------------------------------------------------+--------------------------------------------------------------+
+| Savoirs                                                       | Savoir-faire                                                 |
++===============================================================+==============================================================+
+| Trois méthodes permettent d’obtenir de l’énergie              | Décrire des exemples de chaînes de transformations           |
+| électrique sans nécessiter de combustion :                    | énergétiques permettant d’obtenir de l’énergie électrique    |
+| -     la conversion d’énergie mécanique, soit directe         | à partir de différentes ressources primaires d’énergie.      |
+| (dynamos, éoliennes, hydroliennes, barrages                   | Calculer le rendement global d’un système de conversion      |
+| hydroélectriques), soit indirecte à partir d’énergie          | d’énergie.                                                   |
+| thermique (centrales nucléaires, centrales solaires           | ↔ Grandeurs et mesures.                                      |
+| thermiques, géothermie) ;                                     |                                                              |
+|                                                               | ↔ Grandeurs proportionnelles.                                |
+| -     la conversion de l’énergie radiative reçue du Soleil    |                                                              |
+|                                                               | ↔ Grandeurs quotients.                                       |
+| (panneaux photovoltaïques) ;                                  |                                                              |
+| -    la conversion électrochimique (piles ou                  |                                                              |
+| accumulateurs conventionnels, piles à hydrogène).             |                                                              |
++---------------------------------------------------------------+--------------------------------------------------------------+
+| Ces méthodes sans combustion ont néanmoins un effet           | Analyser des documents présentant les conséquences de        |
+| sur l’environnement et la biodiversité ou présentent des      | l’installation et du fonctionnement d’une centrale           |
+| risques spécifiques (pollution chimique, déchets              | électrique.                                                  |
+| radioactifs, accidents industriels, etc.).                    |                                                              |
++---------------------------------------------------------------+--------------------------------------------------------------+
+| Au cours du transport, une partie de l’énergie électrique,    | Utiliser les formules littérales reliant la puissance à      |
+| dissipée dans l’environnement par effet Joule, ne parvient    | l’intensité et la tension pour identifier l’influence de ces |
+| pas à l’utilisateur.                                          | grandeurs sur l’effet Joule dans les lignes électriques.     |
+| L’utilisation de la haute tension dans les lignes électriques | Comparer des dispositifs de stockage d’énergie selon         |
+| limite les pertes par effet Joule, à puissance transportée    | différents critères (capacité et durée de stockage,          |
+| fixée.                                                        | incidence écologique, masses mises en jeu par                |
+| Le réseau de transport de l’électricité est maillé au niveau  | kilowattheure).                                              |
+| européen. En cas de déséquilibre entre l’offre et la          | ↔ Grandeurs quotients.                                       |
+| demande, il est nécessaire de mobiliser des réserves          | ↔ Calcul littéral.                                           |
+| d’énergie, de diminuer la consommation ou la production       |                                                              |
+|                                                               | ↔ Grandeurs et mesures.                                      |
+| ou de stocker de l’énergie.                                   |                                                              |
+| Pour faire face à l’intermittence liée à certains modes de    |                                                              |
+| production ou à la consommation, une possibilité est de       |                                                              |
+| convertir l’énergie électrique sous une forme stockable :     |                                                              |
+| -   énergie chimique ;                                        |                                                              |
+| -   énergie mécanique ;                                       |                                                              |
+| -   énergie électromagnétique.                                |                                                              |
+|                                                               |                                                              |
++---------------------------------------------------------------+--------------------------------------------------------------+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+Le développement des combustibles alternatifs à empreinte carbone réduite.
+
+Histoire des sciences et des techniques : les piles et les accumulateurs.
+
+**Sciences, société et environnement**
+
+Les enjeux de l’utilisation de l’énergie nucléaire : de la fission à la fusion contrôlée.
+
+Les usages et le recyclage des accumulateurs électrochimiques.
+
+La régulation du réseau de transport d’électricité français et européen.
+
+### 2.3 - Énergie, choix de développement et futur climatique
+
+La consommation mondiale d’énergie, en forte augmentation, fait majoritairement appel aux combustibles fossiles
+dont l’utilisation est la principale cause du changement climatique.
+
+Les activités humaines modifient de manière rapide certains flux associés au cycle du carbone. Dans ce contexte,
+l’estimation d’une empreinte carbone est essentielle pour élaborer des scénarios et fixer des objectifs de réduction.
+
+Les différents scénarios de l’évolution globale du climat dépendent des stratégies que l’humanité mettra en œuvre.
+
+La notion de risques étudiée au collège et en classe de seconde est convoquée.
+
++--------------------------------------------------------------+----------------------------------------------------------------+
+| Savoirs                                                      | Savoir-faire                                                   |
++==============================================================+================================================================+
+| L’énergie utilisée dans le monde provient d’une diversité    | Utiliser les différentes unités d’énergie (tonne équivalent    |
+| de ressources parmi lesquelles les combustibles fossiles     | pétrole (tep), kilowattheure (kWh), etc.).                     |
+| dominent.                                                    | Exploiter des données de production et d’utilisation           |
+| Leur consommation est très inégalement répartie selon la     | d’énergie à différentes échelles (mondiale, nationale,         |
+| richesse des pays et des individus.                          | locale, individuelle).                                         |
+| La croissance de la consommation globale (doublement         | Comparer quelques ordres de grandeur d’énergie et de           |
+| dans les 40 dernières années) est directement liée au        | puissance : corps humain, objets du quotidien, moteurs,        |
+| modèle industriel de production et de consommation           | centrale électrique, flux radiatif solaire, etc.               |
+| des sociétés.                                                | ↔ Organisation et exploitation de données.                     |
+| En moyenne mondiale, cette énergie est utilisée à parts      | ↔ Lectures graphiques.                                         |
+| comparables par le secteur industriel, les transports, le    |                                                                |
+|                                                              | ↔ Puissances de 10, ordres de grandeur.                        |
+| secteur de l’habitat et dans une moindre mesure par le       |                                                                |
+| secteur agricole.                                            | ↔ Conversion d’unités, proportionnalité.                       |
+|                                                              |                                                                |
+| Les énergies primaires sont disponibles sous forme de        | ↔ Grandeurs quotients.                                         |
+| stocks (combustibles fossiles, uranium) et de flux (radiatif |                                                                |
+| solaire, géothermique et des marées).                        |                                                                |
++--------------------------------------------------------------+----------------------------------------------------------------+
+| Le carbone est stocké dans plusieurs réservoirs              | Analyser un schéma représentant le cycle                       |
+| superficiels. L’élément carbone circule entre ces            | biogéochimique du carbone pour comparer les stocks             |
+| différents réservoirs terrestres, constituant le cycle du    | des différents réservoirs et identifier les flux principaux de |
+| carbone. Les combustibles fossiles se sont formés à partir   | carbone d’origine anthropique ou non.                          |
+| du carbone contenu dans la matière organique des êtres       | Citer les ordres de grandeur des durées nécessaires aux        |
+| vivants, résultant de la réduction du CO2 par                | transformations du carbone.                                    |
+| photosynthèse il y a plusieurs dizaines à plusieurs          |                                                                |
+| centaines de millions d’années. Ils ne se renouvellent pas   |                                                                |
+| suffisamment vite pour que les stocks se reconstituent :     |                                                                |
+| ces ressources en énergie sont qualifiées de non             |                                                                |
+| renouvelables.                                               |                                                                |
++--------------------------------------------------------------+----------------------------------------------------------------+
+| La combustion de carburants fossiles et de biomasse          | Ajuster l’équation d’une réaction chimique d’oxydation         |
+| libère du dioxyde de carbone, également des aérosols et      | par le dioxygène.                                              |
+| d’autres substances (N2O, O3, suies, produits soufrés) qui   | Comparer la masse de dioxyde de carbone produite par           |
+| affectent la qualité́ de l’air inhalé et la santé.            | unité d’énergie dégagée pour différents combustibles.          |
+|                                                              | Distinguer ozone stratosphérique et troposphérique.            |
+|                                                              | À partir de documents épidémiologiques, identifier et          |
+|                                                              | expliquer les conséquences sur la santé de certains            |
+|                                                              | polluants atmosphériques, telles les particules fines          |
+|                                                              | résultant de combustions.                                      |
+|                                                              | ↔ Grandeurs et mesures.                                        |
+|                                                              | ↔ Grandeurs quotients.                                         |
++--------------------------------------------------------------+----------------------------------------------------------------+
+| L’empreinte carbone d’une activité ou d’une personne         | À partir de documents, analyser l’empreinte carbone de         |
+| est la masse de CO2 produite directement ou                  | différentes activités humaines et proposer des                 |
+| indirectement par sa consommation d’énergie et/ou de         | comportements pour la minimiser ou la compenser.               |
+| matière première.                                            |                                                                |
++--------------------------------------------------------------+----------------------------------------------------------------+
+| Les scénarios de transition écologique font différentes      | Discuter des incidences de l’augmentation du CO2 sur le        |
+| hypothèses sur la quantité de GES émise dans le futur. Ils   | développement de la végétation.                                |
+| évaluent les changements prévisibles, affectant les          | Analyser des extraits de documents du GIEC ou d’accords        |
+| écosystèmes et les conditions de vie des êtres humains,      | internationaux.                                                |
+| principalement les plus vulnérables. Les projections         |                                                                |
+|                                                              | Analyser d’un point de vue global les incidences de choix      |
+| fournies par les modèles permettent de définir les aléas     |                                                                |
+|                                                              | énergétiques majeurs : exemple du nucléaire en France.         |
+| et peuvent orienter les prises de décision.                  |                                                                |
+|                                                              | Dans une étude de cas, analyser des choix énergétiques         |
+| Dans le domaine énergétique, le choix des mesures            |                                                                |
+|                                                              | locaux selon les critères et les paramètres mentionnés.        |
+| d’adaptation et d’atténuation doit tenir compte de           |                                                                |
+| nombreux critères et paramètres : disponibilité des          | ↔ Organisation et exploitation de données.                     |
+| ressources et adéquation aux besoins, effets (climatique,    | ↔ Lectures graphiques.                                         |
+| écologique, sanitaire, agricole), vulnérabilités et gestion  | ↔ Ordres de grandeur.                                          |
+| des risques, faisabilité, conséquences économiques et        |                                                                |
+| sociales.                                                    |                                                                |
+| Les durées longues, liées à l’inertie de certains systèmes   |                                                                |
+| (infrastructures énergétiques, transports, production        |                                                                |
+| industrielle), sont à confronter à l’urgence de l’action.    |                                                                |
+| La transition écologique des sociétés repose sur la          |                                                                |
+| créativité scientifique et technologique (recherche de       |                                                                |
+| diversification ou d’évolution des ressources, mix           |                                                                |
+| énergétique, etc.) et sur l’évolution des comportements      |                                                                |
+| individuels et collectifs (consommation, déplacements,       |                                                                |
+| etc.).                                                       |                                                                |
++--------------------------------------------------------------+----------------------------------------------------------------+
+
+_Pistes pour la mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+- Histoire des sciences et des techniques : évolution de l’exploitation des ressources hydrauliques au cours des siècles.
+- Histoire des sciences : de la mesure de l’incidence du CO2 sur le climat à la naissance du GIEC.
+- Histoire des sciences : évolution des scénarios de transition écologique proposés par le GIEC depuis sa création.
+- Histoire des sciences : de la découverte de la fission au développement des centrales nucléaires.
+- Estimation des réserves de combustibles fossiles.
+
+**Sciences, société et environnement**
+
+- Gestion des déchets issus des centrales nucléaires.
+- Impact environnemental du développement de parcs éoliens et hydroliens.
+- Évaluation de la disponibilité d’une ressource énergétique intermittente.
+- Développement de la voiture électrique.
+- Empreinte carbone d’un établissement scolaire.
+- Les objectifs de développement durable de l’Organisation des nations unies.
+- Les mesures prises pour améliorer la qualité de l’air en lien avec la santé.
+- Utilisation de bio-indicateurs pour évaluer les pollutions atmosphériques urbaines.
+- Les pistes de décarbonation.
+- Incidence de la diminution du phytoplancton sur l’équilibre des flux de carbone.
+
+
+
+## Thème 3 — Une histoire du vivant
+
+**Introduction et enjeux.** La Terre est habitée par une grande diversité d’êtres vivants, dont l’espèce humaine. Cette
+biodiversité est dynamique et issue d’une longue histoire : l’évolution des espèces. Les activités humaines se sont
+développées et ont des effets directs et indirects sur les écosystèmes. Une approche systémique met en lumière les
+relations entre la santé humaine, la santé animale et les écosystèmes.
+
+Les mathématiques proposent des modèles pour mieux appréhender la dynamique des systèmes vivants. L’être
+humain a construit des machines pour traiter l’information et a créé des langages pour les commander. Avec les
+méthodes de l’intelligence artificielle, il continue d’étendre les capacités de traitement de données et les domaines
+d’application de l’informatique.
+
+Les thématiques abordées sont éventuellement l’occasion pour les professeurs de remobiliser des contenus
+mathématiques abordés dans le cadre du programme de mathématiques intégré à l’enseignement scientifique en
+classe de première générale, en particulier concernant les phénomènes aléatoires et les phénomènes d’évolution.
+
+**Objectifs.** Une partie de la biodiversité actuelle est encore méconnue. Diverses approches cherchent à l’estimer et à
+en comprendre l’évolution. Ce thème est l’occasion d’approfondir les processus permettant l’apparition de
+
+nouveautés au sein de populations. Ces dernières sont soumises à des pressions de sélection qui vont modifier la
+fréquence de représentation de ces nouveautés et donc participer à l’évolution des espèces. L’être humain peut être
+à l’origine de façon directe ou indirecte de telles pressions. L’espèce humaine, comme les autres êtres vivants, est
+issue d’une histoire évolutive complexe que la paléoanthropologie cherche à retracer. Les archives paléontologiques
+sont rares, mais des techniques de biologie moléculaire les complètent.
+
+La démarche de modélisation mathématique comporte plusieurs étapes : identification du type de modèle le mieux
+adapté pour traduire la réalité, détermination des paramètres du modèle, confrontation des résultats du modèle à
+des observations, qui peut conduire à limiter son domaine de validité ou à le modifier.
+
+Les mathématiques et l’informatique contribuent à l’élaboration de modèles démographiques et au développement
+de l’intelligence artificielle dont les nombreuses potentialités et les limites, notamment éthiques, sont à discuter.
+
+### 3.1 - La biodiversité et son évolution
+
+Évaluer la biodiversité à différentes échelles spatiales et temporelles représente un enjeu majeur pour comprendre sa
+dynamique et les conséquences des actions humaines. Les populations évoluent au cours du temps. Des modèles
+mathématiques probabilistes et des outils statistiques permettent d’étudier les mécanismes évolutifs impliqués.
+
++-------------------------------------------------------------+--------------------------------------------------------------+
+| Savoirs                                                     | Savoir-faire                                                 |
++=============================================================+==============================================================+
+| Il existe sur Terre un grand nombre d’espèces. Les          | Exploiter des données obtenues au cours d’une sortie de      |
+|                                                             |                                                              |
+|                                                             |                                                              |
+| scientifiques estiment cependant qu’une part importante     | terrain ou d’explorations scientifiques (historiques et/ou   |
+| de la biodiversité reste à découvrir. La biodiversité se    | actuelles) pour estimer la biodiversité (richesse spécifique |
+| mesure entre autres par des techniques                      | et/ou abondance relative de chaque taxon).                   |
+| d’échantillonnage qui permettent d’estimer le nombre        | Exploiter des résultats de métagénomique.                    |
+| d’espèces dans différents écosystèmes. Les composantes      |                                                              |
+|                                                             | Quantifier l’effectif d’une population ou d’un taxon plus    |
+| de la biodiversité peuvent aussi être décrites par          |                                                              |
+|                                                             | vaste à partir de résultats d’échantillonnage.               |
+| l’abondance (nombre d’individus) d’une population,          |                                                              |
+| d’une espèce ou d’un plus grand taxon.                      | Estimer une abondance par la méthode de capture-             |
+|                                                             | marquage-recapture.                                          |
+| La méthode de capture-marquage-recapture repose sur         |                                                              |
+| des calculs effectués sur un échantillon. Si on suppose     | À l’aide d’un tableur, simuler des séries de recaptures, les |
+| que la proportion d’individus marqués est identique dans    | moyenner et visualiser la fluctuation due à l’expérience.    |
+| l’échantillon de recapture et dans la population totale,    | En utilisant une formule donnée pour un intervalle de        |
+| l’effectif de celle-ci s’obtient par le calcul d’une        | confiance au niveau de confiance de 95 %, estimer un         |
+| quatrième proportionnelle.                                  | paramètre inconnu dans une population de grande taille       |
+| À partir d’un seul échantillon, l’effectif d’une population | à partir des résultats observés sur un échantillon.          |
+| peut également être estimé à l’aide d’un intervalle de      | ↔ Proportions.                                               |
+| confiance. Une telle estimation est toujours assortie d’un  | ↔ Fluctuation d’échantillonnage.                             |
+| niveau de confiance strictement inférieur à 100 % en        |                                                              |
+|                                                             | ↔ Intervalle de confiance.                                   |
+| raison de la fluctuation des échantillons. Pour un niveau   |                                                              |
+| de confiance donné, l’estimation est d’autant plus précise  |                                                              |
+| que la taille de l’échantillon est grande.                  |                                                              |
++-------------------------------------------------------------+--------------------------------------------------------------+
+| La composition génétique des populations d’une espèce       | Pour la transmission de deux allèles, dans le cadre du       |
+| change de génération en génération.                         | modèle de Hardy-Weinberg, établir les relations entre les    |
+| Le modèle mathématique de Hardy-Weinberg utilise la         | probabilités des génotypes d’une génération et celles de     |
+| théorie des probabilités pour décrire le phénomène          | la génération précédente.                                    |
+| aléatoire de transmission des allèles dans une population.  | Produire un calcul sur tableur ou un programme en            |
+| En assimilant les probabilités à des fréquences pour des    | Python pour constater que les probabilités des génotypes     |
+| effectifs de grande taille (loi des grands nombres), le     | sont constantes à partir de la seconde génération            |
+| modèle prédit que la structure génétique d’une              | (modèle de Hardy-Weinberg).                                  |
+| population de grand effectif est stable d’une génération à  | Exploiter des logiciels de simulation basés sur ce modèle    |
+| l’autre sous certaines conditions (absence de migration,    | mathématique.                                                |
+| de mutation, de sélection et de dérive). Cette stabilité    |                                                              |
+|                                                             | Analyser une situation d’évolution biologique expliquant     |
+| théorique est connue sous le nom d’équilibre de Hardy-      |                                                              |
+|                                                             | un écart par rapport au modèle de Hardy-Weinberg.            |
+| Weinberg.                                                   |                                                              |
+|                                                             | ↔ Tableaux croisés.                                          |
+| Les limites du modèle s’expriment dans les écarts entre     |                                                              |
+| les fréquences observées sur une population naturelle et    | ↔ Probabilités conditionnelles.                              |
+| les résultats du modèle trouvent leur explication dans les  | ↔ Suites et relations de récurrence.                         |
+| processus réels mis en jeu notamment par les effets de      |                                                              |
+| forces évolutives (mutation, sélection, dérive, etc.).      |                                                              |
++-------------------------------------------------------------+--------------------------------------------------------------+
+| Les activités humaines ont des conséquences sur la          | Étudier un exemple montrant les effets d’une                 |
+| biodiversité et ses composantes, dont la variation          | modification de l’écosystème, dont ses conséquences          |
+| d’abondance.                                                | possibles en matière de santé.                               |
+| L’approche « Une seule santé » consiste à relier la santé   | Justifier le concept « Une seule santé » qui met en relation |
+| humaine, la santé animale et la santé des écosystèmes       | la santé humaine, la santé animale et l’environnement.       |
+| dans lesquels elles coexistent, ces trois composantes ne    | Utiliser un modèle géométrique simple (quadrillage) pour     |
+| pouvant plus être dissociées.                               | calculer l’incidence génétique d’une fragmentation sur la    |
+| La fragmentation d’une population en plusieurs              | surface disponible pour une espèce.                          |
+| échantillons de plus faibles effectifs entraîne un          | À partir d’un logiciel de simulation, montrer les effets     |
+| appauvrissement de sa diversité génétique.                  | d’un faible effectif de population sur l’évolution rapide    |
+| La connaissance et la gestion d’un écosystème               | des fréquences alléliques.                                   |
+| permettent d’y préserver une biodiversité.                  | Analyser des documents pour comprendre les mesures           |
+|                                                             | de protection de populations à faibles effectifs.            |
+|                                                             | Identifier des critères de gestion durable d’un              |
+|                                                             | écosystème.                                                  |
++-------------------------------------------------------------+--------------------------------------------------------------+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+Histoire des sciences : de l’échantillonnage naturaliste aux données en génomique.
+Élaboration des listes des espèces à protéger à l’échelle internationale.
+
+Les représentations de l’évolution : place de l’être humain.
+
+**Sciences, société et environnement**
+
+Le concept « Une seule santé » et les pandémies.
+
+Espèces emblématiques et campagne de sensibilisation. Le déclin des abeilles.
+
+La biodiversité sur et dans l’être humain : le microbiote.
+
+Stratégies pour préserver la biodiversité ou l’augmenter dans l’enceinte d’un lycée.
+
+### 3.2 -  L’évolution comme grille de lecture du monde
+
+Les concepts de biologie évolutive ont une large portée explicative, présentée ici à travers plusieurs exemples. Ils
+permettent de comprendre l’anatomie comme le résultat d’une longue histoire évolutive, faite d’adaptations, de
+hasard, de contingences et de compromis. Les concepts de variation et de sélection naturelle éclairent des pratiques
+humaines (médicales et agricoles) et certaines de leurs conséquences.
+
++---------------------------------------------------------------+-------------------------------------------------------+
+| Savoirs                                                       | Savoir-faire                                          |
++===============================================================+=======================================================+
+| Les structures anatomiques présentent des particularités      | Expliquer l’origine d’une structure anatomique en     |
+| surprenantes d’un point de vue fonctionnel, pouvant           | mobilisant les concepts de hasard, de variation, de   |
+| paraître sans fonction avérée ou bien d’une étonnante         | sélection naturelle et d’adaptation.                  |
+| complexité. Elles témoignent de l’évolution des espèces,      | Mobiliser des concepts évolutionnistes pour expliquer |
+| dont la nôtre. Les caractères anatomiques peuvent être le     | l’évolution de populations d’êtres vivants.           |
+| résultat de la sélection naturelle, mais certains sont mieux  |                                                       |
+| expliqués par l’héritage de l’histoire évolutive que par leur |                                                       |
+| fonction.                                                     |                                                       |
+| L’évolution permet de comprendre des phénomènes               |                                                       |
+| biologiques ayant une importance médicale. L’évolution        |                                                       |
+| rapide des organismes microbiens nécessite d’adapter les      |                                                       |
+| stratégies prophylactiques, les vaccins et les                |                                                       |
+| antibiotiques.                                                |                                                       |
+| L’évolution des pratiques agricoles a un effet sur la         |                                                       |
+| biodiversité et son évolution.                                |                                                       |
++---------------------------------------------------------------+-------------------------------------------------------+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+Interpréter des caractéristiques anatomiques humaines en relation avec des contraintes historiques (comme le trajet
+de la crosse aortique), des contraintes de construction (comme le téton masculin), des compromis sélectifs (comme
+les difficultés obstétriques) ou des régressions en cours (comme les dents de sagesse).
+
+Les stratégies actuelles pour faire face aux antibiorésistances.
+
+**Sciences, société et environnement**
+
+La domestication animale.
+
+L’utilisation de produits phytosanitaires et le développement de ravageurs des cultures qui y sont résistants.
+
+De la recherche agronomique aux pratiques agricoles durables.
+
+Les variants viraux.
+
+### 3.3 - L’évolution humaine
+
+La paléoanthropologie construit un récit scientifique de nos origines à partir des archives fossiles. La phylogénie permet
+d’étudier les relations de parenté entre les espèces actuelles et les fossiles d’hominidés.
+
++-------------------------------------------------------------+----------------------------------------------------------+
+| Savoirs                                                     | Savoir-faire                                             |
++=============================================================+==========================================================+
+| L’espèce humaine actuelle (Homo sapiens) fait partie du     | Analyser des matrices de comparaison de caractères       |
+| groupe des primates et est plus particulièrement            | morpho-anatomiques résultant d’innovations évolutives    |
+| apparentée aux grands singes, avec lesquels elle partage    | afin d’établir des liens de parenté et de construire un  |
+| des caractères morpho-anatomiques, des                      | arbre phylogénétique.                                    |
+| comportements et des similitudes génétiques.                | Mettre en relation la ressemblance génétique entre les   |
+| C’est avec le chimpanzé qu’elle partage le plus récent      | espèces de primates et leur degré de parenté.            |
+| ancêtre commun.                                             |                                                          |
++-------------------------------------------------------------+----------------------------------------------------------+
+| Des arguments scientifiques issus de l’analyse comparée     | Positionner quelques espèces fossiles dans un arbre      |
+| de fossiles permettent de reconstituer l’histoire de nos    | phylogénétique, à partir de l’étude de caractères.       |
+| origines.                                                   | Discuter la notion de lignée humaine.                    |
+| L’étude de fossiles datés de 3 à 7 millions d’années        | Analyser des arguments scientifiques qui ont permis de   |
+| montre des innovations caractéristiques de la lignée        | préciser la parenté d’Homo sapiens avec les autres Homo, |
+| humaine (bipédie prolongée, forme de la mandibule).         | et notamment la parenté éventuelle avec les              |
+| Cette lignée est buissonnante.                              | Néandertaliens ou les Dénisoviens.                       |
+| Le genre Homo regroupe l’espèce humaine actuelle et         |                                                          |
+| des espèces fossiles qui se caractérisent notamment par     |                                                          |
+| le développement de la capacité crânienne. Plusieurs        |                                                          |
+| espèces humaines du genre Homo ont cohabité sur Terre.      |                                                          |
+| Certains caractères sont transmis de manière non            |                                                          |
+| génétique : microbiote, comportements appris, dont la       |                                                          |
+| langue, les habitudes alimentaires, l’utilisation d’outils, |                                                          |
+| etc.                                                        |                                                          |
++-------------------------------------------------------------+----------------------------------------------------------+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+Des découvertes successives en paléontologie humaine à la construction permanente du récit de nos origines.
+
+Histoire des sciences : vie et mort d’une théorie (East Side Story).
+
+**Sciences, société et environnement**
+
+Évolution de la représentation sociétale de l’émergence du genre humain.
+
+Sciences et croyances face à l’évolution.
+
+Métissage des populations humaines et leurs conséquences au niveau immunitaire.
+
+Qu’est-ce que l’être humain ?
+
+### 3.4 - Les modèles démographiques
+
+Prédire l’évolution de l’effectif d’une population humaine et des ressources qui lui sont nécessaires est un enjeu
+majeur du développement durable.
+
+Pour prédire ces évolutions, les scientifiques utilisent des modèles mathématiques. La démarche de modélisation
+comporte notamment le choix d’un modèle et le contrôle de sa validité. La présentation de l’exemple historique de
+Malthus permet de mettre en œuvre cette démarche mathématique dans le cas discret.
+
++---------------------------------------------------------------+---------------------------------------------------------------+
+| Savoirs                                                       | Savoir-faire                                                  |
++===============================================================+===============================================================+
+| L’évolution d’une population dont la variation absolue        | À partir de données démographiques, calculer des              |
+| par unité de temps est presque constante est                  | variations absolues par unité de temps et des variations      |
+| représentée par un nuage de points évoquant une droite.       | relatives par unité de temps d’une population afin de         |
+| Cette évolution peut être modélisée par une suite             | choisir entre un modèle linéaire et un modèle                 |
+| arithmétique (modèle dit linéaire).                           | exponentiel.                                                  |
+| L’évolution d’une population dont la variation relative par   | Selon le modèle de Malthus, prédire l’effectif d’une          |
+| unité de temps (encore appelée taux d’évolution) est          | population au bout de n années à partir de son effectif       |
+| presque constante est représentée par un nuage de             | initial, de son taux de natalité et de son taux de mortalité. |
+| points évoquant la courbe d’une exponentielle. Cette          | À l’aide d’un tableur, d’une calculatrice ou d’une            |
+| évolution peut être modélisée par une suite géométrique       | représentation graphique, calculer le temps de                |
+| (modèle dit exponentiel).                                     | doublement d’une population sous l’hypothèse de               |
+| Le modèle démographique de Malthus est un modèle              | croissance exponentielle.                                     |
+| exponentiel d’évolution de l’effectif de la population. Il    | À partir de documents fournis, proposer un modèle de          |
+| prévoit que l’effectif de la population décroît vers 0 si le  | croissance de ressources alimentaires (par exemple, la        |
+| taux de mortalité est supérieur au taux de natalité et croît  | production mondiale de blé ou de riz) et la comparer à        |
+| vers l’infini si le taux de natalité est supérieur au taux de | une croissance exponentielle.                                 |
+| mortalité.                                                    | À l’aide d’une calculatrice ou d’un tableur, ajuster un       |
+| Si les prédictions du modèle de Malthus peuvent se            | nuage de points par une courbe de tendance et utiliser ce     |
+| révéler correctes sur un temps court, elles sont irréalistes  | modèle pour effectuer des prévisions.                         |
+| sur un temps long, notamment en raison de l’insuffisance      | Comparer les valeurs fournies par un modèle à des             |
+| des ressources disponibles.                                   | données réelles afin de tester sa validité.                   |
+| Des modèles plus élaborés prévoient que la population         | ↔ Calculs usuels sur les suites arithmétiques et              |
+| mondiale atteindra environ 10 milliards d’humains en          | géométriques, représentations graphiques.                     |
+| 2050.                                                         | ↔ Lectures graphiques.                                        |
+|                                                               | ↔ Résolution d’équations et d’inéquations.                    |
++---------------------------------------------------------------+---------------------------------------------------------------+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+Histoire des sciences : modèles démographiques (Malthus, Quetelet, Verhulst, Lotka-Volterra, Fibonacci).
+
+**Sciences, société et environnement**
+
+Le malthusianisme et le néomalthusianisme.
+
+Modèles de propagation d’une épidémie au sein d’une population.
+Évolution d’une population et automate cellulaire.
+
+### 3.5 - De la machine de Turing à l’intelligence artificielle
+
+L’être humain n’a cessé d’accroître sa capacité d’action sur le monde, utilisant son intelligence pour construire des
+outils et des machines. Dans le contexte du traitement automatique de l’information (informatique), il a élaboré un
+mode de pensée algorithmique susceptible d’être codé dans des langages permettant de commander des machines.
+
+Plus largement, le terme « intelligence artificielle » (IA) se définit comme un champ interdisciplinaire théorique et
+pratique qui a pour objet la compréhension de mécanismes de la cognition et de la réflexion, et leur imitation par un
+dispositif matériel et logiciel, à des fins d’assistance ou de substitution à des activités humaines : reconnaître et
+localiser des objets dans une image, conduire une voiture, traduire un texte, dialoguer, etc. Un champ de
+l’intelligence artificielle ayant récemment permis des applications spectaculaires est celui de l’apprentissage
+automatique.
+
++----------------------------------------------------------------+--------------------------------------------------------------+
+|                            Savoirs                             |                         Savoir-faire                         |
++================================================================+==============================================================+
+| Jusqu’au début du XXe siècle, les machines traitant            | Analyser des documents historiques relatifs au traitement    |
+| l’information étaient limitées à une ou à quelques tâches      | de l’information et à son automatisation.                    |
+| prédéterminées (tisser grâce à un ruban ou des cartes          | Recenser des outils numériques utilisés dans la vie          |
+| perforées, trier un jeu de cartes perforées, séparer des       | courante, identifier ceux qui sont programmables, et par     |
+| cartes selon un critère, sommer des valeurs indiquées sur      | qui (ordinateur, thermostat d’ambiance, téléphone            |
+| ces cartes, etc.). Turing a été le premier à proposer le       | intelligent, boîte Internet, ordinateur de bord d’une        |
+| concept de machine universelle qui a été matérialisé dix       | voiture, etc.).                                              |
+| ans plus tard avec les premiers ordinateurs. Ceux-ci sont      |                                                              |
+| constitués au minimum d’un processeur et d’une                 | Savoir distinguer les fichiers exécutables des autres        |
+| mémoire vive.                                                  | fichiers sous un système d’exploitation donné.               |
+|                                                                |                                                              |
+|                                                                |                                                              |
+|                                                                | Connaître l’ordre de grandeur de la taille d’un fichier      |
+| Un ordinateur peut manipuler des données de natures            | image, son, vidéo.                                           |
+| diverses une fois qu’elles ont été numérisées : textes,        |                                                              |
+| images, sons. Les programmes sont également des                |                                                              |
+| données : ils peuvent être stockés, transportés et traités     | Savoir calculer la taille en octets d’une page de texte (en  |
+| par des ordinateurs. En particulier, un programme écrit        | ASCII et non compressé).                                     |
+| dans un langage de programmation de haut niveau                | Corriger un algorithme ou un programme bogué simple.         |
+| (Python, Scratch, etc.) peut être traduit en instructions      |                                                              |
+| spécifiques à chaque type de processeur.                       | ↔ Ordres de grandeur.                                        |
+|                                                                | ↔ Proportionnalité.                                          |
+|                                                                | ↔ Logique.                                                   |
+|                                                                |                                                              |
+| Un programme peut comporter jusqu’à plusieurs                  |                                                              |
+| centaines de millions de lignes de code, ce qui rend très      |                                                              |
+| probable la présence d’erreurs appelées bogues (ou             |                                                              |
+| bugs). Ces erreurs peuvent conduire un programme à             |                                                              |
+| avoir un comportement inattendu et entraîner des               |                                                              |
+| conséquences graves.                                           |                                                              |
++----------------------------------------------------------------+--------------------------------------------------------------+
+| L’intelligence artificielle (IA) est née en 1956. À cette      | Analyser des documents relatifs à une application de         |
+| époque, elle visait à simuler sur ordinateur les facultés      | l’intelligence artificielle.                                 |
+| cognitives humaines et recouvrait des approches relevant       | Utiliser une courbe de tendance (encore appelée courbe       |
+| de l’informatique, des mathématiques et des sciences           | de régression) pour estimer une valeur inconnue à partir     |
+| cognitives. L’approche symbolique (systèmes experts)           | de données d’entraînement.                                   |
+| initiée à la fin des années 50 n’a pas tenu ses promesses.     |                                                              |
+|                                                                | Analyser un exemple d’utilisation de l’intelligence          |
+|                                                                | artificielle : identifier la source des données utilisées et |
+| Aujourd’hui, on a tendance à attribuer le terme d’IA à l’un    | les corrélations exploitées.                                 |
+| de ses sous-domaines, celui de l’apprentissage                 |                                                              |
+| automatique (apprentissage machine). Il s’agit d’un            |                                                              |
+| processus par lequel un algorithme évalue et améliore ses      |                                                              |
+| propres performances, non pas sous l’intervention d’un         |                                                              |
+| humain chargé de programmer la machine, mais en                | Sur des exemples réels, reconnaître les possibles biais      |
+| répétant son exécution sur des jeux de données de              | dans les données, les limites de la représentativité.        |
+| natures variées (mesures de capteurs pour des prévisions,      | Sur des exemples simples, montrer qu’une corrélation ne      |
+| textes pour la traduction, sons pour la reconnaissance         | correspond pas toujours à une relation de causalité.         |
+| vocale, images pour la reconnaissance visuelle, etc.).         | Expliquer pourquoi certains usages de l’IA peuvent poser     |
+|                                                                | des problèmes éthiques.                                      |
+|                                                                |                                                              |
+|                                                                | ↔ Calcul algébrique.                                         |
+| L’apprentissage machine exploite des méthodes                  | ↔ Lectures graphiques.                                       |
+| mathématiques qui, à partir du repérage de tendances           |                                                              |
+| (par exemple, des corrélations ou des similarités) sur de      |                                                              |
+| très grandes quantités de données (données massives),          |                                                              |
+| permettent de faire des prédictions ou de prendre des          |                                                              |
+| décisions sur d’autres données.                                |                                                              |
+|                                                                |                                                              |
+|                                                                |                                                              |
+| La qualité et la représentativité des données fournies sont    |                                                              |
+| essentielles pour la qualité des résultats. En effet, l’un des |                                                              |
+| risques de l’apprentissage automatique réside dans             |                                                              |
+| l’amplification des biais des données. Par ailleurs, une       |                                                              |
+| interprétation trop rapide des données et un amalgame          |                                                              |
+| entre corrélation et causalité peuvent aboutir à des           |                                                              |
+| résultats erronés.                                             |                                                              |
++----------------------------------------------------------------+--------------------------------------------------------------+
+| L’inférence bayésienne est une méthode de calcul de            | Dans le contexte d’un diagnostic médical fondé sur un        |
+| probabilités de causes à partir des probabilités de leurs      | test, produire un tableau de contingence afin de calculer    |
+| effets. Elle est utilisée en apprentissage automatique pour    | des fréquences de faux positifs, faux négatifs, vrais        |
+| modéliser des relations au sein de systèmes complexes,         | positifs, vrais négatifs et en déduire le nombre de          |
+| notamment en vue de prononcer un diagnostic.                   | personnes malades suivant leur résultat au test.             |
+|                                                                | Utiliser cette démarche dans d’autres contextes de           |
+|                                                                | classification (reconnaissance d’images, détection de        |
+|                                                                | messages non sollicités envoyés en masse, etc.).             |
+|                                                                |                                                              |
+|                                                                | ↔ Probabilités conditionnelles.                              |
+|                                                                | ↔ Formule de Bayes.                                          |
++----------------------------------------------------------------+--------------------------------------------------------------+
+
+_Pistes de mise en œuvre du programme_
+
+**Nature du savoir scientifique et méthodes d’élaboration**
+
+Histoire des sciences : de la machine de Turing aux dialogueurs.
+
+Exemples d’apprentissage automatique : réseaux de neurones simples et principe de l’apprentissage par retour
+d’erreur, algorithme des k plus proches voisins et modification des prédictions selon les données initiales et le
+paramètre k.
+
+**Sciences, société et environnement**
+
+Apports de l’intelligence artificielle : santé (imagerie médicale, diagnostic), commerce électronique et marketing
+(recommandation de produits), finance (prévisions boursières), activités sociales (réseaux sociaux), traduction
+automatique, communications, transports (voitures intelligentes), sécurité, création de contenus par des modèles
+génératifs (ChatGPT), etc.
+
+Points de vigilance : protection des données personnelles, propriété intellectuelle, responsabilité juridique, risques
+liés à l’IA générative dans le cadre des interactions entre l’être humain et la machine (interaction Homme-Machine),
+etc.
+
+Le devenir de l’intelligence artificielle, entre les sciences et la fiction.

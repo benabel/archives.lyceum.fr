@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Partie 6: Les réseaux sociaux"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```

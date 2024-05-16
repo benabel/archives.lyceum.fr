@@ -1,0 +1,8 @@
+---
+title: Exercices
+subtitle: "Chapitre 4: Programmation dynamique*"
+exo: true
+type: exo
+tabnav: true
+---
+ Aucun exercice pour l'instant.

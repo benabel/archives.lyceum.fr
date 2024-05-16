@@ -1,0 +1,6 @@
+---
+title: "Partie 5: Algorithmique"
+listing:
+  contents: /*/index.qmd
+order: 5
+---

@@ -1,0 +1,5 @@
+---
+title: SNT
+listing:
+  contents: /*/index.qmd
+---

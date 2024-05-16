@@ -1,0 +1,9 @@
+---
+title: Exercices
+subtitle: "Partie 5: La photographie numérique"
+exo: true
+type: exo
+tabnav: true
+---
+
+Aucun exercice pour l'instant.

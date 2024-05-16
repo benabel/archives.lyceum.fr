@@ -1,0 +1,8 @@
+---
+title: Exercices
+subtitle: "Chapitre 1: Les ingrédients d’un algorithme"
+exo: true
+type: exo
+tabnav: true
+---
+Aucun exercice pour l'instant.

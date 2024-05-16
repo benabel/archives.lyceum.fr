@@ -1,0 +1,1280 @@
+code	label	parent
+0	ISDEC Codes	
+00	Generic programmes and qualifications	0
+000	Generic programmes and qualifications not further defined	00
+0000	Generic programmes and qualifications not further defined	000
+001	Basic programmes and qualifications	00
+0011	Basic programmes and qualifications	001
+001100	Basic programmes and qualifications	0011
+001101	Broad generic (non-specialised) programmes and qualifications	0011
+001102	General programmes and qualifications with no specific subject emphasis	0011
+001103	Programmes and qualifications at primary level	0011
+002	Literacy and numeracy	00
+0021	Literacy and numerac	002
+002100	Basic remedial programmes for youth or adults	0021
+002101	Functional literacy	0021
+002102	Literacy	0021
+002103	Numeracy	0021
+002104	Simple literacy	0021
+003	Personal skills and development	00
+0031	Personal skills and development	003
+003100	Argumentation and presentation	0031
+003101	Assertiveness training	0031
+003102	Communication skills	0031
+003103	Co-operation	0031
+003104	Development of behavioural capacities	0031
+003105	Development of mental skills	0031
+003106	Development of personal organisational capacities	0031
+003107	Enhancing personal skills	0031
+003108	Family life development training	0031
+003109	Job-seeking programmes	0031
+003110	Life orientation programmes	0031
+003111	Parenting courses	0031
+003112	Personal career planning	0031
+003113	Personal development	0031
+003114	Positive thinking	0031
+003115	Presentation techniques	0031
+003116	Public speaking	0031
+003117	Self-confidence	0031
+003118	Self-esteem skills	0031
+003119	Social competence	0031
+003120	Teamwork	0031
+003121	Time management	0031
+009	Generic programmes and qualifications not elsewhere classified	00
+0099	Generic programmes and qualifications not elsewhere classified	009
+01	Education	0
+011	Education	01
+0110	Education not further defined	011
+0111	Education science	011
+011100	Curriculum development (theory)	0111
+011101	Curriculum studies	0111
+011102	Didactics	0111
+011103	Distance education methodology	0111
+011104	Education science	0111
+011105	Educational assessment, testing and measurement	0111
+011106	Educational evaluation and research	0111
+011107	Paedagogical sciences (education)	0111
+0112	Training for pre-school teachers	011
+011200	Early childhood teaching (within formal school settings)	0112
+011201	Pre-primary teacher training	0112
+0113	Teacher training without subject specialisation	011
+011300	Adult literacy and numeracy teacher training	0113
+011301	Class teacher training	0113
+011302	Elementary teacher education	0113
+011303	Indigenous teacher training	0113
+011304	Lower secondary teaching	0113
+011305	Primary teaching	0113
+011306	Special education teaching	0113
+0114	Teacher training with subject specialisation	011
+011400	Teacher training - arts and crafts	0114
+011401	Teacher training – commercial subjects	0114
+011402	Teacher training – music	0114
+011403	Teacher training – nursing	0114
+011404	Teacher training – physical training	0114
+011405	Teacher training – second languages	0114
+011406	Teacher training – specific theoretical subjects (e.g. mathematics, history)	0114
+011407	Teacher training – technical subjects	0114
+011408	Teacher training – vocational subjects	0114
+011409	Teacher training courses for university teachers	0114
+011410	Training of driving instructors	0114
+0119	Education not elsewhere classified	011
+018	Inter-disciplinary programmes and qualifications involving education	01
+0188	Inter-disciplinary programmes and qualifications involving education	018
+02	Arts and humanities	0
+020	Arts and humanities not further defined	02
+0200	Arts and humanities not further defined	020
+021	Arts	02
+0210	Arts not further defined	021
+0211	Audio-visual techniques and media production	021
+021100	Animation	0211
+021101	Binding and finishing (printing)	0211
+021102	Bookbinding	0211
+021103	Camera operating	0211
+021104	Cinematography	0211
+021105	Compositing (printing)	0211
+021106	Composition equipment operating	0211
+021107	Computer game production	0211
+021108	Computer graphics	0211
+021109	Computer type-setting	0211
+021110	Desktop publishing	0211
+021111	Disc jockey training	0211
+021112	Film and TV editing	0211
+021113	Film and video production	0211
+021114	Graphic design	0211
+021115	Graphic reproduction	0211
+021116	Illustration	0211
+021117	Interactive media design	0211
+021118	Lay-out	0211
+021119	Media techniques	0211
+021120	Multimedia production	0211
+021121	Photo developing	0211
+021122	Photography	0211
+021123	Pre-press operations	0211
+021124	Print finishing and binding	0211
+021125	Printing	0211
+021126	Printing machining	0211
+021127	Publishing design	0211
+021128	Radio and TV production	0211
+021129	Recorded music production	0211
+021130	Sound and vision	0211
+021131	Sound techniques	0211
+021132	Type-setting	0211
+0212	Fashion, interior and industrial design	021
+021200	Costume design	0212
+021201	Design	0212
+021202	Design of industrial products (artistic)	0212
+021203	Fashion design	0212
+021204	Industrial design (artistic)	0212
+021205	Interior architecture	0212
+021206	Interior decorating	0212
+021207	Interior design	0212
+021208	Stage designing	0212
+021209	Three dimensional design	0212
+021210	Window dressing	0212
+0213	Fine arts	021
+021300	Aesthetics	0213
+021301	Art history	0213
+021302	Art studies	0213
+021303	Art theory	0213
+021304	Calligraphy	0213
+021305	Drawing (artistic)	0213
+021306	Etching (artistic)	0213
+021307	Fine art printmaking	0213
+021308	History of art	0213
+021309	Lithography	0213
+021310	Painting (art)	0213
+021311	Philosophy of art	0213
+021312	Sculpture	0213
+021313	Sketching (art)	0213
+0214	Handicrafts	021
+021400	Ceramics (craft)	0214
+021401	Conservation of cultural material	0214
+021402	Craft programmes	0214
+021403	Crafts, folk arts and artisan	0214
+021404	Decorative metal crafts	0214
+021405	Embroidery (craft)	0214
+021406	Fibre, textile and weaving arts	0214
+021407	Floristry (flower arranging)	0214
+021408	Glass arts and craft	0214
+021409	Goldsmithing	0214
+021410	Handicrafts	0214
+021411	Indigenous crafts	0214
+021412	Jewellery design	0214
+021413	Jewellery making (craft)	0214
+021414	Lapidary and jewellery	0214
+021415	Making of musical instruments (not industrial)	0214
+021416	Musical instruments (repairing and tuning)	0214
+021417	Needle craft	0214
+021418	Picture framing	0214
+021419	Silversmithing	0214
+021420	Stone carving (craft)	0214
+021421	Weaving (craft)	0214
+021422	Woodcarving	0214
+0215	Music and performing arts	021
+021500	Acting and directing	0215
+021501	Ballet	0215
+021502	Choreography	0215
+021503	Circus	0215
+021504	Composition (music)	0215
+021505	Conducting (music)	0215
+021506	Creative and performance art	0215
+021507	Dance	0215
+021508	Directing (theatre)	0215
+021509	Drama	0215
+021510	Elocution	0215
+021511	Fashion modelling	0215
+021512	History of film and theatre	0215
+021513	History of music	0215
+021514	Music	0215
+021515	Music and the stage	0215
+021516	Music composition	0215
+021517	Music conducting	0215
+021518	Musicology	0215
+021519	Performing arts	0215
+021520	Theatre/theatre sciences	0215
+0219	Arts not elsewhere classified	021
+022	Humanities (except languages)	02
+0220	Humanities (except languages) not further defined	022
+0221	Religion and theology	022
+022100	Religion	0221
+022101	Religious history	0221
+022102	Religious studies	0221
+022103	Study of different religions	0221
+022104	Study of sacred books	0221
+022105	Theology	0221
+0222	History and archaeology	022
+022200	Archaeology	0222
+022201	Cultural history	0222
+022202	Folklore studies	0222
+022203	History	0222
+022204	History and philosophy of science and technology	0222
+022205	History of literature	0222
+022206	History of medicine	0222
+022207	History of science and ideas	0222
+022208	History of technology	0222
+022209	Literature history	0222
+022210	Medieval and renaissance studies	0222
+022211	Preservation of artistic heritage	0222
+0223	Philosophy and ethics	022
+022300	Ethics	0223
+022301	Logic	0223
+022302	Morals	0223
+022303	Philosophy	0223
+0229	Humanities (except languages) not elsewhere classified	022
+023	Languages	02
+0230	Languages not further defined	023
+0231	Language acquisition	023
+023100	Classical languages	0231
+023101	Exogenous languages	0231
+023102	Foreign languages	0231
+023103	Interpretation programmes	0231
+023104	Phonetics	0231
+023105	Second languages	0231
+023106	Semantics, foreign languages	0231
+023107	Sign language interpreting	0231
+023108	Sign languages	0231
+023109	Translation programmes	0231
+0232	Literature and linguistics	023
+023200	Comparative literature	0232
+023201	Creative writing	0232
+023202	First language programmes	0232
+023203	Indigenous languages	0232
+023204	Linguistics, general	0232
+023205	Literature	0232
+023206	Mother tongue programmes	0232
+023207	Native first languages	0232
+023208	Philology (first language)	0232
+023209	Semantics (first language)	0232
+023210	Speech and rhetorical studies	0232
+0239	Languages not elsewhere classified	023
+028	Inter-disciplinary programmes and qualifications involving arts and humanities	02
+0288	Inter-disciplinary programmes and qualifications involving arts and humanities	028
+029	Arts and humanities not elsewhere classified	02
+0299	Arts and humanities not elsewhere classified	029
+03	Social sciences, journalism and information	0
+030	Social sciences, journalism and information not further defined	03
+0300	Social sciences, journalism and information not further defined	030
+031	Social and behavioural sciences	03
+0310	Social and behavioural sciences not further defined	031
+0311	Economics	031
+031100	Econometrics	0311
+031101	Economic history	0311
+031102	Economics	0311
+031103	International economics	0311
+031104	Macro economics	0311
+031105	National accounts	0311
+031106	Political economics	0311
+0312	Political sciences and civics	031
+031200	Civics	0312
+031201	Human rights	0312
+031202	International relations	0312
+031203	Peace and conflict studies	0312
+031204	Political history	0312
+031205	Political science	0312
+031206	Politics	0312
+031207	Public policy studies	0312
+0313	Psychology	031
+031300	Cognitive sciences	0313
+031301	Conversational therapy	0313
+031302	Development and child psychology	0313
+031303	Psychoanalysis	0313
+031304	Psychology	0313
+031305	Psychotherapy	0313
+0314	Sociology and cultural studies	031
+031400	Criminology	0314
+031401	Cultural geography	0314
+031402	Cultural studies	0314
+031403	Demography/population studies	0314
+031404	Ethnology	0314
+031405	Futurology	0314
+031406	Gender studies	0314
+031407	Geography (social)	0314
+031408	Human geography	0314
+031409	Regional cultures	0314
+031410	Social anthropology	0314
+031411	Social conflict theory	0314
+031412	Social geography	0314
+031413	Sociology	0314
+031414	Women’s studies	0314
+0319	Social and behavioural sciences not elsewhere classified	031
+032	Journalism and information	03
+0320	Journalism and information not further defined	032
+0321	Journalism and reporting	032
+032100	Broadcast journalism	0321
+032101	Editing	0321
+032102	Information (wording and content)	0321
+032103	Journalism	0321
+032104	Mass communication (wording and content)	0321
+032105	News reporting	0321
+032106	Publishing (dissemination of messages)	0321
+0322	Library, information and archival studies	032
+032200	Archival sciences	0322
+032201	Curatorial studies	0322
+032202	Documentation	0322
+032203	Information science	0322
+032204	Information searching	0322
+032205	Librarianship training	0322
+032206	Library studies	0322
+032207	Museum documentation	0322
+032208	Museum studies	0322
+032209	Museology	0322
+0329	Journalism and information not elsewhere classified	032
+038	Inter-disciplinary programmes and qualifications involving social sciences, journalism and information	03
+0388	Inter-disciplinary programmes and qualifications involving social sciences, journalism and information	038
+039	Social sciences, journalism and information not elsewhere classified	03
+0399	Social sciences, journalism and information not elsewhere classified	039
+04	Business, administration and law	0
+040	Business, administration and law not further defined	04
+0400	Business, administration and law not further defined	040
+041	Business and administration	04
+0410	Business and administration not further defined	041
+0411	Accounting and taxation	041
+041100	Accounting	0411
+041101	Auditing	0411
+041102	Bookkeeping	0411
+041103	Tax accounting	0411
+041104	Tax management	0411
+0412	Finance, banking and insurance	041
+041200	Bank teller studies	0412
+041201	Banking and finance	0412
+041202	Business finance	0412
+041203	Finance, banking, insurance	0412
+041204	Finance theory	0412
+041205	Financial management	0412
+041206	Insurance	0412
+041207	Investment analysis	0412
+041208	Investments and securities	0412
+041209	Pension insurance	0412
+041210	Social insurance	0412
+041211	Stock-broking	0412
+0413	Management and administration	041
+041300	Administration	0413
+041301	Business administration	0413
+041302	Educational management	0413
+041303	Employment management	0413
+041304	Entrepreneurship	0413
+041305	Enterprise training	0413
+041306	Health administration	0413
+041307	Human resources management	0413
+041308	Local public administration	0413
+041309	Logistic management	0413
+041310	Management of education	0413
+041311	Management science	0413
+041312	Management skills	0413
+041313	Office management	0413
+041314	Organisational theory and behaviour	0413
+041315	Performance appraisal	0413
+041316	Personnel administration	0413
+041317	Personnel management	0413
+041318	Public administration	0413
+041319	Public and institution management	0413
+041320	Quality management	0413
+041321	Recruitment	0413
+041322	‘Start your own business’ courses	0413
+041323	Supply change management	0413
+041324	Training management	0413
+0414	Marketing and advertising	041
+041400	Advertising	0414
+041401	Consumer behaviour	0414
+041402	Market research	0414
+041403	Marketing	0414
+041404	Merchandising	0414
+041405	Public relations	0414
+041406	Sales and marketing	0414
+0415	Secretarial and office work	041
+041500	Administrative and secretarial services	0415
+041501	Business correspondence	0415
+041502	Clerical programmes	0415
+041503	Court reporting	0415
+041504	Data entry	0415
+041505	Foreign language secretary programmes	0415
+041506	Information processing/data entry	0415
+041507	Keyboard skills	0415
+041508	Legal secretary programmes	0415
+041509	Management support services	0415
+041510	Medical secretary programmes	0415
+041511	Office automation	0415
+041512	Operation of office equipment	0415
+041513	Receptionist training	0415
+041514	Secretarial programmes	0415
+041515	Shorthand	0415
+041516	Stenography	0415
+041517	Switchboard operating	0415
+041518	Typing	0415
+0416	Wholesale and retail sales	041
+041600	Auctioneering	0416
+041601	Buying and selling	0416
+041602	Consumer services	0416
+041603	Dairy retailing	0416
+041604	Demonstration techniques	0416
+041605	Property sales	0416
+041606	Purchasing	0416
+041607	Purchasing, procurement and contracts	0416
+041608	Real-estate business	0416
+041609	Retailing	0416
+041610	Sales representatives	0416
+041611	Stock-keeping	0416
+041612	Telephone selling	0416
+041613	Ware-housing	0416
+041614	Wholesaling	0416
+0417	Work skills	041
+041700	Clients’ needs	0417
+041701	Company knowledge	0417
+041702	Customer service training	0417
+041703	Industrial relations	0417
+041704	Introduction to work courses	0417
+041705	Organisation at work	0417
+041706	Quality assurance	0417
+041707	Trade union courses (general)	0417
+041708	Work development	0417
+041709	Work place skills	0417
+041710	Working life	0417
+0419	Business and administration not elsewhere classified	041
+042	Law	04
+0421	Law	042
+042100	Commercial law	0421
+042101	Criminal justice studies	0421
+042102	History of law	0421
+042103	Indigenous law	0421
+042104	Islamic sharia	0421
+042105	Jurisprudence	0421
+042106	Labour law	0421
+042107	Law	0421
+042108	Legal practice	0421
+042109	Legal studies	0421
+042110	Notary/Notary’s practise	0421
+042111	Paralegal studies	0421
+048	Inter-disciplinary programmes and qualifications involving business, administration and law	04
+0488	Inter-disciplinary programmes and qualifications involving business, administration and law	048
+049	Business, administration and law not elsewhere classified	04
+0499	Business, administration and law not elsewhere classified	049
+05	Natural sciences, mathematics and statistics	0
+050	Natural sciences, mathematics and statistics not further defined	05
+0500	Natural sciences, mathematics and statistics not further defined	050
+051	Biological and related sciences	05
+0510	Biological and related sciences not further defined	051
+0511	Biology	051
+051100	Biology	0511
+051101	Biometrics	0511
+051102	Botany	0511
+051103	Cell biology	0511
+051104	Entomology	0511
+051105	Genetics	0511
+051106	Life sciences	0511
+051107	Limnology	0511
+051108	Microbiology	0511
+051109	Molecular biology	0511
+051110	Mycology	0511
+051111	Ornithology	0511
+051112	Parasitology	0511
+051113	Zoology	0511
+0512	Biochemistry	051
+051200	Biological chemistry	0512
+051201	Biotechnology	0512
+051202	Cell technology	0512
+051203	Forensic sciences	0512
+051204	Genetic code (DNA, RNA) studies	0512
+051205	Genetic engineering	0512
+051206	Pharmacology	0512
+051207	Tissue culture technology	0512
+051208	Toxicology	0512
+051209	Virology	0512
+0519	Biological and related sciences not elsewhere classified	051
+052	Environment	05
+0520	Environment not further defined	052
+0521	Environmental sciences	052
+052100	Ecology	0521
+052101	Environmental science	0521
+0522	Natural environments and wildlife	052
+052200	Conservation and land management	0522
+052201	National parks and wildlife management	0522
+052202	Nature conservation	0522
+052203	Wildlife management	0522
+052204	Wildlife ranger studies	0522
+0529	Environment not elsewhere classified	052
+053	Physical sciences	05
+0530	Physical sciences not further defined	053
+0531	Chemistry	053
+053100	Analytical chemistry	0531
+053101	Chemistry	0531
+053102	Inorganic chemistry	0531
+053103	Organic chemistry	0531
+053104	Petrology	0531
+053105	Physical chemistry	0531
+053106	Polymer chemistry	0531
+0532	Earth sciences	053
+053200	Atmospheric sciences	0532
+053201	Climate research	0532
+053202	Earth science	0532
+053203	Geodesy	0532
+053204	Geographic information systems (GIS)	0532
+053205	Geography (nature)	0532
+053206	Geography (physical)	0532
+053207	Geoinformatics	0532
+053208	Geology	0532
+053209	Geomatics	0532
+053210	Geophysics	0532
+053211	Geoscience	0532
+053212	Geospatial technology	0532
+053213	Hydrogeology	0532
+053214	Hydrology	0532
+053215	Marine science	0532
+053216	Meteorology	0532
+053217	Mineralogy	0532
+053218	Ocean life sciences	0532
+053219	Oceanography	0532
+053220	Palaeontology	0532
+053221	Seismology	0532
+053222	Vulcanology	0532
+0533	Physics	053
+053300	Acoustics	0533
+053301	Astronomy	0533
+053302	Astrophysics	0533
+053303	Biophysics	0533
+053304	Chemical physics	0533
+053305	Medical physics	0533
+053306	Nuclear physics	0533
+053307	Optics	0533
+053308	Physics	0533
+053309	Planetary sciences	0533
+053310	Space science	0533
+0539	Physical sciences not elsewhere classified	053
+054	Mathematics and statistics	05
+0540	Mathematics and statistics not further defined	054
+0541	Mathematics	054
+054100	Algebra	0541
+054101	Applied mathematics	0541
+054102	Data analysis (mathematics)	0541
+054103	Geometry	0541
+054104	Mathematics	0541
+054105	Numerical analysis	0541
+054106	Operational research	0541
+054107	Pure mathematics	0541
+0542	Statistics	054
+054200	Actuarial science	0542
+054201	Applied statistics	0542
+054202	Mathematical (theoretical) statistics	0542
+054203	Probability theory	0542
+054204	Survey design	0542
+054205	Survey sampling	0542
+058	Inter-disciplinary programmes and qualifications involving natural sciences, mathematics and statistics	05
+0588	Inter-disciplinary programmes and qualifications involving natural sciences, mathematics and statistics	058
+059	Natural sciences, mathematics and statistics not elsewhere classified	05
+0599	Natural sciences, mathematics and statistics not elsewhere classified	059
+06	Information and Communication Technologies (ICTs)	0
+061	Information and Communication Technologies (ICTs)	06
+0610	Information and Communication Technologies (ICTs) not further defined	061
+0611	Computer use	061
+061100	Computer software use	0611
+061101	Computer use	0611
+061102	Internet use	0611
+061103	Use of software for calculating	0611
+061104	(spreadsheets)	0611
+061105	Use of software for data processing	0611
+061106	Use of software for desktop publishing	0611
+061107	Use of software for word processing	0611
+0612	Database and network design and administration	061
+061200	Computer administration and management	0612
+061201	Computer media applications	0612
+061202	Computer network installation and maintenance	0612
+061203	Computer support	0612
+061204	Database administrator studies	0612
+061205	Information technology administration	0612
+061206	Information technology security	0612
+061207	Network administration	0612
+061208	Network design	0612
+061209	Web design	0612
+0613	Software and applications development and analysis	061
+061300	Computer programming	0613
+061301	Computer science	0613
+061302	Computer systems analysis	0613
+061303	Computer systems design	0613
+061304	Informatics (computer science)	0613
+061305	Operating systems	0613
+061306	Programming (computer)	0613
+061307	Programming languages development	0613
+061308	Software development	0613
+061309	Software localisation	0613
+061310	Software programming	0613
+061311	Software testing	0613
+0619	Information and Communication Technologies (ICTs) not elsewhere classified	061
+061900	Artificial intelligence	0619
+068	Inter-disciplinary programmes and qualifications involving Information and Communication Technologies (ICTs)	06
+0688	Inter-disciplinary programmes and qualifications involving Information and Communication Technologies (ICTs)	068
+07	Engineering, manufacturing and construction	0
+070	Engineering, manufacturing and construction not further defined	07
+0700	Engineering, manufacturing and construction not further defined	070
+071	Engineering and engineering trades	07
+0710	Engineering and engineering trades not further defined	071
+0711	Chemical engineering and processes	071
+071100	Chemical engineering	0711
+071101	Chemical process engineering	0711
+071102	Laboratory assistant programmes	0711
+071103	Laboratory technician programmes	0711
+071104	Laboratory technology	0711
+071105	Oil/gas/petrochemicals processing	0711
+071106	Oil refining	0711
+071107	Plant and machine operation	0711
+071108	(processing)	0711
+071109	Process technology	0711
+0712	Environmental protection technology	071
+071200	Air pollution control	0712
+071201	Ecological technology	0712
+071202	Energy efficiency	0712
+071203	Environmental control	0712
+071204	Environmental engineering	0712
+071205	Environmental protection technology	0712
+071206	Industrial discharge control	0712
+071207	Noise pollution control	0712
+071208	Recycling	0712
+071209	Water pollution control	0712
+0713	Electricity and energy	071
+071300	Air-conditioning trades (installation and maintenance)	0713
+071301	Climate engineering	0713
+071302	Electrical appliances repairing	0713
+071303	Electrical engineering	0713
+071304	Electrical fitting	0713
+071305	Electrical power generation	0713
+071306	Electrical trades	0713
+071307	Energy studies	0713
+071308	Gas distribution	0713
+071309	Heating trades (installation and maintenance)	0713
+071310	Nuclear, hydraulic and thermal energy	0713
+071311	Power line installation and maintenance	0713
+071312	Power production	0713
+071313	Refrigeration	0713
+071314	Solar energy	0713
+071315	Solar power	0713
+071316	Wind turbines	0713
+0714	Electronics and automation	071
+071400	Automation	0714
+071401	Broadcasting electronics	0714
+071402	Communication systems	0714
+071403	Communications equipment installation	0714
+071404	Communications equipment maintenance	0714
+071405	Computer engineering	0714
+071406	Computer repairing	0714
+071407	Control engineering	0714
+071408	Data processing technology	0714
+071409	Digital technology	0714
+071410	Electronic engineering	0714
+071411	Electronic equipment servicing	0714
+071412	Network technology	0714
+071413	Robotics	0714
+071414	Telecommunications technology	0714
+071415	Television and radio repairing	0714
+0715	Mechanics and metal trades	071
+071500	Bicycle production	0715
+071501	Bicycle repair	0715
+071502	Boilermaking and welding	0715
+071503	Gunsmithing	0715
+071504	Hydraulics	0715
+071505	Locksmithing and safe repairing	0715
+071506	Mechanical engineering	0715
+071507	Mechanical trades	0715
+071508	Metal casting and patternmaking	0715
+071509	Metal fitting, turning and machining	0715
+071510	Metal trades programmes	0715
+071511	Metallurgical engineering	0715
+071512	Metallurgical technology	0715
+071513	Micromechanics	0715
+071514	Precision mechanics	0715
+071515	Sheet metal working	0715
+071516	Steel production	0715
+071517	Tool and die making	0715
+071518	Watchmaking	0715
+071519	Welding	0715
+0716	Motor vehicles, ships and aircraft	071
+071600	Aeronautical engineering	0716
+071601	Aerospace engineering	0716
+071602	Agriculture machinery mechanics	0716
+071603	Aircraft engineering	0716
+071604	Aircraft maintenance	0716
+071605	Automotive electrical systems	0716
+071606	Automotive engineering	0716
+071607	Avionics	0716
+071608	Coachwork	0716
+071609	Helicopter construction	0716
+071610	Marine construction	0716
+071611	Marine engineering	0716
+071612	Maritime engineering	0716
+071613	Motorcycle engineering	0716
+071614	Motorcycle mechanics	0716
+071615	Naval engineering	0716
+071616	Panel beating	0716
+071617	Shipbuilding	0716
+071618	Train repair and maintenance	0716
+071619	Vehicle and motor engineering	0716
+071620	Vehicle building	0716
+071621	Vehicle diagnostics	0716
+071622	Vehicle electrical systems	0716
+071623	Vehicle mechanics	0716
+071624	Vehicle painting	0716
+071625	Vehicle repairing	0716
+071626	Vehicle trimming	0716
+071627	Vehicle varnishers/sprayers	0716
+0719	Engineering and engineering trades not elsewhere classified	071
+071900	Nanotechnology	0719
+072	Manufacturing and processing	07
+0720	Manufacturing and processing not further defined	072
+0721	Food processing	072
+072100	Baking	0721
+072101	Brewing	0721
+072102	Butchery	0721
+072103	Cheese production	0721
+072104	Confectionery	0721
+072105	Dairy foods (industrial)	0721
+072106	Dairy science	0721
+072107	Distilling	0721
+072108	Food and drink processing	0721
+072109	Food handling/hygiene	0721
+072110	Food preparation	0721
+072111	Food preservation	0721
+072112	Food processing industry	0721
+072113	Food science	0721
+072114	Food science and technology	0721
+072115	Food techniques	0721
+072116	Industrial bakery/flour production	0721
+072117	Meat processing	0721
+072118	Pastry cooking	0721
+072119	Tobacco processing	0721
+072120	Wine production	0721
+072121	Wine science	0721
+072122	Wine storing/maturing	0721
+0722	Materials (glass, paper, plastic and wood)	072
+072200	Boat building (non-motor)	0722
+072201	Cabinet making	0722
+072202	Cane, willow and bamboo work	0722
+072203	Carpentry (furniture)	0722
+072204	Ceramics (industrial)	0722
+072205	Furniture crafts	0722
+072206	Furniture making	0722
+072207	Glass production	0722
+072208	Glass working (industrial)	0722
+072209	Industrial diamond production	0722
+072210	Paper manufacturing and processing	0722
+072211	Plastic manufacturing	0722
+072212	Rubber processing	0722
+072213	Stone cutting	0722
+072214	Synthetic fibre manufacturing	0722
+072215	Timber technology	0722
+072216	Wood machining and turning	0722
+072217	Wood technology	0722
+072218	Woodwork trades	0722
+072219	Woodworking and carpentry	0722
+0723	Textiles (clothes, footwear and leather)	072
+072300	Clothing, apparel and textile working	0723
+072301	Clothing industry	0723
+072302	Clothing trades	0723
+072303	Custom tailoring	0723
+072304	Cutting and tailoring	0723
+072305	Dressmaking	0723
+072306	Embroidery and needlework (industrial)	0723
+072307	Footwear making	0723
+072308	Fur making	0723
+072309	Furrier	0723
+072310	Garment production	0723
+072311	Knitting (industrial)	0723
+072312	Leather goods production	0723
+072313	Leather processing	0723
+072314	Leather trades	0723
+072315	Pelt worker	0723
+072316	Saddlery	0723
+072317	Sewing (industrial)	0723
+072318	Shoe, boot and leather repairing	0723
+072319	Shoemaking	0723
+072320	Skins and leather production	0723
+072321	Soft furnishings	0723
+072322	Spinning	0723
+072323	Tailoring	0723
+072324	Textiles, clothing and footwear	0723
+072325	Textile techniques	0723
+072326	Textile trades	0723
+072327	Upholstery	0723
+072328	Weaving (industrial)	0723
+072329	Wool science	0723
+0724	Mining and extraction	072
+072400	Coal mining	0724
+072401	Drilling	0724
+072402	Mineral technology	0724
+072403	Mining engineering	0724
+072404	Mining of minerals	0724
+072405	Mining technology	0724
+072406	Oil and gas drilling	0724
+072407	Oil and gas extraction	0724
+072408	Quarry supervision	0724
+072409	Raw material extraction	0724
+0729	Manufacturing and processing not elsewhere classified	072
+073	Architecture and construction	07
+0730	Architecture and construction not further defined	073
+0731	Architecture and town planning	073
+073100	Architectural urban design and planning	0731
+073101	Architecture	0731
+073102	Building design	0731
+073103	Cartography/Land surveying	0731
+073104	City planning	0731
+073105	Community development	0731
+073106	Community planning	0731
+073107	Landscape architecture	0731
+073108	Rural development	0731
+073109	Structural architecture	0731
+073110	Surveying	0731
+073111	Topography	0731
+073112	Town and country planning	0731
+073113	Town and regional planning	0731
+073114	Town planning	0731
+073115	Urban planning	0731
+073116	Urban studies	0731
+0732	Building and civil engineering	073
+073200	Bricklaying	0732
+073201	Brickwork and masonry	0732
+073202	Bridge construction	0732
+073203	Building construction	0732
+073204	Building engineering	0732
+073205	Building maintenance	0732
+073206	Building renovation	0732
+073207	Building technology	0732
+073208	Carpentry and joinery (building)	0732
+073209	Cement working	0732
+073210	Civil engineering	0732
+073211	Construction equipment	0732
+073212	Construction plant operation	0732
+073213	Construction technology	0732
+073214	Constructional engineering	0732
+073215	Constructional metalwork (building)	0732
+073216	Demolition	0732
+073217	Dock and harbour engineering	0732
+073218	Drawing, technical	0732
+073219	Excavation engineering	0732
+073220	Floor and wall tiling	0732
+073221	Floor covering	0732
+073222	Glazing	0732
+073223	House building	0732
+073224	Industrial abseiling (commercial)	0732
+073225	Insulation	0732
+073226	Irrigation and drainage (construction)	0732
+073227	Joinery and carpentry (building)	0732
+073228	Masonry and tile setting	0732
+073229	Painting and wall covering	0732
+073230	Pipe fitting	0732
+073231	Plastering (building)	0732
+073232	Plumbing	0732
+073233	Quantity surveying	0732
+073234	Road building	0732
+073235	Roof fixing	0732
+073236	Sanitation (building)	0732
+073237	Scaffolding work	0732
+073238	Stonemasonry	0732
+073239	Structural engineering	0732
+073240	Technical drawing	0732
+073241	Water supply and sewerage engineering	0732
+073242	Water technology and engineering	0732
+073243	Ventilation (building)	0732
+078	Inter-disciplinary programmes and qualifications involving engineering, manufacturing and construction	07
+0788	Inter-disciplinary programmes and qualifications involving engineering, manufacturing and construction	078
+079	Engineering, manufacturing and construction not elsewhere classified	07
+0799	Engineering, manufacturing and construction not elsewhere classified	079
+08	Agriculture, forestry, fisheries and veterinary	0
+080	Agriculture, forestry, fisheries and veterinary not further defined	08
+0800	Agriculture, forestry, fisheries and veterinary not further defined	080
+081	Agriculture	08
+0810	Agriculture not further defined	081
+0811	Crop and livestock production	081
+081100	Agricultural business/agribusiness operations	0811
+081101	Agricultural economics	0811
+081102	Agricultural sciences	0811
+081103	Agriculture	0811
+081104	Agronomy and crop science	0811
+081105	Animal breeding	0811
+081106	Animal husbandry	0811
+081107	Animal training	0811
+081108	Basic skills in agriculture	0811
+081109	Crop growing	0811
+081110	Dog breeding	0811
+081111	Farm and ranch management	0811
+081112	Farm maintenance	0811
+081113	Farming	0811
+081114	Fruit growing	0811
+081115	Fruit production	0811
+081116	Goose keeping	0811
+081117	Grain growing	0811
+081118	Horse breeding	0811
+081119	Horse husbandry	0811
+081120	Irrigation techniques	0811
+081121	Olive growing	0811
+081122	Orchards construction	0811
+081123	Pig farming	0811
+081124	Poultry husbandry	0811
+081125	Race horse care	0811
+081126	Rye and wheat growing	0811
+081127	Sheep farming	0811
+081128	Soil and water technician programmes	0811
+081129	Soil fertility	0811
+081130	Soil science	0811
+081131	Sugar cane growing	0811
+081132	Vegetable plantation	0811
+081133	Wine growing	0811
+081134	Vineyard construction	0811
+081135	Viticulture	0811
+0812	Horticulture	081
+081200	Floriculture	0812
+081201	Gardening	0812
+081202	Green keeping	0812
+081203	Greenhouse operations	0812
+081204	Horticultural techniques	0812
+081205	Horticulture	0812
+081206	Landscape gardening	0812
+081207	Nursery management (horticulture)	0812
+081208	Ornamental plants production	0812
+081209	Sports grounds maintenance	0812
+081210	Turf cultivation and management	0812
+0819	Agriculture not elsewhere classified	081
+082	Forestry	08
+0821	Forestry	082
+082100	Charcoal burning	0821
+082101	Forest keeping	0821
+082102	Forest product techniques	0821
+082103	Forest ranging	0821
+082104	Forestry	0821
+082105	Hunting and trapping	0821
+082106	Logging	0821
+082107	Tree felling	0821
+083	Fisheries	08
+0831	Fisheries	083
+083100	Aquaculture	0831
+083101	Deep sea fishing	0831
+083102	Fish breeding	0831
+083103	Fish farms	0831
+083104	Fish husbandry	0831
+083105	Fishery	0831
+083106	Fishery science and technology	0831
+083107	Mariculture	0831
+083108	Pearl cultivating	0831
+083109	Sea food breeding	0831
+083110	Shellfish breeding	0831
+084	Veterinary	08
+0841	Veterinary	084
+084100	Animal health care	0841
+084101	Animal reproduction (science)	0841
+084102	Artificial insemination (of animals)	0841
+084103	Veterinary assisting	0841
+084104	Veterinary medicine	0841
+084105	Veterinary nursing	0841
+084106	Veterinary science	0841
+088	Inter-disciplinary programmes and qualifications involving agriculture, forestry, fisheries and veterinary	08
+0888	Inter-disciplinary programmes and qualifications involving agriculture, forestry, fisheries and veterinary	088
+089	Agriculture, forestry, fisheries and veterinary not elsewhere classified	08
+0899	Agriculture, forestry, fisheries and veterinary not elsewhere classified	089
+09	Health and welfare	0
+090	Health and welfare not further defined	09
+0900	Health and welfare not further defined	090
+091	Health	09
+0910	Health not further defined	091
+0911	Dental studies	091
+091100	Clinical dentistry	0911
+091101	Dental assisting	0911
+091102	Dental hygiene	0911
+091103	Dental laboratory technology	0911
+091104	Dental nursing	0911
+091105	Dental science	0911
+091106	Dental surgery	0911
+091107	Dental technology	0911
+091108	Dentistry	0911
+091109	Odontology	0911
+091110	Oral surgery	0911
+091111	Orthodontics	0911
+0912	Medicine	091
+091200	Anaesthetics	0912
+091201	Anatomy	0912
+091202	Audiology/hearing sciences	0912
+091203	Bacteriology	0912
+091204	Cardiology	0912
+091205	Cytology	0912
+091206	Dermatology	0912
+091207	Epidemiology	0912
+091208	Forensic medicine	0912
+091209	Forensic pathology	0912
+091210	General medicine	0912
+091211	Gerontology	0912
+091212	Gynaecology	0912
+091213	Haematology	0912
+091214	Histology	0912
+091215	Immunology	0912
+091216	Internal medicine	0912
+091217	Medical science	0912
+091218	Medical training	0912
+091219	Medicine	0912
+091220	Naturopathic medicine	0912
+091221	Neurology	0912
+091222	Obstetrics and gynaecology	0912
+091223	Oncology	0912
+091224	Ophthalmic	0912
+091225	Ophthalmology	0912
+091226	Paediatrics	0912
+091227	Pathology	0912
+091228	Physiology	0912
+091229	Plastic surgery	0912
+091230	Preventive and social medicine	0912
+091231	Psychiatry	0912
+091232	Stomatology	0912
+091233	Surgery	0912
+091234	Training of doctors	0912
+091235	Training of physicians	0912
+0913	Nursing and midwifery	091
+091300	Assistant nursing	0913
+091301	Basic nursing	0913
+091302	Community nursing	0913
+091303	General nursing	0913
+091304	Gerontological services	0913
+091305	Health care of old people	0913
+091306	Health care of the disabled	0913
+091307	Health care programmes	0913
+091308	Hygiene, medical	0913
+091309	Infant hygiene (nursing)	0913
+091310	Midwifery	0913
+091311	Mother craft nursing	0913
+091312	Nursing	0913
+091313	Nursing aide/Orderly	0913
+091314	Psychiatric nursing	0913
+091315	Specialised nursing	0913
+0914	Medical diagnostic and treatment technology	091
+091400	Ambulance service	0914
+091401	Ambulance technology	0914
+091402	Auditory prosthetics	0914
+091403	Emergency para-medical technologies	0914
+091404	Forensic medicine technology	0914
+091405	Hearing aid technology	0914
+091406	Medical laboratory technology	0914
+091407	Medical technology	0914
+091408	Nuclear medicine technologies	0914
+091409	Optical lens making	0914
+091410	Optical prosthetics	0914
+091411	Optical technology	0914
+091412	Orthopaedic prosthetics	0914
+091413	Prosthetic technology	0914
+091414	Radiography	0914
+091415	Radiology technology	0914
+091416	Radiotherapy	0914
+091417	X-ray technology (medical)	0914
+0915	Therapy and rehabilitation	091
+091500	Chiropractice	0915
+091501	Dietician programmes	0915
+091502	Massage (medical)	0915
+091503	Mental health services	0915
+091504	Nutrition and dietetics	0915
+091505	Occupational therapy	0915
+091506	Optometry	0915
+091507	Osteopathy	0915
+091508	Physiotherapy	0915
+091509	Reflexology	0915
+091510	Rehabilitation	0915
+091511	Speech pathology and therapy	0915
+091512	Vocational rehabilitation	0915
+0916	Pharmacy	091
+091600	Dispensing pharmacy	0916
+091601	Pharmacy	0916
+0917	Traditional and complementary medicine and therapy	091
+091700	Acupuncture and oriental medicine	0917
+091701	Aromatherapy	0917
+091702	Ayurvedic medicine	0917
+091703	Herbalism	0917
+091704	Herbology	0917
+091705	Holistic medicine	0917
+091706	Homeopathic medicine	0917
+091707	Traditional medicine, for example Chinese	0917
+0919	Health not elsewhere classified	091
+092	Welfare	09
+0920	Welfare not further defined	092
+0921	Care of the elderly and of disabled adults	092
+092100	Care (non-medical) of the elderly	0921
+092101	Non-medical care of disabled adults	0921
+092102	Personal care of adults	0921
+0922	Child care and youth services	092
+092200	Child care (non-medical)	0922
+092201	Child recreation programmes	0922
+092202	Day care	0922
+092203	Non-medical care of disabled children	0922
+092204	Youth recreation programmes	0922
+092205	Youth services	0922
+092206	Youth worker programmes	0922
+0923	Social work and counselling	092
+092300	Alcohol and drug abuse counselling	0923
+092301	Alcohol, tobacco, drugs (knowledge about)	0923
+092302	Career advising	0923
+092303	Counselling	0923
+092304	Crisis support	0923
+092305	Family and marriage counselling	0923
+092306	Maltreatment (knowledge about)	0923
+092307	Mobbing (knowledge about)	0923
+092308	Parole officer training	0923
+092309	Probation officer training	0923
+092310	Social care	0923
+092311	Social policy	0923
+092312	Social practice	0923
+092313	Social theory (applied)	0923
+092314	Social work (welfare)	0923
+092315	Vocational counselling	0923
+092316	Vocational guidance	0923
+0929	Welfare not elsewhere classified	092
+098	Inter-disciplinary programmes and qualifications involving health and welfare	09
+0988	Inter-disciplinary programmes and qualifications involving health and welfare	098
+099	Health and welfare not elsewhere classified	09
+0999	Health and welfare not elsewhere classified	099
+10	Services	0
+100	Services not further defined	10
+1000	Services not further defined	100
+101	Personal services	10
+1010	Personal services not further defined	101
+1011	Domestic services	101
+101100	Caretaking, housekeeping, home service	1011
+101101	Chimney sweeping	1011
+101102	Cleaning	1011
+101103	Cooking (home)	1011
+101104	Custodian/caretaker	1011
+101105	Domestic science	1011
+101106	Dry-cleaning	1011
+101107	Funeral services and mortuary science	1011
+101108	Home economics	1011
+101109	Laundry	1011
+101110	Needlework (home)	1011
+101111	Sewing (home)	1011
+101112	Window cleaning	1011
+1012	Hair and beauty services	101
+101200	Barbering	1012
+101201	Beauty therapy	1012
+101202	Cosmetic services	1012
+101203	Cosmetology	1012
+101204	Fitness and weight control	1012
+101205	Fitness services	1012
+101206	Hairdressing	1012
+101207	Make-up	1012
+101208	Manicure	1012
+101209	Massage (beauty)	1012
+101210	Pedicure	1012
+101211	Salon services (beauty therapy)	1012
+101212	Wig making	1012
+1013	Hotel, restaurants and catering	101
+101300	Bar service	1013
+101301	Bartender/mixologist	1013
+101302	Catering	1013
+101303	Cooking (restaurant and hotel-type)	1013
+101304	Croupier training	1013
+101305	Culinary arts	1013
+101306	Fast food preparation	1013
+101307	Food and hospitality services	1013
+101308	Food serving	1013
+101309	Hospitality services	1013
+101310	Hotel and restaurant studies	1013
+101311	Hotel receptionist training	1013
+101312	Hotel services	1013
+101313	Waiting and bar service	1013
+1014	Sports	101
+101400	Bookmaking (horses etc)	1014
+101401	Diving (sport)	1014
+101402	Football playing	1014
+101403	Gymnastics	1014
+101404	Jockeying	1014
+101405	Physical training (sports)	1014
+101406	Sport leadership	1014
+101407	Sport trainer studies	1014
+101408	Sports	1014
+101409	Sports coaching	1014
+101410	Sports instructor training	1014
+101411	Umpires and other sports officials	1014
+1015	Travel, tourism and leisure	101
+101500	Abseiling (leisure)	1015
+101501	Adventure based activities	1015
+101502	Ground crew training (airports)	1015
+101503	Guiding, tour leading	1015
+101504	Leisure and tourism	1015
+101505	Recreation and leisure	1015
+101506	Recreation management	1015
+101507	Tourism	1015
+101508	Tourist trades	1015
+101509	Travel agency services	1015
+101510	Travel and tourism	1015
+101511	Travel services	1015
+1019	Personal services not elsewhere classified	101
+102	Hygiene and occupational health services	10
+1020	Hygiene and occupational health services not further defined	102
+1021	Community sanitation	102
+102100	Garbage disposal	1021
+102101	Hygiene, community	1021
+102102	Hygienic standards	1021
+102103	Refuse collection	1021
+102104	Refuse/sewage disposal	1021
+102105	Sanitation, community	1021
+102106	Street cleaning	1021
+102107	Water supply (service)	1021
+102108	Waste management	1021
+1022	Occupational health and safety	102
+102200	Ergonomics (occupational health and safety)	1022
+102201	Health and safety in the work place	1022
+102202	Industrial welfare	1022
+102203	Job safety	1022
+102204	Labour protection	1022
+102205	Labour security	1022
+102206	Labour welfare (safety)	1022
+102207	Occupational health and industrial hygiene	1022
+102208	Occupational health and safety	1022
+102209	Stress management	1022
+102210	Work environment	1022
+1029	Hygiene and occupational health services not elsewhere classified	102
+103	Security services	10
+1030	Security services not further defined	103
+1031	Military and defence	103
+103100	Army training	1031
+103101	Defence studies	1031
+103102	Military science	1031
+103103	National security	1031
+103104	Navy training	1031
+103105	War theory	1031
+1032	Protection of persons and property	103
+103200	Civil security	1032
+103201	Customs programmes	1032
+103202	Diving (professional)	1032
+103203	Fire-protection (fire-fighting)	1032
+103204	Fire technology	1032
+103205	Law enforcement	1032
+103206	Life guarding	1032
+103207	Police work	1032
+103208	Policing studies	1032
+103209	Prison work	1032
+103210	Public security	1032
+103211	Security and loss prevention services	1032
+103212	Security guarding	1032
+1039	Security services not elsewhere classified	103
+104	Transport services	10
+1041	Transport services	104
+104100	Air crew (flying and navigation)	1041
+104101	Air traffic control	1041
+104102	Air traffic safety	1041
+104103	Aircraft operation	1041
+104104	Aviation	1041
+104105	Bus and coach driving	1041
+104106	Cabin crew training	1041
+104107	Communications (air, railway, road etc.)	1041
+104108	Crane and truck driving	1041
+104109	Driving training	1041
+104110	Flying and navigation	1041
+104111	Fork-lift truck driving	1041
+104112	Mail operations	1041
+104113	Nautical science	1041
+104114	Navigation technologies	1041
+104115	Postal services	1041
+104116	Railway operations	1041
+104117	Road motor vehicle operations	1041
+104118	Seamanship	1041
+104119	Seamen's programmes/qualifications	1041
+104120	Ship operation	1041
+104121	Shipping	1041
+104122	Stewardess/steward training (air)	1041
+104123	Transport studies	1041
+104124	Truck driving	1041
+108	Inter-disciplinary programmes and qualifications involving services	10
+1088	Inter-disciplinary programmes and qualifications involving services	108
+109	Services not elsewhere classified	10
+1099	Services not elsewhere classified	109
+99	Field unknown	0
+999	Field unknown	99
+9999	Field unknow	999

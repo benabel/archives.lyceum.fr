@@ -1,0 +1,9 @@
+---
+title: Exercices
+subtitle: "Chapitre 3: Boucles et fonctions"
+exo: true
+type: exo
+tabnav: true
+---
+
+Aucun exercice pour l'instant.

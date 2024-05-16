@@ -1,0 +1,9 @@
+---
+title: Exercices
+subtitle: "Chapitre 1: Parcours séquentiel d’un tableau"
+exo: true
+type: exo
+tabnav: true
+---
+
+Aucun exercice pour l'instant.

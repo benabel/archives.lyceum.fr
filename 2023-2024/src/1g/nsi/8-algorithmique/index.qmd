@@ -1,0 +1,6 @@
+---
+title: "Partie 8: Algorithmique"
+listing:
+  contents: /*/index.qmd
+order: 8
+---

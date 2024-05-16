@@ -1,0 +1,330 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/2gt/snt/0-programmation-python/1-programme-et-variables/index.html",
+      "/2gt/snt/0-programmation-python/2-conditions/index.html",
+      "/2gt/snt/0-programmation-python/3-boucles-et-fonctions/index.html",
+      "/2gt/snt/1-les-donnees-structurees/index.html",
+      "/2gt/snt/2-internet/index.html",
+      "/2gt/snt/3-le-web/index.html",
+      "/2gt/snt/4-localisation-cartographie-et-mobilite/index.html",
+      "/2gt/snt/5-la-photographie-numerique/index.html",
+      "/2gt/snt/6-les-reseaux-sociaux/index.html",
+      "/2gt/snt/7-informatique-embarquee/index.html",
+      "/1g/nsi/1-histoire-de-linformatique/1-quelques-dates-marquantes-de-lhistoire-de-linformatique/index.html",
+      "/1g/nsi/1-histoire-de-linformatique/2-technologie-et-theorie/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/1-representation-des-entiers-naturels/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/2-representation-des-entiers-relatifs/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/3-representation-des-nombres-a-virgule/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/4-representation-des-textes/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/5-les-booleens/index.html",
+      "/1g/nsi/3-representation-des-donnees-types-construits/1-introduction-aux-tableaux/index.html",
+      "/1g/nsi/3-representation-des-donnees-types-construits/2-usages-avances-des-tableaux/index.html",
+      "/1g/nsi/3-representation-des-donnees-types-construits/3-dictionnaires/index.html",
+      "/1g/nsi/4-traitement-de-donnees-en-tables/1-tables-de-donnees/index.html",
+      "/1g/nsi/4-traitement-de-donnees-en-tables/2-utilisation-de-la-librairie-pandas/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/1-generalites-sur-le-web/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/2-ecriture-dune-page-html/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/3-mise-en-forme-avec-css/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/4-gestion-des-evenements-en-javascript/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/5-formulaire-dune-page-web/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/6-interaction-client-serveur/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/1-architecture-dun-ordinateur/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/2-jeu-dinstructions-du-processeur/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/3-systemes-dexploitation/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/4-reseaux/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/5-robotique/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/6-circuits-combinatoires/index.html",
+      "/1g/nsi/7-langages-et-programmation/1-les-ingredients-dun-algorithme/index.html",
+      "/1g/nsi/7-langages-et-programmation/2-types/index.html",
+      "/1g/nsi/7-langages-et-programmation/3-entrees-et-sorties/index.html",
+      "/1g/nsi/7-langages-et-programmation/4-conditions/index.html",
+      "/1g/nsi/7-langages-et-programmation/5-boucles/index.html",
+      "/1g/nsi/7-langages-et-programmation/6-fonctions/index.html",
+      "/1g/nsi/7-langages-et-programmation/7-comparaisons-de-langages/index.html",
+      "/1g/nsi/7-langages-et-programmation/8-mise-au-point-dun-programme/index.html",
+      "/1g/nsi/8-algorithmique/1-parcours-sequentiel-dun-tableau/index.html",
+      "/1g/nsi/8-algorithmique/2-algorithmes-de-recherche/index.html",
+      "/1g/nsi/8-algorithmique/3-algorithmes-de-tri/index.html",
+      "/1g/nsi/8-algorithmique/4-algorithmes-gloutons/index.html",
+      "/1g/nsi/8-algorithmique/5-algorithme-des-k-plus-proches-voisins/index.html",
+      "/tg/nsi/1-structures-de-donnees/0-revisions/index.html",
+      "/tg/nsi/1-structures-de-donnees/1-interface-et-implementation/index.html",
+      "/tg/nsi/1-structures-de-donnees/2-programmation-objet/index.html",
+      "/tg/nsi/1-structures-de-donnees/3-structures-lineaires-piles-files/index.html",
+      "/tg/nsi/1-structures-de-donnees/4-arbres/index.html",
+      "/tg/nsi/1-structures-de-donnees/5-graphes/index.html",
+      "/tg/nsi/2-bases-de-donnees/1-les-bases-de-donnees-relationnelles/index.html",
+      "/tg/nsi/2-bases-de-donnees/2-schema-relationnel/index.html",
+      "/tg/nsi/2-bases-de-donnees/3-langage-sql/index.html",
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/1-systeme-sur-puce/index.html",
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/2-gestion-des-processus-par-un-systeme-dexploitation/index.html",
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/3-protocoles-de-routage/index.html",
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/4-securisation-des-communications/index.html",
+      "/tg/nsi/4-langages-et-programmation/1-modules-et-documentation/index.html",
+      "/tg/nsi/4-langages-et-programmation/2-mise-au-point-des-programmes/index.html",
+      "/tg/nsi/4-langages-et-programmation/3-fonctions-recursives/index.html",
+      "/tg/nsi/4-langages-et-programmation/4-paradigmes-de-programmation/index.html",
+      "/tg/nsi/4-langages-et-programmation/5-notion-de-programme/index.html",
+      "/tg/nsi/5-algorithmique/0-rappels/index.html",
+      "/tg/nsi/5-algorithmique/1-algorithmes-sur-les-arbres-binaires/index.html",
+      "/tg/nsi/5-algorithmique/2-diviser-pour-regner/index.html",
+      "/tg/nsi/5-algorithmique/3-algorithmes-sur-les-graphes/index.html",
+      "/tg/nsi/5-algorithmique/4-programmation-dynamique/index.html",
+      "/tg/nsi/5-algorithmique/5-recherche-textuelle/index.html",
+      "/tg/sci/0-introduction/exo/index.html",
+      "/tg/sci/0-introduction/quiz/index.html",
+      "/tg/sci/1-science-climat-et-societe/1-latmosphere-terrestre-et-la-vie/index.html",
+      "/tg/sci/1-science-climat-et-societe/2-la-complexite-du-systeme-climatique/index.html",
+      "/tg/sci/1-science-climat-et-societe/3-le-climat-du-futur/index.html",
+      "/tg/sci/1-science-climat-et-societe/4-energie-choix-de-developpement-et-futur-climatique/index.html",
+      "/tg/sci/2-le-futur-des-energies/5-deux-siecles-denergie-electrique/index.html",
+      "/tg/sci/2-le-futur-des-energies/6-les-atouts-de-lelectricite/index.html",
+      "/tg/sci/2-le-futur-des-energies/7-optimisation-du-transport-de-lelectricite/index.html",
+      "/tg/sci/2-le-futur-des-energies/8-choix-energetiques-et-impacts-sur-les-societes/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/10-levolution-comme-grille-de-lecture-du-monde/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/11-levolution-humaine/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/12-les-modeles-demographiques/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/13-lintelligence-artificielle/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/9-la-biodiversite-et-son-evolution/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/index.html",
+    "items": [
+      "/1g/nsi/1-histoire-de-linformatique/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/index.html",
+      "/1g/nsi/3-representation-des-donnees-types-construits/index.html",
+      "/1g/nsi/4-traitement-de-donnees-en-tables/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/index.html",
+      "/1g/nsi/7-langages-et-programmation/index.html",
+      "/1g/nsi/8-algorithmique/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/index.html",
+    "items": [
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/1-architecture-dun-ordinateur/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/2-jeu-dinstructions-du-processeur/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/3-systemes-dexploitation/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/4-reseaux/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/5-robotique/index.html",
+      "/1g/nsi/6-architectures-materielles-et-systemes-dexploitation/6-circuits-combinatoires/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/3-representation-des-donnees-types-construits/index.html",
+    "items": [
+      "/1g/nsi/3-representation-des-donnees-types-construits/1-introduction-aux-tableaux/index.html",
+      "/1g/nsi/3-representation-des-donnees-types-construits/2-usages-avances-des-tableaux/index.html",
+      "/1g/nsi/3-representation-des-donnees-types-construits/3-dictionnaires/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/index.html",
+    "items": [
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/1-generalites-sur-le-web/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/2-ecriture-dune-page-html/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/3-mise-en-forme-avec-css/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/4-gestion-des-evenements-en-javascript/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/5-formulaire-dune-page-web/index.html",
+      "/1g/nsi/5-interactions-entre-lhomme-et-la-machine-sur-le-web/6-interaction-client-serveur/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/nsi/index.html",
+    "items": [
+      "/tg/nsi/1-structures-de-donnees/index.html",
+      "/tg/nsi/2-bases-de-donnees/index.html",
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/index.html",
+      "/tg/nsi/4-langages-et-programmation/index.html",
+      "/tg/nsi/5-algorithmique/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/nsi/2-bases-de-donnees/index.html",
+    "items": [
+      "/tg/nsi/2-bases-de-donnees/1-les-bases-de-donnees-relationnelles/index.html",
+      "/tg/nsi/2-bases-de-donnees/2-schema-relationnel/index.html",
+      "/tg/nsi/2-bases-de-donnees/3-langage-sql/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/sci/1-science-climat-et-societe/index.html",
+    "items": [
+      "/tg/sci/1-science-climat-et-societe/1-latmosphere-terrestre-et-la-vie/index.html",
+      "/tg/sci/1-science-climat-et-societe/2-la-complexite-du-systeme-climatique/index.html",
+      "/tg/sci/1-science-climat-et-societe/3-le-climat-du-futur/index.html",
+      "/tg/sci/1-science-climat-et-societe/4-energie-choix-de-developpement-et-futur-climatique/index.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/2023-09-28-domaines-education/index.html",
+      "/blog/2023-02-03-ep2023/index.html",
+      "/blog/2022-11-22-densite-flottants/index.html",
+      "/blog/2022-05-01-sentrainer-aux-epreuves-pratiques-de-nsi/index.html",
+      "/blog/2021-04-02-comment-passer-une-liste-vide-par-defaut-a-une-fonction-en-python/index.html",
+      "/blog/2020-01-31-trace-de-vecteurs-cinematiques-en-python/index.html"
+    ]
+  },
+  {
+    "listing": "/2gt/index.html",
+    "items": [
+      "/2gt/snt/index.html"
+    ]
+  },
+  {
+    "listing": "/2gt/snt/index.html",
+    "items": [
+      "/2gt/snt/0-programmation-python/index.html",
+      "/2gt/snt/1-les-donnees-structurees/index.html",
+      "/2gt/snt/2-internet/index.html",
+      "/2gt/snt/3-le-web/index.html",
+      "/2gt/snt/4-localisation-cartographie-et-mobilite/index.html",
+      "/2gt/snt/5-la-photographie-numerique/index.html",
+      "/2gt/snt/6-les-reseaux-sociaux/index.html",
+      "/2gt/snt/7-informatique-embarquee/index.html"
+    ]
+  },
+  {
+    "listing": "/2gt/snt/0-programmation-python/index.html",
+    "items": [
+      "/2gt/snt/0-programmation-python/1-programme-et-variables/index.html",
+      "/2gt/snt/0-programmation-python/2-conditions/index.html",
+      "/2gt/snt/0-programmation-python/3-boucles-et-fonctions/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/sci/2-le-futur-des-energies/index.html",
+    "items": [
+      "/tg/sci/2-le-futur-des-energies/5-deux-siecles-denergie-electrique/index.html",
+      "/tg/sci/2-le-futur-des-energies/6-les-atouts-de-lelectricite/index.html",
+      "/tg/sci/2-le-futur-des-energies/7-optimisation-du-transport-de-lelectricite/index.html",
+      "/tg/sci/2-le-futur-des-energies/8-choix-energetiques-et-impacts-sur-les-societes/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/sci/3-une-histoire-du-vivant/index.html",
+    "items": [
+      "/tg/sci/3-une-histoire-du-vivant/9-la-biodiversite-et-son-evolution/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/10-levolution-comme-grille-de-lecture-du-monde/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/11-levolution-humaine/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/12-les-modeles-demographiques/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/13-lintelligence-artificielle/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/sci/index.html",
+    "items": [
+      "/tg/sci/0-introduction/index.html",
+      "/tg/sci/1-science-climat-et-societe/index.html",
+      "/tg/sci/2-le-futur-des-energies/index.html",
+      "/tg/sci/3-une-histoire-du-vivant/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/index.html",
+    "items": [
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/1-systeme-sur-puce/index.html",
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/2-gestion-des-processus-par-un-systeme-dexploitation/index.html",
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/3-protocoles-de-routage/index.html",
+      "/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/4-securisation-des-communications/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/nsi/1-structures-de-donnees/index.html",
+    "items": [
+      "/tg/nsi/1-structures-de-donnees/0-revisions/index.html",
+      "/tg/nsi/1-structures-de-donnees/1-interface-et-implementation/index.html",
+      "/tg/nsi/1-structures-de-donnees/2-programmation-objet/index.html",
+      "/tg/nsi/1-structures-de-donnees/3-structures-lineaires-piles-files/index.html",
+      "/tg/nsi/1-structures-de-donnees/4-arbres/index.html",
+      "/tg/nsi/1-structures-de-donnees/5-graphes/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/nsi/4-langages-et-programmation/index.html",
+    "items": [
+      "/tg/nsi/4-langages-et-programmation/1-modules-et-documentation/index.html",
+      "/tg/nsi/4-langages-et-programmation/2-mise-au-point-des-programmes/index.html",
+      "/tg/nsi/4-langages-et-programmation/3-fonctions-recursives/index.html",
+      "/tg/nsi/4-langages-et-programmation/4-paradigmes-de-programmation/index.html",
+      "/tg/nsi/4-langages-et-programmation/5-notion-de-programme/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/nsi/5-algorithmique/index.html",
+    "items": [
+      "/tg/nsi/5-algorithmique/0-rappels/index.html",
+      "/tg/nsi/5-algorithmique/1-algorithmes-sur-les-arbres-binaires/index.html",
+      "/tg/nsi/5-algorithmique/2-diviser-pour-regner/index.html",
+      "/tg/nsi/5-algorithmique/3-algorithmes-sur-les-graphes/index.html",
+      "/tg/nsi/5-algorithmique/4-programmation-dynamique/index.html",
+      "/tg/nsi/5-algorithmique/5-recherche-textuelle/index.html"
+    ]
+  },
+  {
+    "listing": "/tg/index.html",
+    "items": [
+      "/tg/sci/index.html",
+      "/tg/nsi/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/index.html",
+    "items": [
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/1-representation-des-entiers-naturels/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/2-representation-des-entiers-relatifs/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/3-representation-des-nombres-a-virgule/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/4-representation-des-textes/index.html",
+      "/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/5-les-booleens/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/7-langages-et-programmation/index.html",
+    "items": [
+      "/1g/nsi/7-langages-et-programmation/1-les-ingredients-dun-algorithme/index.html",
+      "/1g/nsi/7-langages-et-programmation/2-types/index.html",
+      "/1g/nsi/7-langages-et-programmation/3-entrees-et-sorties/index.html",
+      "/1g/nsi/7-langages-et-programmation/4-conditions/index.html",
+      "/1g/nsi/7-langages-et-programmation/5-boucles/index.html",
+      "/1g/nsi/7-langages-et-programmation/6-fonctions/index.html",
+      "/1g/nsi/7-langages-et-programmation/7-comparaisons-de-langages/index.html",
+      "/1g/nsi/7-langages-et-programmation/8-mise-au-point-dun-programme/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/8-algorithmique/index.html",
+    "items": [
+      "/1g/nsi/8-algorithmique/1-parcours-sequentiel-dun-tableau/index.html",
+      "/1g/nsi/8-algorithmique/2-algorithmes-de-recherche/index.html",
+      "/1g/nsi/8-algorithmique/3-algorithmes-de-tri/index.html",
+      "/1g/nsi/8-algorithmique/4-algorithmes-gloutons/index.html",
+      "/1g/nsi/8-algorithmique/5-algorithme-des-k-plus-proches-voisins/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/4-traitement-de-donnees-en-tables/index.html",
+    "items": [
+      "/1g/nsi/4-traitement-de-donnees-en-tables/1-tables-de-donnees/index.html",
+      "/1g/nsi/4-traitement-de-donnees-en-tables/2-utilisation-de-la-librairie-pandas/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/nsi/1-histoire-de-linformatique/index.html",
+    "items": [
+      "/1g/nsi/1-histoire-de-linformatique/1-quelques-dates-marquantes-de-lhistoire-de-linformatique/index.html",
+      "/1g/nsi/1-histoire-de-linformatique/2-technologie-et-theorie/index.html"
+    ]
+  },
+  {
+    "listing": "/1g/index.html",
+    "items": [
+      "/1g/nsi/index.html"
+    ]
+  }
+]

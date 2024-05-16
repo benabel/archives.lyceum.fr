@@ -1,0 +1,171 @@
+---
+title: "Chapitre 1: Tables de données"
+tags:
+  - python
+  - tableau de données
+  - csv
+order: 1
+cours: true
+tabnav: true
+categories:
+  - 1NSI
+---
+
+::: programme
++----------------------+------------------------------------+-----------------------------------+
+| Contenus             | Capacités attendues                | Commentaires                      |
++======================+====================================+===================================+
+| Indexation de tables | Importer une table depuis un       | Est utilisé un tableau doublement |
+|                      | fichier texte tabulé ou un fichier | indexé ou un tableau de p-uplets  |
+|                      | CSV.                               | qui partagent les mêmes           |
+|                      |                                    | descripteurs.                     |
++----------------------+------------------------------------+-----------------------------------+
+| Recherche dans une   | Rechercher les lignes d’une        | La recherche de doublons, les     |
+| table                | table vérifiant des critères       | tests de cohérence d’une table    |
+|                      | exprimés en logique                | sont présentés.                   |
+|                      | propositionnelle.                  |                                   |
++----------------------+------------------------------------+-----------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+Avec l'augmentation des capacités de stockage, on sauvegarde de plus en plus de données en vue de
+les traiter ultérieurement afin de leur donner une valeur ajoutée. On appelle ainsi les données:
+"Le nouvel or noir". Dans ce chapitre, nous allons apprendre à lire des données à partir de
+fichiers [`csv`](/2gt/snt/4-les-donnees-structurees) afin d'y accéder
+sous forme de [type construits](/1g/nsi/3-representation-des-donnees-types-construits) imbriqués:
+nous utiliserons des listes de dictionnaires.
+
+<wc-wikimage title="CSV_Logo_dt_RGB.jpg" caption="Le format csv est un langage répandu dans le monde des données car il est à la fois exploitable aisément par les langages de programmation mais également par les logiciels de tableur."></wc-wikimage>
+
+:::
+
+## Le format `csv`
+
+Vous avez l'habitude d'utiliser un tableur pour traiter des tables de données.
+
+Cependant, le problème de compatibilité des fichiers entre les divers logiciels de tableur fait que
+l'informaticien préfère souvent des formats textuels simples comme le `csv` ou encore le `xml` ou le `json`(voir le cours de
+[snt](/2gt/snt/1-les-donnees-structurees/1-les-donnees-structurees).
+
+csv
+
+: Le format `csv` pour _comma separated values_ est un format de fichier textuel dans lequel les
+colonnes données sont _séparées par des virgules_.
+
+Les descripteurs de colonnes sont placés sur la première ligne et les autres lignes correspondent
+aux entrées du tableau.
+
+Tous les logiciels de tableur et langages de programmation peuvent facilement lire ou écrire ces
+fichiers.
+
+::: example
+
+Voici l'exemple d'un fichier de notes généré par le logiciel Pronote.
+
+```
+Mentions,1/2j abs,Rang,Moyenne Générale,MATHEMATIQUES,PHYSIQUE-CHIMIE,NSI
+Félicitations,3,1,17.4,15.3,15.5,18,18.5
+Encouragements,5,13,10.1,8,10,15,12.4
+```
+
+::::
+
+::: plus
+
+On utilise parfois la tabulation (ou le point-virgule) comme séparateur pour une lecture plus aisée
+par l'homme, et ne pas être gêné par le fait que nous autres français utilisons la virgule comme
+séparateur décimal!
+
+```
+Mentions	    1/2j abs    Rang	Moyenne Générale	MATHEMATIQUES	PHYSIQUE-CHIMIE	NSI
+Félicitations	3	        1	    17.4	15.3	    15.5	        18	            18.5
+Encouragements	5	        13	    10.1	8	        10	            15              12.4
+```
+
+:::
+
+## Lecture d'un fichier `csv` en Python
+
+Python propose un module `csv` spécialisé avec notamment une classe `DictReader` qui permet de lire
+les lignes du fichier `csv` sous la forme de dictionnaires.
+
+```{python}
+import csv
+
+# Lecture du fichier
+with open('./data/notes.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    # Itération sur les lignes
+    for ligne in reader:
+        print(ligne)
+        
+```
+
+## Affecter les données à une liste
+
+Nous allons stocker les données en mémoire sous forme d'une liste de dictionnaires pour utilisation ultérieure.
+
+```{python}
+# Création de la liste vide
+eleves = []
+
+with open('./data/notes.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for ligne in reader:
+        eleves.append(ligne)
+
+# affichage du nombre de lignes et de la première
+len(eleves), eleves[0]
+```
+
+On peut maintenant facilement travailler avec les données, par exemple, compter les félicitations.
+
+```{python}
+len([eleve for eleve in eleves if eleve['Mentions'] == 'Félicitations'])
+```
+
+## Recherche de lignes
+
+Recherchons les élèves qui ont les félicitations.
+
+```{python}
+# Lecture du fichier csv
+with open('./data/notes.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    # Itération sur les lignes du fichier
+    for ligne in reader:
+        if ligne["Mentions"] == 'Félicitations':
+            print(ligne)
+```
+
+
+
+## Recherche de doublons
+
+Vérifions qu'il n'y a pas deux lignes identiques qui se sont glissées par erreur dans le fichier csv.
+
+Pour cela nous allons utiliser une liste annexe `vus` qui rencence les lignes déjà vues lors de l'itération.
+
+```{python}
+vus = []
+for eleve in eleves:
+    # vérifie que l'entrée n'a pas déjà été vue
+    assert eleve not in vus
+    # ajout de l'élève à vus
+    vus.append(eleve)
+# Si on arrive au but de l'itération
+# c'est qu'il n'y a pas de doublons
+print("Pas de doublons")
+```
+
+<!--
+## Recherche de doublons
+
+TODO
+
+## Test de cohérence d'une table
+
+TODO
+-->
+

@@ -1,0 +1,354 @@
+---
+tags:
+  - snt
+  - web
+  - http
+  - lien hypertexte
+  - url
+title: "Partie 3: Le Web"
+order: 3
+cours: true
+tabnav: true
+categories:
+  - 2SNT
+---
+
+::: programme
+
++-----------------------------+-------------------------------------------------------------------------------+
+| Contenus | Capacités attendues |
++=============================+===============================================================================+
+| Repères historiques | Connaître les étapes du développement du _Web_. |
++-----------------------------+-------------------------------------------------------------------------------+
+| Hypertexte | Maîtriser les renvois d’un texte à différents contenus. |
++-----------------------------+-------------------------------------------------------------------------------+
+| Requête HTTP | Décomposer le contenu d’une requête HTTP et identifier les paramètres passés. |
++-----------------------------+-------------------------------------------------------------------------------+
+| URL | Décomposer l’URL d’une page. |
+| | Reconnaître les pages sécurisées. |
++-----------------------------+-------------------------------------------------------------------------------+
+| Modèle client/serveur | Inspecter le code d’une page hébergée par un serveur et distinguer ce qui est |
+| | exécuté par le client et par le serveur. |
++-----------------------------+-------------------------------------------------------------------------------+
+| Langages HTML et CSS | Distinguer ce qui relève du contenu d’une page et de son style |
+| | de présentation. |
+| | Étudier et modifier une page HTML simple. |
++-----------------------------+-------------------------------------------------------------------------------+
+| Moteurs de recherche : | Mener une analyse critique des résultats fournis par un moteur |
+| principes et usages | de recherche. |
+| | Comprendre les enjeux de la publication d’informations. |
++-----------------------------+-------------------------------------------------------------------------------+
+| Paramètres de sécurité d’un | Maîtriser les réglages les plus importants concernant la |
+| navigateur | gestion des cookies, la sécurité et la confidentialité d'un |
+| | navigateur. |
+| | Sécuriser sa navigation en ligne et analyser les pages et |
+| | fichiers. |
++-----------------------------+-------------------------------------------------------------------------------+
+| Notions juridiques | Connaître certaines notions juridiques (licence, droit d'auteur, |
+| | droit d’usage, valeur d'un bien). |
++-----------------------------+------------------------------------------------------------------+
+
+:::
+
+::: {.intro layout-ncol="2"}
+
+Le _Web_ (toile d’araignée) désigne un système donnant accès à un ensemble de données (page, image,
+son, vidéo) reliées par des liens hypertextes et accessibles sur le réseau internet.
+
+<wc-wikimage title="WWW-LetShare.svg" caption="Logo original du World Wide Web créé en 1989 et ouvert au public en 1991."></wc-wikimage>
+
+:::
+
+<!--
+
+Ne confondons pas internet et le web. Le web, l'ensemble des documents électroniques accessibles
+sur le réseau internet compte aujourd'hui près de _2 milliards de pages_ et est devenu omniprésent
+dans notre vie grâce à l'utilisation d'_applications web dynamiques_. L'ensemble des documents
+électroniques du web doivent pouvoir être consulté à partir de machines variées, ordinateurs,
+tablettes, objets connectés. C'est pour cela que des _normes_ ont été mis au point pour garantir un
+accès universel à tous.
+
+
+Le web est un lieu «magique» où une grande quantité d'informations et de services sont à votre
+portée, mais l'accès libre à une information ou à un service signifie-t-il qu'il est gratuit?
+Dans ce chapitre, nous verrons comment rechercher des informations sur le web, sécuriser sa
+navigation et respecter le droit d'auteur sur le Web. -->
+
+<!--
+Commençons par une vidéo présentant l'histoire du web.
+lienmini.fr/3389-303
+
+[![Lien vers la vidéo](../images/screenshot-delagrave-histoire-web.png)](http://lienmini.fr/3389-303)
+-->
+
+::: {.appli titre="QCU diagnostique"}
+
+On commence par tester ses connaissances en utilisant le QCU P56-57 du [manuel de
+Delagrave](https://www.editions-delagrave.fr/livre/9782206103389-sciences-numeriques-et-technologie-snt-2de-2019-manuel-eleve)
+
+Lien vers la version en ligne: <https://lienmini.fr/3389-302>
+
+:::
+
+`youtube: bD6oideRbg8`
+
+## L'hypertexte
+
+::: appli
+
+En utilisant les documents PP 58-59 du [manuel de
+Delagrave](https://www.editions-delagrave.fr/livre/9782206103389-sciences-numeriques-et-technologie-snt-2de-2019-manuel-eleve),
+répondre aux questions suivantes :
+
+1. Expliquer ce qu'est un lien hypertexte, et quand il est apparu.
+2. Quelles relations existent entre l'hypertexte, les pages Web et les navigateurs.
+3. Quelle est la différence entre une page web statique et dynamique ?
+
+:::
+
+Les documents _hypertextes_ ont été imaginés en 1965 par Ted Nelson puis mis en pratique dans le
+Web inventé en 1989 par Tim Berners-Lee.
+
+Lien hypertexte
+
+: Un lien hypertexte ou _hyperlien_ permet de passer automatiquement d'un document consulté à un
+document lié.
+
+## Le langage `html`
+
+Les documents du web sont écrits en `html`(_HypertText Markup Langage_), le navigateur web traduit
+le code `html` et l'affiche à l'utilisateur.
+
+![Code HTML et rendu d'une page par le navigateur web.](../images/cern-www-source-vs-rendu.png)
+
+::: prop
+
+Le langage `html` est un langage qui utilise des balises ouvrantes `<balise>` et fermantes
+`</balise>`.
+
+:::
+
+::: examples
+
+- Un titre de niveau 1: `<h1>Mon titre</h1>`
+- Un lien hypertexte dans un paragraphe: `<p>Le <a href="https://www.w3.org/">w3c</a> gère les normes du web.</p>`
+
+:::
+
+::: appli
+
+Faire l'[exercice 1](./exo).
+
+:::
+
+::: {.plus titre="Les normes du html"}
+
+Bien entendu, les premiers navigateurs n'étaient pas aussi évolués qu'aujourd'hui, vous pouvez
+d'ailleurs avoir une idée du rendu de cette page à l'époque de sa création à cette adresse:
+http://line-mode.cern.ch/www/hypertext/WWW/TheProject.html
+
+Le langage `html` ne cesse d'évoluer pour répondre à tous les nouveaux usages d'internet,
+utilisation d'écrans tactiles, lectures de vidéos, paiements...
+
+On peut trouver sa spécification [ici](https://html.spec.whatwg.org/)
+
+:::
+
+## Les adresses URL _(Uniforme Resource Locator)_
+
+Sur le web, chaque page web possède une adresse unique qui permet de l'identifier.
+
+URL
+
+: Une URL ou _adresse universelle_ est l'adresse d'une ressource donnée(document, image, vidéo...),
+unique sur le Web.
+
+::: examples
+
+- boîte aux lettres électronique : `mailto:gaston.lagaffe@mail.com` ;
+- numéro de téléphone: `tel:+33 1 234 567 890`.
+- page web: https://fr.wikipedia.org/wiki/Grace_Hopper#Anecdote
+
+:::
+
+![Description complète d'une URL issue du site MDN sous licence CC-BY-SA 3.0](../images/mdn-url-all.png)
+
+[Article URL sur MDN](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL){.cite-source}
+
+::: prop
+
+Une URL se décompose en plusieurs parties :
+
+- Le protocole **(Obligatoire)**: `http`, `https`, `mailto`, `tel`...
+- Le domaine précédé éventuellement du sous-domaine **(Obligatoire)**: `fr.wikipedia.org`
+- Le chemin vers la ressource sur le serveur: `/blog/index.html`
+- L'ancre sur une partie de la page: `#exo2`
+- Les paramètres d'URL: `?q=CSS&locale=ja`
+
+:::
+
+::: examples
+
+- `/2gt/snt/3-le-web/#les-adresses-url`
+- `https://developer.mozilla.org/fr/search?q=CSS&locale=ja`
+
+:::
+
+::: {.plus titre="Caractères spéciaux dans les URL"}
+
+**Attention** de nombreux caractères sont interdits dans les URL. Vous rencontrerez parfois le
+`%20`, c'est tout simplement un espace, ou encore `%C3%A9` pour `é`.
+
+Pour connaitre les codes ouvrez votre console navigateur et tapez: `encodeURI("é")`.
+:::
+
+## Le protocole `HTTP`
+
+Le protocole `HTTP` (_HyperText Transfer Protocol_) gère l'échange de données entre le client et le
+serveur sur le Web.
+
+::: prop
+
+HTTPS est la version sécurisée du protocole HTTP dans laquelle les données
+échangées entre le client et le serveur sont _cryptées_.
+
+:::
+
+- Le **client** effectue des demandes au serveur comme: - `GET`: Demande d'une page. - `POST`: Envoi de données. Pour un formulaire par exemple. - `DELETE`: Suppression d'une ressource du serveur. - ...
+
+Les informations nécessaires à la requête sont placées dans des en-têtes un peu comme si les
+messages étaient placés dans une enveloppe.
+
+::: example
+
+Voici la requête `HTTP`_(un extrait)_ envoyée pour demander la page la page
+https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol en cliquant sur le lien du moteur de
+recherche www.qwant.com.
+
+La première ligne indique le type de requête(GET, POST...), l'adresse de la ressource et la
+version du protocole.
+
+```
+GET /wiki/Hypertext_Transfer_Protocol HTTP/2
+Host: fr.wikipedia.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Referer: https://www.qwant.com/
+Cookie: WMF-Last-Access=14-Sep-2020; WMF-Last-Access-Global=14-Sep-2020; GeoIP=FR:PAC:Nice:43.71:7.26:v4;
+...
+```
+
+:::
+
+- Le **serveur** répond au client en commençant par lui envoyer un
+  [code d'état](https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP):
+
+       - `200`: succès de la requête
+       - ...
+       - `301` ou `302`: redirection vers une autre page;
+       - `404`: page non trouvée
+       - ...
+       - `500`: erreur du serveur
+       - ...
+
+::: example
+
+Et voici l'en-tête _(un extrait)_ de la réponse du serveur:
+
+```
+HTTP/2 200 OK
+date: Sun, 13 Sep 2020 09:14:27 GMT
+content-language: fr
+last-modified: Sun, 06 Sep 2020 18:23:06 GMT
+content-type: text/html; charset=UTF-8
+content-length: 33988
+...
+```
+
+La réponse renvoyée (après l'en-tête) étant la page `html` demandée dont nous parlerons juste
+après :
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<title>Hypertext Transfer Protocol — Wikipédia</title>
+...
+</html>
+```
+
+:::
+
+::: appli
+
+En analysant les en-têtes de la requête et de la réponse, expliquez quelles sont les informations:
+
+- Envoyées par le client,
+- et celles renvoyées par le serveur.
+
+:::
+
+## Comment fonctionne un moteur de recherche?
+
+<!-- lienmini.fr/1046-307 -->
+
+`youtube: iKMm6SXO0wA`
+
+::: appli
+
+Répondre aux questions de l'activité PP 64-65 du [manuel de
+Delagrave](https://www.editions-delagrave.fr/livre/9782206103389-sciences-numeriques-et-technologie-snt-2de-2019-manuel-eleve),
+puis **conclure en expliquant quels sont les principaux critères de classement des résultats sur un
+moteur de recherche**.
+
+:::
+
+1. Des robots logiciels explorent toutes les pages web: l'**exploration**.
+2. Les pages sont ensuite classées: l'**indexation**.
+3. Lorsque l'utilisateur fait une recherche l'_algorithme_ du moteur de recherche affiche une liste
+   de pages en les classant dans un ordre qui lui est propre: le **classement**.
+
+::: {.plus titre="Impact écologique"}
+
+Selon l'étude de l'ADEME, aller directement à l’adresse d’un site, soit en tapant son adresse dans
+son navigateur, soit en l’ayant enregistré comme « favori » (plutôt que de rechercher ce site via
+un moteur de recherche) divise par 4 les émissions de gaz à effet de serre.
+
+:::
+
+## Les cookies
+
+::: appli
+
+Répondre aux questions suivantes en utilisant les documents de l'activité PP 66-67 du [manuel de
+Delagrave](https://www.editions-delagrave.fr/livre/9782206103389-sciences-numeriques-et-technologie-snt-2de-2019-manuel-eleve).
+
+1. Comment paramétrer son navigateur pour améliorer sa confidentialité?
+2. Que sont les cookies? Et les cookies tiers?
+3. Ai-je le droit de copier-coller n'importe quelles informations sur les sites web?
+
+:::
+
+cookie
+
+: Les **cookies** sont de petits fichiers stockés sur votre navigateur par le serveur pour maintenir
+votre connexion ou stocker votre panier par exemple.
+
+Les cookies _tiers_ sont des cookies déposés par des serveurs autres que ceux du site que vous
+visitez. Ces cookies sont souvent utilisés pour vous suivre lors de votre navigation afin d'établir
+un profil publicitaire ou autre.
+
+![Paramétrage des cookies sur chromium](../images/parametres-cookies.png)
+
+## Les droits sur internet
+
+Le droit d'auteur s'applique sur internet comme ailleurs. Tous les textes, photos, vidéos sont la
+propriété de leur auteur ou ayant-droits(maison de disques, descendants...) et ce jusqu'à leur
+entrée dans le **domaine public** 70 ans après la mort de leur auteur.
+
+Certains sites comme Wikipédia tentent de promouvoir un nouveau type de licence [Creative
+Commons](https://creativecommons.org/licenses/) afin que les œuvres puissent être copiées,
+distribuées, modifiées et adaptées.
+
+<wc-wikimage title="Creative_commons_license_spectrum_fr.svg" caption="La licence libre Creative Commons existe sous diverses variations plus ou moins ouvertes."></wc-wikimage>

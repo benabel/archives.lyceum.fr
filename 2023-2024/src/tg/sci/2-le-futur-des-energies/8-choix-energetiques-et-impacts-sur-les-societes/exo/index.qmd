@@ -1,0 +1,8 @@
+---
+title: Exercices
+subtitle: "Chapitre 8: Choix énergétiques et impacts sur les sociétés"
+exo: true
+type: exo
+tabnav: true
+---
+ Aucun exercice pour l'instant.

@@ -1,0 +1,351 @@
+---
+tags:
+  - cours
+  - seconde
+  - réseau
+  - snt
+  - protocoles
+  - internet
+title: "Partie 2: Internet"
+order: 2
+cours: true
+tabnav: true
+categories:
+  - 2SNT
+---
+
+::: programme
+
++--------------------------------+------------------------------------------------------------------+
+| Contenus | Capacités attendues |
++================================+==================================================================+
+| Indépendance d’internet | Caractériser quelques types de réseaux physiques : obsolètes |
+| par rapport au réseau physique | ou actuels, rapides ou lents, filaires ou non. |
+| | |
+| | Caractériser l’ordre de grandeur du trafic de données sur |
+| | internet et son évolution. |
++--------------------------------+------------------------------------------------------------------+
+| Réseaux pair-à-pair | Décrire l’intérêt des réseaux pair-à-pair ainsi que les usages |
+| | illicites qu’on peut en faire. |
++--------------------------------+------------------------------------------------------------------+
+| Protocole TCP/IP : paquets, | Distinguer le rôle des protocoles IP et TCP. |
+| routage des paquets | |
+| | Caractériser les principes du routage et ses limites. |
+| | |
+| | Distinguer la fiabilité de transmission et l’absence de garantie |
+| | temporelle. |
++--------------------------------+------------------------------------------------------------------+
+| Adresses symboliques et | Sur des exemples réels, retrouver une adresse IP à partir |
+| serveurs DNS | d’une adresse symbolique et inversement. |
++--------------------------------+------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+| **Exemples d’activités** |
++=================================================================================================+
+| - Illustrer le fonctionnement du routage et de TCP par des activités débranchées ou à l’aide de |
+| logiciels dédiés, en tenant compte de la destruction de paquets. |
+| - Déterminer l’adresse IP d’un équipement et l’adresse du DNS sur un réseau. |
+| - Suivre le chemin d’un courriel en utilisant une commande du protocole IP. |
++-------------------------------------------------------------------------------------------------+
+
+:::
+
+::: {.intro layout-ncol="2"}
+
+Dans cette partie, nous allons nous intéresser à internet: **le réseau des réseaux**. Né en 1983,
+il est aujourd'hui incontournable, mais comment est-il né et comment fonctionne-t-il?
+Souvent confondu avec le web (le réseau d'informations reliées par l'hypertexte), le réseau
+internet est le réseau de machines permettant le transport de ces informations, mais pas que!
+
+<wc-wikimage title="Internet-transit.svg" caption="Internet est constitué de la multitude de réseaux répartis dans le monde entier et interconnectés."></wc-wikimage>
+
+:::
+
+::: {.appli titre="QCU diagnostique"}
+
+On commence par tester ses connaissances en utilisant le QCU P34-35 du [manuel de
+Delagrave](https://www.editions-delagrave.fr/livre/9782206103389-sciences-numeriques-et-technologie-snt-2de-2019-manuel-eleve)
+
+Lien vers la version en ligne: <https://lienmini.fr/3389-202>
+
+:::
+
+## L'histoire d'Internet
+
+`youtube: 5ee6W1ODvFU`
+
+L'ancêtre d'internet s'appelait <!-- arpanet --> ________________.
+Sur internet, les données sont acheminées sous forme de <!-- paquets --> ________________.
+
+Les règles permettant la transmission des données sont les protocoles:
+
+- TCP qui <!-- assure le transport et l'intégrité des paquets dans le réseau --> _________________________________.
+- IP qui <!-- conduit les paquets à bon port --> _________________________________.
+
+## L'essor d'internet
+
+Internet a fait progressivement disparaître beaucoup des moyens de communication précédents:
+
+- __________________________,
+- __________________________,
+- __________________________,
+- ...
+
+Son trafic augmente de façon _exponentielle_.
+
+![Évolution du trafic d'internet](../images/internet-traffic-wikipedia.png)
+
+::: appli
+
+Recherchez dans cette [page](https://reseaux.orange.fr/questions/internet-mobile/definition-data)
+les consommations associées à divers usages d'internet et les classer par ordre croissant.
+
+:::
+
+::: {.plus titre="Le bit et l'octet: unités d'information"}
+
+Les machines que nous utilisons actuellement fonctionnent sur des circuits électroniques à deux
+états notés 0 ou 1.
+
+Toutes les données sont codées en binaire, mais cette unité est tellement petite on utilise plus
+communément d'autres unités comme:
+
+- l'octet: $1~o = 8~bits$,
+- le kibioctet: $1kio=2^{10} octets = 1~024~o \approx 1~ko$,
+- le mébioctet: $1Mio=2^{20} octets = 1~048~576~o \approx 1~Mo$,
+- le gibioctet: $1Gio=2^{30} octets = 1~073~741~824 \approx 1~Go$
+
+:::
+
+## Les protocoles d'internet
+
+`youtube: 5AVY6E-7yCc`
+
+Afin que deux machines puissent communiquer, entre-elles à travers internet, des règles sont
+définies mondialement: les **protocoles**.
+
+::: {layout-ncol=2}
+
+<wc-wikimage title="Internet-transit-2.svg" caption="Les réseaux constituant internet sont reliés par des routeurs. Les protocoles de routage indiquent les directions que doivent suivre les paquets en fonction de l'IP de destination notamment. Certains paquets peuvent se «perdre» et ils n'arrivent pas forcément dans l'ordre."></wc-wikimage>
+
+- **Le protocole IP** donne une adresse unique à chaque machine du réseau internet.
+- **Le protocole TCP** découpe l'information en paquets avant envoi et les vérifie à la réception
+  puis les réordonne.
+
+:::
+
+Il existe deux versions des adresses IP:
+
+:::list-table
+
+- - **IPv4**
+  - **IPv6**
+
+- - Une adresse IP (version 4) est constituée de 4 nombres compris entre 0 et 255 séparés par
+    des points.
+
+    <wc-wikimage title="Adresse_Ipv4.svg" caption="Chacun des quatre octets (8 bits) est un nombre compris entre 0 et 255 en notation décimale."></wc-wikimage>
+
+  - Les adresses IPv6 sont représentées par huit nombres de quatre chiffres _hexadécimaux_(de 0 à F,
+    [voir](/1g/nsi/2-representation-des-donnees-types-et-valeurs-de-base/1-representation-des-entiers-naturels#codage-hexad%C3%A9cimal))
+    chacun, séparés par deux-points.
+
+    <wc-wikimage title="Ipv6_address.svg" caption="Chacun des 8x4=24 chiffres hexadécimaux est compris entre 0 et F( soit 15 en décimal)."></wc-wikimage>
+
+- - Le nombre total d'adresse est $255 \times 255 \times 255 \times 255 = 255^4$ soit environ 4 milliards d'adresse ce
+    qui est largement insuffisant.
+
+  - Le nombre total d'adresse est $16^{4\times8} \approx 3\times 10^{38}$ qui devrait largement
+    suffire pour longtemps.
+
+:::
+
+::: examples
+
+Quand on s'abonne auprès d'un FAI, on obtient une adresse **IP**, cette adresse permet d'identifier
+votre appareil sur le réseau.
+
+Exemple: `185.15.58.224` est l'adresse des serveurs de Wikipédia: <https://185.15.58.224>
+
+Pour obtenir son adresse IP on peut consulter un site comme: <https://www.whatsmyip.org/>.
+
+Pou connaitre l'adresse d'un site, on peut utiliser la commande `ping`. Par exemple: `ping wikipedia.org`
+
+`ping -4 wikipedia.org`
+
+`>>> PING  (185.15.58.224) 56(84) octets de données.`
+
+Voici l'adresse IPv6 de Wikipédia.org `2a02:ec80:0600:ed1a:0000:0001`.
+
+Pour l'utiliser dans un navigateur, il faut l'écrire entre crochets: <https://[2a02:ec80:600:ed1a::1]/>
+
+    ping -6 wikipedia.org
+    >>>64 octets de text-lb.drmrs.wikimedia.org (2a02:ec80:600:ed1a::1) : icmp_seq=1 ttl=47 temps=30.3 ms
+
+:::
+
+## Noms de domaine, le protocole DNS
+
+Nom de domaine
+
+: Un nom de domaine est un « masque » sur une adresse IP. Le but d'un nom de domaine est de retenir et communiquer facilement l'adresse d'un ensemble de serveurs (site web, courrier électronique, FTP). [Article Wikipédia](https://fr.wikipedia.org/wiki/Nom_de_domaine){.cite-source}
+
+::: example
+
+Par exemple, `wikipedia.org` est plus simple à mémoriser que `208.80.154.224` ou `91.198.174.192`. [Article Wikipédia DNS](https://fr.wikipedia.org/wiki/Domain_Name_System){.cite-source}
+
+:::
+
+::: prop
+
+:::: {layout-ncol=2}
+
+Le système de nom de domaine est hiérarchique, permettant la définition de sous-domaines.
+
+<wc-wikimage title="Dns-raum.svg" caption="Le nom de.wikipedia.org appartient aux domaines de premier niveau «.org»."></wc-wikimage>
+
+::::
+
+:::
+
+DNS
+
+: Le Domain Name System ou DNS est un service informatique distribué sur Internet qui résout les
+noms de domaine Internet en adresse IP. [Article Wikipedia DNS](https://fr.wikipedia.org/wiki/Domain_Name_System){.cite-source}
+
+<wc-wikimage title="Example_of_an_iterative_DNS_resolver.svg" caption="Un nom de domaine est résolu de droite à gauche grâce aux serveurs de noms DNS de plus en plus spécialisés jusqu'à obtenir l'adresse IP du nom de domaine tapé."></wc-wikimage>
+
+<!-- ::: {.plus titre="La commande nslookup"}
+
+Cette commande permet de trouver une adresse IP à partir d'un nom de domaine:
+
+    [ben@archben ~]$ nslookup framasoft.org
+    Server:         192.168.1.1
+    Address:        192.168.1.1#53
+
+    Non-authoritative answer:
+    Name:   framasoft.org
+    Address: 144.76.131.212
+    Name:   framasoft.org
+    Address: 2a01:4f8:141:3421::212
+
+
+Ou l'inverse:
+
+
+    [ben@archben ~]$ nslookup 144.76.131.212
+    212.131.76.144.in-addr.arpa     name = edna.framasoft.org.
+
+::: -->
+
+## Communication sur Internet
+
+`youtube: 6ZazbI8faqw`
+
+::: appli
+
+Répondre aux questions de l'activité PP 44-45 du [manuel de
+Delagrave](https://www.editions-delagrave.fr/livre/9782206103389-sciences-numeriques-et-technologie-snt-2de-2019-manuel-eleve).
+
+:::
+
+On distingue deux principaux modes de communication.
+
+:::list-table
+
+- - **Communication client-serveur**
+  - **Communication pair à pair**
+
+- - Une machine (_le client_) émet une requête vers une autre machine (_le serveur_) qui est la
+    seule à pouvoir répondre à ces requêtes.
+
+  - Dans un réseau pair à pair au contraire, chaque machine est à la fois client et serveur. Les
+    deux machines communiquent directement sans intermédiaire.
+
+- - ![](https://upload.wikimedia.org/wikipedia/commons/f/fb/Server-based-network.svg)
+  - ![](https://upload.wikimedia.org/wikipedia/commons/3/3f/P2P-network.svg)
+
+- - La communication **client-serveur** est la plus utilisée actuellement web, courriel, Vod ...
+  - La communication **pair à pair** est beaucoup moins utilisée actuellement:
+    [Torrent](https://ubuntu.com/download/alternative-downloads#bittorrent)pour le partage de
+    fichiers, [Skype](https://en.wikipedia.org/wiki/Skype_protocol): Communications audio et
+    vidéos. [peertube](https://joinpeertube.org/): partage de vidéos alternative à youtube...
+    Mais beaucoup y voit un avenir prometteur pour décentraliser le web et éviter le recours
+    systématique au serveur des géants du web (GAFAM) qui au passage aspirent des données.
+
+:::
+
+::: appli
+
+Citer au moins un avantage et un inconvénient pour chaque type de communication.
+
+:::
+
+<!--
+
+Avantages:
+
+Inconvénient:
+
+- lorsque vous visitez la plateforme vous utilisez des ressources pour envoyer des données à
+  d'autres utilisateurs.
+
+
+
+
+
+## Organisation du réseau internet
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Internet_Connectivity_Distribution_%26_Core.svg#/media/File:Internet_Connectivity_Distribution_&amp;_Core.svg"><img class="half right" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Internet_Connectivity_Distribution_%26_Core.svg" alt="Internet Connectivity Distribution &amp; Core.svg" width="1234" height="720"></a><br>By <a href="//commons.wikimedia.org/wiki/User:Ludovic.ferre" title="User:Ludovic.ferre">User:Ludovic.ferre</a> - Internet Connectivity Distribution&amp;Core.svg, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=10030716">Link</a></p>
+
+
+<wc-wikimage title="Internet_Connectivity_Distribution_&_Core.svg" caption="Interconnexion des réseaux au sein d'internet."></wc-wikimage>
+
+
+Le réseau internet n'est pas centralisé, il n'y a pas une machine _centrale_ à laquelle sont
+connectées toutes les autres. Les **routeurs** permettent de connecter les réseaux entre eux.
+
+Pour se connecter à internet, il suffit de se connecter à une autre machine qui y est déjà
+connectée.
+
+::: examples
+
+- connexion à une box par câble RJ45, par Wifi
+- partage de connexion avec un téléphone par WIFI, câble USB
+- WIFI public
+
+:::
+
+
+
+
+
+
+
+
+Pour accéder à internet, il faut:
+
+- Avoir une machine avec un terminal(ou carte) réseau(ordinateur, téléphone, tablette...),
+- se raccorder à un fournisseur d'accès à internet(FAI) par une connexion:
+       - **filaire**: ADSL, VDSL2, fibre optique,
+       - **sans fil**:
+           - Wi-Fi, WiMAX,
+           - via un réseau de téléphonie mobile (GSM/EDGE, 3G/UMTS, 3G+ ou LTE, 4G, 4G+, 5G, etc.)
+           - ou par satellite.
+
+Internet par satellite: article le monde
+
+::: plus
+
+Cette organisation permet de rendre le réseau internet résilient face aux pannes, car
+lorsque des pannes ont lieu, elles n'affectent pas la totalité du réseau et les échanges peuvent
+transiter quand même par d'autres machines.
+
+:::
+
+
+
+
+
+
+-->

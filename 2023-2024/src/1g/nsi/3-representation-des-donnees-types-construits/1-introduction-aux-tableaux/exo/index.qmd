@@ -1,0 +1,37 @@
+---
+title: Exercices
+subtitle: "Chapitre 1: Introduction aux tableaux"
+exo: true
+type: exo
+tabnav: true
+---
+```ed-pb
+## Quiz
+
+1. Quel est le type de données de base en Python qui permet de stocker une séquence modifiable de valeurs?
+
+   -  [x] Liste
+   -  [ ] Tuple
+   -  [ ] Dictionnaire
+   -  [ ] Ensemble
+
+1.  Quel est le type de données de base en Python qui permet de stocker une séquence immuable de valeurs?
+
+    -  [ ] Liste
+    -  [x] Tuple
+    -  [ ] Dictionnaire
+    -  [ ] Ensemble
+
+```
+## Questions de cours
+
+1. Qu'est-ce qu'un tuple en Python ?  
+2. Comment pouvez-vous créer un tuple en Python ?   
+3. Comment pouvez-vous accéder à un élément d'un tuple en Python ?
+4. Comment pouvez-vous modifier un tuple en Python ?
+6. Comment pouvez-vous fusionner deux tuples en Python ?
+7. Comment pouvez-vous convertir un tuple en liste et une liste en tuple en Python ?
+8. Quels sont les avantages de l'utilisation de tuples par rapport aux listes en Python ?
+9.  Comment pouvez-vous supprimer un tuple en Python ?
+10. Quels sont quelques exemples d'utilisation courante de tuples en Python ?
+11. Quelle est la différence entre un tuple et une liste en Python ?

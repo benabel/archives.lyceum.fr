@@ -1,0 +1,118 @@
+---
+tags:
+  - cours
+  - pc
+  - terminale
+  - lycée
+  - enseignement scientifique
+title: "Chapitre 6: Les atouts de l’électricité"
+order: 6
+cours: true
+tabnav: true
+categories:
+  - TSCI
+---
+
+::: programme
+
++---------------------------------------------------+-----------------------------------------+
+| Savoirs                                           | Savoir-faire                            |
++===================================================+=========================================+
+| Trois méthodes permettent d’obtenir de l’énergie  | Décrire des exemples de chaînes de      |
+| électrique sans nécessiter de combustion :        | transformations énergétiques permettant |
+|                                                   | d’obtenir de l’énergie électrique à     |
+| - la conversion d’énergie mécanique, soit directe | partir de différentes ressources        |
+| (dynamos, éoliennes, hydroliennes, barrages       | primaires d’énergie.                    |
+| hydroélectriques), soit indirecte à partir        |                                         |
+| d’énergie thermique (centrales nucléaires,        | Calculer le rendement global d’un       |
+| centrales solaires thermiques, géothermie);       | système de conversion d’énergie.        |
+| - la conversion de l’énergie radiative reçue du   |                                         |
+| Soleil (panneaux photovoltaïques);                |                                         |
+| - la conversion électrochimique (piles ou         |                                         |
+| accumulateurs conventionnels, piles à             |                                         |
+| hydrogène).                                       |                                         |
++---------------------------------------------------+-----------------------------------------+
+| Ces méthodes sans combustion ont néanmoins un     | Analyser des documents présentant les   |
+| impact sur l’environnement et la biodiversité ou  | conséquences de l’utilisation de        |
+| présentent des risques spécifiques (pollution     | ressources géologiques (métaux rares,   |
+| chimique, déchets radioactifs, accidents          | etc.).                                  |
+| industriels...).                                  |                                         |
++---------------------------------------------------+-----------------------------------------+
+| Pour faire face à l’intermittence                 | Comparer différents dispositifs de      |
+| liée à certains modes de production ou à la       | stockage d’énergie selon différents     |
+| consommation, l’énergie électrique doit être      | critères (masses mises en jeu, capacité |
+| convertie sous une forme stockable :              | et durée de stockage, impact            |
+|                                                   | écologique).                            |
+| - énergie chimique (accumulateurs);               |                                         |
+| - énergie potentielle (barrages);                 |                                         |
+| - énergie électromagnétique (super- capacités).   |                                         |
++---------------------------------------------------+-----------------------------------------+
+
+:::
+
+::: {.intro layout-ncol=2}
+
+L’énergie électrique présente de nombreux avantages : une distribution aisée, sûre et à faible
+impact écologique; l’existence de réseaux de distribution très étendus; la disponibilité de
+convertisseurs de bon rendement permettant de transformer l’énergie électrique en d’autres formes
+d’énergie ou, symétriquement, d’obtenir de l’énergie électrique. **L’existence de procédés
+d’obtention d’énergie électrique sans combustion justifie le rôle central que cette forme d’énergie
+est amenée à jouer à l’avenir**.
+
+
+<wc-wikimage title="Andasol_Guadix_4.jpg" caption="La centrale solaire espagnole d'Andasol est une centrale thermodynamique, elle utilise l'énergie solaire et la stocke afin de produire une énergie propre de façon quasi-continue."></wc-wikimage>
+
+:::
+
+## Comment produire de l'énergie électrique sans combustion?
+
+Trois méthodes permettent d’obtenir de l’énergie électrique sans nécessiter de combustion :  
+                                                
+- la conversion d’**énergie mécanique**, 
+  - soit _directe_ (dynamos, éoliennes, hydroliennes, barrages hydroélectriques), 
+  - soit _indirecte_ à partir d’énergie thermique (centrales nucléaires, centrales solaires
+    thermiques, géothermie);  
+- la conversion de l’**énergie radiative** reçue du Soleil (panneaux photovoltaïques);  
+- la conversion **électrochimique** (piles ou accumulateurs conventionnels, piles à hydrogène).
+
+## Rendement de conversion
+
+Rendement
+
+: À puissance constante, le rendement $r$ est le rapport entre l'énergie (ou la puissance) après
+conversion et l'énergie (ou la puissance) avant conversion.
+
+$$
+r=\frac{E_{sortie}}{E_{entrée}}=\frac{P_{sortie}}{P_{entrée}}
+$$
+
+::: prop
+
+Le rendement a toujours une valeur comprise entre 0 et 1. On l'exprime souvent en pourcentage.
+
+:::
+
+::: {.appli .clearfix}
+
+<wc-wikimage class="half right" title="Flamanville-3_2010-07-15.jpg" caption="Chantier du réacteur EPR de Flamanville en 2010. Celui-ci devait être mis en service en 2012, mais n'est toujours pas en service en 2022."></wc-wikimage>
+
+Le réacteur EPR(dit aussi de troisième génération) de Flamanville 3 est dimensionné avec une
+puissance thermique de 4 300 MW, pour une puissance électrique délivrée sur le réseau de 1 630 MW.
+
+1. Calculer son rendement.
+2. Le comparer au rendement des réacteurs de Flamanville 1 et 2 de deuxième génération puissance
+   thermique de 3817 MW, pour une puissance électrique délivrée sur le réseau de 1 330 MW.
+
+[Article Wikipédia](https://fr.wikipedia.org/wiki/Centrale_nucl%C3%A9aire_de_Flamanville#Caract%C3%A9ristiques_des_r%C3%A9acteurs){.cite-source}
+
+
+:::
+
+## Comment stocker l'énergie électrique ?
+
+Pour faire face à l’intermittence liée à certains modes de production ou à la consommation,
+l’énergie électrique doit être convertie sous une forme stockable :  
+                                               
+- énergie chimique (accumulateurs),
+- énergie potentielle (barrages),
+- énergie électromagnétique (super-capacités).

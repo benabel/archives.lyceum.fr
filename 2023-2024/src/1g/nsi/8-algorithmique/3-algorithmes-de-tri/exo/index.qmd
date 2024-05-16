@@ -1,0 +1,419 @@
+---
+title: Exercices
+subtitle: "Chapitre 3: Algorithmes de tri"
+exo: true
+type: exo
+tabnav: true
+---
+## Tri par sélection
+
+1. Rappeler sans code le principe du tri par sélection.
+
+   ::: correction 
+
+   Le tri par sélection consiste à avancer dans le tableau et à placer un par un les éléments du
+   plus petit au plus grand en cherchant à chaque fois l'élément minium sur la partie droite
+   non triée du tableau.
+
+   :::
+   
+2. Effectuer à la main un tri par sélection des listes suivantes en précisant l'état de la liste à
+   chaque tour de boucle externe:
+    
+    - `[28, 2, 34, 12, 16]`
+    - `[1, 3, 7, 9, 16]`
+    - `[51, 12, 6, 5, 3]`
+
+   ::: correction
+
+   - `[28, 2, 34, 12, 16]`
+   
+     ```
+     [2, 28, 34, 12, 16]
+     [2, 12, 34, 28, 16]
+     [2, 12, 16, 28, 34]
+     [2, 12, 16, 28, 34]
+     ```
+   
+   - `[1, 3, 7, 9, 16]`
+   
+     ```
+     [1, 3, 7, 9, 16]
+     [1, 3, 7, 9, 16]
+     [1, 3, 7, 9, 16]
+     [1, 3, 7, 9, 16]
+     ```
+   
+   - `[51, 12, 6, 5, 3]`
+  
+     ```
+     [3, 12, 6, 5, 51]
+     [3, 5, 6, 12, 51]
+     [3, 5, 6, 12, 51]
+     [3, 5, 6, 12, 51]
+     ```
+
+   :::
+
+3. Combien de tours de boucles a-t-il fallu au total (boucle interne et externe) dans chaque cas?
+
+   ::: correction
+
+   Dans tous les cas il faut: 5 + 4 + 3 + 2 = 14 tours
+
+   :::
+
+## Tri par insertion
+
+1. Rappeler sans code le principe du tri par insertion.
+
+   ::: correction 
+
+   Le tri par insertion consiste à avancer dans le tableau et à placer à sa place l'élément
+   considéré parmi les éléments à sa gauche.
+
+   :::
+
+2. Effectuer à la main un tri par insertion des listes suivantes en précisant l'état de la liste à
+   chaque tour de boucle:
+    
+   - `[28, 2, 34, 12, 16]`
+   - `[1, 3, 7, 9, 16]`
+   - `[51, 12, 6, 5, 3]`
+
+   ::: correction
+
+   - `[28, 2, 34, 12, 16]`
+   
+     ```
+     [2, 28, 34, 12, 16]
+     [2, 28, 34, 12, 16]
+     [2, 12, 28, 34, 16]
+     [2, 12, 16, 28, 34]
+     ```
+   
+   - `[1, 3, 7, 9, 16]`
+   
+     ```
+     [1, 3, 7, 9, 16]
+     [1, 3, 7, 9, 16]
+     [1, 3, 7, 9, 16]
+     [1, 3, 7, 9, 16]
+     ```
+   
+   - `[51, 12, 6, 5, 3]`
+  
+     ```
+     [12, 51, 6, 5, 3]
+     [6, 12, 51, 5, 3]
+     [5, 6, 12, 51, 3]
+     [3, 5, 6, 12, 51]
+     ```
+
+   :::
+
+3. Combien de tours de boucles a-t-il fallu au total(boucle interne et externe) dans les deuxième et troisième cas?
+
+   ::: correction
+
+   Dans le deuxième cas, il faut 4 tours, car les éléments sont dans l'ordre.
+
+   Dans le troisième cas, il faut comme avec le tri par sélection 5 + 4 + 3 + 2 = 14 tours
+
+   :::
+
+   
+
+## Épreuve pratique: sujet n°28 session 2021
+
+On considère l'algorithme de tri de tableau suivant : à chaque étape, on parcourt depuis
+le début du tableau tous les éléments non rangés et on place en dernière position le plus
+grand élément.
+
+Exemple avec le tableau : `t = [41, 55, 21, 18, 12, 6, 25]`
+
+- Étape 1 : on parcourt tous les éléments du tableau, on permute le plus grand élément avec le dernier.
+
+Le tableau devient `t = [41, 25, 21, 18, 12, 6, 55]`
+
+- Étape 2 : on parcourt tous les éléments **sauf le dernier**, on permute le plus grand élément
+  trouvé avec l'avant-dernier.
+
+Le tableau devient : `t = [6, 25, 21, 18, 12, 41, 55]`
+
+Et ainsi de suite. Le code de la fonction `tri_iteratif` qui implémente cet algorithme est donné ci-
+dessous.
+
+```python
+def tri_iteratif(tab):
+    for k in range(..., 0 ,-1):
+        imax = ...
+        for i in range(0, ...):
+            if tab[i] > ... :
+                imax = i
+        if tab[imax] > ... :
+            ..., tab[imax] = tab[imax], ...
+    return tab
+```
+
+Compléter le code qui doit donner :
+
+```python
+>>> tri_iteratif([41, 55, 21, 18, 12, 6, 25])
+[6, 12, 18, 21, 25, 41, 55]
+``` 
+
+On rappelle que l'instruction `a, b = b, a` échange les contenus de `a` et `b`.
+
+::: correction
+
+```python
+def tri_iteratif(tab):
+    for k in range(len(tab) - 1, 0, -1):
+        imax = 0
+        for i in range(0, k):
+            if tab[i] > tab[imax]:
+                imax = i
+        if tab[imax] > tab[k]:
+            tab[k], tab[imax] = tab[imax], tab[k]
+    return tab
+
+assert tri_iteratif([41, 55, 21, 18, 12, 6, 25]) == [6, 12, 18, 21, 25, 41, 55]
+```
+
+::::
+
+
+## Réécriture de la fonction de tri par sélection
+
+1. Écrire une fonction `indice_min(tab, i)` qui renvoie l'indice du minimum du tableau compris
+   entre l'indice `i` et la fin du tableau `tab`.
+
+   Par exemple l'appel `indice_min([3,15,45,12,7,9], 2)` renvoie `4`.
+
+   ::: correction
+
+   ```python
+   def indice_min(tab, i):
+       i_mini = i
+       mini = tab[i]
+       for j in range(i, len(tab)):
+           if tab[j] < mini:
+               i_mini = j
+               mini = tab[j]
+       return i_mini
+               
+   assert indice_min([3,15,45,12,7,9], 2) == 4
+   ```
+   :::   
+
+2. Utiliser cette fonction `indice_min` pour réécrire la fonction `tri_par_selection(tab)` qui trie
+   le tableau `tab` selon l'algorithme de tri par sélection.
+
+   ```python
+   def tri_par_selection(tab):
+      for i in range(len(tab)):
+         # appel de la fonction indice_min
+         ...
+         # permutation des valeurs pour placer 
+         # le ième plus petit élément à l'indice i
+         ...
+   ```
+
+   ::: correction
+   ```python
+   def tri_par_selection(tab):
+         for i in range(len(tab)):
+            # appel de la fonction indice_min
+            i_min = indice_min(tab, i)
+            # permutation des valeurs pour placer 
+            # le ième plus petit élément à l'indice i
+            tab[i_min], tab[i] = tab[i], tab[i_min] 
+           
+   tab = [12, 5, 3, 7]
+   tri_par_selection(tab)
+   assert tab == [3, 5, 7, 12]  
+   ```
+   :::
+
+3. Vérifier que la modification de `tab` s'effectue en place et donc que le tableau `tab` initial
+   est écrasé par l'application de la fonction.
+
+   ```python
+   tab = [12, 5, 3, 7]
+   tri_par_selection(tab)
+   assert tab == [3, 5, 7, 12]
+   ```
+
+4. Modifier le code pour renvoyer un nouveau tableau trié sans modifier le tableau initial `tab`.
+
+   ```python
+   tab = [12, 5, 3, 7]
+   trié = tri_par_selection(tab)
+   assert tab == [12, 5, 3, 7]
+   assert trié == [3, 5, 7, 12]
+   ```
+
+   ::: correction
+   ```python
+   def tri_par_selection(tab):
+       # on crée une copie du tableau qui sera modifiée
+       trié = [v for v in tab]  
+       for i in range(len(trié)):
+           # appel de la fonction indice_min
+           i_min = indice_min(trié, i)
+           # permutation des valeurs pour placer 
+           # le ième plus petit élément à l'indice i
+           trié[i_min], trié[i] = trié[i], trié[i_min]
+       return trié      
+          
+           
+   tab = [12, 5, 3, 7]
+   trié = tri_par_selection(tab)
+   assert tab == [12, 5, 3, 7]
+   assert trié == [3, 5, 7, 12]  
+   ```
+   :::
+
+## Épreuve pratique: sujet n°11 session 2023
+
+La fonction `tri_insertion` suivante prend en argument une liste `tab` et trie cette liste en
+utilisant la méthode du tri par insertion. Compléter cette fonction pour qu'elle réponde à la
+spécification demandée.
+
+On rappelle le principe du tri par insertion : on considère les éléments à trier un par un,
+le premier élément constituant, à lui tout seul, une liste triée de longueur 1. On range
+ensuite le second élément pour constituer une liste triée de longueur 2, puis on range le
+troisième élément pour avoir une liste triée de longueur 3 et ainsi de suite… A chaque
+étape, le premier élément de la sous-liste non triée est placé dans la sous-liste des
+éléments déjà triés de sorte que cette sous-liste demeure triée.  
+
+Le principe du tri par insertion est donc d'insérer à la n-ième itération, le n-ième élément
+à la bonne place.
+
+
+```python
+def tri_insertion(tab):
+    n = len(tab)
+    for i in range(1, n):
+        valeur_insertion = tab[...]
+        # la variable j sert à déterminer où placer la valeur à ranger
+        j = ...
+        # tant qu'on a pas trouvé la place de l'élément à insérer
+        # on décale les valeurs du tableau vers la droite
+        while j > ... and valeur_insertion < tab[...]:
+            tab[j] = tab[j-1]
+            j = ...
+        tab[j] = ...
+```
+
+Exemples :
+```python
+>>> liste = [9, 5, 8, 4, 0, 2, 7, 1, 10, 3, 6]
+>>> tri_insertion(liste)
+>>> liste
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+
+::: correction
+```python
+def tri_insertion(tab):
+    n = len(tab)
+    for i in range(1, n):
+        valeur_insertion = tab[i]
+        # la variable j sert à déterminer où placer la valeur à ranger
+        j = i
+        # tant qu'on a pas trouvé la place de l'élément à insérer
+        # on décale les valeurs du tableau vers la droite
+        while j > 0 and valeur_insertion < tab[j - 1]:
+            tab[j] = tab[j - 1]
+            j = j - 1
+        tab[j] = valeur_insertion
+        
+liste = [9, 5, 8, 4, 0, 2, 7, 1, 10, 3, 6]
+tri_insertion(liste)
+assert liste == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+:::
+
+## Un autre algorithme de tri: le tri à bulles
+
+> Sujet 43 de l'épreuve pratique 2023.
+
+La fonction `tri_bulles` prend en paramètre une liste `T` d’entiers non triés et renvoie la
+liste triée par ordre croissant.
+
+
+Le tri à bulles est un tri en place qui commence par placer le plus grand élément en
+dernière position en parcourant la liste de gauche à droite et en échangeant au passage
+les éléments voisins mal ordonnés (si la valeur de l’élément d’indice `i` a une valeur
+strictement supérieure à celle de l’indice `i + 1`, ils sont échangés). Le tri place ensuite
+en avant-dernière position le plus grand élément de la liste privée de son dernier élément
+en procédant encore à des échanges d’éléments voisins. Ce principe est répété jusqu’à
+placer le minimum en première position.
+
+
+Exemple : pour trier la liste `[7, 9, 4, 3]` :
+
+- première étape : 7 et 9 ne sont pas échangés, puis 9 et 4 sont échangés, puis 9 et
+3 sont échangés, la liste est alors `[7, 4, 3, 9]`
+- deuxième étape : 7 et 4 sont échangés, puis 7 et 3 sont échangés, la liste est
+alors `[4, 3, 7, 9]`
+- troisième étape : 4 et 3 sont échangés, la liste est alors `[3, 4, 7, 9]`
+
+
+Compléter le code Python ci-dessous qui implémente la fonction tri_bulles.
+
+```python
+def tri_bulles(T):
+    '''
+	Renvoie le tableau T trié par ordre croissant
+	'''
+    n = len(T)
+    for i in range(...,...,-1):
+        for j in range(i):
+            if T[j] > T[...]:
+                ... = T[j]
+                T[j] = T[...]
+                T[j+1] = temp
+    return T
+
+
+```
+
+Exemples :
+```python
+>>> tri_bulles([])
+[]
+>>> tri_bulles([7])
+[7]
+>>> tri_bulles([9, 3, 7, 2, 3, 1, 6])
+[1, 2, 3, 3, 6, 7, 9]
+>>> tri_bulles([9, 7, 4, 3])
+[3, 4, 7, 9]
+```
+
+::: correction
+```python
+def tri_bulles(T):
+    """
+    Renvoie le tableau T trié par ordre croissant
+    """
+    n = len(T)
+    for i in range(n - 1, -1, -1):
+        for j in range(i):
+            if T[j] > T[j + 1]:
+                temp = T[j]
+                T[j] = T[j + 1]
+                T[j + 1] = temp
+    return T
+
+assert tri_bulles([]) == []
+assert tri_bulles([7]) == [7]
+assert tri_bulles([9, 3, 7, 2, 3, 1, 6]) == [1, 2, 3, 3, 6, 7, 9]
+assert tri_bulles([9, 7, 4, 3]) == [3, 4, 7, 9]
+```
+:::
+
+

@@ -1,0 +1,195 @@
+---
+tags:
+  - python
+  - boucles
+  - for
+  - while
+title: "Chapitre 5: Boucles"
+order: 5
+cours: true
+tabnav: true
+categories:
+  - 1NSI
+---
+
+::: programme
++------------------------+---------------------------------+-----------------------------------+
+| Contenus               | Capacités attendues             | Commentaires                      |
++========================+=================================+===================================+
+| Constructions          | Mettre en évidence un corpus    | Séquences, affectation,           |
+| élémentaires           | de constructions élémentaires.  | conditionnelles, boucles bornées, |
+|                        | boucles non bornées, appels de  |                                   |
+|                        | fonction.                       |                                   |
++------------------------+---------------------------------+-----------------------------------+
+:::
+
+::: {.intro layout-ncol=2}
+
+Comme nous l'avons déjà vu, les boucles permettent de répéter des instructions. Nous détaillerons
+dans ce chapitre la syntaxe de la fonction `range()` en Python utile pour contrôler les boucles
+bornées `for`, et verrons les trois étapes essentielles à la construction d'une boucle `while`:
+initialisation, condition d'arrêt et mise à jour.
+
+<wc-wikimage title="RepeatUntil.svg" caption="Les boucles font partie des ingrédients indispensables des algorithmes et vous les avez certainement déjà rencontrés en Scratch en collège."></wc-wikimage>
+
+
+:::
+
+Il existe deux façons de coder des boucles:
+
+- La boucle bornée répète les instructions pour des valeurs choisies. En Python `for` (*pour* en
+  français).
+- La boucle non bornée répète les instructions _tant qu'_une condition est vérifiée. En Python:
+  `while` (*tant que* en français).
+
+Les deux types de boucles sont interchangeables, on préfère cependant utiliser:
+
+- `for` si le nombre d'itérations est connu à l'avance.
+- `while` sinon.
+
+
+## La boucle bornée `for`
+
+La boucle `for` est utilisée lorsque l'on _connaît à l'avance_ les valeurs pour lesquelles on veut
+répéter le bloc d'instructions. On l'appelle une **boucle bornée**.
+
+### Utilisation de la fonction `range()`
+
+::: prop
+La fonction `range()` peut accepter de 1 à 3 paramètres pour contrôler la façon dont se font les itérations.
+:::
+
+Il est très fréquent de réaliser des itérations sur des nombres en comptant les tours de boucles.
+
+La fonction `range(n)` permet de créer une boucle de n tours.
+
+```{python}
+for i in range(7):
+    print(i)
+```
+
+On peut éventuellement choisir la valeur du compteur au départ.
+
+```python
+for i in range(début, fin):
+    ...
+```
+**Attention:** Dans tous les cas le nombre final n'est pas inclus dans les itérations.
+
+```{python}
+for i in range(1, 7):
+    print(i)
+```
+
+On peut également choisir le pas de l'incrémentation grâce à la syntaxe:
+
+```python
+for i in range(début, fin, pas):
+    instruction 1
+    instruction 2
+...
+```
+
+```{python}
+for i in range(1, 12, 2):
+    print(i)
+```
+
+```{python}
+for i in range(365, 300, -5):
+    print(i)
+```
+
+
+
+## La boucle non bornée: `while`
+
+La boucle `while` est plus puissante que la boucle `for`, elle permet de créer des répétitions,
+même si l'on ne connait pas à l'avance le nombre de répétitions.
+
+Contrairement à la boucle `for`, le nombre d'itérations n'est pas fixé à l'avance, mais il est
+testé _dynamiquement_ au début de chaque boucle: On parle de **boucle non bornée**.
+
+À chaque tour, on teste une condition, si cette condition est vérifiée, on exécute le bloc
+d'instructions de la boucle, sinon, l'exécution de la boucle est arrêtée et le programme se
+poursuit «_normalement_».
+
+L'écriture d'une boucle non bornée nécessite trois étapes:
+
+1. Initialisation de la variable de contrôle.
+2. Condition d'arrêt.
+3. Mise à jour de la variable de contrôle.
+
+### Réécriture d'une boucle `for`
+
+Nous allons traduire une boucle `for` par un `while` (même si cela n'est pas conseillé).
+
+```{python}
+for i in range(1, 7, 2):
+    print(i)
+```
+
+Dans une boucle `for` toutes les affectations de la variable `i` sont gérées par la fonction `range()`. Avec le `while` c'est à nous de nous en occuper.
+
+```{python}
+i = 1                   # initialisation
+while i < 7:            # condition d'arrêt
+    print(i)
+    i = i + 2           # Mise à jour de la variable de contrôle
+```
+
+### Contrôle par variable booléenne
+
+Nous créons ici une variable booléenne `repeat` pour bien comprendre si la boucle `while` doit se
+poursuivre ou non.
+
+```python
+repeat = True;
+while repeat:
+    resultat = int(input("Combien font 2 + 5?  "))
+    if resultat == 7:
+        print("Bravo vous avez trouvé.")
+        repeat = False
+```
+
+Il serait cependant plus élégant de faire passer la condition du `if` dans le `while`.
+
+```python
+resultat = None
+while resultat != 7:
+    resultat = int(input("Combien font 2 + 5?  "))
+print("Bravo vous avez trouvé.")
+```
+
+
+### Remarques
+
+- La variable compteur est souvent notée `i`;
+- faire attention à ne pas programmer une **boucle infinie** qui bloquerait votre programme en lui
+  faisant répéter l'instruction une infinité de fois et saturerait ainsi votre processeur et
+  votre mémoire.
+
+  ```python
+  i = 0
+  while i >= 0:
+      print(i)
+      i = i + 1
+      # i sera toujours positif, la condition d'arrêt ne sera jamais vraie
+  ```
+
+## Boucles imbriquées
+
+Il est possible d'exécuter une boucle à l'intérieur d'une autre boucle, elles sont alors dites imbriquées.
+
+```{python}
+# boucle externe
+for i in range(3):
+    # boucle interne
+    for j in range(2):
+        print(i, j)
+```
+
+Ce type de boucles peut par exemple être utilisé pour parcourir des tableaux de données en ligne et
+en colonne, on les utilisera également dans les
+[algorithmes de tris](/1g/nsi/8-algorithmique/2-algorithmes-de-tri) que nous verrons en fin
+d'année.

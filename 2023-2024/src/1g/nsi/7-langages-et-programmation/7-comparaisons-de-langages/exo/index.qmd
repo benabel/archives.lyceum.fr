@@ -1,0 +1,8 @@
+---
+title: Exercices
+subtitle: "Chapitre 7: Comparaisons de langages"
+exo: true
+type: exo
+tabnav: true
+---
+Aucun exercice pour l'instant.

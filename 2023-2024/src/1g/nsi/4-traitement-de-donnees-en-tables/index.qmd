@@ -1,0 +1,6 @@
+---
+title: "Partie 4: Traitement de données en tables"
+listing:
+  contents: /*/index.qmd
+order: 4
+---

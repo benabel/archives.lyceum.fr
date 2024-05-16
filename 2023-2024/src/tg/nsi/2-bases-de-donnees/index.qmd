@@ -1,0 +1,6 @@
+---
+title: "Partie 2: Bases de données"
+listing:
+  contents: /*/index.qmd
+order: 2
+---

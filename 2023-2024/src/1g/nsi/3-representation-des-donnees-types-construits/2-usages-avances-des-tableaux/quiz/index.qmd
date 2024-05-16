@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Chapitre 2: Usages avancés des tableaux"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```

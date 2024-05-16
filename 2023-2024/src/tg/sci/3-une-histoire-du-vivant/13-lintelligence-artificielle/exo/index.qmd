@@ -1,0 +1,279 @@
+---
+title: Exercices
+subtitle: "Chapitre 13: L’intelligence artificielle"
+exo: true
+type: exo
+tabnav: true
+---
+## Classification d'images
+
+> Nous abordons ici un problème de **classification**: «Comment reconnaitre une race de chien?».
+> On utilise des données d'apprentissage de [stanford](http://vision.stanford.edu/aditya86/ImageNetDogs/).
+
+- Trouver une image de chien dont vous connaissez la race et l'enregistrer sur votre ordinateur.
+- Ouvrir la page <https://teachablemachine.withgoogle.com/train/image>.
+- Importer à partir du dossier du TP des images de cette race de chien et renommer `Class 1` avec
+  le nom de la race(Chihuahua par exemple).
+- Recommencer avec deux autres races de chiens dans `Class 2` et `Class 3`.
+- Entrainer le modèle et _attendre_...
+- Une fois le modèle entraîné, sélectionnez votre image de chien à reconnaitre dans `Aperçu` et
+  vérifier que votre modèle sait la reconnaitre.
+- Trouver d'autres images sur Wikipédia pour vérifier qu'«il sait» les reconnaitre(Peut-on vraiment dire qu'un algorithme sait?). Commenter les résultats obtenus.
+
+**Informations sur les données**
+
+Source des données d'entraînement du modèle: <http://vision.stanford.edu/aditya86/ImageNetDogs/>
+
+Il y a 120 races de chiens dont voici les traductions(par AI) et le nombre de photo.
+
+| Dossier                        | Race                               | Nombre de photos |
+|--------------------------------|------------------------------------|------------------|
+| French_bulldog                 | Bulldog français                   | 159              |
+| Shetland_sheepdog              | Berger des Shetland                | 157              |
+| curly-coated_retriever         | retriever à poil bouclé            | 151              |
+| basenji                        | basenji                            | 209              |
+| flat-coated_retriever          | retriever à poil plat              | 152              |
+| beagle                         | beagle                             | 195              |
+| Rhodesian_ridgeback            | Rhodesian Ridgeback                | 172              |
+| giant_schnauzer                | schnauzer géant                    | 157              |
+| otterhound                     | lévrier                            | 151              |
+| pug                            | carlin                             | 200              |
+| Pekinese                       | pékinois                           | 149              |
+| Brabancon_griffon              | Griffon Brabançon                  | 153              |
+| Irish_terrier                  | Terrier irlandais                  | 169              |
+| Irish_wolfhound                | Lévrier irlandais                  | 218              |
+| bull_mastiff                   | dogue de taureau                   | 156              |
+| schipperke                     | schipperke                         | 154              |
+| Labrador_retriever             | Labrador retriever                 | 171              |
+| Gordon_setter                  | Passeur Gordon                     | 153              |
+| kelpie                         | varech                             | 153              |
+| Scotch_terrier                 | Terrier écossais                   | 158              |
+| Sussex_spaniel                 | Épagneul du Sussex                 | 151              |
+| Lakeland_terrier               | Terrier des lacs                   | 197              |
+| wire-haired_fox_terrier        | fox-terrier à poil dur             | 157              |
+| Norfolk_terrier                | Terrier de Norfolk                 | 172              |
+| Great_Pyrenees                 | Grandes Pyrénées                   | 213              |
+| Walker_hound                   | Chien marcheur                     | 153              |
+| Bedlington_terrier             | Terrier de Bedlington              | 182              |
+| English_springer               | springer anglais                   | 159              |
+| whippet                        | fouetter                           | 187              |
+| Eskimo_dog                     | Chien esquimau                     | 150              |
+| Dandie_Dinmont                 | Dandie Dinmont                     | 180              |
+| malinois                       | malinois                           | 150              |
+| Shih-Tzu                       | Shih Tzu                           | 214              |
+| German_short-haired_pointer    | Braque allemand à poil court       | 152              |
+| vizsla                         | à savoir                           | 154              |
+| EntleBucher                    | EntleBucher                        | 202              |
+| toy_terrier                    | terrier jouet                      | 172              |
+| Airedale                       | airedale                           | 202              |
+| Boston_bull                    | Taureau de Boston                  | 182              |
+| golden_retriever               | Golden retriever                   | 150              |
+| Chihuahua                      | Chihuahua                          | 152              |
+| West_Highland_white_terrier    | Terrier blanc des West Highlands   | 169              |
+| Pembroke                       | Pembroke                           | 181              |
+| Japanese_spaniel               | Épagneul japonais                  | 185              |
+| miniature_schnauzer            | schnauzer nain                     | 154              |
+| soft-coated_wheaten_terrier    | terrier de froment à poil doux     | 156              |
+| silky_terrier                  | terrier soyeux                     | 183              |
+| Blenheim_spaniel               | Épagneul de Blenheim               | 188              |
+| Greater_Swiss_Mountain_dog     | Grand Bouvier Suisse               | 168              |
+| Newfoundland                   | Terre-Neuve                        | 195              |
+| basset                         | basset                             | 175              |
+| Saluki                         | Sloughi                            | 200              |
+| Australian_terrier             | Terrier australien                 | 196              |
+| English_setter                 | Setter anglais                     | 161              |
+| Tibetan_terrier                | Terrier tibétain                   | 206              |
+| Old_English_sheepdog           | Vieux chien de berger anglais      | 169              |
+| Leonberg                       | Léonberg                           | 210              |
+| cairn                          | cairn                              | 197              |
+| Lhasa                          | Lhassa                             | 186              |
+| Great_Dane                     | Grand danois                       | 156              |
+| collie                         | colley                             | 153              |
+| Saint_Bernard                  | Saint-Bernard                      | 170              |
+| Cardigan                       | Cardigan                           | 155              |
+| Maltese_dog                    | chien maltais                      | 252              |
+| standard_poodle                | caniche royal                      | 159              |
+| briard                         | Briard                             | 152              |
+| Sealyham_terrier               | Terrier de Sealyham                | 202              |
+| dhole                          | dhole                              | 150              |
+| Weimaraner                     | Braque de Weimar                   | 160              |
+| Italian_greyhound              | Lévrier italien                    | 182              |
+| cocker_spaniel                 | Cocker                             | 159              |
+| Doberman                       | Dobermann                          | 150              |
+| borzoi                         | barzoï                             | 151              |
+| English_foxhound               | Foxhound anglais                   | 157              |
+| Brittany_spaniel               | Épagneul breton                    | 152              |
+| miniature_pinscher             | pinscher nain                      | 184              |
+| Ibizan_hound                   | Chien d'Ibiza                      | 188              |
+| Chesapeake_Bay_retriever       | Retriever de la baie de Chesapeake | 167              |
+| bluetick                       | tique bleue                        | 171              |
+| Yorkshire_terrier              | Yorkshire Terrier                  | 164              |
+| toy_poodle                     | caniche jouet                      | 151              |
+| malamute                       | malamute                           | 178              |
+| American_Staffordshire_terrier | Terrier américain du Staffordshire | 164              |
+| Bouvier_des_Flandres           | Bouvier des Flandres               | 150              |
+| papillon                       | papillon                           | 196              |
+| affenpinscher                  | affenpinscher                      | 150              |
+| Border_terrier                 | Terrier frontalier                 | 172              |
+| Irish_setter                   | Setter irlandais                   | 155              |
+| black-and-tan_coonhound        | coonhound noir et feu              | 159              |
+| German_shepherd                | Berger allemand                    | 152              |
+| clumber                        | clumber                            | 150              |
+| komondor                       | komondor                           | 154              |
+| groenendael                    | groenendael                        | 150              |
+| African_hunting_dog            | chien de chasse africain           | 169              |
+| miniature_poodle               | caniche miniature                  | 155              |
+| dingo                          | dingo                              | 156              |
+| Siberian_husky                 | Husky sibérien                     | 192              |
+| keeshond                       | keeshond                           | 158              |
+| Border_collie                  | Border collie                      | 150              |
+| Norwegian_elkhound             | Lévrier norvégien                  | 196              |
+| Norwich_terrier                | Terrier de Norwich                 | 185              |
+| Scottish_deerhound             | lévrier écossais                   | 232              |
+| kuvasz                         | kuvasz                             | 150              |
+| chow                           | bouffe                             | 196              |
+| redbone                        | redbone                            | 148              |
+| Tibetan_mastiff                | Dogue tibétain                     | 152              |
+| Pomeranian                     | poméranien                         | 219              |
+| Irish_water_spaniel            | Épagneul d'eau irlandais           | 150              |
+| standard_schnauzer             | schnauzer standard                 | 155              |
+| Afghan_hound                   | Lévrier afghan                     | 239              |
+| Mexican_hairless               | Mexicain sans poils                | 155              |
+| Welsh_springer_spaniel         | Épagneul springer gallois          | 150              |
+| boxer                          | boxeur                             | 151              |
+| Staffordshire_bullterrier      | Bullterrier du Staffordshire       | 155              |
+| Samoyed                        | Samoyède                           | 218              |
+| Bernese_mountain_dog           | chien de montagne bernois          | 218              |
+| Appenzeller                    | Appenzellois                       | 151              |
+| Rottweiler                     | Rottweiler                         | 152              |
+| bloodhound                     | limier                             | 187              |
+| Kerry_blue_terrier             | Terrier bleu Kerry                 | 179              |
+
+
+## Prévoir le prix d'un appartement en fonction de ses caractéristiques
+
+> Nous abordons ici un problème de **régression**: «Comment prévoir le prix d'un appartement en
+> fonction de ses caractéristiques?».
+
+::: callout-tip
+
+Les élèves de NSI ou volontaires pourront effectuer les étapes suivantes en Python.
+
+:::
+
+### Entrainement
+
+- Ouvrir le fichier [`train.csv`](train.csv) dans le tableur LibreOffice Calc.
+- Tracer un diagramme XY du prix `MEDV` en fonction du nombre de pièces `RM`.
+- Ajouter une courbe de tendance et vérifier la concordance approximative avec la vignette 2.
+- En utilisant le modèle prédire le prix d'un 5 pièces à Boston.
+
+  \carreaux[1]
+
+### Test de validation du modèle
+
+- Ouvrir le fichier [`test.csv`](test.csv) dans le tableur LibreOffice Calc.
+- Tracer un diagramme XY du prix `MEDV` en fonction du nombre de pièces `RM`.
+- Ajouter une nouvelle colonne Erreur qui calcule la distance entre la droite et les points.
+- Calculer l'erreur moyenne de votre modèle.
+
+### Utilisation de plusieurs paramètres
+
+::: callout-warning
+
+Cette dernière partie ne peut-être traitée qu'avec Python, mais pas avec le tableur. Les résultats
+attendus sont présentés.
+
+:::  
+
+- Importer les données d'entraînement `train.csv` grâce à la librairie
+  [pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html).
+
+  ```{python}
+  #| echo: false
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  train = pd.read_csv("train.csv", decimal=",")
+  train
+  ```
+- Tracer le graphique en nuage de points(`scatter`) de la vignette 5 grâce à la librairie
+  [matplotlib](https://matplotlib.org/stable/gallery/mplot3d/scatter3d.html).
+
+  ```{python}
+  #| echo: false
+  fig, ax = plt.subplots(subplot_kw={"projection": "3d"},layout="tight")
+  ax.scatter(train.RM, train.AGE, train.MEDV)
+  ax.set_xlabel('RM: nombre moyen de pièces par logement')
+  ax.set_ylabel('AGE: proportion de logements occupés par leur propriétaire construits avant 1940')
+  ax.set_zlabel('MEDV: Valeur médiane des maisons occupées par leur propriétaire en milliers de dollars')
+  plt.show()
+  ```
+
+- Réaliser la régression linéaire à deux paramètres grâce à la bibliothèque
+  [`sklearn`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html).
+
+  ```{python}
+  #| echo: false
+  import numpy as np
+  from sklearn.linear_model import LinearRegression
+  X = train[['AGE', 'RM']].to_numpy().reshape(-1,2)
+  y = train.MEDV
+  reg = LinearRegression().fit(X, y)
+  A, B = reg.coef_
+  C = reg.intercept_
+  # Make data
+  X = np.linspace(train.RM.min(), train.RM.max())
+  Y = np.linspace(train.AGE.min(), train.AGE.max())
+  X, Y = np.meshgrid(X, Y)
+  Z = B*X +A*Y +C
+
+  # Plot the surface
+  fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+  ax.plot_surface(X, Y, Z)
+  ax.scatter(train.RM, train.AGE, train.MEDV)
+  plt.show()
+  ```
+
+- En utilisant le modèle prédire le prix d'un 6 pièces avec 40% de logements occupés par leur propriétaire construits avant 1940 à Boston.
+
+  ```{python}
+  #| echo: false
+  "Le prix prévu est: " + str(reg.predict(np.array([[40, 6]]))[0])
+  ```
+  
+  Dans les données de test on trouve deux biens qui se rapprochent de ces caractéristiques avec des prix relativement proches de la prévision. 
+
+  | RM    | AGE  | MEDV |
+  |-------|------|------|
+  | 6,162 | 38,4 | 24,1 |
+  | 6,009 | 42,3 | 21,7 |
+  
+**Informations sur les données**
+
+Le jeu de données possède un problème
+[éthique](https://scikit-learn.org/1.1/modules/generated/sklearn.datasets.load_boston.html), mais
+nous travaillerons que sur des colonnes qui ne posent pas ce genre de problème:
+
+- RM  : nombre moyen de pièces par logement                                                   
+- AGE : proportion de logements occupés par leur propriétaire construits avant 1940           
+- MEDV: Valeur médiane des maisons occupées par leur propriétaire en milliers de dollars      
+
+Le tableau de données contient les données concernant 506 quartiers et 14 attributs dont le dernier
+`MEDV` indique le prix moyen du logement dans le quartier:
+
+| Attribut | Explication                                                                           |
+|----------|---------------------------------------------------------------------------------------|
+| CRIM     | taux de criminalité par habitant par ville                                            |
+| ZN       | proportion des terrains résidentiels zonés pour les terrains de plus de 25 000 pi.ca. |
+| INDUS    | proportion d'acres d'entreprises non commerciales par ville                           |
+| CHAS     | Variable fictive Charles River (= 1 si le secteur délimite la rivière ; 0 sinon)      |
+| NOX      | concentration d'oxydes nitriques (parties par 10 millions)                            |
+| RM       | nombre moyen de pièces par logement                                                   |
+| AGE      | proportion de logements occupés par leur propriétaire construits avant 1940           |
+| DIS      | distances pondérées à cinq centres d'emploi de Boston                                 |
+| RAD      | indice d'accessibilité aux autoroutes radiales                                        |
+| TAX      | taux d'imposition foncière sur la valeur totale par tranche de 10 000 $               |
+| PTRATIO  | ratio élèves-enseignant par ville                                                     |
+| B        | 1000(Bk - 0.63)^2 où Bk est la proportion de noirs par ville                          |
+| LSTAT    | % de statut inférieur de la population                                                |
+| MEDV     | Valeur médiane des maisons occupées par leur propriétaire en milliers de dollars      |

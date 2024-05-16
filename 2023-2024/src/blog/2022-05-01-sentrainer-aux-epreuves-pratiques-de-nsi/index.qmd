@@ -1,0 +1,31 @@
+---
+title: "S'entrainer aux épreuves pratiques de NSI"
+date: 2022-05-01
+author: "Benjamin Abel"
+image: "ep2022-jupyterlite.png"
+excerpt: |
+  Vous pouvez vous entrainer en ligne sur tous les sujets de l'épreuve pratique de NSI sans rien 
+  installer grâce à un noyau Python fonctionnant dans le navigateur.
+tags: ["python", "nsi", "épreuve pratique", "jupyterlite"]
+---
+
+J'ai mis à disposition l'ensemble des sujets et corrigés de l'épreuve pratique de NSI au format
+notebook à l'adresse suivante: [https://jupyterlite.lyceum.fr](https://jupyterlite.lyceum.fr).
+
+Les 40 sujets de 2022 sont dans le répertoire `ep-nsi-2022`. Voici un lien direct vers le
+[premier sujet](https://jupyterlite.lyceum.fr/lab?path=ep-nsi-2022%2F22-NSI-01.ipynb).
+
+Pour chaque sujet trois fichiers sont disponibles:
+
+- `22-NSI-xx.ipynb`: le sujet au format notebook.
+- `22-NSI-xx.pdf`: le sujet officiel disponible sur
+  [eduscol](https://eduscol.education.fr/2661/banque-des-epreuves-pratiques-de-specialite-nsi) au
+  format pdf.
+- `22-NSI-xx-correction.ipynb`: la correction au format notebook proposée par
+  [Gilles Lassus](https://glassus.github.io/terminale_nsi/) sous licence
+  [CC-BY-SA](https://creativecommons.org/licenses/by/4.0/deed.fr).
+
+[![Copie d'écran du site jupyterlite d'entrainement aux épreuves pratiques](ep2022-jupyterlite.png)](https://jupyterlite.lyceum.fr/lab?path=ep-nsi-2022%2F22-NSI-01.ipynb)
+
+L'ensemble est hébergé sur [framagit](https://framagit.org/lyceum/jupyterlite) où vous pouvez
+proposer des corrections ou améliorations.

@@ -1,0 +1,10 @@
+---
+title: Quiz
+subtitle: "Chapitre 2: Schéma relationnel"
+quiz: true
+tabnav: true
+---
+```ed-pb
+Pas de quiz pour l'instant
+
+```
